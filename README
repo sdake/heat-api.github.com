@@ -1,0 +1,6 @@
+This site uses jekyll to enable use of a layout templating and partials.  
+
+To run the jekyll server locally to make sure your rendering is working, use:
+jekyll --server
+
+For more information on using jekyll, look here https://github.com/mojombo/jekyll/

@@ -1,0 +1,4 @@
+14:39:35 <funzo> #startmeeting
+14:39:35 <meetbot`> Meeting started Tue Mar 27 14:39:35 2012 UTC.  The chair is funzo. Information about MeetBot at http://wiki.debian.org/MeetBot.
+14:39:35 <meetbot`> Useful Commands: #action #agreed #help #info #idea #link #topic.
+14:39:41 <funzo> #endmeeting

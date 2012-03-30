@@ -1,0 +1,82 @@
+18:06:38 <funzo> #startmeeting
+18:06:38 <meetbot`> Meeting started Fri Mar 30 18:06:38 2012 UTC.  The chair is funzo. Information about MeetBot at http://wiki.debian.org/MeetBot.
+18:06:38 <meetbot`> Useful Commands: #action #agreed #help #info #idea #link #topic.
+18:06:53 <funzo> #topic effective irc meeting tutorial
+18:07:47 <sdake> chris we are on phone conf
+18:07:55 <funzo> can you hear me?
+18:08:03 <sdake> no
+18:08:27 <sdake> chris can you redial the bridge
+18:08:29 <funzo> my head set isn't working
+18:08:31 <rbergeron> are you all on the same bridge
+18:08:36 <rbergeron> LOL
+18:08:55 <funzo> I heard you
+18:09:22 <sdake> do you have an old school land line :)
+18:09:44 <sdake> chris redial bridge - maybr bridge borken
+18:09:47 <funzo> k
+18:09:54 <funzo> I can hear you guys when I dial in
+18:09:59 <funzo> but you can't hear me
+18:10:16 <rbergeron> well it may be his headset
+18:10:24 <rbergeron> but if he can hear me that's probably all that matters
+18:10:29 <sdake> also didn't hear your beep\
+18:10:29 <funzo> I tried handset too
+18:10:44 <rbergeron> truth be told i have taught how to use the meetbot just in a meeting without phone but it is a bit faster this way
+18:11:06 <rbergeron> sdake did you dial again yet
+18:11:09 <funzo> ok, says the leader hasn't arrived yet
+18:11:14 <rbergeron> he's coming
+18:12:13 <rbergeron> in theory
+18:12:41 <sdake> bridge pos
+18:12:45 <rbergeron> are you on yet or not
+18:12:50 <sdake> ya in
+18:13:06 <sdake> ok were all in
+18:13:27 <funzo> I am taking notes here http://etherpad.corp.redhat.com/skq4vnFs9O
+18:13:55 <funzo> #chair sdake rbergeron
+18:13:55 <meetbot`> Current chairs: funzo rbergeron sdake
+18:14:10 <rbergeron> #info giving other people chair status allows people to do other commands
+18:14:18 <rbergeron> #info like taking notes, adding other chairs, etc.
+18:14:48 <funzo> Just realized there is no reason to take notes in etherpad since we are using meetbot
+18:15:00 <sdake> win
+18:15:04 <rbergeron> #info when you do startmeeting it is helpful to give it a name
+18:15:11 <rbergeron> ie: startmeeting heat_meeting
+18:15:16 <rbergeron> #meetingname heat meeting
+18:15:16 <meetbot`> The meeting name has been set to 'heat_meeting'
+18:15:26 <rbergeron> #topic Intro and helpful tips
+18:16:34 <rbergeron> http://meetbot.fedoraproject.org/fedora-meeting/2012-03-09/cloud_sig.2012-03-09-19.00.log.html
+18:17:51 <rbergeron> http://meetbot.fedoraproject.org/fedora-meeting/2012-03-09/cloud_sig.2012-03-09-19.00.html
+18:18:24 <rbergeron> #info using topic helps to organize your minutes!
+18:18:58 <funzo> #idea crod the push of meetingbot logs
+18:19:05 <funzo> #idea setup agenda ahead of time
+18:19:49 <rbergeron> #info Minutes are good because people usually pay attention
+18:20:17 <rbergeron> #info to minutes and not so much to lengthy irc logs
+18:20:42 <rbergeron> #topic Other Commands you can use
+18:20:46 <funzo> here's the commands http://meetbot.debian.net/Manual.html#tutorial
+18:21:00 <rbergeron> #info the action command is used to highlight when people have committed to doing something
+18:21:07 <rbergeron> #action sdake to take robyn to dinner someplace nice
+18:21:09 <funzo> #link http://meetbot.debian.net/Manual.html#tutorial
+18:21:53 <rbergeron> #info the nice part aobut actions is that in the meeting minutes/summary, it shows the actions items by person
+18:22:07 <rbergeron> #info name of person is the person being assigned to the action
+18:22:08 <sdake> #info first word is persons name assigned to action
+18:22:37 <rbergeron> #info other commands poeple use are agreed (or agree)
+18:22:43 <rbergeron> #agreed we all think this is awesome
+18:22:53 <funzo> #agree to disagree
+18:22:56 <rbergeron> Propose: #agreed we all think this is awesome
+18:23:03 <rbergeron> #agreed we all think this is awesome
+18:24:15 <sdake> #info use Propose to get people to use agree/disagree on an item
+18:26:17 <funzo> #action funzo - change meetbot to #heat and update weekly invite
+18:26:27 <rbergeron> #link putalinkher: will link teh link in the meeting
+18:27:02 <rbergeron> http://lists.fedoraproject.org/pipermail/cloud/2012-March/001323.html
+18:27:51 <funzo> #info add meeting minutes to the summary email that goes out
+18:28:07 <funzo> #action funzo - create a really cool irc autograph
+18:29:38 <funzo> http://heat-api.org/irclogs.html
+18:30:04 <rbergeron> #info steve really wants to buy robyn a 30 dollar watch
+18:30:08 <rbergeron> #undo
+18:30:08 <meetbot`> Removing item from minutes: <MeetBot.items.Info object at 0x12cd590>
+18:30:30 <funzo> #info something I should never have said
+18:30:30 <rbergeron> #info steve really wants to buy robyn a 300000000 dollar watch
+18:30:33 <funzo> #undo
+18:30:33 <meetbot`> Removing item from minutes: <MeetBot.items.Info object at 0x12cd3d0>
+18:30:46 <funzo> #undo
+18:30:46 <meetbot`> Removing item from minutes: <MeetBot.items.Info object at 0x12cd590>
+18:30:49 <sdake> #info undo * 300000000 milliion
+18:31:35 <rbergeron> #info topic also changes the topic of the channel *if* meetbot has ops
+18:34:30 <sdake> chris hang on a sec
+18:34:42 <funzo> #endmeeting

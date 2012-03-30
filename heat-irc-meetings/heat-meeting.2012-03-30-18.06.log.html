@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#heat-meeting log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">18:06:38</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">18:06:38</span><span class="nk"> &lt;meetbot`&gt;</span> Meeting started Fri Mar 30 18:06:38 2012 UTC.  The chair is funzo. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">18:06:38</span><span class="nk"> &lt;meetbot`&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">18:06:53</span><span class="nk"> &lt;funzo&gt;</span> <span class="topic">#topic </span><span class="topicline">effective irc meeting tutorial</span>
+<a name="l-5"></a><span class="tm">18:07:47</span><span class="nk"> &lt;sdake&gt;</span> chris we are on phone conf
+<a name="l-6"></a><span class="tm">18:07:55</span><span class="nk"> &lt;funzo&gt;</span> can you hear me?
+<a name="l-7"></a><span class="tm">18:08:03</span><span class="nk"> &lt;sdake&gt;</span> no
+<a name="l-8"></a><span class="tm">18:08:27</span><span class="nk"> &lt;sdake&gt;</span> chris can you redial the bridge
+<a name="l-9"></a><span class="tm">18:08:29</span><span class="nk"> &lt;funzo&gt;</span> my head set isn't working
+<a name="l-10"></a><span class="tm">18:08:31</span><span class="nk"> &lt;rbergeron&gt;</span> are you all on the same bridge
+<a name="l-11"></a><span class="tm">18:08:36</span><span class="nk"> &lt;rbergeron&gt;</span> LOL
+<a name="l-12"></a><span class="tm">18:08:55</span><span class="nk"> &lt;funzo&gt;</span> I heard you
+<a name="l-13"></a><span class="tm">18:09:22</span><span class="nk"> &lt;sdake&gt;</span> do you have an old school land line :)
+<a name="l-14"></a><span class="tm">18:09:44</span><span class="nk"> &lt;sdake&gt;</span> chris redial bridge - maybr bridge borken
+<a name="l-15"></a><span class="tm">18:09:47</span><span class="nk"> &lt;funzo&gt;</span> k
+<a name="l-16"></a><span class="tm">18:09:54</span><span class="nk"> &lt;funzo&gt;</span> I can hear you guys when I dial in
+<a name="l-17"></a><span class="tm">18:09:59</span><span class="nk"> &lt;funzo&gt;</span> but you can't hear me
+<a name="l-18"></a><span class="tm">18:10:16</span><span class="nk"> &lt;rbergeron&gt;</span> well it may be his headset
+<a name="l-19"></a><span class="tm">18:10:24</span><span class="nk"> &lt;rbergeron&gt;</span> but if he can hear me that's probably all that matters
+<a name="l-20"></a><span class="tm">18:10:29</span><span class="nk"> &lt;sdake&gt;</span> also didn't hear your beep\
+<a name="l-21"></a><span class="tm">18:10:29</span><span class="nk"> &lt;funzo&gt;</span> I tried handset too
+<a name="l-22"></a><span class="tm">18:10:44</span><span class="nk"> &lt;rbergeron&gt;</span> truth be told i have taught how to use the meetbot just in a meeting without phone but it is a bit faster this way
+<a name="l-23"></a><span class="tm">18:11:06</span><span class="nk"> &lt;rbergeron&gt;</span> sdake did you dial again yet
+<a name="l-24"></a><span class="tm">18:11:09</span><span class="nk"> &lt;funzo&gt;</span> ok, says the leader hasn't arrived yet
+<a name="l-25"></a><span class="tm">18:11:14</span><span class="nk"> &lt;rbergeron&gt;</span> he's coming
+<a name="l-26"></a><span class="tm">18:12:13</span><span class="nk"> &lt;rbergeron&gt;</span> in theory
+<a name="l-27"></a><span class="tm">18:12:41</span><span class="nk"> &lt;sdake&gt;</span> bridge pos
+<a name="l-28"></a><span class="tm">18:12:45</span><span class="nk"> &lt;rbergeron&gt;</span> are you on yet or not
+<a name="l-29"></a><span class="tm">18:12:50</span><span class="nk"> &lt;sdake&gt;</span> ya in
+<a name="l-30"></a><span class="tm">18:13:06</span><span class="nk"> &lt;sdake&gt;</span> ok were all in
+<a name="l-31"></a><span class="tm">18:13:27</span><span class="nk"> &lt;funzo&gt;</span> I am taking notes here http://etherpad.corp.redhat.com/skq4vnFs9O
+<a name="l-32"></a><span class="tm">18:13:55</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#chair </span><span class="cmdline">sdake rbergeron</span>
+<a name="l-33"></a><span class="tm">18:13:55</span><span class="nk"> &lt;meetbot`&gt;</span> Current chairs: funzo rbergeron sdake
+<a name="l-34"></a><span class="tm">18:14:10</span><span class="nk"> &lt;rbergeron&gt;</span> <span class="cmd">#info </span><span class="cmdline">giving other people chair status allows people to do other commands</span>
+<a name="l-35"></a><span class="tm">18:14:18</span><span class="nk"> &lt;rbergeron&gt;</span> <span class="cmd">#info </span><span class="cmdline">like taking notes, adding other chairs, etc.</span>
+<a name="l-36"></a><span class="tm">18:14:48</span><span class="nk"> &lt;funzo&gt;</span> Just realized there is no reason to take notes in etherpad since we are using meetbot
+<a name="l-37"></a><span class="tm">18:15:00</span><span class="nk"> &lt;sdake&gt;</span> win
+<a name="l-38"></a><span class="tm">18:15:04</span><span class="nk"> &lt;rbergeron&gt;</span> <span class="cmd">#info </span><span class="cmdline">when you do startmeeting it is helpful to give it a name</span>
+<a name="l-39"></a><span class="tm">18:15:11</span><span class="nk"> &lt;rbergeron&gt;</span> <span class="hi">ie:</span> startmeeting heat_meeting
+<a name="l-40"></a><span class="tm">18:15:16</span><span class="nk"> &lt;rbergeron&gt;</span> <span class="cmd">#meetingname </span><span class="cmdline">heat meeting</span>
+<a name="l-41"></a><span class="tm">18:15:16</span><span class="nk"> &lt;meetbot`&gt;</span> The meeting name has been set to 'heat_meeting'
+<a name="l-42"></a><span class="tm">18:15:26</span><span class="nk"> &lt;rbergeron&gt;</span> <span class="topic">#topic </span><span class="topicline">Intro and helpful tips</span>
+<a name="l-43"></a><span class="tm">18:16:34</span><span class="nk"> &lt;rbergeron&gt;</span> http://meetbot.fedoraproject.org/fedora-meeting/2012-03-09/cloud_sig.2012-03-09-19.00.log.html
+<a name="l-44"></a><span class="tm">18:17:51</span><span class="nk"> &lt;rbergeron&gt;</span> http://meetbot.fedoraproject.org/fedora-meeting/2012-03-09/cloud_sig.2012-03-09-19.00.html
+<a name="l-45"></a><span class="tm">18:18:24</span><span class="nk"> &lt;rbergeron&gt;</span> <span class="cmd">#info </span><span class="cmdline">using topic helps to organize your minutes!</span>
+<a name="l-46"></a><span class="tm">18:18:58</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#idea </span><span class="cmdline">crod the push of meetingbot logs</span>
+<a name="l-47"></a><span class="tm">18:19:05</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#idea </span><span class="cmdline">setup agenda ahead of time</span>
+<a name="l-48"></a><span class="tm">18:19:49</span><span class="nk"> &lt;rbergeron&gt;</span> <span class="cmd">#info </span><span class="cmdline">Minutes are good because people usually pay attention</span>
+<a name="l-49"></a><span class="tm">18:20:17</span><span class="nk"> &lt;rbergeron&gt;</span> <span class="cmd">#info </span><span class="cmdline">to minutes and not so much to lengthy irc logs</span>
+<a name="l-50"></a><span class="tm">18:20:42</span><span class="nk"> &lt;rbergeron&gt;</span> <span class="topic">#topic </span><span class="topicline">Other Commands you can use</span>
+<a name="l-51"></a><span class="tm">18:20:46</span><span class="nk"> &lt;funzo&gt;</span> here's the commands http://meetbot.debian.net/Manual.html#tutorial
+<a name="l-52"></a><span class="tm">18:21:00</span><span class="nk"> &lt;rbergeron&gt;</span> <span class="cmd">#info </span><span class="cmdline">the action command is used to highlight when people have committed to doing something</span>
+<a name="l-53"></a><span class="tm">18:21:07</span><span class="nk"> &lt;rbergeron&gt;</span> <span class="cmd">#action </span><span class="cmdline">sdake to take robyn to dinner someplace nice</span>
+<a name="l-54"></a><span class="tm">18:21:09</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#link </span><span class="cmdline">http://meetbot.debian.net/Manual.html#tutorial</span>
+<a name="l-55"></a><span class="tm">18:21:53</span><span class="nk"> &lt;rbergeron&gt;</span> <span class="cmd">#info </span><span class="cmdline">the nice part aobut actions is that in the meeting minutes/summary, it shows the actions items by person</span>
+<a name="l-56"></a><span class="tm">18:22:07</span><span class="nk"> &lt;rbergeron&gt;</span> <span class="cmd">#info </span><span class="cmdline">name of person is the person being assigned to the action</span>
+<a name="l-57"></a><span class="tm">18:22:08</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">first word is persons name assigned to action</span>
+<a name="l-58"></a><span class="tm">18:22:37</span><span class="nk"> &lt;rbergeron&gt;</span> <span class="cmd">#info </span><span class="cmdline">other commands poeple use are agreed (or agree)</span>
+<a name="l-59"></a><span class="tm">18:22:43</span><span class="nk"> &lt;rbergeron&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">we all think this is awesome</span>
+<a name="l-60"></a><span class="tm">18:22:53</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#agree </span><span class="cmdline">to disagree</span>
+<a name="l-61"></a><span class="tm">18:22:56</span><span class="nk"> &lt;rbergeron&gt;</span> <span class="hi">Propose:</span> #agreed we all think this is awesome
+<a name="l-62"></a><span class="tm">18:23:03</span><span class="nk"> &lt;rbergeron&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">we all think this is awesome</span>
+<a name="l-63"></a><span class="tm">18:24:15</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">use Propose to get people to use agree/disagree on an item</span>
+<a name="l-64"></a><span class="tm">18:26:17</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#action </span><span class="cmdline">funzo - change meetbot to #heat and update weekly invite</span>
+<a name="l-65"></a><span class="tm">18:26:27</span><span class="nk"> &lt;rbergeron&gt;</span> <span class="cmd">#link </span><span class="cmdline">putalinkher: will link teh link in the meeting</span>
+<a name="l-66"></a><span class="tm">18:27:02</span><span class="nk"> &lt;rbergeron&gt;</span> http://lists.fedoraproject.org/pipermail/cloud/2012-March/001323.html
+<a name="l-67"></a><span class="tm">18:27:51</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#info </span><span class="cmdline">add meeting minutes to the summary email that goes out</span>
+<a name="l-68"></a><span class="tm">18:28:07</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#action </span><span class="cmdline">funzo - create a really cool irc autograph</span>
+<a name="l-69"></a><span class="tm">18:29:38</span><span class="nk"> &lt;funzo&gt;</span> http://heat-api.org/irclogs.html
+<a name="l-70"></a><span class="tm">18:30:04</span><span class="nk"> &lt;rbergeron&gt;</span> <span class="cmd">#info </span><span class="cmdline">steve really wants to buy robyn a 30 dollar watch</span>
+<a name="l-71"></a><span class="tm">18:30:08</span><span class="nk"> &lt;rbergeron&gt;</span> <span class="cmd">#undo</span><span class="cmdline"></span>
+<a name="l-72"></a><span class="tm">18:30:08</span><span class="nk"> &lt;meetbot`&gt;</span> Removing item from minutes: &lt;MeetBot.items.Info object at 0x12cd590&gt;
+<a name="l-73"></a><span class="tm">18:30:30</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#info </span><span class="cmdline">something I should never have said</span>
+<a name="l-74"></a><span class="tm">18:30:30</span><span class="nk"> &lt;rbergeron&gt;</span> <span class="cmd">#info </span><span class="cmdline">steve really wants to buy robyn a 300000000 dollar watch</span>
+<a name="l-75"></a><span class="tm">18:30:33</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#undo</span><span class="cmdline"></span>
+<a name="l-76"></a><span class="tm">18:30:33</span><span class="nk"> &lt;meetbot`&gt;</span> Removing item from minutes: &lt;MeetBot.items.Info object at 0x12cd3d0&gt;
+<a name="l-77"></a><span class="tm">18:30:46</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#undo</span><span class="cmdline"></span>
+<a name="l-78"></a><span class="tm">18:30:46</span><span class="nk"> &lt;meetbot`&gt;</span> Removing item from minutes: &lt;MeetBot.items.Info object at 0x12cd590&gt;
+<a name="l-79"></a><span class="tm">18:30:49</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">undo * 300000000 milliion</span>
+<a name="l-80"></a><span class="tm">18:31:35</span><span class="nk"> &lt;rbergeron&gt;</span> <span class="cmd">#info </span><span class="cmdline">topic also changes the topic of the channel *if* meetbot has ops</span>
+<a name="l-81"></a><span class="tm">18:34:30</span><span class="nk"> &lt;sdake&gt;</span> chris hang on a sec
+<a name="l-82"></a><span class="tm">18:34:42</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

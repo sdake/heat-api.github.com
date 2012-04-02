@@ -1,0 +1,404 @@
+21:00:11 <funzo> #startmeeting
+21:00:11 <mheat-bot> Meeting started Mon Apr  2 21:00:11 2012 UTC.  The chair is funzo. Information about MeetBot at http://wiki.debian.org/MeetBot.
+21:00:11 <mheat-bot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+21:00:33 <funzo> #chair asalkeld pmyers sdake Slower blomquisg jpeeler rbergeron shadower
+21:00:33 <mheat-bot> Current chairs: Slower asalkeld blomquisg funzo jpeeler pmyers rbergeron sdake shadower
+21:00:57 <funzo> I'd like to quickly review the agenda topics for this meeting
+21:01:09 <funzo> #topic Review meeting agenda
+21:01:44 <sdake> Agenda
+21:01:44 <sdake> ------
+21:01:45 <sdake> 1. come to agreement on first few milestones and dates
+21:01:45 <sdake> 2. Issues for current milestone
+21:01:45 <sdake> 3. Status on current milestones
+21:01:45 <sdake> 4. Blocked development
+21:01:47 <sdake> 5. Future milestones
+21:01:49 <sdake> 6. Architecture improvement
+21:02:07 <sdake> propose agenda look good to start?  (hit +1 or -1 if you agree disagree)
+21:02:26 <Slower> +1
+21:02:28 <shadower> +1
+21:02:35 <funzo> +1
+21:02:38 <sdake> +1
+21:02:40 <jpeeler> +1
+21:02:47 <blomquisg> +1
+21:02:52 <sdake> #agreed meeting agenda looks good
+21:02:54 <funzo> #agreed agenda content is adequate for today
+21:02:58 <funzo> :)
+21:02:59 <sdake> woops :)
+21:03:09 <funzo> sdake: you're a chair, no whoops
+21:03:13 <sdake> you can do agree funzo since ure the mheat botter
+21:03:20 <funzo> #topic come to agreement on first few milestones and dates
+21:03:34 <funzo> Ok, we originally set a date for the POC of last friday
+21:03:49 <sdake> ya i somewhat toned down the poc from what it was originally
+21:03:57 <sdake> to something more like "start a wordpress instance"
+21:04:11 <funzo> the POC was to include Basic functional proof of concept that parses an AWS template and generates a working VM.
+21:04:15 <sdake> I'd propose we break up POC into multiple blocks
+21:04:40 <sdake> since real POC is something that could probably launch multiple VMS, multi-instance VMS, etc
+21:04:41 <funzo> according to the initial POC statement, we accomplished it
+21:05:00 <sdake> i reduced it quite a bit funzo :)
+21:05:01 <funzo> ok, so the original POC is inadequate as a POC?
+21:05:01 <asalkeld> I agree with funzo
+21:05:04 <funzo> ah ok
+21:05:14 <Slower> did we ever show anyone the POC? :)
+21:05:16 <asalkeld> just move forward
+21:05:30 <Slower> I agree too asalkeld
+21:05:39 <funzo> ok, let's set up a POC for multiple instances for the end of this week?
+21:05:42 <sdake> ya agree poc is done - we have working code
+21:05:43 <asalkeld> have functional milestones
+21:05:56 <funzo> ok, let's define them as M1 now
+21:06:02 <funzo> M1,M2,M2
+21:06:05 <funzo> M3 rather
+21:06:08 <asalkeld> like "we want it to do X"
+21:06:12 <sdake> propose Agree/disagree POC finished
+21:06:18 <sdake> +1
+21:06:18 <asalkeld> sure
+21:06:19 <shadower> +1
+21:06:24 <funzo> #agreed POC accomplished
+21:06:29 <sdake> win ok
+21:06:38 <funzo> should milestones be 1 or 2 weeks?
+21:06:40 <funzo> or longer?
+21:06:56 <asalkeld> I think 1 week a bit short
+21:06:57 <sdake> def 2 weeks or less
+21:06:57 <funzo> I'd like to use a sprint model, I'm happy to call milestones sprints
+21:07:12 <sdake> probably depends on what work we want to get done
+21:07:14 <blomquisg> I like 2 weeks, but depends on the chunks of work I suppose (could be 1)
+21:07:15 <asalkeld> I am easy
+21:07:26 <sdake> some work easy (or already done such as rpcize engine) would be 1 week
+21:07:31 <funzo> we have a checkpoint before the openstack design conf
+21:07:43 <funzo> would be nice to demonstrate the multiple instances before then
+21:08:01 <jpeeler> do 1 one week milestones just mean a date to accomplish or a review afterwards like a sprint?
+21:08:03 <funzo> the date of the conference is April 16, I believe
+21:08:12 <funzo> date to accomplish
+21:08:20 <sdake> process up to us, I'd suggest keeping it simple
+21:08:23 <funzo> but we should have a demo of the accomplishment
+21:08:31 <funzo> else people leave loose ends
+21:08:44 <asalkeld> we need to to harden
+21:08:51 <Slower> yeah
+21:08:51 <asalkeld> fix bugs
+21:08:59 <Slower> in fact imo it's as important as new features
+21:08:59 <sdake> ya code full of missing try
+21:09:14 <funzo> how about an internal M1 end date by this Friday (feature complete) and by the following Friday we have bugs patched?
+21:09:23 <Slower> I like to have a stable platform from which to add a new feature
+21:09:23 <asalkeld> so to me major issue is we have no tests
+21:09:32 <funzo> M1 to include multi-instance deployment from template?
+21:09:44 <funzo> I agree with asalkeld
+21:09:46 <asalkeld> so not easy to catch regregression
+21:09:49 <Slower> funzo: yeah
+21:10:18 <sdake> would like to develop test cases in parallell with multi instance deployment
+21:10:21 <funzo> propose to agreee, Friday multi-instance deployment working, the following Friday M1 complete?
+21:10:41 <funzo> -1/+1
+21:10:49 <blomquisg> Friday is a holiday (here, in US)
+21:10:53 <Slower> funzo: so you're saying a week to harden?
+21:10:59 <funzo> Slower: and write tests
+21:11:06 <asalkeld> 2 days off for me
+21:11:08 <sdake> ya this week is pretty bad, we probably want a two week window for this milestone
+21:11:12 <asalkeld> easer
+21:11:15 <shadower> 1 day off for me (monday)
+21:11:20 <asalkeld> easter
+21:11:22 <Slower> we don't need to stress ourselves out either :)
+21:11:27 <blomquisg> next Friday, then?
+21:11:28 <Slower> I'm off on thursday
+21:11:36 <asalkeld> ya, ok
+21:11:56 <funzo> ok, next Friday multi-instance deployment working, the following week as end of
+21:11:57 <sdake> Propose M1 March 13th - multiinstance deployment + test cases
+21:11:59 <funzo> M1
+21:12:12 <blomquisg> apr 13
+21:12:22 <sdake> ya apr 13 ;)
+21:12:23 <funzo> that would make M1 end 4/20 if we have a week to harden
+21:12:32 <asalkeld> so what does multi-instance mean?
+21:12:41 <sdake> 2 weeks is april 13
+21:12:47 <asalkeld> (besides the obvious)
+21:13:02 <sdake> example multi-intance wordpress 1 vm - mysql in another vm
+21:13:07 <funzo> right, 4/13 (2 weeks to be feature complete), do we build in the hardening time?
+21:13:17 <asalkeld> dependancies + volumes
+21:13:20 <funzo> or add a week on the end
+21:13:26 <sdake> ya deps + volumes
+21:13:46 <sdake> M1 Apr 13 multi-instance + test cases
+21:13:48 <funzo> above we talked about adding a week on the end
+21:13:57 <Slower> I just realized I get fri & mon off too, so will be gone thu-mon
+21:13:58 <sdake> M2 Apri 20 harden + focus on test cases this entire week
+21:13:58 <funzo> ok, so no hardening week after the feature complete
+21:14:32 <Slower> imo actually using the software is the best way to harden it, but that's just me :)
+21:14:32 <blomquisg> M1 = multi-instance depl; M2 = harden, bugfix. Right?
+21:14:40 <Slower> that sounds good tom e
+21:14:41 <sdake> that is the proposal blomquisg
+21:14:44 <sdake> +1
+21:14:57 <funzo> +1 sure
+21:15:06 <shadower> the tests are still part of M1 though, right?
+21:15:08 <asalkeld> +1
+21:15:10 <Slower> +1
+21:15:11 <sdake> shadower yes
+21:15:14 <blomquisg> +1
+21:15:14 <shadower> +1
+21:15:16 <shadower> cool
+21:15:30 <funzo> #agreed M1= multi-instance depl; M2 = harden, bugfix. M1 = 4/13, M2=4/27
+21:15:47 <sdake> 4/20 was m2 ;)
+21:15:57 <funzo> shall we just do 2 milestones at a time
+21:16:12 <funzo> ok, M2 is only one week?
+21:16:17 <Slower> ya I don't think we want to get too far ahead of ourselves
+21:16:20 <funzo> that is incongruent
+21:16:21 <shadower> yeah
+21:16:31 <sdake> funzo's parser failed
+21:16:36 <Slower> haha
+21:16:41 <funzo> I think we should keep milestone's 2 weeks
+21:16:58 <funzo> perhaps we can add more work to M2 to keep it to 2 weeks?
+21:17:03 <Slower> funzo: life is incongruent ;-)
+21:17:05 <funzo> ha
+21:17:08 <funzo> ok ok
+21:17:18 <funzo> M1 4/13, M2 4/20
+21:17:27 <funzo> proposal to agree
+21:17:39 <sdake> +1
+21:17:40 <blomquisg> agree
+21:17:42 <funzo> #agreed M1 4/13, M2 4/20
+21:17:44 <Slower> +1
+21:17:46 <asalkeld> +1
+21:18:00 <sdake> ok thats probably beat into the ground
+21:18:05 <funzo> #topic 2. Issues for current milestone
+21:18:22 <asalkeld> ya feel like we are in google+ or something
+21:18:36 <sdake> today sorted out wiki to help people get up to speed on launching the instance
+21:18:59 <sdake> #link https://github.com/heat-api/heat/wiki/HeatGettingStarted
+21:19:02 <funzo> #info fix up the keystonerc to not have to use root
+21:19:03 <Slower> are trying to get mysql support in soon?
+21:19:19 <funzo> I pushed the mysql commit today, we are persisting stacks and events
+21:19:25 <asalkeld> and rpc
+21:19:26 <funzo> there is more integration work to do
+21:19:27 <Slower> neat
+21:19:39 <funzo> like make sure all fields and objects are being read and persisted
+21:19:41 <sdake> slower we probably want rpc working in this milestone too ;)
+21:19:49 <funzo> but the initial model mapping and persistence is working
+21:19:49 <Slower> sdake: yes sir :)
+21:19:55 <Slower> sdake: I think that will be fine
+21:19:56 <sdake> how is it looking
+21:19:58 <sdake> cool
+21:20:19 <Slower> well we have the api and engine talking now and the calls are half working
+21:20:22 <sdake> I'd recommend everyone take a look at the link above and make sure they can run a instance
+21:20:28 <Slower> I mean they get made but there are stacktraces
+21:20:33 <sdake> #action all run wiki getting started guide
+21:20:33 <funzo> #info finish model mapping for storage and queries for models
+21:20:34 <Slower> so no proper returns
+21:20:50 <funzo> what other issues?
+21:20:52 <Slower> so it's coming
+21:20:56 <sdake> nice
+21:21:12 <sdake> half working better then no worky ;)
+21:21:20 <Slower> basically just martialing of args/returns to figure out
+21:21:40 <asalkeld> Slower, if you want I can always help
+21:21:59 <Slower> asalkeld: cool :).  I know I'm slow but I'd like to keep working on it for a bit yet
+21:22:12 <Slower> I'm getting into the codebase more now so it should get better
+21:22:31 <funzo> any other issues we need to discuss on the topic?
+21:22:35 <asalkeld> that's cool, only if you need - just offering help
+21:22:41 <sdake> yes one issue
+21:22:42 <Slower> asalkeld: much appreciated :)
+21:22:51 <sdake> there is a regression on the latest commit
+21:23:03 <sdake> can't launch instances
+21:23:20 <funzo> is anyone taking a look at that?
+21:23:21 <asalkeld> ja, need tests
+21:23:44 <sdake> i have made a bit of time for it today but busy with other things unfortunately
+21:23:47 <funzo> do we want just test scripts or a structured test framework (nose)
+21:23:51 <sdake> #info commit 4679fb01c641053d45a197b598e28552144391a9 broken
+21:24:09 <funzo> do we want to have someone bootstrap the project with nose tests?
+21:24:20 <asalkeld> funzo, just how glance/nova do it
+21:24:36 <funzo> asalkeld: ok, I haven't looked at theirs
+21:24:36 <asalkeld> they do use nose I think
+21:24:45 <sdake> propose bootstrapping test cases as nova/glance do
+21:25:03 <asalkeld> +1
+21:25:06 <shadower> +1
+21:25:06 <sdake> +1
+21:25:07 <jpeeler> +1
+21:25:12 <blomquisg> +1
+21:25:13 <funzo> yep, looks to be nose
+21:25:48 <funzo> #action all implement nose tests similar to nova for your functional pieces
+21:25:58 <funzo> #agreed add tests for your features
+21:26:09 <funzo> any other issues to address for M1?
+21:26:13 <sdake> #agreed bootstrap test cases as nova/glance do
+21:26:47 <funzo> ok, going to move on to the next topic
+21:26:52 <asalkeld> funzo, might help for someone to get the test suite going and explain to others how to do it
+21:27:08 <funzo> anyone have bandwidth to jump in on the nose tests structure?
+21:27:21 <asalkeld> that mocking is tricky
+21:27:25 <funzo> yeah
+21:27:31 <asalkeld> and the env setup
+21:27:35 <funzo> it will be a fulltime thing for someone at first
+21:27:39 <funzo> ja
+21:27:53 <funzo> I can tackle it after the mysql thing if no one else has bandwidth
+21:27:58 <asalkeld> just don't want excuses - don't know how to  do it
+21:27:58 <jpeeler> that may be something that i should jump on
+21:28:05 <funzo> jpeeler: that would be awesome
+21:28:26 <sdake> need that person to train rest of devs
+21:28:29 <funzo> #action jpeeler bootstrap the nose test structure and then give use a rundown
+21:28:33 <funzo> thanks jpeeler
+21:28:35 <sdake> wiki or similar
+21:28:46 <blomquisg> sorry, reading the nose docs ... I can take a look at it, too when not pulled into Audrey
+21:28:58 <funzo> #action blomquisg to help out jpeeler
+21:28:59 <asalkeld> then prehaps all devs add some tests
+21:29:04 <funzo> great!
+21:29:16 <funzo> I think we have already said enough about Status on current milestones
+21:29:17 <sdake> ya propose all devs add tests after jpeeler gets infra in place
+21:29:22 <funzo> yep yep
+21:29:25 <sdake> +1
+21:29:27 <funzo> +1
+21:29:31 <asalkeld> +1
+21:29:32 <blomquisg> +1
+21:29:34 <shadower> +1
+21:29:42 <jpeeler> +1
+21:29:54 <funzo> ok, next topic
+21:30:06 <funzo> skipping agenda item #3
+21:30:12 <funzo> #topic 4. Blocked development
+21:30:28 <funzo> what's the skinny on blocked development
+21:30:37 <sdake> only blocked by that template-file bug
+21:30:52 <funzo> I must have missed that discussion
+21:30:59 <sdake> commit 4679fb01c641053d45a197b598e28552144391a9
+21:31:00 <asalkeld> param list too big
+21:31:16 <sdake> introduces a regression which causes no instances to be launched
+21:31:20 <sdake> stack backtraces etc
+21:31:22 <funzo> ah ok
+21:31:30 <funzo> was tomas looking into it?
+21:31:32 <sdake> i'll look at today see about fixing
+21:31:36 <funzo> ok
+21:31:37 <sdake> he fixed the issue
+21:31:42 <sdake> rest of day is open
+21:31:49 <funzo> kk
+21:31:51 <shadower> sdake: I'll take it over tomorrow if you don't hunt it down
+21:31:59 <funzo> cool
+21:32:05 <shadower> sorry bout that, thought I tested the code
+21:32:08 <sdake> ya pretty much blocks whole dev team at m:)
+21:32:12 <funzo> #action sdake looking at the commit 4679fb01c641053d45a197b598e28552144391a9
+21:32:18 <funzo> any other blockers?
+21:32:20 <sdake> test cases will be helpful for this stuff
+21:32:24 <funzo> +1
+21:32:27 <shadower> yeah
+21:32:46 <funzo> ok, if no other blockers we will move to the next topic
+21:32:49 <sdake> question i have
+21:33:08 <sdake> is anyone blocked on environmental problems or not being able to get the heat api to launch the wordpress instance
+21:33:08 <funzo> ok, shoot
+21:33:30 <asalkeld> sdake, I can launch
+21:33:33 <funzo> I haven't tried the wordpress launch since i just finished reseting my openstack based upon the tools setup
+21:33:39 * shadower can launch
+21:33:40 <asalkeld> but no wordpress
+21:33:41 <funzo> I had an issue with having to run as root
+21:33:45 <funzo> just got past it
+21:33:56 <funzo> so, I currently don't know if it works for me
+21:34:03 <sdake> asalkeld what do you mean no wordpress?
+21:34:07 <funzo> #action complete the wordpress launch
+21:34:08 <asalkeld> is there a firewall adjustment?
+21:34:08 <jpeeler> i'm assuming after i relaunch with a network created things will just work...
+21:34:09 <sdake> 10.0.0.2/wordpress didn't show up?
+21:34:15 <asalkeld> nope
+21:34:22 <asalkeld> new jeos
+21:34:37 <funzo> asalkeld: are you debugging that issue?
+21:34:40 <sdake> the template was updated a bit
+21:34:56 <sdake> asalkeld lets work today to get you rolling
+21:34:56 <funzo> aws updated it?
+21:34:57 <asalkeld> sdake, we can chat later about ti
+21:35:02 <funzo> kk
+21:35:03 <sdake> agree
+21:35:12 <sdake> anyone else having problems
+21:35:17 <funzo> #action sdake and asalkeld looking into wordpress launch
+21:35:19 <sdake> if you do, ping me on irc
+21:35:25 <sdake> wordpress launch works for me ;)
+21:35:36 <funzo> I'll give it a try in the am as well
+21:35:50 <funzo> my setup seems to be fully functional now
+21:35:53 <blomquisg> I'll run through the updatd wiki and try tomorrow
+21:36:06 <funzo> any other issues for blocked development to discuss?
+21:36:07 <Slower> I don't know if mine works or not but I'm in rpc land so it's ok for now
+21:36:08 <sdake> instructionsw on the ml too
+21:36:15 <funzo> ah, question...
+21:36:21 <funzo> when will the rpc branch be merged to master?
+21:36:23 <Slower> sdake: saw that, thanks :)
+21:36:34 <funzo> ...also, why is it in a different branch?
+21:36:43 <sdake> normal to develop in different branches
+21:36:44 <funzo> or shall we save this for agenda item 6
+21:36:52 <Slower> funzo: when it works? :)
+21:37:03 <Slower> funzo: my guess probly early next week
+21:37:10 <asalkeld> how do we agree on items/issues for each milestone?
+21:37:13 <funzo> wasn't sure if we were supposed to be doing feature branches
+21:37:18 <funzo> I've been slinging master
+21:37:28 <Slower> funzo: well it broke the whole project so I can see why angus did it..
+21:37:37 <funzo> aye
+21:37:38 <Slower> the branch is still broken
+21:37:57 <funzo> ok, so developer makes a call on the impact of the feature change and branches when necessary
+21:38:01 <funzo> agreed?
+21:38:13 <asalkeld> ya
+21:38:14 <shadower> yeah
+21:38:19 <blomquisg> yeah
+21:38:24 <funzo> are we saying M1 will have the rpc stuff?
+21:38:33 <sdake> would be nice
+21:38:37 * funzo also does not know what the rpc changes are supposed to do :)
+21:38:50 <funzo> was on PTO
+21:38:52 <sdake> basically it takes heat-engine and converts it from rest to use rabbitmq
+21:39:04 <sdake> so that it may horizontally scale
+21:39:08 <sdake> so we can find the engines to talk to
+21:39:11 <sdake> round robin, etc
+21:39:18 <shadower> might be better to get them tests working before we pull rpc in
+21:39:26 <funzo> ok, I'm going to switch the topic to #6 if we are done with blocking issues
+21:39:27 <shadower> to verify nothing breaks etc
+21:39:41 <sdake> ya makes sense shadower
+21:40:04 <funzo> agreed we have covered the blocking issues?
+21:40:11 <sdake> +1
+21:40:14 <blomquisg> +1
+21:40:20 <asalkeld> sure
+21:40:22 <shadower> +1
+21:40:26 <funzo> #topic 6. Architecture improvement
+21:40:46 <sdake> so diagrams... bit out of date with architecture we are heading for
+21:41:10 <funzo> sdake: which diagrams specifically
+21:41:12 <sdake> i guess inkscape headbanging in store for sdake
+21:41:17 <sdake> the diagrams in the repo
+21:41:17 <funzo> all of them?
+21:41:28 <sdake> i think overview is good
+21:41:34 <funzo> do you have your own repo of the diagrams?
+21:41:39 <sdake> engine diagrams needs some love
+21:41:50 <sdake> they are in heat github
+21:41:52 <funzo> https://github.com/heat-api/diagrams
+21:41:56 <funzo> those two?
+21:42:02 <asalkeld> we are likely going to need new greenthreads for stack creation
+21:42:09 <sdake> but i fork them, work on them, then will send out request for review then pull them in
+21:42:33 <asalkeld> currently stack creation is blocking
+21:42:41 <funzo> sdake: if you pencil what you are thinking on paper, take a picture and send to me I will create svg for it
+21:42:57 <sdake> i know how to use inkscape pretty well
+21:43:03 <funzo> sdake: you've signed up for a lot
+21:43:08 <sdake> i'm good
+21:43:10 <funzo> sdake: if you're not over taxed, cool
+21:43:17 <funzo> aight
+21:43:54 <funzo> #info currently stack creation is blocking, we are likely going to need new greenthreads for stack creation
+21:44:15 <funzo> other architectural improvements...
+21:44:23 <shadower> would it make sense for heat cli not to require root?
+21:44:31 <funzo> do we want the cli to detect when you already have a jeos and ask the user if they want to reuse it?
+21:44:39 <sdake> it shouldn't except jeos create
+21:45:08 <funzo> sdake: I was thinking if you ran jeos_create and you didn't realize that you already had a gold image
+21:45:27 <sdake> funzo ya i was responding to shadower re root
+21:45:28 <funzo> shadower: it would be nice not to have to run it as root
+21:45:29 <sdake> ;)
+21:45:36 <funzo> ah ok
+21:45:47 <asalkeld> agree on no root
+21:45:51 <sdake> ya
+21:45:57 <sdake> need to figure out how to solve that
+21:45:59 <funzo> #agree to running cli without root
+21:46:12 <sdake> unfortunately i dont htink there is a way for jeos creation to work without root
+21:46:16 <shadower> does jeos create have to live in cli?
+21:46:17 <funzo> also need to make sure the keystonerc environment is set up for non-root
+21:46:21 <shadower> we could move it to the daemons
+21:46:25 <shadower> they run with root privs
+21:46:34 <sdake> daemons shouldn't be running with root privs
+21:46:39 <sdake> they should be running with heat user privs
+21:46:42 <Slower> or could it be a separate step?
+21:46:52 <sdake> one option is to pull it out of heat cli
+21:47:07 <blomquisg> doesn't seem like you'd be created jeoses alot
+21:47:08 <asalkeld> lets push this out to late milestone
+21:47:11 <sdake> call it "jeos_create" as a seprate binary
+21:47:20 <sdake> ya not deal breaking atm
+21:47:24 <Slower> ya
+21:47:26 <shadower> yea
+21:47:31 <blomquisg> kk, postpone non-root for now?
+21:47:48 <asalkeld> too much change, we got huge changes already
+21:47:52 <funzo> +1
+21:47:57 <sdake> ya lets chew down our food ;)
+21:47:59 <asalkeld> db rpc tests
+21:48:03 <funzo> any other architectural issues to address for M1?
+21:48:09 <funzo> ya, shload
+21:48:10 <sdake> and multi instance ;)
+21:48:28 <funzo> are we good to go for this week then?
+21:48:38 <asalkeld> ya
+21:48:44 <funzo> #agree to end this meeting
+21:48:48 <sdake> ya i'm good
+21:48:50 <blomquisg> +1
+21:48:52 <sdake> thanks guys
+21:48:53 <shadower> +1
+21:48:53 <funzo> ^proposal :)
+21:49:01 <funzo> #endmeeting

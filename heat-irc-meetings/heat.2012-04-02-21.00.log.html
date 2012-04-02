@@ -1,0 +1,431 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#heat log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">21:00:11</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">21:00:11</span><span class="nk"> &lt;mheat-bot&gt;</span> Meeting started Mon Apr  2 21:00:11 2012 UTC.  The chair is funzo. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">21:00:11</span><span class="nk"> &lt;mheat-bot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">21:00:33</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#chair </span><span class="cmdline">asalkeld pmyers sdake Slower blomquisg jpeeler rbergeron shadower</span>
+<a name="l-5"></a><span class="tm">21:00:33</span><span class="nk"> &lt;mheat-bot&gt;</span> Current chairs: Slower asalkeld blomquisg funzo jpeeler pmyers rbergeron sdake shadower
+<a name="l-6"></a><span class="tm">21:00:57</span><span class="nk"> &lt;funzo&gt;</span> I'd like to quickly review the agenda topics for this meeting
+<a name="l-7"></a><span class="tm">21:01:09</span><span class="nk"> &lt;funzo&gt;</span> <span class="topic">#topic </span><span class="topicline">Review meeting agenda</span>
+<a name="l-8"></a><span class="tm">21:01:44</span><span class="nk"> &lt;sdake&gt;</span> Agenda
+<a name="l-9"></a><span class="tm">21:01:44</span><span class="nk"> &lt;sdake&gt;</span> ------
+<a name="l-10"></a><span class="tm">21:01:45</span><span class="nk"> &lt;sdake&gt;</span> 1. come to agreement on first few milestones and dates
+<a name="l-11"></a><span class="tm">21:01:45</span><span class="nk"> &lt;sdake&gt;</span> 2. Issues for current milestone
+<a name="l-12"></a><span class="tm">21:01:45</span><span class="nk"> &lt;sdake&gt;</span> 3. Status on current milestones
+<a name="l-13"></a><span class="tm">21:01:45</span><span class="nk"> &lt;sdake&gt;</span> 4. Blocked development
+<a name="l-14"></a><span class="tm">21:01:47</span><span class="nk"> &lt;sdake&gt;</span> 5. Future milestones
+<a name="l-15"></a><span class="tm">21:01:49</span><span class="nk"> &lt;sdake&gt;</span> 6. Architecture improvement
+<a name="l-16"></a><span class="tm">21:02:07</span><span class="nk"> &lt;sdake&gt;</span> propose agenda look good to start?  (hit +1 or -1 if you agree disagree)
+<a name="l-17"></a><span class="tm">21:02:26</span><span class="nk"> &lt;Slower&gt;</span> +1
+<a name="l-18"></a><span class="tm">21:02:28</span><span class="nk"> &lt;shadower&gt;</span> +1
+<a name="l-19"></a><span class="tm">21:02:35</span><span class="nk"> &lt;funzo&gt;</span> +1
+<a name="l-20"></a><span class="tm">21:02:38</span><span class="nk"> &lt;sdake&gt;</span> +1
+<a name="l-21"></a><span class="tm">21:02:40</span><span class="nk"> &lt;jpeeler&gt;</span> +1
+<a name="l-22"></a><span class="tm">21:02:47</span><span class="nk"> &lt;blomquisg&gt;</span> +1
+<a name="l-23"></a><span class="tm">21:02:52</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">meeting agenda looks good</span>
+<a name="l-24"></a><span class="tm">21:02:54</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">agenda content is adequate for today</span>
+<a name="l-25"></a><span class="tm">21:02:58</span><span class="nk"> &lt;funzo&gt;</span> :)
+<a name="l-26"></a><span class="tm">21:02:59</span><span class="nk"> &lt;sdake&gt;</span> woops :)
+<a name="l-27"></a><span class="tm">21:03:09</span><span class="nk"> &lt;funzo&gt;</span> <span class="hi">sdake:</span> you're a chair, no whoops
+<a name="l-28"></a><span class="tm">21:03:13</span><span class="nk"> &lt;sdake&gt;</span> you can do agree funzo since ure the mheat botter
+<a name="l-29"></a><span class="tm">21:03:20</span><span class="nk"> &lt;funzo&gt;</span> <span class="topic">#topic </span><span class="topicline">come to agreement on first few milestones and dates</span>
+<a name="l-30"></a><span class="tm">21:03:34</span><span class="nk"> &lt;funzo&gt;</span> Ok, we originally set a date for the POC of last friday
+<a name="l-31"></a><span class="tm">21:03:49</span><span class="nk"> &lt;sdake&gt;</span> ya i somewhat toned down the poc from what it was originally
+<a name="l-32"></a><span class="tm">21:03:57</span><span class="nk"> &lt;sdake&gt;</span> to something more like "start a wordpress instance"
+<a name="l-33"></a><span class="tm">21:04:11</span><span class="nk"> &lt;funzo&gt;</span> the POC was to include Basic functional proof of concept that parses an AWS template and generates a working VM.
+<a name="l-34"></a><span class="tm">21:04:15</span><span class="nk"> &lt;sdake&gt;</span> I'd propose we break up POC into multiple blocks
+<a name="l-35"></a><span class="tm">21:04:40</span><span class="nk"> &lt;sdake&gt;</span> since real POC is something that could probably launch multiple VMS, multi-instance VMS, etc
+<a name="l-36"></a><span class="tm">21:04:41</span><span class="nk"> &lt;funzo&gt;</span> according to the initial POC statement, we accomplished it
+<a name="l-37"></a><span class="tm">21:05:00</span><span class="nk"> &lt;sdake&gt;</span> i reduced it quite a bit funzo :)
+<a name="l-38"></a><span class="tm">21:05:01</span><span class="nk"> &lt;funzo&gt;</span> ok, so the original POC is inadequate as a POC?
+<a name="l-39"></a><span class="tm">21:05:01</span><span class="nk"> &lt;asalkeld&gt;</span> I agree with funzo
+<a name="l-40"></a><span class="tm">21:05:04</span><span class="nk"> &lt;funzo&gt;</span> ah ok
+<a name="l-41"></a><span class="tm">21:05:14</span><span class="nk"> &lt;Slower&gt;</span> did we ever show anyone the POC? :)
+<a name="l-42"></a><span class="tm">21:05:16</span><span class="nk"> &lt;asalkeld&gt;</span> just move forward
+<a name="l-43"></a><span class="tm">21:05:30</span><span class="nk"> &lt;Slower&gt;</span> I agree too asalkeld
+<a name="l-44"></a><span class="tm">21:05:39</span><span class="nk"> &lt;funzo&gt;</span> ok, let's set up a POC for multiple instances for the end of this week?
+<a name="l-45"></a><span class="tm">21:05:42</span><span class="nk"> &lt;sdake&gt;</span> ya agree poc is done - we have working code
+<a name="l-46"></a><span class="tm">21:05:43</span><span class="nk"> &lt;asalkeld&gt;</span> have functional milestones
+<a name="l-47"></a><span class="tm">21:05:56</span><span class="nk"> &lt;funzo&gt;</span> ok, let's define them as M1 now
+<a name="l-48"></a><span class="tm">21:06:02</span><span class="nk"> &lt;funzo&gt;</span> M1,M2,M2
+<a name="l-49"></a><span class="tm">21:06:05</span><span class="nk"> &lt;funzo&gt;</span> M3 rather
+<a name="l-50"></a><span class="tm">21:06:08</span><span class="nk"> &lt;asalkeld&gt;</span> like "we want it to do X"
+<a name="l-51"></a><span class="tm">21:06:12</span><span class="nk"> &lt;sdake&gt;</span> propose Agree/disagree POC finished
+<a name="l-52"></a><span class="tm">21:06:18</span><span class="nk"> &lt;sdake&gt;</span> +1
+<a name="l-53"></a><span class="tm">21:06:18</span><span class="nk"> &lt;asalkeld&gt;</span> sure
+<a name="l-54"></a><span class="tm">21:06:19</span><span class="nk"> &lt;shadower&gt;</span> +1
+<a name="l-55"></a><span class="tm">21:06:24</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">POC accomplished</span>
+<a name="l-56"></a><span class="tm">21:06:29</span><span class="nk"> &lt;sdake&gt;</span> win ok
+<a name="l-57"></a><span class="tm">21:06:38</span><span class="nk"> &lt;funzo&gt;</span> should milestones be 1 or 2 weeks?
+<a name="l-58"></a><span class="tm">21:06:40</span><span class="nk"> &lt;funzo&gt;</span> or longer?
+<a name="l-59"></a><span class="tm">21:06:56</span><span class="nk"> &lt;asalkeld&gt;</span> I think 1 week a bit short
+<a name="l-60"></a><span class="tm">21:06:57</span><span class="nk"> &lt;sdake&gt;</span> def 2 weeks or less
+<a name="l-61"></a><span class="tm">21:06:57</span><span class="nk"> &lt;funzo&gt;</span> I'd like to use a sprint model, I'm happy to call milestones sprints
+<a name="l-62"></a><span class="tm">21:07:12</span><span class="nk"> &lt;sdake&gt;</span> probably depends on what work we want to get done
+<a name="l-63"></a><span class="tm">21:07:14</span><span class="nk"> &lt;blomquisg&gt;</span> I like 2 weeks, but depends on the chunks of work I suppose (could be 1)
+<a name="l-64"></a><span class="tm">21:07:15</span><span class="nk"> &lt;asalkeld&gt;</span> I am easy
+<a name="l-65"></a><span class="tm">21:07:26</span><span class="nk"> &lt;sdake&gt;</span> some work easy (or already done such as rpcize engine) would be 1 week
+<a name="l-66"></a><span class="tm">21:07:31</span><span class="nk"> &lt;funzo&gt;</span> we have a checkpoint before the openstack design conf
+<a name="l-67"></a><span class="tm">21:07:43</span><span class="nk"> &lt;funzo&gt;</span> would be nice to demonstrate the multiple instances before then
+<a name="l-68"></a><span class="tm">21:08:01</span><span class="nk"> &lt;jpeeler&gt;</span> do 1 one week milestones just mean a date to accomplish or a review afterwards like a sprint?
+<a name="l-69"></a><span class="tm">21:08:03</span><span class="nk"> &lt;funzo&gt;</span> the date of the conference is April 16, I believe
+<a name="l-70"></a><span class="tm">21:08:12</span><span class="nk"> &lt;funzo&gt;</span> date to accomplish
+<a name="l-71"></a><span class="tm">21:08:20</span><span class="nk"> &lt;sdake&gt;</span> process up to us, I'd suggest keeping it simple
+<a name="l-72"></a><span class="tm">21:08:23</span><span class="nk"> &lt;funzo&gt;</span> but we should have a demo of the accomplishment
+<a name="l-73"></a><span class="tm">21:08:31</span><span class="nk"> &lt;funzo&gt;</span> else people leave loose ends
+<a name="l-74"></a><span class="tm">21:08:44</span><span class="nk"> &lt;asalkeld&gt;</span> we need to to harden
+<a name="l-75"></a><span class="tm">21:08:51</span><span class="nk"> &lt;Slower&gt;</span> yeah
+<a name="l-76"></a><span class="tm">21:08:51</span><span class="nk"> &lt;asalkeld&gt;</span> fix bugs
+<a name="l-77"></a><span class="tm">21:08:59</span><span class="nk"> &lt;Slower&gt;</span> in fact imo it's as important as new features
+<a name="l-78"></a><span class="tm">21:08:59</span><span class="nk"> &lt;sdake&gt;</span> ya code full of missing try
+<a name="l-79"></a><span class="tm">21:09:14</span><span class="nk"> &lt;funzo&gt;</span> how about an internal M1 end date by this Friday (feature complete) and by the following Friday we have bugs patched?
+<a name="l-80"></a><span class="tm">21:09:23</span><span class="nk"> &lt;Slower&gt;</span> I like to have a stable platform from which to add a new feature
+<a name="l-81"></a><span class="tm">21:09:23</span><span class="nk"> &lt;asalkeld&gt;</span> so to me major issue is we have no tests
+<a name="l-82"></a><span class="tm">21:09:32</span><span class="nk"> &lt;funzo&gt;</span> M1 to include multi-instance deployment from template?
+<a name="l-83"></a><span class="tm">21:09:44</span><span class="nk"> &lt;funzo&gt;</span> I agree with asalkeld
+<a name="l-84"></a><span class="tm">21:09:46</span><span class="nk"> &lt;asalkeld&gt;</span> so not easy to catch regregression
+<a name="l-85"></a><span class="tm">21:09:49</span><span class="nk"> &lt;Slower&gt;</span> <span class="hi">funzo:</span> yeah
+<a name="l-86"></a><span class="tm">21:10:18</span><span class="nk"> &lt;sdake&gt;</span> would like to develop test cases in parallell with multi instance deployment
+<a name="l-87"></a><span class="tm">21:10:21</span><span class="nk"> &lt;funzo&gt;</span> propose to agreee, Friday multi-instance deployment working, the following Friday M1 complete?
+<a name="l-88"></a><span class="tm">21:10:41</span><span class="nk"> &lt;funzo&gt;</span> -1/+1
+<a name="l-89"></a><span class="tm">21:10:49</span><span class="nk"> &lt;blomquisg&gt;</span> Friday is a holiday (here, in US)
+<a name="l-90"></a><span class="tm">21:10:53</span><span class="nk"> &lt;Slower&gt;</span> <span class="hi">funzo:</span> so you're saying a week to harden?
+<a name="l-91"></a><span class="tm">21:10:59</span><span class="nk"> &lt;funzo&gt;</span> <span class="hi">Slower:</span> and write tests
+<a name="l-92"></a><span class="tm">21:11:06</span><span class="nk"> &lt;asalkeld&gt;</span> 2 days off for me
+<a name="l-93"></a><span class="tm">21:11:08</span><span class="nk"> &lt;sdake&gt;</span> ya this week is pretty bad, we probably want a two week window for this milestone
+<a name="l-94"></a><span class="tm">21:11:12</span><span class="nk"> &lt;asalkeld&gt;</span> easer
+<a name="l-95"></a><span class="tm">21:11:15</span><span class="nk"> &lt;shadower&gt;</span> 1 day off for me (monday)
+<a name="l-96"></a><span class="tm">21:11:20</span><span class="nk"> &lt;asalkeld&gt;</span> easter
+<a name="l-97"></a><span class="tm">21:11:22</span><span class="nk"> &lt;Slower&gt;</span> we don't need to stress ourselves out either :)
+<a name="l-98"></a><span class="tm">21:11:27</span><span class="nk"> &lt;blomquisg&gt;</span> next Friday, then?
+<a name="l-99"></a><span class="tm">21:11:28</span><span class="nk"> &lt;Slower&gt;</span> I'm off on thursday
+<a name="l-100"></a><span class="tm">21:11:36</span><span class="nk"> &lt;asalkeld&gt;</span> ya, ok
+<a name="l-101"></a><span class="tm">21:11:56</span><span class="nk"> &lt;funzo&gt;</span> ok, next Friday multi-instance deployment working, the following week as end of
+<a name="l-102"></a><span class="tm">21:11:57</span><span class="nk"> &lt;sdake&gt;</span> Propose M1 March 13th - multiinstance deployment + test cases
+<a name="l-103"></a><span class="tm">21:11:59</span><span class="nk"> &lt;funzo&gt;</span> M1
+<a name="l-104"></a><span class="tm">21:12:12</span><span class="nk"> &lt;blomquisg&gt;</span> apr 13
+<a name="l-105"></a><span class="tm">21:12:22</span><span class="nk"> &lt;sdake&gt;</span> ya apr 13 ;)
+<a name="l-106"></a><span class="tm">21:12:23</span><span class="nk"> &lt;funzo&gt;</span> that would make M1 end 4/20 if we have a week to harden
+<a name="l-107"></a><span class="tm">21:12:32</span><span class="nk"> &lt;asalkeld&gt;</span> so what does multi-instance mean?
+<a name="l-108"></a><span class="tm">21:12:41</span><span class="nk"> &lt;sdake&gt;</span> 2 weeks is april 13
+<a name="l-109"></a><span class="tm">21:12:47</span><span class="nk"> &lt;asalkeld&gt;</span> (besides the obvious)
+<a name="l-110"></a><span class="tm">21:13:02</span><span class="nk"> &lt;sdake&gt;</span> example multi-intance wordpress 1 vm - mysql in another vm
+<a name="l-111"></a><span class="tm">21:13:07</span><span class="nk"> &lt;funzo&gt;</span> right, 4/13 (2 weeks to be feature complete), do we build in the hardening time?
+<a name="l-112"></a><span class="tm">21:13:17</span><span class="nk"> &lt;asalkeld&gt;</span> dependancies + volumes
+<a name="l-113"></a><span class="tm">21:13:20</span><span class="nk"> &lt;funzo&gt;</span> or add a week on the end
+<a name="l-114"></a><span class="tm">21:13:26</span><span class="nk"> &lt;sdake&gt;</span> ya deps + volumes
+<a name="l-115"></a><span class="tm">21:13:46</span><span class="nk"> &lt;sdake&gt;</span> M1 Apr 13 multi-instance + test cases
+<a name="l-116"></a><span class="tm">21:13:48</span><span class="nk"> &lt;funzo&gt;</span> above we talked about adding a week on the end
+<a name="l-117"></a><span class="tm">21:13:57</span><span class="nk"> &lt;Slower&gt;</span> I just realized I get fri &amp; mon off too, so will be gone thu-mon
+<a name="l-118"></a><span class="tm">21:13:58</span><span class="nk"> &lt;sdake&gt;</span> M2 Apri 20 harden + focus on test cases this entire week
+<a name="l-119"></a><span class="tm">21:13:58</span><span class="nk"> &lt;funzo&gt;</span> ok, so no hardening week after the feature complete
+<a name="l-120"></a><span class="tm">21:14:32</span><span class="nk"> &lt;Slower&gt;</span> imo actually using the software is the best way to harden it, but that's just me :)
+<a name="l-121"></a><span class="tm">21:14:32</span><span class="nk"> &lt;blomquisg&gt;</span> M1 = multi-instance depl; M2 = harden, bugfix. Right?
+<a name="l-122"></a><span class="tm">21:14:40</span><span class="nk"> &lt;Slower&gt;</span> that sounds good tom e
+<a name="l-123"></a><span class="tm">21:14:41</span><span class="nk"> &lt;sdake&gt;</span> that is the proposal blomquisg
+<a name="l-124"></a><span class="tm">21:14:44</span><span class="nk"> &lt;sdake&gt;</span> +1
+<a name="l-125"></a><span class="tm">21:14:57</span><span class="nk"> &lt;funzo&gt;</span> +1 sure
+<a name="l-126"></a><span class="tm">21:15:06</span><span class="nk"> &lt;shadower&gt;</span> the tests are still part of M1 though, right?
+<a name="l-127"></a><span class="tm">21:15:08</span><span class="nk"> &lt;asalkeld&gt;</span> +1
+<a name="l-128"></a><span class="tm">21:15:10</span><span class="nk"> &lt;Slower&gt;</span> +1
+<a name="l-129"></a><span class="tm">21:15:11</span><span class="nk"> &lt;sdake&gt;</span> shadower yes
+<a name="l-130"></a><span class="tm">21:15:14</span><span class="nk"> &lt;blomquisg&gt;</span> +1
+<a name="l-131"></a><span class="tm">21:15:14</span><span class="nk"> &lt;shadower&gt;</span> +1
+<a name="l-132"></a><span class="tm">21:15:16</span><span class="nk"> &lt;shadower&gt;</span> cool
+<a name="l-133"></a><span class="tm">21:15:30</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">M1= multi-instance depl; M2 = harden, bugfix. M1 = 4/13, M2=4/27</span>
+<a name="l-134"></a><span class="tm">21:15:47</span><span class="nk"> &lt;sdake&gt;</span> 4/20 was m2 ;)
+<a name="l-135"></a><span class="tm">21:15:57</span><span class="nk"> &lt;funzo&gt;</span> shall we just do 2 milestones at a time
+<a name="l-136"></a><span class="tm">21:16:12</span><span class="nk"> &lt;funzo&gt;</span> ok, M2 is only one week?
+<a name="l-137"></a><span class="tm">21:16:17</span><span class="nk"> &lt;Slower&gt;</span> ya I don't think we want to get too far ahead of ourselves
+<a name="l-138"></a><span class="tm">21:16:20</span><span class="nk"> &lt;funzo&gt;</span> that is incongruent
+<a name="l-139"></a><span class="tm">21:16:21</span><span class="nk"> &lt;shadower&gt;</span> yeah
+<a name="l-140"></a><span class="tm">21:16:31</span><span class="nk"> &lt;sdake&gt;</span> funzo's parser failed
+<a name="l-141"></a><span class="tm">21:16:36</span><span class="nk"> &lt;Slower&gt;</span> haha
+<a name="l-142"></a><span class="tm">21:16:41</span><span class="nk"> &lt;funzo&gt;</span> I think we should keep milestone's 2 weeks
+<a name="l-143"></a><span class="tm">21:16:58</span><span class="nk"> &lt;funzo&gt;</span> perhaps we can add more work to M2 to keep it to 2 weeks?
+<a name="l-144"></a><span class="tm">21:17:03</span><span class="nk"> &lt;Slower&gt;</span> <span class="hi">funzo:</span> life is incongruent ;-)
+<a name="l-145"></a><span class="tm">21:17:05</span><span class="nk"> &lt;funzo&gt;</span> ha
+<a name="l-146"></a><span class="tm">21:17:08</span><span class="nk"> &lt;funzo&gt;</span> ok ok
+<a name="l-147"></a><span class="tm">21:17:18</span><span class="nk"> &lt;funzo&gt;</span> M1 4/13, M2 4/20
+<a name="l-148"></a><span class="tm">21:17:27</span><span class="nk"> &lt;funzo&gt;</span> proposal to agree
+<a name="l-149"></a><span class="tm">21:17:39</span><span class="nk"> &lt;sdake&gt;</span> +1
+<a name="l-150"></a><span class="tm">21:17:40</span><span class="nk"> &lt;blomquisg&gt;</span> agree
+<a name="l-151"></a><span class="tm">21:17:42</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">M1 4/13, M2 4/20</span>
+<a name="l-152"></a><span class="tm">21:17:44</span><span class="nk"> &lt;Slower&gt;</span> +1
+<a name="l-153"></a><span class="tm">21:17:46</span><span class="nk"> &lt;asalkeld&gt;</span> +1
+<a name="l-154"></a><span class="tm">21:18:00</span><span class="nk"> &lt;sdake&gt;</span> ok thats probably beat into the ground
+<a name="l-155"></a><span class="tm">21:18:05</span><span class="nk"> &lt;funzo&gt;</span> <span class="topic">#topic </span><span class="topicline">2. Issues for current milestone</span>
+<a name="l-156"></a><span class="tm">21:18:22</span><span class="nk"> &lt;asalkeld&gt;</span> ya feel like we are in google+ or something
+<a name="l-157"></a><span class="tm">21:18:36</span><span class="nk"> &lt;sdake&gt;</span> today sorted out wiki to help people get up to speed on launching the instance
+<a name="l-158"></a><span class="tm">21:18:59</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#link </span><span class="cmdline">https://github.com/heat-api/heat/wiki/HeatGettingStarted</span>
+<a name="l-159"></a><span class="tm">21:19:02</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#info </span><span class="cmdline">fix up the keystonerc to not have to use root</span>
+<a name="l-160"></a><span class="tm">21:19:03</span><span class="nk"> &lt;Slower&gt;</span> are trying to get mysql support in soon?
+<a name="l-161"></a><span class="tm">21:19:19</span><span class="nk"> &lt;funzo&gt;</span> I pushed the mysql commit today, we are persisting stacks and events
+<a name="l-162"></a><span class="tm">21:19:25</span><span class="nk"> &lt;asalkeld&gt;</span> and rpc
+<a name="l-163"></a><span class="tm">21:19:26</span><span class="nk"> &lt;funzo&gt;</span> there is more integration work to do
+<a name="l-164"></a><span class="tm">21:19:27</span><span class="nk"> &lt;Slower&gt;</span> neat
+<a name="l-165"></a><span class="tm">21:19:39</span><span class="nk"> &lt;funzo&gt;</span> like make sure all fields and objects are being read and persisted
+<a name="l-166"></a><span class="tm">21:19:41</span><span class="nk"> &lt;sdake&gt;</span> slower we probably want rpc working in this milestone too ;)
+<a name="l-167"></a><span class="tm">21:19:49</span><span class="nk"> &lt;funzo&gt;</span> but the initial model mapping and persistence is working
+<a name="l-168"></a><span class="tm">21:19:49</span><span class="nk"> &lt;Slower&gt;</span> <span class="hi">sdake:</span> yes sir :)
+<a name="l-169"></a><span class="tm">21:19:55</span><span class="nk"> &lt;Slower&gt;</span> <span class="hi">sdake:</span> I think that will be fine
+<a name="l-170"></a><span class="tm">21:19:56</span><span class="nk"> &lt;sdake&gt;</span> how is it looking
+<a name="l-171"></a><span class="tm">21:19:58</span><span class="nk"> &lt;sdake&gt;</span> cool
+<a name="l-172"></a><span class="tm">21:20:19</span><span class="nk"> &lt;Slower&gt;</span> well we have the api and engine talking now and the calls are half working
+<a name="l-173"></a><span class="tm">21:20:22</span><span class="nk"> &lt;sdake&gt;</span> I'd recommend everyone take a look at the link above and make sure they can run a instance
+<a name="l-174"></a><span class="tm">21:20:28</span><span class="nk"> &lt;Slower&gt;</span> I mean they get made but there are stacktraces
+<a name="l-175"></a><span class="tm">21:20:33</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#action </span><span class="cmdline">all run wiki getting started guide</span>
+<a name="l-176"></a><span class="tm">21:20:33</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#info </span><span class="cmdline">finish model mapping for storage and queries for models</span>
+<a name="l-177"></a><span class="tm">21:20:34</span><span class="nk"> &lt;Slower&gt;</span> so no proper returns
+<a name="l-178"></a><span class="tm">21:20:50</span><span class="nk"> &lt;funzo&gt;</span> what other issues?
+<a name="l-179"></a><span class="tm">21:20:52</span><span class="nk"> &lt;Slower&gt;</span> so it's coming
+<a name="l-180"></a><span class="tm">21:20:56</span><span class="nk"> &lt;sdake&gt;</span> nice
+<a name="l-181"></a><span class="tm">21:21:12</span><span class="nk"> &lt;sdake&gt;</span> half working better then no worky ;)
+<a name="l-182"></a><span class="tm">21:21:20</span><span class="nk"> &lt;Slower&gt;</span> basically just martialing of args/returns to figure out
+<a name="l-183"></a><span class="tm">21:21:40</span><span class="nk"> &lt;asalkeld&gt;</span> Slower, if you want I can always help
+<a name="l-184"></a><span class="tm">21:21:59</span><span class="nk"> &lt;Slower&gt;</span> <span class="hi">asalkeld:</span> cool :).  I know I'm slow but I'd like to keep working on it for a bit yet
+<a name="l-185"></a><span class="tm">21:22:12</span><span class="nk"> &lt;Slower&gt;</span> I'm getting into the codebase more now so it should get better
+<a name="l-186"></a><span class="tm">21:22:31</span><span class="nk"> &lt;funzo&gt;</span> any other issues we need to discuss on the topic?
+<a name="l-187"></a><span class="tm">21:22:35</span><span class="nk"> &lt;asalkeld&gt;</span> that's cool, only if you need - just offering help
+<a name="l-188"></a><span class="tm">21:22:41</span><span class="nk"> &lt;sdake&gt;</span> yes one issue
+<a name="l-189"></a><span class="tm">21:22:42</span><span class="nk"> &lt;Slower&gt;</span> <span class="hi">asalkeld:</span> much appreciated :)
+<a name="l-190"></a><span class="tm">21:22:51</span><span class="nk"> &lt;sdake&gt;</span> there is a regression on the latest commit
+<a name="l-191"></a><span class="tm">21:23:03</span><span class="nk"> &lt;sdake&gt;</span> can't launch instances
+<a name="l-192"></a><span class="tm">21:23:20</span><span class="nk"> &lt;funzo&gt;</span> is anyone taking a look at that?
+<a name="l-193"></a><span class="tm">21:23:21</span><span class="nk"> &lt;asalkeld&gt;</span> ja, need tests
+<a name="l-194"></a><span class="tm">21:23:44</span><span class="nk"> &lt;sdake&gt;</span> i have made a bit of time for it today but busy with other things unfortunately
+<a name="l-195"></a><span class="tm">21:23:47</span><span class="nk"> &lt;funzo&gt;</span> do we want just test scripts or a structured test framework (nose)
+<a name="l-196"></a><span class="tm">21:23:51</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">commit 4679fb01c641053d45a197b598e28552144391a9 broken</span>
+<a name="l-197"></a><span class="tm">21:24:09</span><span class="nk"> &lt;funzo&gt;</span> do we want to have someone bootstrap the project with nose tests?
+<a name="l-198"></a><span class="tm">21:24:20</span><span class="nk"> &lt;asalkeld&gt;</span> funzo, just how glance/nova do it
+<a name="l-199"></a><span class="tm">21:24:36</span><span class="nk"> &lt;funzo&gt;</span> <span class="hi">asalkeld:</span> ok, I haven't looked at theirs
+<a name="l-200"></a><span class="tm">21:24:36</span><span class="nk"> &lt;asalkeld&gt;</span> they do use nose I think
+<a name="l-201"></a><span class="tm">21:24:45</span><span class="nk"> &lt;sdake&gt;</span> propose bootstrapping test cases as nova/glance do
+<a name="l-202"></a><span class="tm">21:25:03</span><span class="nk"> &lt;asalkeld&gt;</span> +1
+<a name="l-203"></a><span class="tm">21:25:06</span><span class="nk"> &lt;shadower&gt;</span> +1
+<a name="l-204"></a><span class="tm">21:25:06</span><span class="nk"> &lt;sdake&gt;</span> +1
+<a name="l-205"></a><span class="tm">21:25:07</span><span class="nk"> &lt;jpeeler&gt;</span> +1
+<a name="l-206"></a><span class="tm">21:25:12</span><span class="nk"> &lt;blomquisg&gt;</span> +1
+<a name="l-207"></a><span class="tm">21:25:13</span><span class="nk"> &lt;funzo&gt;</span> yep, looks to be nose
+<a name="l-208"></a><span class="tm">21:25:48</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#action </span><span class="cmdline">all implement nose tests similar to nova for your functional pieces</span>
+<a name="l-209"></a><span class="tm">21:25:58</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">add tests for your features</span>
+<a name="l-210"></a><span class="tm">21:26:09</span><span class="nk"> &lt;funzo&gt;</span> any other issues to address for M1?
+<a name="l-211"></a><span class="tm">21:26:13</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">bootstrap test cases as nova/glance do</span>
+<a name="l-212"></a><span class="tm">21:26:47</span><span class="nk"> &lt;funzo&gt;</span> ok, going to move on to the next topic
+<a name="l-213"></a><span class="tm">21:26:52</span><span class="nk"> &lt;asalkeld&gt;</span> funzo, might help for someone to get the test suite going and explain to others how to do it
+<a name="l-214"></a><span class="tm">21:27:08</span><span class="nk"> &lt;funzo&gt;</span> anyone have bandwidth to jump in on the nose tests structure?
+<a name="l-215"></a><span class="tm">21:27:21</span><span class="nk"> &lt;asalkeld&gt;</span> that mocking is tricky
+<a name="l-216"></a><span class="tm">21:27:25</span><span class="nk"> &lt;funzo&gt;</span> yeah
+<a name="l-217"></a><span class="tm">21:27:31</span><span class="nk"> &lt;asalkeld&gt;</span> and the env setup
+<a name="l-218"></a><span class="tm">21:27:35</span><span class="nk"> &lt;funzo&gt;</span> it will be a fulltime thing for someone at first
+<a name="l-219"></a><span class="tm">21:27:39</span><span class="nk"> &lt;funzo&gt;</span> ja
+<a name="l-220"></a><span class="tm">21:27:53</span><span class="nk"> &lt;funzo&gt;</span> I can tackle it after the mysql thing if no one else has bandwidth
+<a name="l-221"></a><span class="tm">21:27:58</span><span class="nk"> &lt;asalkeld&gt;</span> just don't want excuses - don't know how to  do it
+<a name="l-222"></a><span class="tm">21:27:58</span><span class="nk"> &lt;jpeeler&gt;</span> that may be something that i should jump on
+<a name="l-223"></a><span class="tm">21:28:05</span><span class="nk"> &lt;funzo&gt;</span> <span class="hi">jpeeler:</span> that would be awesome
+<a name="l-224"></a><span class="tm">21:28:26</span><span class="nk"> &lt;sdake&gt;</span> need that person to train rest of devs
+<a name="l-225"></a><span class="tm">21:28:29</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#action </span><span class="cmdline">jpeeler bootstrap the nose test structure and then give use a rundown</span>
+<a name="l-226"></a><span class="tm">21:28:33</span><span class="nk"> &lt;funzo&gt;</span> thanks jpeeler
+<a name="l-227"></a><span class="tm">21:28:35</span><span class="nk"> &lt;sdake&gt;</span> wiki or similar
+<a name="l-228"></a><span class="tm">21:28:46</span><span class="nk"> &lt;blomquisg&gt;</span> sorry, reading the nose docs ... I can take a look at it, too when not pulled into Audrey
+<a name="l-229"></a><span class="tm">21:28:58</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#action </span><span class="cmdline">blomquisg to help out jpeeler</span>
+<a name="l-230"></a><span class="tm">21:28:59</span><span class="nk"> &lt;asalkeld&gt;</span> then prehaps all devs add some tests
+<a name="l-231"></a><span class="tm">21:29:04</span><span class="nk"> &lt;funzo&gt;</span> great!
+<a name="l-232"></a><span class="tm">21:29:16</span><span class="nk"> &lt;funzo&gt;</span> I think we have already said enough about Status on current milestones
+<a name="l-233"></a><span class="tm">21:29:17</span><span class="nk"> &lt;sdake&gt;</span> ya propose all devs add tests after jpeeler gets infra in place
+<a name="l-234"></a><span class="tm">21:29:22</span><span class="nk"> &lt;funzo&gt;</span> yep yep
+<a name="l-235"></a><span class="tm">21:29:25</span><span class="nk"> &lt;sdake&gt;</span> +1
+<a name="l-236"></a><span class="tm">21:29:27</span><span class="nk"> &lt;funzo&gt;</span> +1
+<a name="l-237"></a><span class="tm">21:29:31</span><span class="nk"> &lt;asalkeld&gt;</span> +1
+<a name="l-238"></a><span class="tm">21:29:32</span><span class="nk"> &lt;blomquisg&gt;</span> +1
+<a name="l-239"></a><span class="tm">21:29:34</span><span class="nk"> &lt;shadower&gt;</span> +1
+<a name="l-240"></a><span class="tm">21:29:42</span><span class="nk"> &lt;jpeeler&gt;</span> +1
+<a name="l-241"></a><span class="tm">21:29:54</span><span class="nk"> &lt;funzo&gt;</span> ok, next topic
+<a name="l-242"></a><span class="tm">21:30:06</span><span class="nk"> &lt;funzo&gt;</span> skipping agenda item #3
+<a name="l-243"></a><span class="tm">21:30:12</span><span class="nk"> &lt;funzo&gt;</span> <span class="topic">#topic </span><span class="topicline">4. Blocked development</span>
+<a name="l-244"></a><span class="tm">21:30:28</span><span class="nk"> &lt;funzo&gt;</span> what's the skinny on blocked development
+<a name="l-245"></a><span class="tm">21:30:37</span><span class="nk"> &lt;sdake&gt;</span> only blocked by that template-file bug
+<a name="l-246"></a><span class="tm">21:30:52</span><span class="nk"> &lt;funzo&gt;</span> I must have missed that discussion
+<a name="l-247"></a><span class="tm">21:30:59</span><span class="nk"> &lt;sdake&gt;</span> commit 4679fb01c641053d45a197b598e28552144391a9
+<a name="l-248"></a><span class="tm">21:31:00</span><span class="nk"> &lt;asalkeld&gt;</span> param list too big
+<a name="l-249"></a><span class="tm">21:31:16</span><span class="nk"> &lt;sdake&gt;</span> introduces a regression which causes no instances to be launched
+<a name="l-250"></a><span class="tm">21:31:20</span><span class="nk"> &lt;sdake&gt;</span> stack backtraces etc
+<a name="l-251"></a><span class="tm">21:31:22</span><span class="nk"> &lt;funzo&gt;</span> ah ok
+<a name="l-252"></a><span class="tm">21:31:30</span><span class="nk"> &lt;funzo&gt;</span> was tomas looking into it?
+<a name="l-253"></a><span class="tm">21:31:32</span><span class="nk"> &lt;sdake&gt;</span> i'll look at today see about fixing
+<a name="l-254"></a><span class="tm">21:31:36</span><span class="nk"> &lt;funzo&gt;</span> ok
+<a name="l-255"></a><span class="tm">21:31:37</span><span class="nk"> &lt;sdake&gt;</span> he fixed the issue
+<a name="l-256"></a><span class="tm">21:31:42</span><span class="nk"> &lt;sdake&gt;</span> rest of day is open
+<a name="l-257"></a><span class="tm">21:31:49</span><span class="nk"> &lt;funzo&gt;</span> kk
+<a name="l-258"></a><span class="tm">21:31:51</span><span class="nk"> &lt;shadower&gt;</span> <span class="hi">sdake:</span> I'll take it over tomorrow if you don't hunt it down
+<a name="l-259"></a><span class="tm">21:31:59</span><span class="nk"> &lt;funzo&gt;</span> cool
+<a name="l-260"></a><span class="tm">21:32:05</span><span class="nk"> &lt;shadower&gt;</span> sorry bout that, thought I tested the code
+<a name="l-261"></a><span class="tm">21:32:08</span><span class="nk"> &lt;sdake&gt;</span> ya pretty much blocks whole dev team at m:)
+<a name="l-262"></a><span class="tm">21:32:12</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#action </span><span class="cmdline">sdake looking at the commit 4679fb01c641053d45a197b598e28552144391a9</span>
+<a name="l-263"></a><span class="tm">21:32:18</span><span class="nk"> &lt;funzo&gt;</span> any other blockers?
+<a name="l-264"></a><span class="tm">21:32:20</span><span class="nk"> &lt;sdake&gt;</span> test cases will be helpful for this stuff
+<a name="l-265"></a><span class="tm">21:32:24</span><span class="nk"> &lt;funzo&gt;</span> +1
+<a name="l-266"></a><span class="tm">21:32:27</span><span class="nk"> &lt;shadower&gt;</span> yeah
+<a name="l-267"></a><span class="tm">21:32:46</span><span class="nk"> &lt;funzo&gt;</span> ok, if no other blockers we will move to the next topic
+<a name="l-268"></a><span class="tm">21:32:49</span><span class="nk"> &lt;sdake&gt;</span> question i have
+<a name="l-269"></a><span class="tm">21:33:08</span><span class="nk"> &lt;sdake&gt;</span> is anyone blocked on environmental problems or not being able to get the heat api to launch the wordpress instance
+<a name="l-270"></a><span class="tm">21:33:08</span><span class="nk"> &lt;funzo&gt;</span> ok, shoot
+<a name="l-271"></a><span class="tm">21:33:30</span><span class="nk"> &lt;asalkeld&gt;</span> sdake, I can launch
+<a name="l-272"></a><span class="tm">21:33:33</span><span class="nk"> &lt;funzo&gt;</span> I haven't tried the wordpress launch since i just finished reseting my openstack based upon the tools setup
+<a name="l-273"></a><span class="tm">21:33:39 </span><span class="nka">* shadower</span> <span class="ac">can launch</span>
+<a name="l-274"></a><span class="tm">21:33:40</span><span class="nk"> &lt;asalkeld&gt;</span> but no wordpress
+<a name="l-275"></a><span class="tm">21:33:41</span><span class="nk"> &lt;funzo&gt;</span> I had an issue with having to run as root
+<a name="l-276"></a><span class="tm">21:33:45</span><span class="nk"> &lt;funzo&gt;</span> just got past it
+<a name="l-277"></a><span class="tm">21:33:56</span><span class="nk"> &lt;funzo&gt;</span> so, I currently don't know if it works for me
+<a name="l-278"></a><span class="tm">21:34:03</span><span class="nk"> &lt;sdake&gt;</span> asalkeld what do you mean no wordpress?
+<a name="l-279"></a><span class="tm">21:34:07</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#action </span><span class="cmdline">complete the wordpress launch</span>
+<a name="l-280"></a><span class="tm">21:34:08</span><span class="nk"> &lt;asalkeld&gt;</span> is there a firewall adjustment?
+<a name="l-281"></a><span class="tm">21:34:08</span><span class="nk"> &lt;jpeeler&gt;</span> i'm assuming after i relaunch with a network created things will just work...
+<a name="l-282"></a><span class="tm">21:34:09</span><span class="nk"> &lt;sdake&gt;</span> 10.0.0.2/wordpress didn't show up?
+<a name="l-283"></a><span class="tm">21:34:15</span><span class="nk"> &lt;asalkeld&gt;</span> nope
+<a name="l-284"></a><span class="tm">21:34:22</span><span class="nk"> &lt;asalkeld&gt;</span> new jeos
+<a name="l-285"></a><span class="tm">21:34:37</span><span class="nk"> &lt;funzo&gt;</span> <span class="hi">asalkeld:</span> are you debugging that issue?
+<a name="l-286"></a><span class="tm">21:34:40</span><span class="nk"> &lt;sdake&gt;</span> the template was updated a bit
+<a name="l-287"></a><span class="tm">21:34:56</span><span class="nk"> &lt;sdake&gt;</span> asalkeld lets work today to get you rolling
+<a name="l-288"></a><span class="tm">21:34:56</span><span class="nk"> &lt;funzo&gt;</span> aws updated it?
+<a name="l-289"></a><span class="tm">21:34:57</span><span class="nk"> &lt;asalkeld&gt;</span> sdake, we can chat later about ti
+<a name="l-290"></a><span class="tm">21:35:02</span><span class="nk"> &lt;funzo&gt;</span> kk
+<a name="l-291"></a><span class="tm">21:35:03</span><span class="nk"> &lt;sdake&gt;</span> agree
+<a name="l-292"></a><span class="tm">21:35:12</span><span class="nk"> &lt;sdake&gt;</span> anyone else having problems
+<a name="l-293"></a><span class="tm">21:35:17</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#action </span><span class="cmdline">sdake and asalkeld looking into wordpress launch</span>
+<a name="l-294"></a><span class="tm">21:35:19</span><span class="nk"> &lt;sdake&gt;</span> if you do, ping me on irc
+<a name="l-295"></a><span class="tm">21:35:25</span><span class="nk"> &lt;sdake&gt;</span> wordpress launch works for me ;)
+<a name="l-296"></a><span class="tm">21:35:36</span><span class="nk"> &lt;funzo&gt;</span> I'll give it a try in the am as well
+<a name="l-297"></a><span class="tm">21:35:50</span><span class="nk"> &lt;funzo&gt;</span> my setup seems to be fully functional now
+<a name="l-298"></a><span class="tm">21:35:53</span><span class="nk"> &lt;blomquisg&gt;</span> I'll run through the updatd wiki and try tomorrow
+<a name="l-299"></a><span class="tm">21:36:06</span><span class="nk"> &lt;funzo&gt;</span> any other issues for blocked development to discuss?
+<a name="l-300"></a><span class="tm">21:36:07</span><span class="nk"> &lt;Slower&gt;</span> I don't know if mine works or not but I'm in rpc land so it's ok for now
+<a name="l-301"></a><span class="tm">21:36:08</span><span class="nk"> &lt;sdake&gt;</span> instructionsw on the ml too
+<a name="l-302"></a><span class="tm">21:36:15</span><span class="nk"> &lt;funzo&gt;</span> ah, question...
+<a name="l-303"></a><span class="tm">21:36:21</span><span class="nk"> &lt;funzo&gt;</span> when will the rpc branch be merged to master?
+<a name="l-304"></a><span class="tm">21:36:23</span><span class="nk"> &lt;Slower&gt;</span> <span class="hi">sdake:</span> saw that, thanks :)
+<a name="l-305"></a><span class="tm">21:36:34</span><span class="nk"> &lt;funzo&gt;</span> ...also, why is it in a different branch?
+<a name="l-306"></a><span class="tm">21:36:43</span><span class="nk"> &lt;sdake&gt;</span> normal to develop in different branches
+<a name="l-307"></a><span class="tm">21:36:44</span><span class="nk"> &lt;funzo&gt;</span> or shall we save this for agenda item 6
+<a name="l-308"></a><span class="tm">21:36:52</span><span class="nk"> &lt;Slower&gt;</span> <span class="hi">funzo:</span> when it works? :)
+<a name="l-309"></a><span class="tm">21:37:03</span><span class="nk"> &lt;Slower&gt;</span> <span class="hi">funzo:</span> my guess probly early next week
+<a name="l-310"></a><span class="tm">21:37:10</span><span class="nk"> &lt;asalkeld&gt;</span> how do we agree on items/issues for each milestone?
+<a name="l-311"></a><span class="tm">21:37:13</span><span class="nk"> &lt;funzo&gt;</span> wasn't sure if we were supposed to be doing feature branches
+<a name="l-312"></a><span class="tm">21:37:18</span><span class="nk"> &lt;funzo&gt;</span> I've been slinging master
+<a name="l-313"></a><span class="tm">21:37:28</span><span class="nk"> &lt;Slower&gt;</span> <span class="hi">funzo:</span> well it broke the whole project so I can see why angus did it..
+<a name="l-314"></a><span class="tm">21:37:37</span><span class="nk"> &lt;funzo&gt;</span> aye
+<a name="l-315"></a><span class="tm">21:37:38</span><span class="nk"> &lt;Slower&gt;</span> the branch is still broken
+<a name="l-316"></a><span class="tm">21:37:57</span><span class="nk"> &lt;funzo&gt;</span> ok, so developer makes a call on the impact of the feature change and branches when necessary
+<a name="l-317"></a><span class="tm">21:38:01</span><span class="nk"> &lt;funzo&gt;</span> agreed?
+<a name="l-318"></a><span class="tm">21:38:13</span><span class="nk"> &lt;asalkeld&gt;</span> ya
+<a name="l-319"></a><span class="tm">21:38:14</span><span class="nk"> &lt;shadower&gt;</span> yeah
+<a name="l-320"></a><span class="tm">21:38:19</span><span class="nk"> &lt;blomquisg&gt;</span> yeah
+<a name="l-321"></a><span class="tm">21:38:24</span><span class="nk"> &lt;funzo&gt;</span> are we saying M1 will have the rpc stuff?
+<a name="l-322"></a><span class="tm">21:38:33</span><span class="nk"> &lt;sdake&gt;</span> would be nice
+<a name="l-323"></a><span class="tm">21:38:37 </span><span class="nka">* funzo</span> <span class="ac">also does not know what the rpc changes are supposed to do :)</span>
+<a name="l-324"></a><span class="tm">21:38:50</span><span class="nk"> &lt;funzo&gt;</span> was on PTO
+<a name="l-325"></a><span class="tm">21:38:52</span><span class="nk"> &lt;sdake&gt;</span> basically it takes heat-engine and converts it from rest to use rabbitmq
+<a name="l-326"></a><span class="tm">21:39:04</span><span class="nk"> &lt;sdake&gt;</span> so that it may horizontally scale
+<a name="l-327"></a><span class="tm">21:39:08</span><span class="nk"> &lt;sdake&gt;</span> so we can find the engines to talk to
+<a name="l-328"></a><span class="tm">21:39:11</span><span class="nk"> &lt;sdake&gt;</span> round robin, etc
+<a name="l-329"></a><span class="tm">21:39:18</span><span class="nk"> &lt;shadower&gt;</span> might be better to get them tests working before we pull rpc in
+<a name="l-330"></a><span class="tm">21:39:26</span><span class="nk"> &lt;funzo&gt;</span> ok, I'm going to switch the topic to #6 if we are done with blocking issues
+<a name="l-331"></a><span class="tm">21:39:27</span><span class="nk"> &lt;shadower&gt;</span> to verify nothing breaks etc
+<a name="l-332"></a><span class="tm">21:39:41</span><span class="nk"> &lt;sdake&gt;</span> ya makes sense shadower
+<a name="l-333"></a><span class="tm">21:40:04</span><span class="nk"> &lt;funzo&gt;</span> agreed we have covered the blocking issues?
+<a name="l-334"></a><span class="tm">21:40:11</span><span class="nk"> &lt;sdake&gt;</span> +1
+<a name="l-335"></a><span class="tm">21:40:14</span><span class="nk"> &lt;blomquisg&gt;</span> +1
+<a name="l-336"></a><span class="tm">21:40:20</span><span class="nk"> &lt;asalkeld&gt;</span> sure
+<a name="l-337"></a><span class="tm">21:40:22</span><span class="nk"> &lt;shadower&gt;</span> +1
+<a name="l-338"></a><span class="tm">21:40:26</span><span class="nk"> &lt;funzo&gt;</span> <span class="topic">#topic </span><span class="topicline">6. Architecture improvement</span>
+<a name="l-339"></a><span class="tm">21:40:46</span><span class="nk"> &lt;sdake&gt;</span> so diagrams... bit out of date with architecture we are heading for
+<a name="l-340"></a><span class="tm">21:41:10</span><span class="nk"> &lt;funzo&gt;</span> <span class="hi">sdake:</span> which diagrams specifically
+<a name="l-341"></a><span class="tm">21:41:12</span><span class="nk"> &lt;sdake&gt;</span> i guess inkscape headbanging in store for sdake
+<a name="l-342"></a><span class="tm">21:41:17</span><span class="nk"> &lt;sdake&gt;</span> the diagrams in the repo
+<a name="l-343"></a><span class="tm">21:41:17</span><span class="nk"> &lt;funzo&gt;</span> all of them?
+<a name="l-344"></a><span class="tm">21:41:28</span><span class="nk"> &lt;sdake&gt;</span> i think overview is good
+<a name="l-345"></a><span class="tm">21:41:34</span><span class="nk"> &lt;funzo&gt;</span> do you have your own repo of the diagrams?
+<a name="l-346"></a><span class="tm">21:41:39</span><span class="nk"> &lt;sdake&gt;</span> engine diagrams needs some love
+<a name="l-347"></a><span class="tm">21:41:50</span><span class="nk"> &lt;sdake&gt;</span> they are in heat github
+<a name="l-348"></a><span class="tm">21:41:52</span><span class="nk"> &lt;funzo&gt;</span> https://github.com/heat-api/diagrams
+<a name="l-349"></a><span class="tm">21:41:56</span><span class="nk"> &lt;funzo&gt;</span> those two?
+<a name="l-350"></a><span class="tm">21:42:02</span><span class="nk"> &lt;asalkeld&gt;</span> we are likely going to need new greenthreads for stack creation
+<a name="l-351"></a><span class="tm">21:42:09</span><span class="nk"> &lt;sdake&gt;</span> but i fork them, work on them, then will send out request for review then pull them in
+<a name="l-352"></a><span class="tm">21:42:33</span><span class="nk"> &lt;asalkeld&gt;</span> currently stack creation is blocking
+<a name="l-353"></a><span class="tm">21:42:41</span><span class="nk"> &lt;funzo&gt;</span> <span class="hi">sdake:</span> if you pencil what you are thinking on paper, take a picture and send to me I will create svg for it
+<a name="l-354"></a><span class="tm">21:42:57</span><span class="nk"> &lt;sdake&gt;</span> i know how to use inkscape pretty well
+<a name="l-355"></a><span class="tm">21:43:03</span><span class="nk"> &lt;funzo&gt;</span> <span class="hi">sdake:</span> you've signed up for a lot
+<a name="l-356"></a><span class="tm">21:43:08</span><span class="nk"> &lt;sdake&gt;</span> i'm good
+<a name="l-357"></a><span class="tm">21:43:10</span><span class="nk"> &lt;funzo&gt;</span> <span class="hi">sdake:</span> if you're not over taxed, cool
+<a name="l-358"></a><span class="tm">21:43:17</span><span class="nk"> &lt;funzo&gt;</span> aight
+<a name="l-359"></a><span class="tm">21:43:54</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#info </span><span class="cmdline">currently stack creation is blocking, we are likely going to need new greenthreads for stack creation</span>
+<a name="l-360"></a><span class="tm">21:44:15</span><span class="nk"> &lt;funzo&gt;</span> other architectural improvements...
+<a name="l-361"></a><span class="tm">21:44:23</span><span class="nk"> &lt;shadower&gt;</span> would it make sense for heat cli not to require root?
+<a name="l-362"></a><span class="tm">21:44:31</span><span class="nk"> &lt;funzo&gt;</span> do we want the cli to detect when you already have a jeos and ask the user if they want to reuse it?
+<a name="l-363"></a><span class="tm">21:44:39</span><span class="nk"> &lt;sdake&gt;</span> it shouldn't except jeos create
+<a name="l-364"></a><span class="tm">21:45:08</span><span class="nk"> &lt;funzo&gt;</span> <span class="hi">sdake:</span> I was thinking if you ran jeos_create and you didn't realize that you already had a gold image
+<a name="l-365"></a><span class="tm">21:45:27</span><span class="nk"> &lt;sdake&gt;</span> funzo ya i was responding to shadower re root
+<a name="l-366"></a><span class="tm">21:45:28</span><span class="nk"> &lt;funzo&gt;</span> <span class="hi">shadower:</span> it would be nice not to have to run it as root
+<a name="l-367"></a><span class="tm">21:45:29</span><span class="nk"> &lt;sdake&gt;</span> ;)
+<a name="l-368"></a><span class="tm">21:45:36</span><span class="nk"> &lt;funzo&gt;</span> ah ok
+<a name="l-369"></a><span class="tm">21:45:47</span><span class="nk"> &lt;asalkeld&gt;</span> agree on no root
+<a name="l-370"></a><span class="tm">21:45:51</span><span class="nk"> &lt;sdake&gt;</span> ya
+<a name="l-371"></a><span class="tm">21:45:57</span><span class="nk"> &lt;sdake&gt;</span> need to figure out how to solve that
+<a name="l-372"></a><span class="tm">21:45:59</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#agree </span><span class="cmdline">to running cli without root</span>
+<a name="l-373"></a><span class="tm">21:46:12</span><span class="nk"> &lt;sdake&gt;</span> unfortunately i dont htink there is a way for jeos creation to work without root
+<a name="l-374"></a><span class="tm">21:46:16</span><span class="nk"> &lt;shadower&gt;</span> does jeos create have to live in cli?
+<a name="l-375"></a><span class="tm">21:46:17</span><span class="nk"> &lt;funzo&gt;</span> also need to make sure the keystonerc environment is set up for non-root
+<a name="l-376"></a><span class="tm">21:46:21</span><span class="nk"> &lt;shadower&gt;</span> we could move it to the daemons
+<a name="l-377"></a><span class="tm">21:46:25</span><span class="nk"> &lt;shadower&gt;</span> they run with root privs
+<a name="l-378"></a><span class="tm">21:46:34</span><span class="nk"> &lt;sdake&gt;</span> daemons shouldn't be running with root privs
+<a name="l-379"></a><span class="tm">21:46:39</span><span class="nk"> &lt;sdake&gt;</span> they should be running with heat user privs
+<a name="l-380"></a><span class="tm">21:46:42</span><span class="nk"> &lt;Slower&gt;</span> or could it be a separate step?
+<a name="l-381"></a><span class="tm">21:46:52</span><span class="nk"> &lt;sdake&gt;</span> one option is to pull it out of heat cli
+<a name="l-382"></a><span class="tm">21:47:07</span><span class="nk"> &lt;blomquisg&gt;</span> doesn't seem like you'd be created jeoses alot
+<a name="l-383"></a><span class="tm">21:47:08</span><span class="nk"> &lt;asalkeld&gt;</span> lets push this out to late milestone
+<a name="l-384"></a><span class="tm">21:47:11</span><span class="nk"> &lt;sdake&gt;</span> call it "jeos_create" as a seprate binary
+<a name="l-385"></a><span class="tm">21:47:20</span><span class="nk"> &lt;sdake&gt;</span> ya not deal breaking atm
+<a name="l-386"></a><span class="tm">21:47:24</span><span class="nk"> &lt;Slower&gt;</span> ya
+<a name="l-387"></a><span class="tm">21:47:26</span><span class="nk"> &lt;shadower&gt;</span> yea
+<a name="l-388"></a><span class="tm">21:47:31</span><span class="nk"> &lt;blomquisg&gt;</span> kk, postpone non-root for now?
+<a name="l-389"></a><span class="tm">21:47:48</span><span class="nk"> &lt;asalkeld&gt;</span> too much change, we got huge changes already
+<a name="l-390"></a><span class="tm">21:47:52</span><span class="nk"> &lt;funzo&gt;</span> +1
+<a name="l-391"></a><span class="tm">21:47:57</span><span class="nk"> &lt;sdake&gt;</span> ya lets chew down our food ;)
+<a name="l-392"></a><span class="tm">21:47:59</span><span class="nk"> &lt;asalkeld&gt;</span> db rpc tests
+<a name="l-393"></a><span class="tm">21:48:03</span><span class="nk"> &lt;funzo&gt;</span> any other architectural issues to address for M1?
+<a name="l-394"></a><span class="tm">21:48:09</span><span class="nk"> &lt;funzo&gt;</span> ya, shload
+<a name="l-395"></a><span class="tm">21:48:10</span><span class="nk"> &lt;sdake&gt;</span> and multi instance ;)
+<a name="l-396"></a><span class="tm">21:48:28</span><span class="nk"> &lt;funzo&gt;</span> are we good to go for this week then?
+<a name="l-397"></a><span class="tm">21:48:38</span><span class="nk"> &lt;asalkeld&gt;</span> ya
+<a name="l-398"></a><span class="tm">21:48:44</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#agree </span><span class="cmdline">to end this meeting</span>
+<a name="l-399"></a><span class="tm">21:48:48</span><span class="nk"> &lt;sdake&gt;</span> ya i'm good
+<a name="l-400"></a><span class="tm">21:48:50</span><span class="nk"> &lt;blomquisg&gt;</span> +1
+<a name="l-401"></a><span class="tm">21:48:52</span><span class="nk"> &lt;sdake&gt;</span> thanks guys
+<a name="l-402"></a><span class="tm">21:48:53</span><span class="nk"> &lt;shadower&gt;</span> +1
+<a name="l-403"></a><span class="tm">21:48:53</span><span class="nk"> &lt;funzo&gt;</span> ^proposal :)
+<a name="l-404"></a><span class="tm">21:49:01</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

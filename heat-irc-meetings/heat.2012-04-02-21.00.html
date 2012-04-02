@@ -1,0 +1,245 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#heat Meeting</title>
+<style type="text/css">
+/* This is for the .html in the HTML2 writer */
+body {
+    font-family: Helvetica, sans-serif;
+    font-size:14px;
+}
+h1 {
+    text-align: center;
+}
+a {
+    color:navy;
+    text-decoration: none;
+    border-bottom:1px dotted navy;
+}
+a:hover {
+    text-decoration:none;
+    border-bottom: 0;
+    color:#0000B9;
+}
+hr {
+    border: 1px solid #ccc;
+}
+/* The (nick, time) item pairs, and other body text things. */
+.details {
+    font-size: 12px;
+    font-weight:bold;
+}
+/* The 'AGREED:', 'IDEA', etc, prefix to lines. */
+.itemtype {
+    font-style: normal;    /* un-italics it */
+    font-weight: bold;
+}
+/* Example: change single item types.  Capitalized command name.
+/* .TOPIC  {  color:navy;  } */
+/* .AGREED {  color:lime;  } */
+
+</style>
+</head>
+
+<body>
+<h1>#heat Meeting</h1>
+<span class="details">
+Meeting started by funzo at 21:00:11 UTC
+(<a href="heat.2012-04-02-21.00.log.html">full logs</a>).</span>
+
+<br><br>
+
+
+
+<h3>Meeting summary</h3>
+<ol>
+<li><b class="TOPIC">Review meeting agenda</b> <span class="details">(<a href='heat.2012-04-02-21.00.log.html#l-7'>funzo</a>, 21:01:09)</span>
+<ol type="a">
+  <li><i class="itemtype">AGREED</i>: <span class="AGREED">meeting
+    agenda looks good</span> <span class="details">(<a
+    href='heat.2012-04-02-21.00.log.html#l-23'>sdake</a>,
+    21:02:52)</span></li>
+  <li><i class="itemtype">AGREED</i>: <span class="AGREED">agenda
+    content is adequate for today</span> <span class="details">(<a
+    href='heat.2012-04-02-21.00.log.html#l-24'>funzo</a>,
+    21:02:54)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">come to agreement on first few milestones and dates</b> <span class="details">(<a href='heat.2012-04-02-21.00.log.html#l-29'>funzo</a>, 21:03:20)</span>
+<ol type="a">
+  <li><i class="itemtype">AGREED</i>: <span class="AGREED">POC
+    accomplished</span> <span class="details">(<a
+    href='heat.2012-04-02-21.00.log.html#l-55'>funzo</a>,
+    21:06:24)</span></li>
+  <li><i class="itemtype">AGREED</i>: <span class="AGREED">M1=
+    multi-instance depl; M2 = harden, bugfix. M1 = 4/13, M2=4/27</span>
+    <span class="details">(<a
+    href='heat.2012-04-02-21.00.log.html#l-133'>funzo</a>,
+    21:15:30)</span></li>
+  <li><i class="itemtype">AGREED</i>: <span class="AGREED">M1 4/13, M2
+    4/20</span> <span class="details">(<a
+    href='heat.2012-04-02-21.00.log.html#l-151'>funzo</a>,
+    21:17:42)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">2. Issues for current milestone</b> <span class="details">(<a href='heat.2012-04-02-21.00.log.html#l-155'>funzo</a>, 21:18:05)</span>
+<ol type="a">
+  <li><a
+    href="https://github.com/heat-api/heat/wiki/HeatGettingStarted">https://github.com/heat-api/heat/wiki/HeatGettingStarted</a>
+    <span class="details">(<a
+    href='heat.2012-04-02-21.00.log.html#l-158'>sdake</a>,
+    21:18:59)</span></li>
+  <li><span class="INFO">fix up the keystonerc to not have to use
+    root</span> <span class="details">(<a
+    href='heat.2012-04-02-21.00.log.html#l-159'>funzo</a>,
+    21:19:02)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">all run wiki
+    getting started guide</span> <span class="details">(<a
+    href='heat.2012-04-02-21.00.log.html#l-175'>sdake</a>,
+    21:20:33)</span></li>
+  <li><span class="INFO">finish model mapping for storage and queries
+    for models</span> <span class="details">(<a
+    href='heat.2012-04-02-21.00.log.html#l-176'>funzo</a>,
+    21:20:33)</span></li>
+  <li><span class="INFO">commit 4679fb01c641053d45a197b598e28552144391a9
+    broken</span> <span class="details">(<a
+    href='heat.2012-04-02-21.00.log.html#l-196'>sdake</a>,
+    21:23:51)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">all implement
+    nose tests similar to nova for your functional pieces</span> <span
+    class="details">(<a
+    href='heat.2012-04-02-21.00.log.html#l-208'>funzo</a>,
+    21:25:48)</span></li>
+  <li><i class="itemtype">AGREED</i>: <span class="AGREED">add tests for
+    your features</span> <span class="details">(<a
+    href='heat.2012-04-02-21.00.log.html#l-209'>funzo</a>,
+    21:25:58)</span></li>
+  <li><i class="itemtype">AGREED</i>: <span class="AGREED">bootstrap
+    test cases as nova/glance do</span> <span class="details">(<a
+    href='heat.2012-04-02-21.00.log.html#l-211'>sdake</a>,
+    21:26:13)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">jpeeler
+    bootstrap the nose test structure and then give use a rundown</span>
+    <span class="details">(<a
+    href='heat.2012-04-02-21.00.log.html#l-225'>funzo</a>,
+    21:28:29)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">blomquisg to
+    help out jpeeler</span> <span class="details">(<a
+    href='heat.2012-04-02-21.00.log.html#l-229'>funzo</a>,
+    21:28:58)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">4. Blocked development</b> <span class="details">(<a href='heat.2012-04-02-21.00.log.html#l-243'>funzo</a>, 21:30:12)</span>
+<ol type="a">
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">sdake looking
+    at the commit 4679fb01c641053d45a197b598e28552144391a9</span> <span
+    class="details">(<a
+    href='heat.2012-04-02-21.00.log.html#l-262'>funzo</a>,
+    21:32:12)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">complete the
+    wordpress launch</span> <span class="details">(<a
+    href='heat.2012-04-02-21.00.log.html#l-279'>funzo</a>,
+    21:34:07)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">sdake and
+    asalkeld looking into wordpress launch</span> <span
+    class="details">(<a
+    href='heat.2012-04-02-21.00.log.html#l-293'>funzo</a>,
+    21:35:17)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">6. Architecture improvement</b> <span class="details">(<a href='heat.2012-04-02-21.00.log.html#l-338'>funzo</a>, 21:40:26)</span>
+<ol type="a">
+  <li><a
+    href="https://github.com/heat-api/diagrams">https://github.com/heat-api/diagrams</a>
+    <span class="details">(<a
+    href='heat.2012-04-02-21.00.log.html#l-348'>funzo</a>,
+    21:41:52)</span></li>
+  <li><span class="INFO">currently stack creation is blocking, we are
+    likely going to need new greenthreads for stack creation</span>
+    <span class="details">(<a
+    href='heat.2012-04-02-21.00.log.html#l-359'>funzo</a>,
+    21:43:54)</span></li>
+  <li><i class="itemtype">AGREED</i>: <span class="AGREED">to running
+    cli without root</span> <span class="details">(<a
+    href='heat.2012-04-02-21.00.log.html#l-372'>funzo</a>,
+    21:45:59)</span></li>
+  <li><i class="itemtype">AGREED</i>: <span class="AGREED">to end this
+    meeting</span> <span class="details">(<a
+    href='heat.2012-04-02-21.00.log.html#l-398'>funzo</a>,
+    21:48:44)</span></li>
+</ol>
+</li>
+</ol>
+<br><br>
+
+
+
+<span class="details">
+Meeting ended at 21:49:01 UTC
+(<a href="heat.2012-04-02-21.00.log.html">full logs</a>).</span>
+
+<br><br>
+
+
+
+<h3>Action items</h3>
+<ol>
+  <li>all run wiki getting started guide</li>
+  <li>all implement nose tests similar to nova for your functional pieces</li>
+  <li>jpeeler bootstrap the nose test structure and then give use a rundown</li>
+  <li>blomquisg to help out jpeeler</li>
+  <li>sdake looking at the commit 4679fb01c641053d45a197b598e28552144391a9</li>
+  <li>complete the wordpress launch</li>
+  <li>sdake and asalkeld looking into wordpress launch</li>
+</ol>
+<br><br>
+
+
+
+<h3>Action items, by person</h3>
+<ol>
+  <li> asalkeld <ol>
+    <li>sdake and asalkeld looking into wordpress launch</li>
+  </ol></li>
+  <li> blomquisg <ol>
+    <li>blomquisg to help out jpeeler</li>
+  </ol></li>
+  <li> jpeeler <ol>
+    <li>jpeeler bootstrap the nose test structure and then give use a rundown</li>
+    <li>blomquisg to help out jpeeler</li>
+  </ol></li>
+  <li> sdake <ol>
+    <li>sdake looking at the commit 4679fb01c641053d45a197b598e28552144391a9</li>
+    <li>sdake and asalkeld looking into wordpress launch</li>
+  </ol></li>
+  <li><b>UNASSIGNED</b><ol>
+    <li>all run wiki getting started guide</li>
+    <li>all implement nose tests similar to nova for your functional pieces</li>
+    <li>complete the wordpress launch</li>
+  </ol>
+</li>
+</ol>
+<br><br>
+
+
+
+<h3>People present (lines said)</h3>
+<ol>
+  <li>funzo (150)</li>
+  <li>sdake (116)</li>
+  <li>asalkeld (51)</li>
+  <li>Slower (38)</li>
+  <li>shadower (23)</li>
+  <li>blomquisg (17)</li>
+  <li>jpeeler (6)</li>
+  <li>mheat-bot (3)</li>
+  <li>pmyers (0)</li>
+  <li>rbergeron (0)</li>
+</ol>
+<br><br>
+
+
+
+<span class="details">Generated by <a href="http://wiki.debian.org/MeetBot">MeetBot</a> 0.1.4.</span>
+</body></html>

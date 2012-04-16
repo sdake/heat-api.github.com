@@ -1,0 +1,222 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#heat Meeting</title>
+<style type="text/css">
+/* This is for the .html in the HTML2 writer */
+body {
+    font-family: Helvetica, sans-serif;
+    font-size:14px;
+}
+h1 {
+    text-align: center;
+}
+a {
+    color:navy;
+    text-decoration: none;
+    border-bottom:1px dotted navy;
+}
+a:hover {
+    text-decoration:none;
+    border-bottom: 0;
+    color:#0000B9;
+}
+hr {
+    border: 1px solid #ccc;
+}
+/* The (nick, time) item pairs, and other body text things. */
+.details {
+    font-size: 12px;
+    font-weight:bold;
+}
+/* The 'AGREED:', 'IDEA', etc, prefix to lines. */
+.itemtype {
+    font-style: normal;    /* un-italics it */
+    font-weight: bold;
+}
+/* Example: change single item types.  Capitalized command name.
+/* .TOPIC  {  color:navy;  } */
+/* .AGREED {  color:lime;  } */
+
+</style>
+</head>
+
+<body>
+<h1>#heat Meeting</h1>
+<span class="details">
+Meeting started by funzo at 20:57:16 UTC
+(<a href="heat.2012-04-16-20.57.log.html">full logs</a>).</span>
+
+<br><br>
+
+
+
+<h3>Meeting summary</h3>
+<ol>
+<li><b class="TOPIC">1 Discuss M1 blockers for any open issues</b> <span class="details">(<a href='heat.2012-04-16-20.57.log.html#l-37'>funzo</a>, 21:02:02)</span>
+<ol type="a">
+  <li><i class="itemtype">AGREED</i>: <span class="AGREED">above issues
+    listed are blockers for M1</span> <span class="details">(<a
+    href='heat.2012-04-16-20.57.log.html#l-71'>funzo</a>,
+    21:08:51)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">calfonso to
+    label them as blockers in github issues</span> <span
+    class="details">(<a
+    href='heat.2012-04-16-20.57.log.html#l-72'>funzo</a>,
+    21:09:03)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">2) M2 issue recap, and adjustments</b> <span class="details">(<a href='heat.2012-04-16-20.57.log.html#l-92'>funzo</a>, 21:12:06)</span>
+<ol type="a">
+  <li><i class="itemtype">AGREED</i>: <span class="AGREED">issue per
+    test case in issue tracker to be done by Wednesdsay</span> <span
+    class="details">(<a
+    href='heat.2012-04-16-20.57.log.html#l-112'>funzo</a>,
+    21:15:18)</span></li>
+  <li><i class="itemtype">AGREED</i>: <span class="AGREED">change M2 end
+    date to 4/27</span> <span class="details">(<a
+    href='heat.2012-04-16-20.57.log.html#l-122'>funzo</a>,
+    21:16:40)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">calfonso
+    change the dates on m2 to 4/27 and the label</span> <span
+    class="details">(<a
+    href='heat.2012-04-16-20.57.log.html#l-132'>funzo</a>,
+    21:18:38)</span></li>
+  <li><i class="itemtype">AGREED</i>: <span class="AGREED">expand scope
+    of m2 to fix bugs we find with the test cases (assuming they aren't
+    enormous)</span> <span class="details">(<a
+    href='heat.2012-04-16-20.57.log.html#l-150'>funzo</a>,
+    21:20:51)</span></li>
+  <li><a
+    href="http://git.fedorahosted.org/git/?p=subscription-manager.git;a=tree;f=test;h=43ae38da4de9e4545611adcccd60aa5a8a12d20b;hb=HEAD">http://git.fedorahosted.org/git/?p=subscription-manager.git;a=tree;f=test;h=43ae38da4de9e4545611adcccd60aa5a8a12d20b;hb=HEAD</a>
+    <span class="details">(<a
+    href='heat.2012-04-16-20.57.log.html#l-170'>funzo</a>,
+    21:24:15)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">calfonso
+    create an issue and mock out nova</span> <span class="details">(<a
+    href='heat.2012-04-16-20.57.log.html#l-189'>funzo</a>,
+    21:27:27)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">3 Sprints vs Milestones</b> <span class="details">(<a href='heat.2012-04-16-20.57.log.html#l-201'>funzo</a>, 21:29:17)</span>
+<ol type="a">
+  <li><a
+    href="http://en.wikipedia.org/wiki/Kanban_%28development%29">http://en.wikipedia.org/wiki/Kanban_%28development%29</a>
+    <span class="details">(<a
+    href='heat.2012-04-16-20.57.log.html#l-233'>funzo</a>,
+    21:33:30)</span></li>
+  <li><a
+    href="http://en.wikipedia.org/wiki/Kanban_(development)">http://en.wikipedia.org/wiki/Kanban_(development)</a>
+    <span class="details">(<a
+    href='heat.2012-04-16-20.57.log.html#l-234'>blomquisg</a>,
+    21:33:30)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">zaneb to add
+    pydoc generation and push to heat-api.org</span> <span
+    class="details">(<a
+    href='heat.2012-04-16-20.57.log.html#l-325'>funzo</a>,
+    21:43:59)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">sdake to find
+    zaneb a permanent build machine</span> <span class="details">(<a
+    href='heat.2012-04-16-20.57.log.html#l-326'>sdake</a>,
+    21:44:16)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">calfonso to
+    put process discussion on next weeks agenda</span> <span
+    class="details">(<a
+    href='heat.2012-04-16-20.57.log.html#l-347'>funzo</a>,
+    21:47:03)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">4 Scrum process</b> <span class="details">(<a href='heat.2012-04-16-20.57.log.html#l-349'>funzo</a>, 21:47:18)</span>
+<br></li>
+<li><b class="TOPIC">5 M3 Planning / Roadmap discussion</b> <span class="details">(<a href='heat.2012-04-16-20.57.log.html#l-350'>funzo</a>, 21:47:25)</span>
+<ol type="a">
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">calfonso put
+    M3 planning on next monday's meeting</span> <span
+    class="details">(<a
+    href='heat.2012-04-16-20.57.log.html#l-367'>funzo</a>,
+    21:49:49)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">all discuss
+    roadmap on mailing list</span> <span class="details">(<a
+    href='heat.2012-04-16-20.57.log.html#l-417'>sdake</a>,
+    21:55:55)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">sdake to talk
+    with russellb about packaing for fedora</span> <span
+    class="details">(<a
+    href='heat.2012-04-16-20.57.log.html#l-440'>funzo</a>,
+    21:59:02)</span></li>
+</ol>
+</li>
+</ol>
+<br><br>
+
+
+
+<span class="details">
+Meeting ended at 22:00:16 UTC
+(<a href="heat.2012-04-16-20.57.log.html">full logs</a>).</span>
+
+<br><br>
+
+
+
+<h3>Action items</h3>
+<ol>
+  <li>calfonso to label them as blockers in github issues</li>
+  <li>calfonso change the dates on m2 to 4/27 and the label</li>
+  <li>calfonso create an issue and mock out nova</li>
+  <li>zaneb to add pydoc generation and push to heat-api.org</li>
+  <li>sdake to find zaneb a permanent build machine</li>
+  <li>calfonso to put process discussion on next weeks agenda</li>
+  <li>calfonso put M3 planning on next monday's meeting</li>
+  <li>all discuss roadmap on mailing list</li>
+  <li>sdake to talk with russellb about packaing for fedora</li>
+</ol>
+<br><br>
+
+
+
+<h3>Action items, by person</h3>
+<ol>
+  <li> sdake <ol>
+    <li>sdake to find zaneb a permanent build machine</li>
+    <li>sdake to talk with russellb about packaing for fedora</li>
+  </ol></li>
+  <li> zaneb <ol>
+    <li>zaneb to add pydoc generation and push to heat-api.org</li>
+    <li>sdake to find zaneb a permanent build machine</li>
+  </ol></li>
+  <li><b>UNASSIGNED</b><ol>
+    <li>calfonso to label them as blockers in github issues</li>
+    <li>calfonso change the dates on m2 to 4/27 and the label</li>
+    <li>calfonso create an issue and mock out nova</li>
+    <li>calfonso to put process discussion on next weeks agenda</li>
+    <li>calfonso put M3 planning on next monday's meeting</li>
+    <li>all discuss roadmap on mailing list</li>
+  </ol>
+</li>
+</ol>
+<br><br>
+
+
+
+<h3>People present (lines said)</h3>
+<ol>
+  <li>funzo (169)</li>
+  <li>sdake (146)</li>
+  <li>asalkeld (61)</li>
+  <li>zaneb (23)</li>
+  <li>blomquisg (23)</li>
+  <li>shadower (14)</li>
+  <li>jpeeler (8)</li>
+  <li>mheat-bot (7)</li>
+  <li>shadower|g0n3 (1)</li>
+  <li>slower (0)</li>
+  <li>pmyers (0)</li>
+</ol>
+<br><br>
+
+
+
+<span class="details">Generated by <a href="http://wiki.debian.org/MeetBot">MeetBot</a> 0.1.4.</span>
+</body></html>

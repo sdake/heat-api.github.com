@@ -1,0 +1,452 @@
+20:57:16 <funzo> #startmeeting
+20:57:16 <mheat-bot> Meeting started Mon Apr 16 20:57:16 2012 UTC.  The chair is funzo. Information about MeetBot at http://wiki.debian.org/MeetBot.
+20:57:16 <mheat-bot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+20:57:30 <funzo> Here is the agenda for today:
+20:57:44 <funzo> #proposal agenda
+20:57:57 <funzo> Agenda items:
+20:57:57 <funzo> 1 Discuss M1 blockers for any open issues
+20:57:58 <funzo> 2 M2 issue recap, and adjustments
+20:57:58 <funzo> 3 Sprints vs Milestones
+20:57:58 <funzo> 4 Scrum process
+20:58:00 <funzo> 5 M3 Planning / Roadmap discussion
+20:58:02 <funzo> 6 Documentation needed
+20:58:05 <funzo> Needed Wiki Docs:
+20:58:07 <funzo> - release documentation
+20:58:10 <funzo> - FAQ for troubleshooting
+20:58:46 <sdake> first off whos around
+20:58:49 <funzo> #chair asalkeld blomquisg sdake
+20:58:49 <mheat-bot> Current chairs: asalkeld blomquisg funzo sdake
+20:59:05 * shadower|g0n3 is here
+20:59:11 <funzo> #chair pmyers jpeeler
+20:59:11 <mheat-bot> Current chairs: asalkeld blomquisg funzo jpeeler pmyers sdake
+20:59:23 <funzo> #chair shadower
+20:59:23 <mheat-bot> Current chairs: asalkeld blomquisg funzo jpeeler pmyers sdake shadower
+20:59:33 <funzo> #chair slower
+20:59:33 <mheat-bot> Current chairs: asalkeld blomquisg funzo jpeeler pmyers sdake shadower slower
+20:59:54 <funzo> role call
+20:59:57 <asalkeld> hi
+21:00:24 <sdake> sdake
+21:01:03 <sdake> jpeeler around?
+21:01:12 <jpeeler> yes!
+21:01:17 <funzo> Slower: here?
+21:01:32 <sdake> unfortunately I think this time is bad for zaneb
+21:01:37 <funzo> kk
+21:01:43 <funzo> shall we go ahead and get started
+21:01:45 <sdake> several ams in
+21:01:49 <sdake> ya lets roll
+21:02:02 <funzo> #topic 1 Discuss M1 blockers for any open issues
+21:02:12 <sdake> i'll list out some blockers
+21:02:20 <funzo> issue #56 and #45 remain open in M1
+21:02:21 <sdake> then take actions to add them to bug list with blocker
+21:02:32 <sdake> we havce some issues which are not in issue tracker
+21:02:52 <funzo> go ahead and rattle them off and I'll add them right now
+21:03:08 <sdake> the cfntools image does not create a default sudo for the user ec2-user
+21:03:27 <sdake> the cfntools images are built with a password, and they should not have a password of "password"
+21:03:34 <sdake> oh guess time isn't bad for zaneb ;)
+21:03:48 <zaneb> howdy, peeps
+21:03:55 <shadower> zaneb: hey
+21:04:01 <funzo> hi zaneb
+21:04:06 <sdake> the WordPress_Single_Instance_With_EBS_Volume.template
+21:04:08 <sdake> does not work correctly
+21:04:29 <funzo> any more info you want in the issue?
+21:04:43 <sdake> put them in actions and I'll file after meeting
+21:05:01 <funzo> sdake: you're a chair
+21:05:11 <sdake> the WordPress_Single_Instance_With_EIP.template
+21:05:12 <sdake> and WordPress_Single_Instance_With_EBS_Volume.template need to be merged into a new template WordPress_Single_Instance_With_EBS_EIP.template
+21:05:26 <sdake> well i thought we would have some discussion on whether these are actually blockers
+21:06:06 <sdake> cfn-init takes a -f option, and instead should just read from /var/lib/cloud/data/cfn-init-data
+21:06:43 <funzo> sdake: I have added an issue labeled with bug for each of those
+21:06:53 <sdake> ok
+21:07:16 <funzo> ok, and the template mergine is a blocker?
+21:07:17 <sdake> i personally think they should all be blockers as they are either security issues or broken
+21:07:20 <funzo> or shall we talk about that
+21:07:51 <sdake> propose all above as blockers + / - vote
+21:08:16 <asalkeld> sure +1
+21:08:26 <blomquisg> +1
+21:08:27 <funzo> +1
+21:08:28 <shadower> +1
+21:08:40 <jpeeler> +1
+21:08:44 <sdake> =1
+21:08:50 <sdake> ;) +1 that is
+21:08:51 <funzo> #agreed above issues listed are blockers for M1
+21:09:03 <funzo> #action calfonso to label them as blockers in github issues
+21:09:40 <funzo> and will assign them to m1?
+21:09:48 <funzo> even though it's over due, or just push them to m2
+21:09:49 <sdake> yes
+21:09:51 <sdake> meaning m1 will slip a few days
+21:10:04 <sdake> hate to release something broke
+21:10:05 <funzo> done
+21:10:25 <sdake> has anyone run through the latest getting started wiki?
+21:10:42 <asalkeld> couple of days ago
+21:10:47 <asalkeld> seemed ok
+21:10:59 <funzo> yeah, Friday
+21:11:11 <funzo> With single instance
+21:11:17 <sdake> we should probably fix all this stuff, then run through getting started guide for all instances
+21:11:18 <funzo> not with multipl instance
+21:11:22 <sdake> for all templates i mean
+21:11:23 <funzo> kk
+21:11:35 <sdake> by we, i mean everyone run through the getting started guide
+21:11:43 <sdake> after we wrap up the blockers
+21:11:44 <funzo> ok, anything else or shall we move to agend item 2
+21:11:45 <shadower> makes sense
+21:12:06 <funzo> #topic 2) M2 issue recap, and adjustments
+21:12:21 <sdake> testing
+21:12:32 <sdake> jpeeler why dont you give us a quick update of where you landed on friday
+21:13:24 <funzo> This is what we have in m2 right now https://github.com/heat-api/heat/issues?sort=created&direction=desc&state=open&page=1&milestone=4
+21:13:46 <jpeeler> i pushed the nose unit testing framework based on what was done in the upstream projects. do you want more detail?
+21:14:01 <funzo> We should probably have an issue per test each person is creating
+21:14:10 <funzo> so that we don't duplicate
+21:14:20 <funzo> agreed?
+21:14:26 <sdake> propose issue per test case in issue tracker to be done by Wednesdsay + / - vote
+21:14:39 <sdake> +1
+21:14:42 <asalkeld> or at least for each area
+21:14:47 <funzo> yeah, each area
+21:14:54 <shadower> +1 each area
+21:14:55 <sdake> alter proposal to per area
+21:14:55 <sdake> +1
+21:14:59 <funzo> +1
+21:15:01 <jpeeler> +1
+21:15:01 <asalkeld> +1
+21:15:10 <blomquisg> +1
+21:15:11 <zaneb> +1
+21:15:18 <funzo> #agreed issue per test case in issue tracker to be done by Wednesdsay
+21:15:25 <sdake> per area ;)
+21:15:30 <funzo> :)
+21:15:53 <funzo> ok, M2 ends this friday
+21:16:04 <sdake> propose move m2 out another week
+21:16:15 <sdake> +1
+21:16:19 <funzo> yeah, too many issues to fix plus the new development
+21:16:21 <zaneb> +5
+21:16:24 <funzo> +1
+21:16:33 <asalkeld> +1
+21:16:40 <funzo> #agreed change M2 end date to 4/27
+21:16:59 <sdake> #54 is not a m2 issue but should stay open probably untag from imlestones
+21:17:03 <sdake> its like issue #1
+21:17:29 <sdake> actually that part is done
+21:17:40 <sdake> but there are more parts to process
+21:17:46 <funzo> updated
+21:17:48 <sdake> just untag
+21:18:12 <sdake> looks like a bit of dev in m2, debian / ubuntu
+21:18:14 <sdake> makes sense imo
+21:18:20 <sdake> should be pretty easy
+21:18:38 <funzo> #action calfonso change the dates on m2 to 4/27 and the label
+21:18:40 <sdake> i added customization to oz for ubuntu targets - we may not eve nneed customization
+21:18:40 <funzo> done
+21:19:00 <funzo> any other issues to recap for m2?
+21:19:17 <sdake> #62 looks good - should help with debug
+21:19:36 <sdake> I'd like to expand scope of m2 a bit to fixing bugs we find with the test cases
+21:19:47 <funzo> you want to pull #62 in then?
+21:19:50 <funzo> backlog to m2?
+21:19:58 <sdake> propose expand scope of m2 to fix bugs we find with the test cases
+21:20:14 <shadower> +1
+21:20:16 <asalkeld> +1
+21:20:18 <funzo> sure, if they are containable bugs
+21:20:22 <sdake> right
+21:20:23 <funzo> +1
+21:20:26 <sdake> nothing out of control
+21:20:27 <sdake> +1
+21:20:29 <jpeeler> +1
+21:20:46 <sdake> zaneb you good on 62 in next two weeks ?
+21:20:51 <funzo> #agreed expand scope of m2 to fix bugs we find with the test cases (assuming they aren't enormous)
+21:21:15 <zaneb> yep
+21:21:18 <sdake> ok
+21:21:35 <sdake> so back to jpeeler, i saw your post but wasn't totally clear how to proceed
+21:21:45 <funzo> updated label and milestone assignment to #62
+21:21:54 <sdake> do other devs feel same way, or eveyrone understand how to dev test cases?
+21:22:02 <funzo> I think I can jump in with what is there
+21:22:06 <funzo> I've seen nose tests before
+21:22:24 <asalkeld> what would be good is example of mocking
+21:22:26 <sdake> ok new work to me, maybe jpeeler and funzo can provide some coaching once we wrap up with m1
+21:22:33 <sdake> agree with asalkeld
+21:22:37 <asalkeld> and testing rest api
+21:22:52 <jpeeler> i have no problem writing tests
+21:22:53 <asalkeld> but framework is good
+21:23:12 <funzo> there are some examples I can dig up from the subscription-manager public bits as well
+21:23:23 <shadower> so what kind of tests are we talking? Unit, integration, something else?
+21:23:41 <asalkeld> one kind is api testing
+21:23:51 <jpeeler> everything in theory
+21:23:51 <asalkeld> so mock engine out
+21:24:01 <shadower> right
+21:24:15 <funzo> #link http://git.fedorahosted.org/git/?p=subscription-manager.git;a=tree;f=test;h=43ae38da4de9e4545611adcccd60aa5a8a12d20b;hb=HEAD
+21:24:20 <asalkeld> make sure our api is correct
+21:24:31 <funzo> my api is correct
+21:24:50 <sdake> all your apis are belong to us
+21:25:01 <asalkeld> then mock out nova and test parser
+21:25:10 <sdake> mocking nova would be good
+21:25:16 <sdake> you mean python-novaclient
+21:25:22 <asalkeld> ya
+21:25:48 <funzo> just a sanity check on the agenda, we are 2 items in and 25 minutes in
+21:26:12 <funzo> may need to drop item #6 documentation
+21:26:24 <sdake> ya we can drop if needed
+21:26:29 <funzo> ok, any other m2 issues to cover?
+21:26:41 <sdake> regarding mocking, who is our volunteer for nova
+21:26:50 <funzo> I'll do it
+21:26:56 <funzo> if that's cool
+21:27:03 <asalkeld> sure
+21:27:05 <funzo> because I need to be learned
+21:27:19 <sdake> sounds like a plan
+21:27:23 <asalkeld> it will be really valuable
+21:27:27 <funzo> #action calfonso create an issue and mock out nova
+21:27:34 <sdake> funzo rest of us will take up finishing up m1 then
+21:27:46 <funzo> kk
+21:27:47 <sdake> so when we are ready to go tue-wed we will have a good mocked api
+21:28:00 <funzo> as in tomorrow?
+21:28:23 <sdake> lets shoot for wed ;)
+21:28:31 <funzo> haha, I'll get on it on the double
+21:28:33 <sdake> we have a heap of work to do
+21:28:36 <funzo> aye
+21:28:41 <funzo> ok, any other M2?
+21:28:42 <sdake> in  the blockers
+21:29:13 <funzo> moving to next topic then
+21:29:17 <funzo> #topic 3 Sprints vs Milestones
+21:29:25 <sdake> 2 weeks too short
+21:29:28 <funzo> right
+21:29:30 <sdake> here is what i propose
+21:29:33 <funzo> We need to have releases
+21:29:34 <sdake> 5 week dev cycles
+21:29:43 <sdake> 4 weeks of dev, followed by 1 day tes tday
+21:29:49 <sdake> where every dev runs the same test cases
+21:29:54 <funzo> is anyone here unfamiliar with scrum?
+21:29:56 <sdake> followed by 4 days of bug fixes followed by release
+21:30:18 <asalkeld> funzo, ya
+21:30:27 <sdake> ya scrum seems a bit heavy weight tho
+21:30:37 <sdake> should only have as much process as is needed
+21:30:37 <asalkeld> I like contiously working on backlog
+21:30:49 <asalkeld> scrum ~= no process
+21:30:58 <funzo> I would like to propose we do 2, 2 week development sprints followed by 1, 1 week sprint in a release
+21:31:11 <zaneb> sdake: test week sounds more like spiral than agile
+21:31:18 <funzo> I just want to make sure we know where we are when the bosses ask at the end of each week
+21:31:24 <asalkeld> zaneb, +1
+21:31:34 <asalkeld> more test cases
+21:31:47 <sdake> test day allows us to do a release
+21:32:03 <sdake> atm even with test cases, we are not certain our code works with the quickstart guide
+21:32:04 <funzo> I would like the 1 week sprint to be hardening and release mechanics, still planned tasks
+21:32:04 <asalkeld> sdake, release manager ...
+21:32:08 <funzo> not freelance
+21:32:29 <blomquisg> funzo: kanban?
+21:32:35 <funzo> ha
+21:33:01 <blomquisg> but, seriously ... kinda like asalkeld said ... that sounds like kanban
+21:33:14 <sdake> propose 1 day test day at end of dev cycle where devs test quickstart guide + / -
+21:33:23 <asalkeld> link to kanban?
+21:33:23 <blomquisg> +
+21:33:26 <funzo> I'm reading it
+21:33:30 <funzo> http://en.wikipedia.org/wiki/Kanban_%28development%29
+21:33:30 <blomquisg> http://en.wikipedia.org/wiki/Kanban_(development)
+21:33:30 <zaneb> sdake: let's automate the quickstart guide and have a continuous integration test box
+21:33:44 <blomquisg> zaneb: ++
+21:33:55 <funzo> +1 to that
+21:33:59 <sdake> how automate the quickstart guide?
+21:34:13 <funzo> maintain scripts run by jenkins
+21:34:28 <zaneb> it's mostly in scripts already
+21:34:37 <sdake> we need to be sure the services in the templates actually come up
+21:34:40 <sdake> can jenkins do that
+21:34:46 <zaneb> just need something where we can start with a clean system and call them
+21:34:48 <funzo> jenkins can execute any command
+21:35:13 <funzo> jenkins: walk my cat
+21:35:14 <sdake> zaneb i can provide a box if you can sort out the automating of the quickstart guide docs and jenkins stuff
+21:35:35 <zaneb> never used jenkins, but I can give it a go
+21:35:36 <asalkeld> well lets start basic
+21:35:43 <asalkeld> one template
+21:35:49 <asalkeld> really simple
+21:35:53 <zaneb> am I correct that we have to run on bare metal, not virtualised?
+21:35:54 <funzo> +1
+21:35:59 <sdake> ya bare metal
+21:36:08 <sdake> i want atleast our templates we currently have in the repo
+21:36:15 <sdake> ie: eip, ebs, one instance, two instance
+21:36:20 <shadower> because of oz or does openstack require bare metal too?
+21:36:27 <zaneb> yeah, that's the biggest pain for ensuring we can do a clean run
+21:36:29 <sdake> openstack can run on virt
+21:36:42 <sdake> oz can run on virt with hackings
+21:36:54 <zaneb> maybe chroot jail is what we want
+21:36:56 <funzo> ok, so what's the agreement on the topic?
+21:37:06 <asalkeld> testing
+21:37:08 <sdake> let me propose:
+21:37:14 <sdake> 1) qiuckstart guide in script
+21:37:19 <sdake> 2) tool to generate wiki quickstart guide in docs
+21:37:30 <sdake> 3) machine to run quickstart guide and validate results
+21:37:39 <sdake> 4) some type of automated run
+21:37:51 <sdake> does that match up with what you had in mind zaneb?
+21:37:55 <funzo> 5) do packaging build with the automation
+21:38:02 <zaneb> not sure about #2, but yes
+21:38:10 <sdake> we need docs not just a script
+21:38:13 <shadower> having #2 would be nice
+21:38:15 <asalkeld> zaneb, just python docs
+21:38:18 <sdake> that is the problem, docs need to match the script
+21:38:32 <sdake> need docs that humans can read
+21:38:40 <funzo> I think #2 is too much to bite off
+21:38:41 <zaneb> we can start off by keeping them in sync manually
+21:38:48 <funzo> +1
+21:38:53 <shadower> +1
+21:38:55 <sdake> if we keep them in sync manuall ywe are back to test day
+21:39:03 <zaneb> automating the docs can happen down the track a little
+21:39:06 <blomquisg> I think test day is fine for now
+21:39:20 <blomquisg> then, evolve to auto-sync docs
+21:39:23 <sdake> 1.2.3.4.5 6) 1 day test day until docs automated
+21:39:30 <funzo> well, any tiem you add features the change the getting started, we should manually updated it
+21:39:50 <sdake> yes but they are not or may not work
+21:40:00 <blomquisg> if the test script for getting started is all in one script, could use pydoc to generate docs?
+21:40:07 <zaneb> It's much easier to check that the docs match the script than that the whole thing works (without a script)
+21:40:19 <asalkeld> blomquisg, +1
+21:40:25 <funzo> get we get a cross your heart promise from everyone to update the getting started if you change a feature in master that impacts the guide?
+21:40:35 <asalkeld> rm wiki
+21:40:42 <asalkeld> use py docs
+21:40:43 <sdake> lol asalkeld
+21:40:45 <sdake> get off my lawn!
+21:40:48 <blomquisg> :)
+21:40:49 <sdake> pydocs sounds good
+21:40:54 <asalkeld> rm your lawn
+21:40:58 <blomquisg> hahahaha!
+21:41:02 <asalkeld> :)
+21:41:10 <sdake> ok so then new proposal
+21:41:25 <sdake> 1) quickstart guide in script
+21:41:32 <sdake> 2) pydocs match quickstart guide script
+21:41:43 <sdake> 3) machine to run quickstart guide script
+21:41:57 <sdake> 4) automated quickstart guide run
+21:42:07 <asalkeld> need a place to put the pydocs
+21:42:17 <sdake> 5) put pydocs in wiki or git
+21:42:17 <funzo> heat-api.org
+21:42:21 <asalkeld> ya
+21:42:36 <asalkeld> (and automated)
+21:42:43 <asalkeld> so it is updated
+21:42:45 <sdake> ok zaneb can you chew that off over next month?
+21:42:50 <zaneb> that's pretty much what we did with matahari... seemed to work
+21:42:58 <zaneb> sdake: yep, can do
+21:43:02 <sdake> sweet
+21:43:10 <sdake> so if eveyrone agrees with that proposal +  / -
+21:43:14 <asalkeld> +1
+21:43:14 <sdake> +1
+21:43:15 <blomquisg> +1
+21:43:17 <funzo> zaneb: if you just copy the geneated pydocs into the heat-api repo, commit it to git and push
+21:43:18 <zaneb> +1
+21:43:21 <funzo> it's updated on the site
+21:43:31 <funzo> +1
+21:43:40 <shadower> +1
+21:43:50 <jpeeler> +1
+21:43:59 <funzo> #action zaneb to add pydoc generation and push to heat-api.org
+21:44:16 <sdake> #action sdake to find zaneb a permanent build machine
+21:44:40 <funzo> did we decide on kanban?
+21:44:51 <funzo> topic is still sprints vs milestones
+21:44:51 <asalkeld> sounds good
+21:45:02 <funzo> 15 minutes left
+21:45:11 <zaneb> how are sprints and milestones different?
+21:45:38 <funzo> we have been calling every time period bucket for planning a milestone
+21:45:44 <sdake> ok, guys, next week we dont have a solid agenda, lets spend the full hour on the process
+21:45:48 <funzo> and we were basically doing a release every 2 weeks
+21:45:51 <funzo> and it's crazy
+21:46:04 <sdake> come bearing your favorite ;)
+21:46:05 <funzo> ok, we can punt on this
+21:46:07 <sdake> or talk it over in channel
+21:46:25 <asalkeld> seperate release and what we do
+21:46:26 <blomquisg> +1 ... postpone process talk 'til next week
+21:46:29 <funzo> but, I know folks don't like to deal wit hthe process, but we have to be able to tell folks were we are and where we are going to be by x time
+21:46:30 <sdake> +1
+21:46:33 <funzo> +1
+21:46:37 <shadower> +1
+21:46:43 <asalkeld> sure +1
+21:46:46 <zaneb> +1
+21:47:03 <funzo> #action calfonso to put process discussion on next weeks agenda
+21:47:05 <funzo> moving on
+21:47:18 <funzo> #topic 4 Scrum process
+21:47:25 <funzo> #topic 5 M3 Planning / Roadmap discussion
+21:47:40 <sdake> roadmap...  would like some ha
+21:47:47 <funzo> yep
+21:47:55 <asalkeld> haha
+21:48:28 <blomquisg> I hate to bundle too much into next week, but does this belong there too?
+21:48:36 <funzo> asalkeld: and shadower: are going to work on an ha design over the next couple of weeks
+21:48:39 <blomquisg> or, is roadmap separate?
+21:48:39 <funzo> right?
+21:48:47 <asalkeld> sure
+21:48:50 <shadower> yea
+21:48:52 <funzo> we aren't going to get through M3 planning today either
+21:49:03 <sdake> its ok we have plenty to do for this week
+21:49:24 <funzo> since we pushed M2 out a week, proposal to move M3 planning to next monday
+21:49:30 <funzo> + / -?
+21:49:34 <asalkeld> +1
+21:49:37 <sdake> +1
+21:49:39 <funzo> +1
+21:49:49 <funzo> #action calfonso put M3 planning on next monday's meeting
+21:49:57 <funzo> although that means we can't do process for a full hour
+21:50:03 <sdake> asalkeld shadower if you guys could get cracking on ha, i'd super appreciate it with hotsauce on top
+21:50:05 <funzo> we'll just do the two items
+21:50:21 <asalkeld> funzo, we can talk about that on ml too
+21:50:30 <funzo> asalkeld: kk
+21:50:37 <funzo> last item I wante to cover was documentation
+21:50:45 <sdake> any more roadmap ?
+21:51:03 <sdake> tosca?
+21:51:03 <funzo> ok, ha is part of the roadmap
+21:51:10 <funzo> I think no tosca for a while
+21:51:16 <funzo> I think the other aspect is template support
+21:51:23 <asalkeld> users
+21:51:26 <funzo> we are to the point of supporting enough resources to work throiugh stuff
+21:51:32 <funzo> oh right, roles and user security
+21:51:48 <sdake> so good roadmap item would be actual integration with keystone for assignment of heat resources to users
+21:51:49 <asalkeld> correct aws auth
+21:51:50 <blomquisg> users == tying into keystone?
+21:52:03 <asalkeld> what ever it takes
+21:52:06 <funzo> as asalkeld mentioned earlier need to make sure users can't see/do stuff with stuff that isn't theirs
+21:52:09 <funzo> I added an issue for that
+21:52:12 <funzo> it's in the backlog
+21:52:25 <funzo> nova has user role associations
+21:52:32 <funzo> it's in the backlog to investigate
+21:52:47 <funzo> any other items for roadmap?
+21:52:55 <sdake> so we have three roadmap items thus far
+21:53:09 <funzo> 1) template support 2) Ha 3) user security
+21:53:11 <funzo> yes?
+21:53:16 <sdake> ya
+21:53:23 <funzo> those are pretty good sized chunks of function
+21:53:34 <asalkeld> look at most used resource types
+21:53:41 <funzo> yeah
+21:53:45 <asalkeld> and see what we need to implm
+21:53:53 <funzo> +1
+21:54:01 <asalkeld> probably db
+21:54:11 <sdake> +1 with caveat will need add more roadmap items
+21:54:23 <sdake> we should probably schedule a full or half meeting for that in couple weeks too
+21:54:28 <asalkeld> ya
+21:54:31 <funzo> sdake: ya
+21:54:43 <funzo> #action sdake setup roadmap discussion meeting
+21:54:49 <sdake> we can just use this meeting
+21:54:52 <sdake> two weeks from now
+21:54:55 <funzo> kk
+21:55:01 <sdake> or three if two is crazy :)
+21:55:10 <sdake> #undo
+21:55:10 <mheat-bot> Removing item from minutes: <MeetBot.items.Action object at 0x163c710>
+21:55:22 <funzo> Would be nice to talk about that stuff before the m3 planning next week thouigh
+21:55:38 <asalkeld> it might help if we pre-discuss some of these issues on the ml
+21:55:45 <funzo> good idea
+21:55:46 <asalkeld> (yes)
+21:55:55 <sdake> #action all discuss roadmap on mailing list
+21:55:59 <funzo> k
+21:56:08 <sdake> we have three to get started with which are most pressing
+21:56:13 <funzo> ok, 5 minutes left in this hour
+21:56:28 <sdake> quickstart guide for this milestone
+21:56:29 <funzo> just to let folks know, I added tito to the project
+21:56:40 <funzo> I can go through that detail on the list
+21:57:06 <asalkeld> funzo, only thing is there is no packaging stuff in other openstack repos
+21:57:25 <asalkeld> not sure if that is a problem
+21:57:28 <funzo> Is the presence of packaging meta files a bad thing?
+21:57:31 <sdake> i tend to agree with asalkeld tends to stick out
+21:57:47 <blomquisg> should there be a heat-fedora repo?
+21:58:00 <asalkeld> honestly not sure about this
+21:58:26 <funzo> maybe we can get mark's opinion on it?
+21:58:27 <blomquisg> yeah, I'm total noob with how to manage packaging in a nice way with upstream projects
+21:58:32 <funzo> see if he has some recommendations
+21:58:35 <funzo> or russellb
+21:58:44 <sdake> ya lets ask russellb or mark
+21:58:44 <shadower> blomquisg: maybe just a separate branch? Should be easy to merge
+21:58:45 <asalkeld> ya
+21:58:47 <sdake> i'll talk to russel
+21:58:59 <zaneb> in theory the packaging stuff just belongs in fedora
+21:59:01 <blomquisg> shadower: yeah ... good point
+21:59:02 <funzo> #action sdake to talk with russellb about packaing for fedora
+21:59:24 <zaneb> russellb will say to keep it in a separate repo, I'm sure ;)
+21:59:25 <blomquisg> whois mark?
+21:59:36 <funzo> mcloughlin
+21:59:39 <blomquisg> kk
+21:59:43 <funzo> openstack tech lead for bstein
+21:59:47 <sdake> ok anything else left
+22:00:01 <asalkeld> breakfast
+22:00:03 <blomquisg> yep, name resolution for mark failed ... too many names
+22:00:04 <funzo> haha
+22:00:12 <sdake> get some banannas asalkeld :)
+22:00:12 <funzo> ok, let's end this one
+22:00:16 <funzo> #endmeeting

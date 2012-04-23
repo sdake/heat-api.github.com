@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#heat Meeting</title>
+<style type="text/css">
+/* This is for the .html in the HTML2 writer */
+body {
+    font-family: Helvetica, sans-serif;
+    font-size:14px;
+}
+h1 {
+    text-align: center;
+}
+a {
+    color:navy;
+    text-decoration: none;
+    border-bottom:1px dotted navy;
+}
+a:hover {
+    text-decoration:none;
+    border-bottom: 0;
+    color:#0000B9;
+}
+hr {
+    border: 1px solid #ccc;
+}
+/* The (nick, time) item pairs, and other body text things. */
+.details {
+    font-size: 12px;
+    font-weight:bold;
+}
+/* The 'AGREED:', 'IDEA', etc, prefix to lines. */
+.itemtype {
+    font-style: normal;    /* un-italics it */
+    font-weight: bold;
+}
+/* Example: change single item types.  Capitalized command name.
+/* .TOPIC  {  color:navy;  } */
+/* .AGREED {  color:lime;  } */
+
+</style>
+</head>
+
+<body>
+<h1>#heat Meeting</h1>
+<span class="details">
+Meeting started by funzo at 20:58:58 UTC
+(<a href="heat.2012-04-23-20.58.log.html">full logs</a>).</span>
+
+<br><br>
+
+
+
+<h3>Meeting summary</h3>
+<ol>
+<li><b class="TOPIC">heat weekly coordination meeting</b> <span class="details">(<a href='heat.2012-04-23-20.58.log.html#l-6'>funzo</a>, 20:59:56)</span>
+<ol type="a">
+  <li><i class="itemtype">AGREED</i>: <span class="AGREED">on agenda
+    mentioned above</span> <span class="details">(<a
+    href='heat.2012-04-23-20.58.log.html#l-42'>funzo</a>,
+    21:04:26)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">1- Development process</b> <span class="details">(<a href='heat.2012-04-23-20.58.log.html#l-44'>funzo</a>, 21:04:40)</span>
+<ol type="a">
+  <li><i class="itemtype">AGREED</i>: <span class="AGREED">5 week
+    development cycle with 4-9 days of testing and bug fixing along with
+    a test day</span> <span class="details">(<a
+    href='heat.2012-04-23-20.58.log.html#l-120'>funzo</a>,
+    21:14:54)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">2 - Blocking development issues</b> <span class="details">(<a href='heat.2012-04-23-20.58.log.html#l-122'>funzo</a>, 21:15:13)</span>
+<ol type="a">
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">calfonso
+    change milestone numbering in github to match the code
+    version</span> <span class="details">(<a
+    href='heat.2012-04-23-20.58.log.html#l-163'>funzo</a>,
+    21:21:34)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">3 - Roadmap items</b> <span class="details">(<a href='heat.2012-04-23-20.58.log.html#l-175'>funzo</a>, 21:22:40)</span>
+<ol type="a">
+  <li><a
+    href="https://github.com/heat-api/heat/wiki/Roadmap-Feature:-Associate-users-with-templates-using-keystone">https://github.com/heat-api/heat/wiki/Roadmap-Feature:-Associate-users-with-templates-using-keystone</a>
+    <span class="details">(<a
+    href='heat.2012-04-23-20.58.log.html#l-199'>sdake</a>,
+    21:26:35)</span></li>
+  <li><a
+    href="https://bugs.launchpad.net/keystone/+bug/947011">https://bugs.launchpad.net/keystone/+bug/947011</a>
+    added to essex <span class="details">(<a
+    href='heat.2012-04-23-20.58.log.html#l-243'>funzo</a>,
+    21:34:13)</span></li>
+  <li><i class="itemtype">AGREED</i>: <span class="AGREED">jpeeler,
+    slower, shardy to work on auth design to sort out issues 91, 92, and
+    https://github.com/heat-api/heat/wiki/Roadmap-Feature:-Associate-users-with-templates-using-keystone</span>
+    <span class="details">(<a
+    href='heat.2012-04-23-20.58.log.html#l-266'>sdake</a>,
+    21:38:22)</span></li>
+  <li><a
+    href="https://github.com/heat-api/heat/issues/36">https://github.com/heat-api/heat/issues/36</a>
+    <span class="details">(<a
+    href='heat.2012-04-23-20.58.log.html#l-308'>sdake</a>,
+    21:44:53)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">ci + test</b> <span class="details">(<a href='heat.2012-04-23-20.58.log.html#l-327'>funzo</a>, 21:47:09)</span>
+<ol type="a">
+  <li><a
+    href="https://github.com/heat-api/heat/wiki/Roadmap-Feature:-Test-Infrastructure-&amp;-Cases">https://github.com/heat-api/heat/wiki/Roadmap-Feature:-Test-Infrastructure-&amp;-Cases</a>
+    <span class="details">(<a
+    href='heat.2012-04-23-20.58.log.html#l-356'>sdake</a>,
+    21:52:46)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">calfonso
+    update
+    https://github.com/heat-api/heat/wiki/Roadmap-Feature:-Test-Infrastructure-&amp;-Cases
+    with the test stuff merged into master</span> <span
+    class="details">(<a
+    href='heat.2012-04-23-20.58.log.html#l-357'>funzo</a>,
+    21:53:04)</span></li>
+  <li><a href="lists.heat-api.org:8080">lists.heat-api.org:8080</a>
+    <span class="details">(<a
+    href='heat.2012-04-23-20.58.log.html#l-423'>sdake</a>,
+    22:00:41)</span></li>
+</ol>
+</li>
+</ol>
+<br><br>
+
+
+
+<span class="details">
+Meeting ended at 22:01:20 UTC
+(<a href="heat.2012-04-23-20.58.log.html">full logs</a>).</span>
+
+<br><br>
+
+
+
+<h3>Action items</h3>
+<ol>
+  <li>calfonso change milestone numbering in github to match the code version</li>
+  <li>calfonso update https://github.com/heat-api/heat/wiki/Roadmap-Feature:-Test-Infrastructure-&amp;-Cases with the test stuff merged into master</li>
+</ol>
+<br><br>
+
+
+
+<h3>People present (lines said)</h3>
+<ol>
+  <li>funzo (174)</li>
+  <li>sdake (126)</li>
+  <li>asalkeld (63)</li>
+  <li>Slower (35)</li>
+  <li>zaneb (19)</li>
+  <li>shadower (8)</li>
+  <li>mheat-bot` (4)</li>
+  <li>blomquisg (0)</li>
+  <li>shardy (0)</li>
+  <li>jpeeler (0)</li>
+</ol>
+<br><br>
+
+
+
+<span class="details">Generated by <a href="http://wiki.debian.org/MeetBot">MeetBot</a> 0.1.4.</span>
+</body></html>

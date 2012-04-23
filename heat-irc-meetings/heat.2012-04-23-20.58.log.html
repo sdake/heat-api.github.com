@@ -1,0 +1,456 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#heat log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">20:58:58</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">20:58:58</span><span class="nk"> &lt;mheat-bot`&gt;</span> Meeting started Mon Apr 23 20:58:58 2012 UTC.  The chair is funzo. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">20:58:58</span><span class="nk"> &lt;mheat-bot`&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">20:59:35</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#chair </span><span class="cmdline">asalkeld blomquisg funzo jpeeler sdake Slower shardy</span>
+<a name="l-5"></a><span class="tm">20:59:35</span><span class="nk"> &lt;mheat-bot`&gt;</span> Current chairs: Slower asalkeld blomquisg funzo jpeeler sdake shardy
+<a name="l-6"></a><span class="tm">20:59:56</span><span class="nk"> &lt;funzo&gt;</span> <span class="topic">#topic </span><span class="topicline">heat weekly coordination meeting</span>
+<a name="l-7"></a><span class="tm">21:00:18</span><span class="nk"> &lt;funzo&gt;</span> proposed agenda items, work out the process discussion that we didn't get to last week
+<a name="l-8"></a><span class="tm">21:00:41</span><span class="nk"> &lt;funzo&gt;</span> sdake sent out a proposal of a 5 week cycle, I didn't see any counter proposals
+<a name="l-9"></a><span class="tm">21:00:47</span><span class="nk"> &lt;sdake&gt;</span> perhhaps bit of roadmap if that doesn't take up full agenda
+<a name="l-10"></a><span class="tm">21:00:50</span><span class="nk"> &lt;funzo&gt;</span> were there any other agenda items?
+<a name="l-11"></a><span class="tm">21:01:10</span><span class="nk"> &lt;funzo&gt;</span> I can also cover any questions around the test framework that was merged yesterday
+<a name="l-12"></a><span class="tm">21:01:20</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#chair </span><span class="cmdline">zaneb</span>
+<a name="l-13"></a><span class="tm">21:01:20</span><span class="nk"> &lt;mheat-bot`&gt;</span> Current chairs: Slower asalkeld blomquisg funzo jpeeler sdake shardy zaneb
+<a name="l-14"></a><span class="tm">21:01:37</span><span class="nk"> &lt;shadower&gt;</span> <span class="hi">funzo:</span> chair is a meeting attendee, right?
+<a name="l-15"></a><span class="tm">21:01:41</span><span class="nk"> &lt;sdake&gt;</span> just a general test/ci
+<a name="l-16"></a><span class="tm">21:01:51</span><span class="nk"> &lt;sdake&gt;</span> chair can operate the bot, anyone can participate in the meeting
+<a name="l-17"></a><span class="tm">21:01:54</span><span class="nk"> &lt;funzo&gt;</span> chair is allowed to issue meeting bot commands
+<a name="l-18"></a><span class="tm">21:01:55</span><span class="nk"> &lt;funzo&gt;</span> right
+<a name="l-19"></a><span class="tm">21:02:01</span><span class="nk"> &lt;shadower&gt;</span> ah git it
+<a name="l-20"></a><span class="tm">21:02:04</span><span class="nk"> &lt;funzo&gt;</span> see http://meetbot.debian.net/Manual.html#tutorial
+<a name="l-21"></a><span class="tm">21:02:04</span><span class="nk"> &lt;shadower&gt;</span> got
+<a name="l-22"></a><span class="tm">21:02:26</span><span class="nk"> &lt;funzo&gt;</span> we should also cover any blocking issues that require assistance
+<a name="l-23"></a><span class="tm">21:02:33</span><span class="nk"> &lt;sdake&gt;</span> anyone have any other agenda items?
+<a name="l-24"></a><span class="tm">21:03:22</span><span class="nk"> &lt;funzo&gt;</span> ok, so agenda is:
+<a name="l-25"></a><span class="tm">21:03:22</span><span class="nk"> &lt;funzo&gt;</span> Agenda:
+<a name="l-26"></a><span class="tm">21:03:22</span><span class="nk"> &lt;funzo&gt;</span> 1- Development process
+<a name="l-27"></a><span class="tm">21:03:22</span><span class="nk"> &lt;funzo&gt;</span> - proposal 5 week
+<a name="l-28"></a><span class="tm">21:03:22</span><span class="nk"> &lt;funzo&gt;</span> 2 - Blocking development issues
+<a name="l-29"></a><span class="tm">21:03:25</span><span class="nk"> &lt;funzo&gt;</span> 3 - Roadmap items
+<a name="l-30"></a><span class="tm">21:03:29</span><span class="nk"> &lt;funzo&gt;</span> +/1
+<a name="l-31"></a><span class="tm">21:03:36</span><span class="nk"> &lt;funzo&gt;</span> +/- 1
+<a name="l-32"></a><span class="tm">21:03:42</span><span class="nk"> &lt;shadower&gt;</span> +1
+<a name="l-33"></a><span class="tm">21:03:43</span><span class="nk"> &lt;sdake&gt;</span> 4. test / ci
+<a name="l-34"></a><span class="tm">21:03:45</span><span class="nk"> &lt;sdake&gt;</span> +1
+<a name="l-35"></a><span class="tm">21:03:50</span><span class="nk"> &lt;asalkeld&gt;</span> sure
+<a name="l-36"></a><span class="tm">21:04:08</span><span class="nk"> &lt;zaneb&gt;</span> +1
+<a name="l-37"></a><span class="tm">21:04:09</span><span class="nk"> &lt;funzo&gt;</span> and packaging...prolly
+<a name="l-38"></a><span class="tm">21:04:17</span><span class="nk"> &lt;funzo&gt;</span> as part of 4
+<a name="l-39"></a><span class="tm">21:04:20</span><span class="nk"> &lt;funzo&gt;</span> +1
+<a name="l-40"></a><span class="tm">21:04:23</span><span class="nk"> &lt;sdake&gt;</span> sounds good
+<a name="l-41"></a><span class="tm">21:04:23</span><span class="nk"> &lt;Slower&gt;</span> +1
+<a name="l-42"></a><span class="tm">21:04:26</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">on agenda mentioned above</span>
+<a name="l-43"></a><span class="tm">21:04:30</span><span class="nk"> &lt;funzo&gt;</span> let's jump into it
+<a name="l-44"></a><span class="tm">21:04:40</span><span class="nk"> &lt;funzo&gt;</span> <span class="topic">#topic </span><span class="topicline">1- Development process</span>
+<a name="l-45"></a><span class="tm">21:05:05</span><span class="nk"> &lt;sdake&gt;</span> sdake had a proposal on the mailing list
+<a name="l-46"></a><span class="tm">21:05:08</span><span class="nk"> &lt;sdake&gt;</span> (3rd person ftw)
+<a name="l-47"></a><span class="tm">21:05:17</span><span class="nk"> &lt;funzo&gt;</span> Ok, the purpose of proposing a somewhat structure process is so we can anticipate the timing of a release and what's going to be in it without killing ourselves
+<a name="l-48"></a><span class="tm">21:05:22</span><span class="nk"> &lt;sdake&gt;</span> anyone not have a chance to read?
+<a name="l-49"></a><span class="tm">21:05:43</span><span class="nk"> &lt;funzo&gt;</span> also need to be able to report on how we are doing healthwise
+<a name="l-50"></a><span class="tm">21:05:44</span><span class="nk"> &lt;funzo&gt;</span> yes
+<a name="l-51"></a><span class="tm">21:05:52</span><span class="nk"> &lt;funzo&gt;</span> the proposal was a 5 week cycle I believe
+<a name="l-52"></a><span class="tm">21:05:58</span><span class="nk"> &lt;sdake&gt;</span> so in summary
+<a name="l-53"></a><span class="tm">21:06:07</span><span class="nk"> &lt;funzo&gt;</span> for the past decade I've only really used the scrum process
+<a name="l-54"></a><span class="tm">21:06:13</span><span class="nk"> &lt;funzo&gt;</span> I'm open to changes though
+<a name="l-55"></a><span class="tm">21:06:24</span><span class="nk"> &lt;sdake&gt;</span> 5 week dev cycle, 1 day test day, 4-9 days of bug fixes, until we get continuous integration rolling, then we can go to agile
+<a name="l-56"></a><span class="tm">21:06:41</span><span class="nk"> &lt;zaneb&gt;</span> so, I don't think that anyone disagrees that 2 week iterations are too short atm
+<a name="l-57"></a><span class="tm">21:06:42</span><span class="nk"> &lt;Slower&gt;</span> 1 day test day?
+<a name="l-58"></a><span class="tm">21:06:53</span><span class="nk"> &lt;zaneb&gt;</span> but 5 weeks seems very long
+<a name="l-59"></a><span class="tm">21:06:55</span><span class="nk"> &lt;funzo&gt;</span> sort of depends on what we call an iteration
+<a name="l-60"></a><span class="tm">21:07:09</span><span class="nk"> &lt;sdake&gt;</span> ya, write down a test plan all devs run through each test case
+<a name="l-61"></a><span class="tm">21:07:13</span><span class="nk"> &lt;funzo&gt;</span> I've worked on lots of projects in 2 week iterations
+<a name="l-62"></a><span class="tm">21:07:27</span><span class="nk"> &lt;Slower&gt;</span> <span class="hi">sdake:</span> and we keep doing that through the 4-9 days of bug fixes I presume?
+<a name="l-63"></a><span class="tm">21:07:30</span><span class="nk"> &lt;sdake&gt;</span> 2 week iteration is good if ci is in place
+<a name="l-64"></a><span class="tm">21:07:34</span><span class="nk"> &lt;funzo&gt;</span> but that involves taking hours to do sprint planning (a sprint == 2 weeks)
+<a name="l-65"></a><span class="tm">21:07:39</span><span class="nk"> &lt;sdake&gt;</span> slower atm we have been
+<a name="l-66"></a><span class="tm">21:07:48</span><span class="nk"> &lt;Slower&gt;</span> ya ok
+<a name="l-67"></a><span class="tm">21:08:08</span><span class="nk"> &lt;sdake&gt;</span> funzo we really need ci to do agile properly
+<a name="l-68"></a><span class="tm">21:08:14</span><span class="nk"> &lt;funzo&gt;</span> <span class="hi">sdake:</span> I agree
+<a name="l-69"></a><span class="tm">21:08:25</span><span class="nk"> &lt;Slower&gt;</span> I think we should try to keep integrations tight in the meantime too (basically don't break the tree, integrate early when possible etc)
+<a name="l-70"></a><span class="tm">21:08:29</span><span class="nk"> &lt;funzo&gt;</span> well, it certainly makes it easier to manage
+<a name="l-71"></a><span class="tm">21:08:44</span><span class="nk"> &lt;zaneb&gt;</span> I'm not sure we're far away from having at least some basic ci happening
+<a name="l-72"></a><span class="tm">21:08:48</span><span class="nk"> &lt;asalkeld&gt;</span> how about we set the time depending on the content
+<a name="l-73"></a><span class="tm">21:08:56</span><span class="nk"> &lt;funzo&gt;</span> well, the ci infrastructure is part of it, we need test coverage
+<a name="l-74"></a><span class="tm">21:09:12</span><span class="nk"> &lt;sdake&gt;</span> the goal of this "sprint" is test cases + ci infrastructure in place
+<a name="l-75"></a><span class="tm">21:09:19</span><span class="nk"> &lt;funzo&gt;</span> and honestly, with test coverage, ci is just a nice way to notify you of health
+<a name="l-76"></a><span class="tm">21:09:23</span><span class="nk"> &lt;funzo&gt;</span> yep yep
+<a name="l-77"></a><span class="tm">21:09:39</span><span class="nk"> &lt;funzo&gt;</span> because developers should be running tests, add tests + make changes, run tests
+<a name="l-78"></a><span class="tm">21:09:50</span><span class="nk"> &lt;Slower&gt;</span> <span class="hi">sdake:</span> and that ends in 5 weeks?
+<a name="l-79"></a><span class="tm">21:09:56</span><span class="nk"> &lt;sdake&gt;</span> 2 weeks
+<a name="l-80"></a><span class="tm">21:09:58</span><span class="nk"> &lt;funzo&gt;</span> ok, so to the point, I am in favor of the 5 weeks for now
+<a name="l-81"></a><span class="tm">21:09:58</span><span class="nk"> &lt;Slower&gt;</span> ok
+<a name="l-82"></a><span class="tm">21:10:07</span><span class="nk"> &lt;Slower&gt;</span> so basically 5 weeks till release
+<a name="l-83"></a><span class="tm">21:10:17</span><span class="nk"> &lt;zaneb&gt;</span> is part of the problem that we don't have any dedicated test engineers working on this?
+<a name="l-84"></a><span class="tm">21:10:20</span><span class="nk"> &lt;funzo&gt;</span> and when we get decent test coverage, we readdress if needed
+<a name="l-85"></a><span class="tm">21:10:28</span><span class="nk"> &lt;funzo&gt;</span> <span class="hi">zaneb:</span> no, I don't think so
+<a name="l-86"></a><span class="tm">21:10:30</span><span class="nk"> &lt;sdake&gt;</span> zaneb we are the test engineers
+<a name="l-87"></a><span class="tm">21:10:32</span><span class="nk"> &lt;funzo&gt;</span> we just need tests
+<a name="l-88"></a><span class="tm">21:10:34</span><span class="nk"> &lt;funzo&gt;</span> right
+<a name="l-89"></a><span class="tm">21:10:36</span><span class="nk"> &lt;Slower&gt;</span> we have some shorter 'sprints' but then at 5 weeks we do full testing/hardening and a release?
+<a name="l-90"></a><span class="tm">21:10:56</span><span class="nk"> &lt;zaneb&gt;</span> well, I agree with what Slower said on the ML
+<a name="l-91"></a><span class="tm">21:10:57</span><span class="nk"> &lt;sdake&gt;</span> ya slower that works for me
+<a name="l-92"></a><span class="tm">21:11:06</span><span class="nk"> &lt;Slower&gt;</span> that sounds good to me
+<a name="l-93"></a><span class="tm">21:11:14</span><span class="nk"> &lt;zaneb&gt;</span> automated tests are not a substitute for test engineers
+<a name="l-94"></a><span class="tm">21:11:15</span><span class="nk"> &lt;sdake&gt;</span> its the 2 week release cycle that is troublesome
+<a name="l-95"></a><span class="tm">21:11:24</span><span class="nk"> &lt;funzo&gt;</span> <span class="hi">zaneb:</span> disagree
+<a name="l-96"></a><span class="tm">21:11:46</span><span class="nk"> &lt;asalkeld&gt;</span> funzo, zaneb it depends on the tests
+<a name="l-97"></a><span class="tm">21:11:50</span><span class="nk"> &lt;zaneb&gt;</span> <span class="hi">funzo:</span> I'm not saying that automated tests aren't good
+<a name="l-98"></a><span class="tm">21:12:02</span><span class="nk"> &lt;funzo&gt;</span> what shouldn't be automated?
+<a name="l-99"></a><span class="tm">21:12:09</span><span class="nk"> &lt;zaneb&gt;</span> they're obviously an asset
+<a name="l-100"></a><span class="tm">21:12:10</span><span class="nk"> &lt;funzo&gt;</span> we are probably just talking semantics
+<a name="l-101"></a><span class="tm">21:12:26</span><span class="nk"> &lt;asalkeld&gt;</span> funzo, as much as possible
+<a name="l-102"></a><span class="tm">21:12:27</span><span class="nk"> &lt;sdake&gt;</span> the issue at hand is the 2 week cycle
+<a name="l-103"></a><span class="tm">21:12:29</span><span class="nk"> &lt;funzo&gt;</span> we all have the skill sets to automate tests, both functional and unit
+<a name="l-104"></a><span class="tm">21:12:45</span><span class="nk"> &lt;sdake&gt;</span> 2 week release cycle that is
+<a name="l-105"></a><span class="tm">21:12:48</span><span class="nk"> &lt;funzo&gt;</span> right and the rest that isn't automated, we expect people to slave away on each release?
+<a name="l-106"></a><span class="tm">21:12:53</span><span class="nk"> &lt;funzo&gt;</span> someone *else*
+<a name="l-107"></a><span class="tm">21:13:04</span><span class="nk"> &lt;Slower&gt;</span> <span class="hi">funzo:</span> no I expect us all to do it :)
+<a name="l-108"></a><span class="tm">21:13:23</span><span class="nk"> &lt;sdake&gt;</span> ya sdake needs to get out on the weekends :)
+<a name="l-109"></a><span class="tm">21:13:50</span><span class="nk"> &lt;funzo&gt;</span> ok, for to address the topic, everyone cool with the 5 weeks cycle?
+<a name="l-110"></a><span class="tm">21:14:08</span><span class="nk"> &lt;asalkeld&gt;</span> in short term +1
+<a name="l-111"></a><span class="tm">21:14:11</span><span class="nk"> &lt;funzo&gt;</span> we can address project resources at another time, I think
+<a name="l-112"></a><span class="tm">21:14:11</span><span class="nk"> &lt;Slower&gt;</span> yep
+<a name="l-113"></a><span class="tm">21:14:12</span><span class="nk"> &lt;sdake&gt;</span> remember, this is temporary until we have a good ci
+<a name="l-114"></a><span class="tm">21:14:13</span><span class="nk"> &lt;Slower&gt;</span> +1
+<a name="l-115"></a><span class="tm">21:14:19</span><span class="nk"> &lt;sdake&gt;</span> +1
+<a name="l-116"></a><span class="tm">21:14:25</span><span class="nk"> &lt;funzo&gt;</span> +1
+<a name="l-117"></a><span class="tm">21:14:34</span><span class="nk"> &lt;Slower&gt;</span> even with good ci we might not want to release too often..
+<a name="l-118"></a><span class="tm">21:14:51</span><span class="nk"> &lt;Slower&gt;</span> but I'm easy
+<a name="l-119"></a><span class="tm">21:14:52</span><span class="nk"> &lt;sdake&gt;</span> perhaps but we can revisit at the point we have good ci
+<a name="l-120"></a><span class="tm">21:14:54</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">5 week development cycle with 4-9 days of testing and bug fixing along with a test day</span>
+<a name="l-121"></a><span class="tm">21:14:56</span><span class="nk"> &lt;Slower&gt;</span> ya
+<a name="l-122"></a><span class="tm">21:15:13</span><span class="nk"> &lt;funzo&gt;</span> <span class="topic">#topic </span><span class="topicline">2 - Blocking development issues</span>
+<a name="l-123"></a><span class="tm">21:15:29</span><span class="nk"> &lt;sdake&gt;</span> so v2 was released sunday
+<a name="l-124"></a><span class="tm">21:15:30</span><span class="nk"> &lt;funzo&gt;</span> ok, time to talk about any blocking issues that require general discussion
+<a name="l-125"></a><span class="tm">21:15:36</span><span class="nk"> &lt;funzo&gt;</span> <span class="hi">sdake:</span> thanks for seeing that through
+<a name="l-126"></a><span class="tm">21:15:40</span><span class="nk"> &lt;sdake&gt;</span> that includes all the hard work of everyone
+<a name="l-127"></a><span class="tm">21:15:51</span><span class="nk"> &lt;sdake&gt;</span> the tag includes the changes
+<a name="l-128"></a><span class="tm">21:16:10</span><span class="nk"> &lt;funzo&gt;</span> yeah, I think a congrats is in order to the team, excellent contributions by everyone on the team
+<a name="l-129"></a><span class="tm">21:16:16</span><span class="nk"> &lt;funzo&gt;</span> "virtual team"
+<a name="l-130"></a><span class="tm">21:16:26</span><span class="nk"> &lt;sdake&gt;</span> ya +1 to all the devs :)
+<a name="l-131"></a><span class="tm">21:17:07</span><span class="nk"> &lt;funzo&gt;</span> the issues list still has a few m1 issues assigned
+<a name="l-132"></a><span class="tm">21:17:21</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#96, </span><span class="cmdline">93, and 45</span>
+<a name="l-133"></a><span class="tm">21:17:22</span><span class="nk"> &lt;sdake&gt;</span> they are probably mislabeled
+<a name="l-134"></a><span class="tm">21:17:33</span><span class="nk"> &lt;funzo&gt;</span> describe issues
+<a name="l-135"></a><span class="tm">21:18:00</span><span class="nk"> &lt;Slower&gt;</span> <span class="hi">sdake:</span> no more releases on a sunday tho eh? :)
+<a name="l-136"></a><span class="tm">21:18:04</span><span class="nk"> &lt;funzo&gt;</span> I moved the wiki gardening out because of the general unending nature of the issue
+<a name="l-137"></a><span class="tm">21:18:19</span><span class="nk"> &lt;funzo&gt;</span> the the describe issues supposed to be in m2?
+<a name="l-138"></a><span class="tm">21:18:37</span><span class="nk"> &lt;sdake&gt;</span> i cleared 96
+<a name="l-139"></a><span class="tm">21:18:50</span><span class="nk"> &lt;funzo&gt;</span> k, and 93?
+<a name="l-140"></a><span class="tm">21:19:00</span><span class="nk"> &lt;sdake&gt;</span> cleared 93
+<a name="l-141"></a><span class="tm">21:19:08</span><span class="nk"> &lt;funzo&gt;</span> by cleared, were they closed?
+<a name="l-142"></a><span class="tm">21:19:47</span><span class="nk"> &lt;sdake&gt;</span> no, just cleared them, they were not blockers more like "should behave differently"
+<a name="l-143"></a><span class="tm">21:19:51</span><span class="nk"> &lt;sdake&gt;</span> 45 will remain open forever ;)
+<a name="l-144"></a><span class="tm">21:19:55</span><span class="nk"> &lt;funzo&gt;</span> right
+<a name="l-145"></a><span class="tm">21:20:05</span><span class="nk"> &lt;funzo&gt;</span> ok, so any other blocking issues for what folks are currently working on?
+<a name="l-146"></a><span class="tm">21:20:06</span><span class="nk"> &lt;sdake&gt;</span> i can describe quickly ;)
+<a name="l-147"></a><span class="tm">21:20:11</span><span class="nk"> &lt;funzo&gt;</span> we should be picking up issues for M2 now
+<a name="l-148"></a><span class="tm">21:20:24</span><span class="nk"> &lt;asalkeld&gt;</span> sdake, no point in #45
+<a name="l-149"></a><span class="tm">21:20:25</span><span class="nk"> &lt;sdake&gt;</span> if there is a two instance deployable, the first instance starts, output outputs wrong value
+<a name="l-150"></a><span class="tm">21:20:29</span><span class="nk"> &lt;funzo&gt;</span> oh, quick question....since the poc took version #1, we are currently working on version 3, but the mileston is #2
+<a name="l-151"></a><span class="tm">21:20:35</span><span class="nk"> &lt;funzo&gt;</span> this seems kinda confusing to me
+<a name="l-152"></a><span class="tm">21:20:39</span><span class="nk"> &lt;funzo&gt;</span> would be nice to sync them up
+<a name="l-153"></a><span class="tm">21:20:48</span><span class="nk"> &lt;sdake&gt;</span> ya lets just drop m1/m2/m3 tag
+<a name="l-154"></a><span class="tm">21:20:56</span><span class="nk"> &lt;sdake&gt;</span> or sync them
+<a name="l-155"></a><span class="tm">21:20:57</span><span class="nk"> &lt;funzo&gt;</span> ok, great, I will relabel
+<a name="l-156"></a><span class="tm">21:21:04</span><span class="nk"> &lt;funzo&gt;</span> let's keep the version that is in the code
+<a name="l-157"></a><span class="tm">21:21:07</span><span class="nk"> &lt;funzo&gt;</span> 3 right now
+<a name="l-158"></a><span class="tm">21:21:10</span><span class="nk"> &lt;sdake&gt;</span> ya
+<a name="l-159"></a><span class="tm">21:21:12</span><span class="nk"> &lt;funzo&gt;</span> and make our milestones in github match
+<a name="l-160"></a><span class="tm">21:21:15</span><span class="nk"> &lt;Slower&gt;</span> sounds good
+<a name="l-161"></a><span class="tm">21:21:20</span><span class="nk"> &lt;funzo&gt;</span> I'm easily confused
+<a name="l-162"></a><span class="tm">21:21:20</span><span class="nk"> &lt;sdake&gt;</span> +1
+<a name="l-163"></a><span class="tm">21:21:34</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#action </span><span class="cmdline">calfonso change milestone numbering in github to match the code version</span>
+<a name="l-164"></a><span class="tm">21:21:41</span><span class="nk"> &lt;asalkeld&gt;</span> +1
+<a name="l-165"></a><span class="tm">21:21:49</span><span class="nk"> &lt;funzo&gt;</span> ok, any other technical issues that need to be discussed in this meeting?
+<a name="l-166"></a><span class="tm">21:21:57</span><span class="nk"> &lt;asalkeld&gt;</span> client
+<a name="l-167"></a><span class="tm">21:21:58</span><span class="nk"> &lt;asalkeld&gt;</span> ?
+<a name="l-168"></a><span class="tm">21:21:58</span><span class="nk"> &lt;sdake&gt;</span> roadmap
+<a name="l-169"></a><span class="tm">21:22:01</span><span class="nk"> &lt;funzo&gt;</span> if not, we can start talking about roadmap
+<a name="l-170"></a><span class="tm">21:22:11</span><span class="nk"> &lt;sdake&gt;</span> client = roadmap?
+<a name="l-171"></a><span class="tm">21:22:13</span><span class="nk"> &lt;funzo&gt;</span> <span class="hi">asalkeld:</span> what's specifically about client
+<a name="l-172"></a><span class="tm">21:22:23</span><span class="nk"> &lt;asalkeld&gt;</span> 92
+<a name="l-173"></a><span class="tm">21:22:30</span><span class="nk"> &lt;sdake&gt;</span> lets switch to roadmap, then we ca ntalk about client firzt
+<a name="l-174"></a><span class="tm">21:22:36</span><span class="nk"> &lt;asalkeld&gt;</span> sure
+<a name="l-175"></a><span class="tm">21:22:40</span><span class="nk"> &lt;funzo&gt;</span> <span class="topic">#topic </span><span class="topicline">3 - Roadmap items</span>
+<a name="l-176"></a><span class="tm">21:22:52</span><span class="nk"> &lt;asalkeld&gt;</span> issue 92 and 93
+<a name="l-177"></a><span class="tm">21:23:14</span><span class="nk"> &lt;asalkeld&gt;</span> so I think we need to have heat use boto
+<a name="l-178"></a><span class="tm">21:23:18</span><span class="nk"> &lt;sdake&gt;</span> 93 is a describe issue
+<a name="l-179"></a><span class="tm">21:23:32</span><span class="nk"> &lt;asalkeld&gt;</span> oops 91
+<a name="l-180"></a><span class="tm">21:23:38</span><span class="nk"> &lt;shadower&gt;</span> <span class="hi">asalkeld:</span> +1 on boto-
+<a name="l-181"></a><span class="tm">21:23:57</span><span class="nk"> &lt;zaneb&gt;</span> yeah, +1
+<a name="l-182"></a><span class="tm">21:24:00</span><span class="nk"> &lt;shadower&gt;</span> would help us make sure we're really compatible
+<a name="l-183"></a><span class="tm">21:24:12</span><span class="nk"> &lt;asalkeld&gt;</span> and openstack do not export clients for aws api
+<a name="l-184"></a><span class="tm">21:24:22</span><span class="nk"> &lt;sdake&gt;</span> 91 looks good
+<a name="l-185"></a><span class="tm">21:24:34</span><span class="nk"> &lt;asalkeld&gt;</span> so I don't see the point in that
+<a name="l-186"></a><span class="tm">21:24:55</span><span class="nk"> &lt;sdake&gt;</span> one question i would have is how do we associate 91 with keystone creds outside of keystone
+<a name="l-187"></a><span class="tm">21:25:24</span><span class="nk"> &lt;Slower&gt;</span> are we getting the api mixed up?
+<a name="l-188"></a><span class="tm">21:25:26</span><span class="nk"> &lt;asalkeld&gt;</span> the same way nova does
+<a name="l-189"></a><span class="tm">21:25:34</span><span class="nk"> &lt;Slower&gt;</span> keystone is for native apis?
+<a name="l-190"></a><span class="tm">21:25:40</span><span class="nk"> &lt;asalkeld&gt;</span> yes
+<a name="l-191"></a><span class="tm">21:25:48</span><span class="nk"> &lt;Slower&gt;</span> but aws apis use different auth method?
+<a name="l-192"></a><span class="tm">21:25:55</span><span class="nk"> &lt;asalkeld&gt;</span> yes
+<a name="l-193"></a><span class="tm">21:26:02</span><span class="nk"> &lt;asalkeld&gt;</span> they have to
+<a name="l-194"></a><span class="tm">21:26:07</span><span class="nk"> &lt;Slower&gt;</span> yeah
+<a name="l-195"></a><span class="tm">21:26:08</span><span class="nk"> &lt;asalkeld&gt;</span> different api
+<a name="l-196"></a><span class="tm">21:26:14</span><span class="nk"> &lt;Slower&gt;</span> so we are doing an aws api here right?
+<a name="l-197"></a><span class="tm">21:26:18</span><span class="nk"> &lt;sdake&gt;</span> we have a roadmap item this intersects with
+<a name="l-198"></a><span class="tm">21:26:35</span><span class="nk"> &lt;asalkeld&gt;</span> ok, what's that
+<a name="l-199"></a><span class="tm">21:26:35</span><span class="nk"> &lt;sdake&gt;</span> https://github.com/heat-api/heat/wiki/Roadmap-Feature:-Associate-users-with-templates-using-keystone
+<a name="l-200"></a><span class="tm">21:26:43</span><span class="nk"> &lt;Slower&gt;</span> I haven't looked at how nova handles auth
+<a name="l-201"></a><span class="tm">21:26:52</span><span class="nk"> &lt;asalkeld&gt;</span> not really - that's db
+<a name="l-202"></a><span class="tm">21:27:01</span><span class="nk"> &lt;asalkeld&gt;</span> this is cli + api
+<a name="l-203"></a><span class="tm">21:27:03</span><span class="nk"> &lt;Slower&gt;</span> well we somehow have to know the user making the request
+<a name="l-204"></a><span class="tm">21:27:21</span><span class="nk"> &lt;asalkeld&gt;</span> unless you want to roll them together
+<a name="l-205"></a><span class="tm">21:27:29</span><span class="nk"> &lt;asalkeld&gt;</span> but no need to
+<a name="l-206"></a><span class="tm">21:27:49</span><span class="nk"> &lt;Slower&gt;</span> it intersects with user identification
+<a name="l-207"></a><span class="tm">21:27:51</span><span class="nk"> &lt;sdake&gt;</span> so example:
+<a name="l-208"></a><span class="tm">21:28:13</span><span class="nk"> &lt;sdake&gt;</span> user A has stack, user B has stack, how does that get mapped to a keystone user?
+<a name="l-209"></a><span class="tm">21:28:26</span><span class="nk"> &lt;asalkeld&gt;</span> yip
+<a name="l-210"></a><span class="tm">21:28:57</span><span class="nk"> &lt;asalkeld&gt;</span> so in engine we need to do equiverlent to what nova does
+<a name="l-211"></a><span class="tm">21:29:14</span><span class="nk"> &lt;asalkeld&gt;</span> sdake, haven't looked at the details
+<a name="l-212"></a><span class="tm">21:29:27</span><span class="nk"> &lt;sdake&gt;</span> jpeeler and slower looking at details atm
+<a name="l-213"></a><span class="tm">21:29:29</span><span class="nk"> &lt;asalkeld&gt;</span> but obviously possible
+<a name="l-214"></a><span class="tm">21:29:32</span><span class="nk"> &lt;Slower&gt;</span> we could lump those together..
+<a name="l-215"></a><span class="tm">21:29:43</span><span class="nk"> &lt;Slower&gt;</span> authentication + per-user templates
+<a name="l-216"></a><span class="tm">21:29:51</span><span class="nk"> &lt;funzo&gt;</span> I think what asalkeld is saying is that when the client makes the call to heat, we want to do something similar to http://code.google.com/p/boto/wiki/BotoConfig
+<a name="l-217"></a><span class="tm">21:29:55</span><span class="nk"> &lt;sdake&gt;</span> what i think we dont want is one user in keystone that has access to all stacks
+<a name="l-218"></a><span class="tm">21:30:11</span><span class="nk"> &lt;funzo&gt;</span> which tells heat who is making the request and the password associated with that user matches what is in keystone
+<a name="l-219"></a><span class="tm">21:30:14</span><span class="nk"> &lt;funzo&gt;</span> yes?
+<a name="l-220"></a><span class="tm">21:30:15</span><span class="nk"> &lt;sdake&gt;</span> keystone would control access to images in glance as well
+<a name="l-221"></a><span class="tm">21:30:35</span><span class="nk"> &lt;funzo&gt;</span> but the api compatibility in heat for auth would allow us to use boto
+<a name="l-222"></a><span class="tm">21:30:40</span><span class="nk"> &lt;funzo&gt;</span> instead of coming up with another way to do it
+<a name="l-223"></a><span class="tm">21:31:00</span><span class="nk"> &lt;sdake&gt;</span> reading sec
+<a name="l-224"></a><span class="tm">21:31:16</span><span class="nk"> &lt;asalkeld&gt;</span> sdake, as long as that is how it is done in the rest of openstack
+<a name="l-225"></a><span class="tm">21:32:01</span><span class="nk"> &lt;sdake&gt;</span> i am all for doing it as openstack does
+<a name="l-226"></a><span class="tm">21:32:06</span><span class="nk"> &lt;funzo&gt;</span> they are using boto for auth it appears
+<a name="l-227"></a><span class="tm">21:32:14</span><span class="nk"> &lt;funzo&gt;</span> ...the compute project anyway
+<a name="l-228"></a><span class="tm">21:32:33</span><span class="nk"> &lt;funzo&gt;</span> grep -r "boto" . | grep auth
+<a name="l-229"></a><span class="tm">21:32:36</span><span class="nk"> &lt;funzo&gt;</span> lots of stuff
+<a name="l-230"></a><span class="tm">21:32:36</span><span class="nk"> &lt;sdake&gt;</span> i dont really want an aws key to keystone user mapping
+<a name="l-231"></a><span class="tm">21:32:45</span><span class="nk"> &lt;sdake&gt;</span> doesn't that seem strange?
+<a name="l-232"></a><span class="tm">21:32:48</span><span class="nk"> &lt;sdake&gt;</span> or does keysotne do that
+<a name="l-233"></a><span class="tm">21:32:51</span><span class="nk"> &lt;Slower&gt;</span> yeah it does
+<a name="l-234"></a><span class="tm">21:32:54</span><span class="nk"> &lt;sdake&gt;</span> ok
+<a name="l-235"></a><span class="tm">21:32:58</span><span class="nk"> &lt;sdake&gt;</span> well slower jpeeler please investigate
+<a name="l-236"></a><span class="tm">21:33:01</span><span class="nk"> &lt;sdake&gt;</span> and if that is how it works
+<a name="l-237"></a><span class="tm">21:33:05</span><span class="nk"> &lt;sdake&gt;</span> then we are half way there ;)
+<a name="l-238"></a><span class="tm">21:33:11</span><span class="nk"> &lt;asalkeld&gt;</span> cool
+<a name="l-239"></a><span class="tm">21:33:24</span><span class="nk"> &lt;funzo&gt;</span> ok, any other issues we should cover as a group?
+<a name="l-240"></a><span class="tm">21:33:26</span><span class="nk"> &lt;sdake&gt;</span> shardy also seems interested in this area
+<a name="l-241"></a><span class="tm">21:33:28</span><span class="nk"> &lt;zaneb&gt;</span> <span class="hi">sdake:</span> "keystone ec2-credentials-create"?
+<a name="l-242"></a><span class="tm">21:33:59</span><span class="nk"> &lt;sdake&gt;</span> perhaps shardy should be third leg of stool here ;)
+<a name="l-243"></a><span class="tm">21:34:13</span><span class="nk"> &lt;funzo&gt;</span> https://bugs.launchpad.net/keystone/+bug/947011 added to essex
+<a name="l-244"></a><span class="tm">21:34:16</span><span class="nk"> &lt;sdake&gt;</span> jpeeler slower can you sync up with him and work together on that
+<a name="l-245"></a><span class="tm">21:34:30</span><span class="nk"> &lt;sdake&gt;</span> the design that is
+<a name="l-246"></a><span class="tm">21:34:33</span><span class="nk"> &lt;funzo&gt;</span> cool
+<a name="l-247"></a><span class="tm">21:34:42</span><span class="nk"> &lt;asalkeld&gt;</span> sdake, this will improve error handling
+<a name="l-248"></a><span class="tm">21:34:50</span><span class="nk"> &lt;asalkeld&gt;</span> auth done in api
+<a name="l-249"></a><span class="tm">21:35:11</span><span class="nk"> &lt;asalkeld&gt;</span> there are bugs for that currently
+<a name="l-250"></a><span class="tm">21:35:33</span><span class="nk"> &lt;sdake&gt;</span> engine needs to know keystone creds to execute operations
+<a name="l-251"></a><span class="tm">21:35:33</span><span class="nk"> &lt;asalkeld&gt;</span> not good that api is just a tunnel
+<a name="l-252"></a><span class="tm">21:35:49</span><span class="nk"> &lt;sdake&gt;</span> the openstack keystone creds
+<a name="l-253"></a><span class="tm">21:36:00</span><span class="nk"> &lt;sdake&gt;</span> to execute nova api ops
+<a name="l-254"></a><span class="tm">21:36:12</span><span class="nk"> &lt;asalkeld&gt;</span> yip we need to put them in the rpc context I think
+<a name="l-255"></a><span class="tm">21:36:20</span><span class="nk"> &lt;sdake&gt;</span> cool
+<a name="l-256"></a><span class="tm">21:36:21</span><span class="nk"> &lt;sdake&gt;</span> that wfm
+<a name="l-257"></a><span class="tm">21:36:35</span><span class="nk"> &lt;asalkeld&gt;</span> and that goes to db too
+<a name="l-258"></a><span class="tm">21:36:48</span><span class="nk"> &lt;asalkeld&gt;</span> and then per user stacks
+<a name="l-259"></a><span class="tm">21:37:09</span><span class="nk"> &lt;sdake&gt;</span> ok jpeeler slower shardy work on design in next couple weeks in that wiki page
+<a name="l-260"></a><span class="tm">21:37:16</span><span class="nk"> &lt;sdake&gt;</span> while also doing test cases
+<a name="l-261"></a><span class="tm">21:37:26</span><span class="nk"> &lt;Slower&gt;</span> ok
+<a name="l-262"></a><span class="tm">21:37:27</span><span class="nk"> &lt;sdake&gt;</span> hopefully shardy is game :)
+<a name="l-263"></a><span class="tm">21:37:42</span><span class="nk"> &lt;sdake&gt;</span> hate to volunteer him but he posted the issue
+<a name="l-264"></a><span class="tm">21:37:52</span><span class="nk"> &lt;funzo&gt;</span> yeah, I'm sure he'll be interested in it
+<a name="l-265"></a><span class="tm">21:38:03</span><span class="nk"> &lt;funzo&gt;</span> ok, other roadmap items you guys would like to discuss?
+<a name="l-266"></a><span class="tm">21:38:22</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">jpeeler, slower, shardy to work on auth design to sort out issues 91, 92, and https://github.com/heat-api/heat/wiki/Roadmap-Feature:-Associate-users-with-templates-using-keystone</span>
+<a name="l-267"></a><span class="tm">21:38:45</span><span class="nk"> &lt;sdake&gt;</span> ha roadmap ?
+<a name="l-268"></a><span class="tm">21:38:58</span><span class="nk"> &lt;sdake&gt;</span> saw that shadower and asalkeld did a nice job on the blueprint
+<a name="l-269"></a><span class="tm">21:39:08</span><span class="nk"> &lt;asalkeld&gt;</span> well we are working on code now
+<a name="l-270"></a><span class="tm">21:39:15</span><span class="nk"> &lt;asalkeld&gt;</span> we have a ha branch
+<a name="l-271"></a><span class="tm">21:39:19</span><span class="nk"> &lt;sdake&gt;</span> cool
+<a name="l-272"></a><span class="tm">21:39:30</span><span class="nk"> &lt;funzo&gt;</span> are any of the issues on github?
+<a name="l-273"></a><span class="tm">21:39:40</span><span class="nk"> &lt;sdake&gt;</span> any areas people should stay away form code wise to avoid merge collisions
+<a name="l-274"></a><span class="tm">21:39:54</span><span class="nk"> &lt;asalkeld&gt;</span> cfn
+<a name="l-275"></a><span class="tm">21:39:57</span><span class="nk"> &lt;shadower&gt;</span> cfntools for now
+<a name="l-276"></a><span class="tm">21:40:10</span><span class="nk"> &lt;asalkeld&gt;</span> but we know how to merge
+<a name="l-277"></a><span class="tm">21:40:12</span><span class="nk"> &lt;sdake&gt;</span> ok can you guys put the development tasks in the issue tracker
+<a name="l-278"></a><span class="tm">21:40:22</span><span class="nk"> &lt;asalkeld&gt;</span> sdake, pita
+<a name="l-279"></a><span class="tm">21:40:33</span><span class="nk"> &lt;funzo&gt;</span> also, I find it much easier to continually rebase on a branch
+<a name="l-280"></a><span class="tm">21:40:38</span><span class="nk"> &lt;funzo&gt;</span> so it's not a disaster merge later
+<a name="l-281"></a><span class="tm">21:40:47</span><span class="nk"> &lt;asalkeld&gt;</span> we have items in wiki
+<a name="l-282"></a><span class="tm">21:40:56</span><span class="nk"> &lt;asalkeld&gt;</span> isn't that ok
+<a name="l-283"></a><span class="tm">21:40:58</span><span class="nk"> &lt;sdake&gt;</span> ok, keep wiki up to date then please
+<a name="l-284"></a><span class="tm">21:41:09</span><span class="nk"> &lt;sdake&gt;</span> ie track if done or not?
+<a name="l-285"></a><span class="tm">21:41:09</span><span class="nk"> &lt;asalkeld&gt;</span> there are only 2 of us
+<a name="l-286"></a><span class="tm">21:41:15</span><span class="nk"> &lt;funzo&gt;</span> I hate to do this, keeping issues in two different places makes it a pita for us too
+<a name="l-287"></a><span class="tm">21:41:16</span><span class="nk"> &lt;asalkeld&gt;</span> sure
+<a name="l-288"></a><span class="tm">21:41:20</span><span class="nk"> &lt;Slower&gt;</span> (we should add community outreach as a topic next meeting)
+<a name="l-289"></a><span class="tm">21:41:31</span><span class="nk"> &lt;sdake&gt;</span> thanks asalkeld
+<a name="l-290"></a><span class="tm">21:41:32</span><span class="nk"> &lt;funzo&gt;</span> to undertand the progress and who's doing what, and giving issues to other folks
+<a name="l-291"></a><span class="tm">21:41:51</span><span class="nk"> &lt;funzo&gt;</span> unless you expect no help
+<a name="l-292"></a><span class="tm">21:42:00</span><span class="nk"> &lt;funzo&gt;</span> which I am REALLY GOOD at
+<a name="l-293"></a><span class="tm">21:42:12</span><span class="nk"> &lt;sdake&gt;</span> i think asalkeld and shadower expecting no help
+<a name="l-294"></a><span class="tm">21:42:18</span><span class="nk"> &lt;sdake&gt;</span> if that changes, we can put in issue tracker :)
+<a name="l-295"></a><span class="tm">21:42:18</span><span class="nk"> &lt;asalkeld&gt;</span> ya
+<a name="l-296"></a><span class="tm">21:42:32</span><span class="nk"> &lt;sdake&gt;</span> since rest of us should be busy with test cases/ci
+<a name="l-297"></a><span class="tm">21:42:46</span><span class="nk"> &lt;funzo&gt;</span> k, is the HA stuff supposed to land in m3?
+<a name="l-298"></a><span class="tm">21:43:00</span><span class="nk"> &lt;sdake&gt;</span> m4 i think?
+<a name="l-299"></a><span class="tm">21:43:04</span><span class="nk"> &lt;sdake&gt;</span> m3 = test cases + ci
+<a name="l-300"></a><span class="tm">21:43:18</span><span class="nk"> &lt;asalkeld&gt;</span> ok
+<a name="l-301"></a><span class="tm">21:43:20</span><span class="nk"> &lt;funzo&gt;</span> so, are we going to track that in the wiki?
+<a name="l-302"></a><span class="tm">21:43:30</span><span class="nk"> &lt;asalkeld&gt;</span> no
+<a name="l-303"></a><span class="tm">21:43:47</span><span class="nk"> &lt;sdake&gt;</span> there is a roadmap issue in the issue tracker already for ha
+<a name="l-304"></a><span class="tm">21:43:51</span><span class="nk"> &lt;sdake&gt;</span> for ha
+<a name="l-305"></a><span class="tm">21:43:55</span><span class="nk"> &lt;asalkeld&gt;</span> funzo, if you are desperate for issues we can make them
+<a name="l-306"></a><span class="tm">21:44:33</span><span class="nk"> &lt;funzo&gt;</span> I am not wrapped around the axle on it, I was just thrown a bit.  I thought we were using the github tools to track progress and work assignments
+<a name="l-307"></a><span class="tm">21:44:45</span><span class="nk"> &lt;funzo&gt;</span> but as soon as we stop being structured with it, it won't be useful to us
+<a name="l-308"></a><span class="tm">21:44:53</span><span class="nk"> &lt;sdake&gt;</span> https://github.com/heat-api/heat/issues/36
+<a name="l-309"></a><span class="tm">21:44:56</span><span class="nk"> &lt;funzo&gt;</span> and if that's what the team wants, we can work with it
+<a name="l-310"></a><span class="tm">21:45:13</span><span class="nk"> &lt;asalkeld&gt;</span> ok funzo
+<a name="l-311"></a><span class="tm">21:45:21</span><span class="nk"> &lt;funzo&gt;</span> agreed? or am I just ocd?
+<a name="l-312"></a><span class="tm">21:45:29</span><span class="nk"> &lt;sdake&gt;</span> i think for hard roadmap items devs don't expect help on tracking in the individual roadmap item above is sufficient
+<a name="l-313"></a><span class="tm">21:45:32</span><span class="nk"> &lt;asalkeld&gt;</span> both :)
+<a name="l-314"></a><span class="tm">21:45:40</span><span class="nk"> &lt;funzo&gt;</span> lol
+<a name="l-315"></a><span class="tm">21:45:41</span><span class="nk"> &lt;asalkeld&gt;</span> we will make issues
+<a name="l-316"></a><span class="tm">21:45:58</span><span class="nk"> &lt;funzo&gt;</span> ok, cool.  I try to do some gardening on labeling and such
+<a name="l-317"></a><span class="tm">21:46:09</span><span class="nk"> &lt;funzo&gt;</span> k, we have 15 minutes left.
+<a name="l-318"></a><span class="tm">21:46:12</span><span class="nk"> &lt;shadower&gt;</span> <span class="hi">asalkeld:</span> if you get wrappad up with actual coding, I'll make them tomorrow morning
+<a name="l-319"></a><span class="tm">21:46:13</span><span class="nk"> &lt;sdake&gt;</span> don't let the thorns get you
+<a name="l-320"></a><span class="tm">21:46:34</span><span class="nk"> &lt;asalkeld&gt;</span> shadower, cool thanks
+<a name="l-321"></a><span class="tm">21:46:42</span><span class="nk"> &lt;funzo&gt;</span> do you guys want me to explain anything about the test stuff that was merged
+<a name="l-322"></a><span class="tm">21:46:46</span><span class="nk"> &lt;funzo&gt;</span> it's a bit of a change to what we had
+<a name="l-323"></a><span class="tm">21:46:47</span><span class="nk"> &lt;sdake&gt;</span> yes
+<a name="l-324"></a><span class="tm">21:46:52</span><span class="nk"> &lt;sdake&gt;</span> ci + test is next agenda item
+<a name="l-325"></a><span class="tm">21:46:54</span><span class="nk"> &lt;funzo&gt;</span> ok, cool if we move on then?
+<a name="l-326"></a><span class="tm">21:47:02</span><span class="nk"> &lt;asalkeld&gt;</span> yip
+<a name="l-327"></a><span class="tm">21:47:09</span><span class="nk"> &lt;funzo&gt;</span> <span class="topic">#topic </span><span class="topicline">ci + test</span>
+<a name="l-328"></a><span class="tm">21:47:24</span><span class="nk"> &lt;funzo&gt;</span> ok, so yesterday I merged the test commits with does the following
+<a name="l-329"></a><span class="tm">21:47:49</span><span class="nk"> &lt;funzo&gt;</span> the run_tests.sh will run  heat/testing/runner.py
+<a name="l-330"></a><span class="tm">21:47:55</span><span class="nk"> &lt;funzo&gt;</span> all the noseargs are still supported
+<a name="l-331"></a><span class="tm">21:48:02</span><span class="nk"> &lt;funzo&gt;</span> I did this to mimic the way openstack does things
+<a name="l-332"></a><span class="tm">21:48:21</span><span class="nk"> &lt;asalkeld&gt;</span> nice
+<a name="l-333"></a><span class="tm">21:48:24</span><span class="nk"> &lt;funzo&gt;</span> the __init__.py file in heat/test will do the database setup for you
+<a name="l-334"></a><span class="tm">21:48:40</span><span class="nk"> &lt;funzo&gt;</span> it will create an sqlite file in the test directory
+<a name="l-335"></a><span class="tm">21:48:55</span><span class="nk"> &lt;funzo&gt;</span> every time the setup runs it will blow away the previous db
+<a name="l-336"></a><span class="tm">21:49:18</span><span class="nk"> &lt;sdake&gt;</span> zaneb has been doing some good work on mock environment
+<a name="l-337"></a><span class="tm">21:49:19</span><span class="nk"> &lt;funzo&gt;</span> The sqlite schema will be generated by the sqlalchemy migrations
+<a name="l-338"></a><span class="tm">21:49:32</span><span class="nk"> &lt;sdake&gt;</span> so we could run that in mock too
+<a name="l-339"></a><span class="tm">21:49:32</span><span class="nk"> &lt;funzo&gt;</span> which will go through all the schema migrations starting at 0 through n
+<a name="l-340"></a><span class="tm">21:49:45</span><span class="nk"> &lt;funzo&gt;</span> sure
+<a name="l-341"></a><span class="tm">21:50:06</span><span class="nk"> &lt;funzo&gt;</span> ok, the next tricky bit is folks will have to refer to the mox documentation
+<a name="l-342"></a><span class="tm">21:50:11</span><span class="nk"> &lt;funzo&gt;</span> that is the mocking framework
+<a name="l-343"></a><span class="tm">21:50:27</span><span class="nk"> &lt;funzo&gt;</span> you can mock objects so you don't actually call resources that aren't running
+<a name="l-344"></a><span class="tm">21:50:41</span><span class="nk"> &lt;funzo&gt;</span> as a concrete example, we are using the nova client
+<a name="l-345"></a><span class="tm">21:50:43</span><span class="nk"> &lt;sdake&gt;</span> funzo sync up with jpeeler, he was looking at how to mock glance api calls
+<a name="l-346"></a><span class="tm">21:50:51</span><span class="nk"> &lt;funzo&gt;</span> <span class="hi">sdake:</span> I was just getting to that
+<a name="l-347"></a><span class="tm">21:51:02</span><span class="nk"> &lt;funzo&gt;</span> the python-novaclient has a test directory as well
+<a name="l-348"></a><span class="tm">21:51:23</span><span class="nk"> &lt;funzo&gt;</span> it has a bunch of mock module implementations that allow you to make client calls to nova resources without nova running
+<a name="l-349"></a><span class="tm">21:51:35</span><span class="nk"> &lt;funzo&gt;</span> you'll see in the test commits a reference to a FakeClient
+<a name="l-350"></a><span class="tm">21:51:51</span><span class="nk"> &lt;funzo&gt;</span> using this requires that you have the python-novaclient code checked out (see the readme)
+<a name="l-351"></a><span class="tm">21:52:00</span><span class="nk"> &lt;funzo&gt;</span> and an environment variable to points to the location on your filesystem
+<a name="l-352"></a><span class="tm">21:52:03</span><span class="nk"> &lt;funzo&gt;</span> also in the readme
+<a name="l-353"></a><span class="tm">21:52:18</span><span class="nk"> &lt;funzo&gt;</span> this allows us to reuse the python-novaclient mox implementation
+<a name="l-354"></a><span class="tm">21:52:42</span><span class="nk"> &lt;sdake&gt;</span> funzo sounds like good content for https://github.com/heat-api/heat/wiki/Roadmap-Feature:-Test-Infrastructure-&amp;-Cases
+<a name="l-355"></a><span class="tm">21:52:45</span><span class="nk"> &lt;funzo&gt;</span> you can see a reference implementation of using mox and the novaclient FakeClient in tests/test_resources.py
+<a name="l-356"></a><span class="tm">21:52:46</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#link </span><span class="cmdline">https://github.com/heat-api/heat/wiki/Roadmap-Feature:-Test-Infrastructure-&amp;-Cases</span>
+<a name="l-357"></a><span class="tm">21:53:04</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#action </span><span class="cmdline">calfonso update https://github.com/heat-api/heat/wiki/Roadmap-Feature:-Test-Infrastructure-&amp;-Cases with the test stuff merged into master</span>
+<a name="l-358"></a><span class="tm">21:53:05</span><span class="nk"> &lt;Slower&gt;</span> yeah
+<a name="l-359"></a><span class="tm">21:53:09</span><span class="nk"> &lt;funzo&gt;</span> questions so far?
+<a name="l-360"></a><span class="tm">21:53:18</span><span class="nk"> &lt;funzo&gt;</span> if so, I can leave it as an exercise for the user
+<a name="l-361"></a><span class="tm">21:53:20</span><span class="nk"> &lt;asalkeld&gt;</span> it looks good
+<a name="l-362"></a><span class="tm">21:53:31</span><span class="nk"> &lt;sdake&gt;</span> some more docs in that wiki would be helpful but that sounds great
+<a name="l-363"></a><span class="tm">21:53:36</span><span class="nk"> &lt;funzo&gt;</span> kk
+<a name="l-364"></a><span class="tm">21:53:37</span><span class="nk"> &lt;funzo&gt;</span> will do
+<a name="l-365"></a><span class="tm">21:53:42</span><span class="nk"> &lt;Slower&gt;</span> are we going to divide up the tests somehow?
+<a name="l-366"></a><span class="tm">21:53:53</span><span class="nk"> &lt;sdake&gt;</span> we need to define what they should be first
+<a name="l-367"></a><span class="tm">21:54:06</span><span class="nk"> &lt;Slower&gt;</span> righto
+<a name="l-368"></a><span class="tm">21:54:06</span><span class="nk"> &lt;funzo&gt;</span> we sort of just glossed over it as ...if you wrote it, you test it
+<a name="l-369"></a><span class="tm">21:54:09</span><span class="nk"> &lt;funzo&gt;</span> is that still fair?
+<a name="l-370"></a><span class="tm">21:54:10</span><span class="nk"> &lt;sdake&gt;</span> in the wiki then i or chris can mass import as issues
+<a name="l-371"></a><span class="tm">21:54:18</span><span class="nk"> &lt;funzo&gt;</span> except that might be a little unbalanced
+<a name="l-372"></a><span class="tm">21:54:28</span><span class="nk"> &lt;funzo&gt;</span> and cross polinating on features might be useful
+<a name="l-373"></a><span class="tm">21:54:35</span><span class="nk"> &lt;asalkeld&gt;</span> like the code (cfn, api, engine)
+<a name="l-374"></a><span class="tm">21:54:57</span><span class="nk"> &lt;funzo&gt;</span> getting them in as issues is helpful, then you can just pick stuff up
+<a name="l-375"></a><span class="tm">21:55:09</span><span class="nk"> &lt;sdake&gt;</span> ya person writing test cases != person wrote code = all devs understand code better
+<a name="l-376"></a><span class="tm">21:55:25</span><span class="nk"> &lt;sdake&gt;</span> for our initial test push
+<a name="l-377"></a><span class="tm">21:55:36</span><span class="nk"> &lt;funzo&gt;</span> so that makes me the tester of everyting :)
+<a name="l-378"></a><span class="tm">21:55:40</span><span class="nk"> &lt;funzo&gt;</span> self zing
+<a name="l-379"></a><span class="tm">21:55:42</span><span class="nk"> &lt;sdake&gt;</span> me too ;)
+<a name="l-380"></a><span class="tm">21:55:52</span><span class="nk"> &lt;funzo&gt;</span> ok, 5 minutes left
+<a name="l-381"></a><span class="tm">21:56:01</span><span class="nk"> &lt;sdake&gt;</span> zaneb quick update on mock test?
+<a name="l-382"></a><span class="tm">21:56:03</span><span class="nk"> &lt;Slower&gt;</span> haha
+<a name="l-383"></a><span class="tm">21:56:25</span><span class="nk"> &lt;funzo&gt;</span> when you say mock test what do you mean?
+<a name="l-384"></a><span class="tm">21:56:27</span><span class="nk"> &lt;zaneb&gt;</span> launching the openstack daemons from inside mock could be a problem
+<a name="l-385"></a><span class="tm">21:56:38</span><span class="nk"> &lt;funzo&gt;</span> oh like mock the buildtool?
+<a name="l-386"></a><span class="tm">21:56:41</span><span class="nk"> &lt;sdake&gt;</span> yup
+<a name="l-387"></a><span class="tm">21:56:44</span><span class="nk"> &lt;funzo&gt;</span> mock overload
+<a name="l-388"></a><span class="tm">21:56:44</span><span class="nk"> &lt;zaneb&gt;</span> yeah
+<a name="l-389"></a><span class="tm">21:56:57</span><span class="nk"> &lt;asalkeld&gt;</span> so why do we need to?
+<a name="l-390"></a><span class="tm">21:56:58</span><span class="nk"> &lt;sdake&gt;</span> why problem?
+<a name="l-391"></a><span class="tm">21:57:10</span><span class="nk"> &lt;sdake&gt;</span> i think reason was so we always have a clean enviornment
+<a name="l-392"></a><span class="tm">21:57:14</span><span class="nk"> &lt;funzo&gt;</span> oh, zaneb see the heat-rpms repo I pushed
+<a name="l-393"></a><span class="tm">21:57:14</span><span class="nk"> &lt;zaneb&gt;</span> systemd won't start them from inside chroot
+<a name="l-394"></a><span class="tm">21:57:15</span><span class="nk"> &lt;sdake&gt;</span> but we can get that with the openstack setup script
+<a name="l-395"></a><span class="tm">21:57:16</span><span class="nk"> &lt;funzo&gt;</span> that will create rpms
+<a name="l-396"></a><span class="tm">21:57:29</span><span class="nk"> &lt;zaneb&gt;</span> <span class="hi">funzo:</span> ok, thanks
+<a name="l-397"></a><span class="tm">21:57:39</span><span class="nk"> &lt;asalkeld&gt;</span> zaneb, why you starting daemons?
+<a name="l-398"></a><span class="tm">21:57:41</span><span class="nk"> &lt;funzo&gt;</span> I don't think we need to run the tests inside mock do we?
+<a name="l-399"></a><span class="tm">21:57:50</span><span class="nk"> &lt;zaneb&gt;</span> <span class="hi">asalkeld:</span> for the integration test
+<a name="l-400"></a><span class="tm">21:57:52</span><span class="nk"> &lt;funzo&gt;</span> just use mock for building packages if the test run works?
+<a name="l-401"></a><span class="tm">21:58:13</span><span class="nk"> &lt;funzo&gt;</span> jenkins will just run the tests on a machine, pending successful test run, build using mock?
+<a name="l-402"></a><span class="tm">21:58:22</span><span class="nk"> &lt;funzo&gt;</span> is that fair?
+<a name="l-403"></a><span class="tm">21:58:24</span><span class="nk"> &lt;zaneb&gt;</span> the initial idea was to be able to run through the full Getting Started guide in a chroot
+<a name="l-404"></a><span class="tm">21:58:31</span><span class="nk"> &lt;funzo&gt;</span> oh, right
+<a name="l-405"></a><span class="tm">21:58:40</span><span class="nk"> &lt;sdake&gt;</span> part of our CI goal :)
+<a name="l-406"></a><span class="tm">21:58:56</span><span class="nk"> &lt;funzo&gt;</span> why are we using mock?
+<a name="l-407"></a><span class="tm">21:59:08</span><span class="nk"> &lt;sdake&gt;</span> so leftover openstackisms dont break the system
+<a name="l-408"></a><span class="tm">21:59:12</span><span class="nk"> &lt;zaneb&gt;</span> so that we can start from scratch every time
+<a name="l-409"></a><span class="tm">21:59:26</span><span class="nk"> &lt;funzo&gt;</span> we can use lvm snapshots and just reboot a machine
+<a name="l-410"></a><span class="tm">21:59:30</span><span class="nk"> &lt;zaneb&gt;</span> as new users who try the getting started guide will be :)
+<a name="l-411"></a><span class="tm">21:59:37</span><span class="nk"> &lt;funzo&gt;</span> have the kernel params reset the snap
+<a name="l-412"></a><span class="tm">21:59:46</span><span class="nk"> &lt;funzo&gt;</span> using dracut
+<a name="l-413"></a><span class="tm">21:59:59</span><span class="nk"> &lt;sdake&gt;</span> funzo i'll talk to you later about that - sounds promising
+<a name="l-414"></a><span class="tm">21:59:59</span><span class="nk"> &lt;funzo&gt;</span> if the mock thing doesn't work out, I can help set that up
+<a name="l-415"></a><span class="tm">22:00:07</span><span class="nk"> &lt;sdake&gt;</span> 1 minute left
+<a name="l-416"></a><span class="tm">22:00:07</span><span class="nk"> &lt;funzo&gt;</span> that's how I set up my vms
+<a name="l-417"></a><span class="tm">22:00:10</span><span class="nk"> &lt;sdake&gt;</span> quick update on jenkins
+<a name="l-418"></a><span class="tm">22:00:16</span><span class="nk"> &lt;sdake&gt;</span> installed on heat-api.org
+<a name="l-419"></a><span class="tm">22:00:25</span><span class="nk"> &lt;sdake&gt;</span> going to install on a build machine to run the test cases for us
+<a name="l-420"></a><span class="tm">22:00:31</span><span class="nk"> &lt;funzo&gt;</span> lists.heat-api.org:8080
+<a name="l-421"></a><span class="tm">22:00:32</span><span class="nk"> &lt;sdake&gt;</span> asalkeld jenkins alot like buildbot
+<a name="l-422"></a><span class="tm">22:00:40</span><span class="nk"> &lt;asalkeld&gt;</span> nice
+<a name="l-423"></a><span class="tm">22:00:41</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#link </span><span class="cmdline">lists.heat-api.org:8080</span>
+<a name="l-424"></a><span class="tm">22:00:48</span><span class="nk"> &lt;funzo&gt;</span> awesome
+<a name="l-425"></a><span class="tm">22:00:49</span><span class="nk"> &lt;sdake&gt;</span> except its mo pretty
+<a name="l-426"></a><span class="tm">22:01:00</span><span class="nk"> &lt;funzo&gt;</span> kk, time is up for this meeting
+<a name="l-427"></a><span class="tm">22:01:11</span><span class="nk"> &lt;sdake&gt;</span> its just getting started, but I'll focus on that this week and try to get us to agile sooner rather then later
+<a name="l-428"></a><span class="tm">22:01:15</span><span class="nk"> &lt;sdake&gt;</span> thanks guys
+<a name="l-429"></a><span class="tm">22:01:20</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

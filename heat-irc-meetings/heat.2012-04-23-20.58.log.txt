@@ -1,0 +1,429 @@
+20:58:58 <funzo> #startmeeting
+20:58:58 <mheat-bot`> Meeting started Mon Apr 23 20:58:58 2012 UTC.  The chair is funzo. Information about MeetBot at http://wiki.debian.org/MeetBot.
+20:58:58 <mheat-bot`> Useful Commands: #action #agreed #help #info #idea #link #topic.
+20:59:35 <funzo> #chair asalkeld blomquisg funzo jpeeler sdake Slower shardy
+20:59:35 <mheat-bot`> Current chairs: Slower asalkeld blomquisg funzo jpeeler sdake shardy
+20:59:56 <funzo> #topic heat weekly coordination meeting
+21:00:18 <funzo> proposed agenda items, work out the process discussion that we didn't get to last week
+21:00:41 <funzo> sdake sent out a proposal of a 5 week cycle, I didn't see any counter proposals
+21:00:47 <sdake> perhhaps bit of roadmap if that doesn't take up full agenda
+21:00:50 <funzo> were there any other agenda items?
+21:01:10 <funzo> I can also cover any questions around the test framework that was merged yesterday
+21:01:20 <funzo> #chair zaneb
+21:01:20 <mheat-bot`> Current chairs: Slower asalkeld blomquisg funzo jpeeler sdake shardy zaneb
+21:01:37 <shadower> funzo: chair is a meeting attendee, right?
+21:01:41 <sdake> just a general test/ci
+21:01:51 <sdake> chair can operate the bot, anyone can participate in the meeting
+21:01:54 <funzo> chair is allowed to issue meeting bot commands
+21:01:55 <funzo> right
+21:02:01 <shadower> ah git it
+21:02:04 <funzo> see http://meetbot.debian.net/Manual.html#tutorial
+21:02:04 <shadower> got
+21:02:26 <funzo> we should also cover any blocking issues that require assistance
+21:02:33 <sdake> anyone have any other agenda items?
+21:03:22 <funzo> ok, so agenda is:
+21:03:22 <funzo> Agenda:
+21:03:22 <funzo> 1- Development process
+21:03:22 <funzo> - proposal 5 week
+21:03:22 <funzo> 2 - Blocking development issues
+21:03:25 <funzo> 3 - Roadmap items
+21:03:29 <funzo> +/1
+21:03:36 <funzo> +/- 1
+21:03:42 <shadower> +1
+21:03:43 <sdake> 4. test / ci
+21:03:45 <sdake> +1
+21:03:50 <asalkeld> sure
+21:04:08 <zaneb> +1
+21:04:09 <funzo> and packaging...prolly
+21:04:17 <funzo> as part of 4
+21:04:20 <funzo> +1
+21:04:23 <sdake> sounds good
+21:04:23 <Slower> +1
+21:04:26 <funzo> #agreed on agenda mentioned above
+21:04:30 <funzo> let's jump into it
+21:04:40 <funzo> #topic 1- Development process
+21:05:05 <sdake> sdake had a proposal on the mailing list
+21:05:08 <sdake> (3rd person ftw)
+21:05:17 <funzo> Ok, the purpose of proposing a somewhat structure process is so we can anticipate the timing of a release and what's going to be in it without killing ourselves
+21:05:22 <sdake> anyone not have a chance to read?
+21:05:43 <funzo> also need to be able to report on how we are doing healthwise
+21:05:44 <funzo> yes
+21:05:52 <funzo> the proposal was a 5 week cycle I believe
+21:05:58 <sdake> so in summary
+21:06:07 <funzo> for the past decade I've only really used the scrum process
+21:06:13 <funzo> I'm open to changes though
+21:06:24 <sdake> 5 week dev cycle, 1 day test day, 4-9 days of bug fixes, until we get continuous integration rolling, then we can go to agile
+21:06:41 <zaneb> so, I don't think that anyone disagrees that 2 week iterations are too short atm
+21:06:42 <Slower> 1 day test day?
+21:06:53 <zaneb> but 5 weeks seems very long
+21:06:55 <funzo> sort of depends on what we call an iteration
+21:07:09 <sdake> ya, write down a test plan all devs run through each test case
+21:07:13 <funzo> I've worked on lots of projects in 2 week iterations
+21:07:27 <Slower> sdake: and we keep doing that through the 4-9 days of bug fixes I presume?
+21:07:30 <sdake> 2 week iteration is good if ci is in place
+21:07:34 <funzo> but that involves taking hours to do sprint planning (a sprint == 2 weeks)
+21:07:39 <sdake> slower atm we have been
+21:07:48 <Slower> ya ok
+21:08:08 <sdake> funzo we really need ci to do agile properly
+21:08:14 <funzo> sdake: I agree
+21:08:25 <Slower> I think we should try to keep integrations tight in the meantime too (basically don't break the tree, integrate early when possible etc)
+21:08:29 <funzo> well, it certainly makes it easier to manage
+21:08:44 <zaneb> I'm not sure we're far away from having at least some basic ci happening
+21:08:48 <asalkeld> how about we set the time depending on the content
+21:08:56 <funzo> well, the ci infrastructure is part of it, we need test coverage
+21:09:12 <sdake> the goal of this "sprint" is test cases + ci infrastructure in place
+21:09:19 <funzo> and honestly, with test coverage, ci is just a nice way to notify you of health
+21:09:23 <funzo> yep yep
+21:09:39 <funzo> because developers should be running tests, add tests + make changes, run tests
+21:09:50 <Slower> sdake: and that ends in 5 weeks?
+21:09:56 <sdake> 2 weeks
+21:09:58 <funzo> ok, so to the point, I am in favor of the 5 weeks for now
+21:09:58 <Slower> ok
+21:10:07 <Slower> so basically 5 weeks till release
+21:10:17 <zaneb> is part of the problem that we don't have any dedicated test engineers working on this?
+21:10:20 <funzo> and when we get decent test coverage, we readdress if needed
+21:10:28 <funzo> zaneb: no, I don't think so
+21:10:30 <sdake> zaneb we are the test engineers
+21:10:32 <funzo> we just need tests
+21:10:34 <funzo> right
+21:10:36 <Slower> we have some shorter 'sprints' but then at 5 weeks we do full testing/hardening and a release?
+21:10:56 <zaneb> well, I agree with what Slower said on the ML
+21:10:57 <sdake> ya slower that works for me
+21:11:06 <Slower> that sounds good to me
+21:11:14 <zaneb> automated tests are not a substitute for test engineers
+21:11:15 <sdake> its the 2 week release cycle that is troublesome
+21:11:24 <funzo> zaneb: disagree
+21:11:46 <asalkeld> funzo, zaneb it depends on the tests
+21:11:50 <zaneb> funzo: I'm not saying that automated tests aren't good
+21:12:02 <funzo> what shouldn't be automated?
+21:12:09 <zaneb> they're obviously an asset
+21:12:10 <funzo> we are probably just talking semantics
+21:12:26 <asalkeld> funzo, as much as possible
+21:12:27 <sdake> the issue at hand is the 2 week cycle
+21:12:29 <funzo> we all have the skill sets to automate tests, both functional and unit
+21:12:45 <sdake> 2 week release cycle that is
+21:12:48 <funzo> right and the rest that isn't automated, we expect people to slave away on each release?
+21:12:53 <funzo> someone *else*
+21:13:04 <Slower> funzo: no I expect us all to do it :)
+21:13:23 <sdake> ya sdake needs to get out on the weekends :)
+21:13:50 <funzo> ok, for to address the topic, everyone cool with the 5 weeks cycle?
+21:14:08 <asalkeld> in short term +1
+21:14:11 <funzo> we can address project resources at another time, I think
+21:14:11 <Slower> yep
+21:14:12 <sdake> remember, this is temporary until we have a good ci
+21:14:13 <Slower> +1
+21:14:19 <sdake> +1
+21:14:25 <funzo> +1
+21:14:34 <Slower> even with good ci we might not want to release too often..
+21:14:51 <Slower> but I'm easy
+21:14:52 <sdake> perhaps but we can revisit at the point we have good ci
+21:14:54 <funzo> #agreed 5 week development cycle with 4-9 days of testing and bug fixing along with a test day
+21:14:56 <Slower> ya
+21:15:13 <funzo> #topic 2 - Blocking development issues
+21:15:29 <sdake> so v2 was released sunday
+21:15:30 <funzo> ok, time to talk about any blocking issues that require general discussion
+21:15:36 <funzo> sdake: thanks for seeing that through
+21:15:40 <sdake> that includes all the hard work of everyone
+21:15:51 <sdake> the tag includes the changes
+21:16:10 <funzo> yeah, I think a congrats is in order to the team, excellent contributions by everyone on the team
+21:16:16 <funzo> "virtual team"
+21:16:26 <sdake> ya +1 to all the devs :)
+21:17:07 <funzo> the issues list still has a few m1 issues assigned
+21:17:21 <funzo> #96, 93, and 45
+21:17:22 <sdake> they are probably mislabeled
+21:17:33 <funzo> describe issues
+21:18:00 <Slower> sdake: no more releases on a sunday tho eh? :)
+21:18:04 <funzo> I moved the wiki gardening out because of the general unending nature of the issue
+21:18:19 <funzo> the the describe issues supposed to be in m2?
+21:18:37 <sdake> i cleared 96
+21:18:50 <funzo> k, and 93?
+21:19:00 <sdake> cleared 93
+21:19:08 <funzo> by cleared, were they closed?
+21:19:47 <sdake> no, just cleared them, they were not blockers more like "should behave differently"
+21:19:51 <sdake> 45 will remain open forever ;)
+21:19:55 <funzo> right
+21:20:05 <funzo> ok, so any other blocking issues for what folks are currently working on?
+21:20:06 <sdake> i can describe quickly ;)
+21:20:11 <funzo> we should be picking up issues for M2 now
+21:20:24 <asalkeld> sdake, no point in #45
+21:20:25 <sdake> if there is a two instance deployable, the first instance starts, output outputs wrong value
+21:20:29 <funzo> oh, quick question....since the poc took version #1, we are currently working on version 3, but the mileston is #2
+21:20:35 <funzo> this seems kinda confusing to me
+21:20:39 <funzo> would be nice to sync them up
+21:20:48 <sdake> ya lets just drop m1/m2/m3 tag
+21:20:56 <sdake> or sync them
+21:20:57 <funzo> ok, great, I will relabel
+21:21:04 <funzo> let's keep the version that is in the code
+21:21:07 <funzo> 3 right now
+21:21:10 <sdake> ya
+21:21:12 <funzo> and make our milestones in github match
+21:21:15 <Slower> sounds good
+21:21:20 <funzo> I'm easily confused
+21:21:20 <sdake> +1
+21:21:34 <funzo> #action calfonso change milestone numbering in github to match the code version
+21:21:41 <asalkeld> +1
+21:21:49 <funzo> ok, any other technical issues that need to be discussed in this meeting?
+21:21:57 <asalkeld> client
+21:21:58 <asalkeld> ?
+21:21:58 <sdake> roadmap
+21:22:01 <funzo> if not, we can start talking about roadmap
+21:22:11 <sdake> client = roadmap?
+21:22:13 <funzo> asalkeld: what's specifically about client
+21:22:23 <asalkeld> 92
+21:22:30 <sdake> lets switch to roadmap, then we ca ntalk about client firzt
+21:22:36 <asalkeld> sure
+21:22:40 <funzo> #topic 3 - Roadmap items
+21:22:52 <asalkeld> issue 92 and 93
+21:23:14 <asalkeld> so I think we need to have heat use boto
+21:23:18 <sdake> 93 is a describe issue
+21:23:32 <asalkeld> oops 91
+21:23:38 <shadower> asalkeld: +1 on boto-
+21:23:57 <zaneb> yeah, +1
+21:24:00 <shadower> would help us make sure we're really compatible
+21:24:12 <asalkeld> and openstack do not export clients for aws api
+21:24:22 <sdake> 91 looks good
+21:24:34 <asalkeld> so I don't see the point in that
+21:24:55 <sdake> one question i would have is how do we associate 91 with keystone creds outside of keystone
+21:25:24 <Slower> are we getting the api mixed up?
+21:25:26 <asalkeld> the same way nova does
+21:25:34 <Slower> keystone is for native apis?
+21:25:40 <asalkeld> yes
+21:25:48 <Slower> but aws apis use different auth method?
+21:25:55 <asalkeld> yes
+21:26:02 <asalkeld> they have to
+21:26:07 <Slower> yeah
+21:26:08 <asalkeld> different api
+21:26:14 <Slower> so we are doing an aws api here right?
+21:26:18 <sdake> we have a roadmap item this intersects with
+21:26:35 <asalkeld> ok, what's that
+21:26:35 <sdake> https://github.com/heat-api/heat/wiki/Roadmap-Feature:-Associate-users-with-templates-using-keystone
+21:26:43 <Slower> I haven't looked at how nova handles auth
+21:26:52 <asalkeld> not really - that's db
+21:27:01 <asalkeld> this is cli + api
+21:27:03 <Slower> well we somehow have to know the user making the request
+21:27:21 <asalkeld> unless you want to roll them together
+21:27:29 <asalkeld> but no need to
+21:27:49 <Slower> it intersects with user identification
+21:27:51 <sdake> so example:
+21:28:13 <sdake> user A has stack, user B has stack, how does that get mapped to a keystone user?
+21:28:26 <asalkeld> yip
+21:28:57 <asalkeld> so in engine we need to do equiverlent to what nova does
+21:29:14 <asalkeld> sdake, haven't looked at the details
+21:29:27 <sdake> jpeeler and slower looking at details atm
+21:29:29 <asalkeld> but obviously possible
+21:29:32 <Slower> we could lump those together..
+21:29:43 <Slower> authentication + per-user templates
+21:29:51 <funzo> I think what asalkeld is saying is that when the client makes the call to heat, we want to do something similar to http://code.google.com/p/boto/wiki/BotoConfig
+21:29:55 <sdake> what i think we dont want is one user in keystone that has access to all stacks
+21:30:11 <funzo> which tells heat who is making the request and the password associated with that user matches what is in keystone
+21:30:14 <funzo> yes?
+21:30:15 <sdake> keystone would control access to images in glance as well
+21:30:35 <funzo> but the api compatibility in heat for auth would allow us to use boto
+21:30:40 <funzo> instead of coming up with another way to do it
+21:31:00 <sdake> reading sec
+21:31:16 <asalkeld> sdake, as long as that is how it is done in the rest of openstack
+21:32:01 <sdake> i am all for doing it as openstack does
+21:32:06 <funzo> they are using boto for auth it appears
+21:32:14 <funzo> ...the compute project anyway
+21:32:33 <funzo> grep -r "boto" . | grep auth
+21:32:36 <funzo> lots of stuff
+21:32:36 <sdake> i dont really want an aws key to keystone user mapping
+21:32:45 <sdake> doesn't that seem strange?
+21:32:48 <sdake> or does keysotne do that
+21:32:51 <Slower> yeah it does
+21:32:54 <sdake> ok
+21:32:58 <sdake> well slower jpeeler please investigate
+21:33:01 <sdake> and if that is how it works
+21:33:05 <sdake> then we are half way there ;)
+21:33:11 <asalkeld> cool
+21:33:24 <funzo> ok, any other issues we should cover as a group?
+21:33:26 <sdake> shardy also seems interested in this area
+21:33:28 <zaneb> sdake: "keystone ec2-credentials-create"?
+21:33:59 <sdake> perhaps shardy should be third leg of stool here ;)
+21:34:13 <funzo> https://bugs.launchpad.net/keystone/+bug/947011 added to essex
+21:34:16 <sdake> jpeeler slower can you sync up with him and work together on that
+21:34:30 <sdake> the design that is
+21:34:33 <funzo> cool
+21:34:42 <asalkeld> sdake, this will improve error handling
+21:34:50 <asalkeld> auth done in api
+21:35:11 <asalkeld> there are bugs for that currently
+21:35:33 <sdake> engine needs to know keystone creds to execute operations
+21:35:33 <asalkeld> not good that api is just a tunnel
+21:35:49 <sdake> the openstack keystone creds
+21:36:00 <sdake> to execute nova api ops
+21:36:12 <asalkeld> yip we need to put them in the rpc context I think
+21:36:20 <sdake> cool
+21:36:21 <sdake> that wfm
+21:36:35 <asalkeld> and that goes to db too
+21:36:48 <asalkeld> and then per user stacks
+21:37:09 <sdake> ok jpeeler slower shardy work on design in next couple weeks in that wiki page
+21:37:16 <sdake> while also doing test cases
+21:37:26 <Slower> ok
+21:37:27 <sdake> hopefully shardy is game :)
+21:37:42 <sdake> hate to volunteer him but he posted the issue
+21:37:52 <funzo> yeah, I'm sure he'll be interested in it
+21:38:03 <funzo> ok, other roadmap items you guys would like to discuss?
+21:38:22 <sdake> #agreed jpeeler, slower, shardy to work on auth design to sort out issues 91, 92, and https://github.com/heat-api/heat/wiki/Roadmap-Feature:-Associate-users-with-templates-using-keystone
+21:38:45 <sdake> ha roadmap ?
+21:38:58 <sdake> saw that shadower and asalkeld did a nice job on the blueprint
+21:39:08 <asalkeld> well we are working on code now
+21:39:15 <asalkeld> we have a ha branch
+21:39:19 <sdake> cool
+21:39:30 <funzo> are any of the issues on github?
+21:39:40 <sdake> any areas people should stay away form code wise to avoid merge collisions
+21:39:54 <asalkeld> cfn
+21:39:57 <shadower> cfntools for now
+21:40:10 <asalkeld> but we know how to merge
+21:40:12 <sdake> ok can you guys put the development tasks in the issue tracker
+21:40:22 <asalkeld> sdake, pita
+21:40:33 <funzo> also, I find it much easier to continually rebase on a branch
+21:40:38 <funzo> so it's not a disaster merge later
+21:40:47 <asalkeld> we have items in wiki
+21:40:56 <asalkeld> isn't that ok
+21:40:58 <sdake> ok, keep wiki up to date then please
+21:41:09 <sdake> ie track if done or not?
+21:41:09 <asalkeld> there are only 2 of us
+21:41:15 <funzo> I hate to do this, keeping issues in two different places makes it a pita for us too
+21:41:16 <asalkeld> sure
+21:41:20 <Slower> (we should add community outreach as a topic next meeting)
+21:41:31 <sdake> thanks asalkeld
+21:41:32 <funzo> to undertand the progress and who's doing what, and giving issues to other folks
+21:41:51 <funzo> unless you expect no help
+21:42:00 <funzo> which I am REALLY GOOD at
+21:42:12 <sdake> i think asalkeld and shadower expecting no help
+21:42:18 <sdake> if that changes, we can put in issue tracker :)
+21:42:18 <asalkeld> ya
+21:42:32 <sdake> since rest of us should be busy with test cases/ci
+21:42:46 <funzo> k, is the HA stuff supposed to land in m3?
+21:43:00 <sdake> m4 i think?
+21:43:04 <sdake> m3 = test cases + ci
+21:43:18 <asalkeld> ok
+21:43:20 <funzo> so, are we going to track that in the wiki?
+21:43:30 <asalkeld> no
+21:43:47 <sdake> there is a roadmap issue in the issue tracker already for ha
+21:43:51 <sdake> for ha
+21:43:55 <asalkeld> funzo, if you are desperate for issues we can make them
+21:44:33 <funzo> I am not wrapped around the axle on it, I was just thrown a bit.  I thought we were using the github tools to track progress and work assignments
+21:44:45 <funzo> but as soon as we stop being structured with it, it won't be useful to us
+21:44:53 <sdake> https://github.com/heat-api/heat/issues/36
+21:44:56 <funzo> and if that's what the team wants, we can work with it
+21:45:13 <asalkeld> ok funzo
+21:45:21 <funzo> agreed? or am I just ocd?
+21:45:29 <sdake> i think for hard roadmap items devs don't expect help on tracking in the individual roadmap item above is sufficient
+21:45:32 <asalkeld> both :)
+21:45:40 <funzo> lol
+21:45:41 <asalkeld> we will make issues
+21:45:58 <funzo> ok, cool.  I try to do some gardening on labeling and such
+21:46:09 <funzo> k, we have 15 minutes left.
+21:46:12 <shadower> asalkeld: if you get wrappad up with actual coding, I'll make them tomorrow morning
+21:46:13 <sdake> don't let the thorns get you
+21:46:34 <asalkeld> shadower, cool thanks
+21:46:42 <funzo> do you guys want me to explain anything about the test stuff that was merged
+21:46:46 <funzo> it's a bit of a change to what we had
+21:46:47 <sdake> yes
+21:46:52 <sdake> ci + test is next agenda item
+21:46:54 <funzo> ok, cool if we move on then?
+21:47:02 <asalkeld> yip
+21:47:09 <funzo> #topic ci + test
+21:47:24 <funzo> ok, so yesterday I merged the test commits with does the following
+21:47:49 <funzo> the run_tests.sh will run  heat/testing/runner.py
+21:47:55 <funzo> all the noseargs are still supported
+21:48:02 <funzo> I did this to mimic the way openstack does things
+21:48:21 <asalkeld> nice
+21:48:24 <funzo> the __init__.py file in heat/test will do the database setup for you
+21:48:40 <funzo> it will create an sqlite file in the test directory
+21:48:55 <funzo> every time the setup runs it will blow away the previous db
+21:49:18 <sdake> zaneb has been doing some good work on mock environment
+21:49:19 <funzo> The sqlite schema will be generated by the sqlalchemy migrations
+21:49:32 <sdake> so we could run that in mock too
+21:49:32 <funzo> which will go through all the schema migrations starting at 0 through n
+21:49:45 <funzo> sure
+21:50:06 <funzo> ok, the next tricky bit is folks will have to refer to the mox documentation
+21:50:11 <funzo> that is the mocking framework
+21:50:27 <funzo> you can mock objects so you don't actually call resources that aren't running
+21:50:41 <funzo> as a concrete example, we are using the nova client
+21:50:43 <sdake> funzo sync up with jpeeler, he was looking at how to mock glance api calls
+21:50:51 <funzo> sdake: I was just getting to that
+21:51:02 <funzo> the python-novaclient has a test directory as well
+21:51:23 <funzo> it has a bunch of mock module implementations that allow you to make client calls to nova resources without nova running
+21:51:35 <funzo> you'll see in the test commits a reference to a FakeClient
+21:51:51 <funzo> using this requires that you have the python-novaclient code checked out (see the readme)
+21:52:00 <funzo> and an environment variable to points to the location on your filesystem
+21:52:03 <funzo> also in the readme
+21:52:18 <funzo> this allows us to reuse the python-novaclient mox implementation
+21:52:42 <sdake> funzo sounds like good content for https://github.com/heat-api/heat/wiki/Roadmap-Feature:-Test-Infrastructure-&-Cases
+21:52:45 <funzo> you can see a reference implementation of using mox and the novaclient FakeClient in tests/test_resources.py
+21:52:46 <sdake> #link https://github.com/heat-api/heat/wiki/Roadmap-Feature:-Test-Infrastructure-&-Cases
+21:53:04 <funzo> #action calfonso update https://github.com/heat-api/heat/wiki/Roadmap-Feature:-Test-Infrastructure-&-Cases with the test stuff merged into master
+21:53:05 <Slower> yeah
+21:53:09 <funzo> questions so far?
+21:53:18 <funzo> if so, I can leave it as an exercise for the user
+21:53:20 <asalkeld> it looks good
+21:53:31 <sdake> some more docs in that wiki would be helpful but that sounds great
+21:53:36 <funzo> kk
+21:53:37 <funzo> will do
+21:53:42 <Slower> are we going to divide up the tests somehow?
+21:53:53 <sdake> we need to define what they should be first
+21:54:06 <Slower> righto
+21:54:06 <funzo> we sort of just glossed over it as ...if you wrote it, you test it
+21:54:09 <funzo> is that still fair?
+21:54:10 <sdake> in the wiki then i or chris can mass import as issues
+21:54:18 <funzo> except that might be a little unbalanced
+21:54:28 <funzo> and cross polinating on features might be useful
+21:54:35 <asalkeld> like the code (cfn, api, engine)
+21:54:57 <funzo> getting them in as issues is helpful, then you can just pick stuff up
+21:55:09 <sdake> ya person writing test cases != person wrote code = all devs understand code better
+21:55:25 <sdake> for our initial test push
+21:55:36 <funzo> so that makes me the tester of everyting :)
+21:55:40 <funzo> self zing
+21:55:42 <sdake> me too ;)
+21:55:52 <funzo> ok, 5 minutes left
+21:56:01 <sdake> zaneb quick update on mock test?
+21:56:03 <Slower> haha
+21:56:25 <funzo> when you say mock test what do you mean?
+21:56:27 <zaneb> launching the openstack daemons from inside mock could be a problem
+21:56:38 <funzo> oh like mock the buildtool?
+21:56:41 <sdake> yup
+21:56:44 <funzo> mock overload
+21:56:44 <zaneb> yeah
+21:56:57 <asalkeld> so why do we need to?
+21:56:58 <sdake> why problem?
+21:57:10 <sdake> i think reason was so we always have a clean enviornment
+21:57:14 <funzo> oh, zaneb see the heat-rpms repo I pushed
+21:57:14 <zaneb> systemd won't start them from inside chroot
+21:57:15 <sdake> but we can get that with the openstack setup script
+21:57:16 <funzo> that will create rpms
+21:57:29 <zaneb> funzo: ok, thanks
+21:57:39 <asalkeld> zaneb, why you starting daemons?
+21:57:41 <funzo> I don't think we need to run the tests inside mock do we?
+21:57:50 <zaneb> asalkeld: for the integration test
+21:57:52 <funzo> just use mock for building packages if the test run works?
+21:58:13 <funzo> jenkins will just run the tests on a machine, pending successful test run, build using mock?
+21:58:22 <funzo> is that fair?
+21:58:24 <zaneb> the initial idea was to be able to run through the full Getting Started guide in a chroot
+21:58:31 <funzo> oh, right
+21:58:40 <sdake> part of our CI goal :)
+21:58:56 <funzo> why are we using mock?
+21:59:08 <sdake> so leftover openstackisms dont break the system
+21:59:12 <zaneb> so that we can start from scratch every time
+21:59:26 <funzo> we can use lvm snapshots and just reboot a machine
+21:59:30 <zaneb> as new users who try the getting started guide will be :)
+21:59:37 <funzo> have the kernel params reset the snap
+21:59:46 <funzo> using dracut
+21:59:59 <sdake> funzo i'll talk to you later about that - sounds promising
+21:59:59 <funzo> if the mock thing doesn't work out, I can help set that up
+22:00:07 <sdake> 1 minute left
+22:00:07 <funzo> that's how I set up my vms
+22:00:10 <sdake> quick update on jenkins
+22:00:16 <sdake> installed on heat-api.org
+22:00:25 <sdake> going to install on a build machine to run the test cases for us
+22:00:31 <funzo> lists.heat-api.org:8080
+22:00:32 <sdake> asalkeld jenkins alot like buildbot
+22:00:40 <asalkeld> nice
+22:00:41 <sdake> #link lists.heat-api.org:8080
+22:00:48 <funzo> awesome
+22:00:49 <sdake> except its mo pretty
+22:01:00 <funzo> kk, time is up for this meeting
+22:01:11 <sdake> its just getting started, but I'll focus on that this week and try to get us to agile sooner rather then later
+22:01:15 <sdake> thanks guys
+22:01:20 <funzo> #endmeeting

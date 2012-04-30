@@ -1,0 +1,285 @@
+20:59:53 <funzo> #startmeeting
+20:59:53 <mheat-bot`> Meeting started Mon Apr 30 20:59:53 2012 UTC.  The chair is funzo. Information about MeetBot at http://wiki.debian.org/MeetBot.
+20:59:53 <mheat-bot`> Useful Commands: #action #agreed #help #info #idea #link #topic.
+20:59:57 <Slower> I'd like to discuss umm, community facing stuff :)
+21:00:18 <funzo> #chair asalkeld blomquisg jpeeler pmyers sdake shadower shardy Slower zaneb
+21:00:18 <mheat-bot`> Current chairs: Slower asalkeld blomquisg funzo jpeeler pmyers sdake shadower shardy zaneb
+21:00:44 <Slower> sdake: awesome job on the demo btw
+21:00:46 <funzo> ok, meeting in session, let's quickly agree on anything that needs to be discussed via agenda
+21:00:55 <funzo> sdak:++
+21:01:19 <shardy> Hi all
+21:01:25 <funzo> proposals for items that need irc meeting coordination:
+21:01:27 <funzo> go.
+21:01:36 <funzo> 1) community facing stuffs
+21:01:42 <Slower> haha
+21:01:45 <funzo> 2) any blockers that need help from others
+21:01:51 <Slower> well, specifically I think:
+21:02:06 <Slower> - are we ready to push this out to the public (more release announcements etc)
+21:02:10 <funzo> 3) timeline for end of milestone
+21:02:21 <Slower> - do we need more docs?  more example templates? etc to make it easier for users to get started
+21:02:30 <funzo> Slower: sdake sent out an email to the list as an announcement
+21:02:48 <funzo> any other items folks want to coordinate so we can get started?
+21:02:53 <Slower> only to our list tho right?  It could go to openstack lists too I would think (for example)
+21:03:04 <Slower> but we should wait to talk about it :)
+21:03:04 <funzo> ya
+21:03:21 <funzo> all agreed on the agenda?
+21:03:31 <Slower> +1
+21:03:42 <asalkeld> Slower, https://lists.launchpad.net/openstack/msg10478.html
+21:03:43 <sdake> sec
+21:04:07 <Slower> ok awesome
+21:04:08 <sdake> high availability work
+21:04:27 <funzo> sdake: status, or stuff that needs to be done
+21:04:44 <sdake> status
+21:04:49 <asalkeld> ok
+21:04:52 <sdake> in fact status for all roadmap items :)
+21:05:02 <asalkeld> so done cfn-hup
+21:05:11 <sdake> wait asalkeld not on agenda item yet :)
+21:05:19 <asalkeld> o
+21:05:31 <funzo> so, let's do that now then?
+21:05:38 <sdake> sounds good
+21:05:40 <funzo> #topic status for roadmap items
+21:05:52 <funzo> I'll go first on the unit test framework, ok?
+21:05:57 <sdake> yup
+21:05:59 <Slower> please do :)
+21:06:17 <funzo> the python-novaclient test src has been copied into our tree, so no more PYTHON_NOVA_SRC env variable needed
+21:06:32 <funzo> a reference imple using the mock framework is displayed in the test_resources.py
+21:06:39 <funzo> I am currently working on the stacks tests
+21:07:10 <funzo> jpeeler has been working on the jeos create tests, we worked around a venv issue today
+21:07:21 <funzo> we are now able to skip any includes that are not available in pip
+21:07:36 <jpeeler> yeah the email i sent to the mailing list is still relevant i think
+21:07:40 <funzo> that should give us the ability to run all the tests in a virtual env
+21:07:58 <funzo> jpeeler: which part?
+21:08:06 <funzo> http://lists.heat-api.org/pipermail/discuss/2012-April/000062.html
+21:08:16 <sdake> jpeeler use #link
+21:08:24 <jpeeler> not the problem part, just the part to keep the venv dependencies up to date
+21:08:27 <funzo> I think it will pick it up without #link
+21:08:32 <sdake> ok
+21:08:42 <jpeeler> and try to use stuff in pip
+21:09:00 <funzo> one thing to note is that virtualenv has seen this problem before
+21:09:21 <funzo> they implemented a switch to fall back to system site-packages, but that also defeats the purpose of a virtual env
+21:09:34 <funzo> for our scope, I would think we would not yak shave on the topic and just use the SkipTest plugin shipped with nose
+21:09:54 <funzo> and then when we don't need to run a virtualenv we use --no-skip-tests
+21:10:07 <funzo> that was we have coverage and we can use only a pip based virtual env
+21:10:14 <funzo> not to rat hole on this, but we have bigger fish to fry
+21:10:24 <funzo> so, anyway that is my roadmap update
+21:10:28 <asalkeld> HA: done cfn-hup (and restarting services), shadower started on metadata server. still got work in metadata server, cfn-signal and the last bit in heat-engine
+21:10:30 <funzo> we can continue the discussion on the list
+21:10:47 <sdake> lol asalakled
+21:10:49 <funzo> asalkeld: and I saw you merged it to master
+21:10:51 <sdake> one last  thing on testing
+21:11:12 <sdake> zane are you about wrapped up with the quickstart auto test
+21:11:24 <zaneb> couple more days probably
+21:11:35 <sdake> cool i got couple days to get a machine rolling for you then ;)
+21:11:36 <zaneb> also, Tuesday is a holiday here
+21:11:38 <sdake> ok
+21:11:43 <sdake> we are using lvm model then?
+21:11:47 <zaneb> so I'm thinking, end of this week
+21:11:59 <zaneb> maybe, or maybe I can get it running in a VM
+21:12:11 <sdake> ok well let me know as soon as you know
+21:12:15 <zaneb> ok
+21:12:24 <sdake> so i can start work on lvmism if needed
+21:12:33 <sdake> ok now asalkeld :)
+21:12:39 <asalkeld> I am done
+21:12:41 <funzo> when should we target moving to stackforge infra?
+21:13:00 <sdake> i think we need to extend this dev cycle a week
+21:13:00 <asalkeld> today?
+21:13:03 <sdake> we had talked end of week
+21:13:12 <funzo> kk
+21:13:13 <sdake> we have a few things to get setup
+21:13:24 <sdake> and i dont htink its going to be ready this week
+21:13:39 <sdake> we have to get a tox.ini file that describes the deps
+21:14:13 <funzo> I'll extend the versions end date in github by a week then
+21:14:36 <funzo> #action funzo update the github version dates (extend a week)
+21:15:21 <funzo> k, is that all the currently in flight roadmap items?
+21:15:39 <sdake> no, also have the parity
+21:15:53 <sdake> so regarding that, zane was going to make a table out of the partiy doc i think
+21:15:59 <zaneb> yep
+21:16:12 <sdake> then asalkled, shadower, sdake can correct ?
+21:16:21 <zaneb> yeah, that would be ideal
+21:16:32 <zaneb> I'm sure there's some stuff I will have missed in the code
+21:16:34 <sdake> anyone else implement any resource types?
+21:16:47 <funzo> I haven't, but I would like to get into that part
+21:16:49 <funzo> so, can help
+21:16:51 <asalkeld> zaneb, looks good
+21:16:57 <Slower> want an update on the associate users with templates item?
+21:17:06 <asalkeld> need IAM::user
+21:17:11 <sdake> #action zane to tableize the parity doc
+21:17:25 <zaneb> we also need to decide on how much of the unimplemented stuff we want to implement
+21:17:31 <sdake> #action asalkled, sdake, shadower, funzo to validate parity table
+21:17:47 <sdake> zaneb tbh i think that could take an entire agenda meeting and then some ;)
+21:17:54 <zaneb> lol
+21:18:05 <funzo> we might want to refactory the resources.py as it will become enourmous over time
+21:18:18 <Slower> well and it all takes time right?  We could basically just pick away at it and see how it goes :)
+21:18:39 <zaneb> funzo: that's easy enough to do though
+21:18:42 <funzo> ya
+21:18:42 <sdake> asalkeld had idea of making milestones based upon certain template support
+21:19:01 <funzo> I like that idea
+21:19:07 <sdake> i do too
+21:19:12 <asalkeld> so get template X running perfectly
+21:19:24 <Slower> well I suspect we will often have infrastructure items too
+21:19:26 <funzo> k, then we need to choose some templates
+21:19:37 <funzo> pick a top three, or something
+21:19:48 <asalkeld> what is the simplest
+21:20:05 <Slower> sounds good tho ya
+21:20:22 <funzo> discuss that on list?
+21:20:28 <sdake> ya discuss on list
+21:20:37 <funzo> #funzo start thread for template choices
+21:20:49 <sdake> i think you need a #action :)
+21:20:53 <funzo> lol
+21:20:59 <funzo> yeah that
+21:21:07 <funzo> #action funzo start thread for template choices
+21:21:31 <asalkeld> here is one for funzo https://s3.amazonaws.com/cloudformation-templates-us-east-1/IAM_Users_Groups_and_Policies.template
+21:21:52 <funzo> kk
+21:22:04 <funzo> any other roadmap updates?
+21:22:08 <sdake> security
+21:22:24 <funzo> Slower: ready to continue?
+21:22:27 <sdake> jpeeler, slower?
+21:22:37 <Slower> Yeah I did a bunch of code reading and learning about keystone
+21:22:46 <Slower> my findings are all up on the wiki
+21:23:05 <sdake> #action all review security roadmap item
+21:23:16 <funzo> https://github.com/heat-api/heat/wiki/Roadmap-Feature:-Associate-users-with-templates-using-keystone
+21:23:21 <jpeeler> i haven't investigated yet, but it seems Slower has left for me to do the database changes
+21:23:24 <sdake> we can discuss on list then
+21:23:26 <Slower> but I did find a few security issues, how to deal with AWS style access keys, and how to work the code to get the username
+21:23:37 <Slower> still have to look at the database and how that will work
+21:24:01 <funzo> kk
+21:24:34 <funzo> sdake: you reminded me of something during the demo, if you guys know about bugs that you need others to look into, please create and issue on github and assign it to the dev
+21:24:45 <sdake> i think i did for that bug
+21:24:50 <sdake> but need to double check
+21:24:59 <funzo> ok
+21:25:03 <funzo> any other updates
+21:25:13 <sdake> there is like 40 issues on the issue tracker brain can't hold that many items at one time :)
+21:25:18 <shardy> I started looking into boto re #92
+21:25:49 <shardy> I think it expects ec2 style auth, so may have to work that out first
+21:26:17 <asalkeld> shardy, you need to work with Slower
+21:26:21 <funzo> ok next agenda item was to review any blocking issues that require group thought, or do you want to wait on that one?
+21:26:31 <funzo> that stuff might go on forever
+21:26:39 <sdake> ya lets delay to end
+21:26:41 <shardy> asalkeld: Cool, will do, any pointers appreciated :)
+21:26:45 <Slower> shardy: ya I looked into it
+21:27:04 <funzo> community stuffs?
+21:27:10 <Slower> shardy: doesn't look to hard actually
+21:27:20 <sdake> sdake working on learning how to make videos
+21:27:25 <Slower> keystone does the translation iirc, you just have to check what kind of creds it's using
+21:27:27 <sdake> funzo had idea to create vids for each dev
+21:27:29 <Slower> anyway ping me after if you want
+21:27:33 <funzo> #topic community content
+21:27:36 <sdake> change agenda item
+21:27:51 <funzo> sdake: I talked to some of you about making a 30 second or less intro video, but didn't get a hold of everyone
+21:27:58 <funzo> I'll send an internal email to everyone
+21:28:01 <Slower> so basically I wanted us to discuss ideas to get more community involvement
+21:28:13 <funzo> sdake: to what
+21:28:15 <asalkeld> funzo, I'll get there planning a hair was soon ;)
+21:28:19 <Slower> well I think a demo video would be a better idea
+21:28:21 <asalkeld> funzo, I'll get there planning a hair wash soon ;)
+21:28:29 <funzo> haha
+21:28:31 <sdake> haha asalkeld showers ftw
+21:28:42 <Slower> haha
+21:28:51 <funzo> k, logo?
+21:29:01 <sdake> slower ya two videos, one demo one getting started
+21:29:02 <funzo> are we all agreed on the logo Slower sent out?
+21:29:08 <Slower> sdake: yes that would be good
+21:29:14 <asalkeld> ya, good
+21:29:18 <sdake> propose logo slower sent out +/-
+21:29:19 <sdake> +
+21:29:19 <funzo> I'm cool with it too
+21:29:23 <funzo> +
+21:29:25 <Slower> http://stemwinder.org/heat14.png
+21:29:26 <zaneb> +1
+21:29:28 <asalkeld> can always tweek as time goes by
+21:29:32 <Slower> yes
+21:29:42 <sdake> logo goes on your permanent record ;)
+21:29:45 <shardy> +1
+21:29:49 <Slower> I think probably the basic flame as the identifier of the project.. text etc can be changed
+21:30:02 <Slower> size, color all that
+21:30:02 <asalkeld> +1
+21:30:20 <funzo> ok, need to talk to the libvirt guys about what sort of trademarking they did
+21:30:20 <sdake> #action slower to check in svg of logo to website repo
+21:30:21 <Slower> +1
+21:30:27 <Slower> ok
+21:30:57 <funzo> Slower: anything else you want to talk about for community stuff
+21:31:33 <Slower> well, does anyone else have any ideas on how to get more community involvement
+21:31:35 <Slower> ?
+21:31:35 <sdake> logo + vids should keep us busy there for a week
+21:31:41 <funzo> kk
+21:32:07 <asalkeld> do we need to reach out to other related projects?
+21:32:09 <funzo> #action send out email for personal intro video for consistent script and video length
+21:32:21 <Slower> sdake: what about posting to umm, the HA guys list?
+21:32:26 <Slower> pacemaker :)
+21:32:27 <Slower> hehe
+21:32:42 <funzo> #action funzo send out email for personal intro video for consistent script and video length
+21:32:45 <sdake> ya i'll spam those lists
+21:32:51 <Slower> maybe when we get a release with HA in it?
+21:32:55 <asalkeld> ya
+21:33:09 <sdake> ya lets wait until ha is solidified
+21:33:22 <sdake> atm heat melting the chocolate
+21:33:34 <asalkeld> yum
+21:33:40 <asalkeld> hot choc
+21:33:56 <funzo> ok, move on to blockers that need group thought?
+21:34:11 <sdake> ya blockers
+21:34:14 <funzo> #topic discuss blocker dev issues that need group thought
+21:34:26 <sdake> anything blocking in testing?
+21:34:40 <sdake> the ini file
+21:34:44 <funzo> we had that venv issue, but I think we can get past that now
+21:34:50 <funzo> ..not optimal but ok I think
+21:35:06 <funzo> who's working on the ini thing, sdake you?
+21:35:14 <sdake> pretty overloaded atm
+21:35:21 <funzo> sdake I can help out with that
+21:35:22 <sdake> think someone else needs to take it
+21:35:30 <sdake> jpeeler might have bandwidth
+21:35:31 <funzo> just need to jump in and see what the issue is
+21:35:43 <funzo> jpeeler: do you want to look into it?
+21:35:55 <funzo> that is a precursor to using stackforge, right?
+21:35:59 <sdake> yup
+21:36:09 <jpeeler> the ini file?
+21:36:15 <funzo> jpeeler: tox.ini
+21:36:18 <funzo> it describes the deps
+21:36:26 <sdake> link?
+21:36:42 <funzo> http://code.google.com/p/pytox/source/browse/tox.ini
+21:36:50 <jpeeler> i can take that on
+21:36:53 <funzo> I don't know what all the issues are atm
+21:36:55 <sdake> thx
+21:37:12 <funzo> #action jpeeler look into getting tox.ini setup to get us into stackforge
+21:37:36 <funzo> what else needs group intpu
+21:37:56 <sdake> are test cases complete enough to go into stackforge yet?
+21:37:58 <sdake> or we need more time there
+21:38:16 <funzo> not sure what the guage is there
+21:38:19 <sdake> emberassed to say but haven't pulled repo for a week - working on other stuff unfortunately
+21:38:27 <funzo> if they pass, they can go in, or is it a certain amount of coverage
+21:38:41 <sdake> there is no coverage requirement for related projects
+21:38:42 <Slower> push them early if you can
+21:38:43 <funzo> there aren't a lot of tests in there
+21:38:46 <Slower> then others can help
+21:38:53 <funzo> I think we can just get it in there and continue to extend
+21:39:00 <asalkeld> +1
+21:39:03 <sdake> +1
+21:39:06 <funzo> I think coverage is really just going to help us with our modifications over time
+21:39:07 <Slower> +1
+21:39:35 <funzo> I can work with the openstack infra guys to get it in there, if that helps
+21:39:48 <funzo> sdake: is that something you're already doing
+21:39:50 <sdake> i can handle that
+21:39:54 <funzo> kk
+21:40:21 <sdake> once these videos are done my schedule will open up a bit ;)
+21:40:45 <funzo> sdake: shall we put a new logo splash screen in the vieo?
+21:40:47 <funzo> video
+21:40:48 <sdake> working on jenkins for quickstart test too
+21:40:53 <funzo> nice
+21:40:54 <sdake> sounds good
+21:41:03 <sdake> need svg ;)
+21:41:14 <funzo> ok, any other technical issues need group input?
+21:41:24 <asalkeld> not from me
+21:41:34 <funzo> anyone under utilized?
+21:41:39 <asalkeld> lol
+21:41:42 <sdake> haha
+21:41:43 <funzo> :)
+21:41:55 <sdake> *everyone steps back from line*
+21:41:59 <funzo> haha
+21:42:06 <funzo> ok, we can probably end the meeting then
+21:42:07 <Slower> haha
+21:42:17 <funzo> all in favor?
+21:42:23 <sdake> monday monkey ftw
+21:42:27 <sdake> +1
+21:42:28 <Slower> +1
+21:42:31 <asalkeld> +1
+21:42:32 <zaneb> +20
+21:42:33 <funzo> #endmeeting

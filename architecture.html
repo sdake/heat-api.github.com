@@ -1,0 +1,57 @@
+---
+layout: heat
+title: Heat API Community
+---
+
+<HTML>
+<HEAD>
+<TITLE>Architecture</TITLE>
+</HEAD>
+
+<SCRIPT LANGUAGE="JavaScript">
+ 
+current_overID = "";
+last_overID = "";
+ 
+function item (img_name,width,height)
+  {
+ 
+img_prefix = img_name;
+this.slide_img = new Image (width,height);
+this.slide_img.src = img_prefix + ".png";
+  }
+ 
+function new_item (img_name,width,height) 
+  {
+ 
+item [img_name] = new item (img_name,width,height);
+  }
+ 
+function mouseover (itemID)
+  {
+current_overID = itemID;
+        current_overID = itemID;
+        if (current_overID != last_overID) {
+                          document.jrcmap.src = item [current_overID].slide_img.src;
+        }
+}
+ 
+new_item ("overview",862,468);
+new_item ("uimouseover",862,468);
+new_item ("enginemouseover",862,468);
+
+</script>
+
+<center>
+<img src="overview.png" width="862" height="468" border="0" name="jrcmap" usemap="#map" />
+</center>
+<map name="map">
+<!-- #$-:Image map file created by GIMP Image Map plug-in -->
+<!-- #$-:GIMP Image Map plug-in by Maurits Rijk -->
+<!-- #$-:Please do not edit lines starting with "#$" -->
+<!-- #$VERSION:2.3 -->
+<!-- #$AUTHOR:root -->
+<area shape="rect" coords="58,115,379,182" href="ui.png" OnMouseOver="mouseover('uimouseover');window.defaultStatus=''; window.status=''; return true"..." OnMouseOut="mouseover('overview')">
+<area shape="rect" coords="59,221,380,285" href="engine.png" OnMouseOver="mouseover('enginemouseover');window.defaultStatus=''; window.status=''; return true"..." OnMouseOut="mouseover('overview')">
+
+</map>

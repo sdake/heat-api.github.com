@@ -1,0 +1,233 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#heat Meeting</title>
+<style type="text/css">
+/* This is for the .html in the HTML2 writer */
+body {
+    font-family: Helvetica, sans-serif;
+    font-size:14px;
+}
+h1 {
+    text-align: center;
+}
+a {
+    color:navy;
+    text-decoration: none;
+    border-bottom:1px dotted navy;
+}
+a:hover {
+    text-decoration:none;
+    border-bottom: 0;
+    color:#0000B9;
+}
+hr {
+    border: 1px solid #ccc;
+}
+/* The (nick, time) item pairs, and other body text things. */
+.details {
+    font-size: 12px;
+    font-weight:bold;
+}
+/* The 'AGREED:', 'IDEA', etc, prefix to lines. */
+.itemtype {
+    font-style: normal;    /* un-italics it */
+    font-weight: bold;
+}
+/* Example: change single item types.  Capitalized command name.
+/* .TOPIC  {  color:navy;  } */
+/* .AGREED {  color:lime;  } */
+
+</style>
+</head>
+
+<body>
+<h1>#heat Meeting</h1>
+<span class="details">
+Meeting started by funzo at 21:01:34 UTC
+(<a href="heat.2012-05-14-21.01.log.html">full logs</a>).</span>
+
+<br><br>
+
+
+
+<h3>Meeting summary</h3>
+<h3><span class="INFO">identified 4 major areas of investigation 1)                                                                                                         
+    features such as IAM and chef/puppet integration support 2) Quantum                                                                                                       
+    networking features lacking in our template support, 3)                                                                                                                   
+    autoscaling+cloudwatch features, and 4) nested stacks</span> <span                                                                                                        
+    class="details">(<a                                                                                                                                                       
+    href='heat.2012-05-14-21.01.log.html#l-50'>sdake</a>,                                                                                                                     
+    21:47:50)</span></h3>
+<ol>
+<li>
+<ol type="a">
+  <li><a
+    href="https://github.com/heat-api/heat/wiki/Roadmap-Feature:-AWS-template-support-parity">https://github.com/heat-api/heat/wiki/Roadmap-Feature:-AWS-template-support-parity</a>
+    <span class="details">(<a
+    href='heat.2012-05-14-21.01.log.html#l-4'>funzo</a>,
+    21:01:55)</span></li>
+  <li><a
+    href="https://github.com/heat-api/heat/wiki/Roadmap-Feature:-AWS-template-support-parity">https://github.com/heat-api/heat/wiki/Roadmap-Feature:-AWS-template-support-parity</a>
+    <span class="details">(<a
+    href='heat.2012-05-14-21.01.log.html#l-6'>sdake</a>,
+    21:02:11)</span></li>
+  <li><a
+    href="https://aws.amazon.com/cloudformation/aws-cloudformation-templates/">https://aws.amazon.com/cloudformation/aws-cloudformation-templates/</a>
+    <span class="details">(<a
+    href='heat.2012-05-14-21.01.log.html#l-7'>funzo</a>,
+    21:03:21)</span></li>
+  <li><i class="itemtype">AGREED</i>: <span class="AGREED">split up the
+    resources into chunks that can be contained within a version
+    release</span> <span class="details">(<a
+    href='heat.2012-05-14-21.01.log.html#l-12'>funzo</a>,
+    21:07:57)</span></li>
+  <li><a
+    href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-resource-authentication.html">http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-resource-authentication.html</a>
+    <span class="details">(<a
+    href='heat.2012-05-14-21.01.log.html#l-15'>asalkeld</a>,
+    21:08:50)</span></li>
+  <li><a
+    href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-resource-authentication.html">http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-resource-authentication.html</a>
+    <span class="details">(<a
+    href='heat.2012-05-14-21.01.log.html#l-25'>asalkeld</a>,
+    21:24:53)</span></li>
+  <li><span class="INFO">AWS:CloudFormation::Init finished</span> <span
+    class="details">(<a
+    href='heat.2012-05-14-21.01.log.html#l-27'>sdake</a>,
+    21:26:36)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">update wiki
+    for Init</span> <span class="details">(<a
+    href='heat.2012-05-14-21.01.log.html#l-28'>sdake</a>,
+    21:27:14)</span></li>
+  <li><span class="INFO">CloudFormation:Stack is a nested stack - put a
+    stack inside a stack</span> <span class="details">(<a
+    href='heat.2012-05-14-21.01.log.html#l-29'>sdake</a>,
+    21:27:44)</span></li>
+  <li><span class="INFO">WaitCondition functional</span> <span
+    class="details">(<a
+    href='heat.2012-05-14-21.01.log.html#l-30'>sdake</a>,
+    21:29:08)</span></li>
+  <li><span class="INFO">WaitConditionHnalde function</span> <span
+    class="details">(<a
+    href='heat.2012-05-14-21.01.log.html#l-31'>sdake</a>,
+    21:29:15)</span></li>
+  <li><span class="INFO">CloudFront discard</span> <span
+    class="details">(<a
+    href='heat.2012-05-14-21.01.log.html#l-32'>sdake</a>,
+    21:30:01)</span></li>
+  <li><span class="INFO">warp metadata server into cloudwatch
+    server</span> <span class="details">(<a
+    href='heat.2012-05-14-21.01.log.html#l-33'>sdake</a>,
+    21:30:39)</span></li>
+  <li><a
+    href="https://github.com/stackforge/ceilometer">https://github.com/stackforge/ceilometer</a>
+    <span class="details">(<a
+    href='heat.2012-05-14-21.01.log.html#l-34'>asalkeld</a>,
+    21:31:41)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">unassigned
+    investigate CustomerGateway</span> <span class="details">(<a
+    href='heat.2012-05-14-21.01.log.html#l-35'>sdake</a>,
+    21:32:59)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">unassigned
+    investigate DhcpOptions</span> <span class="details">(<a
+    href='heat.2012-05-14-21.01.log.html#l-36'>sdake</a>,
+    21:34:03)</span></li>
+  <li><span class="INFO">quantum integration with DhcpOptions</span>
+    <span class="details">(<a
+    href='heat.2012-05-14-21.01.log.html#l-37'>sdake</a>,
+    21:34:45)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">unassigned
+    update InstanceId to implemented</span> <span class="details">(<a
+    href='heat.2012-05-14-21.01.log.html#l-38'>sdake</a>,
+    21:35:19)</span></li>
+  <li><span class="INFO">domain EIP domain = vpc Quantum  feature</span>
+    <span class="details">(<a
+    href='heat.2012-05-14-21.01.log.html#l-39'>sdake</a>,
+    21:35:53)</span></li>
+  <li><span class="INFO">EIPAssociation AllocationID = vpc quantum
+    feature</span> <span class="details">(<a
+    href='heat.2012-05-14-21.01.log.html#l-40'>sdake</a>,
+    21:36:39)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">unassigned
+    investigate Instance:Kernel ID</span> <span class="details">(<a
+    href='heat.2012-05-14-21.01.log.html#l-41'>sdake</a>,
+    21:37:26)</span></li>
+  <li><span class="INFO">need PublicDnsName - used significantly</span>
+    <span class="details">(<a
+    href='heat.2012-05-14-21.01.log.html#l-42'>sdake</a>,
+    21:38:02)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">SecurityGroup
+    = Quantum VPC feature</span> <span class="details">(<a
+    href='heat.2012-05-14-21.01.log.html#l-43'>sdake</a>,
+    21:38:42)</span></li>
+  <li><span class="INFO">SecurityGroup Quantum VPC feature</span> <span
+    class="details">(<a
+    href='heat.2012-05-14-21.01.log.html#l-45'>sdake</a>,
+    21:38:53)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">slower
+    investigate iam</span> <span class="details">(<a
+    href='heat.2012-05-14-21.01.log.html#l-48'>sdake</a>,
+    21:46:16)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">calfonso
+    create puppet configuraion support</span> <span class="details">(<a
+    href='heat.2012-05-14-21.01.log.html#l-49'>funzo</a>,
+    21:47:18)</span></li>
+  <li><span class="INFO">identified 4 major areas of investigation 1)
+    features such as IAM and chef/puppet integration support 2) Quantum
+    networking features lacking in our template support, 3)
+    autoscaling+cloudwatch features, and 4) nested stacks</span> <span
+    class="details">(<a
+    href='heat.2012-05-14-21.01.log.html#l-50'>sdake</a>,
+    21:47:50)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">setup meeting
+    to go through the templates</span> <span class="details">(<a
+    href='heat.2012-05-14-21.01.log.html#l-53'>funzo</a>,
+    21:54:40)</span></li>
+</ol>
+</li>
+</ol>
+<br><br>
+
+
+
+<span class="details">
+Meeting ended at 21:57:44 UTC
+(<a href="heat.2012-05-14-21.01.log.html">full logs</a>).</span>
+
+<br><br>
+
+
+
+<h3>Action items</h3>
+<ol>
+  <li>update wiki for Init</li>
+  <li>unassigned investigate CustomerGateway</li>
+  <li>unassigned investigate DhcpOptions</li>
+  <li>unassigned update InstanceId to implemented</li>
+  <li>unassigned investigate Instance:Kernel ID</li>
+  <li>SecurityGroup = Quantum VPC feature</li>
+  <li>slower investigate iam</li>
+  <li>calfonso create puppet configuraion support</li>
+  <li>setup meeting to go through the templates</li>
+</ol>
+<br><br>
+
+
+
+<h3>People present (lines said)</h3>
+<ol>
+  <li>sdake (23)</li>
+  <li>funzo (12)</li>
+  <li>asalkeld (11)</li>
+  <li>Slower (4)</li>
+  <li>shardy (2)</li>
+  <li>mheat-bot (2)</li>
+</ol>
+<br><br>
+
+
+
+<span class="details">Generated by <a href="http://wiki.debian.org/MeetBot">MeetBot</a> 0.1.4.</span>
+</body></html>

@@ -1,0 +1,54 @@
+21:01:34 <funzo> #startmeeting
+21:01:34 <mheat-bot> Meeting started Mon May 14 21:01:34 2012 UTC.  The chair is funzo. Information about MeetBot at http://wiki.debian.org/MeetBot.
+21:01:34 <mheat-bot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+21:01:55 <funzo> https://github.com/heat-api/heat/wiki/Roadmap-Feature:-AWS-template-support-parity
+21:02:07 <funzo> review and prioritize ^
+21:02:11 <sdake> https://github.com/heat-api/heat/wiki/Roadmap-Feature:-AWS-template-support-parity
+21:03:21 <funzo> https://aws.amazon.com/cloudformation/aws-cloudformation-templates/
+21:03:27 <funzo> link to the cloudformation templates^
+21:06:53 <asalkeld> can you hear me?
+21:07:17 <sdake> no
+21:07:20 <sdake> hit ure mute
+21:07:57 <funzo> #agreed split up the resources into chunks that can be contained within a version release
+21:08:07 <asalkeld> need cloudwatch
+21:08:19 <asalkeld> for scalling
+21:08:50 <asalkeld> http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-resource-authentication.html
+21:09:27 <asalkeld> anyone have a voip phone I can call?
+21:09:52 <asalkeld> ie. human bridge:)
+21:10:10 <funzo> do you guys just want to hop off and just call into steves bridge?
+21:11:09 <asalkeld> sorry guys
+21:11:29 <asalkeld> i muted, then unmuted
+21:11:35 <asalkeld> now no workie
+21:12:16 <shardy> whats the internal channel?
+21:13:32 <funzo> shardy: #rh-heat
+21:13:52 <shardy> funzo: I just missed the conference ID, can someone pls re-post it?
+21:24:53 <asalkeld> http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-resource-authentication.html
+21:25:30 <funzo> AWS::CloudFormation::Authentication ^
+21:26:36 <sdake> #info AWS:CloudFormation::Init finished
+21:27:14 <sdake> #action update wiki for Init
+21:27:44 <sdake> #info CloudFormation:Stack is a nested stack - put a stack inside a stack
+21:29:08 <sdake> #info WaitCondition functional
+21:29:15 <sdake> #info WaitConditionHnalde function
+21:30:01 <sdake> #info CloudFront discard
+21:30:39 <sdake> #info warp metadata server into cloudwatch server
+21:31:41 <asalkeld> https://github.com/stackforge/ceilometer
+21:32:59 <sdake> #action unassigned investigate CustomerGateway
+21:34:03 <sdake> #action unassigned investigate DhcpOptions
+21:34:45 <sdake> #info quantum integration with DhcpOptions
+21:35:19 <sdake> #action unassigned update InstanceId to implemented
+21:35:53 <sdake> #info domain EIP domain = vpc Quantum  feature
+21:36:39 <sdake> #info EIPAssociation AllocationID = vpc quantum feature
+21:37:26 <sdake> #action unassigned investigate Instance:Kernel ID
+21:38:02 <sdake> #info need PublicDnsName - used significantly
+21:38:42 <sdake> #action SecurityGroup = Quantum VPC feature
+21:38:47 <sdake> #undo
+21:38:53 <sdake> #info SecurityGroup Quantum VPC feature
+21:45:48 <Slower> sdake: put in an action for imain to look at IAM
+21:45:55 <Slower> or Slower I guess
+21:46:16 <sdake> #action slower investigate iam
+21:47:18 <funzo> #action calfonso create puppet configuraion support
+21:47:50 <sdake> #info identified 4 major areas of investigation 1) features such as IAM and chef/puppet integration support 2) Quantum networking features lacking in our template support, 3) autoscaling+cloudwatch features, and 4) nested stacks
+21:53:51 <Slower> yikes
+21:53:57 <Slower> what'd I do? :)
+21:54:40 <funzo> #action setup meeting to go through the templates
+21:57:44 <funzo> #endmeeting

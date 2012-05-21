@@ -1,0 +1,416 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#heat log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">20:57:30</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">20:57:30</span><span class="nk"> &lt;mheat-bot&gt;</span> Meeting started Mon May 21 20:57:30 2012 UTC.  The chair is funzo. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">20:57:30</span><span class="nk"> &lt;mheat-bot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">20:57:58</span><span class="nk"> &lt;funzo&gt;</span> Today's proposed agenda: quick status update on the roadmap items, stackforge update.
+<a name="l-5"></a><span class="tm">20:58:06</span><span class="nk"> &lt;funzo&gt;</span> anything else folks want to bring up during the meeting?
+<a name="l-6"></a><span class="tm">20:58:15</span><span class="nk"> &lt;sdake&gt;</span> functional testing
+<a name="l-7"></a><span class="tm">21:00:35</span><span class="nk"> &lt;funzo&gt;</span> ok, let's go ahead and get started, here is today's meeting agenda:
+<a name="l-8"></a><span class="tm">21:00:40</span><span class="nk"> &lt;funzo&gt;</span> stackforge update
+<a name="l-9"></a><span class="tm">21:00:41</span><span class="nk"> &lt;funzo&gt;</span> functional testing
+<a name="l-10"></a><span class="tm">21:00:41</span><span class="nk"> &lt;funzo&gt;</span> roadmap item updates
+<a name="l-11"></a><span class="tm">21:00:41</span><span class="nk"> &lt;funzo&gt;</span> Roadmap Items: Test Infrastructure &amp; Cases High availability AWS Parity with template support Associate users with templates using keystone Get Boto working with Heat &amp; API rework to align with AWS specification Nested stacks
+<a name="l-12"></a><span class="tm">21:01:00</span><span class="nk"> &lt;funzo&gt;</span> <span class="topic">#topic </span><span class="topicline">stackforge update</span>
+<a name="l-13"></a><span class="tm">21:01:11</span><span class="nk"> &lt;sdake&gt;</span> stackforge imported our repo
+<a name="l-14"></a><span class="tm">21:01:20</span><span class="nk"> &lt;sdake&gt;</span> this leads to the following problems for us
+<a name="l-15"></a><span class="tm">21:01:36</span><span class="nk"> &lt;sdake&gt;</span> 1) our repo wiki, issues, and followers were not transferred
+<a name="l-16"></a><span class="tm">21:01:39</span><span class="nk"> &lt;zaneb&gt;</span> evening all
+<a name="l-17"></a><span class="tm">21:01:56</span><span class="nk"> &lt;funzo&gt;</span> I guess I don't understand the details sdake
+<a name="l-18"></a><span class="tm">21:01:57</span><span class="nk"> &lt;sdake&gt;</span> 2) we can't installl files in the root directory
+<a name="l-19"></a><span class="tm">21:02:53</span><span class="nk"> &lt;sdake&gt;</span> https://github.com/stackforge
+<a name="l-20"></a><span class="tm">21:03:04</span><span class="nk"> &lt;sdake&gt;</span> in there is a "heat" repo
+<a name="l-21"></a><span class="tm">21:03:06</span><span class="nk"> &lt;asalkeld&gt;</span> can't we ask to just move the repo ?
+<a name="l-22"></a><span class="tm">21:03:21</span><span class="nk"> &lt;asalkeld&gt;</span> not pull -&gt; push?
+<a name="l-23"></a><span class="tm">21:03:38</span><span class="nk"> &lt;asalkeld&gt;</span> admin/change owership
+<a name="l-24"></a><span class="tm">21:03:40</span><span class="nk"> &lt;sdake&gt;</span> lets tackle points in order - repo move
+<a name="l-25"></a><span class="tm">21:03:54</span><span class="nk"> &lt;funzo&gt;</span> well, we could just make them the origin
+<a name="l-26"></a><span class="tm">21:04:02</span><span class="nk"> &lt;funzo&gt;</span> and ours is a pull from them
+<a name="l-27"></a><span class="tm">21:04:07</span><span class="nk"> &lt;funzo&gt;</span> and we keep our github as is
+<a name="l-28"></a><span class="tm">21:04:21</span><span class="nk"> &lt;sdake&gt;</span> i talked with the infra team a bit about this and they were oging to think on it, in order to transfer the project, we would need
+<a name="l-29"></a><span class="tm">21:04:26</span><span class="nk"> &lt;sdake&gt;</span> a) admin privs on the stackforge project
+<a name="l-30"></a><span class="tm">21:04:39</span><span class="nk"> &lt;sdake&gt;</span> b) push access on the repos to update the wiki and issues
+<a name="l-31"></a><span class="tm">21:04:51</span><span class="nk"> &lt;sdake&gt;</span> they were thinking over whether this made sense for them
+<a name="l-32"></a><span class="tm">21:05:08</span><span class="nk"> &lt;sdake&gt;</span> another option is they have a user in our acls which can push via gerrit
+<a name="l-33"></a><span class="tm">21:05:20</span><span class="nk"> &lt;zaneb&gt;</span> you can create different groups with different permissions within an organisation
+<a name="l-34"></a><span class="tm">21:05:24</span><span class="nk"> &lt;sdake&gt;</span> what funzo described is the pull model
+<a name="l-35"></a><span class="tm">21:05:27</span><span class="nk"> &lt;funzo&gt;</span> so, git review will send patches to their gerrit instance, once approved it pushes to stackforge/heat right?
+<a name="l-36"></a><span class="tm">21:05:36</span><span class="nk"> &lt;sdake&gt;</span> funzo thats right
+<a name="l-37"></a><span class="tm">21:05:55</span><span class="nk"> &lt;funzo&gt;</span> and we have the heat repo under heat-api/heat (along with all the other repos and stuffs)
+<a name="l-38"></a><span class="tm">21:06:03</span><span class="nk"> &lt;sdake&gt;</span> yup
+<a name="l-39"></a><span class="tm">21:06:17</span><span class="nk"> &lt;Slower&gt;</span> so are we going to start reviewing everything soon then? (I'd rather not personally..)
+<a name="l-40"></a><span class="tm">21:06:18</span><span class="nk"> &lt;funzo&gt;</span> so, if the stackforge/heat repo is just for the build infra, maybe we should just keep everything as is on heat-api/heat
+<a name="l-41"></a><span class="tm">21:06:26</span><span class="nk"> &lt;funzo&gt;</span> and just periodically pull from them
+<a name="l-42"></a><span class="tm">21:06:32</span><span class="nk"> &lt;sdake&gt;</span> we can talk about reviewing after the tactical stuff ;)
+<a name="l-43"></a><span class="tm">21:06:39</span><span class="nk"> &lt;Slower&gt;</span> ok :)
+<a name="l-44"></a><span class="tm">21:06:47</span><span class="nk"> &lt;funzo&gt;</span> ...at least the master branch of heat could work that way
+<a name="l-45"></a><span class="tm">21:07:03</span><span class="nk"> &lt;funzo&gt;</span> that way we can keep everything the same, and just use stackforge/heat for master pushes
+<a name="l-46"></a><span class="tm">21:07:13</span><span class="nk"> &lt;asalkeld&gt;</span> sdake, didn't you say they were looking at been able to push to non-stackforge repos
+<a name="l-47"></a><span class="tm">21:07:13</span><span class="nk"> &lt;zaneb&gt;</span> I don't see the point of having two copies?
+<a name="l-48"></a><span class="tm">21:07:42</span><span class="nk"> &lt;asalkeld&gt;</span> I agree, one copy
+<a name="l-49"></a><span class="tm">21:07:45</span><span class="nk"> &lt;funzo&gt;</span> yeah, it's an infra limitation right now I guess on their part.  But we can give their user push access
+<a name="l-50"></a><span class="tm">21:07:46</span><span class="nk"> &lt;sdake&gt;</span> asalkeld they are looking into it
+<a name="l-51"></a><span class="tm">21:08:09</span><span class="nk"> &lt;sdake&gt;</span> i got impression they are drinking from fire hose, so the push to our repo idea is out for some time
+<a name="l-52"></a><span class="tm">21:08:14</span><span class="nk"> &lt;funzo&gt;</span> should we hold off using it until they get it figured out?
+<a name="l-53"></a><span class="tm">21:08:16</span><span class="nk"> &lt;sdake&gt;</span> it doesn't match up with their infrastructure
+<a name="l-54"></a><span class="tm">21:08:22</span><span class="nk"> &lt;funzo&gt;</span> hrm ok
+<a name="l-55"></a><span class="tm">21:08:48</span><span class="nk"> &lt;sdake&gt;</span> so the two options we can use in the next 1-2 weeks is transfer (1 copy) or two copies
+<a name="l-56"></a><span class="tm">21:08:49</span><span class="nk"> &lt;funzo&gt;</span> in the mean time, we could just pull from them, have a cronjob keep it in sync
+<a name="l-57"></a><span class="tm">21:09:04</span><span class="nk"> &lt;funzo&gt;</span> I really don't think we should transfer
+<a name="l-58"></a><span class="tm">21:09:15</span><span class="nk"> &lt;funzo&gt;</span> we have a ton of other stuff on there and moving it would be so confusing
+<a name="l-59"></a><span class="tm">21:09:42</span><span class="nk"> &lt;asalkeld&gt;</span> funzo, we can start moving that first
+<a name="l-60"></a><span class="tm">21:09:55</span><span class="nk"> &lt;asalkeld&gt;</span> so we need a new bug tracker/wiki
+<a name="l-61"></a><span class="tm">21:10:06</span><span class="nk"> &lt;funzo&gt;</span> what about the other repos?
+<a name="l-62"></a><span class="tm">21:10:11</span><span class="nk"> &lt;sdake&gt;</span> it doesn't make sense to move the diagrams repo, or the rpm repo
+<a name="l-63"></a><span class="tm">21:10:25</span><span class="nk"> &lt;asalkeld&gt;</span> make them personal
+<a name="l-64"></a><span class="tm">21:10:48</span><span class="nk"> &lt;funzo&gt;</span> or the website
+<a name="l-65"></a><span class="tm">21:10:55</span><span class="nk"> &lt;asalkeld&gt;</span> I hate to suggest this but, launchpad?
+<a name="l-66"></a><span class="tm">21:11:02</span><span class="nk"> &lt;sdake&gt;</span> well at this point we can speculate whether they would even allow a transfer, i got the impression they dont want to chew that off
+<a name="l-67"></a><span class="tm">21:11:19</span><span class="nk"> &lt;funzo&gt;</span> oh man
+<a name="l-68"></a><span class="tm">21:11:20</span><span class="nk"> &lt;sdake&gt;</span> i like github, devs know how to use it, easy to use, not hot on launchpad idea
+<a name="l-69"></a><span class="tm">21:11:45</span><span class="nk"> &lt;Slower&gt;</span> I think the only reason we want launchpad is to help exposure to other devs no?
+<a name="l-70"></a><span class="tm">21:11:49</span><span class="nk"> &lt;sdake&gt;</span> and we have a bunch of history already in github
+<a name="l-71"></a><span class="tm">21:12:04</span><span class="nk"> &lt;funzo&gt;</span> ok, why don't we just transfer just the heat repo to stackforge org in github for now
+<a name="l-72"></a><span class="tm">21:12:06</span><span class="nk"> &lt;zaneb&gt;</span> if we transfer the repo then surely the issues go with it?
+<a name="l-73"></a><span class="tm">21:12:17</span><span class="nk"> &lt;sdake&gt;</span> yes if we transfer
+<a name="l-74"></a><span class="tm">21:12:39</span><span class="nk"> &lt;sdake&gt;</span> as i said, it is not clear if the infra team is willing to take a transfer and deal with the acls that come along with that
+<a name="l-75"></a><span class="tm">21:13:03</span><span class="nk"> &lt;funzo&gt;</span> I like the idea of having a place for us to push to branches that doesn't go through the review process
+<a name="l-76"></a><span class="tm">21:13:19</span><span class="nk"> &lt;asalkeld&gt;</span> funzo, clone
+<a name="l-77"></a><span class="tm">21:13:20</span><span class="nk"> &lt;funzo&gt;</span> which means, I'd like to keep a heat repo under heat-api/heat
+<a name="l-78"></a><span class="tm">21:13:30</span><span class="nk"> &lt;funzo&gt;</span> and use personal?
+<a name="l-79"></a><span class="tm">21:13:34</span><span class="nk"> &lt;asalkeld&gt;</span> fork
+<a name="l-80"></a><span class="tm">21:13:38</span><span class="nk"> &lt;asalkeld&gt;</span> yes
+<a name="l-81"></a><span class="tm">21:13:40</span><span class="nk"> &lt;sdake&gt;</span> couple folks joining now from stackforge infra team
+<a name="l-82"></a><span class="tm">21:13:43</span><span class="nk"> &lt;LinuxJedi&gt;</span> hi
+<a name="l-83"></a><span class="tm">21:13:48</span><span class="nk"> &lt;zaneb&gt;</span> you can make someone an admin for just one repo
+<a name="l-84"></a><span class="tm">21:13:50</span><span class="nk"> &lt;funzo&gt;</span> k, and to pull everyone's stuff in we add remotes
+<a name="l-85"></a><span class="tm">21:14:06</span><span class="nk"> &lt;funzo&gt;</span> that seems fair
+<a name="l-86"></a><span class="tm">21:14:08</span><span class="nk"> &lt;zaneb&gt;</span> I don't see why we couldn't manage it ourselves from there as we have been
+<a name="l-87"></a><span class="tm">21:14:32</span><span class="nk"> &lt;funzo&gt;</span> the stackforge/heat repo would not have the individual committers any longer, correct?
+<a name="l-88"></a><span class="tm">21:14:32</span><span class="nk"> &lt;sdake&gt;</span> so stackforge devs, the topic is whether to transfer heat into stackforge, or use a two repo pull model
+<a name="l-89"></a><span class="tm">21:14:50</span><span class="nk"> &lt;sdake&gt;</span> those users need push access to update issues and wiki
+<a name="l-90"></a><span class="tm">21:14:53</span><span class="nk"> &lt;funzo&gt;</span> it would actually be...every developer has a fork of the stackforge/heat repo
+<a name="l-91"></a><span class="tm">21:14:55</span><span class="nk"> &lt;funzo&gt;</span> right?
+<a name="l-92"></a><span class="tm">21:15:35</span><span class="nk"> &lt;sdake&gt;</span> stackforge devs the issue is we don't want to lose the followers, issues, or wiki
+<a name="l-93"></a><span class="tm">21:15:40</span><span class="nk"> &lt;funzo&gt;</span> ...and there is no way to make the stackforge/heat repo just a fork of our upstream?
+<a name="l-94"></a><span class="tm">21:15:40</span><span class="nk"> &lt;sdake&gt;</span> but want gerrit to manage our repos
+<a name="l-95"></a><span class="tm">21:15:57</span><span class="nk"> &lt;sdake&gt;</span> it can't fork, the stackforge repo is written to by gerrit and none else
+<a name="l-96"></a><span class="tm">21:16:26</span><span class="nk"> &lt;asalkeld&gt;</span> I think best solution is gerrit pushes to  our repo where it is
+<a name="l-97"></a><span class="tm">21:16:55</span><span class="nk"> &lt;LinuxJedi&gt;</span> we have discussed doing this but at the moment we are not sure how hard it is to do (if our scripts will do it) so I will look into this tomorrow
+<a name="l-98"></a><span class="tm">21:16:59</span><span class="nk"> &lt;sdake&gt;</span> i agree with that asalkeld, but the framework isn't in place
+<a name="l-99"></a><span class="tm">21:17:03</span><span class="nk"> &lt;mtaylor&gt;</span> well, there are apparently a few things we'll have to change to support that (not saying we shouldn't - just there are some assumptions in our code that will have to be fixed)
+<a name="l-100"></a><span class="tm">21:17:11</span><span class="nk"> &lt;mtaylor&gt;</span> LinuxJedi beat me
+<a name="l-101"></a><span class="tm">21:17:42 </span><span class="nka">* LinuxJedi</span> <span class="ac">beats mtaylor</span>
+<a name="l-102"></a><span class="tm">21:17:47</span><span class="nk"> &lt;asalkeld&gt;</span> (or  we transfer whole repo (with issues), and still can get the permissions we have today)
+<a name="l-103"></a><span class="tm">21:17:49</span><span class="nk"> &lt;mtaylor&gt;</span> for that to work, you'd also have to grant the stackforge gerrit user push access to your heat-api/heat repo (just for completeness)
+<a name="l-104"></a><span class="tm">21:18:04</span><span class="nk"> &lt;sdake&gt;</span> mtaylor yes that works for us
+<a name="l-105"></a><span class="tm">21:18:09</span><span class="nk"> &lt;asalkeld&gt;</span> that's not a problem
+<a name="l-106"></a><span class="tm">21:18:15</span><span class="nk"> &lt;funzo&gt;</span> +1
+<a name="l-107"></a><span class="tm">21:18:31</span><span class="nk"> &lt;zaneb&gt;</span> +1
+<a name="l-108"></a><span class="tm">21:18:32</span><span class="nk"> &lt;LinuxJedi&gt;</span> and if you push to that repo without gerrit it will probably break stuff
+<a name="l-109"></a><span class="tm">21:18:48</span><span class="nk"> &lt;mtaylor&gt;</span> I'm actually personally a little more interested in the idea of having stackforge gerrit push to your repo location ... seems like a think that's going to come up again
+<a name="l-110"></a><span class="tm">21:18:52</span><span class="nk"> &lt;sdake&gt;</span> so if we use that model, in the meantime we wouldn't be able to use gerrit at all
+<a name="l-111"></a><span class="tm">21:18:54</span><span class="nk"> &lt;funzo&gt;</span> we could just outlaw pushing to master
+<a name="l-112"></a><span class="tm">21:18:57</span><span class="nk"> &lt;zaneb&gt;</span> easy to change the permissions to prevent that sort of breakage
+<a name="l-113"></a><span class="tm">21:19:19</span><span class="nk"> &lt;mtaylor&gt;</span> <span class="hi">zaneb:</span> it's not as easy as you'd tink ...you can't remove push access from org owners :(
+<a name="l-114"></a><span class="tm">21:19:23</span><span class="nk"> &lt;mtaylor&gt;</span> <span class="hi">zaneb:</span> but in general, yeah
+<a name="l-115"></a><span class="tm">21:19:36</span><span class="nk"> &lt;zaneb&gt;</span> ah, ok
+<a name="l-116"></a><span class="tm">21:19:53</span><span class="nk"> &lt;funzo&gt;</span> not everyone is an org owner, we only have 3
+<a name="l-117"></a><span class="tm">21:19:59</span><span class="nk"> &lt;funzo&gt;</span> so we could just make sure we don't push to master
+<a name="l-118"></a><span class="tm">21:20:07</span><span class="nk"> &lt;mtaylor&gt;</span> <span class="hi">sdake:</span> I think you could ... perhaps for the time being, just doing a pull from stackforge/heat and a push to heat-api/heat every so often (simple cron mirror)
+<a name="l-119"></a><span class="tm">21:20:10</span><span class="nk"> &lt;sdake&gt;</span> you need push access to update the wiki i believe
+<a name="l-120"></a><span class="tm">21:20:29</span><span class="nk"> &lt;mtaylor&gt;</span> is the wiki a special git ref in the heat repo?
+<a name="l-121"></a><span class="tm">21:20:35</span><span class="nk"> &lt;mtaylor&gt;</span> s/ref/branch/
+<a name="l-122"></a><span class="tm">21:20:38</span><span class="nk"> &lt;sdake&gt;</span> it has a git access, like the website
+<a name="l-123"></a><span class="tm">21:20:40</span><span class="nk"> &lt;sdake&gt;</span> but not a branch
+<a name="l-124"></a><span class="tm">21:20:57</span><span class="nk"> &lt;mtaylor&gt;</span> but it's attached to the main heat repo?
+<a name="l-125"></a><span class="tm">21:21:05</span><span class="nk"> &lt;asalkeld&gt;</span> can I suggest we also start using openstack wiki
+<a name="l-126"></a><span class="tm">21:21:17</span><span class="nk"> &lt;sdake&gt;</span> asalkeld 1 thing at a time :)
+<a name="l-127"></a><span class="tm">21:21:18</span><span class="nk"> &lt;asalkeld&gt;</span> then wiki problem goes away
+<a name="l-128"></a><span class="tm">21:21:40</span><span class="nk"> &lt;asalkeld&gt;</span> we can do more than 1 thing at a time
+<a name="l-129"></a><span class="tm">21:21:42</span><span class="nk"> &lt;asalkeld&gt;</span> :)
+<a name="l-130"></a><span class="tm">21:21:58</span><span class="nk"> &lt;funzo&gt;</span> ok, when do we need to move to gerrit?
+<a name="l-131"></a><span class="tm">21:22:05</span><span class="nk"> &lt;Slower&gt;</span> <span class="hi">asalkeld:</span> rebel.. ;-)
+<a name="l-132"></a><span class="tm">21:22:12</span><span class="nk"> &lt;sdake&gt;</span> sooner the better would be ideal, atm, the trees are out of sync
+<a name="l-133"></a><span class="tm">21:22:15</span><span class="nk"> &lt;mtaylor&gt;</span> I'm just asking about wiki mechanics, because gerrit owns the whole repo, not just a branch
+<a name="l-134"></a><span class="tm">21:22:16</span><span class="nk"> &lt;funzo&gt;</span> should we just hold until LinuxJedi or mtaylor tell us what they think?
+<a name="l-135"></a><span class="tm">21:22:31</span><span class="nk"> &lt;funzo&gt;</span> if they can look into a level of effort tomorrow, we can decide then
+<a name="l-136"></a><span class="tm">21:22:34</span><span class="nk"> &lt;sdake&gt;</span> mytalor ya wiki is attached to the repo, just as the followers and issues are
+<a name="l-137"></a><span class="tm">21:22:49</span><span class="nk"> &lt;mtaylor&gt;</span> hrm. ok. we're going to need to investigage a few things
+<a name="l-138"></a><span class="tm">21:22:54</span><span class="nk"> &lt;mtaylor&gt;</span> investigate
+<a name="l-139"></a><span class="tm">21:23:11 </span><span class="nka">* LinuxJedi</span> <span class="ac">added to todo list to investigate tomorrow</span>
+<a name="l-140"></a><span class="tm">21:23:17</span><span class="nk"> &lt;asalkeld&gt;</span> thanks guys
+<a name="l-141"></a><span class="tm">21:23:26</span><span class="nk"> &lt;funzo&gt;</span> if needed, maybe we could help
+<a name="l-142"></a><span class="tm">21:23:27</span><span class="nk"> &lt;zaneb&gt;</span> "The wiki repositories obey the same access rules as the source repository that they belong to."
+<a name="l-143"></a><span class="tm">21:23:37</span><span class="nk"> &lt;mtaylor&gt;</span> <span class="hi">LinuxJedi:</span> issues, followers and wiki being in the repo may be a giant roadblock here
+<a name="l-144"></a><span class="tm">21:23:57</span><span class="nk"> &lt;LinuxJedi&gt;</span> <span class="hi">mtaylor:</span> very possible...
+<a name="l-145"></a><span class="tm">21:24:14</span><span class="nk"> &lt;sdake&gt;</span> its not referencable via a git address
+<a name="l-146"></a><span class="tm">21:24:37</span><span class="nk"> &lt;funzo&gt;</span> I think using heat-api/heat as upstream that gerrit pushes to is the best bet
+<a name="l-147"></a><span class="tm">21:24:39</span><span class="nk"> &lt;mtaylor&gt;</span> ok ... it's actually a different repo. that's cool
+<a name="l-148"></a><span class="tm">21:24:42</span><span class="nk"> &lt;funzo&gt;</span> pending investigation outcome
+<a name="l-149"></a><span class="tm">21:25:11</span><span class="nk"> &lt;funzo&gt;</span> anything else on the topic we need to cover?
+<a name="l-150"></a><span class="tm">21:25:17</span><span class="nk"> &lt;sdake&gt;</span> yes
+<a name="l-151"></a><span class="tm">21:25:27</span><span class="nk"> &lt;sdake&gt;</span> thanks infra guys - look forward to hearing from you :)
+<a name="l-152"></a><span class="tm">21:25:29</span><span class="nk"> &lt;zaneb&gt;</span> wiki is at git://github.com/heat-api/heat.wiki.git so it's a different git repo
+<a name="l-153"></a><span class="tm">21:25:32</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#action </span><span class="cmdline">sdake follow up with LinuxJedi and mtaylor regarding forkability of gerrit</span>
+<a name="l-154"></a><span class="tm">21:25:48</span><span class="nk"> &lt;Slower&gt;</span> wooo, forkability
+<a name="l-155"></a><span class="tm">21:25:48</span><span class="nk"> &lt;sdake&gt;</span> second issue is files in the root path
+<a name="l-156"></a><span class="tm">21:25:50</span><span class="nk"> &lt;sdake&gt;</span> ie : /etc and /var//log
+<a name="l-157"></a><span class="tm">21:26:04</span><span class="nk"> &lt;sdake&gt;</span> we can't do that via setup.py
+<a name="l-158"></a><span class="tm">21:26:14</span><span class="nk"> &lt;funzo&gt;</span> what does nova do?
+<a name="l-159"></a><span class="tm">21:26:18</span><span class="nk"> &lt;asalkeld&gt;</span> sdake, I think a minor issue
+<a name="l-160"></a><span class="tm">21:26:19</span><span class="nk"> &lt;sdake&gt;</span> it doesn't
+<a name="l-161"></a><span class="tm">21:26:29</span><span class="nk"> &lt;sdake&gt;</span> there is a gerrit review which removes that stuff
+<a name="l-162"></a><span class="tm">21:26:38</span><span class="nk"> &lt;zaneb&gt;</span> <span class="hi">funzo:</span> rpm is responsible for that stuff
+<a name="l-163"></a><span class="tm">21:26:40</span><span class="nk"> &lt;asalkeld&gt;</span> more steps to install from source
+<a name="l-164"></a><span class="tm">21:26:40</span><span class="nk"> &lt;sdake&gt;</span> here is what I propose
+<a name="l-165"></a><span class="tm">21:26:40</span><span class="nk"> &lt;funzo&gt;</span> it has /etc/nova/nova.conf
+<a name="l-166"></a><span class="tm">21:26:46</span><span class="nk"> &lt;funzo&gt;</span> oh
+<a name="l-167"></a><span class="tm">21:26:48</span><span class="nk"> &lt;funzo&gt;</span> I see
+<a name="l-168"></a><span class="tm">21:26:55</span><span class="nk"> &lt;sdake&gt;</span> we can make an install script
+<a name="l-169"></a><span class="tm">21:26:58</span><span class="nk"> &lt;sdake&gt;</span> put in head of repo
+<a name="l-170"></a><span class="tm">21:27:05</span><span class="nk"> &lt;sdake&gt;</span> this is for people that want to install the software
+<a name="l-171"></a><span class="tm">21:27:14</span><span class="nk"> &lt;funzo&gt;</span> without using rpm?
+<a name="l-172"></a><span class="tm">21:27:15</span><span class="nk"> &lt;sdake&gt;</span> setup.py then doesn't actually install, its more like a testing blob
+<a name="l-173"></a><span class="tm">21:27:25</span><span class="nk"> &lt;sdake&gt;</span> some people don't use rpm funzo ;)
+<a name="l-174"></a><span class="tm">21:27:32</span><span class="nk"> &lt;Slower&gt;</span> .deb :)
+<a name="l-175"></a><span class="tm">21:27:45</span><span class="nk"> &lt;zaneb&gt;</span> <span class="hi">sdake:</span> or we could do the rpm and deb packaging now
+<a name="l-176"></a><span class="tm">21:27:56 </span><span class="nka">* asalkeld</span> <span class="ac">uses ./setup.py</span>
+<a name="l-177"></a><span class="tm">21:28:09</span><span class="nk"> &lt;sdake&gt;</span> i use setup.py all the time
+<a name="l-178"></a><span class="tm">21:28:43</span><span class="nk"> &lt;sdake&gt;</span> linuxjedi will it be possible to potentially restart the heat repo once we sort all this stuff out, there have been about 30 commits since gerrit started managing the repo
+<a name="l-179"></a><span class="tm">21:28:55</span><span class="nk"> &lt;mtaylor&gt;</span> setup.py install can be expected to install python libraries and stuff... but it's REALLY bad at installing other stuff
+<a name="l-180"></a><span class="tm">21:28:58</span><span class="nk"> &lt;mtaylor&gt;</span> <span class="hi">sdake:</span> and yes
+<a name="l-181"></a><span class="tm">21:30:24</span><span class="nk"> &lt;sdake&gt;</span> so install.sh then?
+<a name="l-182"></a><span class="tm">21:30:34</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#action </span><span class="cmdline">remove root install location from setup.py</span>
+<a name="l-183"></a><span class="tm">21:30:35</span><span class="nk"> &lt;sdake&gt;</span> I can't think of an easier way
+<a name="l-184"></a><span class="tm">21:30:42</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#action </span><span class="cmdline">create an install.sh</span>
+<a name="l-185"></a><span class="tm">21:30:45</span><span class="nk"> &lt;asalkeld&gt;</span> fine by me
+<a name="l-186"></a><span class="tm">21:30:46</span><span class="nk"> &lt;sdake&gt;</span> funzo there is already a patch for that
+<a name="l-187"></a><span class="tm">21:31:06</span><span class="nk"> &lt;funzo&gt;</span> where?
+<a name="l-188"></a><span class="tm">21:31:13</span><span class="nk"> &lt;sdake&gt;</span> mtaylor wrote most of it in gerrit
+<a name="l-189"></a><span class="tm">21:31:18</span><span class="nk"> &lt;sdake&gt;</span> i fixed a few test case problems
+<a name="l-190"></a><span class="tm">21:31:25</span><span class="nk"> &lt;sdake&gt;</span> i'll pull into our repo after we wrap up
+<a name="l-191"></a><span class="tm">21:31:28</span><span class="nk"> &lt;asalkeld&gt;</span> https://review.stackforge.org/#/c/38/
+<a name="l-192"></a><span class="tm">21:31:57</span><span class="nk"> &lt;funzo&gt;</span> lookie there, thanks mtaylor
+<a name="l-193"></a><span class="tm">21:32:00</span><span class="nk"> &lt;sdake&gt;</span> ok so in meantime, we wont use stackforge for gerrit pushes then?
+<a name="l-194"></a><span class="tm">21:32:32</span><span class="nk"> &lt;funzo&gt;</span> yeah, pending tomorrow's look into it
+<a name="l-195"></a><span class="tm">21:32:33</span><span class="nk"> &lt;sdake&gt;</span> we should probably have a sync + lockout period once all things are sorted out where we transition all at once ;)
+<a name="l-196"></a><span class="tm">21:32:43</span><span class="nk"> &lt;funzo&gt;</span> yep
+<a name="l-197"></a><span class="tm">21:32:46</span><span class="nk"> &lt;asalkeld&gt;</span> ya
+<a name="l-198"></a><span class="tm">21:33:07</span><span class="nk"> &lt;funzo&gt;</span> ok, anything else on the same topic?
+<a name="l-199"></a><span class="tm">21:33:28</span><span class="nk"> &lt;sdake&gt;</span> that is all i had, thanks stackforge infra guys for coming
+<a name="l-200"></a><span class="tm">21:33:38</span><span class="nk"> &lt;sdake&gt;</span> hope you had an idea of what kind of problems we are thinking about ;)
+<a name="l-201"></a><span class="tm">21:33:40</span><span class="nk"> &lt;funzo&gt;</span> yeah, thanks a lot, let us know if you need any help
+<a name="l-202"></a><span class="tm">21:33:51</span><span class="nk"> &lt;funzo&gt;</span> next item
+<a name="l-203"></a><span class="tm">21:33:56</span><span class="nk"> &lt;funzo&gt;</span> <span class="topic">#topic </span><span class="topicline">functional testing</span>
+<a name="l-204"></a><span class="tm">21:34:13</span><span class="nk"> &lt;sdake&gt;</span> beaker (which manages our test machine) is broke for fedora 17
+<a name="l-205"></a><span class="tm">21:34:38</span><span class="nk"> &lt;funzo&gt;</span> <span class="hi">sdake:</span> a work in progress?
+<a name="l-206"></a><span class="tm">21:34:44</span><span class="nk"> &lt;sdake&gt;</span> theoretically f17 will be booting in couple weeks
+<a name="l-207"></a><span class="tm">21:34:54</span><span class="nk"> &lt;sdake&gt;</span> so functional testing is blocked on that issue atm
+<a name="l-208"></a><span class="tm">21:35:13</span><span class="nk"> &lt;funzo&gt;</span> is anyone working on getting stuff working with beaker/installation and all that right now?
+<a name="l-209"></a><span class="tm">21:35:22</span><span class="nk"> &lt;sdake&gt;</span> the beaker guys are working on it
+<a name="l-210"></a><span class="tm">21:35:34</span><span class="nk"> &lt;sdake&gt;</span> but they have maintenance windows and all that
+<a name="l-211"></a><span class="tm">21:35:40</span><span class="nk"> &lt;asalkeld&gt;</span> can't we test on f16
+<a name="l-212"></a><span class="tm">21:35:48</span><span class="nk"> &lt;asalkeld&gt;</span> in short term
+<a name="l-213"></a><span class="tm">21:35:49</span><span class="nk"> &lt;sdake&gt;</span> f16 also broken in beaker
+<a name="l-214"></a><span class="tm">21:35:55</span><span class="nk"> &lt;zaneb&gt;</span> <span class="hi">asalkeld:</span> that won't boot either :(
+<a name="l-215"></a><span class="tm">21:35:56</span><span class="nk"> &lt;asalkeld&gt;</span> groan
+<a name="l-216"></a><span class="tm">21:35:57</span><span class="nk"> &lt;sdake&gt;</span> beaker ppl asleep at wheel ;)
+<a name="l-217"></a><span class="tm">21:36:16</span><span class="nk"> &lt;funzo&gt;</span> is beaker public facing?
+<a name="l-218"></a><span class="tm">21:36:21</span><span class="nk"> &lt;sdake&gt;</span> no internal infra
+<a name="l-219"></a><span class="tm">21:36:22</span><span class="nk"> &lt;funzo&gt;</span> or is that an rh internal tool
+<a name="l-220"></a><span class="tm">21:36:40</span><span class="nk"> &lt;sdake&gt;</span> but it is where our test hardware is managed
+<a name="l-221"></a><span class="tm">21:36:52</span><span class="nk"> &lt;zaneb&gt;</span> so, where I am at is there is a script to completely uninstall heat + openstack and (theoretically) start from scratch
+<a name="l-222"></a><span class="tm">21:37:05</span><span class="nk"> &lt;zaneb&gt;</span> and from there running the GettingStarted readme/script works
+<a name="l-223"></a><span class="tm">21:37:13</span><span class="nk"> &lt;asalkeld&gt;</span> cool
+<a name="l-224"></a><span class="tm">21:37:19</span><span class="nk"> &lt;sdake&gt;</span> jpeeler also has some jeos test cases i believe
+<a name="l-225"></a><span class="tm">21:37:29</span><span class="nk"> &lt;zaneb&gt;</span> I can't get that to work inside a VM
+<a name="l-226"></a><span class="tm">21:37:38</span><span class="nk"> &lt;jpeeler&gt;</span> yep
+<a name="l-227"></a><span class="tm">21:37:49</span><span class="nk"> &lt;zaneb&gt;</span> and I haven't really started looking at LVM because beaker is broken
+<a name="l-228"></a><span class="tm">21:37:50</span><span class="nk"> &lt;asalkeld&gt;</span> zaneb, is there a how to: so devs can run it
+<a name="l-229"></a><span class="tm">21:39:03</span><span class="nk"> &lt;zaneb&gt;</span> <span class="hi">asalkeld:</span> tools/uninstall-heat -y -r "" &amp;&amp; bash -c "$(./tools/rst2script.sed docs/GettingStarted.rst)"
+<a name="l-230"></a><span class="tm">21:39:07</span><span class="nk"> &lt;funzo&gt;</span> ok, so we are basically saying we aren't running the functional tests until beaker is fixed?
+<a name="l-231"></a><span class="tm">21:39:16</span><span class="nk"> &lt;sdake&gt;</span> funzo thats right
+<a name="l-232"></a><span class="tm">21:39:18</span><span class="nk"> &lt;funzo&gt;</span> ie, F16/17 on beaker
+<a name="l-233"></a><span class="tm">21:39:19</span><span class="nk"> &lt;funzo&gt;</span> ok.
+<a name="l-234"></a><span class="tm">21:39:39</span><span class="nk"> &lt;funzo&gt;</span> but that is just a roadmap issue that doesn't block anything else, so we are ok.
+<a name="l-235"></a><span class="tm">21:39:45</span><span class="nk"> &lt;zaneb&gt;</span> <span class="hi">asalkeld:</span> but I'll commit a script to make that easier ;)
+<a name="l-236"></a><span class="tm">21:40:01</span><span class="nk"> &lt;sdake&gt;</span> zaneb sounds good
+<a name="l-237"></a><span class="tm">21:40:07</span><span class="nk"> &lt;asalkeld&gt;</span> cool, was about to make script
+<a name="l-238"></a><span class="tm">21:40:29</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#action </span><span class="cmdline">zaneb commit test script which makes running functional tests a snap</span>
+<a name="l-239"></a><span class="tm">21:40:39</span><span class="nk"> &lt;funzo&gt;</span> ok, anything else on the topic of functional tests?
+<a name="l-240"></a><span class="tm">21:40:46</span><span class="nk"> &lt;sdake&gt;</span> need moar tests
+<a name="l-241"></a><span class="tm">21:41:08</span><span class="nk"> &lt;asalkeld&gt;</span> do the tests run through all templates
+<a name="l-242"></a><span class="tm">21:41:12</span><span class="nk"> &lt;funzo&gt;</span> yeah, more unit tests.  what do you guys think about a rule of ...you add a feature, you add a test.
+<a name="l-243"></a><span class="tm">21:41:22</span><span class="nk"> &lt;funzo&gt;</span> <span class="hi">asalkeld:</span> no
+<a name="l-244"></a><span class="tm">21:41:23</span><span class="nk"> &lt;asalkeld&gt;</span> funzo, lol
+<a name="l-245"></a><span class="tm">21:41:33</span><span class="nk"> &lt;funzo&gt;</span> but we should add one for each
+<a name="l-246"></a><span class="tm">21:41:33 </span><span class="nka">* asalkeld</span> <span class="ac">hides</span>
+<a name="l-247"></a><span class="tm">21:41:36</span><span class="nk"> &lt;funzo&gt;</span> haha
+<a name="l-248"></a><span class="tm">21:41:43</span><span class="nk"> &lt;funzo&gt;</span> it's extremely time consuming, actually.
+<a name="l-249"></a><span class="tm">21:41:49</span><span class="nk"> &lt;sdake&gt;</span> my take is we should spend 80% writing code, and 20% writing tests
+<a name="l-250"></a><span class="tm">21:41:58</span><span class="nk"> &lt;sdake&gt;</span> funzo what you propose is more like 80% writing tests 20% writing code
+<a name="l-251"></a><span class="tm">21:42:03</span><span class="nk"> &lt;sdake&gt;</span> tests harder to write thenf eatures
+<a name="l-252"></a><span class="tm">21:42:11</span><span class="nk"> &lt;asalkeld&gt;</span> ja, honestly
+<a name="l-253"></a><span class="tm">21:42:12</span><span class="nk"> &lt;funzo&gt;</span> my experience is writing tests is more time consuming than writing features
+<a name="l-254"></a><span class="tm">21:42:16</span><span class="nk"> &lt;zaneb&gt;</span> sorted.
+<a name="l-255"></a><span class="tm">21:42:20</span><span class="nk"> &lt;funzo&gt;</span> yeah
+<a name="l-256"></a><span class="tm">21:42:37</span><span class="nk"> &lt;Slower&gt;</span> yeah
+<a name="l-257"></a><span class="tm">21:42:56</span><span class="nk"> &lt;funzo&gt;</span> but honestly if we aren't going to take the tests seriously, then it's not a lot of use
+<a name="l-258"></a><span class="tm">21:43:08</span><span class="nk"> &lt;zaneb&gt;</span> tests are great for stuff that is just transforming data from one form to another
+<a name="l-259"></a><span class="tm">21:43:13</span><span class="nk"> &lt;funzo&gt;</span> meaning if we don't have coverange, we can't count on them to tell us if stuffs broke
+<a name="l-260"></a><span class="tm">21:43:21</span><span class="nk"> &lt;zaneb&gt;</span> just test input vs. output. totally worth it
+<a name="l-261"></a><span class="tm">21:43:35</span><span class="nk"> &lt;zaneb&gt;</span> when you have stuff actually *happening*... so much harder
+<a name="l-262"></a><span class="tm">21:43:49</span><span class="nk"> &lt;sdake&gt;</span> well if we have software with a kickass test system which doesn't do anything, that isn't very productive ;)
+<a name="l-263"></a><span class="tm">21:43:50</span><span class="nk"> &lt;asalkeld&gt;</span> funzo, agree - just find these tests tricky to setup
+<a name="l-264"></a><span class="tm">21:43:59</span><span class="nk"> &lt;funzo&gt;</span> I won't debate the merits of tests here for time, but we certainly need to put more effort into it
+<a name="l-265"></a><span class="tm">21:44:08</span><span class="nk"> &lt;funzo&gt;</span> agreed
+<a name="l-266"></a><span class="tm">21:44:11</span><span class="nk"> &lt;sdake&gt;</span> ya lets move on
+<a name="l-267"></a><span class="tm">21:44:24 </span><span class="nka">* funzo</span> <span class="ac">includes self in *we*</span>
+<a name="l-268"></a><span class="tm">21:44:41</span><span class="nk"> &lt;funzo&gt;</span> ok, then next topic is all roadmap status all the time
+<a name="l-269"></a><span class="tm">21:44:52</span><span class="nk"> &lt;funzo&gt;</span> roadmap item updates
+<a name="l-270"></a><span class="tm">21:44:53</span><span class="nk"> &lt;funzo&gt;</span> Roadmap Items: Test Infrastructure &amp; Cases High availability AWS Parity with template support Associate users with templates using keystone Get Boto working with Heat &amp; API rework to align with AWS specification Nested stacks
+<a name="l-271"></a><span class="tm">21:45:06</span><span class="nk"> &lt;funzo&gt;</span> We kinda just beat the test infra and cases to death
+<a name="l-272"></a><span class="tm">21:45:11</span><span class="nk"> &lt;funzo&gt;</span> HA
+<a name="l-273"></a><span class="tm">21:45:14</span><span class="nk"> &lt;asalkeld&gt;</span> k
+<a name="l-274"></a><span class="tm">21:45:26</span><span class="nk"> &lt;asalkeld&gt;</span> so I have been a bit distracted
+<a name="l-275"></a><span class="tm">21:45:36</span><span class="nk"> &lt;asalkeld&gt;</span> but doing cloudwatch
+<a name="l-276"></a><span class="tm">21:45:43</span><span class="nk"> &lt;asalkeld&gt;</span> and ha together
+<a name="l-277"></a><span class="tm">21:45:49</span><span class="nk"> &lt;sdake&gt;</span> asalkeld any estimates on timeframe?
+<a name="l-278"></a><span class="tm">21:45:49</span><span class="nk"> &lt;asalkeld&gt;</span> doing well
+<a name="l-279"></a><span class="tm">21:46:19</span><span class="nk"> &lt;asalkeld&gt;</span> max 1 week of my full time
+<a name="l-280"></a><span class="tm">21:46:28</span><span class="nk"> &lt;sdake&gt;</span> shadower working on that with you?
+<a name="l-281"></a><span class="tm">21:46:54</span><span class="nk"> &lt;asalkeld&gt;</span> not yet on cloudwatch, but he has looked at it
+<a name="l-282"></a><span class="tm">21:47:11</span><span class="nk"> &lt;asalkeld&gt;</span> it's in a "cloudwatch" branch
+<a name="l-283"></a><span class="tm">21:47:13</span><span class="nk"> &lt;sdake&gt;</span> ok - makes sense he stick with it since he started out with ha wit hyou
+<a name="l-284"></a><span class="tm">21:47:50</span><span class="nk"> &lt;sdake&gt;</span> aws parity?
+<a name="l-285"></a><span class="tm">21:47:51</span><span class="nk"> &lt;funzo&gt;</span> AWS Parity with template support status: Got puppetmaster template working and merged to master.  working on the puppet client (setting up wordpress now).
+<a name="l-286"></a><span class="tm">21:48:06</span><span class="nk"> &lt;asalkeld&gt;</span> nice
+<a name="l-287"></a><span class="tm">21:48:10</span><span class="nk"> &lt;funzo&gt;</span> got a little sidetracked on shooting myself with bridge setup
+<a name="l-288"></a><span class="tm">21:48:38</span><span class="nk"> &lt;funzo&gt;</span> <span class="hi">note:</span> DO NOT USE YOUR real bridge for the --bridge argument to the nova network
+<a name="l-289"></a><span class="tm">21:48:42</span><span class="nk"> &lt;funzo&gt;</span> EVAAARRR
+<a name="l-290"></a><span class="tm">21:48:56</span><span class="nk"> &lt;Slower&gt;</span> hehe
+<a name="l-291"></a><span class="tm">21:48:56</span><span class="nk"> &lt;zaneb&gt;</span> lol
+<a name="l-292"></a><span class="tm">21:49:04</span><span class="nk"> &lt;asalkeld&gt;</span> wlan0 or em0
+<a name="l-293"></a><span class="tm">21:49:07</span><span class="nk"> &lt;Slower&gt;</span> nice irc pirate talk :)
+<a name="l-294"></a><span class="tm">21:49:21</span><span class="nk"> &lt;funzo&gt;</span> Associate users with templates using keystone?
+<a name="l-295"></a><span class="tm">21:49:30</span><span class="nk"> &lt;sdake&gt;</span> ya
+<a name="l-296"></a><span class="tm">21:49:36</span><span class="nk"> &lt;funzo&gt;</span> <span class="hi">note:</span> part of the merge of the puppetmaster was a user and accesskey module
+<a name="l-297"></a><span class="tm">21:50:18</span><span class="nk"> &lt;sdake&gt;</span> nice funzo
+<a name="l-298"></a><span class="tm">21:50:21</span><span class="nk"> &lt;Slower&gt;</span> I've been working on that and the AWS support
+<a name="l-299"></a><span class="tm">21:50:43</span><span class="nk"> &lt;Slower&gt;</span> so I've mostly just been working on getting AWS plus native keystone user/pass auth working
+<a name="l-300"></a><span class="tm">21:50:50</span><span class="nk"> &lt;Slower&gt;</span> which should be done in the next few days
+<a name="l-301"></a><span class="tm">21:51:07</span><span class="nk"> &lt;funzo&gt;</span> <span class="hi">Slower:</span> k, when you're ready to look at the user and accesskey think, we can catch up
+<a name="l-302"></a><span class="tm">21:51:10</span><span class="nk"> &lt;Slower&gt;</span> I learned I needed to learn more about wsgi + paste apps :)
+<a name="l-303"></a><span class="tm">21:51:17</span><span class="nk"> &lt;shardy&gt;</span> <span class="hi">Slower:</span> I can help test with boto-ified heat cli
+<a name="l-304"></a><span class="tm">21:51:29</span><span class="nk"> &lt;Slower&gt;</span> yeah you bet
+<a name="l-305"></a><span class="tm">21:51:42</span><span class="nk"> &lt;funzo&gt;</span> <span class="hi">shardy:</span> excellent segway - get Boto working with Heat &amp; API rework to align with AWS specification
+<a name="l-306"></a><span class="tm">21:51:43</span><span class="nk"> &lt;Slower&gt;</span> I've been running the boto stuff against it.. and have written more command line tests with it
+<a name="l-307"></a><span class="tm">21:51:54</span><span class="nk"> &lt;funzo&gt;</span> awesome!
+<a name="l-308"></a><span class="tm">21:52:06</span><span class="nk"> &lt;Slower&gt;</span> so once the AWS auth is working we'll be able to move into more boto testing..
+<a name="l-309"></a><span class="tm">21:52:06</span><span class="nk"> &lt;shardy&gt;</span> So #115 was the initial API rework for boto
+<a name="l-310"></a><span class="tm">21:52:10</span><span class="nk"> &lt;shardy&gt;</span> which is complete
+<a name="l-311"></a><span class="tm">21:52:18</span><span class="nk"> &lt;Slower&gt;</span> well, it's got bugs :)
+<a name="l-312"></a><span class="tm">21:52:22</span><span class="nk"> &lt;shardy&gt;</span> now gated on AWS style auth #91
+<a name="l-313"></a><span class="tm">21:52:42</span><span class="nk"> &lt;shardy&gt;</span> <span class="hi">Slower:</span> Ah, OK, details?
+<a name="l-314"></a><span class="tm">21:53:00</span><span class="nk"> &lt;Slower&gt;</span> I know the return values are not right
+<a name="l-315"></a><span class="tm">21:53:10</span><span class="nk"> &lt;shardy&gt;</span> I was going to do a boto heat CLI unless anyone else is working on that
+<a name="l-316"></a><span class="tm">21:53:13</span><span class="nk"> &lt;Slower&gt;</span> and stack create uses a POST instead of GET or something?
+<a name="l-317"></a><span class="tm">21:53:17</span><span class="nk"> &lt;Slower&gt;</span> I forget now exactly
+<a name="l-318"></a><span class="tm">21:53:18</span><span class="nk"> &lt;funzo&gt;</span> in interest of time, can you guys hash that out after?
+<a name="l-319"></a><span class="tm">21:53:20</span><span class="nk"> &lt;shardy&gt;</span> and push to auth_work
+<a name="l-320"></a><span class="tm">21:53:23</span><span class="nk"> &lt;Slower&gt;</span> yes
+<a name="l-321"></a><span class="tm">21:53:29</span><span class="nk"> &lt;funzo&gt;</span> k, don't mean to cut you short
+<a name="l-322"></a><span class="tm">21:53:33</span><span class="nk"> &lt;funzo&gt;</span> 7 minutes left
+<a name="l-323"></a><span class="tm">21:53:38</span><span class="nk"> &lt;sdake&gt;</span> status not live debug ;)
+<a name="l-324"></a><span class="tm">21:53:40</span><span class="nk"> &lt;shardy&gt;</span> <span class="hi">funzo:</span> sure
+<a name="l-325"></a><span class="tm">21:53:54</span><span class="nk"> &lt;sdake&gt;</span> slower/shardy any idea on timeframe?
+<a name="l-326"></a><span class="tm">21:54:07</span><span class="nk"> &lt;Slower&gt;</span> so anyway, once the AWS auth stuff is sorted I'll move to doing AWS part time and start working on user identification, other auth issues and association with templates
+<a name="l-327"></a><span class="tm">21:54:10</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#action </span><span class="cmdline">Slower and shardy work out issues with api work for boto</span>
+<a name="l-328"></a><span class="tm">21:54:12</span><span class="nk"> &lt;Slower&gt;</span> that will be faster I think
+<a name="l-329"></a><span class="tm">21:54:24</span><span class="nk"> &lt;shardy&gt;</span> <span class="hi">sdake:</span> I'm still on spare-time-only :9
+<a name="l-330"></a><span class="tm">21:54:27</span><span class="nk"> &lt;shardy&gt;</span> :(
+<a name="l-331"></a><span class="tm">21:54:30</span><span class="nk"> &lt;Slower&gt;</span> so I think AWS auth should be done soon, certainly by end of the week
+<a name="l-332"></a><span class="tm">21:54:40</span><span class="nk"> &lt;Slower&gt;</span> probably another 2 weeks? to get the rest done
+<a name="l-333"></a><span class="tm">21:54:44</span><span class="nk"> &lt;shardy&gt;</span> but will aim to assist Slower as much as time permits
+<a name="l-334"></a><span class="tm">21:54:48</span><span class="nk"> &lt;funzo&gt;</span> <span class="hi">shardy:</span> thanks a lot of putting time into this...
+<a name="l-335"></a><span class="tm">21:54:52</span><span class="nk"> &lt;Slower&gt;</span> ya
+<a name="l-336"></a><span class="tm">21:54:56</span><span class="nk"> &lt;Slower&gt;</span> I'm holding things up with aws auth
+<a name="l-337"></a><span class="tm">21:54:59</span><span class="nk"> &lt;shardy&gt;</span> <span class="hi">funzo:</span> np :)
+<a name="l-338"></a><span class="tm">21:55:01</span><span class="nk"> &lt;Slower&gt;</span> but that should be done soon
+<a name="l-339"></a><span class="tm">21:55:11</span><span class="nk"> &lt;funzo&gt;</span> The next item is Nested Stacks
+<a name="l-340"></a><span class="tm">21:55:11</span><span class="nk"> &lt;sdake&gt;</span> slower jpeeler is available to help, is there a way for a third person to contribute there?
+<a name="l-341"></a><span class="tm">21:55:25</span><span class="nk"> &lt;Slower&gt;</span> I think at this stage it's fine.. I've almost got it I think
+<a name="l-342"></a><span class="tm">21:55:36</span><span class="nk"> &lt;zaneb&gt;</span> I added some stuff on the wiki about nested stacks
+<a name="l-343"></a><span class="tm">21:55:36</span><span class="nk"> &lt;Slower&gt;</span> if I run into more issues I'll talk to him
+<a name="l-344"></a><span class="tm">21:55:46</span><span class="nk"> &lt;sdake&gt;</span> ok maybe jpeeler can work on something else then ;)
+<a name="l-345"></a><span class="tm">21:55:52</span><span class="nk"> &lt;sdake&gt;</span> zaneb nested stacks look good
+<a name="l-346"></a><span class="tm">21:55:52</span><span class="nk"> &lt;asalkeld&gt;</span> zaneb, looks good
+<a name="l-347"></a><span class="tm">21:55:54</span><span class="nk"> &lt;Slower&gt;</span> mostly it's been learning about how to do it properly :)
+<a name="l-348"></a><span class="tm">21:56:08</span><span class="nk"> &lt;sdake&gt;</span> we should hit this window with that
+<a name="l-349"></a><span class="tm">21:56:11</span><span class="nk"> &lt;zaneb&gt;</span> was planning to start the implementation today, but ran into other broken stuff
+<a name="l-350"></a><span class="tm">21:56:15</span><span class="nk"> &lt;zaneb&gt;</span> now fixed :)
+<a name="l-351"></a><span class="tm">21:56:48</span><span class="nk"> &lt;funzo&gt;</span> ok, that covers our prepared agenda.
+<a name="l-352"></a><span class="tm">21:56:54</span><span class="nk"> &lt;sdake&gt;</span> one last thing to add, needing some fedora packaging, + ubuntu ppas
+<a name="l-353"></a><span class="tm">21:56:55</span><span class="nk"> &lt;funzo&gt;</span> anyone else need to bring anything up to the group?
+<a name="l-354"></a><span class="tm">21:57:00</span><span class="nk"> &lt;funzo&gt;</span> aaah, yes.
+<a name="l-355"></a><span class="tm">21:57:08</span><span class="nk"> &lt;sdake&gt;</span> jpeeler is only person on team without packager in fedora
+<a name="l-356"></a><span class="tm">21:57:15</span><span class="nk"> &lt;sdake&gt;</span> so i'll sponsor him on that work
+<a name="l-357"></a><span class="tm">21:57:26</span><span class="nk"> &lt;sdake&gt;</span> jpeeler can you sort out deb packaging as well?
+<a name="l-358"></a><span class="tm">21:57:33</span><span class="nk"> &lt;asalkeld&gt;</span> sdake, smells victom
+<a name="l-359"></a><span class="tm">21:57:41</span><span class="nk"> &lt;funzo&gt;</span> Are we going to move forward with actually trying to get this into fedora soon?
+<a name="l-360"></a><span class="tm">21:57:42</span><span class="nk"> &lt;jpeeler&gt;</span> <span class="hi">sdake:</span> i suppose so
+<a name="l-361"></a><span class="tm">21:57:42</span><span class="nk"> &lt;sdake&gt;</span> blood in water
+<a name="l-362"></a><span class="tm">21:57:47</span><span class="nk"> &lt;funzo&gt;</span> or are we going to hold off on that
+<a name="l-363"></a><span class="tm">21:57:59</span><span class="nk"> &lt;sdake&gt;</span> funzo yes jpeeler going to do a package review request shortly
+<a name="l-364"></a><span class="tm">21:58:09</span><span class="nk"> &lt;funzo&gt;</span> wow, awesome
+<a name="l-365"></a><span class="tm">21:58:12</span><span class="nk"> &lt;sdake&gt;</span> idea with packages in fedora is everyone maintains them, not just jpeeler
+<a name="l-366"></a><span class="tm">21:58:24</span><span class="nk"> &lt;funzo&gt;</span> I need to learn more about it too
+<a name="l-367"></a><span class="tm">21:58:26</span><span class="nk"> &lt;sdake&gt;</span> we can float out the release manager among the team per release
+<a name="l-368"></a><span class="tm">21:58:34</span><span class="nk"> &lt;asalkeld&gt;</span> instead of "yum" need a "github" tool
+<a name="l-369"></a><span class="tm">21:58:35</span><span class="nk"> &lt;sdake&gt;</span> release manager can update fedora packages
+<a name="l-370"></a><span class="tm">21:58:47</span><span class="nk"> &lt;asalkeld&gt;</span> install from github
+<a name="l-371"></a><span class="tm">21:59:03</span><span class="nk"> &lt;funzo&gt;</span> <span class="hi">asalkeld:</span> eh?
+<a name="l-372"></a><span class="tm">21:59:10</span><span class="nk"> &lt;asalkeld&gt;</span> no worries
+<a name="l-373"></a><span class="tm">21:59:16</span><span class="nk"> &lt;asalkeld&gt;</span> just need coffee
+<a name="l-374"></a><span class="tm">21:59:24</span><span class="nk"> &lt;sdake&gt;</span> 3 mins left, asalkeld had idea of openstack wiki instead of our wiki
+<a name="l-375"></a><span class="tm">21:59:40</span><span class="nk"> &lt;sdake&gt;</span> i like that idea, but reading the contributor agreement not sure if we can do that or not
+<a name="l-376"></a><span class="tm">21:59:58</span><span class="nk"> &lt;sdake&gt;</span> not contributor agreement but rather the wiki in general
+<a name="l-377"></a><span class="tm">22:00:03</span><span class="nk"> &lt;sdake&gt;</span> do you have a link asalkeld?
+<a name="l-378"></a><span class="tm">22:00:19</span><span class="nk"> &lt;asalkeld&gt;</span> to what? that was a crazy idea
+<a name="l-379"></a><span class="tm">22:00:31</span><span class="nk"> &lt;asalkeld&gt;</span> ;)
+<a name="l-380"></a><span class="tm">22:00:34</span><span class="nk"> &lt;sdake&gt;</span> u crazy
+<a name="l-381"></a><span class="tm">22:00:37</span><span class="nk"> &lt;sdake&gt;</span> like zebra
+<a name="l-382"></a><span class="tm">22:00:41</span><span class="nk"> &lt;funzo&gt;</span> u cra cra
+<a name="l-383"></a><span class="tm">22:02:04</span><span class="nk"> &lt;sdake&gt;</span> 1 min left
+<a name="l-384"></a><span class="tm">22:02:04</span><span class="nk"> &lt;funzo&gt;</span> final countdown
+<a name="l-385"></a><span class="tm">22:02:04</span><span class="nk"> &lt;sdake&gt;</span> thanks jeblair mtaylor linuxjedi ;)
+<a name="l-386"></a><span class="tm">22:02:04</span><span class="nk"> &lt;sdake&gt;</span> enough horses have been sacrificed
+<a name="l-387"></a><span class="tm">22:02:04</span><span class="nk"> &lt;funzo&gt;</span> see you guys
+<a name="l-388"></a><span class="tm">22:02:04</span><span class="nk"> &lt;sdake&gt;</span> thanks guys
+<a name="l-389"></a><span class="tm">22:02:04</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

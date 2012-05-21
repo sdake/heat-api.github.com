@@ -1,0 +1,389 @@
+20:57:30 <funzo> #startmeeting
+20:57:30 <mheat-bot> Meeting started Mon May 21 20:57:30 2012 UTC.  The chair is funzo. Information about MeetBot at http://wiki.debian.org/MeetBot.
+20:57:30 <mheat-bot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+20:57:58 <funzo> Today's proposed agenda: quick status update on the roadmap items, stackforge update.
+20:58:06 <funzo> anything else folks want to bring up during the meeting?
+20:58:15 <sdake> functional testing
+21:00:35 <funzo> ok, let's go ahead and get started, here is today's meeting agenda:
+21:00:40 <funzo> stackforge update
+21:00:41 <funzo> functional testing
+21:00:41 <funzo> roadmap item updates
+21:00:41 <funzo> Roadmap Items: Test Infrastructure & Cases High availability AWS Parity with template support Associate users with templates using keystone Get Boto working with Heat & API rework to align with AWS specification Nested stacks
+21:01:00 <funzo> #topic stackforge update
+21:01:11 <sdake> stackforge imported our repo
+21:01:20 <sdake> this leads to the following problems for us
+21:01:36 <sdake> 1) our repo wiki, issues, and followers were not transferred
+21:01:39 <zaneb> evening all
+21:01:56 <funzo> I guess I don't understand the details sdake
+21:01:57 <sdake> 2) we can't installl files in the root directory
+21:02:53 <sdake> https://github.com/stackforge
+21:03:04 <sdake> in there is a "heat" repo
+21:03:06 <asalkeld> can't we ask to just move the repo ?
+21:03:21 <asalkeld> not pull -> push?
+21:03:38 <asalkeld> admin/change owership
+21:03:40 <sdake> lets tackle points in order - repo move
+21:03:54 <funzo> well, we could just make them the origin
+21:04:02 <funzo> and ours is a pull from them
+21:04:07 <funzo> and we keep our github as is
+21:04:21 <sdake> i talked with the infra team a bit about this and they were oging to think on it, in order to transfer the project, we would need
+21:04:26 <sdake> a) admin privs on the stackforge project
+21:04:39 <sdake> b) push access on the repos to update the wiki and issues
+21:04:51 <sdake> they were thinking over whether this made sense for them
+21:05:08 <sdake> another option is they have a user in our acls which can push via gerrit
+21:05:20 <zaneb> you can create different groups with different permissions within an organisation
+21:05:24 <sdake> what funzo described is the pull model
+21:05:27 <funzo> so, git review will send patches to their gerrit instance, once approved it pushes to stackforge/heat right?
+21:05:36 <sdake> funzo thats right
+21:05:55 <funzo> and we have the heat repo under heat-api/heat (along with all the other repos and stuffs)
+21:06:03 <sdake> yup
+21:06:17 <Slower> so are we going to start reviewing everything soon then? (I'd rather not personally..)
+21:06:18 <funzo> so, if the stackforge/heat repo is just for the build infra, maybe we should just keep everything as is on heat-api/heat
+21:06:26 <funzo> and just periodically pull from them
+21:06:32 <sdake> we can talk about reviewing after the tactical stuff ;)
+21:06:39 <Slower> ok :)
+21:06:47 <funzo> ...at least the master branch of heat could work that way
+21:07:03 <funzo> that way we can keep everything the same, and just use stackforge/heat for master pushes
+21:07:13 <asalkeld> sdake, didn't you say they were looking at been able to push to non-stackforge repos
+21:07:13 <zaneb> I don't see the point of having two copies?
+21:07:42 <asalkeld> I agree, one copy
+21:07:45 <funzo> yeah, it's an infra limitation right now I guess on their part.  But we can give their user push access
+21:07:46 <sdake> asalkeld they are looking into it
+21:08:09 <sdake> i got impression they are drinking from fire hose, so the push to our repo idea is out for some time
+21:08:14 <funzo> should we hold off using it until they get it figured out?
+21:08:16 <sdake> it doesn't match up with their infrastructure
+21:08:22 <funzo> hrm ok
+21:08:48 <sdake> so the two options we can use in the next 1-2 weeks is transfer (1 copy) or two copies
+21:08:49 <funzo> in the mean time, we could just pull from them, have a cronjob keep it in sync
+21:09:04 <funzo> I really don't think we should transfer
+21:09:15 <funzo> we have a ton of other stuff on there and moving it would be so confusing
+21:09:42 <asalkeld> funzo, we can start moving that first
+21:09:55 <asalkeld> so we need a new bug tracker/wiki
+21:10:06 <funzo> what about the other repos?
+21:10:11 <sdake> it doesn't make sense to move the diagrams repo, or the rpm repo
+21:10:25 <asalkeld> make them personal
+21:10:48 <funzo> or the website
+21:10:55 <asalkeld> I hate to suggest this but, launchpad?
+21:11:02 <sdake> well at this point we can speculate whether they would even allow a transfer, i got the impression they dont want to chew that off
+21:11:19 <funzo> oh man
+21:11:20 <sdake> i like github, devs know how to use it, easy to use, not hot on launchpad idea
+21:11:45 <Slower> I think the only reason we want launchpad is to help exposure to other devs no?
+21:11:49 <sdake> and we have a bunch of history already in github
+21:12:04 <funzo> ok, why don't we just transfer just the heat repo to stackforge org in github for now
+21:12:06 <zaneb> if we transfer the repo then surely the issues go with it?
+21:12:17 <sdake> yes if we transfer
+21:12:39 <sdake> as i said, it is not clear if the infra team is willing to take a transfer and deal with the acls that come along with that
+21:13:03 <funzo> I like the idea of having a place for us to push to branches that doesn't go through the review process
+21:13:19 <asalkeld> funzo, clone
+21:13:20 <funzo> which means, I'd like to keep a heat repo under heat-api/heat
+21:13:30 <funzo> and use personal?
+21:13:34 <asalkeld> fork
+21:13:38 <asalkeld> yes
+21:13:40 <sdake> couple folks joining now from stackforge infra team
+21:13:43 <LinuxJedi> hi
+21:13:48 <zaneb> you can make someone an admin for just one repo
+21:13:50 <funzo> k, and to pull everyone's stuff in we add remotes
+21:14:06 <funzo> that seems fair
+21:14:08 <zaneb> I don't see why we couldn't manage it ourselves from there as we have been
+21:14:32 <funzo> the stackforge/heat repo would not have the individual committers any longer, correct?
+21:14:32 <sdake> so stackforge devs, the topic is whether to transfer heat into stackforge, or use a two repo pull model
+21:14:50 <sdake> those users need push access to update issues and wiki
+21:14:53 <funzo> it would actually be...every developer has a fork of the stackforge/heat repo
+21:14:55 <funzo> right?
+21:15:35 <sdake> stackforge devs the issue is we don't want to lose the followers, issues, or wiki
+21:15:40 <funzo> ...and there is no way to make the stackforge/heat repo just a fork of our upstream?
+21:15:40 <sdake> but want gerrit to manage our repos
+21:15:57 <sdake> it can't fork, the stackforge repo is written to by gerrit and none else
+21:16:26 <asalkeld> I think best solution is gerrit pushes to  our repo where it is
+21:16:55 <LinuxJedi> we have discussed doing this but at the moment we are not sure how hard it is to do (if our scripts will do it) so I will look into this tomorrow
+21:16:59 <sdake> i agree with that asalkeld, but the framework isn't in place
+21:17:03 <mtaylor> well, there are apparently a few things we'll have to change to support that (not saying we shouldn't - just there are some assumptions in our code that will have to be fixed)
+21:17:11 <mtaylor> LinuxJedi beat me
+21:17:42 * LinuxJedi beats mtaylor
+21:17:47 <asalkeld> (or  we transfer whole repo (with issues), and still can get the permissions we have today)
+21:17:49 <mtaylor> for that to work, you'd also have to grant the stackforge gerrit user push access to your heat-api/heat repo (just for completeness)
+21:18:04 <sdake> mtaylor yes that works for us
+21:18:09 <asalkeld> that's not a problem
+21:18:15 <funzo> +1
+21:18:31 <zaneb> +1
+21:18:32 <LinuxJedi> and if you push to that repo without gerrit it will probably break stuff
+21:18:48 <mtaylor> I'm actually personally a little more interested in the idea of having stackforge gerrit push to your repo location ... seems like a think that's going to come up again
+21:18:52 <sdake> so if we use that model, in the meantime we wouldn't be able to use gerrit at all
+21:18:54 <funzo> we could just outlaw pushing to master
+21:18:57 <zaneb> easy to change the permissions to prevent that sort of breakage
+21:19:19 <mtaylor> zaneb: it's not as easy as you'd tink ...you can't remove push access from org owners :(
+21:19:23 <mtaylor> zaneb: but in general, yeah
+21:19:36 <zaneb> ah, ok
+21:19:53 <funzo> not everyone is an org owner, we only have 3
+21:19:59 <funzo> so we could just make sure we don't push to master
+21:20:07 <mtaylor> sdake: I think you could ... perhaps for the time being, just doing a pull from stackforge/heat and a push to heat-api/heat every so often (simple cron mirror)
+21:20:10 <sdake> you need push access to update the wiki i believe
+21:20:29 <mtaylor> is the wiki a special git ref in the heat repo?
+21:20:35 <mtaylor> s/ref/branch/
+21:20:38 <sdake> it has a git access, like the website
+21:20:40 <sdake> but not a branch
+21:20:57 <mtaylor> but it's attached to the main heat repo?
+21:21:05 <asalkeld> can I suggest we also start using openstack wiki
+21:21:17 <sdake> asalkeld 1 thing at a time :)
+21:21:18 <asalkeld> then wiki problem goes away
+21:21:40 <asalkeld> we can do more than 1 thing at a time
+21:21:42 <asalkeld> :)
+21:21:58 <funzo> ok, when do we need to move to gerrit?
+21:22:05 <Slower> asalkeld: rebel.. ;-)
+21:22:12 <sdake> sooner the better would be ideal, atm, the trees are out of sync
+21:22:15 <mtaylor> I'm just asking about wiki mechanics, because gerrit owns the whole repo, not just a branch
+21:22:16 <funzo> should we just hold until LinuxJedi or mtaylor tell us what they think?
+21:22:31 <funzo> if they can look into a level of effort tomorrow, we can decide then
+21:22:34 <sdake> mytalor ya wiki is attached to the repo, just as the followers and issues are
+21:22:49 <mtaylor> hrm. ok. we're going to need to investigage a few things
+21:22:54 <mtaylor> investigate
+21:23:11 * LinuxJedi added to todo list to investigate tomorrow
+21:23:17 <asalkeld> thanks guys
+21:23:26 <funzo> if needed, maybe we could help
+21:23:27 <zaneb> "The wiki repositories obey the same access rules as the source repository that they belong to."
+21:23:37 <mtaylor> LinuxJedi: issues, followers and wiki being in the repo may be a giant roadblock here
+21:23:57 <LinuxJedi> mtaylor: very possible...
+21:24:14 <sdake> its not referencable via a git address
+21:24:37 <funzo> I think using heat-api/heat as upstream that gerrit pushes to is the best bet
+21:24:39 <mtaylor> ok ... it's actually a different repo. that's cool
+21:24:42 <funzo> pending investigation outcome
+21:25:11 <funzo> anything else on the topic we need to cover?
+21:25:17 <sdake> yes
+21:25:27 <sdake> thanks infra guys - look forward to hearing from you :)
+21:25:29 <zaneb> wiki is at git://github.com/heat-api/heat.wiki.git so it's a different git repo
+21:25:32 <funzo> #action sdake follow up with LinuxJedi and mtaylor regarding forkability of gerrit
+21:25:48 <Slower> wooo, forkability
+21:25:48 <sdake> second issue is files in the root path
+21:25:50 <sdake> ie : /etc and /var//log
+21:26:04 <sdake> we can't do that via setup.py
+21:26:14 <funzo> what does nova do?
+21:26:18 <asalkeld> sdake, I think a minor issue
+21:26:19 <sdake> it doesn't
+21:26:29 <sdake> there is a gerrit review which removes that stuff
+21:26:38 <zaneb> funzo: rpm is responsible for that stuff
+21:26:40 <asalkeld> more steps to install from source
+21:26:40 <sdake> here is what I propose
+21:26:40 <funzo> it has /etc/nova/nova.conf
+21:26:46 <funzo> oh
+21:26:48 <funzo> I see
+21:26:55 <sdake> we can make an install script
+21:26:58 <sdake> put in head of repo
+21:27:05 <sdake> this is for people that want to install the software
+21:27:14 <funzo> without using rpm?
+21:27:15 <sdake> setup.py then doesn't actually install, its more like a testing blob
+21:27:25 <sdake> some people don't use rpm funzo ;)
+21:27:32 <Slower> .deb :)
+21:27:45 <zaneb> sdake: or we could do the rpm and deb packaging now
+21:27:56 * asalkeld uses ./setup.py
+21:28:09 <sdake> i use setup.py all the time
+21:28:43 <sdake> linuxjedi will it be possible to potentially restart the heat repo once we sort all this stuff out, there have been about 30 commits since gerrit started managing the repo
+21:28:55 <mtaylor> setup.py install can be expected to install python libraries and stuff... but it's REALLY bad at installing other stuff
+21:28:58 <mtaylor> sdake: and yes
+21:30:24 <sdake> so install.sh then?
+21:30:34 <funzo> #action remove root install location from setup.py
+21:30:35 <sdake> I can't think of an easier way
+21:30:42 <funzo> #action create an install.sh
+21:30:45 <asalkeld> fine by me
+21:30:46 <sdake> funzo there is already a patch for that
+21:31:06 <funzo> where?
+21:31:13 <sdake> mtaylor wrote most of it in gerrit
+21:31:18 <sdake> i fixed a few test case problems
+21:31:25 <sdake> i'll pull into our repo after we wrap up
+21:31:28 <asalkeld> https://review.stackforge.org/#/c/38/
+21:31:57 <funzo> lookie there, thanks mtaylor
+21:32:00 <sdake> ok so in meantime, we wont use stackforge for gerrit pushes then?
+21:32:32 <funzo> yeah, pending tomorrow's look into it
+21:32:33 <sdake> we should probably have a sync + lockout period once all things are sorted out where we transition all at once ;)
+21:32:43 <funzo> yep
+21:32:46 <asalkeld> ya
+21:33:07 <funzo> ok, anything else on the same topic?
+21:33:28 <sdake> that is all i had, thanks stackforge infra guys for coming
+21:33:38 <sdake> hope you had an idea of what kind of problems we are thinking about ;)
+21:33:40 <funzo> yeah, thanks a lot, let us know if you need any help
+21:33:51 <funzo> next item
+21:33:56 <funzo> #topic functional testing
+21:34:13 <sdake> beaker (which manages our test machine) is broke for fedora 17
+21:34:38 <funzo> sdake: a work in progress?
+21:34:44 <sdake> theoretically f17 will be booting in couple weeks
+21:34:54 <sdake> so functional testing is blocked on that issue atm
+21:35:13 <funzo> is anyone working on getting stuff working with beaker/installation and all that right now?
+21:35:22 <sdake> the beaker guys are working on it
+21:35:34 <sdake> but they have maintenance windows and all that
+21:35:40 <asalkeld> can't we test on f16
+21:35:48 <asalkeld> in short term
+21:35:49 <sdake> f16 also broken in beaker
+21:35:55 <zaneb> asalkeld: that won't boot either :(
+21:35:56 <asalkeld> groan
+21:35:57 <sdake> beaker ppl asleep at wheel ;)
+21:36:16 <funzo> is beaker public facing?
+21:36:21 <sdake> no internal infra
+21:36:22 <funzo> or is that an rh internal tool
+21:36:40 <sdake> but it is where our test hardware is managed
+21:36:52 <zaneb> so, where I am at is there is a script to completely uninstall heat + openstack and (theoretically) start from scratch
+21:37:05 <zaneb> and from there running the GettingStarted readme/script works
+21:37:13 <asalkeld> cool
+21:37:19 <sdake> jpeeler also has some jeos test cases i believe
+21:37:29 <zaneb> I can't get that to work inside a VM
+21:37:38 <jpeeler> yep
+21:37:49 <zaneb> and I haven't really started looking at LVM because beaker is broken
+21:37:50 <asalkeld> zaneb, is there a how to: so devs can run it
+21:39:03 <zaneb> asalkeld: tools/uninstall-heat -y -r "" && bash -c "$(./tools/rst2script.sed docs/GettingStarted.rst)"
+21:39:07 <funzo> ok, so we are basically saying we aren't running the functional tests until beaker is fixed?
+21:39:16 <sdake> funzo thats right
+21:39:18 <funzo> ie, F16/17 on beaker
+21:39:19 <funzo> ok.
+21:39:39 <funzo> but that is just a roadmap issue that doesn't block anything else, so we are ok.
+21:39:45 <zaneb> asalkeld: but I'll commit a script to make that easier ;)
+21:40:01 <sdake> zaneb sounds good
+21:40:07 <asalkeld> cool, was about to make script
+21:40:29 <sdake> #action zaneb commit test script which makes running functional tests a snap
+21:40:39 <funzo> ok, anything else on the topic of functional tests?
+21:40:46 <sdake> need moar tests
+21:41:08 <asalkeld> do the tests run through all templates
+21:41:12 <funzo> yeah, more unit tests.  what do you guys think about a rule of ...you add a feature, you add a test.
+21:41:22 <funzo> asalkeld: no
+21:41:23 <asalkeld> funzo, lol
+21:41:33 <funzo> but we should add one for each
+21:41:33 * asalkeld hides
+21:41:36 <funzo> haha
+21:41:43 <funzo> it's extremely time consuming, actually.
+21:41:49 <sdake> my take is we should spend 80% writing code, and 20% writing tests
+21:41:58 <sdake> funzo what you propose is more like 80% writing tests 20% writing code
+21:42:03 <sdake> tests harder to write thenf eatures
+21:42:11 <asalkeld> ja, honestly
+21:42:12 <funzo> my experience is writing tests is more time consuming than writing features
+21:42:16 <zaneb> sorted.
+21:42:20 <funzo> yeah
+21:42:37 <Slower> yeah
+21:42:56 <funzo> but honestly if we aren't going to take the tests seriously, then it's not a lot of use
+21:43:08 <zaneb> tests are great for stuff that is just transforming data from one form to another
+21:43:13 <funzo> meaning if we don't have coverange, we can't count on them to tell us if stuffs broke
+21:43:21 <zaneb> just test input vs. output. totally worth it
+21:43:35 <zaneb> when you have stuff actually *happening*... so much harder
+21:43:49 <sdake> well if we have software with a kickass test system which doesn't do anything, that isn't very productive ;)
+21:43:50 <asalkeld> funzo, agree - just find these tests tricky to setup
+21:43:59 <funzo> I won't debate the merits of tests here for time, but we certainly need to put more effort into it
+21:44:08 <funzo> agreed
+21:44:11 <sdake> ya lets move on
+21:44:24 * funzo includes self in *we*
+21:44:41 <funzo> ok, then next topic is all roadmap status all the time
+21:44:52 <funzo> roadmap item updates
+21:44:53 <funzo> Roadmap Items: Test Infrastructure & Cases High availability AWS Parity with template support Associate users with templates using keystone Get Boto working with Heat & API rework to align with AWS specification Nested stacks
+21:45:06 <funzo> We kinda just beat the test infra and cases to death
+21:45:11 <funzo> HA
+21:45:14 <asalkeld> k
+21:45:26 <asalkeld> so I have been a bit distracted
+21:45:36 <asalkeld> but doing cloudwatch
+21:45:43 <asalkeld> and ha together
+21:45:49 <sdake> asalkeld any estimates on timeframe?
+21:45:49 <asalkeld> doing well
+21:46:19 <asalkeld> max 1 week of my full time
+21:46:28 <sdake> shadower working on that with you?
+21:46:54 <asalkeld> not yet on cloudwatch, but he has looked at it
+21:47:11 <asalkeld> it's in a "cloudwatch" branch
+21:47:13 <sdake> ok - makes sense he stick with it since he started out with ha wit hyou
+21:47:50 <sdake> aws parity?
+21:47:51 <funzo> AWS Parity with template support status: Got puppetmaster template working and merged to master.  working on the puppet client (setting up wordpress now).
+21:48:06 <asalkeld> nice
+21:48:10 <funzo> got a little sidetracked on shooting myself with bridge setup
+21:48:38 <funzo> note: DO NOT USE YOUR real bridge for the --bridge argument to the nova network
+21:48:42 <funzo> EVAAARRR
+21:48:56 <Slower> hehe
+21:48:56 <zaneb> lol
+21:49:04 <asalkeld> wlan0 or em0
+21:49:07 <Slower> nice irc pirate talk :)
+21:49:21 <funzo> Associate users with templates using keystone?
+21:49:30 <sdake> ya
+21:49:36 <funzo> note: part of the merge of the puppetmaster was a user and accesskey module
+21:50:18 <sdake> nice funzo
+21:50:21 <Slower> I've been working on that and the AWS support
+21:50:43 <Slower> so I've mostly just been working on getting AWS plus native keystone user/pass auth working
+21:50:50 <Slower> which should be done in the next few days
+21:51:07 <funzo> Slower: k, when you're ready to look at the user and accesskey think, we can catch up
+21:51:10 <Slower> I learned I needed to learn more about wsgi + paste apps :)
+21:51:17 <shardy> Slower: I can help test with boto-ified heat cli
+21:51:29 <Slower> yeah you bet
+21:51:42 <funzo> shardy: excellent segway - get Boto working with Heat & API rework to align with AWS specification
+21:51:43 <Slower> I've been running the boto stuff against it.. and have written more command line tests with it
+21:51:54 <funzo> awesome!
+21:52:06 <Slower> so once the AWS auth is working we'll be able to move into more boto testing..
+21:52:06 <shardy> So #115 was the initial API rework for boto
+21:52:10 <shardy> which is complete
+21:52:18 <Slower> well, it's got bugs :)
+21:52:22 <shardy> now gated on AWS style auth #91
+21:52:42 <shardy> Slower: Ah, OK, details?
+21:53:00 <Slower> I know the return values are not right
+21:53:10 <shardy> I was going to do a boto heat CLI unless anyone else is working on that
+21:53:13 <Slower> and stack create uses a POST instead of GET or something?
+21:53:17 <Slower> I forget now exactly
+21:53:18 <funzo> in interest of time, can you guys hash that out after?
+21:53:20 <shardy> and push to auth_work
+21:53:23 <Slower> yes
+21:53:29 <funzo> k, don't mean to cut you short
+21:53:33 <funzo> 7 minutes left
+21:53:38 <sdake> status not live debug ;)
+21:53:40 <shardy> funzo: sure
+21:53:54 <sdake> slower/shardy any idea on timeframe?
+21:54:07 <Slower> so anyway, once the AWS auth stuff is sorted I'll move to doing AWS part time and start working on user identification, other auth issues and association with templates
+21:54:10 <funzo> #action Slower and shardy work out issues with api work for boto
+21:54:12 <Slower> that will be faster I think
+21:54:24 <shardy> sdake: I'm still on spare-time-only :9
+21:54:27 <shardy> :(
+21:54:30 <Slower> so I think AWS auth should be done soon, certainly by end of the week
+21:54:40 <Slower> probably another 2 weeks? to get the rest done
+21:54:44 <shardy> but will aim to assist Slower as much as time permits
+21:54:48 <funzo> shardy: thanks a lot of putting time into this...
+21:54:52 <Slower> ya
+21:54:56 <Slower> I'm holding things up with aws auth
+21:54:59 <shardy> funzo: np :)
+21:55:01 <Slower> but that should be done soon
+21:55:11 <funzo> The next item is Nested Stacks
+21:55:11 <sdake> slower jpeeler is available to help, is there a way for a third person to contribute there?
+21:55:25 <Slower> I think at this stage it's fine.. I've almost got it I think
+21:55:36 <zaneb> I added some stuff on the wiki about nested stacks
+21:55:36 <Slower> if I run into more issues I'll talk to him
+21:55:46 <sdake> ok maybe jpeeler can work on something else then ;)
+21:55:52 <sdake> zaneb nested stacks look good
+21:55:52 <asalkeld> zaneb, looks good
+21:55:54 <Slower> mostly it's been learning about how to do it properly :)
+21:56:08 <sdake> we should hit this window with that
+21:56:11 <zaneb> was planning to start the implementation today, but ran into other broken stuff
+21:56:15 <zaneb> now fixed :)
+21:56:48 <funzo> ok, that covers our prepared agenda.
+21:56:54 <sdake> one last thing to add, needing some fedora packaging, + ubuntu ppas
+21:56:55 <funzo> anyone else need to bring anything up to the group?
+21:57:00 <funzo> aaah, yes.
+21:57:08 <sdake> jpeeler is only person on team without packager in fedora
+21:57:15 <sdake> so i'll sponsor him on that work
+21:57:26 <sdake> jpeeler can you sort out deb packaging as well?
+21:57:33 <asalkeld> sdake, smells victom
+21:57:41 <funzo> Are we going to move forward with actually trying to get this into fedora soon?
+21:57:42 <jpeeler> sdake: i suppose so
+21:57:42 <sdake> blood in water
+21:57:47 <funzo> or are we going to hold off on that
+21:57:59 <sdake> funzo yes jpeeler going to do a package review request shortly
+21:58:09 <funzo> wow, awesome
+21:58:12 <sdake> idea with packages in fedora is everyone maintains them, not just jpeeler
+21:58:24 <funzo> I need to learn more about it too
+21:58:26 <sdake> we can float out the release manager among the team per release
+21:58:34 <asalkeld> instead of "yum" need a "github" tool
+21:58:35 <sdake> release manager can update fedora packages
+21:58:47 <asalkeld> install from github
+21:59:03 <funzo> asalkeld: eh?
+21:59:10 <asalkeld> no worries
+21:59:16 <asalkeld> just need coffee
+21:59:24 <sdake> 3 mins left, asalkeld had idea of openstack wiki instead of our wiki
+21:59:40 <sdake> i like that idea, but reading the contributor agreement not sure if we can do that or not
+21:59:58 <sdake> not contributor agreement but rather the wiki in general
+22:00:03 <sdake> do you have a link asalkeld?
+22:00:19 <asalkeld> to what? that was a crazy idea
+22:00:31 <asalkeld> ;)
+22:00:34 <sdake> u crazy
+22:00:37 <sdake> like zebra
+22:00:41 <funzo> u cra cra
+22:02:04 <sdake> 1 min left
+22:02:04 <funzo> final countdown
+22:02:04 <sdake> thanks jeblair mtaylor linuxjedi ;)
+22:02:04 <sdake> enough horses have been sacrificed
+22:02:04 <funzo> see you guys
+22:02:04 <sdake> thanks guys
+22:02:04 <funzo> #endmeeting

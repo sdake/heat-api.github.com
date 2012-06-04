@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#heat Meeting</title>
+<style type="text/css">
+/* This is for the .html in the HTML2 writer */
+body {
+    font-family: Helvetica, sans-serif;
+    font-size:14px;
+}
+h1 {
+    text-align: center;
+}
+a {
+    color:navy;
+    text-decoration: none;
+    border-bottom:1px dotted navy;
+}
+a:hover {
+    text-decoration:none;
+    border-bottom: 0;
+    color:#0000B9;
+}
+hr {
+    border: 1px solid #ccc;
+}
+/* The (nick, time) item pairs, and other body text things. */
+.details {
+    font-size: 12px;
+    font-weight:bold;
+}
+/* The 'AGREED:', 'IDEA', etc, prefix to lines. */
+.itemtype {
+    font-style: normal;    /* un-italics it */
+    font-weight: bold;
+}
+/* Example: change single item types.  Capitalized command name.
+/* .TOPIC  {  color:navy;  } */
+/* .AGREED {  color:lime;  } */
+
+</style>
+</head>
+
+<body>
+<h1>#heat Meeting</h1>
+<span class="details">
+Meeting started by funzo at 20:55:55 UTC
+(<a href="heat.2012-06-04-20.55.log.html">full logs</a>).</span>
+
+<br><br>
+
+
+
+<h3>Meeting summary</h3>
+<ol>
+<li><b class="TOPIC">cloudwatch roadmap status</b> <span class="details">(<a href='heat.2012-06-04-20.55.log.html#l-25'>sdake</a>, 21:02:40)</span>
+<br></li>
+<li><b class="TOPIC">split jeos create into separate repo</b> <span class="details">(<a href='heat.2012-06-04-20.55.log.html#l-36'>sdake</a>, 21:04:37)</span>
+<ol type="a">
+  <li><i class="itemtype">AGREED</i>: <span class="AGREED">the basic
+    proposal is to put cfn/tdl/imaging tools into one package and one
+    repo</span> <span class="details">(<a
+    href='heat.2012-06-04-20.55.log.html#l-59'>funzo</a>,
+    21:08:33)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">shadower
+    create new repo in heat org and put merge jeos code there</span>
+    <span class="details">(<a
+    href='heat.2012-06-04-20.55.log.html#l-67'>sdake</a>,
+    21:10:23)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">sdake create
+    repo for shadower for jeos tools</span> <span class="details">(<a
+    href='heat.2012-06-04-20.55.log.html#l-72'>sdake</a>,
+    21:11:33)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">roadmap item ubuntu support</b> <span class="details">(<a href='heat.2012-06-04-20.55.log.html#l-78'>funzo</a>, 21:13:09)</span>
+<br></li>
+<li><b class="TOPIC">roadmap item nested stacks</b> <span class="details">(<a href='heat.2012-06-04-20.55.log.html#l-84'>sdake</a>, 21:13:59)</span>
+<br></li>
+<li><b class="TOPIC">template parity support</b> <span class="details">(<a href='heat.2012-06-04-20.55.log.html#l-96'>sdake</a>, 21:17:13)</span>
+<br></li>
+<li><b class="TOPIC">security rework</b> <span class="details">(<a href='heat.2012-06-04-20.55.log.html#l-105'>sdake</a>, 21:18:58)</span>
+<br></li>
+<li><b class="TOPIC">boto integration</b> <span class="details">(<a href='heat.2012-06-04-20.55.log.html#l-114'>sdake</a>, 21:21:02)</span>
+<br></li>
+<li><b class="TOPIC">stackforgeing</b> <span class="details">(<a href='heat.2012-06-04-20.55.log.html#l-124'>sdake</a>, 21:23:27)</span>
+<ol type="a">
+  <li><i class="itemtype">AGREED</i>: <span class="AGREED">devs agree to
+    review patches from other devs in stackforge</span> <span
+    class="details">(<a
+    href='heat.2012-06-04-20.55.log.html#l-130'>sdake</a>,
+    21:25:09)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">packaging update</b> <span class="details">(<a href='heat.2012-06-04-20.55.log.html#l-148'>sdake</a>, 21:27:36)</span>
+<br></li>
+<li><b class="TOPIC">functional testing</b> <span class="details">(<a href='heat.2012-06-04-20.55.log.html#l-167'>sdake</a>, 21:32:45)</span>
+<ol type="a">
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">sdake to
+    install f17 host using beaker if possible now</span> <span
+    class="details">(<a
+    href='heat.2012-06-04-20.55.log.html#l-198'>sdake</a>,
+    21:38:43)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">funzo to look
+    into eventlets for deleting security groups</span> <span
+    class="details">(<a
+    href='heat.2012-06-04-20.55.log.html#l-200'>sdake</a>,
+    21:39:06)</span></li>
+</ol>
+</li>
+</ol>
+<br><br>
+
+
+
+<span class="details">
+Meeting ended at 21:41:12 UTC
+(<a href="heat.2012-06-04-20.55.log.html">full logs</a>).</span>
+
+<br><br>
+
+
+
+<h3>Action items</h3>
+<ol>
+  <li>shadower create new repo in heat org and put merge jeos code there</li>
+  <li>sdake create repo for shadower for jeos tools</li>
+  <li>sdake to install f17 host using beaker if possible now</li>
+  <li>funzo to look into eventlets for deleting security groups</li>
+</ol>
+<br><br>
+
+
+
+<h3>Action items, by person</h3>
+<ol>
+  <li> funzo <ol>
+    <li>funzo to look into eventlets for deleting security groups</li>
+  </ol></li>
+  <li> sdake <ol>
+    <li>sdake create repo for shadower for jeos tools</li>
+    <li>sdake to install f17 host using beaker if possible now</li>
+  </ol></li>
+  <li> shadower <ol>
+    <li>shadower create new repo in heat org and put merge jeos code there</li>
+    <li>sdake create repo for shadower for jeos tools</li>
+  </ol></li>
+</ol>
+<br><br>
+
+
+
+<h3>People present (lines said)</h3>
+<ol>
+  <li>sdake (76)</li>
+  <li>funzo (53)</li>
+  <li>asalkeld (24)</li>
+  <li>zaneb (23)</li>
+  <li>Slower (18)</li>
+  <li>shadower (16)</li>
+  <li>mheat-bot (5)</li>
+  <li>jpeeler (0)</li>
+</ol>
+<br><br>
+
+
+
+<span class="details">Generated by <a href="http://wiki.debian.org/MeetBot">MeetBot</a> 0.1.4.</span>
+</body></html>

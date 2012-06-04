@@ -1,0 +1,242 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#heat log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">20:55:55</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">20:55:55</span><span class="nk"> &lt;mheat-bot&gt;</span> Meeting started Mon Jun  4 20:55:55 2012 UTC.  The chair is funzo. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">20:55:55</span><span class="nk"> &lt;mheat-bot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">20:56:53</span><span class="nk"> &lt;funzo&gt;</span> proposed agenda
+<a name="l-5"></a><span class="tm">20:57:04</span><span class="nk"> &lt;funzo&gt;</span> 1) roadmap item status
+<a name="l-6"></a><span class="tm">20:58:51</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#chair </span><span class="cmdline">asalkeld jpeeler sdake shadower zaneb Slower</span>
+<a name="l-7"></a><span class="tm">20:58:51</span><span class="nk"> &lt;mheat-bot&gt;</span> Current chairs: Slower asalkeld funzo jpeeler sdake shadower zaneb
+<a name="l-8"></a><span class="tm">20:59:01</span><span class="nk"> &lt;funzo&gt;</span> did I miss anyone that needs to be a chair?
+<a name="l-9"></a><span class="tm">21:00:17</span><span class="nk"> &lt;funzo&gt;</span> 2) architectural changes in the last week - resource dependency calc and user auth
+<a name="l-10"></a><span class="tm">21:00:38</span><span class="nk"> &lt;funzo&gt;</span> any other items folks want to cover?
+<a name="l-11"></a><span class="tm">21:00:57</span><span class="nk"> &lt;sdake&gt;</span> functional testing
+<a name="l-12"></a><span class="tm">21:00:57</span><span class="nk"> &lt;shadower&gt;</span> how about splitting jeos-create to a standalone tool/package?
+<a name="l-13"></a><span class="tm">21:00:58</span><span class="nk"> &lt;asalkeld&gt;</span> probably ubuntu support
+<a name="l-14"></a><span class="tm">21:00:59</span><span class="nk"> &lt;sdake&gt;</span> packaging
+<a name="l-15"></a><span class="tm">21:01:02</span><span class="nk"> &lt;sdake&gt;</span> jeos split
+<a name="l-16"></a><span class="tm">21:01:46</span><span class="nk"> &lt;funzo&gt;</span> ok, shall we go ahead and start then
+<a name="l-17"></a><span class="tm">21:01:54</span><span class="nk"> &lt;asalkeld&gt;</span> I need to go in 8 min - you want an update?
+<a name="l-18"></a><span class="tm">21:01:59</span><span class="nk"> &lt;funzo&gt;</span> sure
+<a name="l-19"></a><span class="tm">21:02:01</span><span class="nk"> &lt;sdake&gt;</span> yup
+<a name="l-20"></a><span class="tm">21:02:11</span><span class="nk"> &lt;sdake&gt;</span> lets talk about jeos create split next too pls
+<a name="l-21"></a><span class="tm">21:02:16</span><span class="nk"> &lt;funzo&gt;</span> <span class="topic">#topic </span><span class="topicline">ubuntu support</span>
+<a name="l-22"></a><span class="tm">21:02:30</span><span class="nk"> &lt;sdake&gt;</span> asalkeld has to roll, lets give him an update with cloudwatch
+<a name="l-23"></a><span class="tm">21:02:32</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#undo</span><span class="cmdline"></span>
+<a name="l-24"></a><span class="tm">21:02:32</span><span class="nk"> &lt;mheat-bot&gt;</span> Removing item from minutes: &lt;MeetBot.items.Topic object at 0x24f5f90&gt;
+<a name="l-25"></a><span class="tm">21:02:40</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">cloudwatch roadmap status</span>
+<a name="l-26"></a><span class="tm">21:02:45</span><span class="nk"> &lt;zaneb&gt;</span> evening y'all
+<a name="l-27"></a><span class="tm">21:02:49</span><span class="nk"> &lt;asalkeld&gt;</span> so I have a bunch of commits, and am busy debugging
+<a name="l-28"></a><span class="tm">21:02:49</span><span class="nk"> &lt;sdake&gt;</span> yo zaneb
+<a name="l-29"></a><span class="tm">21:03:15</span><span class="nk"> &lt;asalkeld&gt;</span> will get there, the alarm is causing some problems
+<a name="l-30"></a><span class="tm">21:03:22</span><span class="nk"> &lt;asalkeld&gt;</span> (in the code)
+<a name="l-31"></a><span class="tm">21:03:30</span><span class="nk"> &lt;asalkeld&gt;</span> so just working tho' them
+<a name="l-32"></a><span class="tm">21:04:04</span><span class="nk"> &lt;sdake&gt;</span> ok that it asalkeld?
+<a name="l-33"></a><span class="tm">21:04:11</span><span class="nk"> &lt;asalkeld&gt;</span> also we need https://github.com/heat-api/heat/issues/136 fixed
+<a name="l-34"></a><span class="tm">21:04:23</span><span class="nk"> &lt;asalkeld&gt;</span> causes a mess ^
+<a name="l-35"></a><span class="tm">21:04:29</span><span class="nk"> &lt;asalkeld&gt;</span> (all done)
+<a name="l-36"></a><span class="tm">21:04:37</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">split jeos create into separate repo</span>
+<a name="l-37"></a><span class="tm">21:04:55</span><span class="nk"> &lt;shadower&gt;</span> I have a working prototype done
+<a name="l-38"></a><span class="tm">21:04:56</span><span class="nk"> &lt;asalkeld&gt;</span> cfn + jeos together
+<a name="l-39"></a><span class="tm">21:04:59</span><span class="nk"> &lt;shadower&gt;</span> needs cleanup
+<a name="l-40"></a><span class="tm">21:04:59</span><span class="nk"> &lt;sdake&gt;</span> basic proposal here is for a roadmap item
+<a name="l-41"></a><span class="tm">21:05:21</span><span class="nk"> &lt;sdake&gt;</span> shadower tell us what you have in prototype
+<a name="l-42"></a><span class="tm">21:05:24</span><span class="nk"> &lt;asalkeld&gt;</span> also what about into audrey?
+<a name="l-43"></a><span class="tm">21:06:01</span><span class="nk"> &lt;sdake&gt;</span> audrey doesn't do jeos creation
+<a name="l-44"></a><span class="tm">21:06:02</span><span class="nk"> &lt;shadower&gt;</span> so far it lives in the same repo but doesn't depend on any Heat stuff except for having access to cfntools and tdl directorise
+<a name="l-45"></a><span class="tm">21:06:26</span><span class="nk"> &lt;sdake&gt;</span> what features does it have
+<a name="l-46"></a><span class="tm">21:06:33</span><span class="nk"> &lt;asalkeld&gt;</span> those should all be together
+<a name="l-47"></a><span class="tm">21:06:37</span><span class="nk"> &lt;sdake&gt;</span> create tdl, create image, install image?
+<a name="l-48"></a><span class="tm">21:06:52</span><span class="nk"> &lt;sdake&gt;</span> in the aeolus/audrey model they are not together
+<a name="l-49"></a><span class="tm">21:07:05</span><span class="nk"> &lt;shadower&gt;</span> yeah, all together for now -- like the old jeos-create
+<a name="l-50"></a><span class="tm">21:07:11</span><span class="nk"> &lt;asalkeld&gt;</span> but should be
+<a name="l-51"></a><span class="tm">21:07:24</span><span class="nk"> &lt;sdake&gt;</span> the basic proposal is to put cfn/tdl/imaging tools into one package
+<a name="l-52"></a><span class="tm">21:07:27</span><span class="nk"> &lt;sdake&gt;</span> and one repo
+<a name="l-53"></a><span class="tm">21:07:37</span><span class="nk"> &lt;sdake&gt;</span> so it can be installed separately
+<a name="l-54"></a><span class="tm">21:07:43</span><span class="nk"> &lt;asalkeld&gt;</span> ya
+<a name="l-55"></a><span class="tm">21:08:11</span><span class="nk"> &lt;asalkeld&gt;</span> later guys
+<a name="l-56"></a><span class="tm">21:08:13</span><span class="nk"> &lt;sdake&gt;</span> anyone opposed to this proposal for a roadmap item?
+<a name="l-57"></a><span class="tm">21:08:15</span><span class="nk"> &lt;sdake&gt;</span> later asalkeld
+<a name="l-58"></a><span class="tm">21:08:19</span><span class="nk"> &lt;shadower&gt;</span> see ya
+<a name="l-59"></a><span class="tm">21:08:33</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">the basic proposal is to put cfn/tdl/imaging tools into one package and one repo</span>
+<a name="l-60"></a><span class="tm">21:08:53</span><span class="nk"> &lt;sdake&gt;</span> shadower since you taken the bulls by the horns
+<a name="l-61"></a><span class="tm">21:08:57</span><span class="nk"> &lt;sdake&gt;</span> mind wrapping that up? :)
+<a name="l-62"></a><span class="tm">21:09:02</span><span class="nk"> &lt;shadower&gt;</span> not at all
+<a name="l-63"></a><span class="tm">21:09:18</span><span class="nk"> &lt;shadower&gt;</span> how would the CI integration work?
+<a name="l-64"></a><span class="tm">21:09:36</span><span class="nk"> &lt;shadower&gt;</span> do we have to do additioal setup
+<a name="l-65"></a><span class="tm">21:09:38</span><span class="nk"> &lt;sdake&gt;</span> i guess not in the short term
+<a name="l-66"></a><span class="tm">21:10:03</span><span class="nk"> &lt;shadower&gt;</span> fair
+<a name="l-67"></a><span class="tm">21:10:23</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#action </span><span class="cmdline">shadower create new repo in heat org and put merge jeos code there</span>
+<a name="l-68"></a><span class="tm">21:10:39</span><span class="nk"> &lt;sdake&gt;</span> ok sorry for hijacking there funzo, back to the original agenda - just wnated to get those in before asalkeld rolled out
+<a name="l-69"></a><span class="tm">21:10:50</span><span class="nk"> &lt;funzo&gt;</span> no worries
+<a name="l-70"></a><span class="tm">21:11:17</span><span class="nk"> &lt;shadower&gt;</span> I don't think I have the right to create repos
+<a name="l-71"></a><span class="tm">21:11:21</span><span class="nk"> &lt;shadower&gt;</span> put that as an action item?
+<a name="l-72"></a><span class="tm">21:11:33</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#action </span><span class="cmdline">sdake create repo for shadower for jeos tools</span>
+<a name="l-73"></a><span class="tm">21:11:58</span><span class="nk"> &lt;shadower&gt;</span> thx, sorry to derail it even further
+<a name="l-74"></a><span class="tm">21:12:05</span><span class="nk"> &lt;funzo&gt;</span> ok anything else before the roadmap items status?
+<a name="l-75"></a><span class="tm">21:12:19</span><span class="nk"> &lt;sdake&gt;</span> probably what would make most sense is to fork master into a new repo, then delete the stuff out of it so we don't lose the cfn histroies
+<a name="l-76"></a><span class="tm">21:12:52</span><span class="nk"> &lt;funzo&gt;</span> yeah, that would be good
+<a name="l-77"></a><span class="tm">21:12:54</span><span class="nk"> &lt;sdake&gt;</span> roadmap item ubuntu support
+<a name="l-78"></a><span class="tm">21:13:09</span><span class="nk"> &lt;funzo&gt;</span> <span class="topic">#topic </span><span class="topicline">roadmap item ubuntu support</span>
+<a name="l-79"></a><span class="tm">21:13:11</span><span class="nk"> &lt;sdake&gt;</span> u10 guest launching works + wordpress demo works
+<a name="l-80"></a><span class="tm">21:13:18</span><span class="nk"> &lt;funzo&gt;</span> nice
+<a name="l-81"></a><span class="tm">21:13:41</span><span class="nk"> &lt;sdake&gt;</span> jpeeler will miss this meeting, but he had indicated progress is taking place on ubuntu hos tsupport
+<a name="l-82"></a><span class="tm">21:13:41</span><span class="nk"> &lt;funzo&gt;</span> that it then?
+<a name="l-83"></a><span class="tm">21:13:47</span><span class="nk"> &lt;sdake&gt;</span> we keep the wiki up to date on that
+<a name="l-84"></a><span class="tm">21:13:59</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">roadmap item nested stacks</span>
+<a name="l-85"></a><span class="tm">21:14:26</span><span class="nk"> &lt;sdake&gt;</span> zaneb any updates there
+<a name="l-86"></a><span class="tm">21:14:27</span><span class="nk"> &lt;zaneb&gt;</span> so, I'm working on a series of patch for that atm
+<a name="l-87"></a><span class="tm">21:14:39</span><span class="nk"> &lt;zaneb&gt;</span> some are already delivered
+<a name="l-88"></a><span class="tm">21:14:47</span><span class="nk"> &lt;funzo&gt;</span> zaneb also did a bunch of work on calculating resources deps too
+<a name="l-89"></a><span class="tm">21:15:06</span><span class="nk"> &lt;zaneb&gt;</span> yeah, that is going to be part of it
+<a name="l-90"></a><span class="tm">21:15:36</span><span class="nk"> &lt;zaneb&gt;</span> I'm refactoring a lot of the code as I go to hopefully make it simple to turn a stack into a resource
+<a name="l-91"></a><span class="tm">21:16:02</span><span class="nk"> &lt;funzo&gt;</span> I am having a bit of trouble with the wait conditions with that stuff but I can bother you about it later
+<a name="l-92"></a><span class="tm">21:16:14</span><span class="nk"> &lt;zaneb&gt;</span> ok, cool
+<a name="l-93"></a><span class="tm">21:16:34</span><span class="nk"> &lt;zaneb&gt;</span> I haven't encountered any major obstacles yet
+<a name="l-94"></a><span class="tm">21:16:47</span><span class="nk"> &lt;zaneb&gt;</span> I have a rough idea of what I'm going to try
+<a name="l-95"></a><span class="tm">21:16:48</span><span class="nk"> &lt;funzo&gt;</span> just the HA template
+<a name="l-96"></a><span class="tm">21:17:13</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">template parity support</span>
+<a name="l-97"></a><span class="tm">21:17:20</span><span class="nk"> &lt;funzo&gt;</span> k
+<a name="l-98"></a><span class="tm">21:17:31</span><span class="nk"> &lt;funzo&gt;</span> I created a puppet master using the aws template
+<a name="l-99"></a><span class="tm">21:17:34</span><span class="nk"> &lt;funzo&gt;</span> also created the client
+<a name="l-100"></a><span class="tm">21:17:45</span><span class="nk"> &lt;funzo&gt;</span> the client gets wordpress setup (2 nodes)
+<a name="l-101"></a><span class="tm">21:18:00</span><span class="nk"> &lt;funzo&gt;</span> although, ran into some issues after rebasing, will work with zane on the wait conditions
+<a name="l-102"></a><span class="tm">21:18:20</span><span class="nk"> &lt;funzo&gt;</span> I probably won't finish all the open source application stacks before the release
+<a name="l-103"></a><span class="tm">21:18:31</span><span class="nk"> &lt;funzo&gt;</span> this week will be my last week dedicated to the project
+<a name="l-104"></a><span class="tm">21:18:44</span><span class="nk"> &lt;funzo&gt;</span> end
+<a name="l-105"></a><span class="tm">21:18:58</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">security rework</span>
+<a name="l-106"></a><span class="tm">21:19:20</span><span class="nk"> &lt;sdake&gt;</span> slower any update there
+<a name="l-107"></a><span class="tm">21:19:21</span><span class="nk"> &lt;Slower&gt;</span> So we have auth for ec2 and keystone user/pass working
+<a name="l-108"></a><span class="tm">21:19:32</span><span class="nk"> &lt;Slower&gt;</span> I just tested with a non-admin user and that works
+<a name="l-109"></a><span class="tm">21:19:56</span><span class="nk"> &lt;Slower&gt;</span> so next on the list is to associate stacks with the user in the database
+<a name="l-110"></a><span class="tm">21:20:00</span><span class="nk"> &lt;Slower&gt;</span> I think that shouldn't take too long
+<a name="l-111"></a><span class="tm">21:20:11</span><span class="nk"> &lt;Slower&gt;</span> I also want to check with the openstack devs that I have done all the auth stuff correctly
+<a name="l-112"></a><span class="tm">21:20:48</span><span class="nk"> &lt;Slower&gt;</span> so I would think early next week we should have users associated with stacks
+<a name="l-113"></a><span class="tm">21:20:54</span><span class="nk"> &lt;sdake&gt;</span> nice job slower
+<a name="l-114"></a><span class="tm">21:21:02</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">boto integration</span>
+<a name="l-115"></a><span class="tm">21:21:19</span><span class="nk"> &lt;sdake&gt;</span> shardy_afk are you afk? :)
+<a name="l-116"></a><span class="tm">21:21:47</span><span class="nk"> &lt;Slower&gt;</span> I know the boto commands authenticate properly now :)
+<a name="l-117"></a><span class="tm">21:22:10</span><span class="nk"> &lt;Slower&gt;</span> he has an issue with returning json instead of xml for the calls
+<a name="l-118"></a><span class="tm">21:22:13</span><span class="nk"> &lt;sdake&gt;</span> well we will have to sync with shardy later perhaps ;)
+<a name="l-119"></a><span class="tm">21:22:30</span><span class="nk"> &lt;Slower&gt;</span> there's still a fair bit of work to do there I think
+<a name="l-120"></a><span class="tm">21:22:34</span><span class="nk"> &lt;Slower&gt;</span> I will probably help him some too
+<a name="l-121"></a><span class="tm">21:22:46</span><span class="nk"> &lt;sdake&gt;</span> cool makes a perfect segway after security is done ;)
+<a name="l-122"></a><span class="tm">21:22:51</span><span class="nk"> &lt;Slower&gt;</span> yes :)
+<a name="l-123"></a><span class="tm">21:23:18</span><span class="nk"> &lt;Slower&gt;</span> I have been testing it some already to verify security aspect
+<a name="l-124"></a><span class="tm">21:23:27</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">stackforgeing</span>
+<a name="l-125"></a><span class="tm">21:23:40</span><span class="nk"> &lt;sdake&gt;</span> seems like folks have been doing patch reviews
+<a name="l-126"></a><span class="tm">21:23:53</span><span class="nk"> &lt;sdake&gt;</span> intent was to discuss whether that made sense this week
+<a name="l-127"></a><span class="tm">21:24:05</span><span class="nk"> &lt;sdake&gt;</span> but since folks already doing it, seems like it makes sense
+<a name="l-128"></a><span class="tm">21:24:27</span><span class="nk"> &lt;sdake&gt;</span> just would like to hear anyone doesn't want to do reviews of patches
+<a name="l-129"></a><span class="tm">21:25:08</span><span class="nk"> &lt;funzo&gt;</span> I mean, it's a visual review unless you go through the trouble of downloading the patch and applying it
+<a name="l-130"></a><span class="tm">21:25:09</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">devs agree to review patches from other devs in stackforge</span>
+<a name="l-131"></a><span class="tm">21:25:17</span><span class="nk"> &lt;sdake&gt;</span> ya visual
+<a name="l-132"></a><span class="tm">21:25:17</span><span class="nk"> &lt;Slower&gt;</span> I didn't really want to but it's been fine
+<a name="l-133"></a><span class="tm">21:25:34</span><span class="nk"> &lt;Slower&gt;</span> we seem to have very high quality work going on here, I don't know that serious reviews are necessary at this stage
+<a name="l-134"></a><span class="tm">21:25:49</span><span class="nk"> &lt;sdake&gt;</span> i have found it a bit helpful so far
+<a name="l-135"></a><span class="tm">21:26:00</span><span class="nk"> &lt;zaneb&gt;</span> I like code reviews
+<a name="l-136"></a><span class="tm">21:26:01</span><span class="nk"> &lt;zaneb&gt;</span> a lot
+<a name="l-137"></a><span class="tm">21:26:03</span><span class="nk"> &lt;Slower&gt;</span> yeah I don't mind the visual reviews we have been doing
+<a name="l-138"></a><span class="tm">21:26:07</span><span class="nk"> &lt;shadower&gt;</span> I'm cool with what we have now
+<a name="l-139"></a><span class="tm">21:26:09</span><span class="nk"> &lt;sdake&gt;</span> caught a few things from going in that would have been broken
+<a name="l-140"></a><span class="tm">21:26:13</span><span class="nk"> &lt;zaneb&gt;</span> but I am not in love with that tool
+<a name="l-141"></a><span class="tm">21:26:24</span><span class="nk"> &lt;sdake&gt;</span> jenkins ?   Future of computing zaneb :)
+<a name="l-142"></a><span class="tm">21:26:30</span><span class="nk"> &lt;Slower&gt;</span> haha
+<a name="l-143"></a><span class="tm">21:26:34</span><span class="nk"> &lt;asalkeld&gt;</span> hi, back
+<a name="l-144"></a><span class="tm">21:26:34</span><span class="nk"> &lt;shadower&gt;</span> guess he means gerrit
+<a name="l-145"></a><span class="tm">21:26:50</span><span class="nk"> &lt;sdake&gt;</span> we will be using jenkins until we are riding off into the sunset :)
+<a name="l-146"></a><span class="tm">21:26:59</span><span class="nk"> &lt;zaneb&gt;</span> the combination of jenkins &amp; gerrit, I guess
+<a name="l-147"></a><span class="tm">21:27:36</span><span class="nk"> &lt;Slower&gt;</span> right because these have a history of never being replaced by the next great thing..
+<a name="l-148"></a><span class="tm">21:27:36</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">packaging update</span>
+<a name="l-149"></a><span class="tm">21:27:47</span><span class="nk"> &lt;zaneb&gt;</span> there's a big delay and then when something else gets merged you have to resubmit + re-review everyhting
+<a name="l-150"></a><span class="tm">21:27:55</span><span class="nk"> &lt;sdake&gt;</span> jpeeler going to do fedora package review and get cracking on PPAs
+<a name="l-151"></a><span class="tm">21:28:56</span><span class="nk"> &lt;sdake&gt;</span> i want to propose we float around the release manager role
+<a name="l-152"></a><span class="tm">21:29:01</span><span class="nk"> &lt;sdake&gt;</span> to a new dev every release
+<a name="l-153"></a><span class="tm">21:29:12</span><span class="nk"> &lt;sdake&gt;</span> that dev does fedora update + PPA update + package release
+<a name="l-154"></a><span class="tm">21:29:48</span><span class="nk"> &lt;funzo&gt;</span> the guide is really quite comprehensive
+<a name="l-155"></a><span class="tm">21:29:57</span><span class="nk"> &lt;funzo&gt;</span> so we should be able to float it pretty easily
+<a name="l-156"></a><span class="tm">21:30:08</span><span class="nk"> &lt;shadower&gt;</span> I've never done any of that so I'd appreciate giving it a try
+<a name="l-157"></a><span class="tm">21:30:58</span><span class="nk"> &lt;funzo&gt;</span> oh, do we need to do releases on all the repos now?
+<a name="l-158"></a><span class="tm">21:31:04</span><span class="nk"> &lt;Slower&gt;</span> sounds good
+<a name="l-159"></a><span class="tm">21:31:11</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">functional testing</span>
+<a name="l-160"></a><span class="tm">21:31:14</span><span class="nk"> &lt;funzo&gt;</span> for instance, the packaging repo isn't being tagged and released at the same cadence
+<a name="l-161"></a><span class="tm">21:31:38</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#undo</span><span class="cmdline"></span>
+<a name="l-162"></a><span class="tm">21:31:38</span><span class="nk"> &lt;mheat-bot&gt;</span> Removing item from minutes: &lt;MeetBot.items.Topic object at 0x256a1d0&gt;
+<a name="l-163"></a><span class="tm">21:31:54</span><span class="nk"> &lt;sdake&gt;</span> funzo not sure, probably need to think about that
+<a name="l-164"></a><span class="tm">21:32:07</span><span class="nk"> &lt;sdake&gt;</span> fedora + ubuntu packaging wont be ready for next release on 16th
+<a name="l-165"></a><span class="tm">21:32:17</span><span class="nk"> &lt;sdake&gt;</span> so we have some time to sort that out
+<a name="l-166"></a><span class="tm">21:32:42</span><span class="nk"> &lt;funzo&gt;</span> kk
+<a name="l-167"></a><span class="tm">21:32:45</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">functional testing</span>
+<a name="l-168"></a><span class="tm">21:33:01</span><span class="nk"> &lt;sdake&gt;</span> zaneb had a chance to try setup of the f17 host on beaker ?
+<a name="l-169"></a><span class="tm">21:34:40</span><span class="nk"> &lt;funzo&gt;</span> he might be gone
+<a name="l-170"></a><span class="tm">21:34:45</span><span class="nk"> &lt;sdake&gt;</span> possible ;)
+<a name="l-171"></a><span class="tm">21:34:53</span><span class="nk"> &lt;funzo&gt;</span> late there
+<a name="l-172"></a><span class="tm">21:34:59</span><span class="nk"> &lt;sdake&gt;</span> was there anything else anyone wanted to cover in the agenda?
+<a name="l-173"></a><span class="tm">21:35:04</span><span class="nk"> &lt;zaneb&gt;</span> still here
+<a name="l-174"></a><span class="tm">21:35:15</span><span class="nk"> &lt;zaneb&gt;</span> I haven't looked at beaker again yet
+<a name="l-175"></a><span class="tm">21:35:40</span><span class="nk"> &lt;funzo&gt;</span> has anyone had issues deleting stacks that use security groups?
+<a name="l-176"></a><span class="tm">21:35:47</span><span class="nk"> &lt;funzo&gt;</span> like multiple node stacks?
+<a name="l-177"></a><span class="tm">21:35:49</span><span class="nk"> &lt;sdake&gt;</span> zaneb i'll setup a f17 host and see if beaker is fixed yet
+<a name="l-178"></a><span class="tm">21:36:00</span><span class="nk"> &lt;zaneb&gt;</span> ok
+<a name="l-179"></a><span class="tm">21:36:12</span><span class="nk"> &lt;zaneb&gt;</span> yeah, if it boots that will be a good start :)
+<a name="l-180"></a><span class="tm">21:36:12</span><span class="nk"> &lt;sdake&gt;</span> i'll take that machine back from you in beaker then
+<a name="l-181"></a><span class="tm">21:36:15</span><span class="nk"> &lt;funzo&gt;</span> ie, security group still being in use
+<a name="l-182"></a><span class="tm">21:36:16</span><span class="nk"> &lt;zaneb&gt;</span> cool
+<a name="l-183"></a><span class="tm">21:36:26</span><span class="nk"> &lt;funzo&gt;</span> I think angus had some ideas
+<a name="l-184"></a><span class="tm">21:36:33</span><span class="nk"> &lt;sdake&gt;</span> funzo haven't seen that, but been only palying with u10 for last week
+<a name="l-185"></a><span class="tm">21:36:34</span><span class="nk"> &lt;funzo&gt;</span> not using a timer, sdake did he convey any of those ideas
+<a name="l-186"></a><span class="tm">21:36:39</span><span class="nk"> &lt;funzo&gt;</span> k
+<a name="l-187"></a><span class="tm">21:36:46</span><span class="nk"> &lt;funzo&gt;</span> we can go over it tomorrow
+<a name="l-188"></a><span class="tm">21:36:51</span><span class="nk"> &lt;funzo&gt;</span> nothing else I wanted to cover
+<a name="l-189"></a><span class="tm">21:36:55</span><span class="nk"> &lt;zaneb&gt;</span> <span class="hi">funzo:</span> did that patch of yours to wait for the instance to be deleted work?
+<a name="l-190"></a><span class="tm">21:37:29</span><span class="nk"> &lt;asalkeld&gt;</span> funzo, I just suggested using eventlet timeouts
+<a name="l-191"></a><span class="tm">21:37:40</span><span class="nk"> &lt;asalkeld&gt;</span> not some custom thing
+<a name="l-192"></a><span class="tm">21:37:44</span><span class="nk"> &lt;funzo&gt;</span> ah
+<a name="l-193"></a><span class="tm">21:37:56</span><span class="nk"> &lt;sdake&gt;</span> ya i recall - that looked like the correct way to go
+<a name="l-194"></a><span class="tm">21:38:05</span><span class="nk"> &lt;funzo&gt;</span> ok, I'll look into that then
+<a name="l-195"></a><span class="tm">21:38:20</span><span class="nk"> &lt;funzo&gt;</span> and I'll follow up with zane on the wait condition thing
+<a name="l-196"></a><span class="tm">21:38:28</span><span class="nk"> &lt;zaneb&gt;</span> cool
+<a name="l-197"></a><span class="tm">21:38:35</span><span class="nk"> &lt;zaneb&gt;</span> the wait condition thing has never worked for me
+<a name="l-198"></a><span class="tm">21:38:43</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#action </span><span class="cmdline">sdake to install f17 host using beaker if possible now</span>
+<a name="l-199"></a><span class="tm">21:38:57</span><span class="nk"> &lt;asalkeld&gt;</span> zaneb, it needs a new jeos
+<a name="l-200"></a><span class="tm">21:39:06</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#action </span><span class="cmdline">funzo to look into eventlets for deleting security groups</span>
+<a name="l-201"></a><span class="tm">21:39:09</span><span class="nk"> &lt;funzo&gt;</span> kk
+<a name="l-202"></a><span class="tm">21:39:13</span><span class="nk"> &lt;asalkeld&gt;</span> (it used to run the userdata twice)
+<a name="l-203"></a><span class="tm">21:39:19</span><span class="nk"> &lt;zaneb&gt;</span> <span class="hi">asalkeld:</span> that would probably explain it, thanks
+<a name="l-204"></a><span class="tm">21:39:23</span><span class="nk"> &lt;asalkeld&gt;</span> and send 2 signals
+<a name="l-205"></a><span class="tm">21:39:28</span><span class="nk"> &lt;asalkeld&gt;</span> one good one bad
+<a name="l-206"></a><span class="tm">21:39:31</span><span class="nk"> &lt;funzo&gt;</span> the wait conditions hande url parsing seems to be broken
+<a name="l-207"></a><span class="tm">21:39:36</span><span class="nk"> &lt;sdake&gt;</span> the userdata run twice was fixed without updating the jeos
+<a name="l-208"></a><span class="tm">21:39:49</span><span class="nk"> &lt;asalkeld&gt;</span> ah, on
+<a name="l-209"></a><span class="tm">21:39:51</span><span class="nk"> &lt;sdake&gt;</span> it was in heat/cloudconfig/
+<a name="l-210"></a><span class="tm">21:39:57</span><span class="nk"> &lt;asalkeld&gt;</span> that's right
+<a name="l-211"></a><span class="tm">21:40:27</span><span class="nk"> &lt;zaneb&gt;</span> ok, funzo and I can go through it tomorrow
+<a name="l-212"></a><span class="tm">21:40:33</span><span class="nk"> &lt;funzo&gt;</span> kk
+<a name="l-213"></a><span class="tm">21:40:38</span><span class="nk"> &lt;funzo&gt;</span> that's all I had
+<a name="l-214"></a><span class="tm">21:40:58</span><span class="nk"> &lt;funzo&gt;</span> anyone else?
+<a name="l-215"></a><span class="tm">21:41:12</span><span class="nk"> &lt;funzo&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

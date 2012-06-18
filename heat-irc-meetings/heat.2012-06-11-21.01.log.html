@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#heat log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">21:01:29</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">21:01:29</span><span class="nk"> &lt;mheat-bot&gt;</span> Meeting started Mon Jun 11 21:01:29 2012 UTC.  The chair is sdake. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">21:01:29</span><span class="nk"> &lt;mheat-bot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">21:01:45</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#chair </span><span class="cmdline">slower sdake zaneb funzo jpeeler asalkeld shadower</span>
+<a name="l-5"></a><span class="tm">21:01:45</span><span class="nk"> &lt;mheat-bot&gt;</span> Current chairs: asalkeld funzo jpeeler sdake shadower slower zaneb
+<a name="l-6"></a><span class="tm">21:02:22</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">rollcall</span>
+<a name="l-7"></a><span class="tm">21:02:29</span><span class="nk"> &lt;sdake&gt;</span> sdake here
+<a name="l-8"></a><span class="tm">21:02:36</span><span class="nk"> &lt;zaneb&gt;</span> evening all
+<a name="l-9"></a><span class="tm">21:03:11</span><span class="nk"> &lt;sdake&gt;</span> jpeeler slower shadower asalkeld around?
+<a name="l-10"></a><span class="tm">21:03:19</span><span class="nk"> &lt;Slower&gt;</span> yes, Slower here
+<a name="l-11"></a><span class="tm">21:03:20</span><span class="nk"> &lt;asalkeld&gt;</span> morning
+<a name="l-12"></a><span class="tm">21:03:28</span><span class="nk"> &lt;Slower&gt;</span> asalkeld!
+<a name="l-13"></a><span class="tm">21:03:31</span><span class="nk"> &lt;jpeeler&gt;</span> present
+<a name="l-14"></a><span class="tm">21:03:47</span><span class="nk"> &lt;sdake&gt;</span> shadower has bad time slot may not be here :)
+<a name="l-15"></a><span class="tm">21:03:53</span><span class="nk"> &lt;sdake&gt;</span> funzo on pto
+<a name="l-16"></a><span class="tm">21:03:56</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">agenda topics</span>
+<a name="l-17"></a><span class="tm">21:04:24</span><span class="nk"> &lt;sdake&gt;</span> we have release on 18th, i'd like to go over the milestone issues that are pending
+<a name="l-18"></a><span class="tm">21:04:46</span><span class="nk"> &lt;sdake&gt;</span> like to speak a bit about functional testing
+<a name="l-19"></a><span class="tm">21:04:49</span><span class="nk"> &lt;sdake&gt;</span> any other topics?
+<a name="l-20"></a><span class="tm">21:05:25</span><span class="nk"> &lt;asalkeld&gt;</span> seems ok
+<a name="l-21"></a><span class="tm">21:05:37</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">M4 open issues</span>
+<a name="l-22"></a><span class="tm">21:05:44</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#link </span><span class="cmdline">https://github.com/heat-api/heat/issues?milestone=5&amp;state=open</span>
+<a name="l-23"></a><span class="tm">21:05:51</span><span class="nk"> &lt;sdake&gt;</span> please open and take a look
+<a name="l-24"></a><span class="tm">21:06:00</span><span class="nk"> &lt;sdake&gt;</span> lets go from highest to lowest
+<a name="l-25"></a><span class="tm">21:06:11</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#140 </span><span class="cmdline">i'll sort out</span>
+<a name="l-26"></a><span class="tm">21:06:18</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#139 </span><span class="cmdline">i'll sort out</span>
+<a name="l-27"></a><span class="tm">21:06:21</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#138 </span><span class="cmdline">i'll sort out</span>
+<a name="l-28"></a><span class="tm">21:06:29</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#123 </span><span class="cmdline">nested stacks make 18th ?</span>
+<a name="l-29"></a><span class="tm">21:07:14</span><span class="nk"> &lt;zaneb&gt;</span> borderline
+<a name="l-30"></a><span class="tm">21:07:26</span><span class="nk"> &lt;zaneb&gt;</span> hope so
+<a name="l-31"></a><span class="tm">21:07:34</span><span class="nk"> &lt;sdake&gt;</span> can you give a quick update of what work is left
+<a name="l-32"></a><span class="tm">21:07:59</span><span class="nk"> &lt;zaneb&gt;</span> it's mainly figuring out how to represent them in the database
+<a name="l-33"></a><span class="tm">21:08:20</span><span class="nk"> &lt;sdake&gt;</span> are you blocked on any features?
+<a name="l-34"></a><span class="tm">21:08:22</span><span class="nk"> &lt;zaneb&gt;</span> it should be makable, but not if the functional tests suck up too much time this week
+<a name="l-35"></a><span class="tm">21:08:32</span><span class="nk"> &lt;zaneb&gt;</span> no, not blocked on anything
+<a name="l-36"></a><span class="tm">21:08:36</span><span class="nk"> &lt;sdake&gt;</span> release &gt; functional testing
+<a name="l-37"></a><span class="tm">21:08:45</span><span class="nk"> &lt;zaneb&gt;</span> ok, cool
+<a name="l-38"></a><span class="tm">21:09:05</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#120 </span><span class="cmdline">i'll need to sync with funzo on the puppet support</span>
+<a name="l-39"></a><span class="tm">21:09:11</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#119 </span><span class="cmdline">same</span>
+<a name="l-40"></a><span class="tm">21:09:22</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#117 </span><span class="cmdline">Fix auth and id issues</span>
+<a name="l-41"></a><span class="tm">21:09:31</span><span class="nk"> &lt;sdake&gt;</span> slower will that make 18th?
+<a name="l-42"></a><span class="tm">21:10:00</span><span class="nk"> &lt;Slower&gt;</span> It'll be close but I think it will
+<a name="l-43"></a><span class="tm">21:10:11</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#108 </span><span class="cmdline">implement ha escalation</span>
+<a name="l-44"></a><span class="tm">21:10:14</span><span class="nk"> &lt;sdake&gt;</span> asalkeld that make 18th?
+<a name="l-45"></a><span class="tm">21:10:37</span><span class="nk"> &lt;asalkeld&gt;</span> Slower, said he would do "saving auth in db" for me
+<a name="l-46"></a><span class="tm">21:10:52</span><span class="nk"> &lt;asalkeld&gt;</span> I am somewhat blocked on that
+<a name="l-47"></a><span class="tm">21:10:59</span><span class="nk"> &lt;sdake&gt;</span> slower that is the work we talked about in private chat earlier
+<a name="l-48"></a><span class="tm">21:11:11</span><span class="nk"> &lt;asalkeld&gt;</span> but I'll test with a dummy command
+<a name="l-49"></a><span class="tm">21:11:20</span><span class="nk"> &lt;sdake&gt;</span> slower had indicated 1-2 days
+<a name="l-50"></a><span class="tm">21:11:23</span><span class="nk"> &lt;asalkeld&gt;</span> to make sure it all works
+<a name="l-51"></a><span class="tm">21:11:23</span><span class="nk"> &lt;Slower&gt;</span> yes hoping to have that done tongiht for you
+<a name="l-52"></a><span class="tm">21:11:33</span><span class="nk"> &lt;asalkeld&gt;</span> cool
+<a name="l-53"></a><span class="tm">21:11:44</span><span class="nk"> &lt;Slower&gt;</span> I've been flip flopping a bit on how to implement but I think I have it figured now
+<a name="l-54"></a><span class="tm">21:11:54</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#105 </span><span class="cmdline">enhance cfn-signal to write to the metadata server - isnt' this fixed asalkeld?</span>
+<a name="l-55"></a><span class="tm">21:11:54</span><span class="nk"> &lt;asalkeld&gt;</span> so if no major road blocks it will be ok
+<a name="l-56"></a><span class="tm">21:12:03</span><span class="nk"> &lt;asalkeld&gt;</span> ya, done
+<a name="l-57"></a><span class="tm">21:12:50</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#92 </span><span class="cmdline">shardy is afk - i'll sync with him later if boto will be ready for 18th</span>
+<a name="l-58"></a><span class="tm">21:12:58</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#62 </span><span class="cmdline">implement describestackresource api call?</span>
+<a name="l-59"></a><span class="tm">21:13:02</span><span class="nk"> &lt;sdake&gt;</span> is that mandatory for v4?
+<a name="l-60"></a><span class="tm">21:13:20</span><span class="nk"> &lt;asalkeld&gt;</span> not sure
+<a name="l-61"></a><span class="tm">21:13:28</span><span class="nk"> &lt;asalkeld&gt;</span> but not difficult
+<a name="l-62"></a><span class="tm">21:13:44</span><span class="nk"> &lt;sdake&gt;</span> well we can bounce it to v5 if looking tight
+<a name="l-63"></a><span class="tm">21:14:10</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#54 </span><span class="cmdline">need cfn-init script that parses init section - this is done from what I can see - asalkeld agree?</span>
+<a name="l-64"></a><span class="tm">21:14:17</span><span class="nk"> &lt;asalkeld&gt;</span> <span class="cmd">#54 </span><span class="cmdline">is done for ha, but still more</span>
+<a name="l-65"></a><span class="tm">21:14:45</span><span class="nk"> &lt;sdake&gt;</span> ok i'll bump out of the milestone since what we need for this milestone is finished
+<a name="l-66"></a><span class="tm">21:14:47</span><span class="nk"> &lt;sdake&gt;</span> so we can keep it open
+<a name="l-67"></a><span class="tm">21:15:02</span><span class="nk"> &lt;asalkeld&gt;</span> move to heat-jeos issues?
+<a name="l-68"></a><span class="tm">21:15:29</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#24 </span><span class="cmdline">isn't going to make it I think - oz needs some work to support debian v6</span>
+<a name="l-69"></a><span class="tm">21:15:33</span><span class="nk"> &lt;sdake&gt;</span> so bumping
+<a name="l-70"></a><span class="tm">21:15:59</span><span class="nk"> &lt;sdake&gt;</span> two more issues to look at for inclusion in v4 milestone:
+<a name="l-71"></a><span class="tm">21:16:26</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#link </span><span class="cmdline">https://github.com/heat-api/heat/issues/137</span>
+<a name="l-72"></a><span class="tm">21:16:34</span><span class="nk"> &lt;sdake&gt;</span> wrapped db exception become recursive
+<a name="l-73"></a><span class="tm">21:16:56</span><span class="nk"> &lt;sdake&gt;</span> looks like a blocker to me
+<a name="l-74"></a><span class="tm">21:17:09</span><span class="nk"> &lt;sdake&gt;</span> asalkeld you filed what are your thoughts
+<a name="l-75"></a><span class="tm">21:17:11</span><span class="nk"> &lt;zaneb&gt;</span> <span class="hi">asalkeld:</span> is there a reproduction method for that?
+<a name="l-76"></a><span class="tm">21:17:18</span><span class="nk"> &lt;asalkeld&gt;</span> just irritating when you have a bug
+<a name="l-77"></a><span class="tm">21:17:58</span><span class="nk"> &lt;asalkeld&gt;</span> any broken sql will do it
+<a name="l-78"></a><span class="tm">21:18:16</span><span class="nk"> &lt;sdake&gt;</span> so someone has to change heat to make it happen?
+<a name="l-79"></a><span class="tm">21:18:29</span><span class="nk"> &lt;asalkeld&gt;</span> ya
+<a name="l-80"></a><span class="tm">21:18:39</span><span class="nk"> &lt;sdake&gt;</span> ok probably not a blocker then, we can move to v5
+<a name="l-81"></a><span class="tm">21:18:40</span><span class="nk"> &lt;Slower&gt;</span> or find some bug in our code
+<a name="l-82"></a><span class="tm">21:18:47</span><span class="nk"> &lt;Slower&gt;</span> or not migrate the db
+<a name="l-83"></a><span class="tm">21:18:51</span><span class="nk"> &lt;asalkeld&gt;</span> yip
+<a name="l-84"></a><span class="tm">21:19:00</span><span class="nk"> &lt;zaneb&gt;</span> <span class="hi">Slower:</span> there are no bugs in our code! ;)
+<a name="l-85"></a><span class="tm">21:19:08</span><span class="nk"> &lt;Slower&gt;</span> nevar!
+<a name="l-86"></a><span class="tm">21:19:34</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#link </span><span class="cmdline">https://github.com/heat-api/heat/issues/136</span>
+<a name="l-87"></a><span class="tm">21:19:57</span><span class="nk"> &lt;sdake&gt;</span> looks pretty easy to fix
+<a name="l-88"></a><span class="tm">21:19:59</span><span class="nk"> &lt;asalkeld&gt;</span> I suspect zaneb came up against that
+<a name="l-89"></a><span class="tm">21:20:38</span><span class="nk"> &lt;sdake&gt;</span> propose promoting issue 136 to v4 milestone
+<a name="l-90"></a><span class="tm">21:20:42</span><span class="nk"> &lt;sdake&gt;</span> +/-
+<a name="l-91"></a><span class="tm">21:20:42</span><span class="nk"> &lt;sdake&gt;</span> +
+<a name="l-92"></a><span class="tm">21:21:03</span><span class="nk"> &lt;asalkeld&gt;</span> +1 (if we have time for it)
+<a name="l-93"></a><span class="tm">21:21:13</span><span class="nk"> &lt;Slower&gt;</span> +1
+<a name="l-94"></a><span class="tm">21:21:34</span><span class="nk"> &lt;sdake&gt;</span> i'll look into it my week is fairly free atm
+<a name="l-95"></a><span class="tm">21:21:59</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">issue 136 promoted to v4 milestone</span>
+<a name="l-96"></a><span class="tm">21:22:03</span><span class="nk"> &lt;sdake&gt;</span> ok heat-jeos ;)
+<a name="l-97"></a><span class="tm">21:22:25</span><span class="nk"> &lt;sdake&gt;</span> no issues open
+<a name="l-98"></a><span class="tm">21:22:33</span><span class="nk"> &lt;sdake&gt;</span> must be perfect ;)
+<a name="l-99"></a><span class="tm">21:22:54</span><span class="nk"> &lt;asalkeld&gt;</span> need to move that cfn-init one over
+<a name="l-100"></a><span class="tm">21:23:04</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">heat-jeos has no open issues</span>
+<a name="l-101"></a><span class="tm">21:23:18</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#action </span><span class="cmdline">sdake move cfn-init issue to heat-jeos repo issues</span>
+<a name="l-102"></a><span class="tm">21:23:41</span><span class="nk"> &lt;sdake&gt;</span> any other issues devs seeing that need addressing in v4
+<a name="l-103"></a><span class="tm">21:24:06</span><span class="nk"> &lt;asalkeld&gt;</span> how is our ubuntu support?
+<a name="l-104"></a><span class="tm">21:24:24</span><span class="nk"> &lt;sdake&gt;</span> jpeeler can you give an update on ubuntu support
+<a name="l-105"></a><span class="tm">21:25:17</span><span class="nk"> &lt;sdake&gt;</span> asalkeld u10 guests work - u12 needs oz support
+<a name="l-106"></a><span class="tm">21:25:18</span><span class="nk"> &lt;asalkeld&gt;</span> https://github.com/heat-api/heat/wiki/Roadmap-Feature:-Debian-Ubuntu-support
+<a name="l-107"></a><span class="tm">21:25:21</span><span class="nk"> &lt;jpeeler&gt;</span> i'm still working out issues to enable use of devstack, so manual modifications are necessary to allow use to use their template driver
+<a name="l-108"></a><span class="tm">21:25:48</span><span class="nk"> &lt;jpeeler&gt;</span> once that is done, i'm fairly confident everything else will fall into place
+<a name="l-109"></a><span class="tm">21:25:55</span><span class="nk"> &lt;sdake&gt;</span> i assume we want good ubuntu support including docs in v4
+<a name="l-110"></a><span class="tm">21:26:17</span><span class="nk"> &lt;asalkeld&gt;</span> ya, well as much as possible
+<a name="l-111"></a><span class="tm">21:26:30</span><span class="nk"> &lt;sdake&gt;</span> propose making ubuntu support work well + docs in v4
+<a name="l-112"></a><span class="tm">21:26:32</span><span class="nk"> &lt;sdake&gt;</span> +/-
+<a name="l-113"></a><span class="tm">21:26:33</span><span class="nk"> &lt;sdake&gt;</span> +
+<a name="l-114"></a><span class="tm">21:26:39</span><span class="nk"> &lt;asalkeld&gt;</span> it is probably a continous job
+<a name="l-115"></a><span class="tm">21:26:41</span><span class="nk"> &lt;asalkeld&gt;</span> +1
+<a name="l-116"></a><span class="tm">21:26:54</span><span class="nk"> &lt;Slower&gt;</span> +1
+<a name="l-117"></a><span class="tm">21:27:35</span><span class="nk"> &lt;sdake&gt;</span> jpeeler/zaneb?
+<a name="l-118"></a><span class="tm">21:27:39</span><span class="nk"> &lt;zaneb&gt;</span> +1
+<a name="l-119"></a><span class="tm">21:27:59</span><span class="nk"> &lt;jpeeler&gt;</span> +1, i thought we had already decided that
+<a name="l-120"></a><span class="tm">21:28:13</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">ubuntu u12 supported host + docs in v4</span>
+<a name="l-121"></a><span class="tm">21:28:22</span><span class="nk"> &lt;sdake&gt;</span> jpeeler work on that ahead of fedora packaging
+<a name="l-122"></a><span class="tm">21:28:40</span><span class="nk"> &lt;sdake&gt;</span> key features in v4:
+<a name="l-123"></a><span class="tm">21:28:43</span><span class="nk"> &lt;sdake&gt;</span> nested stacks
+<a name="l-124"></a><span class="tm">21:28:46</span><span class="nk"> &lt;sdake&gt;</span> cloudwatch
+<a name="l-125"></a><span class="tm">21:28:49</span><span class="nk"> &lt;sdake&gt;</span> high availability
+<a name="l-126"></a><span class="tm">21:28:52</span><span class="nk"> &lt;sdake&gt;</span> security
+<a name="l-127"></a><span class="tm">21:28:59</span><span class="nk"> &lt;sdake&gt;</span> ubuntu u10 guest support
+<a name="l-128"></a><span class="tm">21:29:03</span><span class="nk"> &lt;sdake&gt;</span> ubuntu u12 host support
+<a name="l-129"></a><span class="tm">21:29:17</span><span class="nk"> &lt;asalkeld&gt;</span> yikes
+<a name="l-130"></a><span class="tm">21:29:24</span><span class="nk"> &lt;asalkeld&gt;</span> bucket load
+<a name="l-131"></a><span class="tm">21:29:46</span><span class="nk"> &lt;sdake&gt;</span> if any of those wont make it by 18th now is time to tell, sounds like nested stacks may be iffy
+<a name="l-132"></a><span class="tm">21:30:22</span><span class="nk"> &lt;zaneb&gt;</span> I'm pretty sure I can get it done
+<a name="l-133"></a><span class="tm">21:30:32</span><span class="nk"> &lt;zaneb&gt;</span> not 100% sure I can not break any of those other new features
+<a name="l-134"></a><span class="tm">21:30:41</span><span class="nk"> &lt;sdake&gt;</span> ;-)
+<a name="l-135"></a><span class="tm">21:30:42</span><span class="nk"> &lt;zaneb&gt;</span> if all are landing about the same time
+<a name="l-136"></a><span class="tm">21:30:48</span><span class="nk"> &lt;asalkeld&gt;</span> sounds fun
+<a name="l-137"></a><span class="tm">21:31:02</span><span class="nk"> &lt;sdake&gt;</span> remember we have 1 week of testing + bugfixes if things do break - but try not to break whats there
+<a name="l-138"></a><span class="tm">21:31:03</span><span class="nk"> &lt;asalkeld&gt;</span> zaneb, all my stuff is in
+<a name="l-139"></a><span class="tm">21:31:18</span><span class="nk"> &lt;zaneb&gt;</span> <span class="hi">asalkeld:</span> ok, that helps. thanks
+<a name="l-140"></a><span class="tm">21:31:36</span><span class="nk"> &lt;sdake&gt;</span> ok well good job folks we are making great progress in 1 month
+<a name="l-141"></a><span class="tm">21:31:42</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">functional testing</span>
+<a name="l-142"></a><span class="tm">21:32:03</span><span class="nk"> &lt;sdake&gt;</span> we have good unit testing + continuous integration going into v4 with 50% coverage
+<a name="l-143"></a><span class="tm">21:32:18</span><span class="nk"> &lt;sdake&gt;</span> we have physical hardware that is deployed for the functional testing
+<a name="l-144"></a><span class="tm">21:32:36</span><span class="nk"> &lt;sdake&gt;</span> Next steps are to run the functional tests on the hardware
+<a name="l-145"></a><span class="tm">21:33:02</span><span class="nk"> &lt;sdake&gt;</span> then follow that up with jenkins stackforge integration
+<a name="l-146"></a><span class="tm">21:33:23</span><span class="nk"> &lt;sdake&gt;</span> i think atm we are a bit pressed for time with relation to v4 milestone, so perhaps we should punt this to next week
+<a name="l-147"></a><span class="tm">21:33:39</span><span class="nk"> &lt;sdake&gt;</span> propose delaying functional testing to v5 milestone
+<a name="l-148"></a><span class="tm">21:33:43</span><span class="nk"> &lt;sdake&gt;</span> +1/-1
+<a name="l-149"></a><span class="tm">21:33:44</span><span class="nk"> &lt;sdake&gt;</span> +1
+<a name="l-150"></a><span class="tm">21:33:48</span><span class="nk"> &lt;zaneb&gt;</span> +1
+<a name="l-151"></a><span class="tm">21:33:52</span><span class="nk"> &lt;asalkeld&gt;</span> +1
+<a name="l-152"></a><span class="tm">21:33:54</span><span class="nk"> &lt;sdake&gt;</span> zaneb fas t;)
+<a name="l-153"></a><span class="tm">21:34:06</span><span class="nk"> &lt;asalkeld&gt;</span> zaneb, goes whew
+<a name="l-154"></a><span class="tm">21:34:08</span><span class="nk"> &lt;zaneb&gt;</span> in theory the integration script in the repo should be sufficient
+<a name="l-155"></a><span class="tm">21:34:09</span><span class="nk"> &lt;Slower&gt;</span> +1
+<a name="l-156"></a><span class="tm">21:34:18</span><span class="nk"> &lt;zaneb&gt;</span> just needs to be integrated with Jenkins
+<a name="l-157"></a><span class="tm">21:34:27</span><span class="nk"> &lt;zaneb&gt;</span> but I haven't tested it on the hw
+<a name="l-158"></a><span class="tm">21:34:34</span><span class="nk"> &lt;sdake&gt;</span> i'll take that on once we know the script works
+<a name="l-159"></a><span class="tm">21:34:54</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#action </span><span class="cmdline">sdake to do jenkins integration once jpeeler+zanebs integration tests working on physical hardware</span>
+<a name="l-160"></a><span class="tm">21:35:13</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">move integration testing to v5</span>
+<a name="l-161"></a><span class="tm">21:35:19</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">open issues</span>
+<a name="l-162"></a><span class="tm">21:35:54</span><span class="nk"> &lt;sdake&gt;</span> any open issues?
+<a name="l-163"></a><span class="tm">21:36:03</span><span class="nk"> &lt;asalkeld&gt;</span> nope
+<a name="l-164"></a><span class="tm">21:36:57</span><span class="nk"> &lt;sdake&gt;</span> ok guys well great work in this version lets get it wrapped up so we can do a bit of testing next week
+<a name="l-165"></a><span class="tm">21:37:07</span><span class="nk"> &lt;sdake&gt;</span> thanks for your time
+<a name="l-166"></a><span class="tm">21:37:10</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

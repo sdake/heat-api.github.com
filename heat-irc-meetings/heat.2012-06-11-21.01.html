@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#heat Meeting</title>
+<style type="text/css">
+/* This is for the .html in the HTML2 writer */
+body {
+    font-family: Helvetica, sans-serif;
+    font-size:14px;
+}
+h1 {
+    text-align: center;
+}
+a {
+    color:navy;
+    text-decoration: none;
+    border-bottom:1px dotted navy;
+}
+a:hover {
+    text-decoration:none;
+    border-bottom: 0;
+    color:#0000B9;
+}
+hr {
+    border: 1px solid #ccc;
+}
+/* The (nick, time) item pairs, and other body text things. */
+.details {
+    font-size: 12px;
+    font-weight:bold;
+}
+/* The 'AGREED:', 'IDEA', etc, prefix to lines. */
+.itemtype {
+    font-style: normal;    /* un-italics it */
+    font-weight: bold;
+}
+/* Example: change single item types.  Capitalized command name.
+/* .TOPIC  {  color:navy;  } */
+/* .AGREED {  color:lime;  } */
+
+</style>
+</head>
+
+<body>
+<h1>#heat Meeting</h1>
+<span class="details">
+Meeting started by sdake at 21:01:29 UTC
+(<a href="heat.2012-06-11-21.01.log.html">full logs</a>).</span>
+
+<br><br>
+
+
+
+<h3>Meeting summary</h3>
+<ol>
+<li><b class="TOPIC">rollcall</b> <span class="details">(<a href='heat.2012-06-11-21.01.log.html#l-6'>sdake</a>, 21:02:22)</span>
+<br></li>
+<li><b class="TOPIC">agenda topics</b> <span class="details">(<a href='heat.2012-06-11-21.01.log.html#l-16'>sdake</a>, 21:03:56)</span>
+<br></li>
+<li><b class="TOPIC">M4 open issues</b> <span class="details">(<a href='heat.2012-06-11-21.01.log.html#l-21'>sdake</a>, 21:05:37)</span>
+<ol type="a">
+  <li><a
+    href="https://github.com/heat-api/heat/issues?milestone=5&amp;state=open">https://github.com/heat-api/heat/issues?milestone=5&amp;state=open</a>
+    <span class="details">(<a
+    href='heat.2012-06-11-21.01.log.html#l-22'>sdake</a>,
+    21:05:44)</span></li>
+  <li><a
+    href="https://github.com/heat-api/heat/issues/137">https://github.com/heat-api/heat/issues/137</a>
+    <span class="details">(<a
+    href='heat.2012-06-11-21.01.log.html#l-71'>sdake</a>,
+    21:16:26)</span></li>
+  <li><a
+    href="https://github.com/heat-api/heat/issues/136">https://github.com/heat-api/heat/issues/136</a>
+    <span class="details">(<a
+    href='heat.2012-06-11-21.01.log.html#l-86'>sdake</a>,
+    21:19:34)</span></li>
+  <li><i class="itemtype">AGREED</i>: <span class="AGREED">issue 136
+    promoted to v4 milestone</span> <span class="details">(<a
+    href='heat.2012-06-11-21.01.log.html#l-95'>sdake</a>,
+    21:21:59)</span></li>
+  <li><span class="INFO">heat-jeos has no open issues</span> <span
+    class="details">(<a
+    href='heat.2012-06-11-21.01.log.html#l-100'>sdake</a>,
+    21:23:04)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">sdake move
+    cfn-init issue to heat-jeos repo issues</span> <span
+    class="details">(<a
+    href='heat.2012-06-11-21.01.log.html#l-101'>sdake</a>,
+    21:23:18)</span></li>
+  <li><a
+    href="https://github.com/heat-api/heat/wiki/Roadmap-Feature:-Debian-Ubuntu-support">https://github.com/heat-api/heat/wiki/Roadmap-Feature:-Debian-Ubuntu-support</a>
+    <span class="details">(<a
+    href='heat.2012-06-11-21.01.log.html#l-106'>asalkeld</a>,
+    21:25:18)</span></li>
+  <li><i class="itemtype">AGREED</i>: <span class="AGREED">ubuntu u12
+    supported host + docs in v4</span> <span class="details">(<a
+    href='heat.2012-06-11-21.01.log.html#l-120'>sdake</a>,
+    21:28:13)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">functional testing</b> <span class="details">(<a href='heat.2012-06-11-21.01.log.html#l-141'>sdake</a>, 21:31:42)</span>
+<ol type="a">
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">sdake to do
+    jenkins integration once jpeeler+zanebs integration tests working on
+    physical hardware</span> <span class="details">(<a
+    href='heat.2012-06-11-21.01.log.html#l-159'>sdake</a>,
+    21:34:54)</span></li>
+  <li><i class="itemtype">AGREED</i>: <span class="AGREED">move
+    integration testing to v5</span> <span class="details">(<a
+    href='heat.2012-06-11-21.01.log.html#l-160'>sdake</a>,
+    21:35:13)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">open issues</b> <span class="details">(<a href='heat.2012-06-11-21.01.log.html#l-161'>sdake</a>, 21:35:19)</span>
+</li>
+</ol>
+<br><br>
+
+
+
+<span class="details">
+Meeting ended at 21:37:10 UTC
+(<a href="heat.2012-06-11-21.01.log.html">full logs</a>).</span>
+
+<br><br>
+
+
+
+<h3>Action items</h3>
+<ol>
+  <li>sdake move cfn-init issue to heat-jeos repo issues</li>
+  <li>sdake to do jenkins integration once jpeeler+zanebs integration tests working on physical hardware</li>
+</ol>
+<br><br>
+
+
+
+<h3>Action items, by person</h3>
+<ol>
+  <li> jpeeler <ol>
+    <li>sdake to do jenkins integration once jpeeler+zanebs integration tests working on physical hardware</li>
+  </ol></li>
+  <li> sdake <ol>
+    <li>sdake move cfn-init issue to heat-jeos repo issues</li>
+    <li>sdake to do jenkins integration once jpeeler+zanebs integration tests working on physical hardware</li>
+  </ol></li>
+  <li> zaneb <ol>
+    <li>sdake to do jenkins integration once jpeeler+zanebs integration tests working on physical hardware</li>
+  </ol></li>
+</ol>
+<br><br>
+
+
+
+<h3>People present (lines said)</h3>
+<ol>
+  <li>sdake (98)</li>
+  <li>asalkeld (32)</li>
+  <li>zaneb (18)</li>
+  <li>Slower (11)</li>
+  <li>jpeeler (4)</li>
+  <li>mheat-bot (3)</li>
+  <li>slower (0)</li>
+  <li>shadower (0)</li>
+  <li>funzo (0)</li>
+</ol>
+<br><br>
+
+
+
+<span class="details">Generated by <a href="http://wiki.debian.org/MeetBot">MeetBot</a> 0.1.4.</span>
+</body></html>

@@ -1,0 +1,166 @@
+21:01:29 <sdake> #startmeeting
+21:01:29 <mheat-bot> Meeting started Mon Jun 11 21:01:29 2012 UTC.  The chair is sdake. Information about MeetBot at http://wiki.debian.org/MeetBot.
+21:01:29 <mheat-bot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+21:01:45 <sdake> #chair slower sdake zaneb funzo jpeeler asalkeld shadower
+21:01:45 <mheat-bot> Current chairs: asalkeld funzo jpeeler sdake shadower slower zaneb
+21:02:22 <sdake> #topic rollcall
+21:02:29 <sdake> sdake here
+21:02:36 <zaneb> evening all
+21:03:11 <sdake> jpeeler slower shadower asalkeld around?
+21:03:19 <Slower> yes, Slower here
+21:03:20 <asalkeld> morning
+21:03:28 <Slower> asalkeld!
+21:03:31 <jpeeler> present
+21:03:47 <sdake> shadower has bad time slot may not be here :)
+21:03:53 <sdake> funzo on pto
+21:03:56 <sdake> #topic agenda topics
+21:04:24 <sdake> we have release on 18th, i'd like to go over the milestone issues that are pending
+21:04:46 <sdake> like to speak a bit about functional testing
+21:04:49 <sdake> any other topics?
+21:05:25 <asalkeld> seems ok
+21:05:37 <sdake> #topic M4 open issues
+21:05:44 <sdake> #link https://github.com/heat-api/heat/issues?milestone=5&state=open
+21:05:51 <sdake> please open and take a look
+21:06:00 <sdake> lets go from highest to lowest
+21:06:11 <sdake> #140 i'll sort out
+21:06:18 <sdake> #139 i'll sort out
+21:06:21 <sdake> #138 i'll sort out
+21:06:29 <sdake> #123 nested stacks make 18th ?
+21:07:14 <zaneb> borderline
+21:07:26 <zaneb> hope so
+21:07:34 <sdake> can you give a quick update of what work is left
+21:07:59 <zaneb> it's mainly figuring out how to represent them in the database
+21:08:20 <sdake> are you blocked on any features?
+21:08:22 <zaneb> it should be makable, but not if the functional tests suck up too much time this week
+21:08:32 <zaneb> no, not blocked on anything
+21:08:36 <sdake> release > functional testing
+21:08:45 <zaneb> ok, cool
+21:09:05 <sdake> #120 i'll need to sync with funzo on the puppet support
+21:09:11 <sdake> #119 same
+21:09:22 <sdake> #117 Fix auth and id issues
+21:09:31 <sdake> slower will that make 18th?
+21:10:00 <Slower> It'll be close but I think it will
+21:10:11 <sdake> #108 implement ha escalation
+21:10:14 <sdake> asalkeld that make 18th?
+21:10:37 <asalkeld> Slower, said he would do "saving auth in db" for me
+21:10:52 <asalkeld> I am somewhat blocked on that
+21:10:59 <sdake> slower that is the work we talked about in private chat earlier
+21:11:11 <asalkeld> but I'll test with a dummy command
+21:11:20 <sdake> slower had indicated 1-2 days
+21:11:23 <asalkeld> to make sure it all works
+21:11:23 <Slower> yes hoping to have that done tongiht for you
+21:11:33 <asalkeld> cool
+21:11:44 <Slower> I've been flip flopping a bit on how to implement but I think I have it figured now
+21:11:54 <sdake> #105 enhance cfn-signal to write to the metadata server - isnt' this fixed asalkeld?
+21:11:54 <asalkeld> so if no major road blocks it will be ok
+21:12:03 <asalkeld> ya, done
+21:12:50 <sdake> #92 shardy is afk - i'll sync with him later if boto will be ready for 18th
+21:12:58 <sdake> #62 implement describestackresource api call?
+21:13:02 <sdake> is that mandatory for v4?
+21:13:20 <asalkeld> not sure
+21:13:28 <asalkeld> but not difficult
+21:13:44 <sdake> well we can bounce it to v5 if looking tight
+21:14:10 <sdake> #54 need cfn-init script that parses init section - this is done from what I can see - asalkeld agree?
+21:14:17 <asalkeld> #54 is done for ha, but still more
+21:14:45 <sdake> ok i'll bump out of the milestone since what we need for this milestone is finished
+21:14:47 <sdake> so we can keep it open
+21:15:02 <asalkeld> move to heat-jeos issues?
+21:15:29 <sdake> #24 isn't going to make it I think - oz needs some work to support debian v6
+21:15:33 <sdake> so bumping
+21:15:59 <sdake> two more issues to look at for inclusion in v4 milestone:
+21:16:26 <sdake> #link https://github.com/heat-api/heat/issues/137
+21:16:34 <sdake> wrapped db exception become recursive
+21:16:56 <sdake> looks like a blocker to me
+21:17:09 <sdake> asalkeld you filed what are your thoughts
+21:17:11 <zaneb> asalkeld: is there a reproduction method for that?
+21:17:18 <asalkeld> just irritating when you have a bug
+21:17:58 <asalkeld> any broken sql will do it
+21:18:16 <sdake> so someone has to change heat to make it happen?
+21:18:29 <asalkeld> ya
+21:18:39 <sdake> ok probably not a blocker then, we can move to v5
+21:18:40 <Slower> or find some bug in our code
+21:18:47 <Slower> or not migrate the db
+21:18:51 <asalkeld> yip
+21:19:00 <zaneb> Slower: there are no bugs in our code! ;)
+21:19:08 <Slower> nevar!
+21:19:34 <sdake> #link https://github.com/heat-api/heat/issues/136
+21:19:57 <sdake> looks pretty easy to fix
+21:19:59 <asalkeld> I suspect zaneb came up against that
+21:20:38 <sdake> propose promoting issue 136 to v4 milestone
+21:20:42 <sdake> +/-
+21:20:42 <sdake> +
+21:21:03 <asalkeld> +1 (if we have time for it)
+21:21:13 <Slower> +1
+21:21:34 <sdake> i'll look into it my week is fairly free atm
+21:21:59 <sdake> #agreed issue 136 promoted to v4 milestone
+21:22:03 <sdake> ok heat-jeos ;)
+21:22:25 <sdake> no issues open
+21:22:33 <sdake> must be perfect ;)
+21:22:54 <asalkeld> need to move that cfn-init one over
+21:23:04 <sdake> #info heat-jeos has no open issues
+21:23:18 <sdake> #action sdake move cfn-init issue to heat-jeos repo issues
+21:23:41 <sdake> any other issues devs seeing that need addressing in v4
+21:24:06 <asalkeld> how is our ubuntu support?
+21:24:24 <sdake> jpeeler can you give an update on ubuntu support
+21:25:17 <sdake> asalkeld u10 guests work - u12 needs oz support
+21:25:18 <asalkeld> https://github.com/heat-api/heat/wiki/Roadmap-Feature:-Debian-Ubuntu-support
+21:25:21 <jpeeler> i'm still working out issues to enable use of devstack, so manual modifications are necessary to allow use to use their template driver
+21:25:48 <jpeeler> once that is done, i'm fairly confident everything else will fall into place
+21:25:55 <sdake> i assume we want good ubuntu support including docs in v4
+21:26:17 <asalkeld> ya, well as much as possible
+21:26:30 <sdake> propose making ubuntu support work well + docs in v4
+21:26:32 <sdake> +/-
+21:26:33 <sdake> +
+21:26:39 <asalkeld> it is probably a continous job
+21:26:41 <asalkeld> +1
+21:26:54 <Slower> +1
+21:27:35 <sdake> jpeeler/zaneb?
+21:27:39 <zaneb> +1
+21:27:59 <jpeeler> +1, i thought we had already decided that
+21:28:13 <sdake> #agreed ubuntu u12 supported host + docs in v4
+21:28:22 <sdake> jpeeler work on that ahead of fedora packaging
+21:28:40 <sdake> key features in v4:
+21:28:43 <sdake> nested stacks
+21:28:46 <sdake> cloudwatch
+21:28:49 <sdake> high availability
+21:28:52 <sdake> security
+21:28:59 <sdake> ubuntu u10 guest support
+21:29:03 <sdake> ubuntu u12 host support
+21:29:17 <asalkeld> yikes
+21:29:24 <asalkeld> bucket load
+21:29:46 <sdake> if any of those wont make it by 18th now is time to tell, sounds like nested stacks may be iffy
+21:30:22 <zaneb> I'm pretty sure I can get it done
+21:30:32 <zaneb> not 100% sure I can not break any of those other new features
+21:30:41 <sdake> ;-)
+21:30:42 <zaneb> if all are landing about the same time
+21:30:48 <asalkeld> sounds fun
+21:31:02 <sdake> remember we have 1 week of testing + bugfixes if things do break - but try not to break whats there
+21:31:03 <asalkeld> zaneb, all my stuff is in
+21:31:18 <zaneb> asalkeld: ok, that helps. thanks
+21:31:36 <sdake> ok well good job folks we are making great progress in 1 month
+21:31:42 <sdake> #topic functional testing
+21:32:03 <sdake> we have good unit testing + continuous integration going into v4 with 50% coverage
+21:32:18 <sdake> we have physical hardware that is deployed for the functional testing
+21:32:36 <sdake> Next steps are to run the functional tests on the hardware
+21:33:02 <sdake> then follow that up with jenkins stackforge integration
+21:33:23 <sdake> i think atm we are a bit pressed for time with relation to v4 milestone, so perhaps we should punt this to next week
+21:33:39 <sdake> propose delaying functional testing to v5 milestone
+21:33:43 <sdake> +1/-1
+21:33:44 <sdake> +1
+21:33:48 <zaneb> +1
+21:33:52 <asalkeld> +1
+21:33:54 <sdake> zaneb fas t;)
+21:34:06 <asalkeld> zaneb, goes whew
+21:34:08 <zaneb> in theory the integration script in the repo should be sufficient
+21:34:09 <Slower> +1
+21:34:18 <zaneb> just needs to be integrated with Jenkins
+21:34:27 <zaneb> but I haven't tested it on the hw
+21:34:34 <sdake> i'll take that on once we know the script works
+21:34:54 <sdake> #action sdake to do jenkins integration once jpeeler+zanebs integration tests working on physical hardware
+21:35:13 <sdake> #agreed move integration testing to v5
+21:35:19 <sdake> #topic open issues
+21:35:54 <sdake> any open issues?
+21:36:03 <asalkeld> nope
+21:36:57 <sdake> ok guys well great work in this version lets get it wrapped up so we can do a bit of testing next week
+21:37:07 <sdake> thanks for your time
+21:37:10 <sdake> #endmeeting

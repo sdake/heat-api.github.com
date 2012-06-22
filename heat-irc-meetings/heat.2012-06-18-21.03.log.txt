@@ -1,0 +1,282 @@
+21:03:35 <sdake> #startmeeting
+21:03:35 <mheat-bot> Meeting started Mon Jun 18 21:03:35 2012 UTC.  The chair is sdake. Information about MeetBot at http://wiki.debian.org/MeetBot.
+21:03:35 <mheat-bot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+21:03:48 <sdake> #chair slower asalkeld shadower zaneb jpeeler funzo
+21:03:48 <mheat-bot> Current chairs: asalkeld funzo jpeeler sdake shadower slower zaneb
+21:03:55 <sdake> #topic agenda
+21:04:58 <sdake> #undo
+21:04:58 <mheat-bot> Removing item from minutes: <MeetBot.items.Topic object at 0x2565490>
+21:05:01 <sdake> #topic rollcoll
+21:05:03 <sdake> #undo
+21:05:03 <mheat-bot> Removing item from minutes: <MeetBot.items.Topic object at 0x25655d0>
+21:05:06 <sdake> #topic rollcall
+21:05:09 <sdake> sdake here
+21:05:18 <shardy> shardy here
+21:05:20 <asalkeld> me too
+21:05:20 <zaneb> present
+21:05:22 <jpeeler> jpeeler present
+21:05:29 <shadower> shadower here
+21:05:38 <sdake> slower is here - funzo?
+21:05:53 <sdake> #topic agenda items
+21:06:02 <sdake> release this week
+21:06:09 <sdake> see where we stand on things
+21:06:15 <Slower> release noise?
+21:06:24 <Slower> eg announcements and where to send them :)
+21:06:38 <sdake> ya need to sort out release notes
+21:06:50 <sdake> i'll keep that as a separate agenda
+21:06:58 <sdake> anything else?
+21:07:12 <sdake> agenda:
+21:07:20 <asalkeld> that is fine
+21:07:22 <sdake> 1. standing on v4 release
+21:07:28 <sdake> 2. release notes generation
+21:07:33 <sdake> #topic standing on v4 release
+21:07:48 <sdake> let me go down list of roadmap features..
+21:08:27 <sdake> high availability asalkeld?
+21:08:48 <asalkeld> should work, but really short on testing as I am hitting an openstack bug
+21:09:08 <asalkeld> #link https://bugzilla.redhat.com/show_bug.cgi?id=832449
+21:09:10 <sdake> maybe we can have someone test for you as well
+21:09:23 <asalkeld> but all code delivered
+21:09:25 <sdake> slower you up for that
+21:09:48 <asalkeld> is no one else hitting that on f17?
+21:09:56 <sdake> nobody running f17 my guess
+21:10:00 <sdake> can't get the damn thing to install
+21:10:05 <Slower> lemme look
+21:10:11 <asalkeld> qemu-img: error while reading sector 12734464: Input/output error\n'
+21:10:24 <shardy> sdake: preupgrade works ok
+21:10:35 <sdake> slower what i mean is would you be able to test ha that asalkeld has deved
+21:10:51 <asalkeld> I can write a wiki today
+21:10:53 <sdake> ie: make sure it works and the quickstart guide has appropriate documentation for poeple
+21:11:03 <asalkeld> ya that
+21:11:08 <Slower> sdake: sure
+21:11:12 <sdake> cool
+21:11:21 <sdake> #action slower to test HA feature set
+21:11:30 <sdake> #action asalkeld to write wiki page describing how to setup cloudwatch+HA
+21:11:39 <sdake> keystone association
+21:11:39 <asalkeld> sure
+21:11:49 <sdake> i saw the patches hit the repo
+21:12:10 <sdake> are they wrapped up then slower?
+21:12:11 <Slower> sdake: you mean per-user stacks?
+21:12:15 <sdake> yup
+21:12:16 <Slower> sdake: yeppers
+21:12:30 <Slower> sdake: we should do more testing on that too
+21:12:33 <sdake> cool zaneb up for testing out slower's work there
+21:12:42 <zaneb> sure
+21:12:46 <sdake> thanks
+21:12:48 <sdake> nested stacks
+21:12:50 <Slower> sdake: and also I wonder.. we still require the stack name to be unique accross all stacks
+21:13:05 <Slower> sdake: but now that they are per user I wonder if they should be unique only for a given user?
+21:13:12 <zaneb> Slower: not any more :)
+21:13:26 <Slower> oh that's already been fixed?
+21:13:31 <sdake> oh wait not nested stacks, boto
+21:13:40 <sdake> shardy where is boto support atm
+21:13:47 <sdake> what state is it in i mean
+21:13:53 <shardy> sdake: boto is partially working, most of the API rework is done
+21:13:57 <zaneb> Slower: should have been for nested stacks, although I haven't really tested it out
+21:13:59 <shardy> but I hit an issue today
+21:14:09 <shardy> which will take a couple of days to work out
+21:14:20 <sdake> shardy at this point i'd like to push out boto to v5, we have a ton of features already
+21:14:21 <Slower> zaneb: ok
+21:14:41 <shardy> apparently the AWS API has an undocumented query parameter that switches response format from XML to JSON (which boto uses)
+21:14:44 <sdake> gotta give the folks something in v5 too :)
+21:14:51 <Slower> sdake: I definitely thing we should push it out
+21:14:57 <shardy> sdake: sure, good plan, should come together fairly soon
+21:14:57 <Slower> sdake: in fact we should switch completely over to boto
+21:15:01 <Slower> and ec2 style auth
+21:15:22 <sdake> ya ok with switching to boto not ok on release week
+21:15:30 <Slower> there will be affects on HA as well
+21:15:32 <Slower> with boto
+21:15:33 <shardy> Slower: boto does seem a bit buggy, we may want to test for a while before switching
+21:15:38 <Slower> because of the auth changes
+21:16:01 <sdake> #action zaneb to test per user stacks and auth work done by slower
+21:16:03 <shardy> I keep discovering little problems which I'll fix when the API is sorted
+21:16:04 <Slower> yeah we could have both work too
+21:16:16 <Slower> I just think it affects more than just the API directly
+21:16:19 <Slower> because of the auth differences
+21:16:20 <sdake> #agreed move boto support to v5 as main feature
+21:16:26 <sdake> ok zaneb your up with nested stacks
+21:16:30 <Slower> and will require a fair bit of testing
+21:16:40 <zaneb> ok, good new: nested stacks are in
+21:16:50 <zaneb> example templates available
+21:16:52 <sdake> good news everybody
+21:16:58 <sdake> ;)
+21:17:07 <zaneb> bad news: more work required to integrate with the metadata server
+21:17:17 <zaneb> because it is currently looking up stacks by name only
+21:17:29 <zaneb> also parts of the code are kinda hideous ;)
+21:17:49 <sdake> zaneb seems paritally functional, so we could say something like "laid groundwork for rds and load balancer nested stacks"
+21:17:59 <sdake> and implemented the stacks resource type
+21:18:02 <sdake> or something to that effect
+21:18:06 <zaneb> yeah
+21:18:17 <zaneb> anything that doesn't require the metadata server will work now
+21:18:20 <sdake> ok deb ubuntu support
+21:18:37 <sdake> oh before ubuntu suport
+21:18:44 <sdake> shardy would you mind giving nested stacks a spin
+21:18:48 <sdake> see if the docs/template make sense to you
+21:18:52 <shardy> sdake: sure
+21:18:59 <sdake> #action shardy to test nested stacks
+21:19:13 <sdake> ok ubuntu support
+21:19:27 <sdake> jpeeler current status there?
+21:19:30 <jpeeler> i've been sort of blocked on trying to get oz install problems sorted
+21:19:46 <jpeeler> a new wiki page was created with directions
+21:19:53 <sdake> so to correctly state the problem, the oz debian packaging is broken
+21:20:26 <jpeeler> yes, working on fixing that
+21:20:58 <sdake> ok, well im available to help and have installed u12 in prep for running through the quickstart guide there
+21:21:11 <sdake> i think we should definately hold releasing until we can sort out the quickstart guide for u12
+21:21:27 <sdake> propose holding release until qs guide sorted for u12 +1/-1
+21:21:28 <sdake> +1
+21:21:36 <asalkeld> +1
+21:21:41 <shadower> +1
+21:21:42 <jpeeler> +1
+21:21:45 <Slower> +1
+21:21:46 <zaneb> +1
+21:21:46 <shardy> +1
+21:21:49 <sdake> ok
+21:22:03 <sdake> #agreed holding release until ubuntu 12 quickstart guide works properly
+21:22:39 <sdake> oh almost forgot, heat-jeos in good shape shadower?
+21:23:00 <shadower> yeah
+21:23:06 <sdake> quickstart updated ?
+21:23:16 <shadower> except, asalkeld that issue you logged is with heat-jeos?
+21:23:16 <asalkeld> https://github.com/heat-api/heat-jeos/issues/1
+21:23:59 <sdake> workaround looks fine to me asalkeld
+21:24:00 <shadower> sdake: qs should be up to date, I'll check
+21:24:28 <asalkeld> I couldn't test it, as my openstack no worky
+21:24:45 <sdake> shadower can you update the templates with the timeoutsec changes as suggested by asalkeld
+21:24:57 <shadower> sure
+21:25:20 <sdake> asalkeld since your dead in the water, mind testing jeos tools make sure they work from the ui/generating images perspective
+21:25:34 <asalkeld> sure
+21:25:37 <sdake> cool
+21:25:50 <asalkeld> I'll work at the openstack bug
+21:25:54 <asalkeld> too
+21:25:56 <sdake> #action jpeeler to finish quickstart guide for u12 possibliy with sdake
+21:26:07 <sdake> #action sdake test jpeeler's u12 quickstart guide
+21:26:25 <sdake> #action shadower modify fedora templates to have a TimeoutSec as per issue #1
+21:26:48 <sdake> #action asalkeld run through jeos toolchain make sure it is sanitary and works properly
+21:27:01 <sdake> #action asalkeld investigate openstack f17 bug
+21:27:14 <sdake> ok, so looks like we have a bit of work to do in next few days ;)
+21:27:29 <Slower> we going to release next monday if all goes well?
+21:28:13 <sdake> i would expect another week will give us a chance to harden everything we have just pushed in last week
+21:28:21 <sdake> and make sure the docs are updated
+21:28:50 <sdake> propose release June 26th +1/-1
+21:28:52 <sdake> +1
+21:29:10 <Slower> providing all goes well :)
+21:29:10 <Slower> +
+21:29:12 <Slower> +1
+21:29:16 <shadower> +1
+21:29:18 <shardy> +1
+21:29:20 <jpeeler> sure, +1
+21:29:22 <asalkeld> +1
+21:29:53 <zaneb> +1
+21:29:58 <sdake> #agreed target release of v4 for June 26th with above mentioned roadmap features
+21:30:17 <sdake> #topic dev windows
+21:30:20 <sdake> ninja topic for a moment
+21:30:24 <sdake> atm we have a 5 week window
+21:30:41 <sdake> as we go more into agile dev, we should consider shortening this a bit
+21:30:45 <sdake> maybe 4 weeks or 3 weeks
+21:31:11 <sdake> anyone opposed?
+21:31:17 <Slower> that's just development time, or full release cycle time?
+21:31:27 <Slower> sorry I forget.. :)
+21:31:27 <sdake> dev time + whatever time it takes to clean up :)
+21:31:40 <Slower> I wouldn't go under 4 weeks then personally..
+21:31:48 <sdake> in this v4 release, we have had 5 weeks of dev, plus 1 week of release cleanup
+21:31:50 <asalkeld> how about "what ever makes sense given the features"
+21:31:58 <Slower> ya agreed :)
+21:32:02 <sdake> ya thats a good point asalkeld
+21:32:19 <asalkeld> little features == short cycle
+21:32:19 <zaneb> +1
+21:32:22 <shadower> +1
+21:32:28 <Slower> +1
+21:32:34 <asalkeld> +1
+21:32:35 <shardy> +1
+21:32:47 <sdake> #agreed release cycle depending on feature set rather then static 5wks+1wk test
+21:32:53 * Slower raises his cup to sanity :)
+21:33:05 <sdake> #topic release notes
+21:33:19 <sdake> we have a floating release manager role in the team
+21:33:24 <asalkeld> git log ?
+21:33:24 <sdake> so far funzo and sdake have released
+21:33:55 <sdake> this leaves asalkeld, slower, jpeeler, zaneb, and shardy for the release manager for v4 release as choices
+21:34:09 <sdake> asalkeld i'd like you to announce the autoscaling work - so if you wouldn't mind sitting htis one out ;)
+21:34:32 <asalkeld> whew
+21:34:37 <shadower> hehe
+21:34:41 <sdake> you will become a victim later ;)
+21:34:45 <sdake> sorry and shadower above as well :)
+21:34:59 <sdake> anyone interested in doing that job?
+21:35:12 <shadower> I'll be on vacation 26-28 but I can volunteer the next time
+21:35:16 <Slower> I could do it if no one else wants to
+21:35:32 <shardy> sdake: I only have Thursday available to work on heat this week, so not sure I'll have time on this occasion
+21:35:48 <sdake> leaves slower zaneb and jpeeler
+21:35:57 <sdake> zaneb jpeeler any interest?
+21:36:07 <jpeeler> yeah that's fine
+21:36:15 <Slower> I don't mind doing it either..
+21:36:16 * jpeeler claims it
+21:36:19 <jpeeler> oh wait
+21:36:23 * jpeeler offers to slower?
+21:36:23 <zaneb> interested in doing it sometime
+21:36:28 <Slower> sure
+21:36:28 <sdake> jpeeler we are probably pretty busy :)
+21:37:06 <sdake> propose slower release manager for v4 +1/-1
+21:37:14 <Slower> +1
+21:37:18 <asalkeld> +1
+21:37:20 <shardy> +1
+21:37:20 <zaneb> +1
+21:37:23 <jpeeler> +1
+21:37:32 <shadower> +1
+21:37:40 <sdake> #agreed slower release manager for v4
+21:37:53 <sdake> ok release notes
+21:38:14 <Slower> start a mailing list thread and let everyone add their bits?
+21:38:29 <sdake> nah i'd rather sort out over irc
+21:38:43 <sdake> way it comes as one message rather then fragmented ;)
+21:38:45 <asalkeld> ha + cloudwatch
+21:38:54 <Slower> right
+21:38:55 <shadower> when was the last release?
+21:39:14 <sdake> shadower i can look after meeting but i don't have data immediately handy on that
+21:39:24 <Slower> - Authentication cleanups
+21:39:29 <Slower> - Per-user stack support
+21:39:52 <shardy> - API rework to align with AWS CFN API spec
+21:40:20 <sdake> ubuntu 12 host support + u10 guest support
+21:40:33 <sdake> nested stacks
+21:40:34 <shadower> heat-jeos split
+21:40:42 <Slower> might even want to say - Authentication and security audit and cleanups
+21:40:50 <sdake> slower sounds good
+21:40:50 <Slower> or something :)
+21:41:20 <sdake> one thing that would be interesting are links to the roadmap items in the announce message
+21:41:29 <sdake> for each of the features
+21:41:36 <sdake> show people we have a roadmap
+21:41:41 <Slower> yeah
+21:42:16 <sdake> shardy re api rework to align with aws, might be helpful to point out we are heading towards boto integration there
+21:42:30 <shadower> funzo did more template parity work, didn't he? May get into the notes as well
+21:42:38 <sdake> so that would go in the "new features" section
+21:42:46 <sdake> yup that should go in the notes
+21:42:48 <asalkeld> added some user support too
+21:42:55 <shardy> sdake: sure, I guess we want to avoid saying it's fully working with boto yet, but it's much closer to aws spec than it was...
+21:42:56 <asalkeld> IAM::user
+21:43:56 <zaneb> is the process for doing a release documented on the wiki?
+21:43:59 <sdake> ok, on top of that, should have a look at the changelog to see what new features made i t in
+21:44:02 <sdake> zaneb yes
+21:44:28 <sdake> one of the reasons we are doing floating release manager is so people can improve those wiki docs :)
+21:44:28 <zaneb> ah, excellent
+21:44:41 <sdake> with their own experiences etc
+21:44:41 <zaneb> yep, good idea
+21:45:08 <zaneb> just trying to review funzo's patch and watch the meeting at the same time - brain is full ;)
+21:45:12 <sdake> slower what I suggest after you wrap up testing is to formulate some release notes with the appropriate links
+21:45:19 <sdake> my brain is full at rest ;(
+21:45:26 <Slower> hehe
+21:45:39 <Slower> sdake: ya, will do a pastebin or something and give lots of time for people to comment
+21:45:41 <sdake> then send to the devs on the project
+21:45:55 <sdake> but wait on the ml, can send to ml after we finish the notes
+21:46:15 <Slower> you bet
+21:46:19 <sdake> cool anything else in release notes topic?
+21:46:51 <sdake> #topic open items
+21:47:03 <sdake> any open items folks would like to discuss?
+21:47:43 <Slower> I was going to ask where to post release announcement but we should table that till next meeting, closer to release
+21:47:54 <sdake> there is a release wiki page slower
+21:47:57 <sdake> it has the details there
+21:48:01 <Slower> ok cool
+21:48:06 <Slower> I haven't looked at iet yet
+21:48:28 <sdake> #topic heat devs rock
+21:48:37 <sdake> everyone has done a spectacular job on v4
+21:48:40 <sdake> we got a ton of work done
+21:49:05 <Slower> ya nice work team
+21:49:05 <sdake> although code still a little rough, improving by heaps in only 1 month of dev
+21:49:18 <sdake> super proud :)
+21:49:21 <sdake> ok thats enough
+21:49:22 <sdake> :)
+21:49:24 <sdake> #endmeeting

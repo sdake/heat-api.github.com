@@ -1,0 +1,231 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#heat Meeting</title>
+<style type="text/css">
+/* This is for the .html in the HTML2 writer */
+body {
+    font-family: Helvetica, sans-serif;
+    font-size:14px;
+}
+h1 {
+    text-align: center;
+}
+a {
+    color:navy;
+    text-decoration: none;
+    border-bottom:1px dotted navy;
+}
+a:hover {
+    text-decoration:none;
+    border-bottom: 0;
+    color:#0000B9;
+}
+hr {
+    border: 1px solid #ccc;
+}
+/* The (nick, time) item pairs, and other body text things. */
+.details {
+    font-size: 12px;
+    font-weight:bold;
+}
+/* The 'AGREED:', 'IDEA', etc, prefix to lines. */
+.itemtype {
+    font-style: normal;    /* un-italics it */
+    font-weight: bold;
+}
+/* Example: change single item types.  Capitalized command name.
+/* .TOPIC  {  color:navy;  } */
+/* .AGREED {  color:lime;  } */
+
+</style>
+</head>
+
+<body>
+<h1>#heat Meeting</h1>
+<span class="details">
+Meeting started by sdake at 21:03:35 UTC
+(<a href="heat.2012-06-18-21.03.log.html">full logs</a>).</span>
+
+<br><br>
+
+
+
+<h3>Meeting summary</h3>
+<ol>
+<li><b class="TOPIC">rollcall</b> <span class="details">(<a href='heat.2012-06-18-21.03.log.html#l-12'>sdake</a>, 21:05:06)</span>
+<br></li>
+<li><b class="TOPIC">agenda items</b> <span class="details">(<a href='heat.2012-06-18-21.03.log.html#l-20'>sdake</a>, 21:05:53)</span>
+<br></li>
+<li><b class="TOPIC">standing on v4 release</b> <span class="details">(<a href='heat.2012-06-18-21.03.log.html#l-32'>sdake</a>, 21:07:33)</span>
+<ol type="a">
+  <li><a
+    href="https://bugzilla.redhat.com/show_bug.cgi?id=832449">https://bugzilla.redhat.com/show_bug.cgi?id=832449</a>
+    <span class="details">(<a
+    href='heat.2012-06-18-21.03.log.html#l-36'>asalkeld</a>,
+    21:09:08)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">slower to
+    test HA feature set</span> <span class="details">(<a
+    href='heat.2012-06-18-21.03.log.html#l-52'>sdake</a>,
+    21:11:21)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">asalkeld to
+    write wiki page describing how to setup cloudwatch+HA</span> <span
+    class="details">(<a
+    href='heat.2012-06-18-21.03.log.html#l-53'>sdake</a>,
+    21:11:30)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">zaneb to test
+    per user stacks and auth work done by slower</span> <span
+    class="details">(<a
+    href='heat.2012-06-18-21.03.log.html#l-90'>sdake</a>,
+    21:16:01)</span></li>
+  <li><i class="itemtype">AGREED</i>: <span class="AGREED">move boto
+    support to v5 as main feature</span> <span class="details">(<a
+    href='heat.2012-06-18-21.03.log.html#l-95'>sdake</a>,
+    21:16:20)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">shardy to
+    test nested stacks</span> <span class="details">(<a
+    href='heat.2012-06-18-21.03.log.html#l-115'>sdake</a>,
+    21:18:59)</span></li>
+  <li><i class="itemtype">AGREED</i>: <span class="AGREED">holding
+    release until ubuntu 12 quickstart guide works properly</span> <span
+    class="details">(<a
+    href='heat.2012-06-18-21.03.log.html#l-133'>sdake</a>,
+    21:22:03)</span></li>
+  <li><a
+    href="https://github.com/heat-api/heat-jeos/issues/1">https://github.com/heat-api/heat-jeos/issues/1</a>
+    <span class="details">(<a
+    href='heat.2012-06-18-21.03.log.html#l-138'>asalkeld</a>,
+    21:23:16)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">jpeeler to
+    finish quickstart guide for u12 possibliy with sdake</span> <span
+    class="details">(<a
+    href='heat.2012-06-18-21.03.log.html#l-149'>sdake</a>,
+    21:25:56)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">sdake test
+    jpeeler's u12 quickstart guide</span> <span class="details">(<a
+    href='heat.2012-06-18-21.03.log.html#l-150'>sdake</a>,
+    21:26:07)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">shadower
+    modify fedora templates to have a TimeoutSec as per issue #1</span>
+    <span class="details">(<a
+    href='heat.2012-06-18-21.03.log.html#l-151'>sdake</a>,
+    21:26:25)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">asalkeld run
+    through jeos toolchain make sure it is sanitary and works
+    properly</span> <span class="details">(<a
+    href='heat.2012-06-18-21.03.log.html#l-152'>sdake</a>,
+    21:26:48)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">asalkeld
+    investigate openstack f17 bug</span> <span class="details">(<a
+    href='heat.2012-06-18-21.03.log.html#l-153'>sdake</a>,
+    21:27:01)</span></li>
+  <li><i class="itemtype">AGREED</i>: <span class="AGREED">target
+    release of v4 for June 26th with above mentioned roadmap
+    features</span> <span class="details">(<a
+    href='heat.2012-06-18-21.03.log.html#l-168'>sdake</a>,
+    21:29:58)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">dev windows</b> <span class="details">(<a href='heat.2012-06-18-21.03.log.html#l-169'>sdake</a>, 21:30:17)</span>
+<ol type="a">
+  <li><i class="itemtype">AGREED</i>: <span class="AGREED">release cycle
+    depending on feature set rather then static 5wks+1wk test</span>
+    <span class="details">(<a
+    href='heat.2012-06-18-21.03.log.html#l-189'>sdake</a>,
+    21:32:47)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">release notes</b> <span class="details">(<a href='heat.2012-06-18-21.03.log.html#l-191'>sdake</a>, 21:33:05)</span>
+<ol type="a">
+  <li><i class="itemtype">AGREED</i>: <span class="AGREED">slower
+    release manager for v4</span> <span class="details">(<a
+    href='heat.2012-06-18-21.03.log.html#l-222'>sdake</a>,
+    21:37:40)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">open items</b> <span class="details">(<a href='heat.2012-06-18-21.03.log.html#l-267'>sdake</a>, 21:46:51)</span>
+<br></li>
+<li><b class="TOPIC">heat devs rock</b> <span class="details">(<a href='heat.2012-06-18-21.03.log.html#l-274'>sdake</a>, 21:48:28)</span>
+</li>
+</ol>
+<br><br>
+
+
+
+<span class="details">
+Meeting ended at 21:49:24 UTC
+(<a href="heat.2012-06-18-21.03.log.html">full logs</a>).</span>
+
+<br><br>
+
+
+
+<h3>Action items</h3>
+<ol>
+  <li>slower to test HA feature set</li>
+  <li>asalkeld to write wiki page describing how to setup cloudwatch+HA</li>
+  <li>zaneb to test per user stacks and auth work done by slower</li>
+  <li>shardy to test nested stacks</li>
+  <li>jpeeler to finish quickstart guide for u12 possibliy with sdake</li>
+  <li>sdake test jpeeler's u12 quickstart guide</li>
+  <li>shadower modify fedora templates to have a TimeoutSec as per issue #1</li>
+  <li>asalkeld run through jeos toolchain make sure it is sanitary and works properly</li>
+  <li>asalkeld investigate openstack f17 bug</li>
+</ol>
+<br><br>
+
+
+
+<h3>Action items, by person</h3>
+<ol>
+  <li> asalkeld <ol>
+    <li>asalkeld to write wiki page describing how to setup cloudwatch+HA</li>
+    <li>asalkeld run through jeos toolchain make sure it is sanitary and works properly</li>
+    <li>asalkeld investigate openstack f17 bug</li>
+  </ol></li>
+  <li> jpeeler <ol>
+    <li>jpeeler to finish quickstart guide for u12 possibliy with sdake</li>
+    <li>sdake test jpeeler's u12 quickstart guide</li>
+  </ol></li>
+  <li> sdake <ol>
+    <li>jpeeler to finish quickstart guide for u12 possibliy with sdake</li>
+    <li>sdake test jpeeler's u12 quickstart guide</li>
+  </ol></li>
+  <li> shadower <ol>
+    <li>shadower modify fedora templates to have a TimeoutSec as per issue #1</li>
+  </ol></li>
+  <li> shardy <ol>
+    <li>shardy to test nested stacks</li>
+  </ol></li>
+  <li> slower <ol>
+    <li>slower to test HA feature set</li>
+    <li>zaneb to test per user stacks and auth work done by slower</li>
+  </ol></li>
+  <li> zaneb <ol>
+    <li>zaneb to test per user stacks and auth work done by slower</li>
+  </ol></li>
+</ol>
+<br><br>
+
+
+
+<h3>People present (lines said)</h3>
+<ol>
+  <li>sdake (139)</li>
+  <li>Slower (50)</li>
+  <li>asalkeld (26)</li>
+  <li>zaneb (20)</li>
+  <li>shardy (17)</li>
+  <li>shadower (14)</li>
+  <li>jpeeler (11)</li>
+  <li>mheat-bot (5)</li>
+  <li>slower (0)</li>
+  <li>funzo (0)</li>
+</ol>
+<br><br>
+
+
+
+<span class="details">Generated by <a href="http://wiki.debian.org/MeetBot">MeetBot</a> 0.1.4.</span>
+</body></html>

@@ -1,0 +1,277 @@
+21:01:58 <sdake> #startmeeting
+21:01:58 <mheat-bot> Meeting started Mon Jun 25 21:01:58 2012 UTC.  The chair is sdake. Information about MeetBot at http://wiki.debian.org/MeetBot.
+21:01:58 <mheat-bot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+21:02:01 <sdake> #agenda
+21:02:10 <sdake> rollcall
+21:02:34 <sdake> blocking bugs
+21:03:08 <asalkeld> here
+21:03:09 <sdake> release today
+21:03:17 <sdake> sorting out agenda asalkeld :)
+21:03:22 <sdake> anyone have other agenda items
+21:03:37 <sdake> #topic agenda
+21:03:43 <sdake> sorry l2ubot
+21:03:57 <sdake> rollcall, blocking bugs, release today
+21:04:22 <sdake> any others?
+21:04:40 <asalkeld> that's good
+21:05:07 <zaneb> road map for v5?
+21:05:10 <jpeeler> maybe final acceptance of release notes
+21:05:27 <sdake> ok those two sound good
+21:05:32 <shardy> +1 on roadmap for next cycle
+21:06:02 <sdake> #agreed agenda rollcall, blocking bugs, release today, release notes bikeshed session, roadmap v5
+21:06:06 <sdake> #topic rollcall
+21:06:08 <sdake> sdake here
+21:06:13 <zaneb> yo
+21:06:14 <Slower> Ian here
+21:06:14 <shardy> shardy here
+21:06:18 <asalkeld> asalkeld, here
+21:06:26 <jpeeler> jpeeler here
+21:06:43 <sdake> #topic blocking bugs
+21:07:41 <sdake> not sure if this is blocking, but https://bugzilla.redhat.com/show_bug.cgi?id=835019
+21:07:53 <sdake> can work around with an oz fork
+21:08:27 <sdake> results in u10/u12 not starting on fedora hosts
+21:09:22 <sdake> #action sdake to make oz fork to work around u10/u12 not starting
+21:09:40 <sdake> any other blocking issues people are concerned with (especially those that block the release)
+21:10:02 <zaneb> sdake: do you have to fork oz, or could it be resolved by using the oz api?
+21:10:10 <sdake> must fork
+21:10:14 <zaneb> i.e. import from Python and monkey-patch
+21:10:29 <zaneb> ok
+21:10:40 <sdake> http://fpaste.org/V8V9/
+21:10:54 <asalkeld> this would be good https://github.com/heat-api/heat/issues/145
+21:11:07 <asalkeld> not sure if it blocks tho'
+21:11:32 <sdake> deb installer makes a logical partition, and kernel.org blocks forever
+21:12:15 <sdake> doesn't seem to block us too much
+21:12:45 <asalkeld> (ok, just lb work then)
+21:12:46 <Slower> The Getting Started guide for fedora needs to mention f17
+21:12:46 <zaneb> community will likely be fedora on fedora or ubuntu on ubuntu
+21:12:47 <sdake> guess blocks autoscaling
+21:12:56 <Slower> I can fix that before release
+21:13:14 <Slower> oh also should we be starting the heat-metadata service in the guides?
+21:13:20 <sdake> #action slower to submit a review request to update getting started guide to mention fedora 17
+21:13:56 <sdake> #action release today
+21:13:58 <sdake> #undo
+21:13:58 <mheat-bot> Removing item from minutes: <MeetBot.items.Action object at 0x2589e50>
+21:14:01 <sdake> #topic release today
+21:14:26 <asalkeld> lets do it
+21:14:26 <sdake> everyone have a quick look at the release guide
+21:14:28 <sdake> https://github.com/heat-api/heat/wiki/Release-Process
+21:14:42 <sdake> specifically the release criteria section
+21:14:54 <Slower> 'Launch the Heat services'
+21:14:55 <Slower> sudo -E bash -c 'heat-api & heat-engine &'
+21:15:45 <sdake> The Getting Started Guide followed from start to finish operates properly.
+21:15:45 <sdake> The HA Howto followed from start to finish operates properly.
+21:15:46 <sdake> All templates without deb in their name run properly on F16 and F17.
+21:15:46 <sdake> All templates with deb in their name run properly on U10 and U12.
+21:15:46 <sdake> Validate the HA template using F16 guests by following the HA Howto.
+21:16:18 <sdake> any objections to that release criteria?
+21:16:24 <sdake> we have been slowly ramping these up every release
+21:16:42 <asalkeld> my system misbehaving atm
+21:16:53 <asalkeld> I havn't tested all that
+21:16:56 <Slower> I agree with the criteria for sure
+21:17:02 <Slower> but I haven't tested it all yet either
+21:17:08 <Slower> hwoever I intend to before the day is out :)
+21:17:11 <asalkeld> ha worked last I ran it
+21:17:32 <sdake> zaneb jpeeler?
+21:17:37 <zaneb> +1
+21:17:46 <jpeeler> yep, sounds good
+21:17:48 <shardy> +1
+21:17:56 <sdake> oops and shardy forget your in our timezone now :)
+21:18:14 <shardy> sdake: np ;)
+21:18:33 <sdake> ok, here is what i suggest, since angus not 100% positive on ha, we may want to remove that from the release criteria if we run into trouble
+21:18:39 <Slower> I feel like I'm behind on the release engineering business but hopefully it will all work out
+21:18:48 <sdake> especially since he wont be able to debug
+21:18:51 <sdake> but, lets play it by ear
+21:19:07 <asalkeld> well someone could run through it
+21:19:22 <asalkeld> and I'll hopefully get functional today
+21:19:43 <sdake> i am also going to give one last go at the u12 getting started guide
+21:20:22 <sdake> goal is to announce the release tuesday 10PM PST
+21:20:37 <sdake> 10AM PST
+21:20:47 <sdake> brain malfunction today
+21:21:19 <sdake> ok, if everyone happy with release criteria we can revisit it next release
+21:21:32 <sdake> and see if we need to add more
+21:21:56 <sdake> #agreed release criteria on wiki approved by devs
+21:22:35 <sdake> #topic release announce/notes bikeshed
+21:22:46 <sdake> slower can you post the current draft
+21:23:07 <Slower> sure
+21:24:01 <Slower> http://fpaste.org/K4ZJ/
+21:24:49 <sdake> line 12 "or try"
+21:25:48 <Slower> ok
+21:25:52 <Slower> how about 'or on'
+21:25:58 <sdake> yes
+21:26:17 <Slower> anyone have any smaller things they want to add?
+21:26:20 <jpeeler> perhaps the repo should be listed for heat-jeos
+21:26:36 <sdake> I think we want to double highlight ubuntu 12 host support and quickstart guide
+21:26:44 <Slower> good idea
+21:26:58 <asalkeld> Add cfn-push-stats, this can post statistics and service fails to heat. Heat can then escalate the vm service failure to an instance restart
+21:27:07 <sdake> "The Heat developers are pleased to announce the release of Heat API version 4.  We have added several features as well as Ubuntu Precise host support."
+21:27:42 <sdake> shardy have any suggestions for the release notes?
+21:27:52 <sdake> zaneb?
+21:27:54 <sdake> asalkeld?
+21:27:55 <sdake> jpeeler?
+21:27:58 <shardy> sdake: Looks good to me - API rework mentioned
+21:28:12 <asalkeld> I did post a comment
+21:28:19 <asalkeld> re: ha
+21:28:31 <sdake> ya got it, must be lag
+21:28:31 <Slower> + Added cfn-push-stats.  This can post statistics and service failure  notifications to heat.  Heat can then escalate the VM service failure to an instance restart.
+21:28:32 <jpeeler> aside from what i said about heat-jeos, i think it's good now
+21:28:32 <zaneb> looks good to me
+21:28:48 <asalkeld> +1
+21:28:55 <sdake> paste latest update
+21:29:04 <Slower> sec, will add Ubuntu part
+21:30:07 <Slower> http://fpaste.org/NYZu/
+21:30:33 <sdake> should be Ubuntu precise support
+21:30:38 <sdake> we dont want to support u10 for example ;)
+21:30:41 <Slower> oh forgot heat-jeos repo
+21:30:48 <Slower> precise ?
+21:30:54 <Slower> what does that mean?  sorry ubuntu noob :)
+21:30:54 <sdake> Precise = 12.04
+21:30:56 <sdake> codename
+21:30:58 <Slower> ah ok
+21:31:22 <asalkeld> Slower, my comment?
+21:31:39 <sdake> asalkeld = teflon
+21:31:53 <asalkeld> huh?
+21:31:59 <sdake> ask lon, inside joke
+21:32:03 <asalkeld> at the bottom
+21:32:06 <Slower> asalkeld: which comment?
+21:32:06 <sdake> sorry i thought you kne w:)
+21:32:16 <asalkeld> merge with HA
+21:32:46 <Slower> asalkeld: sorry, where is the comment? :)
+21:32:47 <asalkeld> o, not an issue just ship
+21:33:00 * Slower must be slow
+21:33:07 <sdake> (er)
+21:33:09 <sdake> need more minerals
+21:33:57 <Slower> asalkeld: you wanted the cfn-push-stats part merged with HA bullet?
+21:34:05 <asalkeld> yip
+21:34:32 <Slower> http://fpaste.org/rAW7/
+21:34:40 <Slower> ok I can do that
+21:34:40 <sdake> i had one last thought, could you move 42-45 in place of 30
+21:34:58 <sdake> ie: move nested stack up above ia:m::user
+21:35:09 <Slower> ok
+21:35:44 <Slower> asalkeld: I dunno, cfn-push-stats and the HA part are really the same thing..
+21:36:01 <Slower> asalkeld: not sure if it's worth going into real detail in the announcement?
+21:36:05 <asalkeld> sure
+21:36:07 <sdake> how bout angus writes what he wants for 21-23 tells you what to type in :)
+21:36:19 <asalkeld> just ship
+21:36:23 <sdake> its a critical feature
+21:36:45 <Slower> + Cloud Watch high availability. Heat monitors services and VMs and can restart them or send alarms on failure.  Also supported is escalation of service failure can result in an instance restart.  This is similar to the AWS CloudWatch functionality.
+21:36:49 <Slower> ?
+21:36:52 <asalkeld> Slower, I'll send you something
+21:37:01 <asalkeld> after meeting
+21:37:14 <asalkeld> brain not working - too early
+21:37:27 <sdake> #action asalkeld to send slower details about what should be in lcoud watch high availability section
+21:37:30 <Slower> sure
+21:37:35 <Slower> :) understood :)
+21:37:36 <sdake> sorry about that asalkeld, I wrote what I thought was ok :)
+21:37:50 <asalkeld> no worries
+21:38:02 <sdake> propose approve release notes including what asalkeld changes :)
+21:38:05 <sdake> +1
+21:38:07 <Slower> +1
+21:38:10 <asalkeld> +1
+21:38:11 <shardy> +1
+21:38:18 <zaneb> +1
+21:38:31 <sdake> jpeeler?
+21:39:14 <sdake> well I assume he agrees ;)
+21:39:15 <jpeeler> +1
+21:39:22 <sdake> #agreed release notes approved
+21:39:27 <Slower> you assumed correctly :()
+21:39:50 <sdake> #topic roadmap v4
+21:39:53 <sdake> #undu
+21:39:54 <sdake> #undo
+21:39:54 <mheat-bot> Removing item from minutes: <MeetBot.items.Topic object at 0x2589c10>
+21:40:09 <sdake> #topic roadmap v5
+21:40:24 <sdake> functional testing
+21:41:21 <Slower> per-tenant stacks instead of per-user?
+21:41:33 <sdake> brainstorm
+21:41:38 <Slower> as per our discussions on list
+21:41:55 <shardy> finish AWS API alignment, boto integration
+21:42:06 <Slower> that may have some odd side effects though, and could be a bigger project.. eg we may need to develop a heat security policy.json like nova has
+21:42:33 <sdake> asalkeld HA sorted out?
+21:42:44 <asalkeld> ja I think so
+21:42:52 <asalkeld> could do vm health checks
+21:43:02 <asalkeld> (extra feature)
+21:43:03 <sdake> would be handy
+21:43:15 <asalkeld> can do that any time tho'
+21:43:24 <asalkeld> busy on lb atm
+21:43:25 <sdake> once we wrap up a roadmap feature suggest we mark it as completed
+21:43:28 <zaneb> #145/#151 (have metadata server reference stacks by id)
+21:43:44 <asalkeld> +1
+21:44:11 <sdake> i'd like to see heat-jeos beat into submission
+21:44:42 <sdake> Heat fedora 17 package approval
+21:44:44 <asalkeld> also I'de like to see cfn capable of been installed via github
+21:44:49 <Slower> stacks should be key'd differently (not by name) so that we can have multiple stacks with the same name in a different tenant or different user (depending)
+21:45:02 <asalkeld> not needed to be pre-baked
+21:45:16 <shardy> Do we currently track AWS capabilities used by and allowed in stacks?
+21:45:34 <Slower> right that's the same bug
+21:45:40 <Slower> #151
+21:45:44 <sdake> Heat PPA + oz PPA
+21:46:02 <Slower> PPA?
+21:46:12 <sdake> like a yum repo but for anyone to setup and access
+21:46:23 <Slower> ah ok
+21:46:28 <sdake> for ubuntu
+21:46:35 <asalkeld> private package archive?
+21:46:47 <sdake> probably what it means but tbh not sure ;)
+21:46:53 <sdake> i think it may be personal actually
+21:47:03 <zaneb> yeah, personal
+21:47:14 <sdake> anything else?
+21:47:24 <asalkeld> lb + autoscale
+21:47:40 <asalkeld> needs #151
+21:47:57 <sdake> sounds like blocker to me, zaneb can you fix
+21:48:06 <zaneb> yep, working on it already
+21:48:10 <sdake> cool
+21:48:26 <sdake> last call
+21:49:01 <sdake> ok well thats a ton of stuff, lets see what we can get wrapped up in 3-4 weeks
+21:49:08 <sdake> can discuss again at next meeting
+21:49:26 <sdake> looks like dev slowing down a bit - because code base becoming more complete
+21:49:40 <asalkeld> (more to break)
+21:49:47 <sdake> haha precisely
+21:50:16 <asalkeld> need functional tests
+21:50:32 <sdake> i suggest devs pick what they want to work on, file a bug, and assign it to themselves so others know your working on it
+21:50:37 <sdake> ya functional tests already mentioned
+21:50:50 <sdake> zaneb+sdake going to be cranking on that as soon as your unblocked asalkeld
+21:50:59 <asalkeld> cool
+21:51:03 <sdake> manual acceptance criteria sucks
+21:51:26 <asalkeld> just good to have those running dayly
+21:51:30 <sdake> release should be "can we make release notes"
+21:51:41 <zaneb> so, at this point it might be time for my plug that the getting startde guide is fully automated :)
+21:52:00 <asalkeld> well done
+21:52:10 <sdake> yup nice work now for ubuntu version :)
+21:52:31 <sdake> #topic open items
+21:52:31 <zaneb> once I get F17 running on the test server we'll even know if it works ;)
+21:53:33 <sdake> if it is still your work day, do what you can to help slower get the release out
+21:53:36 <sdake> so we can move on to next work
+21:53:52 <sdake> by fixing bugs etc
+21:54:32 <sdake> asalkeld I updated the ha guide
+21:54:34 <sdake> https://github.com/heat-api/heat/wiki/Using-HA
+21:54:35 <Slower> running through getting started guide, testing ha
+21:54:50 <sdake> can you have a look and make sure it is still correct
+21:54:52 <Slower> I'm going to install f17 and test on that
+21:55:04 <asalkeld> sure
+21:55:16 <sdake> I think there is something missing there about the iptables rules
+21:55:28 <asalkeld> where?
+21:55:33 <asalkeld> ha?
+21:55:35 <sdake> #action asalkeld review ha guide
+21:55:46 <sdake> ya, doesn't a port need to be opened?
+21:55:54 <asalkeld> I don't change any iptables rules
+21:56:18 <asalkeld> might need to configure metadata bind ip
+21:56:20 <sdake> couple people have had to do so, I've been up to my neck in ubuntu and oz haven't had a chance to test that yet
+21:56:36 <zaneb> iirc that was required for all metadata
+21:56:53 <zaneb> that is to say, for anything involving the metadata server
+21:56:54 <asalkeld> yip
+21:57:03 <sdake> don't see in docs
+21:57:14 <asalkeld> what docs
+21:57:20 <sdake> the wiki docs
+21:57:28 <asalkeld> ya missing
+21:57:37 <sdake> okie
+21:57:37 <zaneb> yeah, metadata documentation is MIA
+21:57:53 <sdake> sounds like we need metadata documentation
+21:58:06 <Slower> agreed
+21:58:06 <asalkeld> well a line or two
+21:58:13 <asalkeld> will do fine
+21:58:16 <sdake> anyone that knows how to configure metadata server mind writing a wiki
+21:58:21 <sdake> or adding to ha
+21:58:29 <asalkeld> I'll add to ha
+21:58:40 <sdake> #action asalkeld to add metadata config info to ha guide
+21:58:49 <sdake> ok guys anything else?
+21:59:02 <asalkeld> nope
+21:59:12 <zaneb> no
+21:59:45 <sdake> ok thanks for coming - lets get this release knocked out today then and move on to next dev :)
+21:59:47 <sdake> #endmeeting

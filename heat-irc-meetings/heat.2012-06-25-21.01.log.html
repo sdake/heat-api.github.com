@@ -1,0 +1,304 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#heat log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">21:01:58</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">21:01:58</span><span class="nk"> &lt;mheat-bot&gt;</span> Meeting started Mon Jun 25 21:01:58 2012 UTC.  The chair is sdake. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">21:01:58</span><span class="nk"> &lt;mheat-bot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">21:02:01</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#agenda</span><span class="cmdline"></span>
+<a name="l-5"></a><span class="tm">21:02:10</span><span class="nk"> &lt;sdake&gt;</span> rollcall
+<a name="l-6"></a><span class="tm">21:02:34</span><span class="nk"> &lt;sdake&gt;</span> blocking bugs
+<a name="l-7"></a><span class="tm">21:03:08</span><span class="nk"> &lt;asalkeld&gt;</span> here
+<a name="l-8"></a><span class="tm">21:03:09</span><span class="nk"> &lt;sdake&gt;</span> release today
+<a name="l-9"></a><span class="tm">21:03:17</span><span class="nk"> &lt;sdake&gt;</span> sorting out agenda asalkeld :)
+<a name="l-10"></a><span class="tm">21:03:22</span><span class="nk"> &lt;sdake&gt;</span> anyone have other agenda items
+<a name="l-11"></a><span class="tm">21:03:37</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">agenda</span>
+<a name="l-12"></a><span class="tm">21:03:43</span><span class="nk"> &lt;sdake&gt;</span> sorry l2ubot
+<a name="l-13"></a><span class="tm">21:03:57</span><span class="nk"> &lt;sdake&gt;</span> rollcall, blocking bugs, release today
+<a name="l-14"></a><span class="tm">21:04:22</span><span class="nk"> &lt;sdake&gt;</span> any others?
+<a name="l-15"></a><span class="tm">21:04:40</span><span class="nk"> &lt;asalkeld&gt;</span> that's good
+<a name="l-16"></a><span class="tm">21:05:07</span><span class="nk"> &lt;zaneb&gt;</span> road map for v5?
+<a name="l-17"></a><span class="tm">21:05:10</span><span class="nk"> &lt;jpeeler&gt;</span> maybe final acceptance of release notes
+<a name="l-18"></a><span class="tm">21:05:27</span><span class="nk"> &lt;sdake&gt;</span> ok those two sound good
+<a name="l-19"></a><span class="tm">21:05:32</span><span class="nk"> &lt;shardy&gt;</span> +1 on roadmap for next cycle
+<a name="l-20"></a><span class="tm">21:06:02</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">agenda rollcall, blocking bugs, release today, release notes bikeshed session, roadmap v5</span>
+<a name="l-21"></a><span class="tm">21:06:06</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">rollcall</span>
+<a name="l-22"></a><span class="tm">21:06:08</span><span class="nk"> &lt;sdake&gt;</span> sdake here
+<a name="l-23"></a><span class="tm">21:06:13</span><span class="nk"> &lt;zaneb&gt;</span> yo
+<a name="l-24"></a><span class="tm">21:06:14</span><span class="nk"> &lt;Slower&gt;</span> Ian here
+<a name="l-25"></a><span class="tm">21:06:14</span><span class="nk"> &lt;shardy&gt;</span> shardy here
+<a name="l-26"></a><span class="tm">21:06:18</span><span class="nk"> &lt;asalkeld&gt;</span> asalkeld, here
+<a name="l-27"></a><span class="tm">21:06:26</span><span class="nk"> &lt;jpeeler&gt;</span> jpeeler here
+<a name="l-28"></a><span class="tm">21:06:43</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">blocking bugs</span>
+<a name="l-29"></a><span class="tm">21:07:41</span><span class="nk"> &lt;sdake&gt;</span> not sure if this is blocking, but https://bugzilla.redhat.com/show_bug.cgi?id=835019
+<a name="l-30"></a><span class="tm">21:07:53</span><span class="nk"> &lt;sdake&gt;</span> can work around with an oz fork
+<a name="l-31"></a><span class="tm">21:08:27</span><span class="nk"> &lt;sdake&gt;</span> results in u10/u12 not starting on fedora hosts
+<a name="l-32"></a><span class="tm">21:09:22</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#action </span><span class="cmdline">sdake to make oz fork to work around u10/u12 not starting</span>
+<a name="l-33"></a><span class="tm">21:09:40</span><span class="nk"> &lt;sdake&gt;</span> any other blocking issues people are concerned with (especially those that block the release)
+<a name="l-34"></a><span class="tm">21:10:02</span><span class="nk"> &lt;zaneb&gt;</span> <span class="hi">sdake:</span> do you have to fork oz, or could it be resolved by using the oz api?
+<a name="l-35"></a><span class="tm">21:10:10</span><span class="nk"> &lt;sdake&gt;</span> must fork
+<a name="l-36"></a><span class="tm">21:10:14</span><span class="nk"> &lt;zaneb&gt;</span> i.e. import from Python and monkey-patch
+<a name="l-37"></a><span class="tm">21:10:29</span><span class="nk"> &lt;zaneb&gt;</span> ok
+<a name="l-38"></a><span class="tm">21:10:40</span><span class="nk"> &lt;sdake&gt;</span> http://fpaste.org/V8V9/
+<a name="l-39"></a><span class="tm">21:10:54</span><span class="nk"> &lt;asalkeld&gt;</span> this would be good https://github.com/heat-api/heat/issues/145
+<a name="l-40"></a><span class="tm">21:11:07</span><span class="nk"> &lt;asalkeld&gt;</span> not sure if it blocks tho'
+<a name="l-41"></a><span class="tm">21:11:32</span><span class="nk"> &lt;sdake&gt;</span> deb installer makes a logical partition, and kernel.org blocks forever
+<a name="l-42"></a><span class="tm">21:12:15</span><span class="nk"> &lt;sdake&gt;</span> doesn't seem to block us too much
+<a name="l-43"></a><span class="tm">21:12:45</span><span class="nk"> &lt;asalkeld&gt;</span> (ok, just lb work then)
+<a name="l-44"></a><span class="tm">21:12:46</span><span class="nk"> &lt;Slower&gt;</span> The Getting Started guide for fedora needs to mention f17
+<a name="l-45"></a><span class="tm">21:12:46</span><span class="nk"> &lt;zaneb&gt;</span> community will likely be fedora on fedora or ubuntu on ubuntu
+<a name="l-46"></a><span class="tm">21:12:47</span><span class="nk"> &lt;sdake&gt;</span> guess blocks autoscaling
+<a name="l-47"></a><span class="tm">21:12:56</span><span class="nk"> &lt;Slower&gt;</span> I can fix that before release
+<a name="l-48"></a><span class="tm">21:13:14</span><span class="nk"> &lt;Slower&gt;</span> oh also should we be starting the heat-metadata service in the guides?
+<a name="l-49"></a><span class="tm">21:13:20</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#action </span><span class="cmdline">slower to submit a review request to update getting started guide to mention fedora 17</span>
+<a name="l-50"></a><span class="tm">21:13:56</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#action </span><span class="cmdline">release today</span>
+<a name="l-51"></a><span class="tm">21:13:58</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#undo</span><span class="cmdline"></span>
+<a name="l-52"></a><span class="tm">21:13:58</span><span class="nk"> &lt;mheat-bot&gt;</span> Removing item from minutes: &lt;MeetBot.items.Action object at 0x2589e50&gt;
+<a name="l-53"></a><span class="tm">21:14:01</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">release today</span>
+<a name="l-54"></a><span class="tm">21:14:26</span><span class="nk"> &lt;asalkeld&gt;</span> lets do it
+<a name="l-55"></a><span class="tm">21:14:26</span><span class="nk"> &lt;sdake&gt;</span> everyone have a quick look at the release guide
+<a name="l-56"></a><span class="tm">21:14:28</span><span class="nk"> &lt;sdake&gt;</span> https://github.com/heat-api/heat/wiki/Release-Process
+<a name="l-57"></a><span class="tm">21:14:42</span><span class="nk"> &lt;sdake&gt;</span> specifically the release criteria section
+<a name="l-58"></a><span class="tm">21:14:54</span><span class="nk"> &lt;Slower&gt;</span> 'Launch the Heat services'
+<a name="l-59"></a><span class="tm">21:14:55</span><span class="nk"> &lt;Slower&gt;</span> sudo -E bash -c 'heat-api &amp; heat-engine &amp;'
+<a name="l-60"></a><span class="tm">21:15:45</span><span class="nk"> &lt;sdake&gt;</span> The Getting Started Guide followed from start to finish operates properly.
+<a name="l-61"></a><span class="tm">21:15:45</span><span class="nk"> &lt;sdake&gt;</span> The HA Howto followed from start to finish operates properly.
+<a name="l-62"></a><span class="tm">21:15:46</span><span class="nk"> &lt;sdake&gt;</span> All templates without deb in their name run properly on F16 and F17.
+<a name="l-63"></a><span class="tm">21:15:46</span><span class="nk"> &lt;sdake&gt;</span> All templates with deb in their name run properly on U10 and U12.
+<a name="l-64"></a><span class="tm">21:15:46</span><span class="nk"> &lt;sdake&gt;</span> Validate the HA template using F16 guests by following the HA Howto.
+<a name="l-65"></a><span class="tm">21:16:18</span><span class="nk"> &lt;sdake&gt;</span> any objections to that release criteria?
+<a name="l-66"></a><span class="tm">21:16:24</span><span class="nk"> &lt;sdake&gt;</span> we have been slowly ramping these up every release
+<a name="l-67"></a><span class="tm">21:16:42</span><span class="nk"> &lt;asalkeld&gt;</span> my system misbehaving atm
+<a name="l-68"></a><span class="tm">21:16:53</span><span class="nk"> &lt;asalkeld&gt;</span> I havn't tested all that
+<a name="l-69"></a><span class="tm">21:16:56</span><span class="nk"> &lt;Slower&gt;</span> I agree with the criteria for sure
+<a name="l-70"></a><span class="tm">21:17:02</span><span class="nk"> &lt;Slower&gt;</span> but I haven't tested it all yet either
+<a name="l-71"></a><span class="tm">21:17:08</span><span class="nk"> &lt;Slower&gt;</span> hwoever I intend to before the day is out :)
+<a name="l-72"></a><span class="tm">21:17:11</span><span class="nk"> &lt;asalkeld&gt;</span> ha worked last I ran it
+<a name="l-73"></a><span class="tm">21:17:32</span><span class="nk"> &lt;sdake&gt;</span> zaneb jpeeler?
+<a name="l-74"></a><span class="tm">21:17:37</span><span class="nk"> &lt;zaneb&gt;</span> +1
+<a name="l-75"></a><span class="tm">21:17:46</span><span class="nk"> &lt;jpeeler&gt;</span> yep, sounds good
+<a name="l-76"></a><span class="tm">21:17:48</span><span class="nk"> &lt;shardy&gt;</span> +1
+<a name="l-77"></a><span class="tm">21:17:56</span><span class="nk"> &lt;sdake&gt;</span> oops and shardy forget your in our timezone now :)
+<a name="l-78"></a><span class="tm">21:18:14</span><span class="nk"> &lt;shardy&gt;</span> <span class="hi">sdake:</span> np ;)
+<a name="l-79"></a><span class="tm">21:18:33</span><span class="nk"> &lt;sdake&gt;</span> ok, here is what i suggest, since angus not 100% positive on ha, we may want to remove that from the release criteria if we run into trouble
+<a name="l-80"></a><span class="tm">21:18:39</span><span class="nk"> &lt;Slower&gt;</span> I feel like I'm behind on the release engineering business but hopefully it will all work out
+<a name="l-81"></a><span class="tm">21:18:48</span><span class="nk"> &lt;sdake&gt;</span> especially since he wont be able to debug
+<a name="l-82"></a><span class="tm">21:18:51</span><span class="nk"> &lt;sdake&gt;</span> but, lets play it by ear
+<a name="l-83"></a><span class="tm">21:19:07</span><span class="nk"> &lt;asalkeld&gt;</span> well someone could run through it
+<a name="l-84"></a><span class="tm">21:19:22</span><span class="nk"> &lt;asalkeld&gt;</span> and I'll hopefully get functional today
+<a name="l-85"></a><span class="tm">21:19:43</span><span class="nk"> &lt;sdake&gt;</span> i am also going to give one last go at the u12 getting started guide
+<a name="l-86"></a><span class="tm">21:20:22</span><span class="nk"> &lt;sdake&gt;</span> goal is to announce the release tuesday 10PM PST
+<a name="l-87"></a><span class="tm">21:20:37</span><span class="nk"> &lt;sdake&gt;</span> 10AM PST
+<a name="l-88"></a><span class="tm">21:20:47</span><span class="nk"> &lt;sdake&gt;</span> brain malfunction today
+<a name="l-89"></a><span class="tm">21:21:19</span><span class="nk"> &lt;sdake&gt;</span> ok, if everyone happy with release criteria we can revisit it next release
+<a name="l-90"></a><span class="tm">21:21:32</span><span class="nk"> &lt;sdake&gt;</span> and see if we need to add more
+<a name="l-91"></a><span class="tm">21:21:56</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">release criteria on wiki approved by devs</span>
+<a name="l-92"></a><span class="tm">21:22:35</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">release announce/notes bikeshed</span>
+<a name="l-93"></a><span class="tm">21:22:46</span><span class="nk"> &lt;sdake&gt;</span> slower can you post the current draft
+<a name="l-94"></a><span class="tm">21:23:07</span><span class="nk"> &lt;Slower&gt;</span> sure
+<a name="l-95"></a><span class="tm">21:24:01</span><span class="nk"> &lt;Slower&gt;</span> http://fpaste.org/K4ZJ/
+<a name="l-96"></a><span class="tm">21:24:49</span><span class="nk"> &lt;sdake&gt;</span> line 12 "or try"
+<a name="l-97"></a><span class="tm">21:25:48</span><span class="nk"> &lt;Slower&gt;</span> ok
+<a name="l-98"></a><span class="tm">21:25:52</span><span class="nk"> &lt;Slower&gt;</span> how about 'or on'
+<a name="l-99"></a><span class="tm">21:25:58</span><span class="nk"> &lt;sdake&gt;</span> yes
+<a name="l-100"></a><span class="tm">21:26:17</span><span class="nk"> &lt;Slower&gt;</span> anyone have any smaller things they want to add?
+<a name="l-101"></a><span class="tm">21:26:20</span><span class="nk"> &lt;jpeeler&gt;</span> perhaps the repo should be listed for heat-jeos
+<a name="l-102"></a><span class="tm">21:26:36</span><span class="nk"> &lt;sdake&gt;</span> I think we want to double highlight ubuntu 12 host support and quickstart guide
+<a name="l-103"></a><span class="tm">21:26:44</span><span class="nk"> &lt;Slower&gt;</span> good idea
+<a name="l-104"></a><span class="tm">21:26:58</span><span class="nk"> &lt;asalkeld&gt;</span> Add cfn-push-stats, this can post statistics and service fails to heat. Heat can then escalate the vm service failure to an instance restart
+<a name="l-105"></a><span class="tm">21:27:07</span><span class="nk"> &lt;sdake&gt;</span> "The Heat developers are pleased to announce the release of Heat API version 4.  We have added several features as well as Ubuntu Precise host support."
+<a name="l-106"></a><span class="tm">21:27:42</span><span class="nk"> &lt;sdake&gt;</span> shardy have any suggestions for the release notes?
+<a name="l-107"></a><span class="tm">21:27:52</span><span class="nk"> &lt;sdake&gt;</span> zaneb?
+<a name="l-108"></a><span class="tm">21:27:54</span><span class="nk"> &lt;sdake&gt;</span> asalkeld?
+<a name="l-109"></a><span class="tm">21:27:55</span><span class="nk"> &lt;sdake&gt;</span> jpeeler?
+<a name="l-110"></a><span class="tm">21:27:58</span><span class="nk"> &lt;shardy&gt;</span> <span class="hi">sdake:</span> Looks good to me - API rework mentioned
+<a name="l-111"></a><span class="tm">21:28:12</span><span class="nk"> &lt;asalkeld&gt;</span> I did post a comment
+<a name="l-112"></a><span class="tm">21:28:19</span><span class="nk"> &lt;asalkeld&gt;</span> <span class="hi">re:</span> ha
+<a name="l-113"></a><span class="tm">21:28:31</span><span class="nk"> &lt;sdake&gt;</span> ya got it, must be lag
+<a name="l-114"></a><span class="tm">21:28:31</span><span class="nk"> &lt;Slower&gt;</span> + Added cfn-push-stats.  This can post statistics and service failure  notifications to heat.  Heat can then escalate the VM service failure to an instance restart.
+<a name="l-115"></a><span class="tm">21:28:32</span><span class="nk"> &lt;jpeeler&gt;</span> aside from what i said about heat-jeos, i think it's good now
+<a name="l-116"></a><span class="tm">21:28:32</span><span class="nk"> &lt;zaneb&gt;</span> looks good to me
+<a name="l-117"></a><span class="tm">21:28:48</span><span class="nk"> &lt;asalkeld&gt;</span> +1
+<a name="l-118"></a><span class="tm">21:28:55</span><span class="nk"> &lt;sdake&gt;</span> paste latest update
+<a name="l-119"></a><span class="tm">21:29:04</span><span class="nk"> &lt;Slower&gt;</span> sec, will add Ubuntu part
+<a name="l-120"></a><span class="tm">21:30:07</span><span class="nk"> &lt;Slower&gt;</span> http://fpaste.org/NYZu/
+<a name="l-121"></a><span class="tm">21:30:33</span><span class="nk"> &lt;sdake&gt;</span> should be Ubuntu precise support
+<a name="l-122"></a><span class="tm">21:30:38</span><span class="nk"> &lt;sdake&gt;</span> we dont want to support u10 for example ;)
+<a name="l-123"></a><span class="tm">21:30:41</span><span class="nk"> &lt;Slower&gt;</span> oh forgot heat-jeos repo
+<a name="l-124"></a><span class="tm">21:30:48</span><span class="nk"> &lt;Slower&gt;</span> precise ?
+<a name="l-125"></a><span class="tm">21:30:54</span><span class="nk"> &lt;Slower&gt;</span> what does that mean?  sorry ubuntu noob :)
+<a name="l-126"></a><span class="tm">21:30:54</span><span class="nk"> &lt;sdake&gt;</span> Precise = 12.04
+<a name="l-127"></a><span class="tm">21:30:56</span><span class="nk"> &lt;sdake&gt;</span> codename
+<a name="l-128"></a><span class="tm">21:30:58</span><span class="nk"> &lt;Slower&gt;</span> ah ok
+<a name="l-129"></a><span class="tm">21:31:22</span><span class="nk"> &lt;asalkeld&gt;</span> Slower, my comment?
+<a name="l-130"></a><span class="tm">21:31:39</span><span class="nk"> &lt;sdake&gt;</span> asalkeld = teflon
+<a name="l-131"></a><span class="tm">21:31:53</span><span class="nk"> &lt;asalkeld&gt;</span> huh?
+<a name="l-132"></a><span class="tm">21:31:59</span><span class="nk"> &lt;sdake&gt;</span> ask lon, inside joke
+<a name="l-133"></a><span class="tm">21:32:03</span><span class="nk"> &lt;asalkeld&gt;</span> at the bottom
+<a name="l-134"></a><span class="tm">21:32:06</span><span class="nk"> &lt;Slower&gt;</span> <span class="hi">asalkeld:</span> which comment?
+<a name="l-135"></a><span class="tm">21:32:06</span><span class="nk"> &lt;sdake&gt;</span> sorry i thought you kne w:)
+<a name="l-136"></a><span class="tm">21:32:16</span><span class="nk"> &lt;asalkeld&gt;</span> merge with HA
+<a name="l-137"></a><span class="tm">21:32:46</span><span class="nk"> &lt;Slower&gt;</span> <span class="hi">asalkeld:</span> sorry, where is the comment? :)
+<a name="l-138"></a><span class="tm">21:32:47</span><span class="nk"> &lt;asalkeld&gt;</span> o, not an issue just ship
+<a name="l-139"></a><span class="tm">21:33:00 </span><span class="nka">* Slower</span> <span class="ac">must be slow</span>
+<a name="l-140"></a><span class="tm">21:33:07</span><span class="nk"> &lt;sdake&gt;</span> (er)
+<a name="l-141"></a><span class="tm">21:33:09</span><span class="nk"> &lt;sdake&gt;</span> need more minerals
+<a name="l-142"></a><span class="tm">21:33:57</span><span class="nk"> &lt;Slower&gt;</span> <span class="hi">asalkeld:</span> you wanted the cfn-push-stats part merged with HA bullet?
+<a name="l-143"></a><span class="tm">21:34:05</span><span class="nk"> &lt;asalkeld&gt;</span> yip
+<a name="l-144"></a><span class="tm">21:34:32</span><span class="nk"> &lt;Slower&gt;</span> http://fpaste.org/rAW7/
+<a name="l-145"></a><span class="tm">21:34:40</span><span class="nk"> &lt;Slower&gt;</span> ok I can do that
+<a name="l-146"></a><span class="tm">21:34:40</span><span class="nk"> &lt;sdake&gt;</span> i had one last thought, could you move 42-45 in place of 30
+<a name="l-147"></a><span class="tm">21:34:58</span><span class="nk"> &lt;sdake&gt;</span> <span class="hi">ie:</span> move nested stack up above ia:m::user
+<a name="l-148"></a><span class="tm">21:35:09</span><span class="nk"> &lt;Slower&gt;</span> ok
+<a name="l-149"></a><span class="tm">21:35:44</span><span class="nk"> &lt;Slower&gt;</span> <span class="hi">asalkeld:</span> I dunno, cfn-push-stats and the HA part are really the same thing..
+<a name="l-150"></a><span class="tm">21:36:01</span><span class="nk"> &lt;Slower&gt;</span> <span class="hi">asalkeld:</span> not sure if it's worth going into real detail in the announcement?
+<a name="l-151"></a><span class="tm">21:36:05</span><span class="nk"> &lt;asalkeld&gt;</span> sure
+<a name="l-152"></a><span class="tm">21:36:07</span><span class="nk"> &lt;sdake&gt;</span> how bout angus writes what he wants for 21-23 tells you what to type in :)
+<a name="l-153"></a><span class="tm">21:36:19</span><span class="nk"> &lt;asalkeld&gt;</span> just ship
+<a name="l-154"></a><span class="tm">21:36:23</span><span class="nk"> &lt;sdake&gt;</span> its a critical feature
+<a name="l-155"></a><span class="tm">21:36:45</span><span class="nk"> &lt;Slower&gt;</span> + Cloud Watch high availability. Heat monitors services and VMs and can restart them or send alarms on failure.  Also supported is escalation of service failure can result in an instance restart.  This is similar to the AWS CloudWatch functionality.
+<a name="l-156"></a><span class="tm">21:36:49</span><span class="nk"> &lt;Slower&gt;</span> ?
+<a name="l-157"></a><span class="tm">21:36:52</span><span class="nk"> &lt;asalkeld&gt;</span> Slower, I'll send you something
+<a name="l-158"></a><span class="tm">21:37:01</span><span class="nk"> &lt;asalkeld&gt;</span> after meeting
+<a name="l-159"></a><span class="tm">21:37:14</span><span class="nk"> &lt;asalkeld&gt;</span> brain not working - too early
+<a name="l-160"></a><span class="tm">21:37:27</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#action </span><span class="cmdline">asalkeld to send slower details about what should be in lcoud watch high availability section</span>
+<a name="l-161"></a><span class="tm">21:37:30</span><span class="nk"> &lt;Slower&gt;</span> sure
+<a name="l-162"></a><span class="tm">21:37:35</span><span class="nk"> &lt;Slower&gt;</span> :) understood :)
+<a name="l-163"></a><span class="tm">21:37:36</span><span class="nk"> &lt;sdake&gt;</span> sorry about that asalkeld, I wrote what I thought was ok :)
+<a name="l-164"></a><span class="tm">21:37:50</span><span class="nk"> &lt;asalkeld&gt;</span> no worries
+<a name="l-165"></a><span class="tm">21:38:02</span><span class="nk"> &lt;sdake&gt;</span> propose approve release notes including what asalkeld changes :)
+<a name="l-166"></a><span class="tm">21:38:05</span><span class="nk"> &lt;sdake&gt;</span> +1
+<a name="l-167"></a><span class="tm">21:38:07</span><span class="nk"> &lt;Slower&gt;</span> +1
+<a name="l-168"></a><span class="tm">21:38:10</span><span class="nk"> &lt;asalkeld&gt;</span> +1
+<a name="l-169"></a><span class="tm">21:38:11</span><span class="nk"> &lt;shardy&gt;</span> +1
+<a name="l-170"></a><span class="tm">21:38:18</span><span class="nk"> &lt;zaneb&gt;</span> +1
+<a name="l-171"></a><span class="tm">21:38:31</span><span class="nk"> &lt;sdake&gt;</span> jpeeler?
+<a name="l-172"></a><span class="tm">21:39:14</span><span class="nk"> &lt;sdake&gt;</span> well I assume he agrees ;)
+<a name="l-173"></a><span class="tm">21:39:15</span><span class="nk"> &lt;jpeeler&gt;</span> +1
+<a name="l-174"></a><span class="tm">21:39:22</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">release notes approved</span>
+<a name="l-175"></a><span class="tm">21:39:27</span><span class="nk"> &lt;Slower&gt;</span> you assumed correctly :()
+<a name="l-176"></a><span class="tm">21:39:50</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">roadmap v4</span>
+<a name="l-177"></a><span class="tm">21:39:53</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#undu</span><span class="cmdline"></span>
+<a name="l-178"></a><span class="tm">21:39:54</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#undo</span><span class="cmdline"></span>
+<a name="l-179"></a><span class="tm">21:39:54</span><span class="nk"> &lt;mheat-bot&gt;</span> Removing item from minutes: &lt;MeetBot.items.Topic object at 0x2589c10&gt;
+<a name="l-180"></a><span class="tm">21:40:09</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">roadmap v5</span>
+<a name="l-181"></a><span class="tm">21:40:24</span><span class="nk"> &lt;sdake&gt;</span> functional testing
+<a name="l-182"></a><span class="tm">21:41:21</span><span class="nk"> &lt;Slower&gt;</span> per-tenant stacks instead of per-user?
+<a name="l-183"></a><span class="tm">21:41:33</span><span class="nk"> &lt;sdake&gt;</span> brainstorm
+<a name="l-184"></a><span class="tm">21:41:38</span><span class="nk"> &lt;Slower&gt;</span> as per our discussions on list
+<a name="l-185"></a><span class="tm">21:41:55</span><span class="nk"> &lt;shardy&gt;</span> finish AWS API alignment, boto integration
+<a name="l-186"></a><span class="tm">21:42:06</span><span class="nk"> &lt;Slower&gt;</span> that may have some odd side effects though, and could be a bigger project.. eg we may need to develop a heat security policy.json like nova has
+<a name="l-187"></a><span class="tm">21:42:33</span><span class="nk"> &lt;sdake&gt;</span> asalkeld HA sorted out?
+<a name="l-188"></a><span class="tm">21:42:44</span><span class="nk"> &lt;asalkeld&gt;</span> ja I think so
+<a name="l-189"></a><span class="tm">21:42:52</span><span class="nk"> &lt;asalkeld&gt;</span> could do vm health checks
+<a name="l-190"></a><span class="tm">21:43:02</span><span class="nk"> &lt;asalkeld&gt;</span> (extra feature)
+<a name="l-191"></a><span class="tm">21:43:03</span><span class="nk"> &lt;sdake&gt;</span> would be handy
+<a name="l-192"></a><span class="tm">21:43:15</span><span class="nk"> &lt;asalkeld&gt;</span> can do that any time tho'
+<a name="l-193"></a><span class="tm">21:43:24</span><span class="nk"> &lt;asalkeld&gt;</span> busy on lb atm
+<a name="l-194"></a><span class="tm">21:43:25</span><span class="nk"> &lt;sdake&gt;</span> once we wrap up a roadmap feature suggest we mark it as completed
+<a name="l-195"></a><span class="tm">21:43:28</span><span class="nk"> &lt;zaneb&gt;</span> <span class="cmd">#145/#151 </span><span class="cmdline">(have metadata server reference stacks by id)</span>
+<a name="l-196"></a><span class="tm">21:43:44</span><span class="nk"> &lt;asalkeld&gt;</span> +1
+<a name="l-197"></a><span class="tm">21:44:11</span><span class="nk"> &lt;sdake&gt;</span> i'd like to see heat-jeos beat into submission
+<a name="l-198"></a><span class="tm">21:44:42</span><span class="nk"> &lt;sdake&gt;</span> Heat fedora 17 package approval
+<a name="l-199"></a><span class="tm">21:44:44</span><span class="nk"> &lt;asalkeld&gt;</span> also I'de like to see cfn capable of been installed via github
+<a name="l-200"></a><span class="tm">21:44:49</span><span class="nk"> &lt;Slower&gt;</span> stacks should be key'd differently (not by name) so that we can have multiple stacks with the same name in a different tenant or different user (depending)
+<a name="l-201"></a><span class="tm">21:45:02</span><span class="nk"> &lt;asalkeld&gt;</span> not needed to be pre-baked
+<a name="l-202"></a><span class="tm">21:45:16</span><span class="nk"> &lt;shardy&gt;</span> Do we currently track AWS capabilities used by and allowed in stacks?
+<a name="l-203"></a><span class="tm">21:45:34</span><span class="nk"> &lt;Slower&gt;</span> right that's the same bug
+<a name="l-204"></a><span class="tm">21:45:40</span><span class="nk"> &lt;Slower&gt;</span> <span class="cmd">#151</span><span class="cmdline"></span>
+<a name="l-205"></a><span class="tm">21:45:44</span><span class="nk"> &lt;sdake&gt;</span> Heat PPA + oz PPA
+<a name="l-206"></a><span class="tm">21:46:02</span><span class="nk"> &lt;Slower&gt;</span> PPA?
+<a name="l-207"></a><span class="tm">21:46:12</span><span class="nk"> &lt;sdake&gt;</span> like a yum repo but for anyone to setup and access
+<a name="l-208"></a><span class="tm">21:46:23</span><span class="nk"> &lt;Slower&gt;</span> ah ok
+<a name="l-209"></a><span class="tm">21:46:28</span><span class="nk"> &lt;sdake&gt;</span> for ubuntu
+<a name="l-210"></a><span class="tm">21:46:35</span><span class="nk"> &lt;asalkeld&gt;</span> private package archive?
+<a name="l-211"></a><span class="tm">21:46:47</span><span class="nk"> &lt;sdake&gt;</span> probably what it means but tbh not sure ;)
+<a name="l-212"></a><span class="tm">21:46:53</span><span class="nk"> &lt;sdake&gt;</span> i think it may be personal actually
+<a name="l-213"></a><span class="tm">21:47:03</span><span class="nk"> &lt;zaneb&gt;</span> yeah, personal
+<a name="l-214"></a><span class="tm">21:47:14</span><span class="nk"> &lt;sdake&gt;</span> anything else?
+<a name="l-215"></a><span class="tm">21:47:24</span><span class="nk"> &lt;asalkeld&gt;</span> lb + autoscale
+<a name="l-216"></a><span class="tm">21:47:40</span><span class="nk"> &lt;asalkeld&gt;</span> needs #151
+<a name="l-217"></a><span class="tm">21:47:57</span><span class="nk"> &lt;sdake&gt;</span> sounds like blocker to me, zaneb can you fix
+<a name="l-218"></a><span class="tm">21:48:06</span><span class="nk"> &lt;zaneb&gt;</span> yep, working on it already
+<a name="l-219"></a><span class="tm">21:48:10</span><span class="nk"> &lt;sdake&gt;</span> cool
+<a name="l-220"></a><span class="tm">21:48:26</span><span class="nk"> &lt;sdake&gt;</span> last call
+<a name="l-221"></a><span class="tm">21:49:01</span><span class="nk"> &lt;sdake&gt;</span> ok well thats a ton of stuff, lets see what we can get wrapped up in 3-4 weeks
+<a name="l-222"></a><span class="tm">21:49:08</span><span class="nk"> &lt;sdake&gt;</span> can discuss again at next meeting
+<a name="l-223"></a><span class="tm">21:49:26</span><span class="nk"> &lt;sdake&gt;</span> looks like dev slowing down a bit - because code base becoming more complete
+<a name="l-224"></a><span class="tm">21:49:40</span><span class="nk"> &lt;asalkeld&gt;</span> (more to break)
+<a name="l-225"></a><span class="tm">21:49:47</span><span class="nk"> &lt;sdake&gt;</span> haha precisely
+<a name="l-226"></a><span class="tm">21:50:16</span><span class="nk"> &lt;asalkeld&gt;</span> need functional tests
+<a name="l-227"></a><span class="tm">21:50:32</span><span class="nk"> &lt;sdake&gt;</span> i suggest devs pick what they want to work on, file a bug, and assign it to themselves so others know your working on it
+<a name="l-228"></a><span class="tm">21:50:37</span><span class="nk"> &lt;sdake&gt;</span> ya functional tests already mentioned
+<a name="l-229"></a><span class="tm">21:50:50</span><span class="nk"> &lt;sdake&gt;</span> zaneb+sdake going to be cranking on that as soon as your unblocked asalkeld
+<a name="l-230"></a><span class="tm">21:50:59</span><span class="nk"> &lt;asalkeld&gt;</span> cool
+<a name="l-231"></a><span class="tm">21:51:03</span><span class="nk"> &lt;sdake&gt;</span> manual acceptance criteria sucks
+<a name="l-232"></a><span class="tm">21:51:26</span><span class="nk"> &lt;asalkeld&gt;</span> just good to have those running dayly
+<a name="l-233"></a><span class="tm">21:51:30</span><span class="nk"> &lt;sdake&gt;</span> release should be "can we make release notes"
+<a name="l-234"></a><span class="tm">21:51:41</span><span class="nk"> &lt;zaneb&gt;</span> so, at this point it might be time for my plug that the getting startde guide is fully automated :)
+<a name="l-235"></a><span class="tm">21:52:00</span><span class="nk"> &lt;asalkeld&gt;</span> well done
+<a name="l-236"></a><span class="tm">21:52:10</span><span class="nk"> &lt;sdake&gt;</span> yup nice work now for ubuntu version :)
+<a name="l-237"></a><span class="tm">21:52:31</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">open items</span>
+<a name="l-238"></a><span class="tm">21:52:31</span><span class="nk"> &lt;zaneb&gt;</span> once I get F17 running on the test server we'll even know if it works ;)
+<a name="l-239"></a><span class="tm">21:53:33</span><span class="nk"> &lt;sdake&gt;</span> if it is still your work day, do what you can to help slower get the release out
+<a name="l-240"></a><span class="tm">21:53:36</span><span class="nk"> &lt;sdake&gt;</span> so we can move on to next work
+<a name="l-241"></a><span class="tm">21:53:52</span><span class="nk"> &lt;sdake&gt;</span> by fixing bugs etc
+<a name="l-242"></a><span class="tm">21:54:32</span><span class="nk"> &lt;sdake&gt;</span> asalkeld I updated the ha guide
+<a name="l-243"></a><span class="tm">21:54:34</span><span class="nk"> &lt;sdake&gt;</span> https://github.com/heat-api/heat/wiki/Using-HA
+<a name="l-244"></a><span class="tm">21:54:35</span><span class="nk"> &lt;Slower&gt;</span> running through getting started guide, testing ha
+<a name="l-245"></a><span class="tm">21:54:50</span><span class="nk"> &lt;sdake&gt;</span> can you have a look and make sure it is still correct
+<a name="l-246"></a><span class="tm">21:54:52</span><span class="nk"> &lt;Slower&gt;</span> I'm going to install f17 and test on that
+<a name="l-247"></a><span class="tm">21:55:04</span><span class="nk"> &lt;asalkeld&gt;</span> sure
+<a name="l-248"></a><span class="tm">21:55:16</span><span class="nk"> &lt;sdake&gt;</span> I think there is something missing there about the iptables rules
+<a name="l-249"></a><span class="tm">21:55:28</span><span class="nk"> &lt;asalkeld&gt;</span> where?
+<a name="l-250"></a><span class="tm">21:55:33</span><span class="nk"> &lt;asalkeld&gt;</span> ha?
+<a name="l-251"></a><span class="tm">21:55:35</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#action </span><span class="cmdline">asalkeld review ha guide</span>
+<a name="l-252"></a><span class="tm">21:55:46</span><span class="nk"> &lt;sdake&gt;</span> ya, doesn't a port need to be opened?
+<a name="l-253"></a><span class="tm">21:55:54</span><span class="nk"> &lt;asalkeld&gt;</span> I don't change any iptables rules
+<a name="l-254"></a><span class="tm">21:56:18</span><span class="nk"> &lt;asalkeld&gt;</span> might need to configure metadata bind ip
+<a name="l-255"></a><span class="tm">21:56:20</span><span class="nk"> &lt;sdake&gt;</span> couple people have had to do so, I've been up to my neck in ubuntu and oz haven't had a chance to test that yet
+<a name="l-256"></a><span class="tm">21:56:36</span><span class="nk"> &lt;zaneb&gt;</span> iirc that was required for all metadata
+<a name="l-257"></a><span class="tm">21:56:53</span><span class="nk"> &lt;zaneb&gt;</span> that is to say, for anything involving the metadata server
+<a name="l-258"></a><span class="tm">21:56:54</span><span class="nk"> &lt;asalkeld&gt;</span> yip
+<a name="l-259"></a><span class="tm">21:57:03</span><span class="nk"> &lt;sdake&gt;</span> don't see in docs
+<a name="l-260"></a><span class="tm">21:57:14</span><span class="nk"> &lt;asalkeld&gt;</span> what docs
+<a name="l-261"></a><span class="tm">21:57:20</span><span class="nk"> &lt;sdake&gt;</span> the wiki docs
+<a name="l-262"></a><span class="tm">21:57:28</span><span class="nk"> &lt;asalkeld&gt;</span> ya missing
+<a name="l-263"></a><span class="tm">21:57:37</span><span class="nk"> &lt;sdake&gt;</span> okie
+<a name="l-264"></a><span class="tm">21:57:37</span><span class="nk"> &lt;zaneb&gt;</span> yeah, metadata documentation is MIA
+<a name="l-265"></a><span class="tm">21:57:53</span><span class="nk"> &lt;sdake&gt;</span> sounds like we need metadata documentation
+<a name="l-266"></a><span class="tm">21:58:06</span><span class="nk"> &lt;Slower&gt;</span> agreed
+<a name="l-267"></a><span class="tm">21:58:06</span><span class="nk"> &lt;asalkeld&gt;</span> well a line or two
+<a name="l-268"></a><span class="tm">21:58:13</span><span class="nk"> &lt;asalkeld&gt;</span> will do fine
+<a name="l-269"></a><span class="tm">21:58:16</span><span class="nk"> &lt;sdake&gt;</span> anyone that knows how to configure metadata server mind writing a wiki
+<a name="l-270"></a><span class="tm">21:58:21</span><span class="nk"> &lt;sdake&gt;</span> or adding to ha
+<a name="l-271"></a><span class="tm">21:58:29</span><span class="nk"> &lt;asalkeld&gt;</span> I'll add to ha
+<a name="l-272"></a><span class="tm">21:58:40</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#action </span><span class="cmdline">asalkeld to add metadata config info to ha guide</span>
+<a name="l-273"></a><span class="tm">21:58:49</span><span class="nk"> &lt;sdake&gt;</span> ok guys anything else?
+<a name="l-274"></a><span class="tm">21:59:02</span><span class="nk"> &lt;asalkeld&gt;</span> nope
+<a name="l-275"></a><span class="tm">21:59:12</span><span class="nk"> &lt;zaneb&gt;</span> no
+<a name="l-276"></a><span class="tm">21:59:45</span><span class="nk"> &lt;sdake&gt;</span> ok thanks for coming - lets get this release knocked out today then and move on to next dev :)
+<a name="l-277"></a><span class="tm">21:59:47</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

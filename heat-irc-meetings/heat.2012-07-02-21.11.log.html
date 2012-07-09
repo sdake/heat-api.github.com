@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#heat log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">21:11:33</span><span class="nk"> &lt;asalkeld&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">21:11:33</span><span class="nk"> &lt;mheat-bot&gt;</span> Meeting started Mon Jul  2 21:11:33 2012 UTC.  The chair is asalkeld. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">21:11:33</span><span class="nk"> &lt;mheat-bot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">21:11:37</span><span class="nk"> &lt;shadower&gt;</span> the US guys are not coming?
+<a name="l-5"></a><span class="tm">21:12:03</span><span class="nk"> &lt;asalkeld&gt;</span> not sure
+<a name="l-6"></a><span class="tm">21:12:03</span><span class="nk"> &lt;zaneb&gt;</span> ah, holiday on Wednesday
+<a name="l-7"></a><span class="tm">21:12:26</span><span class="nk"> &lt;zaneb&gt;</span> calendar says sdake is PTO
+<a name="l-8"></a><span class="tm">21:12:34</span><span class="nk"> &lt;asalkeld&gt;</span> <span class="topic">#topic </span><span class="topicline">agenda</span>
+<a name="l-9"></a><span class="tm">21:12:56</span><span class="nk"> &lt;asalkeld&gt;</span> steve asked us to hold the meeting anyways
+<a name="l-10"></a><span class="tm">21:13:19 </span><span class="nka">* asalkeld</span> <span class="ac">reading up on meetbot commands</span>
+<a name="l-11"></a><span class="tm">21:13:50</span><span class="nk"> &lt;asalkeld&gt;</span> so agenda is normally agenda rollcall status
+<a name="l-12"></a><span class="tm">21:14:14 </span><span class="nka">* shadower</span> <span class="ac">smells recursion in that</span>
+<a name="l-13"></a><span class="tm">21:14:22</span><span class="nk"> &lt;asalkeld&gt;</span> any thing else ?
+<a name="l-14"></a><span class="tm">21:14:38</span><span class="nk"> &lt;shardy&gt;</span> roadmap/priorities for this dev cycle?
+<a name="l-15"></a><span class="tm">21:14:55</span><span class="nk"> &lt;asalkeld&gt;</span> can do, we haven't done that?
+<a name="l-16"></a><span class="tm">21:15:13</span><span class="nk"> &lt;shardy&gt;</span> I'm not that clear on what to focus on after the API rework is done, we can discuss offline tho
+<a name="l-17"></a><span class="tm">21:15:28</span><span class="nk"> &lt;asalkeld&gt;</span> that's ok
+<a name="l-18"></a><span class="tm">21:15:52</span><span class="nk"> &lt;zaneb&gt;</span> <span class="hi">shardy:</span> you expecting it to be done soon? ;)
+<a name="l-19"></a><span class="tm">21:15:55</span><span class="nk"> &lt;asalkeld&gt;</span> <span class="hi">agenda:</span> rollcall status roadmap/priorities
+<a name="l-20"></a><span class="tm">21:16:14</span><span class="nk"> &lt;asalkeld&gt;</span> sound good?
+<a name="l-21"></a><span class="tm">21:16:16</span><span class="nk"> &lt;zaneb&gt;</span> +1
+<a name="l-22"></a><span class="tm">21:16:21</span><span class="nk"> &lt;shadower&gt;</span> yeah
+<a name="l-23"></a><span class="tm">21:16:22</span><span class="nk"> &lt;shardy&gt;</span> <span class="hi">zaneb:</span> yes, I think the error path stuff is the last of it for now (should be done this week I think )
+<a name="l-24"></a><span class="tm">21:16:47</span><span class="nk"> &lt;shardy&gt;</span> yep
+<a name="l-25"></a><span class="tm">21:16:50</span><span class="nk"> &lt;asalkeld&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">agenda rollcall status roadmap/priorities</span>
+<a name="l-26"></a><span class="tm">21:17:12</span><span class="nk"> &lt;asalkeld&gt;</span> <span class="cmd">#agenda </span><span class="cmdline">rollcall</span>
+<a name="l-27"></a><span class="tm">21:17:20</span><span class="nk"> &lt;asalkeld&gt;</span> oops
+<a name="l-28"></a><span class="tm">21:17:26</span><span class="nk"> &lt;asalkeld&gt;</span> <span class="topic">#topic </span><span class="topicline">rollcall</span>
+<a name="l-29"></a><span class="tm">21:17:32</span><span class="nk"> &lt;zaneb&gt;</span> present
+<a name="l-30"></a><span class="tm">21:17:35</span><span class="nk"> &lt;asalkeld&gt;</span> I am here:)
+<a name="l-31"></a><span class="tm">21:17:39</span><span class="nk"> &lt;shardy&gt;</span> here
+<a name="l-32"></a><span class="tm">21:17:44</span><span class="nk"> &lt;shadower&gt;</span> here
+<a name="l-33"></a><span class="tm">21:17:46</span><span class="nk"> &lt;jpeeler&gt;</span> here
+<a name="l-34"></a><span class="tm">21:17:56</span><span class="nk"> &lt;asalkeld&gt;</span> <span class="topic">#topic </span><span class="topicline">status</span>
+<a name="l-35"></a><span class="tm">21:18:09</span><span class="nk"> &lt;asalkeld&gt;</span> (so what is everyone doing)
+<a name="l-36"></a><span class="tm">21:18:35</span><span class="nk"> &lt;zaneb&gt;</span> reworking the database code in the engine
+<a name="l-37"></a><span class="tm">21:18:50</span><span class="nk"> &lt;asalkeld&gt;</span> (order zane, asalkeld, shardy,shadower,jpeeler)
+<a name="l-38"></a><span class="tm">21:18:51</span><span class="nk"> &lt;shardy&gt;</span> api rework nearly done (i think), boto client up for review and mostly functional, need to write some tests for api/client
+<a name="l-39"></a><span class="tm">21:19:06</span><span class="nk"> &lt;zaneb&gt;</span> <span class="hi">asalkeld:</span> if you could have a look at https://review.stackforge.org/273 some time today that would be handy
+<a name="l-40"></a><span class="tm">21:19:07</span><span class="nk"> &lt;shardy&gt;</span> oops ;)
+<a name="l-41"></a><span class="tm">21:19:21</span><span class="nk"> &lt;asalkeld&gt;</span> no worries
+<a name="l-42"></a><span class="tm">21:19:27</span><span class="nk"> &lt;shardy&gt;</span> ditto boto client review
+<a name="l-43"></a><span class="tm">21:19:46</span><span class="nk"> &lt;asalkeld&gt;</span> I am working on a loadbalancer resource type
+<a name="l-44"></a><span class="tm">21:20:03</span><span class="nk"> &lt;asalkeld&gt;</span> and working towards autoscaling
+<a name="l-45"></a><span class="tm">21:20:17</span><span class="nk"> &lt;zaneb&gt;</span> I'll also have another poke at the integration test server, see if F17 has gotten any more stable
+<a name="l-46"></a><span class="tm">21:20:58</span><span class="nk"> &lt;shadower&gt;</span> I've been looking into heat-jeos usability: mostly issues #2 and #3 plus ppetit's suggestions on the mailing list
+<a name="l-47"></a><span class="tm">21:21:08</span><span class="nk"> &lt;jpeeler&gt;</span> i'm currently focused on getting heat/heat-jeos packaged
+<a name="l-48"></a><span class="tm">21:21:24</span><span class="nk"> &lt;asalkeld&gt;</span> one thing sdake asked was to have an issue for what you are doing
+<a name="l-49"></a><span class="tm">21:21:33</span><span class="nk"> &lt;asalkeld&gt;</span> I need to do that too
+<a name="l-50"></a><span class="tm">21:21:57</span><span class="nk"> &lt;asalkeld&gt;</span> <span class="topic">#topic </span><span class="topicline">roadmap/priorities</span>
+<a name="l-51"></a><span class="tm">21:22:25</span><span class="nk"> &lt;asalkeld&gt;</span> so shardy ...
+<a name="l-52"></a><span class="tm">21:22:49</span><span class="nk"> &lt;asalkeld&gt;</span> you what some work to do?
+<a name="l-53"></a><span class="tm">21:23:02</span><span class="nk"> &lt;shardy&gt;</span> so after the api rework and boto is done, I was thinking of looking at rollback
+<a name="l-54"></a><span class="tm">21:23:18</span><span class="nk"> &lt;shardy&gt;</span> but is that important, should I be looking somewhere else?
+<a name="l-55"></a><span class="tm">21:23:34</span><span class="nk"> &lt;asalkeld&gt;</span> well updates are more important
+<a name="l-56"></a><span class="tm">21:23:37</span><span class="nk"> &lt;shardy&gt;</span> just want to focus on priority items/features
+<a name="l-57"></a><span class="tm">21:23:38</span><span class="nk"> &lt;zaneb&gt;</span> <span class="hi">shardy:</span> I think it might pay to clean up our internal API
+<a name="l-58"></a><span class="tm">21:23:49</span><span class="nk"> &lt;asalkeld&gt;</span> but could be a dog
+<a name="l-59"></a><span class="tm">21:23:59</span><span class="nk"> &lt;zaneb&gt;</span> move all the compatibility ugliness for AWS into heat-api
+<a name="l-60"></a><span class="tm">21:24:32</span><span class="nk"> &lt;shardy&gt;</span> <span class="hi">zaneb:</span> Ok, yeah longer term that should be good - I've been trying to move in that direction
+<a name="l-61"></a><span class="tm">21:24:56</span><span class="nk"> &lt;shardy&gt;</span> I'll look at a more thorough review/cleanup
+<a name="l-62"></a><span class="tm">21:25:09</span><span class="nk"> &lt;zaneb&gt;</span> stuff like LastUpdatedTimestamp vs. Timestamp
+<a name="l-63"></a><span class="tm">21:25:18</span><span class="nk"> &lt;zaneb&gt;</span> honestly, WTF Amazon?
+<a name="l-64"></a><span class="tm">21:25:31</span><span class="nk"> &lt;shardy&gt;</span> Yeah, their API is horrible
+<a name="l-65"></a><span class="tm">21:25:53</span><span class="nk"> &lt;asalkeld&gt;</span> and the parameters
+<a name="l-66"></a><span class="tm">21:25:57</span><span class="nk"> &lt;shardy&gt;</span> ok, then I'll start looking at getting update working
+<a name="l-67"></a><span class="tm">21:26:07</span><span class="nk"> &lt;shardy&gt;</span> should keep me busy for a few weeks :)
+<a name="l-68"></a><span class="tm">21:26:09</span><span class="nk"> &lt;asalkeld&gt;</span> and passing template as a parameter
+<a name="l-69"></a><span class="tm">21:26:22</span><span class="nk"> &lt;asalkeld&gt;</span> that was a good idea:)
+<a name="l-70"></a><span class="tm">21:26:36</span><span class="nk"> &lt;asalkeld&gt;</span> digression
+<a name="l-71"></a><span class="tm">21:26:52</span><span class="nk"> &lt;asalkeld&gt;</span> so is everyone happy with what they are doing?
+<a name="l-72"></a><span class="tm">21:27:00 </span><span class="nka">* shadower</span> <span class="ac">is</span>
+<a name="l-73"></a><span class="tm">21:27:08 </span><span class="nka">* shardy</span> <span class="ac">is now</span>
+<a name="l-74"></a><span class="tm">21:27:13</span><span class="nk"> &lt;asalkeld&gt;</span> (or have plenty of code to hack)
+<a name="l-75"></a><span class="tm">21:27:35</span><span class="nk"> &lt;asalkeld&gt;</span> zaneb, do you have something to keep you busy
+<a name="l-76"></a><span class="tm">21:28:10 </span><span class="nka">* jpeeler</span> <span class="ac">is good</span>
+<a name="l-77"></a><span class="tm">21:28:20</span><span class="nk"> &lt;shadower&gt;</span> I'll probably need something new in a couple of days
+<a name="l-78"></a><span class="tm">21:28:48</span><span class="nk"> &lt;asalkeld&gt;</span> ok, there are plenty of bugs
+<a name="l-79"></a><span class="tm">21:28:54</span><span class="nk"> &lt;shadower&gt;</span> sure
+<a name="l-80"></a><span class="tm">21:29:18</span><span class="nk"> &lt;asalkeld&gt;</span> also you could make an agregated stack (based on a nested stack)
+<a name="l-81"></a><span class="tm">21:29:38</span><span class="nk"> &lt;zaneb&gt;</span> I'm back
+<a name="l-82"></a><span class="tm">21:29:54</span><span class="nk"> &lt;shadower&gt;</span> <span class="hi">asalkeld:</span> do we have an issue for that?
+<a name="l-83"></a><span class="tm">21:30:05</span><span class="nk"> &lt;shadower&gt;</span> I'm not sure what that is
+<a name="l-84"></a><span class="tm">21:30:06</span><span class="nk"> &lt;asalkeld&gt;</span> what about AWS::S3::Bucket
+<a name="l-85"></a><span class="tm">21:30:14</span><span class="nk"> &lt;asalkeld&gt;</span> (using swift)
+<a name="l-86"></a><span class="tm">21:30:28</span><span class="nk"> &lt;shadower&gt;</span> sounds good
+<a name="l-87"></a><span class="tm">21:30:43</span><span class="nk"> &lt;asalkeld&gt;</span> really useful resource type
+<a name="l-88"></a><span class="tm">21:30:53</span><span class="nk"> &lt;asalkeld&gt;</span> that we don't have yet
+<a name="l-89"></a><span class="tm">21:31:11</span><span class="nk"> &lt;asalkeld&gt;</span> I think we are done
+<a name="l-90"></a><span class="tm">21:31:31</span><span class="nk"> &lt;asalkeld&gt;</span> anything any one wants to bring up?
+<a name="l-91"></a><span class="tm">21:31:51</span><span class="nk"> &lt;asalkeld&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

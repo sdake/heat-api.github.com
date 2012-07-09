@@ -1,0 +1,91 @@
+21:11:33 <asalkeld> #startmeeting
+21:11:33 <mheat-bot> Meeting started Mon Jul  2 21:11:33 2012 UTC.  The chair is asalkeld. Information about MeetBot at http://wiki.debian.org/MeetBot.
+21:11:33 <mheat-bot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+21:11:37 <shadower> the US guys are not coming?
+21:12:03 <asalkeld> not sure
+21:12:03 <zaneb> ah, holiday on Wednesday
+21:12:26 <zaneb> calendar says sdake is PTO
+21:12:34 <asalkeld> #topic agenda
+21:12:56 <asalkeld> steve asked us to hold the meeting anyways
+21:13:19 * asalkeld reading up on meetbot commands
+21:13:50 <asalkeld> so agenda is normally agenda rollcall status
+21:14:14 * shadower smells recursion in that
+21:14:22 <asalkeld> any thing else ?
+21:14:38 <shardy> roadmap/priorities for this dev cycle?
+21:14:55 <asalkeld> can do, we haven't done that?
+21:15:13 <shardy> I'm not that clear on what to focus on after the API rework is done, we can discuss offline tho
+21:15:28 <asalkeld> that's ok
+21:15:52 <zaneb> shardy: you expecting it to be done soon? ;)
+21:15:55 <asalkeld> agenda: rollcall status roadmap/priorities
+21:16:14 <asalkeld> sound good?
+21:16:16 <zaneb> +1
+21:16:21 <shadower> yeah
+21:16:22 <shardy> zaneb: yes, I think the error path stuff is the last of it for now (should be done this week I think )
+21:16:47 <shardy> yep
+21:16:50 <asalkeld> #agreed agenda rollcall status roadmap/priorities
+21:17:12 <asalkeld> #agenda rollcall
+21:17:20 <asalkeld> oops
+21:17:26 <asalkeld> #topic rollcall
+21:17:32 <zaneb> present
+21:17:35 <asalkeld> I am here:)
+21:17:39 <shardy> here
+21:17:44 <shadower> here
+21:17:46 <jpeeler> here
+21:17:56 <asalkeld> #topic status
+21:18:09 <asalkeld> (so what is everyone doing)
+21:18:35 <zaneb> reworking the database code in the engine
+21:18:50 <asalkeld> (order zane, asalkeld, shardy,shadower,jpeeler)
+21:18:51 <shardy> api rework nearly done (i think), boto client up for review and mostly functional, need to write some tests for api/client
+21:19:06 <zaneb> asalkeld: if you could have a look at https://review.stackforge.org/273 some time today that would be handy
+21:19:07 <shardy> oops ;)
+21:19:21 <asalkeld> no worries
+21:19:27 <shardy> ditto boto client review
+21:19:46 <asalkeld> I am working on a loadbalancer resource type
+21:20:03 <asalkeld> and working towards autoscaling
+21:20:17 <zaneb> I'll also have another poke at the integration test server, see if F17 has gotten any more stable
+21:20:58 <shadower> I've been looking into heat-jeos usability: mostly issues #2 and #3 plus ppetit's suggestions on the mailing list
+21:21:08 <jpeeler> i'm currently focused on getting heat/heat-jeos packaged
+21:21:24 <asalkeld> one thing sdake asked was to have an issue for what you are doing
+21:21:33 <asalkeld> I need to do that too
+21:21:57 <asalkeld> #topic roadmap/priorities
+21:22:25 <asalkeld> so shardy ...
+21:22:49 <asalkeld> you what some work to do?
+21:23:02 <shardy> so after the api rework and boto is done, I was thinking of looking at rollback
+21:23:18 <shardy> but is that important, should I be looking somewhere else?
+21:23:34 <asalkeld> well updates are more important
+21:23:37 <shardy> just want to focus on priority items/features
+21:23:38 <zaneb> shardy: I think it might pay to clean up our internal API
+21:23:49 <asalkeld> but could be a dog
+21:23:59 <zaneb> move all the compatibility ugliness for AWS into heat-api
+21:24:32 <shardy> zaneb: Ok, yeah longer term that should be good - I've been trying to move in that direction
+21:24:56 <shardy> I'll look at a more thorough review/cleanup
+21:25:09 <zaneb> stuff like LastUpdatedTimestamp vs. Timestamp
+21:25:18 <zaneb> honestly, WTF Amazon?
+21:25:31 <shardy> Yeah, their API is horrible
+21:25:53 <asalkeld> and the parameters
+21:25:57 <shardy> ok, then I'll start looking at getting update working
+21:26:07 <shardy> should keep me busy for a few weeks :)
+21:26:09 <asalkeld> and passing template as a parameter
+21:26:22 <asalkeld> that was a good idea:)
+21:26:36 <asalkeld> digression
+21:26:52 <asalkeld> so is everyone happy with what they are doing?
+21:27:00 * shadower is
+21:27:08 * shardy is now
+21:27:13 <asalkeld> (or have plenty of code to hack)
+21:27:35 <asalkeld> zaneb, do you have something to keep you busy
+21:28:10 * jpeeler is good
+21:28:20 <shadower> I'll probably need something new in a couple of days
+21:28:48 <asalkeld> ok, there are plenty of bugs
+21:28:54 <shadower> sure
+21:29:18 <asalkeld> also you could make an agregated stack (based on a nested stack)
+21:29:38 <zaneb> I'm back
+21:29:54 <shadower> asalkeld: do we have an issue for that?
+21:30:05 <shadower> I'm not sure what that is
+21:30:06 <asalkeld> what about AWS::S3::Bucket
+21:30:14 <asalkeld> (using swift)
+21:30:28 <shadower> sounds good
+21:30:43 <asalkeld> really useful resource type
+21:30:53 <asalkeld> that we don't have yet
+21:31:11 <asalkeld> I think we are done
+21:31:31 <asalkeld> anything any one wants to bring up?
+21:31:51 <asalkeld> #endmeeting

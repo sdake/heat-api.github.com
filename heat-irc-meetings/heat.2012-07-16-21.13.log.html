@@ -1,0 +1,321 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#heat log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">21:13:57</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">21:13:57</span><span class="nk"> &lt;mheat-bot&gt;</span> Meeting started Mon Jul 16 21:13:57 2012 UTC.  The chair is sdake. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">21:13:57</span><span class="nk"> &lt;mheat-bot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">21:14:06</span><span class="nk"> &lt;sdake&gt;</span> hai guys
+<a name="l-5"></a><span class="tm">21:14:13</span><span class="nk"> &lt;shadower&gt;</span> <span class="hi">sdake:</span> wanna discuss it now or after the meet?
+<a name="l-6"></a><span class="tm">21:14:19</span><span class="nk"> &lt;sdake&gt;</span> during meeting we can discuss
+<a name="l-7"></a><span class="tm">21:14:26</span><span class="nk"> &lt;shadower&gt;</span> aight
+<a name="l-8"></a><span class="tm">21:14:45</span><span class="nk"> &lt;asalkeld&gt;</span> say I'll have to multitask (get kids up and attend meeting today)
+<a name="l-9"></a><span class="tm">21:15:01</span><span class="nk"> &lt;sdake&gt;</span> agenda topics rollcall, incubation application review, roadmap
+<a name="l-10"></a><span class="tm">21:15:06</span><span class="nk"> &lt;sdake&gt;</span> any others?
+<a name="l-11"></a><span class="tm">21:15:43</span><span class="nk"> &lt;asalkeld&gt;</span> sounds ok
+<a name="l-12"></a><span class="tm">21:16:05</span><span class="nk"> &lt;shadower&gt;</span> yeah
+<a name="l-13"></a><span class="tm">21:16:13</span><span class="nk"> &lt;shardy&gt;</span> sounds good
+<a name="l-14"></a><span class="tm">21:16:17</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">rollcall</span>
+<a name="l-15"></a><span class="tm">21:16:19</span><span class="nk"> &lt;sdake&gt;</span> sdake here
+<a name="l-16"></a><span class="tm">21:16:23</span><span class="nk"> &lt;shardy&gt;</span> shardy here
+<a name="l-17"></a><span class="tm">21:16:26</span><span class="nk"> &lt;zaneb&gt;</span> present
+<a name="l-18"></a><span class="tm">21:16:28</span><span class="nk"> &lt;jpeeler&gt;</span> here
+<a name="l-19"></a><span class="tm">21:16:31</span><span class="nk"> &lt;shadower&gt;</span> here
+<a name="l-20"></a><span class="tm">21:16:38</span><span class="nk"> &lt;asalkeld&gt;</span> here
+<a name="l-21"></a><span class="tm">21:16:46</span><span class="nk"> &lt;Slower&gt;</span> here
+<a name="l-22"></a><span class="tm">21:17:01</span><span class="nk"> &lt;sdake&gt;</span> i think thats all the devs
+<a name="l-23"></a><span class="tm">21:17:06</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">incubation application review</span>
+<a name="l-24"></a><span class="tm">21:17:29</span><span class="nk"> &lt;sdake&gt;</span> ok so put together an application based upon what we have on our wiki web pages email lists etc
+<a name="l-25"></a><span class="tm">21:17:53</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#link </span><span class="cmdline">http://wiki.openstack.org/Heat</span>
+<a name="l-26"></a><span class="tm">21:18:15</span><span class="nk"> &lt;asalkeld&gt;</span> is it not worth writing a non-aws rest api first?
+<a name="l-27"></a><span class="tm">21:18:23</span><span class="nk"> &lt;asalkeld&gt;</span> should be quick
+<a name="l-28"></a><span class="tm">21:18:40</span><span class="nk"> &lt;asalkeld&gt;</span> make it more likely to succeed
+<a name="l-29"></a><span class="tm">21:18:45</span><span class="nk"> &lt;sdake&gt;</span> here is what i'm thinking
+<a name="l-30"></a><span class="tm">21:19:10</span><span class="nk"> &lt;sdake&gt;</span> we post message with our application, indicating we would like people to take a look, and request a meeting to review the app at the start of G
+<a name="l-31"></a><span class="tm">21:19:33</span><span class="nk"> &lt;asalkeld&gt;</span> ok
+<a name="l-32"></a><span class="tm">21:19:39</span><span class="nk"> &lt;sdake&gt;</span> a few months time - in the meantime openstack devs know we are actively interested
+<a name="l-33"></a><span class="tm">21:19:42</span><span class="nk"> &lt;asalkeld&gt;</span> then keep working
+<a name="l-34"></a><span class="tm">21:19:59</span><span class="nk"> &lt;sdake&gt;</span> and can give us some opportunity to make modifications such as what you just mentioned
+<a name="l-35"></a><span class="tm">21:20:00</span><span class="nk"> &lt;Slower&gt;</span> that sounds good to me
+<a name="l-36"></a><span class="tm">21:20:15</span><span class="nk"> &lt;asalkeld&gt;</span> yip
+<a name="l-37"></a><span class="tm">21:20:29</span><span class="nk"> &lt;sdake&gt;</span> for the current app, anyone want me to make any changes?
+<a name="l-38"></a><span class="tm">21:20:29</span><span class="nk"> &lt;shardy&gt;</span> <span class="hi">asalkeld:</span> not sure I understand, why do we need two API implementations?
+<a name="l-39"></a><span class="tm">21:20:55</span><span class="nk"> &lt;zaneb&gt;</span> <span class="hi">shardy:</span> our current implementation is RPC only
+<a name="l-40"></a><span class="tm">21:20:55</span><span class="nk"> &lt;asalkeld&gt;</span> cos core openstack projects need a non-aws api
+<a name="l-41"></a><span class="tm">21:21:09</span><span class="nk"> &lt;shardy&gt;</span> Ah, ok, gotcha
+<a name="l-42"></a><span class="tm">21:21:57</span><span class="nk"> &lt;sdake&gt;</span> reason for waiting until g, ceilometer just went through incubation request, an dthey were asked to hold their request until the start of g
+<a name="l-43"></a><span class="tm">21:21:58</span><span class="nk"> &lt;Slower&gt;</span> so a second wsgi interface?
+<a name="l-44"></a><span class="tm">21:22:07</span><span class="nk"> &lt;sdake&gt;</span> (they have about 3 months of dev  time too)
+<a name="l-45"></a><span class="tm">21:22:11</span><span class="nk"> &lt;asalkeld&gt;</span> Slower, yar
+<a name="l-46"></a><span class="tm">21:22:26</span><span class="nk"> &lt;asalkeld&gt;</span> like nova
+<a name="l-47"></a><span class="tm">21:22:37</span><span class="nk"> &lt;shadower&gt;</span> <span class="hi">asalkeld:</span> proper rest? We say REST on the application but the AWS api is nothing but
+<a name="l-48"></a><span class="tm">21:22:41</span><span class="nk"> &lt;Slower&gt;</span> I wasn't sure we'd need that since the api is pretty umm.. simple and stablish?
+<a name="l-49"></a><span class="tm">21:22:53</span><span class="nk"> &lt;asalkeld&gt;</span> shadower, exactly
+<a name="l-50"></a><span class="tm">21:22:54</span><span class="nk"> &lt;Slower&gt;</span> we just going to make a prettier one?
+<a name="l-51"></a><span class="tm">21:23:09</span><span class="nk"> &lt;asalkeld&gt;</span> ya, not a big deal
+<a name="l-52"></a><span class="tm">21:23:18</span><span class="nk"> &lt;sdake&gt;</span> we can discuss during roadmap ;)
+<a name="l-53"></a><span class="tm">21:23:24</span><span class="nk"> &lt;sdake&gt;</span> everyone satisified wit hthe current app?
+<a name="l-54"></a><span class="tm">21:23:36</span><span class="nk"> &lt;asalkeld&gt;</span> looks good to me
+<a name="l-55"></a><span class="tm">21:23:39</span><span class="nk"> &lt;shadower&gt;</span> me too
+<a name="l-56"></a><span class="tm">21:23:43</span><span class="nk"> &lt;sdake&gt;</span> please vote +1 -1
+<a name="l-57"></a><span class="tm">21:23:45</span><span class="nk"> &lt;sdake&gt;</span> sdake +1
+<a name="l-58"></a><span class="tm">21:23:46</span><span class="nk"> &lt;shadower&gt;</span> +1
+<a name="l-59"></a><span class="tm">21:23:48</span><span class="nk"> &lt;jpeeler&gt;</span> +1
+<a name="l-60"></a><span class="tm">21:23:48</span><span class="nk"> &lt;shardy&gt;</span> +1
+<a name="l-61"></a><span class="tm">21:23:50</span><span class="nk"> &lt;zaneb&gt;</span> +1
+<a name="l-62"></a><span class="tm">21:23:53</span><span class="nk"> &lt;asalkeld&gt;</span> +1
+<a name="l-63"></a><span class="tm">21:24:03</span><span class="nk"> &lt;zaneb&gt;</span> dependencies appear to be listed as Fedora package names?
+<a name="l-64"></a><span class="tm">21:24:12</span><span class="nk"> &lt;sdake&gt;</span> dont like?
+<a name="l-65"></a><span class="tm">21:24:19</span><span class="nk"> &lt;zaneb&gt;</span> just wondering about that a little
+<a name="l-66"></a><span class="tm">21:24:20</span><span class="nk"> &lt;Slower&gt;</span> +1
+<a name="l-67"></a><span class="tm">21:24:28</span><span class="nk"> &lt;sdake&gt;</span> anyone can edit the wiki ;)
+<a name="l-68"></a><span class="tm">21:24:31</span><span class="nk"> &lt;sdake&gt;</span> feel free to change
+<a name="l-69"></a><span class="tm">21:24:37</span><span class="nk"> &lt;sdake&gt;</span> i wanted to make it clear they were python libs
+<a name="l-70"></a><span class="tm">21:24:40</span><span class="nk"> &lt;sdake&gt;</span> but maybe that is obvious
+<a name="l-71"></a><span class="tm">21:25:01</span><span class="nk"> &lt;zaneb&gt;</span> true, fair enough
+<a name="l-72"></a><span class="tm">21:25:13</span><span class="nk"> &lt;asalkeld&gt;</span> argubly we should not use our mailing list and use the openstack ml
+<a name="l-73"></a><span class="tm">21:25:25</span><span class="nk"> &lt;zaneb&gt;</span> just don't want to create the impression that we are Fedora-centric
+<a name="l-74"></a><span class="tm">21:25:39</span><span class="nk"> &lt;sdake&gt;</span> zaneb can you alter to pypi names?
+<a name="l-75"></a><span class="tm">21:25:43</span><span class="nk"> &lt;shadower&gt;</span> +1
+<a name="l-76"></a><span class="tm">21:25:47</span><span class="nk"> &lt;zaneb&gt;</span> <span class="hi">sdake:</span> sure
+<a name="l-77"></a><span class="tm">21:26:12</span><span class="nk"> &lt;sdake&gt;</span> sounds like new topic re ml
+<a name="l-78"></a><span class="tm">21:26:20</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">use os ml for heat discussions</span>
+<a name="l-79"></a><span class="tm">21:26:30</span><span class="nk"> &lt;sdake&gt;</span> angus had brought this up before
+<a name="l-80"></a><span class="tm">21:26:35</span><span class="nk"> &lt;sdake&gt;</span> our mailing list is really low volume
+<a name="l-81"></a><span class="tm">21:26:45</span><span class="nk"> &lt;sdake&gt;</span> so it probably wouldn't be annoying
+<a name="l-82"></a><span class="tm">21:26:55</span><span class="nk"> &lt;zaneb&gt;</span> there is also openstack-dev now
+<a name="l-83"></a><span class="tm">21:26:57</span><span class="nk"> &lt;sdake&gt;</span> but typically projects have mailing lists separate on launchpad
+<a name="l-84"></a><span class="tm">21:26:58</span><span class="nk"> &lt;asalkeld&gt;</span> this to be seen as more active in the openstack community
+<a name="l-85"></a><span class="tm">21:27:25</span><span class="nk"> &lt;asalkeld&gt;</span> rather than all seperate
+<a name="l-86"></a><span class="tm">21:27:26</span><span class="nk"> &lt;zaneb&gt;</span> which imo makes it a bit more practical
+<a name="l-87"></a><span class="tm">21:27:44</span><span class="nk"> &lt;sdake&gt;</span> which argument is more practical zane :)
+<a name="l-88"></a><span class="tm">21:27:46</span><span class="nk"> &lt;zaneb&gt;</span> (wouldn't have to have development discussions on the main openstack list)
+<a name="l-89"></a><span class="tm">21:28:16</span><span class="nk"> &lt;asalkeld&gt;</span> ya - there is a new dev list
+<a name="l-90"></a><span class="tm">21:28:23</span><span class="nk"> &lt;Slower&gt;</span> personally I like the low volume list for dev discussions, but it would be good to get more visibility..
+<a name="l-91"></a><span class="tm">21:28:26</span><span class="nk"> &lt;Slower&gt;</span> dunno
+<a name="l-92"></a><span class="tm">21:28:26</span><span class="nk"> &lt;sdake&gt;</span> what about users, use user list?
+<a name="l-93"></a><span class="tm">21:28:42</span><span class="nk"> &lt;zaneb&gt;</span> for user-facing stuff, use main openstack list
+<a name="l-94"></a><span class="tm">21:28:46</span><span class="nk"> &lt;asalkeld&gt;</span> I surpose
+<a name="l-95"></a><span class="tm">21:28:50</span><span class="nk"> &lt;zaneb&gt;</span> for developer-only stuff, use openstack-dev
+<a name="l-96"></a><span class="tm">21:29:04</span><span class="nk"> &lt;asalkeld&gt;</span> the point is to totally integrate
+<a name="l-97"></a><span class="tm">21:29:13</span><span class="nk"> &lt;asalkeld&gt;</span> ourselves into openstack
+<a name="l-98"></a><span class="tm">21:29:18</span><span class="nk"> &lt;sdake&gt;</span> ok so roughly proposal is as follows:
+<a name="l-99"></a><span class="tm">21:29:20</span><span class="nk"> &lt;zaneb&gt;</span> then we are engaged with community but not spamming users
+<a name="l-100"></a><span class="tm">21:29:41</span><span class="nk"> &lt;asalkeld&gt;</span> yip
+<a name="l-101"></a><span class="tm">21:29:42</span><span class="nk"> &lt;sdake&gt;</span> 1) use openstack mailing list for heat user discussions, 2) use openstack-dev mailing list for heat dev discussions
+<a name="l-102"></a><span class="tm">21:29:51</span><span class="nk"> &lt;sdake&gt;</span> vote +1 / -1 on proposal
+<a name="l-103"></a><span class="tm">21:29:51</span><span class="nk"> &lt;jpeeler&gt;</span> can anybody use these mailing lists for their project or is this an incubation blessing?
+<a name="l-104"></a><span class="tm">21:29:59</span><span class="nk"> &lt;asalkeld&gt;</span> +1
+<a name="l-105"></a><span class="tm">21:30:10</span><span class="nk"> &lt;jpeeler&gt;</span> +1
+<a name="l-106"></a><span class="tm">21:30:16</span><span class="nk"> &lt;sdake&gt;</span> i think if we are annoying ppl they will tell us to gtfo ;)
+<a name="l-107"></a><span class="tm">21:30:17</span><span class="nk"> &lt;zaneb&gt;</span> <span class="hi">jpeeler:</span> ceilometer appear to be using the main list
+<a name="l-108"></a><span class="tm">21:30:21</span><span class="nk"> &lt;zaneb&gt;</span> +1
+<a name="l-109"></a><span class="tm">21:30:26</span><span class="nk"> &lt;shardy&gt;</span> +1
+<a name="l-110"></a><span class="tm">21:30:29</span><span class="nk"> &lt;shadower&gt;</span> +1
+<a name="l-111"></a><span class="tm">21:30:49</span><span class="nk"> &lt;sdake&gt;</span> well i'm torn, but the majority has i t :)
+<a name="l-112"></a><span class="tm">21:31:07</span><span class="nk"> &lt;sdake&gt;</span> sec forgot some agreeds
+<a name="l-113"></a><span class="tm">21:31:07</span><span class="nk"> &lt;asalkeld&gt;</span> sdake, why torn
+<a name="l-114"></a><span class="tm">21:31:25</span><span class="nk"> &lt;sdake&gt;</span> worry about lost messages
+<a name="l-115"></a><span class="tm">21:31:31</span><span class="nk"> &lt;sdake&gt;</span> ppl have to be more vigilient
+<a name="l-116"></a><span class="tm">21:31:34</span><span class="nk"> &lt;sdake&gt;</span> which is probably a good idea
+<a name="l-117"></a><span class="tm">21:32:03</span><span class="nk"> &lt;jpeeler&gt;</span> so when is this transition supposed to occur?
+<a name="l-118"></a><span class="tm">21:32:10</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">application approved by devs, going to propose to PPB to review at start of G</span>
+<a name="l-119"></a><span class="tm">21:32:12 </span><span class="nka">* Slower</span> <span class="ac">is torn also</span>
+<a name="l-120"></a><span class="tm">21:32:13</span><span class="nk"> &lt;Slower&gt;</span> :)
+<a name="l-121"></a><span class="tm">21:32:17</span><span class="nk"> &lt;asalkeld&gt;</span> openstack ml not so busy
+<a name="l-122"></a><span class="tm">21:32:38</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#agreed </span><span class="cmdline">use openstack/openstack-dev ml for heat discussions</span>
+<a name="l-123"></a><span class="tm">21:32:45</span><span class="nk"> &lt;zaneb&gt;</span> <span class="hi">asalkeld:</span> 3078 unread messages ;)
+<a name="l-124"></a><span class="tm">21:32:54</span><span class="nk"> &lt;sdake&gt;</span> mark all read ftw
+<a name="l-125"></a><span class="tm">21:33:01</span><span class="nk"> &lt;asalkeld&gt;</span> that's cos you don't read them
+<a name="l-126"></a><span class="tm">21:33:10</span><span class="nk"> &lt;sdake&gt;</span> that is only reason i am torn, that people dont read the list
+<a name="l-127"></a><span class="tm">21:33:23</span><span class="nk"> &lt;sdake&gt;</span> but if ppl read their lists, then wfm ;)
+<a name="l-128"></a><span class="tm">21:33:51</span><span class="nk"> &lt;asalkeld&gt;</span> they are less likely to read ours
+<a name="l-129"></a><span class="tm">21:34:00</span><span class="nk"> &lt;shadower&gt;</span> yeah
+<a name="l-130"></a><span class="tm">21:34:00</span><span class="nk"> &lt;asalkeld&gt;</span> ml that is
+<a name="l-131"></a><span class="tm">21:34:25</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">roadmap</span>
+<a name="l-132"></a><span class="tm">21:34:52</span><span class="nk"> &lt;sdake&gt;</span> been busy pulling in common changes
+<a name="l-133"></a><span class="tm">21:35:11</span><span class="nk"> &lt;sdake&gt;</span> requires a bit of rework of our config system
+<a name="l-134"></a><span class="tm">21:35:44</span><span class="nk"> &lt;asalkeld&gt;</span> I am fixing a clusting bug atm:I(
+<a name="l-135"></a><span class="tm">21:35:53</span><span class="nk"> &lt;asalkeld&gt;</span> I am fixing a clustering bug atm:I(
+<a name="l-136"></a><span class="tm">21:36:03</span><span class="nk"> &lt;sdake&gt;</span> asalkeld working on ipc until he is dead.. ;)
+<a name="l-137"></a><span class="tm">21:36:26</span><span class="nk"> &lt;shardy&gt;</span> I've been looking at implementing the AWS Cloudwatch API, although is that still a priority if we're now talking alternate openstack-centric API's?
+<a name="l-138"></a><span class="tm">21:37:09</span><span class="nk"> &lt;sdake&gt;</span> i think idea is we do a rest specific api
+<a name="l-139"></a><span class="tm">21:37:25</span><span class="nk"> &lt;sdake&gt;</span> and provide a converter that converts cloudformatoin/cloudwatch into the rest specific api
+<a name="l-140"></a><span class="tm">21:37:40</span><span class="nk"> &lt;shardy&gt;</span> later, after we have aws parity, or build aws on top of the rest api?
+<a name="l-141"></a><span class="tm">21:37:57</span><span class="nk"> &lt;shardy&gt;</span> I've been purely focussed on aws parity, perhaps that is a mistake..
+<a name="l-142"></a><span class="tm">21:38:04</span><span class="nk"> &lt;sdake&gt;</span> i dont think that is a mistake
+<a name="l-143"></a><span class="tm">21:38:05</span><span class="nk"> &lt;zaneb&gt;</span> I don't see the point of adding another layer for the AWS path?
+<a name="l-144"></a><span class="tm">21:38:17</span><span class="nk"> &lt;asalkeld&gt;</span> I think have both side by side
+<a name="l-145"></a><span class="tm">21:38:50</span><span class="nk"> &lt;sdake&gt;</span> probably a good topic for openstack ml
+<a name="l-146"></a><span class="tm">21:39:13</span><span class="nk"> &lt;sdake&gt;</span> i have talked to a  few people prefer  to see one on top of another
+<a name="l-147"></a><span class="tm">21:39:16</span><span class="nk"> &lt;sdake&gt;</span> rather then side by side
+<a name="l-148"></a><span class="tm">21:39:32</span><span class="nk"> &lt;sdake&gt;</span> haven't heard feedback to make side by side although it is alot simpler to implement that way
+<a name="l-149"></a><span class="tm">21:39:53</span><span class="nk"> &lt;asalkeld&gt;</span> simple is good?
+<a name="l-150"></a><span class="tm">21:39:55</span><span class="nk"> &lt;zaneb&gt;</span> we still need a stable python (RPC) API, right?
+<a name="l-151"></a><span class="tm">21:40:04</span><span class="nk"> &lt;sdake&gt;</span> yup
+<a name="l-152"></a><span class="tm">21:40:09</span><span class="nk"> &lt;sdake&gt;</span> and yup
+<a name="l-153"></a><span class="tm">21:40:29</span><span class="nk"> &lt;zaneb&gt;</span> can't see a reason not to layer both HTTP APIs right on top of that then
+<a name="l-154"></a><span class="tm">21:40:31</span><span class="nk"> &lt;sdake&gt;</span> well before we crank out a bunch of work lets get some bikeshedding done on the ml
+<a name="l-155"></a><span class="tm">21:40:57</span><span class="nk"> &lt;Slower&gt;</span> +1 on ml
+<a name="l-156"></a><span class="tm">21:41:14</span><span class="nk"> &lt;shardy&gt;</span> yeah, I think we need to understand the requirements first
+<a name="l-157"></a><span class="tm">21:41:48</span><span class="nk"> &lt;sdake&gt;</span> well there are two ways to proceed, do it the way we think makes sense, and then potentially redo, or ask and get a 50/50 split and do it one way and have other half people unhappy :)
+<a name="l-158"></a><span class="tm">21:41:54</span><span class="nk"> &lt;sdake&gt;</span> -1/-1 :)
+<a name="l-159"></a><span class="tm">21:42:07</span><span class="nk"> &lt;zaneb&gt;</span> easier to get forgiveness than permission ;)
+<a name="l-160"></a><span class="tm">21:42:16</span><span class="nk"> &lt;sdake&gt;</span> zaneb the voice of reason
+<a name="l-161"></a><span class="tm">21:42:20</span><span class="nk"> &lt;asalkeld&gt;</span> +1 zaneb
+<a name="l-162"></a><span class="tm">21:42:45</span><span class="nk"> &lt;sdake&gt;</span> what state is autoscaling in asalkeld
+<a name="l-163"></a><span class="tm">21:43:11</span><span class="nk"> &lt;asalkeld&gt;</span> not quite done
+<a name="l-164"></a><span class="tm">21:43:18</span><span class="nk"> &lt;asalkeld&gt;</span> still needs work
+<a name="l-165"></a><span class="tm">21:43:27</span><span class="nk"> &lt;sdake&gt;</span> 27th is our next release milestone
+<a name="l-166"></a><span class="tm">21:43:42</span><span class="nk"> &lt;sdake&gt;</span> <span class="hi">ie:</span> 2 weeks
+<a name="l-167"></a><span class="tm">21:43:54</span><span class="nk"> &lt;asalkeld&gt;</span> ok, I'll need to see what needs to be done
+<a name="l-168"></a><span class="tm">21:44:03</span><span class="nk"> &lt;asalkeld&gt;</span> might be ok
+<a name="l-169"></a><span class="tm">21:44:26</span><span class="nk"> &lt;asalkeld&gt;</span> for basic functionality
+<a name="l-170"></a><span class="tm">21:44:29</span><span class="nk"> &lt;sdake&gt;</span> shardy think aws boto be ready to roll by 27th?
+<a name="l-171"></a><span class="tm">21:44:42</span><span class="nk"> &lt;shardy&gt;</span> <span class="hi">sdake:</span> I think it's ready now (or 99% there)
+<a name="l-172"></a><span class="tm">21:44:47</span><span class="nk"> &lt;sdake&gt;</span> cool
+<a name="l-173"></a><span class="tm">21:44:51</span><span class="nk"> &lt;sdake&gt;</span> well hit the other 1%
+<a name="l-174"></a><span class="tm">21:45:02</span><span class="nk"> &lt;shardy&gt;</span> gated on upstream
+<a name="l-175"></a><span class="tm">21:45:12</span><span class="nk"> &lt;shardy&gt;</span> they are not very responsive
+<a name="l-176"></a><span class="tm">21:45:40</span><span class="nk"> &lt;zaneb&gt;</span> seems like the dude has been away
+<a name="l-177"></a><span class="tm">21:46:00</span><span class="nk"> &lt;zaneb&gt;</span> he appeared to be very active on Twitter and stuff a couple of months ago
+<a name="l-178"></a><span class="tm">21:46:15</span><span class="nk"> &lt;shardy&gt;</span> <span class="hi">zaneb:</span> ah, cool, hopefully only a temporary delay then
+<a name="l-179"></a><span class="tm">21:46:27</span><span class="nk"> &lt;zaneb&gt;</span> fingers crossed
+<a name="l-180"></a><span class="tm">21:46:43</span><span class="nk"> &lt;sdake&gt;</span> zaneb beyond refactoring the whole codebase you have anything planned for v5 :)
+<a name="l-181"></a><span class="tm">21:46:53</span><span class="nk"> &lt;zaneb&gt;</span> lol
+<a name="l-182"></a><span class="tm">21:47:01</span><span class="nk"> &lt;zaneb&gt;</span> looking at the integration tests now
+<a name="l-183"></a><span class="tm">21:47:02</span><span class="nk"> &lt;sdake&gt;</span> angus made me do it
+<a name="l-184"></a><span class="tm">21:47:17</span><span class="nk"> &lt;sdake&gt;</span> speaking of integration tests, had discussion with jay pipes regarding tempeset
+<a name="l-185"></a><span class="tm">21:47:22</span><span class="nk"> &lt;sdake&gt;</span> which is a functional testing system for openstack
+<a name="l-186"></a><span class="tm">21:47:28</span><span class="nk"> &lt;sdake&gt;</span> might make sense to just integrate there
+<a name="l-187"></a><span class="tm">21:47:45</span><span class="nk"> &lt;sdake&gt;</span> can you investigate that?
+<a name="l-188"></a><span class="tm">21:47:49</span><span class="nk"> &lt;zaneb&gt;</span> yeah, would be interesting to know more about that
+<a name="l-189"></a><span class="tm">21:48:00</span><span class="nk"> &lt;zaneb&gt;</span> sure
+<a name="l-190"></a><span class="tm">21:48:00</span><span class="nk"> &lt;sdake&gt;</span> thats the I in investigate ;)
+<a name="l-191"></a><span class="tm">21:48:24</span><span class="nk"> &lt;sdake&gt;</span> jpeeler you have anything planned for v5
+<a name="l-192"></a><span class="tm">21:48:46</span><span class="nk"> &lt;zaneb&gt;</span> <span class="cmd">#action </span><span class="cmdline">zaneb investigate functional testing with tempest</span>
+<a name="l-193"></a><span class="tm">21:49:00</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#action </span><span class="cmdline">zaneb investigate function testing with tempest</span>
+<a name="l-194"></a><span class="tm">21:49:13</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#chair </span><span class="cmdline">zaneb asalkeld jpeeler shadower slower shardy</span>
+<a name="l-195"></a><span class="tm">21:49:13</span><span class="nk"> &lt;mheat-bot&gt;</span> Current chairs: asalkeld jpeeler sdake shadower shardy slower zaneb
+<a name="l-196"></a><span class="tm">21:49:20</span><span class="nk"> &lt;zaneb&gt;</span> ta
+<a name="l-197"></a><span class="tm">21:49:25</span><span class="nk"> &lt;jpeeler&gt;</span> <span class="hi">sdake:</span> just trying to get the packing stuff fully completed
+<a name="l-198"></a><span class="tm">21:49:38</span><span class="nk"> &lt;sdake&gt;</span> which packing stuff?
+<a name="l-199"></a><span class="tm">21:49:59</span><span class="nk"> &lt;jpeeler&gt;</span> sorry packaging. rpm accepted, deb stuff, and necessary ppas
+<a name="l-200"></a><span class="tm">21:50:18</span><span class="nk"> &lt;sdake&gt;</span> oh right, nice work there, jpeeler has done a nice job getting started as a packager in fedora folks
+<a name="l-201"></a><span class="tm">21:50:28</span><span class="nk"> &lt;sdake&gt;</span> so he will be submitting fedora packages for f18
+<a name="l-202"></a><span class="tm">21:51:01</span><span class="nk"> &lt;sdake&gt;</span> after he does initial package, each of us devs who takes on the release manager role will rebuild for rawhide/f18/ppas ;)
+<a name="l-203"></a><span class="tm">21:51:27</span><span class="nk"> &lt;sdake&gt;</span> jpeeler prob need some rawhide/ppa docs
+<a name="l-204"></a><span class="tm">21:51:48</span><span class="nk"> &lt;sdake&gt;</span> like wiki page or wiki improvements to release page
+<a name="l-205"></a><span class="tm">21:51:53</span><span class="nk"> &lt;jpeeler&gt;</span> of course
+<a name="l-206"></a><span class="tm">21:51:57</span><span class="nk"> &lt;sdake&gt;</span> cool
+<a name="l-207"></a><span class="tm">21:52:05</span><span class="nk"> &lt;sdake&gt;</span> slower got anything cooking for v5
+<a name="l-208"></a><span class="tm">21:52:16</span><span class="nk"> &lt;Slower&gt;</span> working on the per tenant stack stuff
+<a name="l-209"></a><span class="tm">21:52:26</span><span class="nk"> &lt;Slower&gt;</span> putting in the policy json stuff now
+<a name="l-210"></a><span class="tm">21:52:28</span><span class="nk"> &lt;sdake&gt;</span> 2 weeks enough?
+<a name="l-211"></a><span class="tm">21:52:32</span><span class="nk"> &lt;Slower&gt;</span> which seems to be the way to go
+<a name="l-212"></a><span class="tm">21:52:41</span><span class="nk"> &lt;Slower&gt;</span> well I hope so :)
+<a name="l-213"></a><span class="tm">21:52:46</span><span class="nk"> &lt;Slower&gt;</span> should do I think
+<a name="l-214"></a><span class="tm">21:52:49</span><span class="nk"> &lt;sdake&gt;</span> cool
+<a name="l-215"></a><span class="tm">21:52:59</span><span class="nk"> &lt;sdake&gt;</span> shadower got anything planned for v5?
+<a name="l-216"></a><span class="tm">21:53:08</span><span class="nk"> &lt;shadower&gt;</span> started looking into RDS
+<a name="l-217"></a><span class="tm">21:53:18</span><span class="nk"> &lt;sdake&gt;</span> cool that will be a sweet feature
+<a name="l-218"></a><span class="tm">21:53:19</span><span class="nk"> &lt;shadower&gt;</span> too early to say how much will get in but at least POC for sure
+<a name="l-219"></a><span class="tm">21:53:21</span><span class="nk"> &lt;sdake&gt;</span> plus more integration
+<a name="l-220"></a><span class="tm">21:53:26</span><span class="nk"> &lt;shadower&gt;</span> yeah
+<a name="l-221"></a><span class="tm">21:53:37</span><span class="nk"> &lt;sdake&gt;</span> i'm going to wrap up this common merge
+<a name="l-222"></a><span class="tm">21:53:42</span><span class="nk"> &lt;sdake&gt;</span> and do some refactor to deal with it
+<a name="l-223"></a><span class="tm">21:53:57</span><span class="nk"> &lt;sdake&gt;</span> and pump up our ubuntu template examples
+<a name="l-224"></a><span class="tm">21:54:08</span><span class="nk"> &lt;sdake&gt;</span> would like template parity for ubuntu and fedora
+<a name="l-225"></a><span class="tm">21:54:09</span><span class="nk"> &lt;Slower&gt;</span> <span class="hi">sdake:</span> nice :)
+<a name="l-226"></a><span class="tm">21:54:35</span><span class="nk"> &lt;sdake&gt;</span> unfortunatey sick last week and vacation week before so my contribution to v5 wont be as significant as rest of team - more next cycle ;)
+<a name="l-227"></a><span class="tm">21:54:49</span><span class="nk"> &lt;shardy&gt;</span> Is/has anyone else looked at getting UpdateStack working?
+<a name="l-228"></a><span class="tm">21:54:54</span><span class="nk"> &lt;sdake&gt;</span> as far as next cycle goes..
+<a name="l-229"></a><span class="tm">21:55:04</span><span class="nk"> &lt;shardy&gt;</span> was thinking of looking at that after cloudwatch
+<a name="l-230"></a><span class="tm">21:55:40</span><span class="nk"> &lt;sdake&gt;</span> updatestack is pretty important, worth doing
+<a name="l-231"></a><span class="tm">21:55:52</span><span class="nk"> &lt;asalkeld&gt;</span> yes
+<a name="l-232"></a><span class="tm">21:56:04</span><span class="nk"> &lt;shardy&gt;</span> should I look at that before the cloudwatch api (ie this week?)
+<a name="l-233"></a><span class="tm">21:56:17</span><span class="nk"> &lt;asalkeld&gt;</span> I think so
+<a name="l-234"></a><span class="tm">21:56:19</span><span class="nk"> &lt;sdake&gt;</span> yes from me
+<a name="l-235"></a><span class="tm">21:56:46</span><span class="nk"> &lt;shardy&gt;</span> k, cool - I have a good handle on cloudwatch for later now anyway, will start on update tomorrow
+<a name="l-236"></a><span class="tm">21:56:56</span><span class="nk"> &lt;sdake&gt;</span> nice
+<a name="l-237"></a><span class="tm">21:57:19</span><span class="nk"> &lt;sdake&gt;</span> well folks our next big chunk of work to tackle is either API rework or VPC
+<a name="l-238"></a><span class="tm">21:57:37</span><span class="nk"> &lt;sdake&gt;</span> so start thinking about that for our next cycle
+<a name="l-239"></a><span class="tm">21:58:13</span><span class="nk"> &lt;sdake&gt;</span> i'd like to start around 1st or 2nd v6, so try to wrap up feature dev and docs for v5 by 27th to give time for releasing
+<a name="l-240"></a><span class="tm">21:59:00</span><span class="nk"> &lt;zaneb&gt;</span> btw I am away from 25th to 8th
+<a name="l-241"></a><span class="tm">21:59:09</span><span class="nk"> &lt;zaneb&gt;</span> so y'all will be safe from refactoring ;)
+<a name="l-242"></a><span class="tm">21:59:19</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#action </span><span class="cmdline">zaneb get some good r&amp;r 25th-8th and not a moment longer ;)</span>
+<a name="l-243"></a><span class="tm">21:59:43</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">open issues</span>
+<a name="l-244"></a><span class="tm">22:00:02</span><span class="nk"> &lt;sdake&gt;</span> anyone have any open issues to discuss?
+<a name="l-245"></a><span class="tm">22:00:31</span><span class="nk"> &lt;shadower&gt;</span> <span class="hi">sdake:</span> the #55 we talked about earlier?
+<a name="l-246"></a><span class="tm">22:00:41</span><span class="nk"> &lt;sdake&gt;</span> sure
+<a name="l-247"></a><span class="tm">22:00:48</span><span class="nk"> &lt;sdake&gt;</span> so eventlet was changed?
+<a name="l-248"></a><span class="tm">22:00:52</span><span class="nk"> &lt;sdake&gt;</span> and this resulted in a different wsgi?
+<a name="l-249"></a><span class="tm">22:00:56</span><span class="nk"> &lt;shadower&gt;</span> yeah
+<a name="l-250"></a><span class="tm">22:01:03</span><span class="nk"> &lt;shadower&gt;</span> we're using paste's wsgi for now
+<a name="l-251"></a><span class="tm">22:01:17</span><span class="nk"> &lt;shadower&gt;</span> I could prod the eventled devs to make a release
+<a name="l-252"></a><span class="tm">22:01:21</span><span class="nk"> &lt;shadower&gt;</span> they're not very active tho
+<a name="l-253"></a><span class="tm">22:01:32</span><span class="nk"> &lt;sdake&gt;</span> poke em see what happens
+<a name="l-254"></a><span class="tm">22:01:43</span><span class="nk"> &lt;shadower&gt;</span> yeah
+<a name="l-255"></a><span class="tm">22:02:00</span><span class="nk"> &lt;sdake&gt;</span> any feedback on heat-jeos from community?
+<a name="l-256"></a><span class="tm">22:02:17</span><span class="nk"> &lt;shadower&gt;</span> ppetit liked the new ui
+<a name="l-257"></a><span class="tm">22:02:23</span><span class="nk"> &lt;sdake&gt;</span> nice
+<a name="l-258"></a><span class="tm">22:02:29</span><span class="nk"> &lt;asalkeld&gt;</span> it  is nice
+<a name="l-259"></a><span class="tm">22:02:31</span><span class="nk"> &lt;sdake&gt;</span> well if he is satisified, must be good ;)
+<a name="l-260"></a><span class="tm">22:02:36</span><span class="nk"> &lt;shadower&gt;</span> hehe
+<a name="l-261"></a><span class="tm">22:02:51</span><span class="nk"> &lt;shardy&gt;</span> I'm going to an openstack meetup in London next week - does anyone (asalkeld?) have any "intro to heat" slides?
+<a name="l-262"></a><span class="tm">22:03:07</span><span class="nk"> &lt;sdake&gt;</span> i am making a deck
+<a name="l-263"></a><span class="tm">22:03:08</span><span class="nk"> &lt;asalkeld&gt;</span> shardy, I'll send you my stuff
+<a name="l-264"></a><span class="tm">22:03:17</span><span class="nk"> &lt;asalkeld&gt;</span> I ran a demo too
+<a name="l-265"></a><span class="tm">22:03:20</span><span class="nk"> &lt;sdake&gt;</span> asalkeld send me your deck too
+<a name="l-266"></a><span class="tm">22:03:33</span><span class="nk"> &lt;sdake&gt;</span> i am presenting in aug at cloudopen on heat
+<a name="l-267"></a><span class="tm">22:03:40</span><span class="nk"> &lt;Slower&gt;</span> pmyers just sent out an email essentially asking all rh devs to be involved in both projects..
+<a name="l-268"></a><span class="tm">22:03:43</span><span class="nk"> &lt;shardy&gt;</span> <span class="hi">asalkeld:</span> thanks, it will only be a 5min talk (if at all), but any info appreciated
+<a name="l-269"></a><span class="tm">22:03:44</span><span class="nk"> &lt;sdake&gt;</span> going to do live demo of autoscale and ha
+<a name="l-270"></a><span class="tm">22:03:44</span><span class="nk"> &lt;Slower&gt;</span> openstack &amp; heat
+<a name="l-271"></a><span class="tm">22:03:46</span><span class="nk"> &lt;Slower&gt;</span> or at least look
+<a name="l-272"></a><span class="tm">22:03:50 </span><span class="nka">* sdake</span> <span class="ac">glutton for punishment</span>
+<a name="l-273"></a><span class="tm">22:04:23</span><span class="nk"> &lt;asalkeld&gt;</span> ya
+<a name="l-274"></a><span class="tm">22:04:33</span><span class="nk"> &lt;sdake&gt;</span> shardy hit up russellb - he did lightning talk previously at openstack's summit
+<a name="l-275"></a><span class="tm">22:04:44</span><span class="nk"> &lt;sdake&gt;</span> he had 5 min timer
+<a name="l-276"></a><span class="tm">22:05:10</span><span class="nk"> &lt;shardy&gt;</span> <span class="hi">sdake:</span> OK, cool - I volunteered to do a Lignting talk this time, could do more at future meets
+<a name="l-277"></a><span class="tm">22:05:29</span><span class="nk"> &lt;sdake&gt;</span> ya - ideally we would have a standard deck + demo
+<a name="l-278"></a><span class="tm">22:05:37</span><span class="nk"> &lt;sdake&gt;</span> which should come outof cloudopen
+<a name="l-279"></a><span class="tm">22:05:51</span><span class="nk"> &lt;shardy&gt;</span> cloudopen?
+<a name="l-280"></a><span class="tm">22:05:59</span><span class="nk"> &lt;asalkeld&gt;</span> rain?
+<a name="l-281"></a><span class="tm">22:06:00</span><span class="nk"> &lt;sdake&gt;</span> conference in US in aug
+<a name="l-282"></a><span class="tm">22:06:09</span><span class="nk"> &lt;pmyers&gt;</span> it's along with LinuxCon in San Diego
+<a name="l-283"></a><span class="tm">22:06:16</span><span class="nk"> &lt;shardy&gt;</span> ah
+<a name="l-284"></a><span class="tm">22:06:24 </span><span class="nka">* shardy</span> <span class="ac">hadn't heard about that yet</span>
+<a name="l-285"></a><span class="tm">22:06:34</span><span class="nk"> &lt;sdake&gt;</span> there be dragons in the channel ;)
+<a name="l-286"></a><span class="tm">22:06:45</span><span class="nk"> &lt;pmyers&gt;</span> this is first year that CloudOpen is happening
+<a name="l-287"></a><span class="tm">22:06:53</span><span class="nk"> &lt;pmyers&gt;</span> they're trying to make LinuxCon.... cloudier :)
+<a name="l-288"></a><span class="tm">22:06:59</span><span class="nk"> &lt;sdake&gt;</span> should be good conference lots of good speakers
+<a name="l-289"></a><span class="tm">22:07:27</span><span class="nk"> &lt;asalkeld&gt;</span> ok, I am off to next meeting
+<a name="l-290"></a><span class="tm">22:07:32</span><span class="nk"> &lt;asalkeld&gt;</span> later guys
+<a name="l-291"></a><span class="tm">22:07:34</span><span class="nk"> &lt;sdake&gt;</span> poor asalkeld
+<a name="l-292"></a><span class="tm">22:07:42</span><span class="nk"> &lt;sdake&gt;</span> ok guys, if nothing else i'll end meeting
+<a name="l-293"></a><span class="tm">22:08:23</span><span class="nk"> &lt;sdake&gt;</span> nothing heard - remember we voted to take our conversations upstream - i'll notify the mailing list
+<a name="l-294"></a><span class="tm">22:08:30</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

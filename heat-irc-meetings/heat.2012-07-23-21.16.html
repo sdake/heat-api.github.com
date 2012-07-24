@@ -1,0 +1,224 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#heat Meeting</title>
+<style type="text/css">
+/* This is for the .html in the HTML2 writer */
+body {
+    font-family: Helvetica, sans-serif;
+    font-size:14px;
+}
+h1 {
+    text-align: center;
+}
+a {
+    color:navy;
+    text-decoration: none;
+    border-bottom:1px dotted navy;
+}
+a:hover {
+    text-decoration:none;
+    border-bottom: 0;
+    color:#0000B9;
+}
+hr {
+    border: 1px solid #ccc;
+}
+/* The (nick, time) item pairs, and other body text things. */
+.details {
+    font-size: 12px;
+    font-weight:bold;
+}
+/* The 'AGREED:', 'IDEA', etc, prefix to lines. */
+.itemtype {
+    font-style: normal;    /* un-italics it */
+    font-weight: bold;
+}
+/* Example: change single item types.  Capitalized command name.
+/* .TOPIC  {  color:navy;  } */
+/* .AGREED {  color:lime;  } */
+
+</style>
+</head>
+
+<body>
+<h1>#heat Meeting</h1>
+<span class="details">
+Meeting started by sdake at 21:16:14 UTC
+(<a href="heat.2012-07-23-21.16.log.html">full logs</a>).</span>
+
+<br><br>
+
+
+
+<h3>Meeting summary</h3>
+<ol>
+<li><b class="TOPIC">rollcall</b> <span class="details">(<a href='heat.2012-07-23-21.16.log.html#l-9'>sdake</a>, 21:18:08)</span>
+<ol type="a">
+  <li><span class="INFO">sdake, shadower, shardy, asalkeld, jpeeler,
+    slower present</span> <span class="details">(<a
+    href='heat.2012-07-23-21.16.log.html#l-17'>sdake</a>,
+    21:19:15)</span></li>
+  <li><span class="INFO">zaneb awakens</span> <span class="details">(<a
+    href='heat.2012-07-23-21.16.log.html#l-19'>sdake</a>,
+    21:19:32)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">status of feature dev</b> <span class="details">(<a href='heat.2012-07-23-21.16.log.html#l-20'>sdake</a>, 21:19:54)</span>
+<ol type="a">
+  <li><a
+    href="https://fedorahosted.org/fesco/ticket/909#comment:2">https://fedorahosted.org/fesco/ticket/909#comment:2</a>
+    <span class="details">(<a
+    href='heat.2012-07-23-21.16.log.html#l-24'>sdake</a>,
+    21:22:03)</span></li>
+  <li><span class="INFO">fesco approved heat as a fedora 18 feature,
+    with suggestion to find an alternate dep for python-crypto</span>
+    <span class="details">(<a
+    href='heat.2012-07-23-21.16.log.html#l-29'>sdake</a>,
+    21:24:26)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">jpeeler to
+    look into expunging python-crypto if possible</span> <span
+    class="details">(<a
+    href='heat.2012-07-23-21.16.log.html#l-33'>sdake</a>,
+    21:25:29)</span></li>
+  <li><a
+    href="http://meetbot.fedoraproject.org/fedora-meeting/2012-07-23/fesco.2012-07-23-17.01.log.html">http://meetbot.fedoraproject.org/fedora-meeting/2012-07-23/fesco.2012-07-23-17.01.log.html</a>
+    <span class="details">(<a
+    href='heat.2012-07-23-21.16.log.html#l-35'>jpeeler</a>,
+    21:25:59)</span></li>
+  <li><a
+    href="http://meetbot.fedoraproject.org/fedora-meeting/2012-07-23/fesco.2012-07-23-17.01.log.html">http://meetbot.fedoraproject.org/fedora-meeting/2012-07-23/fesco.2012-07-23-17.01.log.html</a>
+    <span class="details">(<a
+    href='heat.2012-07-23-21.16.log.html#l-39'>jpeeler</a>,
+    21:26:40)</span></li>
+  <li><a
+    href="https://github.com/hpcloud/reddwarf_lite">https://github.com/hpcloud/reddwarf_lite</a>
+    <span class="details">(<a
+    href='heat.2012-07-23-21.16.log.html#l-59'>asalkeld</a>,
+    21:30:21)</span></li>
+  <li><span class="INFO">rds nested stack implementation functional -
+    only mysql support - no avail zones or backup</span> <span
+    class="details">(<a
+    href='heat.2012-07-23-21.16.log.html#l-65'>sdake</a>,
+    21:30:49)</span></li>
+  <li><a
+    href="https://github.com/heat-api/heat-integration-tests">https://github.com/heat-api/heat-integration-tests</a>
+    <span class="details">(<a
+    href='heat.2012-07-23-21.16.log.html#l-85'>sdake</a>,
+    21:34:51)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">jpeeler to
+    add integration tests for heat_jeos to heat-integration-tests
+    repo</span> <span class="details">(<a
+    href='heat.2012-07-23-21.16.log.html#l-91'>sdake</a>,
+    21:37:45)</span></li>
+  <li><span class="INFO">zaneb close to having a provision + integration
+    test toolset working</span> <span class="details">(<a
+    href='heat.2012-07-23-21.16.log.html#l-98'>sdake</a>,
+    21:39:04)</span></li>
+  <li><span class="INFO">security work ongoing</span> <span
+    class="details">(<a
+    href='heat.2012-07-23-21.16.log.html#l-124'>sdake</a>,
+    21:43:00)</span></li>
+  <li><span class="INFO">will have per-tenant stacks in v5</span> <span
+    class="details">(<a
+    href='heat.2012-07-23-21.16.log.html#l-125'>sdake</a>,
+    21:43:08)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">asalkeld to
+    make howto regarding autoscaling</span> <span class="details">(<a
+    href='heat.2012-07-23-21.16.log.html#l-139'>sdake</a>,
+    21:44:49)</span></li>
+  <li><span class="INFO">autoscaling working well with loadbalancer
+    nested stack</span> <span class="details">(<a
+    href='heat.2012-07-23-21.16.log.html#l-146'>sdake</a>,
+    21:46:24)</span></li>
+  <li><span class="INFO">UpdateStack added to master</span> <span
+    class="details">(<a
+    href='heat.2012-07-23-21.16.log.html#l-156'>sdake</a>,
+    21:48:19)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">v5 release</b> <span class="details">(<a href='heat.2012-07-23-21.16.log.html#l-165'>sdake</a>, 21:51:37)</span>
+<ol type="a">
+  <li><span class="INFO">release manager choices include asalkeld,
+    shadower, shardy, jpeeler</span> <span class="details">(<a
+    href='heat.2012-07-23-21.16.log.html#l-182'>sdake</a>,
+    21:56:15)</span></li>
+  <li><span class="INFO">shadower release manager for v5</span> <span
+    class="details">(<a
+    href='heat.2012-07-23-21.16.log.html#l-218'>sdake</a>,
+    22:02:46)</span></li>
+  <li><span class="INFO">jpeeler release manager for v6</span> <span
+    class="details">(<a
+    href='heat.2012-07-23-21.16.log.html#l-219'>sdake</a>,
+    22:02:52)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">open items</b> <span class="details">(<a href='heat.2012-07-23-21.16.log.html#l-227'>sdake</a>, 22:04:29)</span>
+<ol type="a">
+  <li><span class="INFO">eventlet has new maintainer with new release
+    planned in the next week</span> <span class="details">(<a
+    href='heat.2012-07-23-21.16.log.html#l-233'>sdake</a>,
+    22:05:59)</span></li>
+  <li><span class="INFO">boto upstream a bit unresponsive - may need to
+    maintain heat client for longer period of time</span> <span
+    class="details">(<a
+    href='heat.2012-07-23-21.16.log.html#l-234'>sdake</a>,
+    22:06:21)</span></li>
+</ol>
+</li>
+</ol>
+<br><br>
+
+
+
+<span class="details">
+Meeting ended at 22:07:48 UTC
+(<a href="heat.2012-07-23-21.16.log.html">full logs</a>).</span>
+
+<br><br>
+
+
+
+<h3>Action items</h3>
+<ol>
+  <li>jpeeler to look into expunging python-crypto if possible</li>
+  <li>jpeeler to add integration tests for heat_jeos to heat-integration-tests repo</li>
+  <li>asalkeld to make howto regarding autoscaling</li>
+</ol>
+<br><br>
+
+
+
+<h3>Action items, by person</h3>
+<ol>
+  <li> asalkeld <ol>
+    <li>asalkeld to make howto regarding autoscaling</li>
+  </ol></li>
+  <li> jpeeler <ol>
+    <li>jpeeler to look into expunging python-crypto if possible</li>
+    <li>jpeeler to add integration tests for heat_jeos to heat-integration-tests repo</li>
+  </ol></li>
+</ol>
+<br><br>
+
+
+
+<h3>People present (lines said)</h3>
+<ol>
+  <li>sdake (113)</li>
+  <li>Slower (30)</li>
+  <li>asalkeld (27)</li>
+  <li>shadower (25)</li>
+  <li>zaneb (13)</li>
+  <li>jpeeler (13)</li>
+  <li>shardy (11)</li>
+  <li>mheat-bot (4)</li>
+  <li>slower (0)</li>
+</ol>
+<br><br>
+
+
+
+<span class="details">Generated by <a href="http://wiki.debian.org/MeetBot">MeetBot</a> 0.1.4.</span>
+</body></html>

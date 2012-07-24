@@ -1,0 +1,236 @@
+21:16:14 <sdake> #startmeeting
+21:16:14 <mheat-bot> Meeting started Mon Jul 23 21:16:14 2012 UTC.  The chair is sdake. Information about MeetBot at http://wiki.debian.org/MeetBot.
+21:16:14 <mheat-bot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+21:16:14 <shadower> np
+21:16:55 <sdake> agenda: rollcall, v5 (7/30), open issues
+21:16:58 <sdake> any other topics?
+21:17:22 <shadower> I can talk RDS and eventlet status if folks are interested
+21:17:36 <sdake> ok general topic of status report we can do before v5 release
+21:18:08 <sdake> #topic rollcall
+21:18:10 <sdake> sdake here
+21:18:16 <shadower> shadower here
+21:18:17 <shardy> shardy here
+21:18:18 <asalkeld> me too
+21:18:20 <jpeeler> here
+21:18:23 <Slower> me three
+21:18:42 <sdake> zaneb about?
+21:19:15 <sdake> #info sdake, shadower, shardy, asalkeld, jpeeler, slower present
+21:19:24 <zaneb> awake ;)
+21:19:32 <sdake> #info zaneb awakens
+21:19:54 <sdake> #topic status of feature dev
+21:20:16 <sdake> jpeeler can you give us a quick update on fedora feature request
+21:20:26 <jpeeler> yes
+21:20:54 <jpeeler> spec files are *perfect* ;) and heat has been accepted as a feature for f18
+21:22:03 <sdake> #link https://fedorahosted.org/fesco/ticket/909#comment:2
+21:22:15 <sdake> looks like fesco approved, but doesnt like python-crypto
+21:22:50 <sdake> what was reasoning for python crypto problems jeff?
+21:23:37 <jpeeler> there were some security concerns for one thing. the default configuration is not ideal when using python-crypto
+21:23:58 <jpeeler> i believe also the API wasn't very clean
+21:24:26 <sdake> #info fesco approved heat as a fedora 18 feature, with suggestion to find an alternate dep for python-crypto
+21:24:55 <sdake> can you look into the requirement for that dep?
+21:25:14 <jpeeler> yes, i will look into expunging it if possible
+21:25:19 <sdake> cool
+21:25:29 <sdake> #action jpeeler to look into expunging python-crypto if possible
+21:25:39 <sdake> did you have the meeting minutes handy for the fesco meeting?
+21:25:59 <jpeeler> #link http://meetbot.fedoraproject.org/fedora-meeting/2012-07-23/fesco.2012-07-23-17.01.log.html
+21:26:27 <sdake> #chair jpeeler asalkeld zaneb shardy shadower slower
+21:26:27 <mheat-bot> Current chairs: asalkeld jpeeler sdake shadower shardy slower zaneb
+21:26:34 <sdake> try link again jpeeler pls
+21:26:40 <jpeeler> #link http://meetbot.fedoraproject.org/fedora-meeting/2012-07-23/fesco.2012-07-23-17.01.log.html
+21:26:44 <sdake> cool
+21:26:54 <sdake> anyone have any other questions for jeff?
+21:27:11 <asalkeld> no, well done jeff
+21:27:21 <sdake> agree nice work jpeeler
+21:27:26 <sdake> now for review and victory ;)
+21:27:34 <sdake> shadower want to speak about rds?
+21:27:41 <shadower> yeah
+21:28:00 <shadower> the initial implementation just landed in master (thanks zaneb for the review)
+21:28:11 <shadower> it's working and there's a template that shows it off
+21:28:39 <shadower> it's not complete yet -- the big missing things are multiple availability zones and backup
+21:28:53 <shadower> and multiple database engines
+21:29:02 <shadower> AWS supports oracle and sql server
+21:29:02 <sdake> right now just mysql?
+21:29:04 <shadower> ya
+21:29:22 <shadower> not sure what we can to do about the other two
+21:29:32 <asalkeld> so not using reddarf_lite?
+21:30:00 <asalkeld> just curious
+21:30:13 <shadower> huh
+21:30:20 <shadower> wasn't aware of it
+21:30:21 <asalkeld> https://github.com/hpcloud/reddwarf_lite
+21:30:25 <asalkeld> ok
+21:30:27 <zaneb> asalkeld: I think that is a more long-term project
+21:30:40 <asalkeld> no worries
+21:30:47 <shadower> asalkeld: the readme is a bit nondescript
+21:30:48 <asalkeld> less deps
+21:30:49 <sdake> #info rds nested stack implementation functional - only mysql support - no avail zones or backup
+21:30:49 <shadower> what is it?
+21:31:07 <asalkeld> db as a service
+21:31:16 <zaneb> shadower: it's an OpenStack DB service
+21:31:20 <shadower> aah
+21:31:47 <asalkeld> but don't worry, nice the way you did it
+21:31:48 <sdake> seems like mysql dictated by cloudformation
+21:32:05 <asalkeld> could add postgres
+21:32:11 <shadower> yeah
+21:32:40 <zaneb> this way is actually closer to AWS
+21:32:47 <sdake> agree with zaneb
+21:32:48 <zaneb> RedDwarf claim they're faster
+21:33:02 <zaneb> it's an interesting project
+21:33:12 <sdake> yup have to watch it and see where it heads
+21:33:15 <zaneb> but good to have something going now
+21:33:45 <sdake> zaneb any update on integration tests
+21:34:16 <zaneb> yeah: downloading Fedora ISOs is really slow ;)
+21:34:27 <zaneb> will cache them on one of those lab machines
+21:34:36 <sdake> sounds good
+21:34:45 <zaneb> but it's almost there
+21:34:51 <sdake> #link https://github.com/heat-api/heat-integration-tests
+21:34:58 <zaneb> so we will be able to provision a machine and run the test from a script
+21:34:58 <sdake> new repo for our integration scriptlets
+21:36:03 <sdake> after you wrap up, can jpeeler add heatjeos integration tests?
+21:36:59 <jpeeler> i checked with zane earlier and he said i probably could now, but i rather just wait unless there is time pressure
+21:37:18 <sdake> sooner better but whatevery ou feel comfortable with
+21:37:45 <sdake> #action jpeeler to add integration tests for heat_jeos to heat-integration-tests repo
+21:38:01 <sdake> any other topics zaneb?
+21:38:11 <sdake> probably trying to tidy up before pto ;)
+21:38:20 <zaneb> yeah, exactly
+21:38:25 <sdake> cool
+21:38:34 <sdake> slower any updates on tenant auth
+21:38:57 <Slower> so yeah
+21:39:04 <sdake> #info zaneb close to having a provision + integration test toolset working
+21:39:25 <Slower> as some of you know I had a discussion with vishy on #openstack-dev about using a 'heat' user to do operations
+21:39:43 <Slower> he pointed out that we would lose quota and billing info
+21:39:58 <Slower> and that he thought it'd be better to stick with storing creds for now
+21:40:17 <Slower> so I am presently working on just moving the db to do per-tenant keying and then encrypting the creds in the db
+21:40:28 <Slower> I also just spoke with adam young who is working on keystone
+21:40:33 <Slower> he had some ideas for how to make this work better
+21:40:34 <asalkeld> keystone needs "su"
+21:40:37 <Slower> yeah :)
+21:40:46 <Slower> that's what I said.. he didn't like that as much though
+21:40:52 <Slower> he wanted to do signed operations
+21:41:07 <asalkeld> sounds fancy
+21:41:10 <Slower> so you could sign some operations with the users creds when you had them
+21:41:15 <sdake> sounds complicated to me ;)
+21:41:16 <Slower> and then use those at a later time
+21:41:19 <Slower> yes it does
+21:41:25 <Slower> I need to talk to him more
+21:41:43 <Slower> but he did have a good point re the user might not being valid at a later date, and that causing ha to fail
+21:41:46 <sdake> well i suggest not overcomplicating things, especially around security
+21:41:57 <Slower> yeah
+21:42:08 <Slower> I talked to him about my concerns with security in openstack/keystone
+21:42:22 <Slower> which it turns out are valid.. :)
+21:42:38 <sdake> so summary is "work ongoing" :)?
+21:42:39 <Slower> so I'm not sure why 'su' is frowned upon.. :)
+21:42:44 <Slower> sdake: exactly, yes :)
+21:42:56 <Slower> but we will have per-tenant stacks and encrypted creds for v5
+21:43:00 <sdake> #info security work ongoing
+21:43:08 <sdake> #info will have per-tenant stacks in v5
+21:43:13 <sdake> cool
+21:43:23 <sdake> asalkeld made the autoscaling magic work?
+21:43:31 <asalkeld> ya seems to work
+21:43:48 <asalkeld> scales up and down as advertised
+21:43:53 <sdake> nice work
+21:44:00 <asalkeld> loadbalancer seems to work
+21:44:11 <asalkeld> haven't stressed the lb
+21:44:11 <sdake> come with a wiki page?
+21:44:18 <asalkeld> can do
+21:44:22 <sdake> thanks bro
+21:44:32 <sdake> #action asalkeld to make wiki page about autoscaling usage
+21:44:40 <sdake> #undo
+21:44:40 <mheat-bot> Removing item from minutes: <MeetBot.items.Action object at 0x7fe970fb2390>
+21:44:49 <sdake> #action asalkeld to make howto regarding autoscaling
+21:44:57 <asalkeld> lb still only does http
+21:45:04 <sdake> should be ok
+21:45:10 <asalkeld> but can add features as needed
+21:45:30 <sdake> few updates from me
+21:45:48 <sdake> I've been making a go at matching our paste pipeline to how nova does things
+21:46:02 <sdake> more work needed there
+21:46:24 <sdake> #info autoscaling working well with loadbalancer nested stack
+21:46:48 <sdake> also been taking a crack at adding heat to devstack
+21:47:07 <sdake> dont think either will make v5
+21:47:19 <sdake> well, some of the paste will but wont be complete
+21:47:29 <sdake> any questions
+21:47:41 <asalkeld> sounds good
+21:47:49 <sdake> shardy any updates?
+21:48:00 <shardy> Yep - I added UpdateStack last week
+21:48:06 <sdake> nice work
+21:48:13 <shardy> but with a default delete/replace logic for resources
+21:48:19 <sdake> #info UpdateStack added to master
+21:48:38 <shardy> so each resource now has a handle_update method where we need to add non-disruptive update logic
+21:48:43 <Slower> shardy: it only delete/replaces those things that changed?
+21:49:13 <zaneb> Slower: that's a TODO ;)
+21:49:17 <shardy> Slower: yes, exactly, it compares the parsed templates per-resource
+21:49:28 <Slower> shardy: cool
+21:49:47 <shardy> but if people have detailed knowledge of specific resources, help with getting non-disruptive updates working in due course would be great :)
+21:50:13 <shardy> In many cases the correct behavior is to delete/replace anyway so it's a reasonable default approach
+21:51:25 <sdake> ok I think that is everyone
+21:51:37 <sdake> #topic v5 release
+21:51:56 <sdake> For some reason last week, I said we had two weeks to do v5, but it was actually one week
+21:52:09 <sdake> so I took liberty of moving it out a week to the 30th
+21:52:31 <sdake> this should give us a bit of time to sort out remaining bugs
+21:52:55 <sdake> any feature anyone working on not making v5? (1 week)?
+21:54:15 <shardy> sdake: I marked CloudWatch API as v5, but I think it's going to be in the next cycle - I did UpdateStack instead
+21:54:35 <sdake> shardy ok, can you modify the bug and just untag it from a milestone?
+21:54:42 <shardy> sdake: will do
+21:54:58 <sdake> ok need to choose a release manager for v5
+21:55:08 <sdake> zaneb will be on vacation
+21:55:28 <shadower> I can do it
+21:55:30 <sdake> possible victims include asalkeld, shardy, jpeeler
+21:55:41 <asalkeld> nix
+21:55:44 <sdake> haha
+21:55:46 <shadower> nevermind then
+21:55:51 <shadower> :-)
+21:55:58 <sdake> sorry and shadower
+21:56:15 <sdake> #info release manager choices include asalkeld, shadower, shardy, jpeeler
+21:56:40 <sdake> asalkeld, release manager going to catch up to you ;)
+21:57:08 <asalkeld> probably
+21:57:12 <sdake> any on that list would like to manage the v5 release?
+21:57:21 <sdake> at most 4 more releases ;)
+21:57:28 <asalkeld> just choose and shoot
+21:57:43 <sdake> any volunteer
+21:57:45 <jpeeler> i can do it
+21:57:52 <sdake> jpeeler volunteers
+21:57:53 <sdake> any others
+21:58:02 <shadower> me
+21:58:08 <sdake> shadower volunteers
+21:58:36 <shardy> I'm happy to do it, but am on PTO from the 3rd
+21:58:50 <sdake> probably easiest way to choose is to see if you have critical work over next week that would be interrupted on monday/tu of next week
+21:58:57 <sdake> jpeeler got anything cooking?
+21:59:02 <sdake> shadower got anything cooking?
+21:59:05 <shadower> nope
+21:59:18 <Slower> oh yes I'm off next week if that matters
+21:59:29 <sdake> no problem slower
+21:59:33 <sdake> you already did release manager
+21:59:48 <Slower> ya
+21:59:49 <sdake> just a reminder, each contributor release manager for a release until everyone used up, then we start a new :)
+21:59:53 <Slower> it was terrible
+21:59:58 <Slower> ;-)
+22:00:01 <sdake> your internet fired imo :)
+22:00:03 <shadower> Slower: thanks
+22:00:07 <Slower> haha
+22:00:17 <Slower> j/k
+22:00:32 <sdake> jpeeler - any thoughts on upcoming week, especially around monday/tuesday?
+22:00:36 <jpeeler> i don't think there's anything time sensitive in my queue
+22:00:53 <sdake> fedora reviews wouldn't be impacted?
+22:01:15 <sdake> meeting bot needs a coin flipper
+22:01:21 <jpeeler> well... they are perfect, remember? maybe should not assume that
+22:02:00 <sdake> jpeeler mind waiting until next release, - would like to make sure fedora review etc goes smoothly
+22:02:36 <jpeeler> probably for the best
+22:02:41 <asalkeld> say I need to help with kids ...
+22:02:46 <sdake> #info shadower release manager for v5
+22:02:52 <sdake> #info jpeeler release manager for v6
+22:02:52 <asalkeld> anything more for me?
+22:03:08 <sdake> asalkeld you have any open issues?
+22:03:15 <asalkeld> no all good
+22:03:18 <sdake> ok
+22:03:47 <sdake> so 1 week, please get things wrapped up hopefully by wed-thur of this week to make shadower's job easier ;)
+22:04:00 <sdake> shadower feel free to flog the devs to help with testing specific things
+22:04:15 <sdake> hopefully v6 we will have some integration testing of our templates in an automated way
+22:04:29 <sdake> #topic open items
+22:04:53 <sdake> any open issues?
+22:05:00 <sdake> eventlet?
+22:05:08 <shadower> that's closed :-)
+22:05:27 <shadower> we have a new maintainer now, a new \release has been promissed in a week
+22:05:55 <shardy> boto upstream have been unresponsive recently, so I think we need to maintain our current client for the time being
+22:05:59 <sdake> #info eventlet has new maintainer with new release planned in the next week
+22:06:21 <sdake> #info boto upstream a bit unresponsive - may need to maintain heat client for longer period of time
+22:07:27 <sdake> ok if nothing else, I'll end the meeting and post the minutes
+22:07:48 <sdake> #endmeeting

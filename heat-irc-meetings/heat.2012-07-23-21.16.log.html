@@ -1,0 +1,263 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#heat log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">21:16:14</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">21:16:14</span><span class="nk"> &lt;mheat-bot&gt;</span> Meeting started Mon Jul 23 21:16:14 2012 UTC.  The chair is sdake. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">21:16:14</span><span class="nk"> &lt;mheat-bot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">21:16:14</span><span class="nk"> &lt;shadower&gt;</span> np
+<a name="l-5"></a><span class="tm">21:16:55</span><span class="nk"> &lt;sdake&gt;</span> <span class="hi">agenda:</span> rollcall, v5 (7/30), open issues
+<a name="l-6"></a><span class="tm">21:16:58</span><span class="nk"> &lt;sdake&gt;</span> any other topics?
+<a name="l-7"></a><span class="tm">21:17:22</span><span class="nk"> &lt;shadower&gt;</span> I can talk RDS and eventlet status if folks are interested
+<a name="l-8"></a><span class="tm">21:17:36</span><span class="nk"> &lt;sdake&gt;</span> ok general topic of status report we can do before v5 release
+<a name="l-9"></a><span class="tm">21:18:08</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">rollcall</span>
+<a name="l-10"></a><span class="tm">21:18:10</span><span class="nk"> &lt;sdake&gt;</span> sdake here
+<a name="l-11"></a><span class="tm">21:18:16</span><span class="nk"> &lt;shadower&gt;</span> shadower here
+<a name="l-12"></a><span class="tm">21:18:17</span><span class="nk"> &lt;shardy&gt;</span> shardy here
+<a name="l-13"></a><span class="tm">21:18:18</span><span class="nk"> &lt;asalkeld&gt;</span> me too
+<a name="l-14"></a><span class="tm">21:18:20</span><span class="nk"> &lt;jpeeler&gt;</span> here
+<a name="l-15"></a><span class="tm">21:18:23</span><span class="nk"> &lt;Slower&gt;</span> me three
+<a name="l-16"></a><span class="tm">21:18:42</span><span class="nk"> &lt;sdake&gt;</span> zaneb about?
+<a name="l-17"></a><span class="tm">21:19:15</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">sdake, shadower, shardy, asalkeld, jpeeler, slower present</span>
+<a name="l-18"></a><span class="tm">21:19:24</span><span class="nk"> &lt;zaneb&gt;</span> awake ;)
+<a name="l-19"></a><span class="tm">21:19:32</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">zaneb awakens</span>
+<a name="l-20"></a><span class="tm">21:19:54</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">status of feature dev</span>
+<a name="l-21"></a><span class="tm">21:20:16</span><span class="nk"> &lt;sdake&gt;</span> jpeeler can you give us a quick update on fedora feature request
+<a name="l-22"></a><span class="tm">21:20:26</span><span class="nk"> &lt;jpeeler&gt;</span> yes
+<a name="l-23"></a><span class="tm">21:20:54</span><span class="nk"> &lt;jpeeler&gt;</span> spec files are *perfect* ;) and heat has been accepted as a feature for f18
+<a name="l-24"></a><span class="tm">21:22:03</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#link </span><span class="cmdline">https://fedorahosted.org/fesco/ticket/909#comment:2</span>
+<a name="l-25"></a><span class="tm">21:22:15</span><span class="nk"> &lt;sdake&gt;</span> looks like fesco approved, but doesnt like python-crypto
+<a name="l-26"></a><span class="tm">21:22:50</span><span class="nk"> &lt;sdake&gt;</span> what was reasoning for python crypto problems jeff?
+<a name="l-27"></a><span class="tm">21:23:37</span><span class="nk"> &lt;jpeeler&gt;</span> there were some security concerns for one thing. the default configuration is not ideal when using python-crypto
+<a name="l-28"></a><span class="tm">21:23:58</span><span class="nk"> &lt;jpeeler&gt;</span> i believe also the API wasn't very clean
+<a name="l-29"></a><span class="tm">21:24:26</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">fesco approved heat as a fedora 18 feature, with suggestion to find an alternate dep for python-crypto</span>
+<a name="l-30"></a><span class="tm">21:24:55</span><span class="nk"> &lt;sdake&gt;</span> can you look into the requirement for that dep?
+<a name="l-31"></a><span class="tm">21:25:14</span><span class="nk"> &lt;jpeeler&gt;</span> yes, i will look into expunging it if possible
+<a name="l-32"></a><span class="tm">21:25:19</span><span class="nk"> &lt;sdake&gt;</span> cool
+<a name="l-33"></a><span class="tm">21:25:29</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#action </span><span class="cmdline">jpeeler to look into expunging python-crypto if possible</span>
+<a name="l-34"></a><span class="tm">21:25:39</span><span class="nk"> &lt;sdake&gt;</span> did you have the meeting minutes handy for the fesco meeting?
+<a name="l-35"></a><span class="tm">21:25:59</span><span class="nk"> &lt;jpeeler&gt;</span> <span class="cmd">#link </span><span class="cmdline">http://meetbot.fedoraproject.org/fedora-meeting/2012-07-23/fesco.2012-07-23-17.01.log.html</span>
+<a name="l-36"></a><span class="tm">21:26:27</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#chair </span><span class="cmdline">jpeeler asalkeld zaneb shardy shadower slower</span>
+<a name="l-37"></a><span class="tm">21:26:27</span><span class="nk"> &lt;mheat-bot&gt;</span> Current chairs: asalkeld jpeeler sdake shadower shardy slower zaneb
+<a name="l-38"></a><span class="tm">21:26:34</span><span class="nk"> &lt;sdake&gt;</span> try link again jpeeler pls
+<a name="l-39"></a><span class="tm">21:26:40</span><span class="nk"> &lt;jpeeler&gt;</span> <span class="cmd">#link </span><span class="cmdline">http://meetbot.fedoraproject.org/fedora-meeting/2012-07-23/fesco.2012-07-23-17.01.log.html</span>
+<a name="l-40"></a><span class="tm">21:26:44</span><span class="nk"> &lt;sdake&gt;</span> cool
+<a name="l-41"></a><span class="tm">21:26:54</span><span class="nk"> &lt;sdake&gt;</span> anyone have any other questions for jeff?
+<a name="l-42"></a><span class="tm">21:27:11</span><span class="nk"> &lt;asalkeld&gt;</span> no, well done jeff
+<a name="l-43"></a><span class="tm">21:27:21</span><span class="nk"> &lt;sdake&gt;</span> agree nice work jpeeler
+<a name="l-44"></a><span class="tm">21:27:26</span><span class="nk"> &lt;sdake&gt;</span> now for review and victory ;)
+<a name="l-45"></a><span class="tm">21:27:34</span><span class="nk"> &lt;sdake&gt;</span> shadower want to speak about rds?
+<a name="l-46"></a><span class="tm">21:27:41</span><span class="nk"> &lt;shadower&gt;</span> yeah
+<a name="l-47"></a><span class="tm">21:28:00</span><span class="nk"> &lt;shadower&gt;</span> the initial implementation just landed in master (thanks zaneb for the review)
+<a name="l-48"></a><span class="tm">21:28:11</span><span class="nk"> &lt;shadower&gt;</span> it's working and there's a template that shows it off
+<a name="l-49"></a><span class="tm">21:28:39</span><span class="nk"> &lt;shadower&gt;</span> it's not complete yet -- the big missing things are multiple availability zones and backup
+<a name="l-50"></a><span class="tm">21:28:53</span><span class="nk"> &lt;shadower&gt;</span> and multiple database engines
+<a name="l-51"></a><span class="tm">21:29:02</span><span class="nk"> &lt;shadower&gt;</span> AWS supports oracle and sql server
+<a name="l-52"></a><span class="tm">21:29:02</span><span class="nk"> &lt;sdake&gt;</span> right now just mysql?
+<a name="l-53"></a><span class="tm">21:29:04</span><span class="nk"> &lt;shadower&gt;</span> ya
+<a name="l-54"></a><span class="tm">21:29:22</span><span class="nk"> &lt;shadower&gt;</span> not sure what we can to do about the other two
+<a name="l-55"></a><span class="tm">21:29:32</span><span class="nk"> &lt;asalkeld&gt;</span> so not using reddarf_lite?
+<a name="l-56"></a><span class="tm">21:30:00</span><span class="nk"> &lt;asalkeld&gt;</span> just curious
+<a name="l-57"></a><span class="tm">21:30:13</span><span class="nk"> &lt;shadower&gt;</span> huh
+<a name="l-58"></a><span class="tm">21:30:20</span><span class="nk"> &lt;shadower&gt;</span> wasn't aware of it
+<a name="l-59"></a><span class="tm">21:30:21</span><span class="nk"> &lt;asalkeld&gt;</span> https://github.com/hpcloud/reddwarf_lite
+<a name="l-60"></a><span class="tm">21:30:25</span><span class="nk"> &lt;asalkeld&gt;</span> ok
+<a name="l-61"></a><span class="tm">21:30:27</span><span class="nk"> &lt;zaneb&gt;</span> <span class="hi">asalkeld:</span> I think that is a more long-term project
+<a name="l-62"></a><span class="tm">21:30:40</span><span class="nk"> &lt;asalkeld&gt;</span> no worries
+<a name="l-63"></a><span class="tm">21:30:47</span><span class="nk"> &lt;shadower&gt;</span> <span class="hi">asalkeld:</span> the readme is a bit nondescript
+<a name="l-64"></a><span class="tm">21:30:48</span><span class="nk"> &lt;asalkeld&gt;</span> less deps
+<a name="l-65"></a><span class="tm">21:30:49</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">rds nested stack implementation functional - only mysql support - no avail zones or backup</span>
+<a name="l-66"></a><span class="tm">21:30:49</span><span class="nk"> &lt;shadower&gt;</span> what is it?
+<a name="l-67"></a><span class="tm">21:31:07</span><span class="nk"> &lt;asalkeld&gt;</span> db as a service
+<a name="l-68"></a><span class="tm">21:31:16</span><span class="nk"> &lt;zaneb&gt;</span> <span class="hi">shadower:</span> it's an OpenStack DB service
+<a name="l-69"></a><span class="tm">21:31:20</span><span class="nk"> &lt;shadower&gt;</span> aah
+<a name="l-70"></a><span class="tm">21:31:47</span><span class="nk"> &lt;asalkeld&gt;</span> but don't worry, nice the way you did it
+<a name="l-71"></a><span class="tm">21:31:48</span><span class="nk"> &lt;sdake&gt;</span> seems like mysql dictated by cloudformation
+<a name="l-72"></a><span class="tm">21:32:05</span><span class="nk"> &lt;asalkeld&gt;</span> could add postgres
+<a name="l-73"></a><span class="tm">21:32:11</span><span class="nk"> &lt;shadower&gt;</span> yeah
+<a name="l-74"></a><span class="tm">21:32:40</span><span class="nk"> &lt;zaneb&gt;</span> this way is actually closer to AWS
+<a name="l-75"></a><span class="tm">21:32:47</span><span class="nk"> &lt;sdake&gt;</span> agree with zaneb
+<a name="l-76"></a><span class="tm">21:32:48</span><span class="nk"> &lt;zaneb&gt;</span> RedDwarf claim they're faster
+<a name="l-77"></a><span class="tm">21:33:02</span><span class="nk"> &lt;zaneb&gt;</span> it's an interesting project
+<a name="l-78"></a><span class="tm">21:33:12</span><span class="nk"> &lt;sdake&gt;</span> yup have to watch it and see where it heads
+<a name="l-79"></a><span class="tm">21:33:15</span><span class="nk"> &lt;zaneb&gt;</span> but good to have something going now
+<a name="l-80"></a><span class="tm">21:33:45</span><span class="nk"> &lt;sdake&gt;</span> zaneb any update on integration tests
+<a name="l-81"></a><span class="tm">21:34:16</span><span class="nk"> &lt;zaneb&gt;</span> <span class="hi">yeah:</span> downloading Fedora ISOs is really slow ;)
+<a name="l-82"></a><span class="tm">21:34:27</span><span class="nk"> &lt;zaneb&gt;</span> will cache them on one of those lab machines
+<a name="l-83"></a><span class="tm">21:34:36</span><span class="nk"> &lt;sdake&gt;</span> sounds good
+<a name="l-84"></a><span class="tm">21:34:45</span><span class="nk"> &lt;zaneb&gt;</span> but it's almost there
+<a name="l-85"></a><span class="tm">21:34:51</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#link </span><span class="cmdline">https://github.com/heat-api/heat-integration-tests</span>
+<a name="l-86"></a><span class="tm">21:34:58</span><span class="nk"> &lt;zaneb&gt;</span> so we will be able to provision a machine and run the test from a script
+<a name="l-87"></a><span class="tm">21:34:58</span><span class="nk"> &lt;sdake&gt;</span> new repo for our integration scriptlets
+<a name="l-88"></a><span class="tm">21:36:03</span><span class="nk"> &lt;sdake&gt;</span> after you wrap up, can jpeeler add heatjeos integration tests?
+<a name="l-89"></a><span class="tm">21:36:59</span><span class="nk"> &lt;jpeeler&gt;</span> i checked with zane earlier and he said i probably could now, but i rather just wait unless there is time pressure
+<a name="l-90"></a><span class="tm">21:37:18</span><span class="nk"> &lt;sdake&gt;</span> sooner better but whatevery ou feel comfortable with
+<a name="l-91"></a><span class="tm">21:37:45</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#action </span><span class="cmdline">jpeeler to add integration tests for heat_jeos to heat-integration-tests repo</span>
+<a name="l-92"></a><span class="tm">21:38:01</span><span class="nk"> &lt;sdake&gt;</span> any other topics zaneb?
+<a name="l-93"></a><span class="tm">21:38:11</span><span class="nk"> &lt;sdake&gt;</span> probably trying to tidy up before pto ;)
+<a name="l-94"></a><span class="tm">21:38:20</span><span class="nk"> &lt;zaneb&gt;</span> yeah, exactly
+<a name="l-95"></a><span class="tm">21:38:25</span><span class="nk"> &lt;sdake&gt;</span> cool
+<a name="l-96"></a><span class="tm">21:38:34</span><span class="nk"> &lt;sdake&gt;</span> slower any updates on tenant auth
+<a name="l-97"></a><span class="tm">21:38:57</span><span class="nk"> &lt;Slower&gt;</span> so yeah
+<a name="l-98"></a><span class="tm">21:39:04</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">zaneb close to having a provision + integration test toolset working</span>
+<a name="l-99"></a><span class="tm">21:39:25</span><span class="nk"> &lt;Slower&gt;</span> as some of you know I had a discussion with vishy on #openstack-dev about using a 'heat' user to do operations
+<a name="l-100"></a><span class="tm">21:39:43</span><span class="nk"> &lt;Slower&gt;</span> he pointed out that we would lose quota and billing info
+<a name="l-101"></a><span class="tm">21:39:58</span><span class="nk"> &lt;Slower&gt;</span> and that he thought it'd be better to stick with storing creds for now
+<a name="l-102"></a><span class="tm">21:40:17</span><span class="nk"> &lt;Slower&gt;</span> so I am presently working on just moving the db to do per-tenant keying and then encrypting the creds in the db
+<a name="l-103"></a><span class="tm">21:40:28</span><span class="nk"> &lt;Slower&gt;</span> I also just spoke with adam young who is working on keystone
+<a name="l-104"></a><span class="tm">21:40:33</span><span class="nk"> &lt;Slower&gt;</span> he had some ideas for how to make this work better
+<a name="l-105"></a><span class="tm">21:40:34</span><span class="nk"> &lt;asalkeld&gt;</span> keystone needs "su"
+<a name="l-106"></a><span class="tm">21:40:37</span><span class="nk"> &lt;Slower&gt;</span> yeah :)
+<a name="l-107"></a><span class="tm">21:40:46</span><span class="nk"> &lt;Slower&gt;</span> that's what I said.. he didn't like that as much though
+<a name="l-108"></a><span class="tm">21:40:52</span><span class="nk"> &lt;Slower&gt;</span> he wanted to do signed operations
+<a name="l-109"></a><span class="tm">21:41:07</span><span class="nk"> &lt;asalkeld&gt;</span> sounds fancy
+<a name="l-110"></a><span class="tm">21:41:10</span><span class="nk"> &lt;Slower&gt;</span> so you could sign some operations with the users creds when you had them
+<a name="l-111"></a><span class="tm">21:41:15</span><span class="nk"> &lt;sdake&gt;</span> sounds complicated to me ;)
+<a name="l-112"></a><span class="tm">21:41:16</span><span class="nk"> &lt;Slower&gt;</span> and then use those at a later time
+<a name="l-113"></a><span class="tm">21:41:19</span><span class="nk"> &lt;Slower&gt;</span> yes it does
+<a name="l-114"></a><span class="tm">21:41:25</span><span class="nk"> &lt;Slower&gt;</span> I need to talk to him more
+<a name="l-115"></a><span class="tm">21:41:43</span><span class="nk"> &lt;Slower&gt;</span> but he did have a good point re the user might not being valid at a later date, and that causing ha to fail
+<a name="l-116"></a><span class="tm">21:41:46</span><span class="nk"> &lt;sdake&gt;</span> well i suggest not overcomplicating things, especially around security
+<a name="l-117"></a><span class="tm">21:41:57</span><span class="nk"> &lt;Slower&gt;</span> yeah
+<a name="l-118"></a><span class="tm">21:42:08</span><span class="nk"> &lt;Slower&gt;</span> I talked to him about my concerns with security in openstack/keystone
+<a name="l-119"></a><span class="tm">21:42:22</span><span class="nk"> &lt;Slower&gt;</span> which it turns out are valid.. :)
+<a name="l-120"></a><span class="tm">21:42:38</span><span class="nk"> &lt;sdake&gt;</span> so summary is "work ongoing" :)?
+<a name="l-121"></a><span class="tm">21:42:39</span><span class="nk"> &lt;Slower&gt;</span> so I'm not sure why 'su' is frowned upon.. :)
+<a name="l-122"></a><span class="tm">21:42:44</span><span class="nk"> &lt;Slower&gt;</span> <span class="hi">sdake:</span> exactly, yes :)
+<a name="l-123"></a><span class="tm">21:42:56</span><span class="nk"> &lt;Slower&gt;</span> but we will have per-tenant stacks and encrypted creds for v5
+<a name="l-124"></a><span class="tm">21:43:00</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">security work ongoing</span>
+<a name="l-125"></a><span class="tm">21:43:08</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">will have per-tenant stacks in v5</span>
+<a name="l-126"></a><span class="tm">21:43:13</span><span class="nk"> &lt;sdake&gt;</span> cool
+<a name="l-127"></a><span class="tm">21:43:23</span><span class="nk"> &lt;sdake&gt;</span> asalkeld made the autoscaling magic work?
+<a name="l-128"></a><span class="tm">21:43:31</span><span class="nk"> &lt;asalkeld&gt;</span> ya seems to work
+<a name="l-129"></a><span class="tm">21:43:48</span><span class="nk"> &lt;asalkeld&gt;</span> scales up and down as advertised
+<a name="l-130"></a><span class="tm">21:43:53</span><span class="nk"> &lt;sdake&gt;</span> nice work
+<a name="l-131"></a><span class="tm">21:44:00</span><span class="nk"> &lt;asalkeld&gt;</span> loadbalancer seems to work
+<a name="l-132"></a><span class="tm">21:44:11</span><span class="nk"> &lt;asalkeld&gt;</span> haven't stressed the lb
+<a name="l-133"></a><span class="tm">21:44:11</span><span class="nk"> &lt;sdake&gt;</span> come with a wiki page?
+<a name="l-134"></a><span class="tm">21:44:18</span><span class="nk"> &lt;asalkeld&gt;</span> can do
+<a name="l-135"></a><span class="tm">21:44:22</span><span class="nk"> &lt;sdake&gt;</span> thanks bro
+<a name="l-136"></a><span class="tm">21:44:32</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#action </span><span class="cmdline">asalkeld to make wiki page about autoscaling usage</span>
+<a name="l-137"></a><span class="tm">21:44:40</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#undo</span><span class="cmdline"></span>
+<a name="l-138"></a><span class="tm">21:44:40</span><span class="nk"> &lt;mheat-bot&gt;</span> Removing item from minutes: &lt;MeetBot.items.Action object at 0x7fe970fb2390&gt;
+<a name="l-139"></a><span class="tm">21:44:49</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#action </span><span class="cmdline">asalkeld to make howto regarding autoscaling</span>
+<a name="l-140"></a><span class="tm">21:44:57</span><span class="nk"> &lt;asalkeld&gt;</span> lb still only does http
+<a name="l-141"></a><span class="tm">21:45:04</span><span class="nk"> &lt;sdake&gt;</span> should be ok
+<a name="l-142"></a><span class="tm">21:45:10</span><span class="nk"> &lt;asalkeld&gt;</span> but can add features as needed
+<a name="l-143"></a><span class="tm">21:45:30</span><span class="nk"> &lt;sdake&gt;</span> few updates from me
+<a name="l-144"></a><span class="tm">21:45:48</span><span class="nk"> &lt;sdake&gt;</span> I've been making a go at matching our paste pipeline to how nova does things
+<a name="l-145"></a><span class="tm">21:46:02</span><span class="nk"> &lt;sdake&gt;</span> more work needed there
+<a name="l-146"></a><span class="tm">21:46:24</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">autoscaling working well with loadbalancer nested stack</span>
+<a name="l-147"></a><span class="tm">21:46:48</span><span class="nk"> &lt;sdake&gt;</span> also been taking a crack at adding heat to devstack
+<a name="l-148"></a><span class="tm">21:47:07</span><span class="nk"> &lt;sdake&gt;</span> dont think either will make v5
+<a name="l-149"></a><span class="tm">21:47:19</span><span class="nk"> &lt;sdake&gt;</span> well, some of the paste will but wont be complete
+<a name="l-150"></a><span class="tm">21:47:29</span><span class="nk"> &lt;sdake&gt;</span> any questions
+<a name="l-151"></a><span class="tm">21:47:41</span><span class="nk"> &lt;asalkeld&gt;</span> sounds good
+<a name="l-152"></a><span class="tm">21:47:49</span><span class="nk"> &lt;sdake&gt;</span> shardy any updates?
+<a name="l-153"></a><span class="tm">21:48:00</span><span class="nk"> &lt;shardy&gt;</span> Yep - I added UpdateStack last week
+<a name="l-154"></a><span class="tm">21:48:06</span><span class="nk"> &lt;sdake&gt;</span> nice work
+<a name="l-155"></a><span class="tm">21:48:13</span><span class="nk"> &lt;shardy&gt;</span> but with a default delete/replace logic for resources
+<a name="l-156"></a><span class="tm">21:48:19</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">UpdateStack added to master</span>
+<a name="l-157"></a><span class="tm">21:48:38</span><span class="nk"> &lt;shardy&gt;</span> so each resource now has a handle_update method where we need to add non-disruptive update logic
+<a name="l-158"></a><span class="tm">21:48:43</span><span class="nk"> &lt;Slower&gt;</span> <span class="hi">shardy:</span> it only delete/replaces those things that changed?
+<a name="l-159"></a><span class="tm">21:49:13</span><span class="nk"> &lt;zaneb&gt;</span> <span class="hi">Slower:</span> that's a TODO ;)
+<a name="l-160"></a><span class="tm">21:49:17</span><span class="nk"> &lt;shardy&gt;</span> <span class="hi">Slower:</span> yes, exactly, it compares the parsed templates per-resource
+<a name="l-161"></a><span class="tm">21:49:28</span><span class="nk"> &lt;Slower&gt;</span> <span class="hi">shardy:</span> cool
+<a name="l-162"></a><span class="tm">21:49:47</span><span class="nk"> &lt;shardy&gt;</span> but if people have detailed knowledge of specific resources, help with getting non-disruptive updates working in due course would be great :)
+<a name="l-163"></a><span class="tm">21:50:13</span><span class="nk"> &lt;shardy&gt;</span> In many cases the correct behavior is to delete/replace anyway so it's a reasonable default approach
+<a name="l-164"></a><span class="tm">21:51:25</span><span class="nk"> &lt;sdake&gt;</span> ok I think that is everyone
+<a name="l-165"></a><span class="tm">21:51:37</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">v5 release</span>
+<a name="l-166"></a><span class="tm">21:51:56</span><span class="nk"> &lt;sdake&gt;</span> For some reason last week, I said we had two weeks to do v5, but it was actually one week
+<a name="l-167"></a><span class="tm">21:52:09</span><span class="nk"> &lt;sdake&gt;</span> so I took liberty of moving it out a week to the 30th
+<a name="l-168"></a><span class="tm">21:52:31</span><span class="nk"> &lt;sdake&gt;</span> this should give us a bit of time to sort out remaining bugs
+<a name="l-169"></a><span class="tm">21:52:55</span><span class="nk"> &lt;sdake&gt;</span> any feature anyone working on not making v5? (1 week)?
+<a name="l-170"></a><span class="tm">21:54:15</span><span class="nk"> &lt;shardy&gt;</span> <span class="hi">sdake:</span> I marked CloudWatch API as v5, but I think it's going to be in the next cycle - I did UpdateStack instead
+<a name="l-171"></a><span class="tm">21:54:35</span><span class="nk"> &lt;sdake&gt;</span> shardy ok, can you modify the bug and just untag it from a milestone?
+<a name="l-172"></a><span class="tm">21:54:42</span><span class="nk"> &lt;shardy&gt;</span> <span class="hi">sdake:</span> will do
+<a name="l-173"></a><span class="tm">21:54:58</span><span class="nk"> &lt;sdake&gt;</span> ok need to choose a release manager for v5
+<a name="l-174"></a><span class="tm">21:55:08</span><span class="nk"> &lt;sdake&gt;</span> zaneb will be on vacation
+<a name="l-175"></a><span class="tm">21:55:28</span><span class="nk"> &lt;shadower&gt;</span> I can do it
+<a name="l-176"></a><span class="tm">21:55:30</span><span class="nk"> &lt;sdake&gt;</span> possible victims include asalkeld, shardy, jpeeler
+<a name="l-177"></a><span class="tm">21:55:41</span><span class="nk"> &lt;asalkeld&gt;</span> nix
+<a name="l-178"></a><span class="tm">21:55:44</span><span class="nk"> &lt;sdake&gt;</span> haha
+<a name="l-179"></a><span class="tm">21:55:46</span><span class="nk"> &lt;shadower&gt;</span> nevermind then
+<a name="l-180"></a><span class="tm">21:55:51</span><span class="nk"> &lt;shadower&gt;</span> :-)
+<a name="l-181"></a><span class="tm">21:55:58</span><span class="nk"> &lt;sdake&gt;</span> sorry and shadower
+<a name="l-182"></a><span class="tm">21:56:15</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">release manager choices include asalkeld, shadower, shardy, jpeeler</span>
+<a name="l-183"></a><span class="tm">21:56:40</span><span class="nk"> &lt;sdake&gt;</span> asalkeld, release manager going to catch up to you ;)
+<a name="l-184"></a><span class="tm">21:57:08</span><span class="nk"> &lt;asalkeld&gt;</span> probably
+<a name="l-185"></a><span class="tm">21:57:12</span><span class="nk"> &lt;sdake&gt;</span> any on that list would like to manage the v5 release?
+<a name="l-186"></a><span class="tm">21:57:21</span><span class="nk"> &lt;sdake&gt;</span> at most 4 more releases ;)
+<a name="l-187"></a><span class="tm">21:57:28</span><span class="nk"> &lt;asalkeld&gt;</span> just choose and shoot
+<a name="l-188"></a><span class="tm">21:57:43</span><span class="nk"> &lt;sdake&gt;</span> any volunteer
+<a name="l-189"></a><span class="tm">21:57:45</span><span class="nk"> &lt;jpeeler&gt;</span> i can do it
+<a name="l-190"></a><span class="tm">21:57:52</span><span class="nk"> &lt;sdake&gt;</span> jpeeler volunteers
+<a name="l-191"></a><span class="tm">21:57:53</span><span class="nk"> &lt;sdake&gt;</span> any others
+<a name="l-192"></a><span class="tm">21:58:02</span><span class="nk"> &lt;shadower&gt;</span> me
+<a name="l-193"></a><span class="tm">21:58:08</span><span class="nk"> &lt;sdake&gt;</span> shadower volunteers
+<a name="l-194"></a><span class="tm">21:58:36</span><span class="nk"> &lt;shardy&gt;</span> I'm happy to do it, but am on PTO from the 3rd
+<a name="l-195"></a><span class="tm">21:58:50</span><span class="nk"> &lt;sdake&gt;</span> probably easiest way to choose is to see if you have critical work over next week that would be interrupted on monday/tu of next week
+<a name="l-196"></a><span class="tm">21:58:57</span><span class="nk"> &lt;sdake&gt;</span> jpeeler got anything cooking?
+<a name="l-197"></a><span class="tm">21:59:02</span><span class="nk"> &lt;sdake&gt;</span> shadower got anything cooking?
+<a name="l-198"></a><span class="tm">21:59:05</span><span class="nk"> &lt;shadower&gt;</span> nope
+<a name="l-199"></a><span class="tm">21:59:18</span><span class="nk"> &lt;Slower&gt;</span> oh yes I'm off next week if that matters
+<a name="l-200"></a><span class="tm">21:59:29</span><span class="nk"> &lt;sdake&gt;</span> no problem slower
+<a name="l-201"></a><span class="tm">21:59:33</span><span class="nk"> &lt;sdake&gt;</span> you already did release manager
+<a name="l-202"></a><span class="tm">21:59:48</span><span class="nk"> &lt;Slower&gt;</span> ya
+<a name="l-203"></a><span class="tm">21:59:49</span><span class="nk"> &lt;sdake&gt;</span> just a reminder, each contributor release manager for a release until everyone used up, then we start a new :)
+<a name="l-204"></a><span class="tm">21:59:53</span><span class="nk"> &lt;Slower&gt;</span> it was terrible
+<a name="l-205"></a><span class="tm">21:59:58</span><span class="nk"> &lt;Slower&gt;</span> ;-)
+<a name="l-206"></a><span class="tm">22:00:01</span><span class="nk"> &lt;sdake&gt;</span> your internet fired imo :)
+<a name="l-207"></a><span class="tm">22:00:03</span><span class="nk"> &lt;shadower&gt;</span> <span class="hi">Slower:</span> thanks
+<a name="l-208"></a><span class="tm">22:00:07</span><span class="nk"> &lt;Slower&gt;</span> haha
+<a name="l-209"></a><span class="tm">22:00:17</span><span class="nk"> &lt;Slower&gt;</span> j/k
+<a name="l-210"></a><span class="tm">22:00:32</span><span class="nk"> &lt;sdake&gt;</span> jpeeler - any thoughts on upcoming week, especially around monday/tuesday?
+<a name="l-211"></a><span class="tm">22:00:36</span><span class="nk"> &lt;jpeeler&gt;</span> i don't think there's anything time sensitive in my queue
+<a name="l-212"></a><span class="tm">22:00:53</span><span class="nk"> &lt;sdake&gt;</span> fedora reviews wouldn't be impacted?
+<a name="l-213"></a><span class="tm">22:01:15</span><span class="nk"> &lt;sdake&gt;</span> meeting bot needs a coin flipper
+<a name="l-214"></a><span class="tm">22:01:21</span><span class="nk"> &lt;jpeeler&gt;</span> well... they are perfect, remember? maybe should not assume that
+<a name="l-215"></a><span class="tm">22:02:00</span><span class="nk"> &lt;sdake&gt;</span> jpeeler mind waiting until next release, - would like to make sure fedora review etc goes smoothly
+<a name="l-216"></a><span class="tm">22:02:36</span><span class="nk"> &lt;jpeeler&gt;</span> probably for the best
+<a name="l-217"></a><span class="tm">22:02:41</span><span class="nk"> &lt;asalkeld&gt;</span> say I need to help with kids ...
+<a name="l-218"></a><span class="tm">22:02:46</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">shadower release manager for v5</span>
+<a name="l-219"></a><span class="tm">22:02:52</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">jpeeler release manager for v6</span>
+<a name="l-220"></a><span class="tm">22:02:52</span><span class="nk"> &lt;asalkeld&gt;</span> anything more for me?
+<a name="l-221"></a><span class="tm">22:03:08</span><span class="nk"> &lt;sdake&gt;</span> asalkeld you have any open issues?
+<a name="l-222"></a><span class="tm">22:03:15</span><span class="nk"> &lt;asalkeld&gt;</span> no all good
+<a name="l-223"></a><span class="tm">22:03:18</span><span class="nk"> &lt;sdake&gt;</span> ok
+<a name="l-224"></a><span class="tm">22:03:47</span><span class="nk"> &lt;sdake&gt;</span> so 1 week, please get things wrapped up hopefully by wed-thur of this week to make shadower's job easier ;)
+<a name="l-225"></a><span class="tm">22:04:00</span><span class="nk"> &lt;sdake&gt;</span> shadower feel free to flog the devs to help with testing specific things
+<a name="l-226"></a><span class="tm">22:04:15</span><span class="nk"> &lt;sdake&gt;</span> hopefully v6 we will have some integration testing of our templates in an automated way
+<a name="l-227"></a><span class="tm">22:04:29</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">open items</span>
+<a name="l-228"></a><span class="tm">22:04:53</span><span class="nk"> &lt;sdake&gt;</span> any open issues?
+<a name="l-229"></a><span class="tm">22:05:00</span><span class="nk"> &lt;sdake&gt;</span> eventlet?
+<a name="l-230"></a><span class="tm">22:05:08</span><span class="nk"> &lt;shadower&gt;</span> that's closed :-)
+<a name="l-231"></a><span class="tm">22:05:27</span><span class="nk"> &lt;shadower&gt;</span> we have a new maintainer now, a new \release has been promissed in a week
+<a name="l-232"></a><span class="tm">22:05:55</span><span class="nk"> &lt;shardy&gt;</span> boto upstream have been unresponsive recently, so I think we need to maintain our current client for the time being
+<a name="l-233"></a><span class="tm">22:05:59</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">eventlet has new maintainer with new release planned in the next week</span>
+<a name="l-234"></a><span class="tm">22:06:21</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">boto upstream a bit unresponsive - may need to maintain heat client for longer period of time</span>
+<a name="l-235"></a><span class="tm">22:07:27</span><span class="nk"> &lt;sdake&gt;</span> ok if nothing else, I'll end the meeting and post the minutes
+<a name="l-236"></a><span class="tm">22:07:48</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

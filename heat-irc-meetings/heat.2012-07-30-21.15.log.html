@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#heat log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">21:15:53</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">21:15:53</span><span class="nk"> &lt;mheat-bot&gt;</span> Meeting started Mon Jul 30 21:15:53 2012 UTC.  The chair is sdake. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">21:15:53</span><span class="nk"> &lt;mheat-bot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">21:16:23</span><span class="nk"> &lt;sdake&gt;</span> agenda rollcall, v5 release status, roadmap features
+<a name="l-5"></a><span class="tm">21:16:26</span><span class="nk"> &lt;sdake&gt;</span> sdake here
+<a name="l-6"></a><span class="tm">21:16:37</span><span class="nk"> &lt;asalkeld_&gt;</span> asalkeld_, here
+<a name="l-7"></a><span class="tm">21:16:39</span><span class="nk"> &lt;shardy&gt;</span> shardy here
+<a name="l-8"></a><span class="tm">21:16:51</span><span class="nk"> &lt;jpeeler&gt;</span> jpeeler here
+<a name="l-9"></a><span class="tm">21:16:53</span><span class="nk"> &lt;shadower&gt;</span> shadower here
+<a name="l-10"></a><span class="tm">21:17:09</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">rollcall</span>
+<a name="l-11"></a><span class="tm">21:17:29</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">sdake, asalkeld, shardy, jpeeler, shadower present</span>
+<a name="l-12"></a><span class="tm">21:17:35</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">v5 release status</span>
+<a name="l-13"></a><span class="tm">21:18:31</span><span class="nk"> &lt;sdake&gt;</span> shadower having some problems pulling off the testing?
+<a name="l-14"></a><span class="tm">21:18:59</span><span class="nk"> &lt;shadower&gt;</span> I managed to test most of the templates before my setup got busted
+<a name="l-15"></a><span class="tm">21:19:23</span><span class="nk"> &lt;shadower&gt;</span> the added features have been tested
+<a name="l-16"></a><span class="tm">21:19:34</span><span class="nk"> &lt;shadower&gt;</span> what  I couldn't finish were the EIP templates
+<a name="l-17"></a><span class="tm">21:19:37</span><span class="nk"> &lt;sdake&gt;</span> shardy was also testing?
+<a name="l-18"></a><span class="tm">21:19:41</span><span class="nk"> &lt;shadower&gt;</span> and shardy discovered some issues there
+<a name="l-19"></a><span class="tm">21:19:59</span><span class="nk"> &lt;shardy&gt;</span> <span class="hi">sdake:</span> yep, I tested EIP today and spent most of the afternoon figuring out what was causing them
+<a name="l-20"></a><span class="tm">21:20:02</span><span class="nk"> &lt;shadower&gt;</span> shardy was helping me once I realised that I'm not going to finish it alone due to the brokenn setup
+<a name="l-21"></a><span class="tm">21:20:25</span><span class="nk"> &lt;shardy&gt;</span> I think that commit should fix both issues, but my openstack is broken now, more testing todo after I fix
+<a name="l-22"></a><span class="tm">21:20:26</span><span class="nk"> &lt;sdake&gt;</span> were you able to test ubuntu precise host?
+<a name="l-23"></a><span class="tm">21:20:45</span><span class="nk"> &lt;shadower&gt;</span> I didn't get to do that
+<a name="l-24"></a><span class="tm">21:21:15</span><span class="nk"> &lt;shadower&gt;</span> I can try after the meeting or tomorrow morning
+<a name="l-25"></a><span class="tm">21:21:16</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">bug found with EIP template - appears fixed</span>
+<a name="l-26"></a><span class="tm">21:21:36</span><span class="nk"> &lt;sdake&gt;</span> tomorrow morning is quickly approaching for you, istn' it like 11pm there?
+<a name="l-27"></a><span class="tm">21:21:41</span><span class="nk"> &lt;shardy&gt;</span> actually it was a parser bug which affected all resources, not just EIP
+<a name="l-28"></a><span class="tm">21:21:46</span><span class="nk"> &lt;shadower&gt;</span> yeah
+<a name="l-29"></a><span class="tm">21:21:51</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#undo</span><span class="cmdline"></span>
+<a name="l-30"></a><span class="tm">21:21:51</span><span class="nk"> &lt;mheat-bot&gt;</span> Removing item from minutes: &lt;MeetBot.items.Info object at 0x7fe970fb8310&gt;
+<a name="l-31"></a><span class="tm">21:21:59</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">parser bug found which affects all resources appears fixed</span>
+<a name="l-32"></a><span class="tm">21:22:44</span><span class="nk"> &lt;sdake&gt;</span> ok i suggest get some shuteye, and attack in the morning
+<a name="l-33"></a><span class="tm">21:23:00</span><span class="nk"> &lt;sdake&gt;</span> in meantime, shardy+sdake can shake out rest of fedora test env
+<a name="l-34"></a><span class="tm">21:23:25</span><span class="nk"> &lt;shadower&gt;</span> ok
+<a name="l-35"></a><span class="tm">21:23:32</span><span class="nk"> &lt;shardy&gt;</span> I can continue helping tomorro, is ~10pm here too ;)
+<a name="l-36"></a><span class="tm">21:23:34</span><span class="nk"> &lt;sdake&gt;</span> be nice when our integration tests are running all the time
+<a name="l-37"></a><span class="tm">21:23:43</span><span class="nk"> &lt;asalkeld&gt;</span> ya
+<a name="l-38"></a><span class="tm">21:23:47</span><span class="nk"> &lt;sdake&gt;</span> sdake will shake out fedora after shardy tells me which parts aren't done
+<a name="l-39"></a><span class="tm">21:24:10</span><span class="nk"> &lt;shadower&gt;</span> the only template missing is WordPress_Single_Instance_With_HA.template iirc
+<a name="l-40"></a><span class="tm">21:24:14</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#action </span><span class="cmdline">sdake finish fedora host testing</span>
+<a name="l-41"></a><span class="tm">21:24:36</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">integration testing will make releasing a whole lot easier ;)</span>
+<a name="l-42"></a><span class="tm">21:24:42</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#undo</span><span class="cmdline"></span>
+<a name="l-43"></a><span class="tm">21:24:42</span><span class="nk"> &lt;mheat-bot&gt;</span> Removing item from minutes: &lt;MeetBot.items.Info object at 0x1e5e950&gt;
+<a name="l-44"></a><span class="tm">21:24:52</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">automated integration testing in v6 will make releasing a whole lot easier</span>
+<a name="l-45"></a><span class="tm">21:25:11</span><span class="nk"> &lt;sdake&gt;</span> any problems beyond what you ran into shardy?
+<a name="l-46"></a><span class="tm">21:25:36</span><span class="nk"> &lt;sdake&gt;</span> shadower can you paste the release notes?
+<a name="l-47"></a><span class="tm">21:25:41</span><span class="nk"> &lt;shardy&gt;</span> <span class="hi">sdake:</span> no, but I did spend most of my time chasing down that parser issue, not really tested that many templates yet
+<a name="l-48"></a><span class="tm">21:25:44</span><span class="nk"> &lt;sdake&gt;</span> paste a link that is
+<a name="l-49"></a><span class="tm">21:25:59</span><span class="nk"> &lt;sdake&gt;</span> i'll go through the templates again today with the change
+<a name="l-50"></a><span class="tm">21:26:17</span><span class="nk"> &lt;shardy&gt;</span> cool, sounds good
+<a name="l-51"></a><span class="tm">21:26:33</span><span class="nk"> &lt;shadower&gt;</span> <span class="hi">sdake:</span> http://piratepad.net/IlaT3W4cHW
+<a name="l-52"></a><span class="tm">21:27:36</span><span class="nk"> &lt;asalkeld&gt;</span> looks good
+<a name="l-53"></a><span class="tm">21:27:40</span><span class="nk"> &lt;sdake&gt;</span> anyone have any suggested changes
+<a name="l-54"></a><span class="tm">21:27:50</span><span class="nk"> &lt;sdake&gt;</span> i'll give 2 mins :)
+<a name="l-55"></a><span class="tm">21:29:05</span><span class="nk"> &lt;shardy&gt;</span> looks good to me
+<a name="l-56"></a><span class="tm">21:29:07</span><span class="nk"> &lt;sdake&gt;</span> ok, lets have a vote then,
+<a name="l-57"></a><span class="tm">21:29:11</span><span class="nk"> &lt;asalkeld&gt;</span> +1
+<a name="l-58"></a><span class="tm">21:29:13</span><span class="nk"> &lt;sdake&gt;</span> VOTE Approve +1/-1
+<a name="l-59"></a><span class="tm">21:29:14</span><span class="nk"> &lt;sdake&gt;</span> +1
+<a name="l-60"></a><span class="tm">21:29:14</span><span class="nk"> &lt;shadower&gt;</span> +1
+<a name="l-61"></a><span class="tm">21:29:15</span><span class="nk"> &lt;shardy&gt;</span> +1
+<a name="l-62"></a><span class="tm">21:29:19</span><span class="nk"> &lt;jpeeler&gt;</span> +1
+<a name="l-63"></a><span class="tm">21:29:44</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">asalkeld, shadower, shardy, jpeeler, sdake +1 on approving release notes</span>
+<a name="l-64"></a><span class="tm">21:30:27</span><span class="nk"> &lt;sdake&gt;</span> ok, so just to wrap up, sdake will test the rest of the templates on fedora quickly with the new change shardy implemented to do a deepcopy of the dict
+<a name="l-65"></a><span class="tm">21:30:52</span><span class="nk"> &lt;sdake&gt;</span> shadower will give a go at running the templates on ubuntu host
+<a name="l-66"></a><span class="tm">21:31:05</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">roadmap</span>
+<a name="l-67"></a><span class="tm">21:31:29</span><span class="nk"> &lt;sdake&gt;</span> need to sort out what we plan for v6
+<a name="l-68"></a><span class="tm">21:31:59</span><span class="nk"> &lt;sdake&gt;</span> integration testing needs to be finished so we can stop the release madness ;)
+<a name="l-69"></a><span class="tm">21:32:22</span><span class="nk"> &lt;asalkeld&gt;</span> yes that would be good
+<a name="l-70"></a><span class="tm">21:32:24</span><span class="nk"> &lt;sdake&gt;</span> part of that integration testing needs to be testing for every template we ship
+<a name="l-71"></a><span class="tm">21:32:34</span><span class="nk"> &lt;sdake&gt;</span> when devs add new templates, add new test cases
+<a name="l-72"></a><span class="tm">21:32:40</span><span class="nk"> &lt;sdake&gt;</span> atm, we only have the quickstart test cases
+<a name="l-73"></a><span class="tm">21:32:46</span><span class="nk"> &lt;shardy&gt;</span> Do we have a matrix in the wiki showing where we are with AWS resource parity?
+<a name="l-74"></a><span class="tm">21:33:02</span><span class="nk"> &lt;sdake&gt;</span> we need another class of tests for the templates
+<a name="l-75"></a><span class="tm">21:33:12</span><span class="nk"> &lt;sdake&gt;</span> i'll talk with zaneb about taking that on when he returns from pto
+<a name="l-76"></a><span class="tm">21:33:26</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">need finish integration testing</span>
+<a name="l-77"></a><span class="tm">21:33:35</span><span class="nk"> &lt;sdake&gt;</span> shardy we do have a parity matrix
+<a name="l-78"></a><span class="tm">21:33:46</span><span class="nk"> &lt;sdake&gt;</span> devs should be updating on wiki when they add features
+<a name="l-79"></a><span class="tm">21:33:56</span><span class="nk"> &lt;sdake&gt;</span> if you have added a feature in v5, might want to update that parity matrix
+<a name="l-80"></a><span class="tm">21:34:26</span><span class="nk"> &lt;asalkeld&gt;</span> https://github.com/heat-api/heat/wiki/Roadmap-Feature:-AWS-template-support-parity
+<a name="l-81"></a><span class="tm">21:34:38</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">devs update parity matrix with new v5 features</span>
+<a name="l-82"></a><span class="tm">21:34:38</span><span class="nk"> &lt;shardy&gt;</span> Thanks, found it
+<a name="l-83"></a><span class="tm">21:35:08</span><span class="nk"> &lt;sdake&gt;</span> asalkeld autoscaling based upon cpu sampling?
+<a name="l-84"></a><span class="tm">21:35:23</span><span class="nk"> &lt;asalkeld&gt;</span> we don't have that
+<a name="l-85"></a><span class="tm">21:35:30</span><span class="nk"> &lt;sdake&gt;</span> talking about v6 features
+<a name="l-86"></a><span class="tm">21:35:31</span><span class="nk"> &lt;asalkeld&gt;</span> cpu sampling
+<a name="l-87"></a><span class="tm">21:35:58</span><span class="nk"> &lt;sdake&gt;</span> be nice to demo that at cloudopen on aug 31.. :)
+<a name="l-88"></a><span class="tm">21:36:01</span><span class="nk"> &lt;asalkeld&gt;</span> well it requires instrumentation on the guest
+<a name="l-89"></a><span class="tm">21:36:21</span><span class="nk"> &lt;sdake&gt;</span> a cronjob could do the sampling?
+<a name="l-90"></a><span class="tm">21:36:33</span><span class="nk"> &lt;asalkeld&gt;</span> ya
+<a name="l-91"></a><span class="tm">21:37:04</span><span class="nk"> &lt;sdake&gt;</span> sounds like good short term solution so people can see how it works
+<a name="l-92"></a><span class="tm">21:37:13</span><span class="nk"> &lt;sdake&gt;</span> without ooming their system
+<a name="l-93"></a><span class="tm">21:37:17</span><span class="nk"> &lt;shardy&gt;</span> This ties into the CloudWatch/Ceilometer idea for the long-term  solution tho right?
+<a name="l-94"></a><span class="tm">21:37:36</span><span class="nk"> &lt;sdake&gt;</span> yup
+<a name="l-95"></a><span class="tm">21:37:44</span><span class="nk"> &lt;sdake&gt;</span> like a stepping stone
+<a name="l-96"></a><span class="tm">21:37:58</span><span class="nk"> &lt;sdake&gt;</span> show how it works, then make it work correctly ;)
+<a name="l-97"></a><span class="tm">21:38:23</span><span class="nk"> &lt;shardy&gt;</span> cool
+<a name="l-98"></a><span class="tm">21:38:30</span><span class="nk"> &lt;sdake&gt;</span> asalkeld can you tackle that
+<a name="l-99"></a><span class="tm">21:38:43</span><span class="nk"> &lt;asalkeld&gt;</span> sure
+<a name="l-100"></a><span class="tm">21:39:17</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#action </span><span class="cmdline">asalkeld implement shortterm crontab solution for cpu sampling with longer term idea of getting ceilometer to replace that functionality</span>
+<a name="l-101"></a><span class="tm">21:39:28</span><span class="nk"> &lt;sdake&gt;</span> openshift templates
+<a name="l-102"></a><span class="tm">21:39:46</span><span class="nk"> &lt;shardy&gt;</span> Improved support for UpdateStack, so we can do non-interrupting and semi-interupting updates of some resources/properties
+<a name="l-103"></a><span class="tm">21:39:48</span><span class="nk"> &lt;sdake&gt;</span> so basically in my simple view of the world, heat is not a paas
+<a name="l-104"></a><span class="tm">21:40:02</span><span class="nk"> &lt;sdake&gt;</span> best way to demo we are not a paas is to launch a paas....
+<a name="l-105"></a><span class="tm">21:40:10</span><span class="nk"> &lt;sdake&gt;</span> and openshift/shiftstick fit the bill
+<a name="l-106"></a><span class="tm">21:40:14</span><span class="nk"> &lt;shardy&gt;</span> <span class="hi">sdake:</span> I'll try to get into that tomorrow and do a new wiki page
+<a name="l-107"></a><span class="tm">21:40:25</span><span class="nk"> &lt;sdake&gt;</span> cool sounds good shardy
+<a name="l-108"></a><span class="tm">21:40:54</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#action </span><span class="cmdline">shardy tackle an openshift PAAS template that runs with the assistance of heat instance launching</span>
+<a name="l-109"></a><span class="tm">21:41:21</span><span class="nk"> &lt;asalkeld&gt;</span> that one I did no good?
+<a name="l-110"></a><span class="tm">21:41:25</span><span class="nk"> &lt;shardy&gt;</span> Anyone know what the status of the existing openshift template is - does it work?
+<a name="l-111"></a><span class="tm">21:41:33</span><span class="nk"> &lt;sdake&gt;</span> i got some feedback that is only part of the solution asalkeld ?
+<a name="l-112"></a><span class="tm">21:41:44</span><span class="nk"> &lt;sdake&gt;</span> something about only being the server and not the nodes?
+<a name="l-113"></a><span class="tm">21:41:45</span><span class="nk"> &lt;asalkeld&gt;</span> well I took it from their how to
+<a name="l-114"></a><span class="tm">21:42:05</span><span class="nk"> &lt;asalkeld&gt;</span> I can give you some links later
+<a name="l-115"></a><span class="tm">21:42:14</span><span class="nk"> &lt;asalkeld&gt;</span> but it works
+<a name="l-116"></a><span class="tm">21:42:20</span><span class="nk"> &lt;asalkeld&gt;</span> installs everything
+<a name="l-117"></a><span class="tm">21:42:27</span><span class="nk"> &lt;sdake&gt;</span> cool well you did a good job on the initial template, it looks pretty complicated to get rolling, perhaps shardy can do some docs and explain how it works
+<a name="l-118"></a><span class="tm">21:42:48</span><span class="nk"> &lt;asalkeld&gt;</span> but ya, we need to get the whole thing working
+<a name="l-119"></a><span class="tm">21:43:19</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#action </span><span class="cmdline">asalkeld to point shardy at some approprirate openshift links</span>
+<a name="l-120"></a><span class="tm">21:43:31</span><span class="nk"> &lt;sdake&gt;</span> heat-jeos looks pretty darn good
+<a name="l-121"></a><span class="tm">21:43:33</span><span class="nk"> &lt;shardy&gt;</span> <span class="hi">sdake:</span> Do you want an issue to track the openshift work?
+<a name="l-122"></a><span class="tm">21:43:40</span><span class="nk"> &lt;sdake&gt;</span> shardy make one pls
+<a name="l-123"></a><span class="tm">21:43:43</span><span class="nk"> &lt;shardy&gt;</span> will do
+<a name="l-124"></a><span class="tm">21:44:26</span><span class="nk"> &lt;sdake&gt;</span> anyone have anything else to add for v6 features
+<a name="l-125"></a><span class="tm">21:44:28</span><span class="nk"> &lt;asalkeld&gt;</span> http://fedoraproject.org/wiki/Features/OpenShift_Origin
+<a name="l-126"></a><span class="tm">21:45:10</span><span class="nk"> &lt;sdake&gt;</span> depending on when v6 finishes up and f18 freezes, we may rebase f18 to v6 - have to play that by ear
+<a name="l-127"></a><span class="tm">21:45:36</span><span class="nk"> &lt;shardy&gt;</span> <span class="hi">sdake:</span> I can probably do rollback fairly easily now we have update working
+<a name="l-128"></a><span class="tm">21:45:45</span><span class="nk"> &lt;sdake&gt;</span> aug 27 is 4 weeks
+<a name="l-129"></a><span class="tm">21:45:56</span><span class="nk"> &lt;sdake&gt;</span> shardy sounds good - make issue in issue tracker
+<a name="l-130"></a><span class="tm">21:46:07</span><span class="nk"> &lt;sdake&gt;</span> also wouldn't hurt to have a general roadmap item in the roadmap list for "updatestack"
+<a name="l-131"></a><span class="tm">21:46:12</span><span class="nk"> &lt;sdake&gt;</span> along with the work items required for that
+<a name="l-132"></a><span class="tm">21:46:23</span><span class="nk"> &lt;shardy&gt;</span> <span class="hi">sdake:</span> there already is one
+<a name="l-133"></a><span class="tm">21:46:24</span><span class="nk"> &lt;asalkeld&gt;</span> http://www.slideshare.net/fallenpegasus/openshift-openstack-fedora-awesome
+<a name="l-134"></a><span class="tm">21:46:26</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#action </span><span class="cmdline">shardy to implement rollback</span>
+<a name="l-135"></a><span class="tm">21:46:34</span><span class="nk"> &lt;shardy&gt;</span> <span class="cmd">#154</span><span class="cmdline"></span>
+<a name="l-136"></a><span class="tm">21:47:28</span><span class="nk"> &lt;sdake&gt;</span> ok
+<a name="l-137"></a><span class="tm">21:47:58</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">open items</span>
+<a name="l-138"></a><span class="tm">21:48:20</span><span class="nk"> &lt;sdake&gt;</span> v5 may be our last releaes to go into f18 before f18 freezes
+<a name="l-139"></a><span class="tm">21:48:24</span><span class="nk"> &lt;sdake&gt;</span> so lets make sure its a good one :)
+<a name="l-140"></a><span class="tm">21:48:42</span><span class="nk"> &lt;sdake&gt;</span> jpeeler can yo ugive us a quick status on the f18 packaging
+<a name="l-141"></a><span class="tm">21:49:34</span><span class="nk"> &lt;jpeeler&gt;</span> yes heat is good to go now, heat-jeos has got a few things to be worked out with the package name.
+<a name="l-142"></a><span class="tm">21:50:03</span><span class="nk"> &lt;jpeeler&gt;</span> i predict that will all be finished by tomorrow and i can move on to doing the integration tests
+<a name="l-143"></a><span class="tm">21:50:14</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">heat good to go for f18 packaging, heat-jos has some packae naming issues to be resolved shortly</span>
+<a name="l-144"></a><span class="tm">21:50:42</span><span class="nk"> &lt;sdake&gt;</span> cool
+<a name="l-145"></a><span class="tm">21:50:49</span><span class="nk"> &lt;sdake&gt;</span> well everyone as usual is doing a spectacular job
+<a name="l-146"></a><span class="tm">21:51:07</span><span class="nk"> &lt;sdake&gt;</span> anyone have any open items they would like to discuss?
+<a name="l-147"></a><span class="tm">21:51:13</span><span class="nk"> &lt;shardy&gt;</span> FYI I'm on PTO this Friday and all next week
+<a name="l-148"></a><span class="tm">21:51:22</span><span class="nk"> &lt;sdake&gt;</span> enjoy pto shardy
+<a name="l-149"></a><span class="tm">21:51:26</span><span class="nk"> &lt;shardy&gt;</span> thx
+<a name="l-150"></a><span class="tm">21:51:31</span><span class="nk"> &lt;shadower&gt;</span> I'm on PTO on Friday as well
+<a name="l-151"></a><span class="tm">21:51:34</span><span class="nk"> &lt;shadower&gt;</span> (just the one day)
+<a name="l-152"></a><span class="tm">21:52:29</span><span class="nk"> &lt;sdake&gt;</span> ok well if nothing else, i'll end the meeting and post the notes
+<a name="l-153"></a><span class="tm">21:52:58</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

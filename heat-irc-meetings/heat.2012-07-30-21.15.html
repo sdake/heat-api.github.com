@@ -1,0 +1,200 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#heat Meeting</title>
+<style type="text/css">
+/* This is for the .html in the HTML2 writer */
+body {
+    font-family: Helvetica, sans-serif;
+    font-size:14px;
+}
+h1 {
+    text-align: center;
+}
+a {
+    color:navy;
+    text-decoration: none;
+    border-bottom:1px dotted navy;
+}
+a:hover {
+    text-decoration:none;
+    border-bottom: 0;
+    color:#0000B9;
+}
+hr {
+    border: 1px solid #ccc;
+}
+/* The (nick, time) item pairs, and other body text things. */
+.details {
+    font-size: 12px;
+    font-weight:bold;
+}
+/* The 'AGREED:', 'IDEA', etc, prefix to lines. */
+.itemtype {
+    font-style: normal;    /* un-italics it */
+    font-weight: bold;
+}
+/* Example: change single item types.  Capitalized command name.
+/* .TOPIC  {  color:navy;  } */
+/* .AGREED {  color:lime;  } */
+
+</style>
+</head>
+
+<body>
+<h1>#heat Meeting</h1>
+<span class="details">
+Meeting started by sdake at 21:15:53 UTC
+(<a href="heat.2012-07-30-21.15.log.html">full logs</a>).</span>
+
+<br><br>
+
+
+
+<h3>Meeting summary</h3>
+<ol>
+<li><b class="TOPIC">rollcall</b> <span class="details">(<a href='heat.2012-07-30-21.15.log.html#l-10'>sdake</a>, 21:17:09)</span>
+<ol type="a">
+  <li><span class="INFO">sdake, asalkeld, shardy, jpeeler, shadower
+    present</span> <span class="details">(<a
+    href='heat.2012-07-30-21.15.log.html#l-11'>sdake</a>,
+    21:17:29)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">v5 release status</b> <span class="details">(<a href='heat.2012-07-30-21.15.log.html#l-12'>sdake</a>, 21:17:35)</span>
+<ol type="a">
+  <li><span class="INFO">parser bug found which affects all resources
+    appears fixed</span> <span class="details">(<a
+    href='heat.2012-07-30-21.15.log.html#l-31'>sdake</a>,
+    21:21:59)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">sdake finish
+    fedora host testing</span> <span class="details">(<a
+    href='heat.2012-07-30-21.15.log.html#l-40'>sdake</a>,
+    21:24:14)</span></li>
+  <li><span class="INFO">automated integration testing in v6 will make
+    releasing a whole lot easier</span> <span class="details">(<a
+    href='heat.2012-07-30-21.15.log.html#l-44'>sdake</a>,
+    21:24:52)</span></li>
+  <li><span class="INFO">asalkeld, shadower, shardy, jpeeler, sdake +1
+    on approving release notes</span> <span class="details">(<a
+    href='heat.2012-07-30-21.15.log.html#l-63'>sdake</a>,
+    21:29:44)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">roadmap</b> <span class="details">(<a href='heat.2012-07-30-21.15.log.html#l-66'>sdake</a>, 21:31:05)</span>
+<ol type="a">
+  <li><span class="INFO">need finish integration testing</span> <span
+    class="details">(<a
+    href='heat.2012-07-30-21.15.log.html#l-76'>sdake</a>,
+    21:33:26)</span></li>
+  <li><a
+    href="https://github.com/heat-api/heat/wiki/Roadmap-Feature:-AWS-template-support-parity">https://github.com/heat-api/heat/wiki/Roadmap-Feature:-AWS-template-support-parity</a>
+    <span class="details">(<a
+    href='heat.2012-07-30-21.15.log.html#l-80'>asalkeld</a>,
+    21:34:26)</span></li>
+  <li><span class="INFO">devs update parity matrix with new v5
+    features</span> <span class="details">(<a
+    href='heat.2012-07-30-21.15.log.html#l-81'>sdake</a>,
+    21:34:38)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">asalkeld
+    implement shortterm crontab solution for cpu sampling with longer
+    term idea of getting ceilometer to replace that functionality</span>
+    <span class="details">(<a
+    href='heat.2012-07-30-21.15.log.html#l-100'>sdake</a>,
+    21:39:17)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">shardy tackle
+    an openshift PAAS template that runs with the assistance of heat
+    instance launching</span> <span class="details">(<a
+    href='heat.2012-07-30-21.15.log.html#l-108'>sdake</a>,
+    21:40:54)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">asalkeld to
+    point shardy at some approprirate openshift links</span> <span
+    class="details">(<a
+    href='heat.2012-07-30-21.15.log.html#l-119'>sdake</a>,
+    21:43:19)</span></li>
+  <li><a
+    href="http://fedoraproject.org/wiki/Features/OpenShift_Origin">http://fedoraproject.org/wiki/Features/OpenShift_Origin</a>
+    <span class="details">(<a
+    href='heat.2012-07-30-21.15.log.html#l-125'>asalkeld</a>,
+    21:44:28)</span></li>
+  <li><a
+    href="http://www.slideshare.net/fallenpegasus/openshift-openstack-fedora-awesome">http://www.slideshare.net/fallenpegasus/openshift-openstack-fedora-awesome</a>
+    <span class="details">(<a
+    href='heat.2012-07-30-21.15.log.html#l-133'>asalkeld</a>,
+    21:46:24)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">shardy to
+    implement rollback</span> <span class="details">(<a
+    href='heat.2012-07-30-21.15.log.html#l-134'>sdake</a>,
+    21:46:26)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">open items</b> <span class="details">(<a href='heat.2012-07-30-21.15.log.html#l-137'>sdake</a>, 21:47:58)</span>
+<ol type="a">
+  <li><span class="INFO">heat good to go for f18 packaging, heat-jos has
+    some packae naming issues to be resolved shortly</span> <span
+    class="details">(<a
+    href='heat.2012-07-30-21.15.log.html#l-143'>sdake</a>,
+    21:50:14)</span></li>
+</ol>
+</li>
+</ol>
+<br><br>
+
+
+
+<span class="details">
+Meeting ended at 21:52:58 UTC
+(<a href="heat.2012-07-30-21.15.log.html">full logs</a>).</span>
+
+<br><br>
+
+
+
+<h3>Action items</h3>
+<ol>
+  <li>sdake finish fedora host testing</li>
+  <li>asalkeld implement shortterm crontab solution for cpu sampling with longer term idea of getting ceilometer to replace that functionality</li>
+  <li>shardy tackle an openshift PAAS template that runs with the assistance of heat instance launching</li>
+  <li>asalkeld to point shardy at some approprirate openshift links</li>
+  <li>shardy to implement rollback</li>
+</ol>
+<br><br>
+
+
+
+<h3>Action items, by person</h3>
+<ol>
+  <li> asalkeld <ol>
+    <li>asalkeld implement shortterm crontab solution for cpu sampling with longer term idea of getting ceilometer to replace that functionality</li>
+    <li>asalkeld to point shardy at some approprirate openshift links</li>
+  </ol></li>
+  <li> sdake <ol>
+    <li>sdake finish fedora host testing</li>
+  </ol></li>
+  <li> shardy <ol>
+    <li>shardy tackle an openshift PAAS template that runs with the assistance of heat instance launching</li>
+    <li>asalkeld to point shardy at some approprirate openshift links</li>
+    <li>shardy to implement rollback</li>
+  </ol></li>
+</ol>
+<br><br>
+
+
+
+<h3>People present (lines said)</h3>
+<ol>
+  <li>sdake (88)</li>
+  <li>shardy (23)</li>
+  <li>asalkeld (18)</li>
+  <li>shadower (15)</li>
+  <li>mheat-bot (4)</li>
+  <li>jpeeler (4)</li>
+  <li>asalkeld_ (1)</li>
+</ol>
+<br><br>
+
+
+
+<span class="details">Generated by <a href="http://wiki.debian.org/MeetBot">MeetBot</a> 0.1.4.</span>
+</body></html>

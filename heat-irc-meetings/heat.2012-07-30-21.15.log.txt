@@ -1,0 +1,153 @@
+21:15:53 <sdake> #startmeeting
+21:15:53 <mheat-bot> Meeting started Mon Jul 30 21:15:53 2012 UTC.  The chair is sdake. Information about MeetBot at http://wiki.debian.org/MeetBot.
+21:15:53 <mheat-bot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+21:16:23 <sdake> agenda rollcall, v5 release status, roadmap features
+21:16:26 <sdake> sdake here
+21:16:37 <asalkeld_> asalkeld_, here
+21:16:39 <shardy> shardy here
+21:16:51 <jpeeler> jpeeler here
+21:16:53 <shadower> shadower here
+21:17:09 <sdake> #topic rollcall
+21:17:29 <sdake> #info sdake, asalkeld, shardy, jpeeler, shadower present
+21:17:35 <sdake> #topic v5 release status
+21:18:31 <sdake> shadower having some problems pulling off the testing?
+21:18:59 <shadower> I managed to test most of the templates before my setup got busted
+21:19:23 <shadower> the added features have been tested
+21:19:34 <shadower> what  I couldn't finish were the EIP templates
+21:19:37 <sdake> shardy was also testing?
+21:19:41 <shadower> and shardy discovered some issues there
+21:19:59 <shardy> sdake: yep, I tested EIP today and spent most of the afternoon figuring out what was causing them
+21:20:02 <shadower> shardy was helping me once I realised that I'm not going to finish it alone due to the brokenn setup
+21:20:25 <shardy> I think that commit should fix both issues, but my openstack is broken now, more testing todo after I fix
+21:20:26 <sdake> were you able to test ubuntu precise host?
+21:20:45 <shadower> I didn't get to do that
+21:21:15 <shadower> I can try after the meeting or tomorrow morning
+21:21:16 <sdake> #info bug found with EIP template - appears fixed
+21:21:36 <sdake> tomorrow morning is quickly approaching for you, istn' it like 11pm there?
+21:21:41 <shardy> actually it was a parser bug which affected all resources, not just EIP
+21:21:46 <shadower> yeah
+21:21:51 <sdake> #undo
+21:21:51 <mheat-bot> Removing item from minutes: <MeetBot.items.Info object at 0x7fe970fb8310>
+21:21:59 <sdake> #info parser bug found which affects all resources appears fixed
+21:22:44 <sdake> ok i suggest get some shuteye, and attack in the morning
+21:23:00 <sdake> in meantime, shardy+sdake can shake out rest of fedora test env
+21:23:25 <shadower> ok
+21:23:32 <shardy> I can continue helping tomorro, is ~10pm here too ;)
+21:23:34 <sdake> be nice when our integration tests are running all the time
+21:23:43 <asalkeld> ya
+21:23:47 <sdake> sdake will shake out fedora after shardy tells me which parts aren't done
+21:24:10 <shadower> the only template missing is WordPress_Single_Instance_With_HA.template iirc
+21:24:14 <sdake> #action sdake finish fedora host testing
+21:24:36 <sdake> #info integration testing will make releasing a whole lot easier ;)
+21:24:42 <sdake> #undo
+21:24:42 <mheat-bot> Removing item from minutes: <MeetBot.items.Info object at 0x1e5e950>
+21:24:52 <sdake> #info automated integration testing in v6 will make releasing a whole lot easier
+21:25:11 <sdake> any problems beyond what you ran into shardy?
+21:25:36 <sdake> shadower can you paste the release notes?
+21:25:41 <shardy> sdake: no, but I did spend most of my time chasing down that parser issue, not really tested that many templates yet
+21:25:44 <sdake> paste a link that is
+21:25:59 <sdake> i'll go through the templates again today with the change
+21:26:17 <shardy> cool, sounds good
+21:26:33 <shadower> sdake: http://piratepad.net/IlaT3W4cHW
+21:27:36 <asalkeld> looks good
+21:27:40 <sdake> anyone have any suggested changes
+21:27:50 <sdake> i'll give 2 mins :)
+21:29:05 <shardy> looks good to me
+21:29:07 <sdake> ok, lets have a vote then,
+21:29:11 <asalkeld> +1
+21:29:13 <sdake> VOTE Approve +1/-1
+21:29:14 <sdake> +1
+21:29:14 <shadower> +1
+21:29:15 <shardy> +1
+21:29:19 <jpeeler> +1
+21:29:44 <sdake> #info asalkeld, shadower, shardy, jpeeler, sdake +1 on approving release notes
+21:30:27 <sdake> ok, so just to wrap up, sdake will test the rest of the templates on fedora quickly with the new change shardy implemented to do a deepcopy of the dict
+21:30:52 <sdake> shadower will give a go at running the templates on ubuntu host
+21:31:05 <sdake> #topic roadmap
+21:31:29 <sdake> need to sort out what we plan for v6
+21:31:59 <sdake> integration testing needs to be finished so we can stop the release madness ;)
+21:32:22 <asalkeld> yes that would be good
+21:32:24 <sdake> part of that integration testing needs to be testing for every template we ship
+21:32:34 <sdake> when devs add new templates, add new test cases
+21:32:40 <sdake> atm, we only have the quickstart test cases
+21:32:46 <shardy> Do we have a matrix in the wiki showing where we are with AWS resource parity?
+21:33:02 <sdake> we need another class of tests for the templates
+21:33:12 <sdake> i'll talk with zaneb about taking that on when he returns from pto
+21:33:26 <sdake> #info need finish integration testing
+21:33:35 <sdake> shardy we do have a parity matrix
+21:33:46 <sdake> devs should be updating on wiki when they add features
+21:33:56 <sdake> if you have added a feature in v5, might want to update that parity matrix
+21:34:26 <asalkeld> https://github.com/heat-api/heat/wiki/Roadmap-Feature:-AWS-template-support-parity
+21:34:38 <sdake> #info devs update parity matrix with new v5 features
+21:34:38 <shardy> Thanks, found it
+21:35:08 <sdake> asalkeld autoscaling based upon cpu sampling?
+21:35:23 <asalkeld> we don't have that
+21:35:30 <sdake> talking about v6 features
+21:35:31 <asalkeld> cpu sampling
+21:35:58 <sdake> be nice to demo that at cloudopen on aug 31.. :)
+21:36:01 <asalkeld> well it requires instrumentation on the guest
+21:36:21 <sdake> a cronjob could do the sampling?
+21:36:33 <asalkeld> ya
+21:37:04 <sdake> sounds like good short term solution so people can see how it works
+21:37:13 <sdake> without ooming their system
+21:37:17 <shardy> This ties into the CloudWatch/Ceilometer idea for the long-term  solution tho right?
+21:37:36 <sdake> yup
+21:37:44 <sdake> like a stepping stone
+21:37:58 <sdake> show how it works, then make it work correctly ;)
+21:38:23 <shardy> cool
+21:38:30 <sdake> asalkeld can you tackle that
+21:38:43 <asalkeld> sure
+21:39:17 <sdake> #action asalkeld implement shortterm crontab solution for cpu sampling with longer term idea of getting ceilometer to replace that functionality
+21:39:28 <sdake> openshift templates
+21:39:46 <shardy> Improved support for UpdateStack, so we can do non-interrupting and semi-interupting updates of some resources/properties
+21:39:48 <sdake> so basically in my simple view of the world, heat is not a paas
+21:40:02 <sdake> best way to demo we are not a paas is to launch a paas....
+21:40:10 <sdake> and openshift/shiftstick fit the bill
+21:40:14 <shardy> sdake: I'll try to get into that tomorrow and do a new wiki page
+21:40:25 <sdake> cool sounds good shardy
+21:40:54 <sdake> #action shardy tackle an openshift PAAS template that runs with the assistance of heat instance launching
+21:41:21 <asalkeld> that one I did no good?
+21:41:25 <shardy> Anyone know what the status of the existing openshift template is - does it work?
+21:41:33 <sdake> i got some feedback that is only part of the solution asalkeld ?
+21:41:44 <sdake> something about only being the server and not the nodes?
+21:41:45 <asalkeld> well I took it from their how to
+21:42:05 <asalkeld> I can give you some links later
+21:42:14 <asalkeld> but it works
+21:42:20 <asalkeld> installs everything
+21:42:27 <sdake> cool well you did a good job on the initial template, it looks pretty complicated to get rolling, perhaps shardy can do some docs and explain how it works
+21:42:48 <asalkeld> but ya, we need to get the whole thing working
+21:43:19 <sdake> #action asalkeld to point shardy at some approprirate openshift links
+21:43:31 <sdake> heat-jeos looks pretty darn good
+21:43:33 <shardy> sdake: Do you want an issue to track the openshift work?
+21:43:40 <sdake> shardy make one pls
+21:43:43 <shardy> will do
+21:44:26 <sdake> anyone have anything else to add for v6 features
+21:44:28 <asalkeld> http://fedoraproject.org/wiki/Features/OpenShift_Origin
+21:45:10 <sdake> depending on when v6 finishes up and f18 freezes, we may rebase f18 to v6 - have to play that by ear
+21:45:36 <shardy> sdake: I can probably do rollback fairly easily now we have update working
+21:45:45 <sdake> aug 27 is 4 weeks
+21:45:56 <sdake> shardy sounds good - make issue in issue tracker
+21:46:07 <sdake> also wouldn't hurt to have a general roadmap item in the roadmap list for "updatestack"
+21:46:12 <sdake> along with the work items required for that
+21:46:23 <shardy> sdake: there already is one
+21:46:24 <asalkeld> http://www.slideshare.net/fallenpegasus/openshift-openstack-fedora-awesome
+21:46:26 <sdake> #action shardy to implement rollback
+21:46:34 <shardy> #154
+21:47:28 <sdake> ok
+21:47:58 <sdake> #topic open items
+21:48:20 <sdake> v5 may be our last releaes to go into f18 before f18 freezes
+21:48:24 <sdake> so lets make sure its a good one :)
+21:48:42 <sdake> jpeeler can yo ugive us a quick status on the f18 packaging
+21:49:34 <jpeeler> yes heat is good to go now, heat-jeos has got a few things to be worked out with the package name.
+21:50:03 <jpeeler> i predict that will all be finished by tomorrow and i can move on to doing the integration tests
+21:50:14 <sdake> #info heat good to go for f18 packaging, heat-jos has some packae naming issues to be resolved shortly
+21:50:42 <sdake> cool
+21:50:49 <sdake> well everyone as usual is doing a spectacular job
+21:51:07 <sdake> anyone have any open items they would like to discuss?
+21:51:13 <shardy> FYI I'm on PTO this Friday and all next week
+21:51:22 <sdake> enjoy pto shardy
+21:51:26 <shardy> thx
+21:51:31 <shadower> I'm on PTO on Friday as well
+21:51:34 <shadower> (just the one day)
+21:52:29 <sdake> ok well if nothing else, i'll end the meeting and post the notes
+21:52:58 <sdake> #endmeeting

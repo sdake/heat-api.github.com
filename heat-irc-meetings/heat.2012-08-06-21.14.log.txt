@@ -1,0 +1,185 @@
+21:14:00 <sdake> #startmeeting
+21:14:00 <mheat-bot> Meeting started Mon Aug  6 21:14:00 2012 UTC.  The chair is sdake. Information about MeetBot at http://wiki.debian.org/MeetBot.
+21:14:00 <mheat-bot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+21:14:42 <sdake> agenda roll call, feature defition v6, roadmap items
+21:14:44 <sdake> anything else?
+21:14:51 <shadower_> yo
+21:15:08 <asalkeld> that should be enough
+21:15:29 <sdake> #topic #roll call
+21:15:32 <sdake> sdake here
+21:15:39 <shadower> shadower here
+21:15:41 <asalkeld> asalkeld, here
+21:15:50 <sdake> zaneb is on pto
+21:15:53 <jpeeler> Here
+21:16:07 <sdake> slower still on pto i think
+21:16:20 <sdake> shardy on pto
+21:16:37 <sdake> #info sdake, shadower, asalkeld, jpeeler on pto - rest of devs on vacation
+21:16:48 <sdake> #topic #feature definition v6
+21:17:24 <sdake> been working on openshift template to make that functional while shardy is on pto
+21:17:38 <sdake> would be nice if there were ways to speed that 50 minutes up
+21:17:50 <sdake> asalkeld and I came up with couple
+21:18:11 <sdake> idea of snapshotting the image and caching it based upon a template hash -> idea #!
+21:18:11 <asalkeld> 1) manual
+21:18:23 <asalkeld> 2) ^
+21:18:30 <asalkeld> 3) ozz
+21:18:43 <sdake> idea #2 is convert a template into tdl and generate a new template
+21:19:00 <asalkeld> no that was 3
+21:19:06 <sdake> ok
+21:19:28 <asalkeld> 2 is dynamically using openstack api to snapshot the image
+21:19:30 <sdake> no reson to # them anyway all fine ways
+21:19:51 <shadower> so the diff between #1 and #2 is manual vs automatic?
+21:19:57 <asalkeld> ya
+21:20:16 <sdake> #link http://docs.openstack.org/trunk/openstack-compute/admin/content/creating-images-from-running-instances.html
+21:20:20 <asalkeld> not all templates will be dynamically snapshot'able
+21:20:33 <sdake> ebs going to be a challenge in either case
+21:20:59 <asalkeld> well could do it if possible
+21:21:05 <sdake> i have tested the above link works in essex
+21:21:12 <asalkeld> else just doen't
+21:21:28 <sdake> i'd like to give a try to both methods
+21:21:39 <sdake> they both have different use cases
+21:22:11 <asalkeld> so some problems with both is dealing with cfn-signal
+21:22:14 <sdake> shadower you up for the translator way
+21:22:40 <shadower> sdake: you mean building template in oz, then making a new template?
+21:22:45 <sdake> right
+21:22:47 <shadower> yup
+21:22:56 <sdake> convert the template to oz
+21:23:05 <sdake> instanitate a template in glance
+21:23:10 <sdake> make a new template based upon old template
+21:23:13 <sdake> all in 1 tool
+21:23:21 <shadower> ya
+21:23:40 <shadower> going to have to call both heat-jeos and heat-api code I thing. Kinda bad with the split and all
+21:24:11 <sdake> #action shadower to investigate translator unit from template to TDL
+21:24:33 <sdake> jpeeler up for caching based way based upon hash of template
+21:24:51 <jpeeler> yep!
+21:25:13 <sdake> #action jpeeler to investigate caching based method based upon hash of template for speeding up boottimes
+21:25:36 <sdake> since these are both roadmap items, a roadmap wiki entry would be spectacular
+21:25:41 <sdake> since we are running out of work to do ;)
+21:26:48 <sdake> can you make roadmap wiki page for each guys?
+21:27:07 <shadower> sure
+21:27:22 <jpeeler> yep
+21:27:26 <sdake> cool
+21:27:32 <sdake> openshift - would like to see that in v6 too
+21:27:36 <asalkeld> sdake, this is a prototype?
+21:27:40 <sdake> ya prototype
+21:28:16 <sdake> our templates are somewhat buggy
+21:28:25 <sdake> this all goes back to our reliance on manual testing
+21:28:47 <sdake> we are almost to point where we can make a test case for integration for each template
+21:29:19 <asalkeld> only problem is the time it all takes
+21:29:25 <asalkeld> (to run)
+21:29:32 <sdake> to run not concerned with
+21:29:50 <sdake> even if it takes 4 hrs, that is better then us manually doing that work
+21:29:55 <asalkeld> but totally agree need tests
+21:30:21 <asalkeld> for t in templates/* run(t)
+21:30:29 <sdake> ya
+21:30:32 <asalkeld> and check it started
+21:30:45 <asalkeld> even that would be a step up
+21:30:48 <sdake> we need to start making the "check it started" part in our testing repo
+21:31:07 <asalkeld> heat describe
+21:31:23 <sdake> i want to test the actual service is available
+21:31:40 <sdake> heat may have launched it but it never started for example
+21:31:58 <asalkeld> well one step at a time
+21:32:07 <asalkeld> but sure
+21:32:15 <sdake> well I'll make a couple test cases and get a repo organized
+21:32:30 <sdake> next meeting, expect each person to take a couple templates and implement test cases before v6 :)
+21:32:43 <asalkeld> why can't these just be in functional tests
+21:32:57 <sdake> because we have provisioning that needs to be done
+21:33:28 <asalkeld> so
+21:33:42 <sdake> jpeeler are the jeos unit tests in functional test section?
+21:33:45 <asalkeld> as long as the test don't run by default
+21:34:07 <asalkeld> it's just nice having tests with the code
+21:34:14 <sdake> agree
+21:34:16 <asalkeld> else you forget about them
+21:34:27 <jpeeler> sdake: i'm working on confirming the functional test i wrote is good
+21:34:39 <jpeeler> the plan is to extend that test to automate every template
+21:34:41 <sdake> how did you implement functioanl test, inside heat testing infra?
+21:34:44 <jpeeler> (at least that was my plan)
+21:34:58 <sdake> ok - think we need to accelerate that and split load between the team
+21:35:11 <jpeeler> it took me some time to figure out beaker
+21:35:17 <jpeeler> ran into qemu permission issues
+21:35:58 <sdake> do you hve a link to your test cases for heat jeos?
+21:36:32 <jpeeler> i can produce a link to the source tree, no wiki entry
+21:36:40 <sdake> ya link to source tree is good
+21:37:14 <jpeeler> https://github.com/heat-api/heat/blob/master/heat/tests/functional/test_bin_heat.py
+21:38:02 <sdake> how do you run that from the  testing repo tools?
+21:38:08 <sdake> have a diff?
+21:38:30 <asalkeld> meeting guys
+21:38:37 <sdake> this is meeting
+21:38:43 <asalkeld> can we move along
+21:38:53 <sdake> asalkeld looks like we can keep source with tree
+21:39:06 <sdake> we were coming to conclusion on issue you raised
+21:39:30 <sdake> jpeeler when is heat-jeos going to be running from the testing repo?
+21:40:13 <jpeeler> i was hoping in the next few days, but that's without running into problems like the qemu one i described
+21:40:26 <jpeeler> that test just does one template though
+21:40:32 <sdake> i see, well then we will wait for you to sort out running the functional tests from the testing repo
+21:40:42 <sdake> then develop functional tests for the templates after
+21:41:19 <sdake> #info wait for jpeeler's functional test heat_jeos tools test to develop functional tests for templates
+21:41:28 <sdake> any other features for v6?
+21:41:40 <asalkeld> someone doing s3
+21:41:45 <asalkeld> resource
+21:42:21 <asalkeld> sdake, wasn'
+21:42:29 <asalkeld> sdake, wasn't someone doing s3
+21:42:39 <sdake> i dont believe so
+21:42:40 <asalkeld> (cold fingers)
+21:42:53 <sdake> not doing work currently is slower + zaneb + asalkeld
+21:42:57 <sdake> that is targeted at v6
+21:43:12 <sdake> i think your busy with v6 already tho :)
+21:43:28 <asalkeld> well openstack-common
+21:43:43 <asalkeld> and then celiometer?
+21:43:44 <sdake> perhaps zaneb, but he is finishing up the integration test integration with jenkins
+21:44:02 <asalkeld> I might squeeze that in
+21:44:04 <sdake> ya that makes sense - although there are some bugs in load balancer that need some love
+21:44:06 <asalkeld> we will se
+21:44:19 <sdake> perhaps i'll fix those
+21:44:35 <sdake> rather autoscale
+21:45:01 <asalkeld> just raise bugs
+21:45:06 <sdake> ya
+21:45:44 <sdake> our next big push is vpc after we wrap up this batch of work
+21:46:58 <asalkeld> looks like it is really wanted
+21:47:29 <sdake> #info v6 features: automatic optimization of boot, translated heat->oz tdl, integration testing completed, s3, load balancer fixed up, devstack integration
+21:47:52 <sdake> #info possibly start digging into vpc planning
+21:47:58 <sdake> #unfo
+21:48:11 <sdake> #info start digging into vpc planning with Quantum
+21:48:46 <asalkeld> sounds good
+21:48:51 <sdake> ok well we sort of jammed roadmap and v6 together
+21:48:59 <sdake> so .. :)
+21:49:01 <sdake> #topic open items
+21:50:01 <sdake> are we going to carry patches for bug fixes via cherry-pick for rawhide or rebase?
+21:50:36 <asalkeld> rebase can be risky
+21:50:46 <sdake> ya fix bunch of old bugs bring in new ones
+21:50:48 <asalkeld> depends what is there
+21:51:02 <sdake> autoscaling looks bit buggy
+21:51:07 <asalkeld> no general rule
+21:51:28 <asalkeld> lets see the issues
+21:51:42 <asalkeld> and I can help out
+21:51:50 <sdake> ya will file aftermeeting
+21:52:13 <sdake> notification of wait handles is pokey
+21:52:28 <sdake> asalkeld you had idea to fix?
+21:52:49 <asalkeld> can add ideas to issue
+21:52:58 <sdake> going to be giving public demo aug 27 - want demo to be snappy
+21:53:06 <sdake> @cloudopen
+21:53:17 <asalkeld> sure
+21:53:54 <sdake> besides beating openshift into shape, thats all i have
+21:53:56 <sdake> anyone else ? :)
+21:54:05 <jpeeler> going back to rawhide maintenance, if we cherry-pick we need to create version branches
+21:54:20 <sdake> we branch every version
+21:54:27 <jpeeler> you mean tag right?
+21:54:29 <asalkeld> you can do it as needed
+21:54:32 <sdake> no we branch
+21:54:38 <sdake> and tag the first commit of the branch
+21:54:39 <asalkeld> based on the tag
+21:54:57 <asalkeld> you don't _have_ to do that
+21:55:15 <sdake> we have done this for all our releases
+21:55:30 <jpeeler> yeah just making sure, i see that. good to go
+21:55:38 <sdake> jenkins wants to control branches
+21:55:45 <sdake> rather then us pushing branches ourselves
+21:56:32 <sdake> not sure how to submit patches for branches
+21:56:37 <sdake> i guess check them out and git review
+21:56:54 <sdake> not sure how to cherry-piick with jenkins
+21:57:13 <asalkeld> cherrypick locally and review?
+21:57:24 <sdake> ya may work - may have to amend to remove change id
+21:57:42 <sdake> shadower anything on your end?
+21:57:57 <shadower> I'm good
+21:57:57 <sdake> asalkeld anything on your end?
+21:58:04 <asalkeld> all good
+21:58:10 <sdake> ok thanks guys
+21:58:12 <sdake> #endmeeting

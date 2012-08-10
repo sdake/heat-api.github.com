@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#heat Meeting</title>
+<style type="text/css">
+/* This is for the .html in the HTML2 writer */
+body {
+    font-family: Helvetica, sans-serif;
+    font-size:14px;
+}
+h1 {
+    text-align: center;
+}
+a {
+    color:navy;
+    text-decoration: none;
+    border-bottom:1px dotted navy;
+}
+a:hover {
+    text-decoration:none;
+    border-bottom: 0;
+    color:#0000B9;
+}
+hr {
+    border: 1px solid #ccc;
+}
+/* The (nick, time) item pairs, and other body text things. */
+.details {
+    font-size: 12px;
+    font-weight:bold;
+}
+/* The 'AGREED:', 'IDEA', etc, prefix to lines. */
+.itemtype {
+    font-style: normal;    /* un-italics it */
+    font-weight: bold;
+}
+/* Example: change single item types.  Capitalized command name.
+/* .TOPIC  {  color:navy;  } */
+/* .AGREED {  color:lime;  } */
+
+</style>
+</head>
+
+<body>
+<h1>#heat Meeting</h1>
+<span class="details">
+Meeting started by sdake at 21:14:00 UTC
+(<a href="heat.2012-08-06-21.14.log.html">full logs</a>).</span>
+
+<br><br>
+
+
+
+<h3>Meeting summary</h3>
+<ol>
+<li><b class="TOPIC">#roll call</b> <span class="details">(<a href='heat.2012-08-06-21.14.log.html#l-8'>sdake</a>, 21:15:29)</span>
+<ol type="a">
+  <li><span class="INFO">sdake, shadower, asalkeld, jpeeler on pto -
+    rest of devs on vacation</span> <span class="details">(<a
+    href='heat.2012-08-06-21.14.log.html#l-16'>sdake</a>,
+    21:16:37)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">#feature definition v6</b> <span class="details">(<a href='heat.2012-08-06-21.14.log.html#l-17'>sdake</a>, 21:16:48)</span>
+<ol type="a">
+  <li><a
+    href="http://docs.openstack.org/trunk/openstack-compute/admin/content/creating-images-from-running-instances.html">http://docs.openstack.org/trunk/openstack-compute/admin/content/creating-images-from-running-instances.html</a>
+    <span class="details">(<a
+    href='heat.2012-08-06-21.14.log.html#l-32'>sdake</a>,
+    21:20:16)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">shadower to
+    investigate translator unit from template to TDL</span> <span
+    class="details">(<a
+    href='heat.2012-08-06-21.14.log.html#l-51'>sdake</a>,
+    21:24:11)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">jpeeler to
+    investigate caching based method based upon hash of template for
+    speeding up boottimes</span> <span class="details">(<a
+    href='heat.2012-08-06-21.14.log.html#l-54'>sdake</a>,
+    21:25:13)</span></li>
+  <li><a
+    href="https://github.com/heat-api/heat/blob/master/heat/tests/functional/test_bin_heat.py">https://github.com/heat-api/heat/blob/master/heat/tests/functional/test_bin_heat.py</a>
+    <span class="details">(<a
+    href='heat.2012-08-06-21.14.log.html#l-102'>jpeeler</a>,
+    21:37:14)</span></li>
+  <li><span class="INFO">wait for jpeeler's functional test heat_jeos
+    tools test to develop functional tests for templates</span> <span
+    class="details">(<a
+    href='heat.2012-08-06-21.14.log.html#l-115'>sdake</a>,
+    21:41:19)</span></li>
+  <li><span class="INFO">v6 features: automatic optimization of boot,
+    translated heat-&gt;oz tdl, integration testing completed, s3, load
+    balancer fixed up, devstack integration</span> <span
+    class="details">(<a
+    href='heat.2012-08-06-21.14.log.html#l-138'>sdake</a>,
+    21:47:29)</span></li>
+  <li><span class="INFO">possibly start digging into vpc planning</span>
+    <span class="details">(<a
+    href='heat.2012-08-06-21.14.log.html#l-139'>sdake</a>,
+    21:47:52)</span></li>
+  <li><span class="INFO">start digging into vpc planning with
+    Quantum</span> <span class="details">(<a
+    href='heat.2012-08-06-21.14.log.html#l-141'>sdake</a>,
+    21:48:11)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">open items</b> <span class="details">(<a href='heat.2012-08-06-21.14.log.html#l-145'>sdake</a>, 21:49:01)</span>
+</li>
+</ol>
+<br><br>
+
+
+
+<span class="details">
+Meeting ended at 21:58:12 UTC
+(<a href="heat.2012-08-06-21.14.log.html">full logs</a>).</span>
+
+<br><br>
+
+
+
+<h3>Action items</h3>
+<ol>
+  <li>shadower to investigate translator unit from template to TDL</li>
+  <li>jpeeler to investigate caching based method based upon hash of template for speeding up boottimes</li>
+</ol>
+<br><br>
+
+
+
+<h3>Action items, by person</h3>
+<ol>
+  <li> jpeeler <ol>
+    <li>jpeeler to investigate caching based method based upon hash of template for speeding up boottimes</li>
+  </ol></li>
+  <li> shadower <ol>
+    <li>shadower to investigate translator unit from template to TDL</li>
+  </ol></li>
+</ol>
+<br><br>
+
+
+
+<h3>People present (lines said)</h3>
+<ol>
+  <li>sdake (106)</li>
+  <li>asalkeld (53)</li>
+  <li>jpeeler (15)</li>
+  <li>shadower (8)</li>
+  <li>mheat-bot (2)</li>
+  <li>shadower_ (1)</li>
+</ol>
+<br><br>
+
+
+
+<span class="details">Generated by <a href="http://wiki.debian.org/MeetBot">MeetBot</a> 0.1.4.</span>
+</body></html>

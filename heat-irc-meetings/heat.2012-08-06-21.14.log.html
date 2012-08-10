@@ -1,0 +1,212 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#heat log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">21:14:00</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">21:14:00</span><span class="nk"> &lt;mheat-bot&gt;</span> Meeting started Mon Aug  6 21:14:00 2012 UTC.  The chair is sdake. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">21:14:00</span><span class="nk"> &lt;mheat-bot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">21:14:42</span><span class="nk"> &lt;sdake&gt;</span> agenda roll call, feature defition v6, roadmap items
+<a name="l-5"></a><span class="tm">21:14:44</span><span class="nk"> &lt;sdake&gt;</span> anything else?
+<a name="l-6"></a><span class="tm">21:14:51</span><span class="nk"> &lt;shadower_&gt;</span> yo
+<a name="l-7"></a><span class="tm">21:15:08</span><span class="nk"> &lt;asalkeld&gt;</span> that should be enough
+<a name="l-8"></a><span class="tm">21:15:29</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">#roll call</span>
+<a name="l-9"></a><span class="tm">21:15:32</span><span class="nk"> &lt;sdake&gt;</span> sdake here
+<a name="l-10"></a><span class="tm">21:15:39</span><span class="nk"> &lt;shadower&gt;</span> shadower here
+<a name="l-11"></a><span class="tm">21:15:41</span><span class="nk"> &lt;asalkeld&gt;</span> asalkeld, here
+<a name="l-12"></a><span class="tm">21:15:50</span><span class="nk"> &lt;sdake&gt;</span> zaneb is on pto
+<a name="l-13"></a><span class="tm">21:15:53</span><span class="nk"> &lt;jpeeler&gt;</span> Here
+<a name="l-14"></a><span class="tm">21:16:07</span><span class="nk"> &lt;sdake&gt;</span> slower still on pto i think
+<a name="l-15"></a><span class="tm">21:16:20</span><span class="nk"> &lt;sdake&gt;</span> shardy on pto
+<a name="l-16"></a><span class="tm">21:16:37</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">sdake, shadower, asalkeld, jpeeler on pto - rest of devs on vacation</span>
+<a name="l-17"></a><span class="tm">21:16:48</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">#feature definition v6</span>
+<a name="l-18"></a><span class="tm">21:17:24</span><span class="nk"> &lt;sdake&gt;</span> been working on openshift template to make that functional while shardy is on pto
+<a name="l-19"></a><span class="tm">21:17:38</span><span class="nk"> &lt;sdake&gt;</span> would be nice if there were ways to speed that 50 minutes up
+<a name="l-20"></a><span class="tm">21:17:50</span><span class="nk"> &lt;sdake&gt;</span> asalkeld and I came up with couple
+<a name="l-21"></a><span class="tm">21:18:11</span><span class="nk"> &lt;sdake&gt;</span> idea of snapshotting the image and caching it based upon a template hash -&gt; idea #!
+<a name="l-22"></a><span class="tm">21:18:11</span><span class="nk"> &lt;asalkeld&gt;</span> 1) manual
+<a name="l-23"></a><span class="tm">21:18:23</span><span class="nk"> &lt;asalkeld&gt;</span> 2) ^
+<a name="l-24"></a><span class="tm">21:18:30</span><span class="nk"> &lt;asalkeld&gt;</span> 3) ozz
+<a name="l-25"></a><span class="tm">21:18:43</span><span class="nk"> &lt;sdake&gt;</span> idea #2 is convert a template into tdl and generate a new template
+<a name="l-26"></a><span class="tm">21:19:00</span><span class="nk"> &lt;asalkeld&gt;</span> no that was 3
+<a name="l-27"></a><span class="tm">21:19:06</span><span class="nk"> &lt;sdake&gt;</span> ok
+<a name="l-28"></a><span class="tm">21:19:28</span><span class="nk"> &lt;asalkeld&gt;</span> 2 is dynamically using openstack api to snapshot the image
+<a name="l-29"></a><span class="tm">21:19:30</span><span class="nk"> &lt;sdake&gt;</span> no reson to # them anyway all fine ways
+<a name="l-30"></a><span class="tm">21:19:51</span><span class="nk"> &lt;shadower&gt;</span> so the diff between #1 and #2 is manual vs automatic?
+<a name="l-31"></a><span class="tm">21:19:57</span><span class="nk"> &lt;asalkeld&gt;</span> ya
+<a name="l-32"></a><span class="tm">21:20:16</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#link </span><span class="cmdline">http://docs.openstack.org/trunk/openstack-compute/admin/content/creating-images-from-running-instances.html</span>
+<a name="l-33"></a><span class="tm">21:20:20</span><span class="nk"> &lt;asalkeld&gt;</span> not all templates will be dynamically snapshot'able
+<a name="l-34"></a><span class="tm">21:20:33</span><span class="nk"> &lt;sdake&gt;</span> ebs going to be a challenge in either case
+<a name="l-35"></a><span class="tm">21:20:59</span><span class="nk"> &lt;asalkeld&gt;</span> well could do it if possible
+<a name="l-36"></a><span class="tm">21:21:05</span><span class="nk"> &lt;sdake&gt;</span> i have tested the above link works in essex
+<a name="l-37"></a><span class="tm">21:21:12</span><span class="nk"> &lt;asalkeld&gt;</span> else just doen't
+<a name="l-38"></a><span class="tm">21:21:28</span><span class="nk"> &lt;sdake&gt;</span> i'd like to give a try to both methods
+<a name="l-39"></a><span class="tm">21:21:39</span><span class="nk"> &lt;sdake&gt;</span> they both have different use cases
+<a name="l-40"></a><span class="tm">21:22:11</span><span class="nk"> &lt;asalkeld&gt;</span> so some problems with both is dealing with cfn-signal
+<a name="l-41"></a><span class="tm">21:22:14</span><span class="nk"> &lt;sdake&gt;</span> shadower you up for the translator way
+<a name="l-42"></a><span class="tm">21:22:40</span><span class="nk"> &lt;shadower&gt;</span> <span class="hi">sdake:</span> you mean building template in oz, then making a new template?
+<a name="l-43"></a><span class="tm">21:22:45</span><span class="nk"> &lt;sdake&gt;</span> right
+<a name="l-44"></a><span class="tm">21:22:47</span><span class="nk"> &lt;shadower&gt;</span> yup
+<a name="l-45"></a><span class="tm">21:22:56</span><span class="nk"> &lt;sdake&gt;</span> convert the template to oz
+<a name="l-46"></a><span class="tm">21:23:05</span><span class="nk"> &lt;sdake&gt;</span> instanitate a template in glance
+<a name="l-47"></a><span class="tm">21:23:10</span><span class="nk"> &lt;sdake&gt;</span> make a new template based upon old template
+<a name="l-48"></a><span class="tm">21:23:13</span><span class="nk"> &lt;sdake&gt;</span> all in 1 tool
+<a name="l-49"></a><span class="tm">21:23:21</span><span class="nk"> &lt;shadower&gt;</span> ya
+<a name="l-50"></a><span class="tm">21:23:40</span><span class="nk"> &lt;shadower&gt;</span> going to have to call both heat-jeos and heat-api code I thing. Kinda bad with the split and all
+<a name="l-51"></a><span class="tm">21:24:11</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#action </span><span class="cmdline">shadower to investigate translator unit from template to TDL</span>
+<a name="l-52"></a><span class="tm">21:24:33</span><span class="nk"> &lt;sdake&gt;</span> jpeeler up for caching based way based upon hash of template
+<a name="l-53"></a><span class="tm">21:24:51</span><span class="nk"> &lt;jpeeler&gt;</span> yep!
+<a name="l-54"></a><span class="tm">21:25:13</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#action </span><span class="cmdline">jpeeler to investigate caching based method based upon hash of template for speeding up boottimes</span>
+<a name="l-55"></a><span class="tm">21:25:36</span><span class="nk"> &lt;sdake&gt;</span> since these are both roadmap items, a roadmap wiki entry would be spectacular
+<a name="l-56"></a><span class="tm">21:25:41</span><span class="nk"> &lt;sdake&gt;</span> since we are running out of work to do ;)
+<a name="l-57"></a><span class="tm">21:26:48</span><span class="nk"> &lt;sdake&gt;</span> can you make roadmap wiki page for each guys?
+<a name="l-58"></a><span class="tm">21:27:07</span><span class="nk"> &lt;shadower&gt;</span> sure
+<a name="l-59"></a><span class="tm">21:27:22</span><span class="nk"> &lt;jpeeler&gt;</span> yep
+<a name="l-60"></a><span class="tm">21:27:26</span><span class="nk"> &lt;sdake&gt;</span> cool
+<a name="l-61"></a><span class="tm">21:27:32</span><span class="nk"> &lt;sdake&gt;</span> openshift - would like to see that in v6 too
+<a name="l-62"></a><span class="tm">21:27:36</span><span class="nk"> &lt;asalkeld&gt;</span> sdake, this is a prototype?
+<a name="l-63"></a><span class="tm">21:27:40</span><span class="nk"> &lt;sdake&gt;</span> ya prototype
+<a name="l-64"></a><span class="tm">21:28:16</span><span class="nk"> &lt;sdake&gt;</span> our templates are somewhat buggy
+<a name="l-65"></a><span class="tm">21:28:25</span><span class="nk"> &lt;sdake&gt;</span> this all goes back to our reliance on manual testing
+<a name="l-66"></a><span class="tm">21:28:47</span><span class="nk"> &lt;sdake&gt;</span> we are almost to point where we can make a test case for integration for each template
+<a name="l-67"></a><span class="tm">21:29:19</span><span class="nk"> &lt;asalkeld&gt;</span> only problem is the time it all takes
+<a name="l-68"></a><span class="tm">21:29:25</span><span class="nk"> &lt;asalkeld&gt;</span> (to run)
+<a name="l-69"></a><span class="tm">21:29:32</span><span class="nk"> &lt;sdake&gt;</span> to run not concerned with
+<a name="l-70"></a><span class="tm">21:29:50</span><span class="nk"> &lt;sdake&gt;</span> even if it takes 4 hrs, that is better then us manually doing that work
+<a name="l-71"></a><span class="tm">21:29:55</span><span class="nk"> &lt;asalkeld&gt;</span> but totally agree need tests
+<a name="l-72"></a><span class="tm">21:30:21</span><span class="nk"> &lt;asalkeld&gt;</span> for t in templates/* run(t)
+<a name="l-73"></a><span class="tm">21:30:29</span><span class="nk"> &lt;sdake&gt;</span> ya
+<a name="l-74"></a><span class="tm">21:30:32</span><span class="nk"> &lt;asalkeld&gt;</span> and check it started
+<a name="l-75"></a><span class="tm">21:30:45</span><span class="nk"> &lt;asalkeld&gt;</span> even that would be a step up
+<a name="l-76"></a><span class="tm">21:30:48</span><span class="nk"> &lt;sdake&gt;</span> we need to start making the "check it started" part in our testing repo
+<a name="l-77"></a><span class="tm">21:31:07</span><span class="nk"> &lt;asalkeld&gt;</span> heat describe
+<a name="l-78"></a><span class="tm">21:31:23</span><span class="nk"> &lt;sdake&gt;</span> i want to test the actual service is available
+<a name="l-79"></a><span class="tm">21:31:40</span><span class="nk"> &lt;sdake&gt;</span> heat may have launched it but it never started for example
+<a name="l-80"></a><span class="tm">21:31:58</span><span class="nk"> &lt;asalkeld&gt;</span> well one step at a time
+<a name="l-81"></a><span class="tm">21:32:07</span><span class="nk"> &lt;asalkeld&gt;</span> but sure
+<a name="l-82"></a><span class="tm">21:32:15</span><span class="nk"> &lt;sdake&gt;</span> well I'll make a couple test cases and get a repo organized
+<a name="l-83"></a><span class="tm">21:32:30</span><span class="nk"> &lt;sdake&gt;</span> next meeting, expect each person to take a couple templates and implement test cases before v6 :)
+<a name="l-84"></a><span class="tm">21:32:43</span><span class="nk"> &lt;asalkeld&gt;</span> why can't these just be in functional tests
+<a name="l-85"></a><span class="tm">21:32:57</span><span class="nk"> &lt;sdake&gt;</span> because we have provisioning that needs to be done
+<a name="l-86"></a><span class="tm">21:33:28</span><span class="nk"> &lt;asalkeld&gt;</span> so
+<a name="l-87"></a><span class="tm">21:33:42</span><span class="nk"> &lt;sdake&gt;</span> jpeeler are the jeos unit tests in functional test section?
+<a name="l-88"></a><span class="tm">21:33:45</span><span class="nk"> &lt;asalkeld&gt;</span> as long as the test don't run by default
+<a name="l-89"></a><span class="tm">21:34:07</span><span class="nk"> &lt;asalkeld&gt;</span> it's just nice having tests with the code
+<a name="l-90"></a><span class="tm">21:34:14</span><span class="nk"> &lt;sdake&gt;</span> agree
+<a name="l-91"></a><span class="tm">21:34:16</span><span class="nk"> &lt;asalkeld&gt;</span> else you forget about them
+<a name="l-92"></a><span class="tm">21:34:27</span><span class="nk"> &lt;jpeeler&gt;</span> <span class="hi">sdake:</span> i'm working on confirming the functional test i wrote is good
+<a name="l-93"></a><span class="tm">21:34:39</span><span class="nk"> &lt;jpeeler&gt;</span> the plan is to extend that test to automate every template
+<a name="l-94"></a><span class="tm">21:34:41</span><span class="nk"> &lt;sdake&gt;</span> how did you implement functioanl test, inside heat testing infra?
+<a name="l-95"></a><span class="tm">21:34:44</span><span class="nk"> &lt;jpeeler&gt;</span> (at least that was my plan)
+<a name="l-96"></a><span class="tm">21:34:58</span><span class="nk"> &lt;sdake&gt;</span> ok - think we need to accelerate that and split load between the team
+<a name="l-97"></a><span class="tm">21:35:11</span><span class="nk"> &lt;jpeeler&gt;</span> it took me some time to figure out beaker
+<a name="l-98"></a><span class="tm">21:35:17</span><span class="nk"> &lt;jpeeler&gt;</span> ran into qemu permission issues
+<a name="l-99"></a><span class="tm">21:35:58</span><span class="nk"> &lt;sdake&gt;</span> do you hve a link to your test cases for heat jeos?
+<a name="l-100"></a><span class="tm">21:36:32</span><span class="nk"> &lt;jpeeler&gt;</span> i can produce a link to the source tree, no wiki entry
+<a name="l-101"></a><span class="tm">21:36:40</span><span class="nk"> &lt;sdake&gt;</span> ya link to source tree is good
+<a name="l-102"></a><span class="tm">21:37:14</span><span class="nk"> &lt;jpeeler&gt;</span> https://github.com/heat-api/heat/blob/master/heat/tests/functional/test_bin_heat.py
+<a name="l-103"></a><span class="tm">21:38:02</span><span class="nk"> &lt;sdake&gt;</span> how do you run that from the  testing repo tools?
+<a name="l-104"></a><span class="tm">21:38:08</span><span class="nk"> &lt;sdake&gt;</span> have a diff?
+<a name="l-105"></a><span class="tm">21:38:30</span><span class="nk"> &lt;asalkeld&gt;</span> meeting guys
+<a name="l-106"></a><span class="tm">21:38:37</span><span class="nk"> &lt;sdake&gt;</span> this is meeting
+<a name="l-107"></a><span class="tm">21:38:43</span><span class="nk"> &lt;asalkeld&gt;</span> can we move along
+<a name="l-108"></a><span class="tm">21:38:53</span><span class="nk"> &lt;sdake&gt;</span> asalkeld looks like we can keep source with tree
+<a name="l-109"></a><span class="tm">21:39:06</span><span class="nk"> &lt;sdake&gt;</span> we were coming to conclusion on issue you raised
+<a name="l-110"></a><span class="tm">21:39:30</span><span class="nk"> &lt;sdake&gt;</span> jpeeler when is heat-jeos going to be running from the testing repo?
+<a name="l-111"></a><span class="tm">21:40:13</span><span class="nk"> &lt;jpeeler&gt;</span> i was hoping in the next few days, but that's without running into problems like the qemu one i described
+<a name="l-112"></a><span class="tm">21:40:26</span><span class="nk"> &lt;jpeeler&gt;</span> that test just does one template though
+<a name="l-113"></a><span class="tm">21:40:32</span><span class="nk"> &lt;sdake&gt;</span> i see, well then we will wait for you to sort out running the functional tests from the testing repo
+<a name="l-114"></a><span class="tm">21:40:42</span><span class="nk"> &lt;sdake&gt;</span> then develop functional tests for the templates after
+<a name="l-115"></a><span class="tm">21:41:19</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">wait for jpeeler's functional test heat_jeos tools test to develop functional tests for templates</span>
+<a name="l-116"></a><span class="tm">21:41:28</span><span class="nk"> &lt;sdake&gt;</span> any other features for v6?
+<a name="l-117"></a><span class="tm">21:41:40</span><span class="nk"> &lt;asalkeld&gt;</span> someone doing s3
+<a name="l-118"></a><span class="tm">21:41:45</span><span class="nk"> &lt;asalkeld&gt;</span> resource
+<a name="l-119"></a><span class="tm">21:42:21</span><span class="nk"> &lt;asalkeld&gt;</span> sdake, wasn'
+<a name="l-120"></a><span class="tm">21:42:29</span><span class="nk"> &lt;asalkeld&gt;</span> sdake, wasn't someone doing s3
+<a name="l-121"></a><span class="tm">21:42:39</span><span class="nk"> &lt;sdake&gt;</span> i dont believe so
+<a name="l-122"></a><span class="tm">21:42:40</span><span class="nk"> &lt;asalkeld&gt;</span> (cold fingers)
+<a name="l-123"></a><span class="tm">21:42:53</span><span class="nk"> &lt;sdake&gt;</span> not doing work currently is slower + zaneb + asalkeld
+<a name="l-124"></a><span class="tm">21:42:57</span><span class="nk"> &lt;sdake&gt;</span> that is targeted at v6
+<a name="l-125"></a><span class="tm">21:43:12</span><span class="nk"> &lt;sdake&gt;</span> i think your busy with v6 already tho :)
+<a name="l-126"></a><span class="tm">21:43:28</span><span class="nk"> &lt;asalkeld&gt;</span> well openstack-common
+<a name="l-127"></a><span class="tm">21:43:43</span><span class="nk"> &lt;asalkeld&gt;</span> and then celiometer?
+<a name="l-128"></a><span class="tm">21:43:44</span><span class="nk"> &lt;sdake&gt;</span> perhaps zaneb, but he is finishing up the integration test integration with jenkins
+<a name="l-129"></a><span class="tm">21:44:02</span><span class="nk"> &lt;asalkeld&gt;</span> I might squeeze that in
+<a name="l-130"></a><span class="tm">21:44:04</span><span class="nk"> &lt;sdake&gt;</span> ya that makes sense - although there are some bugs in load balancer that need some love
+<a name="l-131"></a><span class="tm">21:44:06</span><span class="nk"> &lt;asalkeld&gt;</span> we will se
+<a name="l-132"></a><span class="tm">21:44:19</span><span class="nk"> &lt;sdake&gt;</span> perhaps i'll fix those
+<a name="l-133"></a><span class="tm">21:44:35</span><span class="nk"> &lt;sdake&gt;</span> rather autoscale
+<a name="l-134"></a><span class="tm">21:45:01</span><span class="nk"> &lt;asalkeld&gt;</span> just raise bugs
+<a name="l-135"></a><span class="tm">21:45:06</span><span class="nk"> &lt;sdake&gt;</span> ya
+<a name="l-136"></a><span class="tm">21:45:44</span><span class="nk"> &lt;sdake&gt;</span> our next big push is vpc after we wrap up this batch of work
+<a name="l-137"></a><span class="tm">21:46:58</span><span class="nk"> &lt;asalkeld&gt;</span> looks like it is really wanted
+<a name="l-138"></a><span class="tm">21:47:29</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">v6 features: automatic optimization of boot, translated heat-&gt;oz tdl, integration testing completed, s3, load balancer fixed up, devstack integration</span>
+<a name="l-139"></a><span class="tm">21:47:52</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">possibly start digging into vpc planning</span>
+<a name="l-140"></a><span class="tm">21:47:58</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#unfo</span><span class="cmdline"></span>
+<a name="l-141"></a><span class="tm">21:48:11</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">start digging into vpc planning with Quantum</span>
+<a name="l-142"></a><span class="tm">21:48:46</span><span class="nk"> &lt;asalkeld&gt;</span> sounds good
+<a name="l-143"></a><span class="tm">21:48:51</span><span class="nk"> &lt;sdake&gt;</span> ok well we sort of jammed roadmap and v6 together
+<a name="l-144"></a><span class="tm">21:48:59</span><span class="nk"> &lt;sdake&gt;</span> so .. :)
+<a name="l-145"></a><span class="tm">21:49:01</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">open items</span>
+<a name="l-146"></a><span class="tm">21:50:01</span><span class="nk"> &lt;sdake&gt;</span> are we going to carry patches for bug fixes via cherry-pick for rawhide or rebase?
+<a name="l-147"></a><span class="tm">21:50:36</span><span class="nk"> &lt;asalkeld&gt;</span> rebase can be risky
+<a name="l-148"></a><span class="tm">21:50:46</span><span class="nk"> &lt;sdake&gt;</span> ya fix bunch of old bugs bring in new ones
+<a name="l-149"></a><span class="tm">21:50:48</span><span class="nk"> &lt;asalkeld&gt;</span> depends what is there
+<a name="l-150"></a><span class="tm">21:51:02</span><span class="nk"> &lt;sdake&gt;</span> autoscaling looks bit buggy
+<a name="l-151"></a><span class="tm">21:51:07</span><span class="nk"> &lt;asalkeld&gt;</span> no general rule
+<a name="l-152"></a><span class="tm">21:51:28</span><span class="nk"> &lt;asalkeld&gt;</span> lets see the issues
+<a name="l-153"></a><span class="tm">21:51:42</span><span class="nk"> &lt;asalkeld&gt;</span> and I can help out
+<a name="l-154"></a><span class="tm">21:51:50</span><span class="nk"> &lt;sdake&gt;</span> ya will file aftermeeting
+<a name="l-155"></a><span class="tm">21:52:13</span><span class="nk"> &lt;sdake&gt;</span> notification of wait handles is pokey
+<a name="l-156"></a><span class="tm">21:52:28</span><span class="nk"> &lt;sdake&gt;</span> asalkeld you had idea to fix?
+<a name="l-157"></a><span class="tm">21:52:49</span><span class="nk"> &lt;asalkeld&gt;</span> can add ideas to issue
+<a name="l-158"></a><span class="tm">21:52:58</span><span class="nk"> &lt;sdake&gt;</span> going to be giving public demo aug 27 - want demo to be snappy
+<a name="l-159"></a><span class="tm">21:53:06</span><span class="nk"> &lt;sdake&gt;</span> @cloudopen
+<a name="l-160"></a><span class="tm">21:53:17</span><span class="nk"> &lt;asalkeld&gt;</span> sure
+<a name="l-161"></a><span class="tm">21:53:54</span><span class="nk"> &lt;sdake&gt;</span> besides beating openshift into shape, thats all i have
+<a name="l-162"></a><span class="tm">21:53:56</span><span class="nk"> &lt;sdake&gt;</span> anyone else ? :)
+<a name="l-163"></a><span class="tm">21:54:05</span><span class="nk"> &lt;jpeeler&gt;</span> going back to rawhide maintenance, if we cherry-pick we need to create version branches
+<a name="l-164"></a><span class="tm">21:54:20</span><span class="nk"> &lt;sdake&gt;</span> we branch every version
+<a name="l-165"></a><span class="tm">21:54:27</span><span class="nk"> &lt;jpeeler&gt;</span> you mean tag right?
+<a name="l-166"></a><span class="tm">21:54:29</span><span class="nk"> &lt;asalkeld&gt;</span> you can do it as needed
+<a name="l-167"></a><span class="tm">21:54:32</span><span class="nk"> &lt;sdake&gt;</span> no we branch
+<a name="l-168"></a><span class="tm">21:54:38</span><span class="nk"> &lt;sdake&gt;</span> and tag the first commit of the branch
+<a name="l-169"></a><span class="tm">21:54:39</span><span class="nk"> &lt;asalkeld&gt;</span> based on the tag
+<a name="l-170"></a><span class="tm">21:54:57</span><span class="nk"> &lt;asalkeld&gt;</span> you don't _have_ to do that
+<a name="l-171"></a><span class="tm">21:55:15</span><span class="nk"> &lt;sdake&gt;</span> we have done this for all our releases
+<a name="l-172"></a><span class="tm">21:55:30</span><span class="nk"> &lt;jpeeler&gt;</span> yeah just making sure, i see that. good to go
+<a name="l-173"></a><span class="tm">21:55:38</span><span class="nk"> &lt;sdake&gt;</span> jenkins wants to control branches
+<a name="l-174"></a><span class="tm">21:55:45</span><span class="nk"> &lt;sdake&gt;</span> rather then us pushing branches ourselves
+<a name="l-175"></a><span class="tm">21:56:32</span><span class="nk"> &lt;sdake&gt;</span> not sure how to submit patches for branches
+<a name="l-176"></a><span class="tm">21:56:37</span><span class="nk"> &lt;sdake&gt;</span> i guess check them out and git review
+<a name="l-177"></a><span class="tm">21:56:54</span><span class="nk"> &lt;sdake&gt;</span> not sure how to cherry-piick with jenkins
+<a name="l-178"></a><span class="tm">21:57:13</span><span class="nk"> &lt;asalkeld&gt;</span> cherrypick locally and review?
+<a name="l-179"></a><span class="tm">21:57:24</span><span class="nk"> &lt;sdake&gt;</span> ya may work - may have to amend to remove change id
+<a name="l-180"></a><span class="tm">21:57:42</span><span class="nk"> &lt;sdake&gt;</span> shadower anything on your end?
+<a name="l-181"></a><span class="tm">21:57:57</span><span class="nk"> &lt;shadower&gt;</span> I'm good
+<a name="l-182"></a><span class="tm">21:57:57</span><span class="nk"> &lt;sdake&gt;</span> asalkeld anything on your end?
+<a name="l-183"></a><span class="tm">21:58:04</span><span class="nk"> &lt;asalkeld&gt;</span> all good
+<a name="l-184"></a><span class="tm">21:58:10</span><span class="nk"> &lt;sdake&gt;</span> ok thanks guys
+<a name="l-185"></a><span class="tm">21:58:12</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

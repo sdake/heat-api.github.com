@@ -1,0 +1,248 @@
+21:14:37 <asalkeld> #startmeeting
+21:14:37 <mheat-bot> Meeting started Mon Aug 13 21:14:37 2012 UTC.  The chair is asalkeld. Information about MeetBot at http://wiki.debian.org/MeetBot.
+21:14:37 <mheat-bot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+21:14:43 <sdake> hey guys
+21:14:49 <asalkeld> hi
+21:15:01 <asalkeld> internet good?
+21:15:37 <sdake> ya
+21:16:07 <sdake> agenda rollcall, v6 any additional features, open items
+21:16:13 <sdake> any other agenda items?
+21:16:25 <sdake> asalkeld type #chair sdake
+21:16:25 <asalkeld> #chair sdake
+21:16:25 <mheat-bot> Current chairs: asalkeld sdake
+21:16:40 <asalkeld> (was just googling it)
+21:17:21 * Slower is here
+21:17:23 <sdake> #topic rollcall
+21:17:28 <sdake> sdake here
+21:17:32 <zaneb> howdy
+21:17:32 <asalkeld> asalkeld, here
+21:17:35 <shardy> shardy here
+21:17:40 <funzo> funzo  lurking
+21:17:40 <jpeeler> here!
+21:17:41 <Slower> imain here
+21:17:53 <shadower> shadower here
+21:18:30 <sdake> #info zaneb, sdake, imain, asalkeld, shardy, funzo, jpeeler present
+21:18:45 <sdake> #topic v6 additional features
+21:18:56 <shadower> sdake: I'm present too ;-)
+21:19:00 <sdake> #undo
+21:19:00 <mheat-bot> Removing item from minutes: <MeetBot.items.Topic object at 0x1e61910>
+21:19:07 <sdake> #info shadower present too
+21:19:14 <sdake> #topic v6 additional features
+21:19:44 <sdake> zaneb, shardy, slower were on pto last couple weeks
+21:19:58 <sdake> guys, so far we put together the following items for v6
+21:20:46 <sdake> v6 features: automatic optimization of boot, translated heat->oz tdl, integration testing completed, s3, load balancer fixed up, devstack integration (sdake, 21:47:29)
+21:21:15 <sdake> adding onto that, we have managed to do the dev of devstack + an image repo
+21:21:31 <sdake> steveb_ did the devstack work - nice patch!
+21:21:58 <sdake> i think we were not sure who was going to do s3
+21:22:20 <sdake> and shardy, slower, zaneb, if you have extra items you want to add to v6, let the devs know
+21:22:50 <shardy> sdake, asalkeld: Did you want me to do the API side of Cloudwatch, with the existing metric-collection back-end?
+21:23:05 <shardy> then possibly move to a ceilometer/whatever back-end later?
+21:23:13 <sdake> up to you
+21:23:16 <sdake> what do you want to do ;)
+21:23:40 <shardy> I don't mind - finished the openshift stuff so looking for the next thing to do.. :)
+21:23:50 <zaneb> sdake: what about an OpenStack ReST API?
+21:23:54 <sdake> #info shardy wrapped up openshift
+21:24:09 <shardy> sdake: review of new template pending if anyone get a sec
+21:24:10 <zaneb> or is that down the priority list
+21:24:22 <sdake> makes sense to me
+21:24:27 <sdake> once integration testing wrapped up ;)
+21:24:34 <asalkeld> shardy, well it could be  a prototype that you copy over later
+21:24:48 <asalkeld> (if you want to do it now)
+21:25:10 <asalkeld> so not much wasted effort
+21:25:13 <shardy> asalkeld: ok, I'll get an initial version started, unless there's anything more important I can be doing
+21:25:38 <sdake> #action shardy working on initial cloudwatch improvements - to potentially merge into ceilometer later without much wasted effort
+21:26:11 <sdake> #action zaneb help wrap up integration testing and start cracking on openstack orchestration rest api code
+21:26:28 <sdake> slower anything upcoming?
+21:26:36 <sdake> need s3 support if anyone interested ;)
+21:27:02 <asalkeld> sdake, can just be next on the list
+21:27:06 <Slower> sdake: I'd need to take a look at the list
+21:27:17 <Slower> sdake: although Id id look at s3 support a bit already
+21:27:27 <Slower> s/Id id/I did/ :)
+21:28:10 <sdake> #info additional features from returning from pto devs - openstack rest orchestraition API and improved CloudWatch implementation
+21:28:33 <Slower> sdake: I'll look into s3 support and see if it's doable
+21:29:04 <sdake> #action slower to investigate s3 integration support with swift
+21:29:26 <sdake> v5 was on 7/30
+21:30:00 <sdake> so 8/4 is v6 release
+21:30:24 <sdake> #info 8/4 v6 release target
+21:30:55 <sdake> so we got a couple weeks of dev
+21:31:29 <sdake> we can go through status update next meeting once everyone in grove of working again after the breaks ;)
+21:31:29 <shardy> sdake: should that be 9/4?
+21:31:33 <zaneb> sdake: 8/4 was last week ;)
+21:31:55 * sdake learns to read calendar
+21:32:02 <sdake> #undo
+21:32:02 <mheat-bot> Removing item from minutes: <MeetBot.items.Info object at 0x1e61a10>
+21:32:53 <sdake> version 5 was 7/31
+21:33:15 <sdake> ya 9/4
+21:33:50 <sdake> #info 9/4 release target for v6
+21:34:15 <sdake> so 3 weeks
+21:34:20 <sdake> next week we can go into status
+21:34:40 <sdake> i'd really like to see us getting started on vpc implementation - ie quantum
+21:34:52 <sdake> and not put it off forever ;)
+21:35:14 <sdake> maybe v7 will be more direct integration with quantum rather then bunch of features
+21:35:32 <sdake> anyone opposed to that idea?
+21:35:44 <zaneb> I'm really looking forward to finding out what a virtualised network means
+21:35:50 <zaneb> I feel like I should know
+21:36:06 <sdake> ya
+21:36:30 <sdake> zaneb i'd recommend you be involved in that work
+21:36:36 <sdake> i'd like to find out myself ;)
+21:36:52 <zaneb> I asked russellb the other day, and he had no clue either ;)
+21:36:53 <Slower> that's just was I was wondering :)
+21:37:12 <Slower> oh I have worked with virtualized networks
+21:37:22 <sdake> hey, does anyone have any general opinions about which is more important, vpc or rest api for orcehstration
+21:37:26 <russellb> do what now
+21:37:37 <sdake> lets have a vote - say preference pls
+21:37:42 <asalkeld> vote for -> vpc
+21:37:48 <russellb> oh yes, when we were joking around about SDN ...
+21:38:13 <zaneb> yah
+21:38:15 <sdake> need more then 1 vote
+21:38:18 <shardy> +1
+21:38:18 <asalkeld> (as far as getting real functionality)
+21:38:23 <zaneb> I'd say vpc
+21:38:30 <sdake> shardy +1 to vpc or rest api
+21:38:34 <shardy> vpc
+21:38:40 <zaneb> but it would be nice to have an API before the incubation vote
+21:38:44 <Slower> I'm not sure how to vote.. :)
+21:38:54 <shadower> deff api before incubation
+21:38:58 <shardy> I don't quite understand the scope of what the rest api is supposed to provide tho ;)
+21:38:59 <sdake> jpeeler
+21:39:12 <asalkeld> zaneb, it is something that can be do quickly
+21:39:17 <sdake> zaneb give a quick overview of the rest api
+21:39:22 <asalkeld> s/do/done
+21:39:30 <zaneb> shardy: an OpenStack API that does the same thing as out current AWS API
+21:39:36 <zaneb> but does it the OpenStack way
+21:39:41 <asalkeld> just less suck
+21:39:56 <shardy> zaneb: OK, remember we discussed it, thought it was a more long-term goal
+21:40:00 <jpeeler> vpc, sure
+21:40:02 <zaneb> asalkeld: agreed, it shouldn't be a big job
+21:40:09 <shardy> zaneb: sounds like a good idea tho
+21:40:22 <sdake> zaneb estimate timewise?
+21:40:41 <zaneb> hmmm
+21:40:47 <sdake> WAG
+21:40:51 <zaneb> 1-2 weeks?
+21:40:59 <sdake> ok so all of v6 cycle
+21:41:05 <sdake> (or half of v7 cycle)
+21:41:15 <sdake> ok, so i recommend following
+21:41:19 <shardy> zaneb: lol thats what I thought about the AWS api ;)
+21:41:25 <sdake> zaneb continue on rewrite of heat  to support rest api (rewrite;)
+21:41:42 <sdake> i'll get started scoping out vpc
+21:41:48 <sdake> and what the hell it is supposed to do
+21:41:52 <asalkeld> sdake, need both
+21:41:54 <sdake> and you can join me when you wrap up
+21:41:58 <asalkeld> so not rewrite
+21:41:59 <zaneb> shardy: luckily we don't have to be compatible with anyone this time ;)
+21:42:05 <sdake> asalkeld - joke..
+21:42:06 <asalkeld> just add new api
+21:42:18 <asalkeld> k
+21:42:31 <shardy> zaneb: I'll catch up with you tomorrow so the cloudwatch api fits in with what you're doing
+21:42:39 <zaneb> 'k
+21:42:51 <sdake> shardy may make sense for you to work on vpc as well after you get cloudwatch in order
+21:42:54 <sdake> perhaps v7 timeframe
+21:43:05 <shardy> shardy: ok, sounds good
+21:43:15 <sdake> shardy talking to himself again
+21:43:27 <shardy> duh, sdake, getting late/tired ;)
+21:43:40 <sdake> ok lets wrap this up then
+21:44:17 <sdake> zaneb work on rest api for v6, sdake start sorting out quantum integration planning in v6, then v7 zaneb,shardy,sdake work on quantum vpc
+21:44:21 <sdake> perhaps more if ppl interested
+21:44:53 <sdake> ya/nay shardy/zaneb?
+21:44:57 <zaneb> +1
+21:45:00 <shardy> sdake: sounds good :)
+21:45:04 <sdake> cool
+21:45:17 * asalkeld working on openstack-common then ceilometer
+21:45:33 <sdake> #info zaneb to work on rest api for v6, sdake start sorting out quantum integration plans in v6, then v7 shardy,sdake,zaneb work on quantum vpc
+21:45:53 <sdake> #topic open items
+21:46:06 <sdake> sounds like we got alot of work planned out for v6
+21:46:27 <sdake> jpeeler is working on his functional test case atm for jeos images
+21:46:35 <sdake> he has indicated that it will be reusable for all templates
+21:46:41 <sdake> ie: we change some stuff, and can launch a new template
+21:47:01 <sdake> Would like to divide up the templates so each person handles ~3-4 integration tests
+21:47:21 <sdake> would like to do that for our integration testing for v6
+21:47:36 <sdake> ie: instead of madness for 4 days, just run our integration test, and bam done
+21:47:51 <sdake> pay now/pay later
+21:47:57 <sdake> time to pay up in my opinion, who is with me :)
+21:48:10 <zaneb> There's a bunch of code in the Getting Started script for checking whether Wordpress has launched successfully
+21:48:11 <sdake> VOTE: each person do ~3-4 integration tests for templates
+21:48:18 <asalkeld> sure
+21:48:23 <zaneb> could pull that out in to a shell script library
+21:48:24 <sdake> +1
+21:48:25 <shardy> +1
+21:48:36 <shadower> +1
+21:48:38 <zaneb> +1
+21:48:53 <Slower> +1
+21:48:55 <sdake> zaneb i thinki we made decision at last meeting to integrate it into the nose infra
+21:49:16 <zaneb> ah, ok
+21:49:16 <asalkeld> tempest?
+21:49:24 <sdake> idea is to go into tempest long term
+21:49:30 <sdake> like next 2-3 months
+21:49:47 <asalkeld> ok
+21:49:48 <sdake> then commits will gate on functional tests
+21:49:48 <zaneb> how do we get the image in there?
+21:50:01 <sdake> download it from the image repo ;)
+21:50:15 <zaneb> ok, cool :)
+21:50:34 <sdake> speaking of that, I am going to make the current image repo automatically update on each commit to heat-jeos
+21:50:39 <asalkeld> so what is not  doable with tempest now?
+21:50:41 <sdake> it takes about 75 minutes t orun
+21:51:05 <sdake> asalkeld i think there is a bandwidth problem of someone to look into it
+21:51:21 <sdake> but mostly, we dont have the integration tests working
+21:51:22 <shardy> sdake: should I add an openshift image to the repo, I added a new tdl today?
+21:51:31 <asalkeld> just wondering if it is not worth going straight to what we want
+21:51:38 <sdake> can't integrate them into tempeest if we dont have our integration tests working
+21:52:04 <sdake> i expect tempest uses nose to run the integration tests, but i am not certain
+21:52:13 <sdake> in any case, writing the test cases will get us closer
+21:52:24 <sdake> i'll take action to look into how tempest expects test cases
+21:52:28 <jpeeler> apparently it isn't tied to nose
+21:52:35 <sdake> #action sdake to find out how tempest expects test cases
+21:52:37 <jpeeler> but nose can be used
+21:52:39 <sdake> does it run python tests?
+21:52:53 * jpeeler just started reading 5 seconds ago
+21:53:04 <asalkeld> https://github.com/openstack/tempest/
+21:53:05 <sdake> ok, i'll update at next meeting
+21:53:14 <asalkeld> This is a set of integration tests to be run against a live cluster.
+21:53:42 <zaneb> as I understand it, it runs Python tests
+21:53:44 <sdake> I'd like nose to be usable for integration tests for devs tho
+21:54:01 <jpeeler> yep
+21:54:13 <sdake> so maybe answer is "do both"
+21:54:29 <sdake> tempest integration sounds like roadmap item
+21:54:41 <asalkeld> so one issue is nose locally does not setup openstack
+21:54:47 <sdake> VOTE: add tempest integration as roadmap item
+21:54:56 <asalkeld> +1
+21:55:00 <sdake> +1
+21:55:00 <shardy> +1
+21:55:01 <jpeeler> +1
+21:55:02 <shadower> +1
+21:55:24 <zaneb> +1
+21:55:35 <sdake> #info unanimous vote to add tempest integration as roadmap item for future versions
+21:55:40 <Slower> +1
+21:55:57 <sdake> ok cool, so now that is settled, still need the test cases written in the first place
+21:56:13 <sdake> and unloading all templates on one dev somewhat painful
+21:56:49 <sdake> ok, next topic is user support
+21:57:00 <sdake> i have noticed an uptick in users in the channel asking support questions
+21:57:07 <sdake> this is great news - ppl using heat!
+21:57:26 <sdake> I think everyone has done a great job so far answering folks questions and generally being supportive
+21:57:37 <sdake> one thing we want to capture from their experiences is troubleshooting tips
+21:57:51 <sdake> so if they come up with a workaround for a problem they are having, add to troubleshooting wiki pls
+21:58:49 <sdake> #info as user base increases, add troubleshooting tips to troubleshooting wiki based upon user feedback
+21:59:22 <sdake> one last point on user support - this is calm before storm - if we do a good job on making good software, we will have people asking many quesetions all the time
+21:59:35 <sdake> be patient with the users, every one matters ;)
+21:59:42 <Slower> +1
+22:00:16 <sdake> any other open issues anyone would like to discuss
+22:00:30 <asalkeld> all good
+22:00:50 <sdake> asalkeld would be all good in a tornado ;)
+22:00:53 <shardy> sdake: boto still unresponsive - suggest we put plans to move to boto on hold for v6
+22:01:02 <sdake> shardy ack
+22:01:16 <sdake> you mean the upstream
+22:01:44 <shardy> Yeah, sent a patch ~6weeks ago - maintainer acked via IRC ~3weeks ago, still not merged
+22:01:57 <sdake> try again, maintainers lose track of patches
+22:02:05 <sdake> its a hard job manually merging patches
+22:02:11 <sdake> i know it should be easy, but it is hard
+22:02:46 <shardy> It's just a pull request, but yeah I know, still it's gating a proper fix to #175 so don't think we can move to boto yet
+22:02:54 <shardy> unless I just hack around it
+22:03:03 <sdake> ya lets wait for a proper fix
+22:03:36 <asalkeld> I need to go (sort kids) are we nearly done?
+22:03:46 <sdake> any other issues
+22:03:48 <sdake> thanks asalkeld
+22:03:55 <asalkeld> later
+22:05:46 <sdake> ok guys, well nice work so far
+22:05:56 <sdake> keep an eye on the channel for user support questions
+22:06:04 <sdake> add to troubleshooting where appropriate
+22:06:11 <sdake> thanks!
+22:06:14 <sdake> #endmeeting

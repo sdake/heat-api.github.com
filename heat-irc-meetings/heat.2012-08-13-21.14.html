@@ -1,0 +1,188 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#heat Meeting</title>
+<style type="text/css">
+/* This is for the .html in the HTML2 writer */
+body {
+    font-family: Helvetica, sans-serif;
+    font-size:14px;
+}
+h1 {
+    text-align: center;
+}
+a {
+    color:navy;
+    text-decoration: none;
+    border-bottom:1px dotted navy;
+}
+a:hover {
+    text-decoration:none;
+    border-bottom: 0;
+    color:#0000B9;
+}
+hr {
+    border: 1px solid #ccc;
+}
+/* The (nick, time) item pairs, and other body text things. */
+.details {
+    font-size: 12px;
+    font-weight:bold;
+}
+/* The 'AGREED:', 'IDEA', etc, prefix to lines. */
+.itemtype {
+    font-style: normal;    /* un-italics it */
+    font-weight: bold;
+}
+/* Example: change single item types.  Capitalized command name.
+/* .TOPIC  {  color:navy;  } */
+/* .AGREED {  color:lime;  } */
+
+</style>
+</head>
+
+<body>
+<h1>#heat Meeting</h1>
+<span class="details">
+Meeting started by asalkeld at 21:14:37 UTC
+(<a href="heat.2012-08-13-21.14.log.html">full logs</a>).</span>
+
+<br><br>
+
+
+
+<h3>Meeting summary</h3>
+<ol>
+<li><b class="TOPIC">rollcall</b> <span class="details">(<a href='heat.2012-08-13-21.14.log.html#l-15'>sdake</a>, 21:17:23)</span>
+<ol type="a">
+  <li><span class="INFO">zaneb, sdake, imain, asalkeld, shardy, funzo,
+    jpeeler present</span> <span class="details">(<a
+    href='heat.2012-08-13-21.14.log.html#l-24'>sdake</a>,
+    21:18:30)</span></li>
+  <li><span class="INFO">shadower present too</span> <span
+    class="details">(<a
+    href='heat.2012-08-13-21.14.log.html#l-29'>sdake</a>,
+    21:19:07)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">v6 additional features</b> <span class="details">(<a href='heat.2012-08-13-21.14.log.html#l-30'>sdake</a>, 21:19:14)</span>
+<ol type="a">
+  <li><span class="INFO">shardy wrapped up openshift</span> <span
+    class="details">(<a
+    href='heat.2012-08-13-21.14.log.html#l-44'>sdake</a>,
+    21:23:54)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">shardy
+    working on initial cloudwatch improvements - to potentially merge
+    into ceilometer later without much wasted effort</span> <span
+    class="details">(<a
+    href='heat.2012-08-13-21.14.log.html#l-53'>sdake</a>,
+    21:25:38)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">zaneb help
+    wrap up integration testing and start cracking on openstack
+    orchestration rest api code</span> <span class="details">(<a
+    href='heat.2012-08-13-21.14.log.html#l-54'>sdake</a>,
+    21:26:11)</span></li>
+  <li><span class="INFO">additional features from returning from pto
+    devs - openstack rest orchestraition API and improved CloudWatch
+    implementation</span> <span class="details">(<a
+    href='heat.2012-08-13-21.14.log.html#l-61'>sdake</a>,
+    21:28:10)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">slower to
+    investigate s3 integration support with swift</span> <span
+    class="details">(<a
+    href='heat.2012-08-13-21.14.log.html#l-63'>sdake</a>,
+    21:29:04)</span></li>
+  <li><span class="INFO">9/4 release target for v6</span> <span
+    class="details">(<a
+    href='heat.2012-08-13-21.14.log.html#l-76'>sdake</a>,
+    21:33:50)</span></li>
+  <li><span class="INFO">zaneb to work on rest api for v6, sdake start
+    sorting out quantum integration plans in v6, then v7
+    shardy,sdake,zaneb work on quantum vpc</span> <span
+    class="details">(<a
+    href='heat.2012-08-13-21.14.log.html#l-151'>sdake</a>,
+    21:45:33)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">open items</b> <span class="details">(<a href='heat.2012-08-13-21.14.log.html#l-152'>sdake</a>, 21:45:53)</span>
+<ol type="a">
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">sdake to find
+    out how tempest expects test cases</span> <span class="details">(<a
+    href='heat.2012-08-13-21.14.log.html#l-193'>sdake</a>,
+    21:52:35)</span></li>
+  <li><a
+    href="https://github.com/openstack/tempest/">https://github.com/openstack/tempest/</a>
+    <span class="details">(<a
+    href='heat.2012-08-13-21.14.log.html#l-197'>asalkeld</a>,
+    21:53:04)</span></li>
+  <li><span class="INFO">unanimous vote to add tempest integration as
+    roadmap item for future versions</span> <span class="details">(<a
+    href='heat.2012-08-13-21.14.log.html#l-213'>sdake</a>,
+    21:55:35)</span></li>
+  <li><span class="INFO">as user base increases, add troubleshooting
+    tips to troubleshooting wiki based upon user feedback</span> <span
+    class="details">(<a
+    href='heat.2012-08-13-21.14.log.html#l-223'>sdake</a>,
+    21:58:49)</span></li>
+</ol>
+</li>
+</ol>
+<br><br>
+
+
+
+<span class="details">
+Meeting ended at 22:06:14 UTC
+(<a href="heat.2012-08-13-21.14.log.html">full logs</a>).</span>
+
+<br><br>
+
+
+
+<h3>Action items</h3>
+<ol>
+  <li>shardy working on initial cloudwatch improvements - to potentially merge into ceilometer later without much wasted effort</li>
+  <li>zaneb help wrap up integration testing and start cracking on openstack orchestration rest api code</li>
+  <li>slower to investigate s3 integration support with swift</li>
+  <li>sdake to find out how tempest expects test cases</li>
+</ol>
+<br><br>
+
+
+
+<h3>Action items, by person</h3>
+<ol>
+  <li> sdake <ol>
+    <li>sdake to find out how tempest expects test cases</li>
+  </ol></li>
+  <li> shardy <ol>
+    <li>shardy working on initial cloudwatch improvements - to potentially merge into ceilometer later without much wasted effort</li>
+  </ol></li>
+  <li> zaneb <ol>
+    <li>zaneb help wrap up integration testing and start cracking on openstack orchestration rest api code</li>
+  </ol></li>
+</ol>
+<br><br>
+
+
+
+<h3>People present (lines said)</h3>
+<ol>
+  <li>sdake (134)</li>
+  <li>asalkeld (32)</li>
+  <li>zaneb (26)</li>
+  <li>shardy (24)</li>
+  <li>Slower (12)</li>
+  <li>jpeeler (7)</li>
+  <li>mheat-bot (5)</li>
+  <li>shadower (5)</li>
+  <li>russellb (2)</li>
+  <li>funzo (1)</li>
+</ol>
+<br><br>
+
+
+
+<span class="details">Generated by <a href="http://wiki.debian.org/MeetBot">MeetBot</a> 0.1.4.</span>
+</body></html>

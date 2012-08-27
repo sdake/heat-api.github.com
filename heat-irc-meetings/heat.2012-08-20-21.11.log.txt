@@ -1,0 +1,227 @@
+21:11:54 <sdake> #startmeeting
+21:11:54 <mheat-bot> Meeting started Mon Aug 20 21:11:54 2012 UTC.  The chair is sdake. Information about MeetBot at http://wiki.debian.org/MeetBot.
+21:11:54 <mheat-bot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+21:12:44 <sdake> agenda items: rollcall, status on v6 items, roadmap items, open
+21:12:46 <sdake> anything else?
+21:14:34 <sdake> #topic rollcall
+21:14:37 <sdake> sdake here
+21:14:45 <zaneb> hi
+21:14:46 <shardy> shardy here
+21:14:47 <shadower> shadower here
+21:14:55 <jpeeler> jpeeler here
+21:16:04 <sdake> asalkeld around?
+21:16:11 <asalkeld> hi
+21:16:23 <asalkeld> asalkeld, here
+21:16:30 <sdake> #info sdake, zaneb, shardy, shadower, jpeeler, asalkeld present
+21:16:37 <sdake> #topic status of v6 items
+21:16:52 <sdake> favorite topic integration testing
+21:17:32 <sdake> any updates?
+21:17:51 <jpeeler> i've updated the test that tests a wordpress template to work again
+21:18:05 <jpeeler> need to make it easier for people to drop in their tests for additional templates
+21:18:12 <sdake> yo slower
+21:18:28 <Slower> heya
+21:18:34 <Slower> having internet problems at new place
+21:18:41 <zaneb> jpeeler: are you testing using the same lab box as I was using a few weeks ago?
+21:18:52 <sdake> cool so like an import for test cases - sounds good
+21:19:08 <sdake> slower ya internet evil i had that problem for months - power socket wired backwards.
+21:19:15 <jpeeler> zaneb: i will be eventually. i started off there, but started debugging problems locally
+21:19:28 <zaneb> ok, thanks
+21:20:07 <zaneb> sdake: I think we will need 2 boxes in the lab if we are going to integrate with Jenkins
+21:20:10 <sdake> jpeeler were you able to get the provision tools to work for you
+21:20:25 <sdake> zaneb why two
+21:21:03 <zaneb> one to talk to Jenkins (always up), and the other to run the tests on (gets reprovisioned)
+21:21:05 <sdake> i have commendeered one for creating jeos images - would that work as one
+21:21:15 <zaneb> that sounds perfect
+21:21:20 <sdake> cool
+21:21:29 <sdake> someone may eventually kick us off, time will tell ;)
+21:21:46 <jpeeler> sdake: mostly, i did make one minor change
+21:22:10 <jpeeler> haven't looked at it lately, that is the easy part in my opinion
+21:22:16 <sdake> jpeeler zaneb send me your public keys, i'll add them to mrg-04, mrg-05
+21:22:20 <sdake> mrg-04 will be our build box
+21:22:29 <sdake> rathre i will add to mrg-05
+21:23:31 <sdake> one problem is credentials, - the deployment scripts need someone's password
+21:23:53 <zaneb> no, they only need a Kerberos ticket
+21:24:25 <sdake> how do you go about getting a long term one without a password?
+21:24:47 <zaneb> I believe you can refresh them without a password
+21:24:58 <zaneb> we did something like that in Matahari
+21:25:14 <sdake> ok well we can discuss later
+21:25:14 <zaneb> don't know the details, but I have reason to think it's possible ;)
+21:25:27 <sdake> if you know who did that work, can you speak with them
+21:25:45 <zaneb> I do, and he left the company
+21:25:57 <zaneb> but I can look back into it
+21:26:03 <sdake> cool
+21:26:25 <sdake> shardy cloudwatch?
+21:27:00 <shardy> sdake: pretty good progress written quite a bit of code, should start merging in the next couple of days
+21:27:21 <shardy> Hoping to have a pretty functional implementation by the end of the week
+21:27:37 <sdake> cool
+21:27:45 <sdake> helps we have the groundwork setup
+21:28:09 <shardy> yeah, the HA stuff added by asalkeld has made the engine side of things much easier
+21:28:39 <sdake> jpeeler no progress on snapshots i assume because of integration tests?
+21:28:48 <jpeeler> sdake: sorry, not yet
+21:28:53 <sdake> no apologies needed
+21:29:08 <sdake> we should probably move snapshotting to v7 tho
+21:29:25 <sdake> any objections?
+21:29:32 <asalkeld> nope
+21:29:45 <shadower> no
+21:29:51 <zaneb> +1
+21:29:53 <Slower> +1
+21:30:08 <sdake> #info move snapshot to v7 to allow integration testing work to finish
+21:30:21 <sdake> #info will need two machines for integration test linkage with jenkins
+21:30:52 <sdake> #info fairly functional cloudwatch implementation expected by end of next week
+21:31:10 <sdake> zaneb api addition?
+21:31:42 <zaneb> working on it, but stopping to sort out the integration test stuff
+21:31:51 <zaneb> not sure how long that will take atm
+21:31:58 <sdake> ok, should probably move api to v7 then?
+21:32:18 <zaneb> I would say yeah, let's go ahead and do that
+21:32:23 <sdake> any objections?
+21:32:37 <jpeeler> no
+21:32:43 <zaneb> integration test stuff always takes longer than you think :(
+21:32:48 <shardy> zaneb: are you happy for me to go ahead and break out the api common stuff as we discussed?
+21:32:53 <sdake> ya, in our case 6 months.. ;)
+21:33:07 <zaneb> shardy: yep, go ahead
+21:33:32 <sdake> #info moving openstack specific heat api to v7 to finish integration testing
+21:33:56 <sdake> asalkeld much progress on ceilometer front
+21:34:11 <asalkeld> ya working on api and db
+21:34:23 <asalkeld> codebase quite different
+21:34:23 <zaneb> shardy: check my GitHub acct, 2 commits there may be useful
+21:34:34 <sdake> #info asalkeld working on ceilometer api/db to support cloudwatch
+21:34:40 <shardy> zaneb: ok, thanks, will do
+21:34:53 <asalkeld> api has no auth
+21:34:56 <sdake> asalkeld more detail on differences?
+21:35:14 <asalkeld> mongodb + flask
+21:35:32 <sdake> we could likely help on the auth part, have some experience there
+21:35:36 <asalkeld> I'll get there
+21:35:40 <asalkeld> sure
+21:35:40 <sdake> cool
+21:36:20 <sdake> tomas how is template->oz tdl translator coming along
+21:37:20 <Slower> asalkeld: yeah I can lend a hand with auth too if needed
+21:37:28 <shadower> sdake: It's generating the Oz TDLs and I'm this close on outputting the new template
+21:37:36 <sdake> cool
+21:37:40 <shadower> but I need to go and do the codebase split
+21:37:47 <shadower> test it out and clien it up
+21:37:51 <shadower> clean
+21:37:56 <sdake> #info cloudformation->oz tdl - generating oz tdls and close to ouputing an updated template
+21:38:00 <shadower> should deffinitely make v6 though
+21:38:04 <sdake> cool
+21:38:15 <zaneb> speaking of auth...
+21:38:17 <shadower> sdake or asalkeld could any of you create a new repo on github for this?
+21:38:28 <sdake> yup will do shadower, been in meetings all day :(
+21:38:35 <shadower> no worries, thanks
+21:38:35 <sdake> after this meeting wraps up
+21:38:49 <zaneb> it seems we can't do keystone token auth with HA?
+21:39:33 <sdake> #action sdake to create repo for cloudformation template->oz tdl converter
+21:39:34 <Slower> zaneb: you mean just keep the token and renew it?
+21:40:11 <zaneb> well, if the user authenticates with a token we don't have their password
+21:40:24 <Slower> correct
+21:40:28 <zaneb> so my question is how we handle that with HA
+21:40:38 <asalkeld> so we could get the aws key?
+21:40:54 <Slower> zaneb: we pass it all (username/pass/tenant or aws key etc) into server
+21:41:01 <Slower> and store it
+21:41:04 <Slower> so we can do auth again later
+21:41:13 <Slower> that's the temporary solution anyway
+21:41:14 <zaneb> Slower: this is in the context of the OpenStack API
+21:41:31 <Slower> zaneb: I'm missing something I gather? :)
+21:41:45 <zaneb> it seems like the normal way to authenticate is to get a token from keystone and then pass only that to the api
+21:41:53 <zaneb> unless I am getting that wrong
+21:41:54 <Slower> yes
+21:42:00 <Slower> zaneb: that is right
+21:42:16 <Slower> well the api itself can get a token too
+21:42:51 <Slower> which is what we have been doing
+21:43:31 <Slower> zaneb: I see what you are saying
+21:43:45 <zaneb> ok, we can discuss later
+21:43:48 <Slower> zaneb: yeah
+21:43:56 <Slower> zaneb: we need to be certain and discuss.. we should investigate more
+21:43:59 <zaneb> just something to be aware of when we go to add the openstack api
+21:44:04 <Slower> yeah
+21:44:09 <asalkeld> use the admin user?
+21:44:23 <Slower> asalkeld: we lose quotas and billing info..
+21:44:39 <asalkeld> I see
+21:44:42 <zaneb> Slower: that's what we were told
+21:44:46 <Slower> yeah
+21:44:56 <zaneb> but I'm pretty sure the quota stuff goes with the tenant, not the user
+21:45:01 <Slower> the idea of per-tenant admin users could work though
+21:45:20 <Slower> I just think that sounds scary admin wise :)
+21:45:28 <Slower> but if that's the only way then that is fine
+21:45:31 <sdake> sounds suboptimal
+21:45:39 <Slower> yeah
+21:45:42 <Slower> we need a real solution
+21:45:50 <Slower> we need to talk to keystone guys more
+21:45:52 <zaneb> I think we only need one admin user, which we already have
+21:45:56 <sdake> ok well can you guys sort that out at a different time ;)
+21:46:02 <zaneb> but would have to implement it to find out for sure
+21:46:03 <Slower> sdake: yes :)
+21:46:04 <sdake> asalkeld has errands to run ;)
+21:46:16 <sdake> ok any other updates for v6 release?
+21:46:18 <Slower> zaneb: you could be right
+21:46:34 <Slower> zaneb: want me to research that?
+21:46:58 <sdake> #action slower to research token auth for ha
+21:46:59 <zaneb> Slower: we need some better info out of the keystone guys. maybe start a thread in openstack-dev
+21:47:06 <sdake> sounds like you volunteered slower ;)
+21:47:29 <sdake> ya openstack-dev sounds good
+21:47:31 <Slower> ok :)
+21:47:38 <sdake> release is Sep 4th
+21:47:39 <Slower> ya good plan
+21:47:45 <sdake> 20th now
+21:47:47 <sdake> 2 weeks
+21:48:06 <sdake> #topic roadmap
+21:48:30 <sdake> so one of our roadmap items is integrating our ideas around cloudwatch into ceilometer
+21:48:37 <sdake> perhaps should be a roadmap wiki on that topic
+21:48:53 <asalkeld> ok
+21:48:57 <sdake> thanks asalkeld
+21:49:18 <sdake> another roadmap item that comes to mind after we wrap up with v6 + work that goes into v7:
+21:49:44 <sdake> #link https://github.com/heat-api/heat/wiki/Roadmap-Feature:-AWS-template-support-parity
+21:50:28 <sdake> a majority of the unimplemented resource types are network related
+21:50:57 <sdake> may make sense for devs finishing up on their current tasks to start integrating with the quantum community
+21:51:28 <sdake> we should have  a roadmap item for quantum integration
+21:51:35 <sdake> i'll create that
+21:52:47 <sdake> for those folks interested in quantum + finishing out those resource types after you wrap up with current work and have no other pressing items might start taking a crack at the quantum integration roadmap
+21:53:03 <asalkeld> sounds good
+21:53:05 <sdake> any other roadmap items?
+21:53:26 <asalkeld> s3 + volume snapshots
+21:53:52 <sdake> any volunteer to make wiki roadmap page for that
+21:54:05 <asalkeld> well - when we have time
+21:54:13 <sdake> can make wiki page now - do later
+21:54:32 <sdake> shardy hate to impose but would you mind putting some rough thoughts together?
+21:54:55 <asalkeld> seperate the s3 and volume snapshots
+21:55:25 <sdake> ya, that requires changes in nova / cinder i'd believe
+21:55:43 <asalkeld> there are volume snapshots now
+21:56:05 <sdake> isorry i thought you meant the instance image snapshots
+21:56:10 <asalkeld> no
+21:56:32 <asalkeld> (this should not be too difficult)
+21:56:52 <shardy> sdake: sure
+21:56:56 <sdake> thanks shardy
+21:57:03 <shardy> sorry, internet dropout..
+21:57:11 <shardy> Another item - better update support
+21:57:23 <shardy> ie non interrupting where possible
+21:57:36 <sdake> #action asalkeld add roadmap page describiing ceilometer cloudwatch work based upon heat cloudwatch implementation
+21:59:02 <sdake> #action shardy add roadmap item for s3 integration
+21:59:12 <sdake> #action sdake add roadmap item for quantum integration
+21:59:43 <sdake> i think we need a type of roadmap which is things we need to look at
+21:59:48 <sdake> but we dont have time to scope them out yet
+21:59:52 <sdake> update support may be one
+22:00:15 <sdake> or maybe just make an update roadmap item ;)
+22:00:39 <sdake> shardy up for update roadmap item (since your making progress there)
+22:01:14 <shardy> sdake: sure - I implemented the current (basic) update, so happy to document what's still todo
+22:01:19 <asalkeld> guys gota run - anything else for me?
+22:01:27 <sdake> take care asalkeld - not unless you have open items
+22:01:38 <Slower> cya asalkeld :)
+22:01:38 <asalkeld> ok - (no)
+22:02:05 <sdake> looks like there is an update roadmap on the roadmap already
+22:02:32 <shardy> sdake: Ah, OK, I really just wanted to flag it as todo for v7
+22:02:56 <sdake> jpeeler i think the last roadmap item that isn't documented is the snapshot feature
+22:03:07 <sdake> mind making a roadmap page for that?
+22:03:21 <jpeeler> ok sure
+22:03:23 <sdake> If you notice a pattern, would like our roadmap items documented so we dont have to rehash old ones over and over ;)
+22:03:50 <sdake> #action jpeeler update roadmap wiki with snapshot feature
+22:03:58 <sdake> ok well thats all i got for roadmap :)
+22:04:16 <sdake> that should keep us busy for some time to come
+22:04:19 <sdake> #topic open items
+22:04:22 <sdake> any open items?
+22:04:48 <zaneb> we should arrange a pre-meeting to organise the roadmap for the roadmap
+22:04:52 * zaneb ducks
+22:04:59 <zaneb> ;)
+22:05:22 <Slower> haha
+22:05:50 <zaneb> jk, no open items
+22:07:55 <sdake> zaneb rofl
+22:08:00 <sdake> ok ending meeeting now ;)
+22:08:02 <sdake> #endmeeting

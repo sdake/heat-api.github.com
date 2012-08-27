@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#heat Meeting</title>
+<style type="text/css">
+/* This is for the .html in the HTML2 writer */
+body {
+    font-family: Helvetica, sans-serif;
+    font-size:14px;
+}
+h1 {
+    text-align: center;
+}
+a {
+    color:navy;
+    text-decoration: none;
+    border-bottom:1px dotted navy;
+}
+a:hover {
+    text-decoration:none;
+    border-bottom: 0;
+    color:#0000B9;
+}
+hr {
+    border: 1px solid #ccc;
+}
+/* The (nick, time) item pairs, and other body text things. */
+.details {
+    font-size: 12px;
+    font-weight:bold;
+}
+/* The 'AGREED:', 'IDEA', etc, prefix to lines. */
+.itemtype {
+    font-style: normal;    /* un-italics it */
+    font-weight: bold;
+}
+/* Example: change single item types.  Capitalized command name.
+/* .TOPIC  {  color:navy;  } */
+/* .AGREED {  color:lime;  } */
+
+</style>
+</head>
+
+<body>
+<h1>#heat Meeting</h1>
+<span class="details">
+Meeting started by sdake at 21:11:54 UTC
+(<a href="heat.2012-08-20-21.11.log.html">full logs</a>).</span>
+
+<br><br>
+
+
+
+<h3>Meeting summary</h3>
+<ol>
+<li><b class="TOPIC">rollcall</b> <span class="details">(<a href='heat.2012-08-20-21.11.log.html#l-6'>sdake</a>, 21:14:34)</span>
+<ol type="a">
+  <li><span class="INFO">sdake, zaneb, shardy, shadower, jpeeler,
+    asalkeld present</span> <span class="details">(<a
+    href='heat.2012-08-20-21.11.log.html#l-15'>sdake</a>,
+    21:16:30)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">status of v6 items</b> <span class="details">(<a href='heat.2012-08-20-21.11.log.html#l-16'>sdake</a>, 21:16:37)</span>
+<ol type="a">
+  <li><span class="INFO">move snapshot to v7 to allow integration
+    testing work to finish</span> <span class="details">(<a
+    href='heat.2012-08-20-21.11.log.html#l-68'>sdake</a>,
+    21:30:08)</span></li>
+  <li><span class="INFO">will need two machines for integration test
+    linkage with jenkins</span> <span class="details">(<a
+    href='heat.2012-08-20-21.11.log.html#l-69'>sdake</a>,
+    21:30:21)</span></li>
+  <li><span class="INFO">fairly functional cloudwatch implementation
+    expected by end of next week</span> <span class="details">(<a
+    href='heat.2012-08-20-21.11.log.html#l-70'>sdake</a>,
+    21:30:52)</span></li>
+  <li><span class="INFO">moving openstack specific heat api to v7 to
+    finish integration testing</span> <span class="details">(<a
+    href='heat.2012-08-20-21.11.log.html#l-82'>sdake</a>,
+    21:33:32)</span></li>
+  <li><span class="INFO">asalkeld working on ceilometer api/db to
+    support cloudwatch</span> <span class="details">(<a
+    href='heat.2012-08-20-21.11.log.html#l-87'>sdake</a>,
+    21:34:34)</span></li>
+  <li><span class="INFO">cloudformation-&gt;oz tdl - generating oz tdls
+    and close to ouputing an updated template</span> <span
+    class="details">(<a
+    href='heat.2012-08-20-21.11.log.html#l-103'>sdake</a>,
+    21:37:56)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">sdake to
+    create repo for cloudformation template-&gt;oz tdl converter</span>
+    <span class="details">(<a
+    href='heat.2012-08-20-21.11.log.html#l-112'>sdake</a>,
+    21:39:33)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">slower to
+    research token auth for ha</span> <span class="details">(<a
+    href='heat.2012-08-20-21.11.log.html#l-157'>sdake</a>,
+    21:46:58)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">roadmap</b> <span class="details">(<a href='heat.2012-08-20-21.11.log.html#l-166'>sdake</a>, 21:48:06)</span>
+<ol type="a">
+  <li><a
+    href="https://github.com/heat-api/heat/wiki/Roadmap-Feature:-AWS-template-support-parity">https://github.com/heat-api/heat/wiki/Roadmap-Feature:-AWS-template-support-parity</a>
+    <span class="details">(<a
+    href='heat.2012-08-20-21.11.log.html#l-172'>sdake</a>,
+    21:49:44)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">asalkeld add
+    roadmap page describiing ceilometer cloudwatch work based upon heat
+    cloudwatch implementation</span> <span class="details">(<a
+    href='heat.2012-08-20-21.11.log.html#l-196'>sdake</a>,
+    21:57:36)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">shardy add
+    roadmap item for s3 integration</span> <span class="details">(<a
+    href='heat.2012-08-20-21.11.log.html#l-197'>sdake</a>,
+    21:59:02)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">sdake add
+    roadmap item for quantum integration</span> <span
+    class="details">(<a
+    href='heat.2012-08-20-21.11.log.html#l-198'>sdake</a>,
+    21:59:12)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">jpeeler
+    update roadmap wiki with snapshot feature</span> <span
+    class="details">(<a
+    href='heat.2012-08-20-21.11.log.html#l-215'>sdake</a>,
+    22:03:50)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">open items</b> <span class="details">(<a href='heat.2012-08-20-21.11.log.html#l-218'>sdake</a>, 22:04:19)</span>
+</li>
+</ol>
+<br><br>
+
+
+
+<span class="details">
+Meeting ended at 22:08:02 UTC
+(<a href="heat.2012-08-20-21.11.log.html">full logs</a>).</span>
+
+<br><br>
+
+
+
+<h3>Action items</h3>
+<ol>
+  <li>sdake to create repo for cloudformation template-&gt;oz tdl converter</li>
+  <li>slower to research token auth for ha</li>
+  <li>asalkeld add roadmap page describiing ceilometer cloudwatch work based upon heat cloudwatch implementation</li>
+  <li>shardy add roadmap item for s3 integration</li>
+  <li>sdake add roadmap item for quantum integration</li>
+  <li>jpeeler update roadmap wiki with snapshot feature</li>
+</ol>
+<br><br>
+
+
+
+<h3>Action items, by person</h3>
+<ol>
+  <li> asalkeld <ol>
+    <li>asalkeld add roadmap page describiing ceilometer cloudwatch work based upon heat cloudwatch implementation</li>
+  </ol></li>
+  <li> jpeeler <ol>
+    <li>jpeeler update roadmap wiki with snapshot feature</li>
+  </ol></li>
+  <li> sdake <ol>
+    <li>sdake to create repo for cloudformation template-&gt;oz tdl converter</li>
+    <li>sdake add roadmap item for quantum integration</li>
+  </ol></li>
+  <li> shardy <ol>
+    <li>shardy add roadmap item for s3 integration</li>
+  </ol></li>
+</ol>
+<br><br>
+
+
+
+<h3>People present (lines said)</h3>
+<ol>
+  <li>sdake (102)</li>
+  <li>zaneb (37)</li>
+  <li>Slower (34)</li>
+  <li>asalkeld (22)</li>
+  <li>shardy (12)</li>
+  <li>shadower (9)</li>
+  <li>jpeeler (9)</li>
+  <li>mheat-bot (2)</li>
+</ol>
+<br><br>
+
+
+
+<span class="details">Generated by <a href="http://wiki.debian.org/MeetBot">MeetBot</a> 0.1.4.</span>
+</body></html>

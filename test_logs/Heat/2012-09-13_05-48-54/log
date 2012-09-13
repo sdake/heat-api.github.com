@@ -396,3 +396,35 @@ skipping non-regular file "6"
 skipping non-regular file "7"
 skipping non-regular file "8"
 skipping non-regular file "9"
+[master 8a31ff0] Sync jenkins-Heat-9 build logs
+ 25 files changed, 4428 insertions(+)
+ create mode 100644 test_logs/Heat/2012-09-12_12-38-55/build.xml
+ create mode 100644 test_logs/Heat/2012-09-12_12-38-55/changelog.xml
+ create mode 100644 test_logs/Heat/2012-09-12_12-38-55/log
+ create mode 100644 test_logs/Heat/2012-09-12_13-48-56/build.xml
+ create mode 100644 test_logs/Heat/2012-09-12_13-48-56/changelog.xml
+ create mode 100644 test_logs/Heat/2012-09-12_13-48-56/log
+ create mode 100644 test_logs/Heat/2012-09-12_16-44-56/build.xml
+ create mode 100644 test_logs/Heat/2012-09-12_16-44-56/changelog.xml
+ create mode 100644 test_logs/Heat/2012-09-12_16-44-56/log
+ create mode 100644 test_logs/Heat/2012-09-12_18-32-32/build.xml
+ create mode 100644 test_logs/Heat/2012-09-12_18-32-32/changelog.xml
+ create mode 100644 test_logs/Heat/2012-09-12_18-32-32/log
+ create mode 100644 test_logs/Heat/2012-09-12_18-42-33/build.xml
+ create mode 100644 test_logs/Heat/2012-09-12_18-42-33/changelog.xml
+ create mode 100644 test_logs/Heat/2012-09-12_18-42-33/log
+ create mode 100644 test_logs/Heat/2012-09-12_22-35-46/build.xml
+ create mode 100644 test_logs/Heat/2012-09-12_22-35-46/changelog.xml
+ create mode 100644 test_logs/Heat/2012-09-12_22-35-46/log
+ create mode 100644 test_logs/Heat/2012-09-13_02-03-31/build.xml
+ create mode 100644 test_logs/Heat/2012-09-13_02-03-31/changelog.xml
+ create mode 100644 test_logs/Heat/2012-09-13_02-03-31/log
+ create mode 100644 test_logs/Heat/2012-09-13_04-21-21/build.xml
+ create mode 100644 test_logs/Heat/2012-09-13_04-21-21/changelog.xml
+ create mode 100644 test_logs/Heat/2012-09-13_04-21-21/log
+ create mode 100644 test_logs/Heat/2012-09-13_05-48-54/changelog.xml
+ create mode 100644 test_logs/Heat/2012-09-13_05-48-54/log
+To git@github.com:heat-api/heat-api.github.com.git
+   9ffea35..8a31ff0  master -> master
+~/heat-integration
+Finished: FAILURE

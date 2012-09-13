@@ -1,0 +1,192 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#heat Meeting</title>
+<style type="text/css">
+/* This is for the .html in the HTML2 writer */
+body {
+    font-family: Helvetica, sans-serif;
+    font-size:14px;
+}
+h1 {
+    text-align: center;
+}
+a {
+    color:navy;
+    text-decoration: none;
+    border-bottom:1px dotted navy;
+}
+a:hover {
+    text-decoration:none;
+    border-bottom: 0;
+    color:#0000B9;
+}
+hr {
+    border: 1px solid #ccc;
+}
+/* The (nick, time) item pairs, and other body text things. */
+.details {
+    font-size: 12px;
+    font-weight:bold;
+}
+/* The 'AGREED:', 'IDEA', etc, prefix to lines. */
+.itemtype {
+    font-style: normal;    /* un-italics it */
+    font-weight: bold;
+}
+/* Example: change single item types.  Capitalized command name.
+/* .TOPIC  {  color:navy;  } */
+/* .AGREED {  color:lime;  } */
+
+</style>
+</head>
+
+<body>
+<h1>#heat Meeting</h1>
+<span class="details">
+Meeting started by sdake at 21:10:39 UTC
+(<a href="heat.2012-08-27-21.10.log.html">full logs</a>).</span>
+
+<br><br>
+
+
+
+<h3>Meeting summary</h3>
+<ol>
+<li><b class="TOPIC">rollcall</b> <span class="details">(<a href='heat.2012-08-27-21.10.log.html#l-7'>sdake</a>, 21:12:23)</span>
+<ol type="a">
+  <li><span class="INFO">sdake, asalkeld, jpeeler, shardy present</span>
+    <span class="details">(<a
+    href='heat.2012-08-27-21.10.log.html#l-13'>sdake</a>,
+    21:13:44)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">v6 status</b> <span class="details">(<a href='heat.2012-08-27-21.10.log.html#l-14'>sdake</a>, 21:13:54)</span>
+<ol type="a">
+  <li><span class="INFO">slower shadower also here</span> <span
+    class="details">(<a
+    href='heat.2012-08-27-21.10.log.html#l-22'>sdake</a>,
+    21:15:46)</span></li>
+  <li><span class="INFO">zaneb also here ;)</span> <span
+    class="details">(<a
+    href='heat.2012-08-27-21.10.log.html#l-25'>sdake</a>,
+    21:16:27)</span></li>
+  <li><a
+    href="https://github.com/heat-api/heat/blob/master/heat/tests/functional/test_WordPress_Single_Instance.py">https://github.com/heat-api/heat/blob/master/heat/tests/functional/test_WordPress_Single_Instance.py</a>
+    <span class="details">(<a
+    href='heat.2012-08-27-21.10.log.html#l-28'>jpeeler</a>,
+    21:17:40)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">open items</b> <span class="details">(<a href='heat.2012-08-27-21.10.log.html#l-81'>sdake</a>, 21:30:18)</span>
+<ol type="a">
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">zaneb test
+    case for AutoScalingMultiAZSample.template</span> <span
+    class="details">(<a
+    href='heat.2012-08-27-21.10.log.html#l-111'>sdake</a>,
+    21:36:04)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">sdake test
+    case for HAProxy_Single_Instance.template</span> <span
+    class="details">(<a
+    href='heat.2012-08-27-21.10.log.html#l-112'>sdake</a>,
+    21:36:16)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">shardy test
+    case for MySQL_Single_Instance.template</span> <span
+    class="details">(<a
+    href='heat.2012-08-27-21.10.log.html#l-113'>sdake</a>,
+    21:36:30)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">slower
+    OpenShift_Prebuilt_JEOS.template</span> <span class="details">(<a
+    href='heat.2012-08-27-21.10.log.html#l-114'>sdake</a>,
+    21:36:42)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">jpeeler
+    WordPress_2_Instances.template</span> <span class="details">(<a
+    href='heat.2012-08-27-21.10.log.html#l-115'>sdake</a>,
+    21:36:53)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">asalkeld
+    WordPress_2_Instances_With_EBS_EIP.template</span> <span
+    class="details">(<a
+    href='heat.2012-08-27-21.10.log.html#l-116'>sdake</a>,
+    21:37:01)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">zaneb
+    WordPress_2_Instances_With_EBS.template</span> <span
+    class="details">(<a
+    href='heat.2012-08-27-21.10.log.html#l-117'>sdake</a>,
+    21:37:10)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">sdake
+    WordPress_Composed_Instances.template</span> <span
+    class="details">(<a
+    href='heat.2012-08-27-21.10.log.html#l-118'>sdake</a>,
+    21:37:20)</span></li>
+</ol>
+</li>
+</ol>
+<br><br>
+
+
+
+<span class="details">
+Meeting ended at 21:40:24 UTC
+(<a href="heat.2012-08-27-21.10.log.html">full logs</a>).</span>
+
+<br><br>
+
+
+
+<h3>Action items</h3>
+<ol>
+  <li>zaneb test case for AutoScalingMultiAZSample.template</li>
+  <li>sdake test case for HAProxy_Single_Instance.template</li>
+  <li>shardy test case for MySQL_Single_Instance.template</li>
+  <li>slower OpenShift_Prebuilt_JEOS.template</li>
+  <li>jpeeler WordPress_2_Instances.template</li>
+  <li>asalkeld WordPress_2_Instances_With_EBS_EIP.template</li>
+  <li>zaneb WordPress_2_Instances_With_EBS.template</li>
+  <li>sdake WordPress_Composed_Instances.template</li>
+</ol>
+<br><br>
+
+
+
+<h3>Action items, by person</h3>
+<ol>
+  <li> asalkeld <ol>
+    <li>asalkeld WordPress_2_Instances_With_EBS_EIP.template</li>
+  </ol></li>
+  <li> jpeeler <ol>
+    <li>jpeeler WordPress_2_Instances.template</li>
+  </ol></li>
+  <li> sdake <ol>
+    <li>sdake test case for HAProxy_Single_Instance.template</li>
+    <li>sdake WordPress_Composed_Instances.template</li>
+  </ol></li>
+  <li> shardy <ol>
+    <li>shardy test case for MySQL_Single_Instance.template</li>
+  </ol></li>
+  <li> zaneb <ol>
+    <li>zaneb test case for AutoScalingMultiAZSample.template</li>
+    <li>zaneb WordPress_2_Instances_With_EBS.template</li>
+  </ol></li>
+</ol>
+<br><br>
+
+
+
+<h3>People present (lines said)</h3>
+<ol>
+  <li>sdake (73)</li>
+  <li>Slower (15)</li>
+  <li>zaneb (10)</li>
+  <li>shardy (10)</li>
+  <li>asalkeld (9)</li>
+  <li>jpeeler (9)</li>
+  <li>shadower (7)</li>
+  <li>mheat-bot` (2)</li>
+</ol>
+<br><br>
+
+
+
+<span class="details">Generated by <a href="http://wiki.debian.org/MeetBot">MeetBot</a> 0.1.4.</span>
+</body></html>

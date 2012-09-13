@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#heat log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">21:10:39</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">21:10:39</span><span class="nk"> &lt;mheat-bot`&gt;</span> Meeting started Mon Aug 27 21:10:39 2012 UTC.  The chair is sdake. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">21:10:39</span><span class="nk"> &lt;mheat-bot`&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">21:11:28</span><span class="nk"> &lt;sdake&gt;</span> agenda rollcall, v6 status, open items
+<a name="l-5"></a><span class="tm">21:11:32</span><span class="nk"> &lt;sdake&gt;</span> any other agenda items?
+<a name="l-6"></a><span class="tm">21:11:48</span><span class="nk"> &lt;asalkeld&gt;</span> nope
+<a name="l-7"></a><span class="tm">21:12:23</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">rollcall</span>
+<a name="l-8"></a><span class="tm">21:12:36</span><span class="nk"> &lt;asalkeld&gt;</span> asalkeld, here
+<a name="l-9"></a><span class="tm">21:12:38</span><span class="nk"> &lt;jpeeler&gt;</span> jpeeler here
+<a name="l-10"></a><span class="tm">21:12:41</span><span class="nk"> &lt;sdake&gt;</span> sdake here
+<a name="l-11"></a><span class="tm">21:12:43</span><span class="nk"> &lt;shardy&gt;</span> shardy here
+<a name="l-12"></a><span class="tm">21:13:17</span><span class="nk"> &lt;sdake&gt;</span> slower here?
+<a name="l-13"></a><span class="tm">21:13:44</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">sdake, asalkeld, jpeeler, shardy present</span>
+<a name="l-14"></a><span class="tm">21:13:54</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">v6 status</span>
+<a name="l-15"></a><span class="tm">21:14:13</span><span class="nk"> &lt;Slower&gt;</span> yes sorry
+<a name="l-16"></a><span class="tm">21:14:29</span><span class="nk"> &lt;sdake&gt;</span> since we are missing few folks today lets go over where people are on the projects they are working on
+<a name="l-17"></a><span class="tm">21:14:36</span><span class="nk"> &lt;sdake&gt;</span> jpeeler why dont you roll out first
+<a name="l-18"></a><span class="tm">21:15:01</span><span class="nk"> &lt;jpeeler&gt;</span> i've finished the nose portion of the integration testing
+<a name="l-19"></a><span class="tm">21:15:09</span><span class="nk"> &lt;jpeeler&gt;</span> so people should be able to see how to write tests for the rest of the templates
+<a name="l-20"></a><span class="tm">21:15:22</span><span class="nk"> &lt;jpeeler&gt;</span> still getting it tied into automatic deployment from beaker
+<a name="l-21"></a><span class="tm">21:15:36</span><span class="nk"> &lt;shadower&gt;</span> sorry, shadower here
+<a name="l-22"></a><span class="tm">21:15:46</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">slower shadower also here</span>
+<a name="l-23"></a><span class="tm">21:16:17</span><span class="nk"> &lt;sdake&gt;</span> re writing tests, ppl should be able to write tests now then jpeeler?
+<a name="l-24"></a><span class="tm">21:16:19</span><span class="nk"> &lt;zaneb&gt;</span> I'm also here
+<a name="l-25"></a><span class="tm">21:16:27</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">zaneb also here ;)</span>
+<a name="l-26"></a><span class="tm">21:16:38</span><span class="nk"> &lt;jpeeler&gt;</span> <span class="hi">sdake:</span> yes
+<a name="l-27"></a><span class="tm">21:17:00</span><span class="nk"> &lt;sdake&gt;</span> jpeeler can you provide a link to the example test case you wrote
+<a name="l-28"></a><span class="tm">21:17:40</span><span class="nk"> &lt;jpeeler&gt;</span> https://github.com/heat-api/heat/blob/master/heat/tests/functional/test_WordPress_Single_Instance.py
+<a name="l-29"></a><span class="tm">21:18:04</span><span class="nk"> &lt;sdake&gt;</span> cool, at end of meeting perhaps we can pass out templates to write
+<a name="l-30"></a><span class="tm">21:18:07</span><span class="nk"> &lt;sdake&gt;</span> test cases for
+<a name="l-31"></a><span class="tm">21:18:15</span><span class="nk"> &lt;sdake&gt;</span> zaneb can you give us a quick update
+<a name="l-32"></a><span class="tm">21:18:22</span><span class="nk"> &lt;zaneb&gt;</span> sure
+<a name="l-33"></a><span class="tm">21:19:00</span><span class="nk"> &lt;zaneb&gt;</span> I'm working on setting up a Jenkins instance to run the integration tests in the lab and post the results back to Gerrit
+<a name="l-34"></a><span class="tm">21:19:24</span><span class="nk"> &lt;zaneb&gt;</span> Currently testing with the gerrit sandbox and Jenkins on my machine
+<a name="l-35"></a><span class="tm">21:19:36</span><span class="nk"> &lt;sdake&gt;</span> do you need jenkins for that?
+<a name="l-36"></a><span class="tm">21:19:38</span><span class="nk"> &lt;zaneb&gt;</span> I think I'm pretty close to having that running
+<a name="l-37"></a><span class="tm">21:20:01</span><span class="nk"> &lt;zaneb&gt;</span> <span class="hi">sdake:</span> well, the idea is to get it working and then move it to a server
+<a name="l-38"></a><span class="tm">21:20:39</span><span class="nk"> &lt;zaneb&gt;</span> once it is running I will move to a box in the lab and hook up to the real gerrit
+<a name="l-39"></a><span class="tm">21:20:42</span><span class="nk"> &lt;sdake&gt;</span> ok we can talk more later - just not sure of value of having jenkins
+<a name="l-40"></a><span class="tm">21:21:00</span><span class="nk"> &lt;sdake&gt;</span> shadower got any updates for us
+<a name="l-41"></a><span class="tm">21:21:24</span><span class="nk"> &lt;shadower&gt;</span> heat-prebuild's got all the pieces in
+<a name="l-42"></a><span class="tm">21:21:31</span><span class="nk"> &lt;shadower&gt;</span> but I want to test it more thoroughly tomorrow
+<a name="l-43"></a><span class="tm">21:21:42</span><span class="nk"> &lt;sdake&gt;</span> nice work
+<a name="l-44"></a><span class="tm">21:22:40</span><span class="nk"> &lt;sdake&gt;</span> slower any updates
+<a name="l-45"></a><span class="tm">21:23:08</span><span class="nk"> &lt;Slower&gt;</span> not really
+<a name="l-46"></a><span class="tm">21:23:19</span><span class="nk"> &lt;Slower&gt;</span> I was to look into auth issues but never got to it
+<a name="l-47"></a><span class="tm">21:23:24</span><span class="nk"> &lt;sdake&gt;</span> k
+<a name="l-48"></a><span class="tm">21:23:28</span><span class="nk"> &lt;Slower&gt;</span> I will be doing that top priority this week
+<a name="l-49"></a><span class="tm">21:23:31</span><span class="nk"> &lt;sdake&gt;</span> asalkeld any updates
+<a name="l-50"></a><span class="tm">21:23:58</span><span class="nk"> &lt;asalkeld&gt;</span> just working on poc ceilometer + cloudwatch
+<a name="l-51"></a><span class="tm">21:24:22</span><span class="nk"> &lt;sdake&gt;</span> shardy any updates
+<a name="l-52"></a><span class="tm">21:24:23</span><span class="nk"> &lt;asalkeld&gt;</span> and working tho' upstream issues
+<a name="l-53"></a><span class="tm">21:24:42</span><span class="nk"> &lt;shardy&gt;</span> sure - I've been working on a new cloudwatch API and client
+<a name="l-54"></a><span class="tm">21:24:58</span><span class="nk"> &lt;shardy&gt;</span> both are now working, but need a bit more work before posting for review this week
+<a name="l-55"></a><span class="tm">21:25:10</span><span class="nk"> &lt;Slower&gt;</span> are we going to get to have input on the API?
+<a name="l-56"></a><span class="tm">21:25:20</span><span class="nk"> &lt;Slower&gt;</span> does the api include discovery options?
+<a name="l-57"></a><span class="tm">21:25:35</span><span class="nk"> &lt;shardy&gt;</span> The API I've implemented is an AWS clone API
+<a name="l-58"></a><span class="tm">21:25:43</span><span class="nk"> &lt;Slower&gt;</span> eg what is supported in the backend
+<a name="l-59"></a><span class="tm">21:26:01</span><span class="nk"> &lt;shardy&gt;</span> but probably, we'll only support a subset of actions due to our current engine implementation
+<a name="l-60"></a><span class="tm">21:26:19</span><span class="nk"> &lt;shardy&gt;</span> then we can enhance when asalkeld has ceilometer cloudwatch backend done
+<a name="l-61"></a><span class="tm">21:26:37</span><span class="nk"> &lt;Slower&gt;</span> I think discovery of supported template features is important for the future
+<a name="l-62"></a><span class="tm">21:27:00</span><span class="nk"> &lt;Slower&gt;</span> however that looks I'm not sure :)
+<a name="l-63"></a><span class="tm">21:27:03</span><span class="nk"> &lt;Slower&gt;</span> just commenting :)
+<a name="l-64"></a><span class="tm">21:27:03</span><span class="nk"> &lt;shardy&gt;</span> I'm expecting us to be able to read alarms defined in templates, read and write metric datapoints, and toggle alarm state (useful for test/debug)
+<a name="l-65"></a><span class="tm">21:27:32</span><span class="nk"> &lt;asalkeld&gt;</span> nice shardy
+<a name="l-66"></a><span class="tm">21:27:35</span><span class="nk"> &lt;sdake&gt;</span> slower i think that is more for zaneb's rewrite
+<a name="l-67"></a><span class="tm">21:27:43</span><span class="nk"> &lt;sdake&gt;</span> ya sounds sweet shardy
+<a name="l-68"></a><span class="tm">21:27:58</span><span class="nk"> &lt;Slower&gt;</span> oh is this not the heat-specific api?
+<a name="l-69"></a><span class="tm">21:28:02</span><span class="nk"> &lt;sdake&gt;</span> no
+<a name="l-70"></a><span class="tm">21:28:08</span><span class="nk"> &lt;Slower&gt;</span> oh ok
+<a name="l-71"></a><span class="tm">21:28:12</span><span class="nk"> &lt;Slower&gt;</span> nm then :), sorry
+<a name="l-72"></a><span class="tm">21:28:24</span><span class="nk"> &lt;shardy&gt;</span> <span class="hi">Slower:</span> we can add a non-aws cloudwatch API later
+<a name="l-73"></a><span class="tm">21:28:28</span><span class="nk"> &lt;sdake&gt;</span> update from me - been working on slides for cloudopen - they are wrapped up now
+<a name="l-74"></a><span class="tm">21:28:29</span><span class="nk"> &lt;Slower&gt;</span> yes
+<a name="l-75"></a><span class="tm">21:28:36</span><span class="nk"> &lt;sdake&gt;</span> so i should be back to actually doing real work soon
+<a name="l-76"></a><span class="tm">21:28:41</span><span class="nk"> &lt;sdake&gt;</span> although I am out rest of week traveling
+<a name="l-77"></a><span class="tm">21:29:25</span><span class="nk"> &lt;sdake&gt;</span> next tuesday is release
+<a name="l-78"></a><span class="tm">21:29:30</span><span class="nk"> &lt;sdake&gt;</span> (sept 4th)
+<a name="l-79"></a><span class="tm">21:30:03</span><span class="nk"> &lt;sdake&gt;</span> would really like this release to focus on making sure all our test cases run in an automated way
+<a name="l-80"></a><span class="tm">21:30:15</span><span class="nk"> &lt;sdake&gt;</span> so our release manager isn't swamped
+<a name="l-81"></a><span class="tm">21:30:18</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">open items</span>
+<a name="l-82"></a><span class="tm">21:30:28</span><span class="nk"> &lt;sdake&gt;</span> so on to choosing a release manager for v6
+<a name="l-83"></a><span class="tm">21:30:45</span><span class="nk"> &lt;sdake&gt;</span> choices are jpeeler, shardy, zaneb, asalkeld
+<a name="l-84"></a><span class="tm">21:30:58</span><span class="nk"> &lt;shardy&gt;</span> <span class="hi">sdake:</span> I'm happy to do it
+<a name="l-85"></a><span class="tm">21:30:58</span><span class="nk"> &lt;asalkeld&gt;</span> just roll a dice
+<a name="l-86"></a><span class="tm">21:30:58</span><span class="nk"> &lt;sdake&gt;</span> i think jpeeler was really interested last time as i recall
+<a name="l-87"></a><span class="tm">21:31:16</span><span class="nk"> &lt;jpeeler&gt;</span> sure, that's cool
+<a name="l-88"></a><span class="tm">21:31:20</span><span class="nk"> &lt;zaneb&gt;</span> I'm also happy to do it
+<a name="l-89"></a><span class="tm">21:31:32</span><span class="nk"> &lt;sdake&gt;</span> zaneb yo ucan be next victim then ;)
+<a name="l-90"></a><span class="tm">21:31:32</span><span class="nk"> &lt;shadower&gt;</span> guys I wouldn't be so eager if I were you
+<a name="l-91"></a><span class="tm">21:31:37</span><span class="nk"> &lt;jpeeler&gt;</span> especially if all the tests get written :)
+<a name="l-92"></a><span class="tm">21:31:38</span><span class="nk"> &lt;sdake&gt;</span> so jpeeler v6, zaneb v7
+<a name="l-93"></a><span class="tm">21:31:49</span><span class="nk"> &lt;zaneb&gt;</span> cool
+<a name="l-94"></a><span class="tm">21:31:49</span><span class="nk"> &lt;sdake&gt;</span> ya once the tests are done it hsould be eas(ier)
+<a name="l-95"></a><span class="tm">21:32:11</span><span class="nk"> &lt;sdake&gt;</span> ok so test cases
+<a name="l-96"></a><span class="tm">21:32:33</span><span class="nk"> &lt;sdake&gt;</span> there are 26
+<a name="l-97"></a><span class="tm">21:33:29</span><span class="nk"> &lt;sdake&gt;</span> any volunteers for specific ones, otherwise i'll just assign in order ;)
+<a name="l-98"></a><span class="tm">21:34:45</span><span class="nk"> &lt;sdake&gt;</span> please vote "assign in order" +1/-1
+<a name="l-99"></a><span class="tm">21:34:54</span><span class="nk"> &lt;asalkeld&gt;</span> +1
+<a name="l-100"></a><span class="tm">21:35:00</span><span class="nk"> &lt;shadower&gt;</span> +1
+<a name="l-101"></a><span class="tm">21:35:04</span><span class="nk"> &lt;jpeeler&gt;</span> +1
+<a name="l-102"></a><span class="tm">21:35:04</span><span class="nk"> &lt;shardy&gt;</span> +1
+<a name="l-103"></a><span class="tm">21:35:32</span><span class="nk"> &lt;zaneb&gt;</span> +1 if by "order" you mean "round robin"
+<a name="l-104"></a><span class="tm">21:35:41</span><span class="nk"> &lt;sdake&gt;</span> Zane Bitter
+<a name="l-105"></a><span class="tm">21:35:41</span><span class="nk"> &lt;sdake&gt;</span> Steven Dake
+<a name="l-106"></a><span class="tm">21:35:42</span><span class="nk"> &lt;sdake&gt;</span> Steve Hardy
+<a name="l-107"></a><span class="tm">21:35:42</span><span class="nk"> &lt;sdake&gt;</span> Ian Main
+<a name="l-108"></a><span class="tm">21:35:42</span><span class="nk"> &lt;sdake&gt;</span> Jeff Peeler
+<a name="l-109"></a><span class="tm">21:35:43</span><span class="nk"> &lt;sdake&gt;</span> Angus Salkeld
+<a name="l-110"></a><span class="tm">21:35:45</span><span class="nk"> &lt;sdake&gt;</span> Tomas Sedovic
+<a name="l-111"></a><span class="tm">21:36:04</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#action </span><span class="cmdline">zaneb test case for AutoScalingMultiAZSample.template</span>
+<a name="l-112"></a><span class="tm">21:36:16</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#action </span><span class="cmdline">sdake test case for HAProxy_Single_Instance.template</span>
+<a name="l-113"></a><span class="tm">21:36:30</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#action </span><span class="cmdline">shardy test case for MySQL_Single_Instance.template</span>
+<a name="l-114"></a><span class="tm">21:36:42</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#action </span><span class="cmdline">slower OpenShift_Prebuilt_JEOS.template</span>
+<a name="l-115"></a><span class="tm">21:36:53</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#action </span><span class="cmdline">jpeeler WordPress_2_Instances.template</span>
+<a name="l-116"></a><span class="tm">21:37:01</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#action </span><span class="cmdline">asalkeld WordPress_2_Instances_With_EBS_EIP.template</span>
+<a name="l-117"></a><span class="tm">21:37:10</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#action </span><span class="cmdline">zaneb WordPress_2_Instances_With_EBS.template</span>
+<a name="l-118"></a><span class="tm">21:37:20</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#action </span><span class="cmdline">sdake WordPress_Composed_Instances.template</span>
+<a name="l-119"></a><span class="tm">21:37:40</span><span class="nk"> &lt;asalkeld&gt;</span> isn't the issue tracker better for this
+<a name="l-120"></a><span class="tm">21:37:43</span><span class="nk"> &lt;sdake&gt;</span> 3action shardy WordPress_Single_Instance_With_EBS_EIP.template
+<a name="l-121"></a><span class="tm">21:37:54</span><span class="nk"> &lt;sdake&gt;</span> groan
+<a name="l-122"></a><span class="tm">21:38:01</span><span class="nk"> &lt;sdake&gt;</span> ok i'll file issues in issue tracker
+<a name="l-123"></a><span class="tm">21:38:01</span><span class="nk"> &lt;shadower&gt;</span> <span class="hi">sdake:</span> not that I'm complaining but I think you've missed me
+<a name="l-124"></a><span class="tm">21:38:15</span><span class="nk"> &lt;shadower&gt;</span> skipped
+<a name="l-125"></a><span class="tm">21:38:18</span><span class="nk"> &lt;sdake&gt;</span> ya
+<a name="l-126"></a><span class="tm">21:38:22</span><span class="nk"> &lt;sdake&gt;</span> i'll just use issue tracker
+<a name="l-127"></a><span class="tm">21:38:34</span><span class="nk"> &lt;sdake&gt;</span> please attend to those at your earliest convience ;)
+<a name="l-128"></a><span class="tm">21:38:41</span><span class="nk"> &lt;sdake&gt;</span> i'll file after meeting
+<a name="l-129"></a><span class="tm">21:38:48</span><span class="nk"> &lt;sdake&gt;</span> thanks asalkeld
+<a name="l-130"></a><span class="tm">21:38:57</span><span class="nk"> &lt;sdake&gt;</span> anyone have other open items they would like to discuss?
+<a name="l-131"></a><span class="tm">21:39:19</span><span class="nk"> &lt;asalkeld&gt;</span> all good from my end of the world
+<a name="l-132"></a><span class="tm">21:39:24</span><span class="nk"> &lt;Slower&gt;</span> <span class="hi">shadower:</span> sssshhh!! :)
+<a name="l-133"></a><span class="tm">21:40:12</span><span class="nk"> &lt;sdake&gt;</span> ok if no other issues we can wrap up meeting
+<a name="l-134"></a><span class="tm">21:40:22</span><span class="nk"> &lt;sdake&gt;</span> nice work guys, lets get the tests and features wrapped up in next week ;)
+<a name="l-135"></a><span class="tm">21:40:24</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

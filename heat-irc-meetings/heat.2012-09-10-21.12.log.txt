@@ -1,0 +1,220 @@
+21:12:45 <sdake> #startmeeting
+21:12:45 <mheat-bot`> Meeting started Mon Sep 10 21:12:45 2012 UTC.  The chair is sdake. Information about MeetBot at http://wiki.debian.org/MeetBot.
+21:12:45 <mheat-bot`> Useful Commands: #action #agreed #help #info #idea #link #topic.
+21:12:49 <sdake> yohoho
+21:13:30 <sdake> agenda rollcall, heat v6, topics for OS summit half-day incubation summit
+21:14:08 <sdake> that will likely take up most of the time - anyone else have any other topics they would like to discuss?
+21:14:29 <sdake> #topic rollcall
+21:14:41 <sdake> sdake present
+21:14:47 <steveb_> o/
+21:14:48 <Slower> imain
+21:14:48 <shardy> shardy here
+21:14:48 <zaneb> present
+21:14:53 <jpeeler> here
+21:15:06 <Slower> steveb_: :)
+21:15:11 <zaneb> steveb_: nice to see a fellow kiwi in the channel ;)
+21:15:17 <steveb_> represent!
+21:15:31 <zaneb> we're takin' over ;)
+21:15:34 <sdake> asalkeld?
+21:15:46 <sdake> pretty soon it will be all aus and no US
+21:16:19 <sdake> #info sdake, steveb_ slower shardy zaneb jpeeler present
+21:16:28 <sdake> Topic heatv6
+21:16:33 <sdake> #topic heat-v6
+21:16:43 <sdake> went through our bug list
+21:16:51 <sdake> tried to identify what makes sense for fixing for v6
+21:17:12 <sdake> https://github.com/heat-api/heat/issues?milestone=7&state=open
+21:17:56 <sdake> any bugs anyone suggest me drop to v7?
+21:18:37 <zaneb> 136
+21:19:01 <sdake> i think fixing that makes eip's deleteable
+21:19:15 <shardy> #176 is only really cosmetic
+21:19:32 <shardy> would be nice to fix, but not if it's going to take a lot of time
+21:19:48 <sdake> shardy i agree on 176 - should be fast fix or bump it
+21:20:01 <zaneb> not convinced that #160 & #136 are related
+21:20:10 <steveb_> I can't replicate 176
+21:20:44 <sdake> if you create two eips, one is no longer deletable becuase both stacks have reference to the same eip ingress thing
+21:21:11 <zaneb> ah, so if you use different names _in nova_...
+21:21:19 <zaneb> ok, makes sense
+21:21:20 <sdake> yes
+21:21:48 <Slower> sounds like a good one to try and get fixed
+21:22:13 <sdake> ok well its clear to me this wont get fixed by tomorrow
+21:22:20 <sdake> so we should have a vote to slip or not to slip
+21:22:37 <sdake> vote move v6 schedule to September 18
+21:22:39 <sdake> +1/-1
+21:22:40 <sdake> +1
+21:22:51 <shardy> +1
+21:22:55 <jpeeler> +1
+21:22:56 <steveb_> +1
+21:23:20 <Slower> +1
+21:23:31 <zaneb> +1
+21:23:54 <Slower> it's a +1 smiley face
+21:23:56 <sdake> #info team voted to move v6 release to September 18th, 2012
+21:24:26 <sdake> lets look at these in a bit more detail if you woulnd't mind
+21:24:30 <sdake> 84 - integration test
+21:24:38 <zaneb> nearly there
+21:24:39 <sdake> zaneb i know most if not all of the work is done here
+21:24:51 <zaneb> beaker is working!
+21:24:55 <sdake> ;)
+21:25:07 <zaneb> just waiting on SSH public keys to be set up in Beaker for us
+21:25:17 <sdake> they have been setup haven't they?
+21:25:24 <zaneb> not for that user
+21:25:42 <zaneb> so when it provisions a box, there's no keys on it
+21:25:49 <sdake> i see
+21:26:21 <zaneb> so, once that is done I can turn on Jenkins
+21:26:23 <sdake> i may be able to fix that
+21:26:37 <zaneb> sdake: see email thread from today, don't think you can
+21:26:48 <sdake> will check it out
+21:26:59 <zaneb> I'll enable Jenkins without posting to Gerrit to start with
+21:27:03 <sdake> 160/136 i think related - i fixed part of eip undeletable
+21:27:17 <zaneb> if all looks good, I'll start posting comments on changesets
+21:27:18 <sdake> but now with two eip stacks, bad things happen
+21:27:25 <sdake> zaneb sounds good
+21:27:44 <sdake> jpeeler item #176
+21:28:07 <sdake> if I were to speculate, whoever the evil person was that brought in common rpc didn't bring in signal handlers for sigint
+21:28:26 <sdake> can you take a look at fixing that
+21:28:32 <zaneb> it didn't work with the old common rpc either
+21:28:38 <zaneb> I put in a fix for it once I think
+21:28:47 <zaneb> but it got lost in the update
+21:28:53 <jpeeler> sdake: i can, but i assume tests are more important
+21:29:00 <sdake> yup
+21:29:07 <sdake> tests more important
+21:29:26 <sdake> couple ha issues 223 and 218
+21:30:15 <sdake> hoepfully angus can fix that up by friday
+21:30:24 <sdake> this leaves bulk of work are test cases
+21:30:42 <sdake> reworked the test infra a bit
+21:31:03 <sdake> should be able to write multi-instance tests now
+21:31:58 <sdake> would like to get the tests wrapped up early part of week so zane has some chance to test out the running of them
+21:32:19 <shardy> sdake: I have three tests (220/221/222) assigned to me which aren't tagged for the release, do you want me to add the tag?
+21:32:30 <sdake> yes add tag
+21:32:31 <Slower> I haven't been following.. do we have a machine to run them on set up now?
+21:33:00 <shardy> sdake: OK, they're the ones I created last week, would be good to get them in for release
+21:33:09 <zaneb> tests all time out for me and say image not found in glance
+21:33:10 <sdake> zaneb can you explain to slower what we have
+21:33:33 <zaneb> I assume because I don't have F17 DVD ISO?
+21:33:41 <sdake> shardy if its in the repo its in v6 ;)
+21:33:43 <zaneb> some docs would be really nice
+21:34:02 <sdake> yes need f17 registered
+21:34:22 <sdake> slower we have a system which automatically provisions a box and runs the functional tests on that hardwaqre
+21:34:26 <zaneb> timeout is a poor failure mode for something that obviously cannot work
+21:34:54 <sdake> then the test case results are uploaded to our github website, and people ccan view them from the bug report
+21:35:02 <sdake> err the review request
+21:35:06 <Slower> ok
+21:35:10 <shardy> sdake: Issues created, tests, not yet :)
+21:35:13 <zaneb> sdake: so is the idea that we will also run the functional tests ourselves?
+21:35:16 <zaneb> or too slow?
+21:35:36 <sdake> we will run functional test when introducing a new functional test
+21:35:43 <sdake> (ie: new template)
+21:35:51 <sdake> otherwise depend on automation for that
+21:36:02 <zaneb> ah, ok
+21:36:26 <sdake> so shouldn't change workflow at all, git review, someone commits, if at that point it was determined the patch broke something whoever broke it can fix it ;)
+21:36:51 <zaneb> btw WordPressComposedInstancesFunctionalTest is based on utils that have been deleted
+21:37:12 <Slower> ah, missed one..
+21:37:31 <sdake> i'll fix that one, that was my test case originally
+21:37:54 <sdake> nosetests -a test_Wordpress*py
+21:38:21 <sdake> anyone stuck on tests?
+21:38:48 <zaneb> yes, but I think I know what to do
+21:39:01 <jpeeler> i was... i may have difficulty getting openshift to work without work arounds
+21:39:02 <Slower> zaneb: we can help
+21:39:22 <sdake> jpeeler more details on workarounds
+21:39:34 <shardy> jpeeler: I may be able to help
+21:39:40 <jpeeler> i had to do some version changing and manual installing
+21:40:18 <jpeeler> shardy: that would be most welcome
+21:40:46 <sdake> well keep at it jpeeler, that template is important and i'm certain you can get it working
+21:41:05 <sdake> sync up with shardy on difficulties - he may have seen them already
+21:41:23 <sdake> anyone else stuck on tests?
+21:41:46 <shardy> jpeeler: The template works OK for me still, can do some more testing tomorrow with new jeos etc
+21:42:29 <sdake> ok so everyone knows how to write functional tests now - we should be in good shape :)
+21:42:40 <sdake> nice work too guys on the infrastructure, our testing is pretty high quality
+21:43:07 <sdake> any other topics for v6?
+21:43:44 <sdake> #topic half-day incibuation miniconf at OpenStack Summit in San Diego
+21:43:53 <sdake> I know alot of devs here wont be at conf
+21:44:15 <sdake> but think it would be worthwhile to chart out a schedule of things we as a community want to chat about
+21:44:29 <sdake> and we can have those discussions with the summit attendees
+21:45:17 <sdake> new AP1 zane working on
+21:45:49 <shardy> cloudwatch ceilometer back-end asalkeld's been looking at
+21:46:10 <asalkeld> morning
+21:46:13 <sdake> hey angus
+21:46:22 <sdake> we are talking about topics for our half day mini conf in san diego
+21:46:28 <asalkeld> sorry, head cold
+21:46:32 <sdake> np
+21:46:37 <sdake> right b4 vacation too :(
+21:46:55 <asalkeld> I know - fly with congestion
+21:46:59 <asalkeld> :(
+21:47:26 <Slower> yuck
+21:47:27 <sdake> zane since an openstack specific API is critical for other openstack projects to work with, having a 1 hr session on how the api works and what it does would be helpful
+21:47:50 <zaneb> ok
+21:47:58 <sdake> since you wont  be there
+21:48:04 <zaneb> as soon as I've written it I'll let you know how it works ;)
+21:48:12 <sdake> i or angus will need to communicate what your doing
+21:48:30 <zaneb> yep, understood
+21:48:57 <sdake> ceilometer + heat integration, - asalkeld there is already a topic on this right?
+21:49:29 <asalkeld> well there is a meeting on getting that into ceilometer
+21:50:01 <asalkeld> we need to have sessions on new plans
+21:50:11 <sdake> i could be wrong, but I dont think most people know what cloudwatch does
+21:50:24 <asalkeld> but it is going to be odd with just the 2 of us
+21:50:31 <asalkeld> (devs)
+21:50:35 <sdake> hopefully more fro mcommunity will show up :)
+21:50:46 <asalkeld> ya
+21:50:53 <sdake> thierry is running an incubation track
+21:51:03 <sdake> two half day sessions one ceil one heat
+21:51:12 <asalkeld> we should try get requests for new features
+21:51:24 <sdake> roadmap discussion then
+21:51:48 <asalkeld> is ppetit going to be there?
+21:51:51 <sdake> so API overview, Roadmap for orchestration API
+21:51:54 <sdake> ppettit will be there
+21:51:59 <asalkeld> (good to have him)
+21:52:17 <sdake> probably need a session on cloudwatch
+21:52:27 <asalkeld> sure
+21:52:27 <sdake> asalkeld i think that is up your alley ;)
+21:52:38 <shardy> was anyone planning to respond to ppettit's query re LXC?
+21:52:50 <shardy> Looks like nova supports it from the docs
+21:52:55 <sdake> has anyone tried lxc?
+21:53:00 <asalkeld> nope
+21:53:18 <asalkeld> maybe we could ask him to talk about how wants to use it:)
+21:53:24 <zaneb> I was under the impression that lxc was still pretty experimental in nova
+21:53:49 <zaneb> would have thought that we would be no better or worse than plain nova
+21:53:55 <sdake> still like to stay on topic regarding agenda items for half day mini summit
+21:54:19 <sdake> #info agenda item for summit - New Orchestration API from Zane
+21:54:37 <sdake> #info agenda item for summit - What CloudWatch is and how to make it a reality in OpenStack
+21:55:10 <sdake> #info agenda item for summit - heat roadmap feature open suggestions
+21:55:21 <sdake> we probably need an overview of heat too
+21:55:51 <sdake> #info agenda item for summit -overview of heat
+21:55:54 <sdake> so that is half day
+21:55:59 <sdake> any other agenda topics?
+21:56:11 <asalkeld> sounds good
+21:56:52 <sdake> #topic open  items
+21:57:36 <sdake> so lxc, answer is we haven't tried it, I'll respond on that point and ask him how he wants to use it (as per asalkeld's request)
+21:58:08 <sdake> user issue: https://github.com/heat-api/heat/issues/216
+21:58:47 <sdake> this should wait for v7 imo, but need to address user issues
+21:59:00 <sdake> since if users blocked, they wont evaluate positively
+21:59:25 <sdake> any volunteer to tackle that start of v7?
+22:00:24 <shardy> I can look at it
+22:00:30 <sdake> thanks shardy
+22:01:27 <sdake> any other open topics
+22:01:31 <steveb_> I'm basically ready to push S3 bucket resource
+22:01:44 <asalkeld> well done
+22:01:46 <sdake> steveb_ nice work
+22:01:56 <steveb_> Assuming the functional test can come later ;)
+22:02:18 <sdake> atm we only do functional tests for templates
+22:02:29 <sdake> do you have a template to go with it?
+22:02:42 <steveb_> Yes, there is a template
+22:02:52 <sdake> functional test would be helpful
+22:02:55 <sdake> is it based on wordpress?
+22:03:02 <steveb_> I don't know if it is cutting it too fine for v6
+22:03:03 <shardy> sdake: I have proposed tests which cover non-template components (ie the whole API, different types of auth, the cli tools)
+22:03:27 <shardy> we won't get full coverage only testing template launch/delete
+22:03:29 <sdake> yes i saw shardy - trying to let steveb_ off the hook ;)
+22:03:35 <steveb_> the template doesn't even create an instance, just buckets
+22:03:35 <shardy> ah, cool :)
+22:04:00 <sdake> if no template no way to test
+22:04:04 <sdake> if no instance i mean
+22:05:01 <sdake> i can see why your histent to create a test case (with no instance) - thought about throwing an instance into the mix?
+22:05:20 <steveb_> OK, I'll have to figure out how to exercise all the code paths
+22:05:30 <sdake> well here is my take
+22:05:45 <sdake> i'd rather have code that does the work then no code at all
+22:06:05 <sdake> so eval if that fits, and submit a review request appropriately
+22:06:26 <sdake> any other open issues
+22:06:28 <steveb_> I don't mind writing an instance based functional test
+22:06:33 <sdake> cool
+22:07:16 <sdake> ok well i'll close the meeting - thanks all, lets wrap up this release by 18th!
+22:07:19 <steveb_> My official start is tomorrow
+22:07:24 <sdake> #endmeeting

@@ -1,0 +1,135 @@
+21:10:39 <sdake> #startmeeting
+21:10:39 <mheat-bot`> Meeting started Mon Aug 27 21:10:39 2012 UTC.  The chair is sdake. Information about MeetBot at http://wiki.debian.org/MeetBot.
+21:10:39 <mheat-bot`> Useful Commands: #action #agreed #help #info #idea #link #topic.
+21:11:28 <sdake> agenda rollcall, v6 status, open items
+21:11:32 <sdake> any other agenda items?
+21:11:48 <asalkeld> nope
+21:12:23 <sdake> #topic rollcall
+21:12:36 <asalkeld> asalkeld, here
+21:12:38 <jpeeler> jpeeler here
+21:12:41 <sdake> sdake here
+21:12:43 <shardy> shardy here
+21:13:17 <sdake> slower here?
+21:13:44 <sdake> #info sdake, asalkeld, jpeeler, shardy present
+21:13:54 <sdake> #topic v6 status
+21:14:13 <Slower> yes sorry
+21:14:29 <sdake> since we are missing few folks today lets go over where people are on the projects they are working on
+21:14:36 <sdake> jpeeler why dont you roll out first
+21:15:01 <jpeeler> i've finished the nose portion of the integration testing
+21:15:09 <jpeeler> so people should be able to see how to write tests for the rest of the templates
+21:15:22 <jpeeler> still getting it tied into automatic deployment from beaker
+21:15:36 <shadower> sorry, shadower here
+21:15:46 <sdake> #info slower shadower also here
+21:16:17 <sdake> re writing tests, ppl should be able to write tests now then jpeeler?
+21:16:19 <zaneb> I'm also here
+21:16:27 <sdake> #info zaneb also here ;)
+21:16:38 <jpeeler> sdake: yes
+21:17:00 <sdake> jpeeler can you provide a link to the example test case you wrote
+21:17:40 <jpeeler> https://github.com/heat-api/heat/blob/master/heat/tests/functional/test_WordPress_Single_Instance.py
+21:18:04 <sdake> cool, at end of meeting perhaps we can pass out templates to write
+21:18:07 <sdake> test cases for
+21:18:15 <sdake> zaneb can you give us a quick update
+21:18:22 <zaneb> sure
+21:19:00 <zaneb> I'm working on setting up a Jenkins instance to run the integration tests in the lab and post the results back to Gerrit
+21:19:24 <zaneb> Currently testing with the gerrit sandbox and Jenkins on my machine
+21:19:36 <sdake> do you need jenkins for that?
+21:19:38 <zaneb> I think I'm pretty close to having that running
+21:20:01 <zaneb> sdake: well, the idea is to get it working and then move it to a server
+21:20:39 <zaneb> once it is running I will move to a box in the lab and hook up to the real gerrit
+21:20:42 <sdake> ok we can talk more later - just not sure of value of having jenkins
+21:21:00 <sdake> shadower got any updates for us
+21:21:24 <shadower> heat-prebuild's got all the pieces in
+21:21:31 <shadower> but I want to test it more thoroughly tomorrow
+21:21:42 <sdake> nice work
+21:22:40 <sdake> slower any updates
+21:23:08 <Slower> not really
+21:23:19 <Slower> I was to look into auth issues but never got to it
+21:23:24 <sdake> k
+21:23:28 <Slower> I will be doing that top priority this week
+21:23:31 <sdake> asalkeld any updates
+21:23:58 <asalkeld> just working on poc ceilometer + cloudwatch
+21:24:22 <sdake> shardy any updates
+21:24:23 <asalkeld> and working tho' upstream issues
+21:24:42 <shardy> sure - I've been working on a new cloudwatch API and client
+21:24:58 <shardy> both are now working, but need a bit more work before posting for review this week
+21:25:10 <Slower> are we going to get to have input on the API?
+21:25:20 <Slower> does the api include discovery options?
+21:25:35 <shardy> The API I've implemented is an AWS clone API
+21:25:43 <Slower> eg what is supported in the backend
+21:26:01 <shardy> but probably, we'll only support a subset of actions due to our current engine implementation
+21:26:19 <shardy> then we can enhance when asalkeld has ceilometer cloudwatch backend done
+21:26:37 <Slower> I think discovery of supported template features is important for the future
+21:27:00 <Slower> however that looks I'm not sure :)
+21:27:03 <Slower> just commenting :)
+21:27:03 <shardy> I'm expecting us to be able to read alarms defined in templates, read and write metric datapoints, and toggle alarm state (useful for test/debug)
+21:27:32 <asalkeld> nice shardy
+21:27:35 <sdake> slower i think that is more for zaneb's rewrite
+21:27:43 <sdake> ya sounds sweet shardy
+21:27:58 <Slower> oh is this not the heat-specific api?
+21:28:02 <sdake> no
+21:28:08 <Slower> oh ok
+21:28:12 <Slower> nm then :), sorry
+21:28:24 <shardy> Slower: we can add a non-aws cloudwatch API later
+21:28:28 <sdake> update from me - been working on slides for cloudopen - they are wrapped up now
+21:28:29 <Slower> yes
+21:28:36 <sdake> so i should be back to actually doing real work soon
+21:28:41 <sdake> although I am out rest of week traveling
+21:29:25 <sdake> next tuesday is release
+21:29:30 <sdake> (sept 4th)
+21:30:03 <sdake> would really like this release to focus on making sure all our test cases run in an automated way
+21:30:15 <sdake> so our release manager isn't swamped
+21:30:18 <sdake> #topic open items
+21:30:28 <sdake> so on to choosing a release manager for v6
+21:30:45 <sdake> choices are jpeeler, shardy, zaneb, asalkeld
+21:30:58 <shardy> sdake: I'm happy to do it
+21:30:58 <asalkeld> just roll a dice
+21:30:58 <sdake> i think jpeeler was really interested last time as i recall
+21:31:16 <jpeeler> sure, that's cool
+21:31:20 <zaneb> I'm also happy to do it
+21:31:32 <sdake> zaneb yo ucan be next victim then ;)
+21:31:32 <shadower> guys I wouldn't be so eager if I were you
+21:31:37 <jpeeler> especially if all the tests get written :)
+21:31:38 <sdake> so jpeeler v6, zaneb v7
+21:31:49 <zaneb> cool
+21:31:49 <sdake> ya once the tests are done it hsould be eas(ier)
+21:32:11 <sdake> ok so test cases
+21:32:33 <sdake> there are 26
+21:33:29 <sdake> any volunteers for specific ones, otherwise i'll just assign in order ;)
+21:34:45 <sdake> please vote "assign in order" +1/-1
+21:34:54 <asalkeld> +1
+21:35:00 <shadower> +1
+21:35:04 <jpeeler> +1
+21:35:04 <shardy> +1
+21:35:32 <zaneb> +1 if by "order" you mean "round robin"
+21:35:41 <sdake> Zane Bitter
+21:35:41 <sdake> Steven Dake
+21:35:42 <sdake> Steve Hardy
+21:35:42 <sdake> Ian Main
+21:35:42 <sdake> Jeff Peeler
+21:35:43 <sdake> Angus Salkeld
+21:35:45 <sdake> Tomas Sedovic
+21:36:04 <sdake> #action zaneb test case for AutoScalingMultiAZSample.template
+21:36:16 <sdake> #action sdake test case for HAProxy_Single_Instance.template
+21:36:30 <sdake> #action shardy test case for MySQL_Single_Instance.template
+21:36:42 <sdake> #action slower OpenShift_Prebuilt_JEOS.template
+21:36:53 <sdake> #action jpeeler WordPress_2_Instances.template
+21:37:01 <sdake> #action asalkeld WordPress_2_Instances_With_EBS_EIP.template
+21:37:10 <sdake> #action zaneb WordPress_2_Instances_With_EBS.template
+21:37:20 <sdake> #action sdake WordPress_Composed_Instances.template
+21:37:40 <asalkeld> isn't the issue tracker better for this
+21:37:43 <sdake> 3action shardy WordPress_Single_Instance_With_EBS_EIP.template
+21:37:54 <sdake> groan
+21:38:01 <sdake> ok i'll file issues in issue tracker
+21:38:01 <shadower> sdake: not that I'm complaining but I think you've missed me
+21:38:15 <shadower> skipped
+21:38:18 <sdake> ya
+21:38:22 <sdake> i'll just use issue tracker
+21:38:34 <sdake> please attend to those at your earliest convience ;)
+21:38:41 <sdake> i'll file after meeting
+21:38:48 <sdake> thanks asalkeld
+21:38:57 <sdake> anyone have other open items they would like to discuss?
+21:39:19 <asalkeld> all good from my end of the world
+21:39:24 <Slower> shadower: sssshhh!! :)
+21:40:12 <sdake> ok if no other issues we can wrap up meeting
+21:40:22 <sdake> nice work guys, lets get the tests and features wrapped up in next week ;)
+21:40:24 <sdake> #endmeeting

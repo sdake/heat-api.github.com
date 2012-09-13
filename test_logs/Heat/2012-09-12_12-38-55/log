@@ -1,0 +1,483 @@
+Triggered by Gerrit: https://review.openstack.org/12888
+Building in workspace /var/lib/jenkins/jobs/Heat/workspace
+Checkout:workspace / /var/lib/jenkins/jobs/Heat/workspace - hudson.remoting.LocalChannel@85c3715
+Using strategy: Default
+Cloning the remote Git repository
+Cloning repository https://review.openstack.org/heat-api/heat
+git --version
+git version 1.7.11.2
+Fetching upstream changes from https://review.openstack.org/heat-api/heat
+Commencing build of Revision 14fe52e0e632e45657bcf1cef1dca397cc9a9e4e (origin/master)
+Checking out Revision 14fe52e0e632e45657bcf1cef1dca397cc9a9e4e (origin/master)
+No change to record in branch origin/master
+[workspace] $ /bin/sh -xe /tmp/hudson6067527167889678321.sh
++ /var/lib/jenkins/heat-integration/remote-test.sh
+Attempting to provision machine mrg-04.mpc.lab.eng.bos.redhat.com with Beaker
+Distro Id:  58551
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+
+Waiting for host networking...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+
+Waiting for host networking...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+
+Waiting for host networking...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+
+Waiting for host networking...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+
+Waiting for host networking...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+
+Waiting for host networking...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+
+Waiting for host networking...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+
+Waiting for host networking...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+
+Waiting for host networking...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+
+Waiting for host networking...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+
+Waiting for host networking...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+
+Waiting for host networking...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+
+Waiting for host networking...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 0 received, 100% packet loss, time 0ms
+
+Waiting for host networking...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 0 received, 100% packet loss, time 0ms
+
+Waiting for host networking...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 0 received, 100% packet loss, time 0ms
+
+Waiting for host networking...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.202/0.202/0.202/0.000 ms
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.266/0.266/0.266/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.106/0.106/0.106/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.123/0.123/0.123/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.144/0.144/0.144/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.132/0.132/0.132/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.127/0.127/0.127/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.126/0.126/0.126/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.126/0.126/0.126/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.127/0.127/0.127/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.125/0.125/0.125/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.124/0.124/0.124/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.130/0.130/0.130/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.128/0.128/0.128/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.127/0.127/0.127/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.127/0.127/0.127/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.201/0.201/0.201/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.130/0.130/0.130/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.127/0.127/0.127/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.093/0.093/0.093/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.126/0.126/0.126/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.138/0.138/0.138/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.123/0.123/0.123/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.127/0.127/0.127/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.126/0.126/0.126/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.202/0.202/0.202/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.099/0.099/0.099/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.097/0.097/0.097/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.140/0.140/0.140/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.132/0.132/0.132/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.128/0.128/0.128/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.123/0.123/0.123/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.221/0.221/0.221/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.135/0.135/0.135/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.124/0.124/0.124/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.125/0.125/0.125/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.261/0.261/0.261/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.243/0.243/0.243/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.120/0.120/0.120/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.132/0.132/0.132/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.094/0.094/0.094/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.163/0.163/0.163/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.125/0.125/0.125/0.000 ms
+Waiting for host reboot...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 0 received, 100% packet loss, time 0ms
+
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+
+Waiting for host networking...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+
+Waiting for host networking...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+
+Waiting for host networking...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+
+Waiting for host networking...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+
+Waiting for host networking...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+
+Waiting for host networking...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+
+Waiting for host networking...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+
+Waiting for host networking...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+
+Waiting for host networking...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+
+Waiting for host networking...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+
+Waiting for host networking...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 0 received, 100% packet loss, time 0ms
+
+Waiting for host networking...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+
+Waiting for host networking...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+
+Waiting for host networking...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+
+Waiting for host networking...
+PING mrg-04.mpc.lab.eng.bos.redhat.com (10.16.144.40) 56(84) bytes of data.
+
+--- mrg-04.mpc.lab.eng.bos.redhat.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 2003.034/2003.034/2003.034/0.000 ms
+Warning: Identity file /var/lib/jenkins/.ssh/heat-test-id_rsa not accessible: No such file or directory.
+Warning: Permanently added 'mrg-04.mpc.lab.eng.bos.redhat.com,10.16.144.40' (RSA) to the list of known hosts.
+ 13:00:41 up 0 min,  0 users,  load average: 0.55, 0.12, 0.04
+Copying scripts to test machine...
+Warning: Identity file /var/lib/jenkins/.ssh/heat-test-id_rsa not accessible: No such file or directory.
+Copying Fedora ISO to test machine...
+Warning: Identity file /var/lib/jenkins/.ssh/heat-test-id_rsa not accessible: No such file or directory.
+/: not a regular file
+Releasing machine mrg-04.mpc.lab.eng.bos.redhat.com with Beaker
+Build step 'Execute shell' marked build as failure
+[PostBuildScript] - Execution post build scripts.
+[PostBuildScript] - [Error] - Problems occurs: The script file path '/var/lib/jenkins/heat-integration/log-upload.sh' doesn't exist.
+Build step '[PostBuildScript] - Execute a set of scripts' marked build as failure
+Finished: FAILURE

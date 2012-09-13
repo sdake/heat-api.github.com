@@ -1,0 +1,67 @@
+Triggered by Gerrit: https://review.openstack.org/12881
+Building in workspace /var/lib/jenkins/jobs/Heat/workspace
+Checkout:workspace / /var/lib/jenkins/jobs/Heat/workspace - hudson.remoting.LocalChannel@85c3715
+Using strategy: Default
+Last Built Revision: Revision 14fe52e0e632e45657bcf1cef1dca397cc9a9e4e (origin/master)
+Fetching changes from 1 remote Git repository
+Fetching upstream changes from https://review.openstack.org/heat-api/heat
+Commencing build of Revision 14fe52e0e632e45657bcf1cef1dca397cc9a9e4e (origin/master)
+Checking out Revision 14fe52e0e632e45657bcf1cef1dca397cc9a9e4e (origin/master)
+[workspace] $ /bin/sh -xe /tmp/hudson2605341167186962061.sh
++ /var/lib/jenkins/heat-integration/remote-test.sh
+Deleting mrg-04.mpc.lab.eng.bos.redhat.com from SSH known hosts file...
+Attempting to provision machine mrg-04.mpc.lab.eng.bos.redhat.com with Beaker
+Distro Id:  58551
+XML-RPC fault: <class 'turbogears.identity.exceptions.IdentityFailure'>: Please log in first
+Build step 'Execute shell' marked build as failure
+[PostBuildScript] - Execution post build scripts.
+[PostBuildScript] - Resolving environment variables for the script content.
+[PostBuildScript] - Evaluating the script: 
+ #!/bin/bash
+
+script_dir=$(dirname $0)
+
+if [ -z "$JENKINS_DIR" ] || [ -z "$JOB_NAME" ]; then
+    echo "Jenkins Environment variables not found" >&2
+    exit 1
+fi
+
+LOG_LOCATION=${JENKINS_DIR}/jobs/${JOB_NAME}/builds
+
+ORG=heat-api
+SITE=${ORG}.github.com
+LOG_DIR=test_logs
+
+clone_site() {
+    if [ ! -d $SITE ]; then
+        git clone git@github.com:${ORG}/${SITE}.git
+    fi
+
+    pushd $SITE
+    git config user.name "heat-gerrit"
+    git config user.email "scd@broked.org"
+
+    git pull --rebase
+    [ -d $LOG_DIR ] || mkdir -p $LOG_DIR
+    popd
+}
+
+update_logs() {
+    pushd $SITE
+    [ -d $LOG_DIR ] || mkdir -p $LOG_DIR
+    rsync -r ${LOG_LOCATION}/ ${LOG_DIR}/${JOB_NAME}
+    git add $LOG_DIR
+    git commit -m "Sync ${BUILD_TAG} build logs"
+    git push
+    popd
+}
+
+
+cd $script_dir
+clone_site
+update_logs
+
+[workspace] $ /bin/bash /tmp/hudson936691865992329872.sh
+Jenkins Environment variables not found
+Build step '[PostBuildScript] - Execute a set of scripts' marked build as failure
+Finished: FAILURE

@@ -1,0 +1,20 @@
+Triggered by Gerrit: https://review.openstack.org/12891
+Building in workspace /var/lib/jenkins/jobs/Heat/workspace
+Checkout:workspace / /var/lib/jenkins/jobs/Heat/workspace - hudson.remoting.LocalChannel@85c3715
+Using strategy: Default
+Last Built Revision: Revision 14fe52e0e632e45657bcf1cef1dca397cc9a9e4e (origin/master)
+Fetching changes from 1 remote Git repository
+Fetching upstream changes from https://review.openstack.org/heat-api/heat
+Commencing build of Revision 14fe52e0e632e45657bcf1cef1dca397cc9a9e4e (origin/master)
+Checking out Revision 14fe52e0e632e45657bcf1cef1dca397cc9a9e4e (origin/master)
+[workspace] $ /bin/sh -xe /tmp/hudson1624657165146184698.sh
++ /var/lib/jenkins/heat-integration/remote-test.sh
+Deleting mrg-04.mpc.lab.eng.bos.redhat.com from SSH known hosts file...
+Attempting to provision machine mrg-04.mpc.lab.eng.bos.redhat.com with Beaker
+Distro Id:  58551
+XML-RPC fault: <class 'turbogears.identity.exceptions.IdentityFailure'>: Please log in first
+Build step 'Execute shell' marked build as failure
+[PostBuildScript] - Execution post build scripts.
+[PostBuildScript] - [Error] - Problems occurs: The script file path '/var/lib/jenkins/heat-integration/log-upload.sh' doesn't exist.
+Build step '[PostBuildScript] - Execute a set of scripts' marked build as failure
+Finished: FAILURE

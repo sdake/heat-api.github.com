@@ -1,0 +1,66 @@
+Changes in branch origin/master, between 81e835841c9f63a5c6f5a7dc1ef0732493fce3d4 and 754fe2861ef4a739830de1a95fe27ed701ca8b69
+commit e1c0b4eafcbefc441b105298afca69450bb13694
+tree b630d5ce4c79224a2786f536ffbefe08afd0a3e7
+parent 0ad5ab9748e49196b4105528b6634213b4e596c2
+author Zane Bitter <zbitter@redhat.com> 1347896805 +0200
+committer Zane Bitter <zbitter@redhat.com> 1347898745 +0200
+
+    Change templates to launch F17 (not F16) by default
+    
+    Change-Id: If8b97e85f2dca5251145a8eebb184e43e25a34ea
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 1ff2c0e23ee669b61819f2cf3a6dca5ae86a3ae1 7b66e9a7c85d55cade7f5c79e9dd6b3def633c51 M	heat/tests/test_api_cfn_v1.py
+:100644 100644 ed637906854d3a20a68cb57db934b69c26ab42a9 75564ab0b2a237a4fb3d1e6986ba76df0f959da2 M	heat/tests/test_engine_manager.py
+:100644 100644 8e222ca3e55c0a28ea2d9dd6b7297a746ccb2f28 55013ef7a8d1c39826904fab43362b9274a1680b M	heat/tests/v1_1/fakes.py
+:100644 100644 bf410abead1d483fda251cf1c77cb850b609e3f8 10d3d953dbdfe146236b548c7d7d1d15968e03a8 M	templates/MySQL_Single_Instance.template
+:100644 100644 f52f659d9c4bfdc3549bce1abcfdefe4b53623a3 1d348c415dc93133c1d977623c4952dc0806a5e0 M	templates/PuppetMaster_Single_Instance.template
+:100644 100644 5847a6448f8c11770a3c92815610521f60c0fd57 6ec34dcee885c9c37395477e721f3e2bf5893589 M	templates/WordPress_2_Instances.template
+:100644 100644 ada10c0fc4b506ef6faf9b7da894951c00b1cae1 71d6e150b4dd85465e003f8c5ee2a792279a3fde M	templates/WordPress_2_Instances_With_EBS.template
+:100644 100644 78fdcfccbdb9b73fcf378471967b2f46a56fefc4 fb668888ed31e5904b6d579295842ee586bfdbef M	templates/WordPress_2_Instances_With_EBS_EIP.template
+:100644 100644 52f52b5147dc9748cfdff5ec41d81414f19296e6 77e853e4d4a745ad281cbf7eb0d75158e06213c7 M	templates/WordPress_And_Http.template
+:100644 100644 422ca5ec31acb5e19a78914a12490c4d9d06ba4a f7b28f5ef1d325132aa5dad5be466923a9bde97b M	templates/WordPress_Composed_Instances.template
+:100644 100644 642a5bd79d2b7795e78d4e91d4cf80b696fbe750 c44377a7633c018f715caa54d5a38c760f300e16 M	templates/WordPress_Single_Instance.template
+:100644 100644 e243ff9ab81525b3f13fcd8411ba71601a3b98cf 931d41e69fe644d22c00c03e762b987a0c46ad82 M	templates/WordPress_Single_Instance_With_EBS.template
+:100644 100644 5651b0f2f208322d936048032c2ec0ce2b896ae1 549fafb222d0a9c0918433cf2125d53c938ff1a7 M	templates/WordPress_Single_Instance_With_EBS_EIP.template
+:100644 100644 c234f383f13e73980fab3c6165343bee82f31467 f65220dba00fa46eee7a5d41fb32711de139372c M	templates/WordPress_Single_Instance_With_EIP.template
+:100644 100644 8c00624c58080c035cee3d42fb2507e5d31772f4 a3c864ceb813278f091201876832956cd5128c57 M	templates/WordPress_Single_Instance_With_HA.template
+:100644 100644 de61090cd78fa63dd29975807da8e3066cea5f42 1159c1a37a2eb035c02de88af374fccefde697da M	templates/WordPress_Single_Instance_With_IHA.template
+:100644 100644 7dfa1a59428a0d8e4e2afb96a0744aedb8b39851 1207d18358d9bdd31a3d13b449b1cbd43d87699a M	templates/WordPress_Single_Instance_deb.template
+:100644 100644 b3d06afecf6e99ee9d8d212e8d9ce94c51584058 621e8a3311ef42e69923f9d41b7ac2b232901feb M	templates/WordPress_Single_Instance_gold.template
+:100644 100644 a25353de429f9524a2dbf79619abaf4c532e0b7d abcab381325ab15c25dfbbc549eeec0fea3d33c6 M	templates/WordPress_With_LB.template
+:100644 100644 9a1b865fcb591dcd8df92e015374d4264afb3f8d bbf51357ea24f89cdbcba5c313fb488ff1569473 M	templates/WordPress_With_RDS.template
+
+commit a7a9fe515cecc44fde6864a4e6c5e257f68b46a2
+tree 41a66a1c7c2cf9343f4e522f67f0270b951516eb
+parent 96af1144b08d9d08d54528c37e9dc0d5e0c23bb5
+author Steven Hardy <shardy@redhat.com> 1347897466 +0100
+committer Steven Hardy <shardy@redhat.com> 1347898417 +0100
+
+    heat tests : add HAProxy functional test
+    
+    Add new test_HAProxy_Single_Instance.py functional test
+    
+    Fixes #202
+    
+    Change-Id: I34818756dc5d8ac1f42302118eaa630348946d38
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:000000 100644 0000000000000000000000000000000000000000 6a0cfcc26a5a9cd7ce457dd2a79dbf51f8faeeff A	heat/tests/functional/test_HAProxy_Single_Instance.py
+
+commit 96af1144b08d9d08d54528c37e9dc0d5e0c23bb5
+tree a4ebb3d00df1aea3bd4d772a4d3b21a06f18e6fd
+parent 81e835841c9f63a5c6f5a7dc1ef0732493fce3d4
+author Steven Hardy <shardy@redhat.com> 1347897396 +0100
+committer Steven Hardy <shardy@redhat.com> 1347898417 +0100
+
+    heat templates : add LinuxDistribution parameter to HAProxy
+    
+    Add LinuxDistribution section and mappings to HAProxy template,
+    to align with other templates and for compatibility with functional
+    test infrastructure
+    
+    Change-Id: Ib86ac4f587aebf712df1c9ad09cebc44f853e114
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 25f640037914d75db6a5564fb53886dbd2cf4006 26143a25d54011be4d71c9b79edfdedf79dcdced M	templates/HAProxy_Single_Instance.template

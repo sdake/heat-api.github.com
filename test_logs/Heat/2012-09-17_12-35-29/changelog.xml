@@ -1,0 +1,16 @@
+Changes in branch origin/master, between 0ad5ab9748e49196b4105528b6634213b4e596c2 and 81e835841c9f63a5c6f5a7dc1ef0732493fce3d4
+commit 81e835841c9f63a5c6f5a7dc1ef0732493fce3d4
+tree 8d9e1dd1392c03b57eff984cd26d5594f10cf907
+parent 0ad5ab9748e49196b4105528b6634213b4e596c2
+author Steven Hardy <shardy@redhat.com> 1347897263 +0100
+committer Steven Hardy <shardy@redhat.com> 1347898417 +0100
+
+    heat tests : functional tests allow non-default stackname
+    
+    Allow the default "teststack" to be overridden, so multiple
+    stacks can be created in one test
+    
+    Change-Id: I09a4128b98df7af6c6b85552ac2175919a697c50
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 dcface9f13b7091a30d87730c1b16942835766b9 e104c1bd96d22b969a3c38699879d82504026c8d M	heat/tests/functional/util.py

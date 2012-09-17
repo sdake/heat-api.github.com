@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<build>
+  <actions>
+    <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.BadgeAction>
+      <event class="com.sonyericsson.hudson.plugins.gerrit.gerritevents.dto.events.ChangeMerged">
+        <change>
+          <project>heat-api/heat</project>
+          <branch>master</branch>
+          <id>I34818756dc5d8ac1f42302118eaa630348946d38</id>
+          <number>13131</number>
+          <subject>heat tests : add HAProxy functional test</subject>
+          <owner>
+            <name>Steven Hardy</name>
+            <email>shardy@redhat.com</email>
+          </owner>
+          <url>https://review.openstack.org/13131</url>
+        </change>
+        <patchSet>
+          <number>2</number>
+          <revision>a7a9fe515cecc44fde6864a4e6c5e257f68b46a2</revision>
+          <ref>refs/changes/31/13131/2</ref>
+          <uploader>
+            <name>Steven Hardy</name>
+            <email>shardy@redhat.com</email>
+          </uploader>
+        </patchSet>
+        <account>
+          <name>Jenkins</name>
+        </account>
+      </event>
+    </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.BadgeAction>
+    <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.actions.RetriggerAction>
+      <context>
+        <event reference="../../../com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.BadgeAction/event"/>
+        <thisBuild>
+          <buildNumber>38</buildNumber>
+          <projectId>Heat</projectId>
+        </thisBuild>
+      </context>
+    </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.actions.RetriggerAction>
+    <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.actions.RetriggerAllAction>
+      <context reference="../../com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.actions.RetriggerAction/context"/>
+    </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.actions.RetriggerAllAction>
+    <hudson.model.ParametersAction>
+      <parameters>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_EVENT_HASH</name>
+          <value>1065125630</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_BRANCH</name>
+          <value>master</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_CHANGE_NUMBER</name>
+          <value>13131</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_CHANGE_ID</name>
+          <value>I34818756dc5d8ac1f42302118eaa630348946d38</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_PATCHSET_NUMBER</name>
+          <value>2</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_PATCHSET_REVISION</name>
+          <value>a7a9fe515cecc44fde6864a4e6c5e257f68b46a2</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_REFSPEC</name>
+          <value>refs/changes/31/13131/2</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_PROJECT</name>
+          <value>heat-api/heat</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_CHANGE_SUBJECT</name>
+          <value>heat tests : add HAProxy functional test</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_CHANGE_URL</name>
+          <value>https://review.openstack.org/13131</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_CHANGE_OWNER</name>
+          <value>\&quot;Steven Hardy\&quot; &lt;shardy@redhat.com&gt;</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_CHANGE_OWNER_NAME</name>
+          <value>Steven Hardy</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_CHANGE_OWNER_EMAIL</name>
+          <value>shardy@redhat.com</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_PATCHSET_UPLOADER</name>
+          <value>\&quot;Steven Hardy\&quot; &lt;shardy@redhat.com&gt;</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_PATCHSET_UPLOADER_NAME</name>
+          <value>Steven Hardy</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_PATCHSET_UPLOADER_EMAIL</name>
+          <value>shardy@redhat.com</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_EVENT_ACCOUNT</name>
+          <value></value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_EVENT_ACCOUNT_NAME</name>
+          <value>Jenkins</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_EVENT_ACCOUNT_EMAIL</name>
+          <value></value>
+        </hudson.model.StringParameterValue>
+      </parameters>
+    </hudson.model.ParametersAction>
+    <hudson.model.CauseAction>
+      <causes>
+        <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.GerritCause>
+          <event class="com.sonyericsson.hudson.plugins.gerrit.gerritevents.dto.events.ChangeMerged" reference="../../../../com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.BadgeAction/event"/>
+          <silentMode>false</silentMode>
+          <context reference="../../../../com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.actions.RetriggerAction/context"/>
+        </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.GerritCause>
+      </causes>
+    </hudson.model.CauseAction>
+    <hudson.plugins.git.util.BuildData>
+      <buildsByBranchName>
+        <entry>
+          <string>origin/master</string>
+          <hudson.plugins.git.util.Build>
+            <revision>
+              <sha1>754fe2861ef4a739830de1a95fe27ed701ca8b69</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>origin/master</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </revision>
+            <hudsonBuildNumber>38</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+      </buildsByBranchName>
+      <lastBuild reference="../buildsByBranchName/entry/hudson.plugins.git.util.Build"/>
+      <scmName></scmName>
+      <remoteUrls>
+        <string>https://review.openstack.org/heat-api/heat</string>
+      </remoteUrls>
+    </hudson.plugins.git.util.BuildData>
+    <hudson.plugins.git.GitTagAction>
+      <build class="build" reference="../../.."/>
+      <tags class="hudson.util.CopyOnWriteMap$Tree">
+        <no-comparator/>
+        <entry>
+          <string>origin/master</string>
+          <list/>
+        </entry>
+      </tags>
+      <ws>/var/lib/jenkins/jobs/Heat/workspace</ws>
+    </hudson.plugins.git.GitTagAction>
+    <hudson.scm.SCMRevisionState_-None/>
+  </actions>
+  <number>38</number>
+  <result>SUCCESS</result>
+  <duration>2433152</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <builtOn></builtOn>
+  <workspace>/var/lib/jenkins/jobs/Heat/workspace</workspace>
+  <hudsonVersion>1.480</hudsonVersion>
+  <scm class="hudson.plugins.git.GitChangeLogParser">
+    <authorOrCommitter>false</authorOrCommitter>
+  </scm>
+  <culprits class="com.google.common.collect.EmptyImmutableSortedSet"/>
+</build>

@@ -1,0 +1,13 @@
+Changes in branch origin/master, between 754fe2861ef4a739830de1a95fe27ed701ca8b69 and e32feeb448b388d31ac27e76e5bbad82b0e2d112
+commit e32feeb448b388d31ac27e76e5bbad82b0e2d112
+tree 0c4767e2eb4c1dfdde856deb003317d65fbd7384
+parent 754fe2861ef4a739830de1a95fe27ed701ca8b69
+author Steven Dake <sdake@redhat.com> 1347903701 -0700
+committer Steven Dake <sdake@redhat.com> 1347903701 -0700
+
+    Fix test_WordPress_2_Instances_With_EBS.py
+    
+    Change-Id: Iee70c20b4dc771da5cc84bcfe7bb1cd1ba5280d1
+    Signed-off-by: Steven Dake <sdake@redhat.com>
+
+:100644 100644 2af7b11509ced949f19ef5d56665c5c5d37c95b7 8996dc18c3cf29a3ee06cc3bd0105a8126d63d75 M	heat/tests/functional/test_WordPress_2_Instances_With_EBS.py

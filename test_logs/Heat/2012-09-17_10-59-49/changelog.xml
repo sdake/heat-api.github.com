@@ -1,0 +1,13 @@
+Changes in branch origin/master, between c53b4fb733407c92f076faae6629a608aa3f26a2 and 0ad5ab9748e49196b4105528b6634213b4e596c2
+commit 0ad5ab9748e49196b4105528b6634213b4e596c2
+tree 745c8326c0a257ee601efcc2f5f11276eeb2536f
+parent c53b4fb733407c92f076faae6629a608aa3f26a2
+author Zane Bitter <zbitter@redhat.com> 1347893589 +0200
+committer Zane Bitter <zbitter@redhat.com> 1347893649 +0200
+
+    Switch to Fedora 17 on guests in Getting Started
+    
+    Change-Id: I24ff5305876d91828e15f89e363d03bbf6bed923
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 6280f0a12b44f74fb3c71a4a81a345efb2d87dd1 d5069a5ae90d5c953c3b289fea85692dbbbece8f M	docs/GettingStarted.rst

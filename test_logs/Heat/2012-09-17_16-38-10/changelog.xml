@@ -1,0 +1,36 @@
+Changes in branch origin/master, between 77864991de744096976936eebaf61d0f7fd4440e and d81d3406ba375b1ad35d2330b0b1015e16436c8e
+commit d81d3406ba375b1ad35d2330b0b1015e16436c8e
+tree d87a69015b3c11304a7ce1dec9db74834d4b6813
+parent c5d512465979d0c3851352736ca0acc7091722a6
+author Steven Dake <sdake@redhat.com> 1347911847 -0700
+committer Steven Dake <sdake@redhat.com> 1347912297 -0700
+
+    Allow linux distribution to be passed to multiaz template for test case
+    
+    Change-Id: I054c3ad72cea2727dd8f5956166d753fff7363e7
+    Signed-off-by: Steven Dake <sdake@redhat.com>
+
+:100644 100644 47e352ef80a881e49db456cac2db0d62e2194d75 1ad5fd80214d7ca385c3e4c849a8138f3e844812 M	templates/AutoScalingMultiAZSample.template
+
+commit c5d512465979d0c3851352736ca0acc7091722a6
+tree 72a00b8bced3a2923d6088a575272cae1afdb75a
+parent 77864991de744096976936eebaf61d0f7fd4440e
+author Steven Dake <sdake@redhat.com> 1347911481 -0700
+committer Steven Dake <sdake@redhat.com> 1347911481 -0700
+
+    Fix backtrace when using loadbalancer
+    
+    Loadbalancer incorrectly tried to reference a string as an integer.
+    
+    This resulted in the following typeerror which is repaired by
+    thi patch:
+    
+        timeout_check = 'timeout check %ds' % (health_chk['Timeout'])
+    TypeError: %d format: a number is required, not unicode
+    
+    Fixes issue #240
+    
+    Change-Id: I7e2697200d3fa9b0cb009f3a7898d487b70fc23a
+    Signed-off-by: Steven Dake <sdake@redhat.com>
+
+:100644 100644 bedeedfb7a5f0fad458e66535501e40b230d374e fab1e67f48ab8f783eccd11eeab2ad595c5cded4 M	heat/engine/loadbalancer.py

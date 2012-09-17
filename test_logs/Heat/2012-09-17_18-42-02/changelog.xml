@@ -1,0 +1,17 @@
+Changes in branch origin/master, between d81d3406ba375b1ad35d2330b0b1015e16436c8e and fbcf37f17a9c244e4e18f736f4fc0c701d952e2e
+commit fbcf37f17a9c244e4e18f736f4fc0c701d952e2e
+tree 1b78fd6b9829d8a071c8728a1efaab237e5f4994
+parent d81d3406ba375b1ad35d2330b0b1015e16436c8e
+author Steven Hardy <shardy@redhat.com> 1347920629 +0100
+committer Steven Hardy <shardy@redhat.com> 1347920779 +0100
+
+    heat tests : New wordpress IHA functional test
+    
+    Add new test_WordPress_Single_Instance_With_IHA test
+    
+    Fixes #213
+    
+    Change-Id: Ibacfe4d5eb57c470a3e2a000ec794adfb432c081
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:000000 100644 0000000000000000000000000000000000000000 2f561316d49f1ece5a9f0d51b6c30d3ba53943ad A	heat/tests/functional/test_WordPress_Single_Instance_With_IHA.py

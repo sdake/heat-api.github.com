@@ -1,0 +1,34 @@
+Changes in branch origin/master, between e32feeb448b388d31ac27e76e5bbad82b0e2d112 and 77864991de744096976936eebaf61d0f7fd4440e
+commit 77864991de744096976936eebaf61d0f7fd4440e
+tree 8ac7f743b4712d2aa854d21de1cf83c4ef234212
+parent 37def2b2df7d945fe4300de893489c9364e2762b
+author Steven Dake <sdake@redhat.com> 1347908999 -0700
+committer Steven Dake <sdake@redhat.com> 1347910955 -0700
+
+    Fix spelling errors in loadbalancer which resulted in template not launching
+    
+    Fixes issue #239
+    
+    Change-Id: I20f685598b90a40ed0452af8b7c018a1bf7e0492
+    Signed-off-by: Steven Dake <sdake@redhat.com>
+    Signed-off-by: Tomas Sedovic <tsedovic@redhat.com>
+
+:100644 100644 79cca3dbfd9abdb1da30b946b0192b1d90d63838 bedeedfb7a5f0fad458e66535501e40b230d374e M	heat/engine/loadbalancer.py
+
+commit 37def2b2df7d945fe4300de893489c9364e2762b
+tree 537869785c5b3387325f549c4a1d3c969165a87d
+parent e32feeb448b388d31ac27e76e5bbad82b0e2d112
+author Ian Main <imain@redhat.com> 1347909144 -0700
+committer Ian Main <imain@redhat.com> 1347909171 -0700
+
+    Fix up tags
+    
+    Fix the remaining tags to include the template.
+    
+    Change-Id: I307d2a7a2678617f38ad3329b51855d5ca6614c2
+    Signed-off-by: Ian Main <imain@redhat.com>
+
+:100644 100644 5d6155d4ba8549f6e9ac096308bfdabac771911c 041eb0899ed7fc8adca75b4be0b4c262d5e0c1ab M	heat/tests/functional/test_WordPress_Composed_Instances.py
+:100644 100644 3490dec3862706acd140e2b14ee05a2d3e0737c4 1f6bb50389a04f87c889db6c0155ec574f500ce6 M	heat/tests/functional/test_WordPress_Single_Instance_With_EBS_EIP.py
+:100644 100644 212a4da329cc90eded163584483e07077454bfce 00a55d2631f3b402c2070c764085566a47af8808 M	heat/tests/functional/test_WordPress_Single_Instance_With_EIP.py
+:100644 100644 6047f08c7c13d6d922dcb50d5a6a397493b68f27 9845cbc542cbc037073314bde8f2045f0ad46f64 M	heat/tests/functional/test_WordPress_With_RDS.py

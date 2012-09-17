@@ -1,0 +1,587 @@
+Changes in branch origin/master, between 14fe52e0e632e45657bcf1cef1dca397cc9a9e4e and c53b4fb733407c92f076faae6629a608aa3f26a2
+commit c53b4fb733407c92f076faae6629a608aa3f26a2
+tree 7ce7d319d4d26a770d9323336c82ff961869dc75
+parent fdbd64dd2d0f364c0fd4a510ae4e124855a17eae
+author Steven Hardy <shardy@redhat.com> 1347875996 +0100
+committer Steven Hardy <shardy@redhat.com> 1347883815 +0100
+
+    heat : Show user parameter values in heat describe
+    
+    Return an agregate set of stack parameters via heat describe
+    and underlying engine show_stack call, so we see the template
+    parameters, and any user-overridden values (ie don't just show
+    the template defaults, which is not really very useful)
+    
+    Fixes #238
+    
+    Change-Id: Ia2cc3271f0dcf8c986e968bc21775d31ecbe6228
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 8ca455e8084d5db822d6d4f7df721a6c484ed225 7e280efdc44da10120adf3718ab4146a9eb81ba7 M	heat/api/v1/stacks.py
+:100644 100644 271e908c34ddee67f58ac71d7ec9514852c8c18b ca9c9a2c824538122a6dacd4af3c3d85a9b17aa5 M	heat/engine/api.py
+:100644 100644 eeb5d1c75de54b942a8e242ff3ecbd35ab7f6423 cf4ba9874ba0cdae291b33685fc83489272839d6 M	heat/tests/functional/test_CFN_API_Actions.py
+:100644 100644 122679eaa7a7d3bdc56421fd39317520f5cbddb0 1ff2c0e23ee669b61819f2cf3a6dca5ae86a3ae1 M	heat/tests/test_api_cfn_v1.py
+
+commit fdbd64dd2d0f364c0fd4a510ae4e124855a17eae
+tree 68c51129f8a3837618506176eefee59d0cc2dfe4
+parent 42f2fd86f3942529afe5c21a128c30fe7cf76c89
+author Steven Hardy <shardy@redhat.com> 1347875153 +0100
+committer Steven Hardy <shardy@redhat.com> 1347876095 +0100
+
+    heat tests : expose keyname from Stack object
+    
+    Expose keyname via Stack.keyname so it can be acccessed in tests
+    
+    Change-Id: I7bca1acad150647d525c0a51f4ce75b0ba21050d
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 6a92c664264e34b0ede74d32025316b8cbd6910c dcface9f13b7091a30d87730c1b16942835766b9 M	heat/tests/functional/util.py
+
+commit 42f2fd86f3942529afe5c21a128c30fe7cf76c89
+tree a8205ebfbb16df25d67280e712c6c868336bd5ce
+parent 397488959fca2fb74c9d6851941dae601fa3e1c1
+author Zane Bitter <zbitter@redhat.com> 1347875171 +0200
+committer Zane Bitter <zbitter@redhat.com> 1347875192 +0200
+
+    Work around nova-network launch issue harder
+    
+    Change-Id: Ia1bf8cb2f0e23755100713c1289baa371bbfb956
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100755 100755 b48663f933088686f055b5fa9baceebe18f85e9c 251b9501ed7e324c4d8a56c89f75cc785f4eba86 M	tools/openstack
+
+commit 8df32a93d2efa66905ab85260ee03c6f2ba0b227
+tree 075cef910d8f5bce470f9e819531e71e49a0757a
+parent 77700c10bf6187b4cf0f84d82309d499134d0a7c
+author Steve Baker <sbaker@redhat.com> 1347840185 +1200
+committer Steve Baker <sbaker@redhat.com> 1347842631 +1200
+
+    Unit test S3 Bucket resource with associated fixes.
+    
+    Change-Id: Ib23ed500385c299247bf80062a7a4342f5afe1d2
+
+:100644 100644 5b8c5c71e0c3145bdd30ee247a9490a659a4bf31 7dcebc52af420f04ba54ca4120a1bf6eabdaeb1c M	heat/engine/s3.py
+:000000 100644 0000000000000000000000000000000000000000 1a7c5c4f44017205d440f2a62b03f5ebfbf966c3 A	heat/tests/test_s3.py
+:100644 100644 33f4425507d07f437d74817d9dd0e1b5219429bb 0c58ab6f6fd7d5d15586ccd930a1929054f7766f M	templates/S3_Single_Instance.template
+
+commit 1a98136a64be413f63044312df40ad459b5a0262
+tree 6a1381e2c86f0f1bb4d623d1d6084dbb2267bcda
+parent 77700c10bf6187b4cf0f84d82309d499134d0a7c
+author Steven Dake <sdake@redhat.com> 1347840056 -0700
+committer Steven Dake <sdake@redhat.com> 1347840155 -0700
+
+    Use openstack.common.timeutils.isotime()
+    
+    Remove heat_utils.strftime() and replace callers with
+    openstack.common.timeutils.isotime().  They do similar activites, and
+    since its carried in common, makes more sense to use that version.
+    
+    Change-Id: Icd919fb218a5f97be103eda7814a5fb56e1b0a02
+    Signed-off-by: Steven Dake <sdake@redhat.com>
+
+:100644 100644 666d3ae4132df588e708f1c7bf3eae023eac30a2 d4e94ad97db61b9c39af94c0bc48ae122bd8bc5d M	heat/common/utils.py
+:100644 100644 5c25e72c2110499fb2f15fdcc7b075dfd18c5f24 271e908c34ddee67f58ac71d7ec9514852c8c18b M	heat/engine/api.py
+
+commit 77700c10bf6187b4cf0f84d82309d499134d0a7c
+tree 734ca9fbfce94efa9dad2fa0dae1402509a7ec41
+parent 137e3592223f5a4f4591cf30e1bc197b4058da8c
+author Zane Bitter <zbitter@redhat.com> 1347821345 +0200
+committer Zane Bitter <zbitter@redhat.com> 1347821383 +0200
+
+    Work around nova-network launch issue
+    
+    Launch nova-network *after* nova-cert to work around the SELinux error in
+    https://bugzilla.redhat.com/show_bug.cgi?id=857747
+    
+    Change-Id: I2ca4af4b950cca92cdd2785c493d8453648ccbb0
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100755 100755 52c5712f60e441ce71149dfa80e32a70d29cb804 b48663f933088686f055b5fa9baceebe18f85e9c M	tools/openstack
+
+commit 137e3592223f5a4f4591cf30e1bc197b4058da8c
+tree 3cb4a37b4bf229649344285461adb14c493fac5e
+parent 1650f849fb09bbb521360b352248f63c26b1752e
+author Jeff Peeler <jpeeler@redhat.com> 1347673935 -0400
+committer Jeff Peeler <jpeeler@redhat.com> 1347674833 -0400
+
+    Change rpc cleanup to occur before killing engine thread
+    
+    This bug only manifested itself after a heat request was made to the
+    engine. Once a request was made a Qpid connection handler continued
+    to wait in a select call, presumably for a subsequent request. Closing
+    the connection immediately after detecting a keyboard interrupt and then
+    terminating the thread yields a clean shutdown with no traceback.
+    
+    Closes #176
+    
+    Change-Id: Ifdb82d33a6c52a004bbd6b08c564264f4140e800
+    Signed-off-by: Jeff Peeler <jpeeler@redhat.com>
+
+:100644 100644 41c7a23b9551f90838ef25c426cb17389af8cc2e 4ea5ba0d2db80bc2c5d1f89d5b95cd58472a8041 M	heat/service.py
+
+commit 1650f849fb09bbb521360b352248f63c26b1752e
+tree 51461e3c555dc90706fb315173db75b5e4af570e
+parent e5ce50eaf39feda335d2c5d620297aeb4ea9fbe1
+author Jeff Peeler <jpeeler@redhat.com> 1347601477 -0400
+committer Jeff Peeler <jpeeler@redhat.com> 1347634952 -0400
+
+    Add new OpenShift test
+    
+    New utility functions added to add/remove host file entries.
+    
+    Closes #204
+    
+    Change-Id: I182b451a25e22a558d1b4073e981cdc826ab836d
+    Signed-off-by: Jeff Peeler <jpeeler@redhat.com>
+
+:000000 100644 0000000000000000000000000000000000000000 bf06fb8aac9c7fded77047cb2c9a37c03ca55627 A	heat/tests/functional/test_OpenShift_Prebuilt_JEOS.py
+:100644 100644 ed1f656deb679092225278d12471cd2f301cf466 6a92c664264e34b0ede74d32025316b8cbd6910c M	heat/tests/functional/util.py
+
+commit e5ce50eaf39feda335d2c5d620297aeb4ea9fbe1
+tree ed1bbd23d7c67cbf86cb6c8f5b2a52cbb2adb696
+parent d0c394542c1d5ba96da98c47a7468f0e92c678e2
+author Steven Hardy <shardy@redhat.com> 1347556270 +0100
+committer Steven Hardy <shardy@redhat.com> 1347631738 +0100
+
+    heat tests : new functional test for CFN API
+    
+    Add new test which tests most actions of the CFN API
+    note UpdateStack, ValidateTemplate and EstimateTemplateCost
+    are still TODO
+    
+    Change-Id: I814508871ddd81495f5d41d38e8e724ab4d03765
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:000000 100644 0000000000000000000000000000000000000000 eeb5d1c75de54b942a8e242ff3ecbd35ab7f6423 A	heat/tests/functional/test_CFN_API_Actions.py
+
+commit d0c394542c1d5ba96da98c47a7468f0e92c678e2
+tree 4f4acaafab957db8cab8fa1257f5b8af9b614671
+parent 4481b66624904e9d04bb91a02b658c4690dedfac
+author Steven Hardy <shardy@redhat.com> 1347530357 +0100
+committer Steven Hardy <shardy@redhat.com> 1347626959 +0100
+
+    heat tests : Update test_WordPress_With_RDS
+    
+    Update test_WordPress_With_RDS.py to use new test infrastructure
+    
+    Change-Id: Iea78e4d2507f0f59db3528b475e6981ea027a617
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 113a7d163b7a2d5cc63c2eca2bc2814f8bf2638a 6047f08c7c13d6d922dcb50d5a6a397493b68f27 M	heat/tests/functional/test_WordPress_With_RDS.py
+
+commit 4481b66624904e9d04bb91a02b658c4690dedfac
+tree 3683ef238eb7c7459b0fdbd9937d24caf1d39b6a
+parent ef809d370a4c28a77d7d28fe54124d06075ceae2
+author Steven Hardy <shardy@redhat.com> 1347626205 +0100
+committer Steven Hardy <shardy@redhat.com> 1347626406 +0100
+
+    heat tests : remove duplicate cleanup Wordpress_Boto
+    
+    Remove the duplicate cleanup call, should only be in tearDown
+    fixture
+    
+    Change-Id: I43cbe28694b248550689be08522d9774a38e6f64
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 bd734f383b75353f4120e9aec9ef1e4fc88f4a2e 1327e4dc82892a1757f6527fe9b17a69dd7149b7 M	heat/tests/functional/test_WordPress_Single_Instance_Boto.py
+
+commit ef809d370a4c28a77d7d28fe54124d06075ceae2
+tree 8a038c13940f9209ae83e9d6622399a3d320f20d
+parent 8357920281c017f316b1fc214ddb621efa5bc667
+author Steven Hardy <shardy@redhat.com> 1347620398 +0100
+committer Steven Hardy <shardy@redhat.com> 1347626406 +0100
+
+    heat tests : bugfix utils cleanup function
+    
+    end state for stacks is DELETE_COMPLETE, but then they
+    are deleted, hence we need to test for either DELETE_COMPLETE
+    or a null result to avoid false failures
+    
+    Change-Id: I7e35c5a734d1005fa38d587353cbca5b911ec77b
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 092f8854dcc0ff80db18ee5395568d0e3c1680b9 ed1f656deb679092225278d12471cd2f301cf466 M	heat/tests/functional/util.py
+
+commit 8357920281c017f316b1fc214ddb621efa5bc667
+tree 46b9652569ac37b3e4d115b4352a2f01745d4c76
+parent f397d7ad5292689ce106dd7de9579651a6d2be4c
+author Steven Hardy <shardy@redhat.com> 1347615275 +0100
+committer Steven Hardy <shardy@redhat.com> 1347615275 +0100
+
+    heat tests : bugfix utils cleanup
+    
+    Initialize tries variable or we get a referenced before
+    assignment error
+    
+    Change-Id: Ic8eb68ced893fb89844e81e895c766e8f8b04bee
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 b039d193bd6b7fcfaf1e2c1583aee4fe1d6e04c9 092f8854dcc0ff80db18ee5395568d0e3c1680b9 M	heat/tests/functional/util.py
+
+commit f397d7ad5292689ce106dd7de9579651a6d2be4c
+tree d6d7e01ba1ecd1ac75909c105d262ed3092084a8
+parent ab754ba493a282c0790e72a73d0f09d26cb50cf3
+author Zane Bitter <zbitter@redhat.com> 1347565249 +0200
+committer Zane Bitter <zbitter@redhat.com> 1347565685 +0200
+
+    tests: Wait for delete completion
+    
+    Wait for the stack to actually be deleted before ending the test.
+    
+    Fixes #233
+    
+    Change-Id: I4f2060ff73615bcb16ac9cba3d7062117cca08dd
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 e44bba10424c2a785501b130513dcb790c083f9e b039d193bd6b7fcfaf1e2c1583aee4fe1d6e04c9 M	heat/tests/functional/util.py
+
+commit ab754ba493a282c0790e72a73d0f09d26cb50cf3
+tree 32bedd69de61a35d7e0740b02e1bc8ffc36079b2
+parent e7bd43657d7f0f881b66ae1eec4c87cfbe57923c
+author Zane Bitter <zbitter@redhat.com> 1347459165 +0200
+committer Zane Bitter <zbitter@redhat.com> 1347565685 +0200
+
+    tests: Clean up after a failed functional test
+    
+    Ensure that whenever a stack is created, we delete it after the test by
+    putting the cleanup() call into the tearDown() method. For this to work,
+    we must also move the actual creation into the test itself, since an
+    exception during setUp() will mean that tearDown is not called.
+    
+    Change-Id: I481e691f07c1af9e931258d7ba4453b2037c62ad
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 e8083199b84b818b5116ceb6b2ec09d7e732e305 2af7b11509ced949f19ef5d56665c5c5d37c95b7 M	heat/tests/functional/test_WordPress_2_Instances_With_EBS.py
+:100644 100644 4fb1be3cf3e582b5457b3acaf6d4e70734c7e4c7 0da6adccd3c883959d901eead8ab2cbe5d1071c4 M	heat/tests/functional/test_WordPress_2_Instances_With_EBS_EIP.py
+:100644 100644 339058b03f8f3026f4de4d48d56f185846a8cf9a d277c2e6572dbcbc2168a155f9fa6c938a021080 M	heat/tests/functional/test_WordPress_2_Intances.py
+:100644 100644 d6fb391b1078413ddae01d5ca2d35b43ab73d981 5d6155d4ba8549f6e9ac096308bfdabac771911c M	heat/tests/functional/test_WordPress_Composed_Instances.py
+:100644 100644 9fd8a35750fd6b3c8fec1f567c5d6c5f7cf67670 d938427283fc2c96c1b6dc5a7a3c1e4385f3263f M	heat/tests/functional/test_WordPress_Single_Instance.py
+:100644 100644 9fda3fad75a9dd57bcde61a6a496251e5c1846c2 bd734f383b75353f4120e9aec9ef1e4fc88f4a2e M	heat/tests/functional/test_WordPress_Single_Instance_Boto.py
+:100644 100644 0d8a8c483b4b4e4b2615e1be101fb0464612b7fc 79d67921dcd9a91d50919c865f5903968c59d57d M	heat/tests/functional/test_WordPress_Single_Instance_With_EBS.py
+:100644 100644 51cd8b6635e5ec781f70c489c13ea9786e44523c 3490dec3862706acd140e2b14ee05a2d3e0737c4 M	heat/tests/functional/test_WordPress_Single_Instance_With_EBS_EIP.py
+:100644 100644 6e189a2e3317b0ea6e33a2a56512b83bf0811d3d 212a4da329cc90eded163584483e07077454bfce M	heat/tests/functional/test_WordPress_Single_Instance_With_EIP.py
+:100644 100644 cf2667451d7dbff15f24ee2b8937bbcbd70d4ff2 408c52d8315c1ecb6ea6071af90af98928955af8 M	heat/tests/functional/test_WordPress_Single_Instance_With_HA.py
+:100644 100644 7c4af4a4529a9a5ad05c5a9d52f1dc03528c5a86 44a042f84237722b9f5c26717ee437547d1e8e73 M	heat/tests/functional/test_WordPress_With_LB.py
+:100644 100644 a5944235c8865df55e2d4a3eadec013d348a454e e44bba10424c2a785501b130513dcb790c083f9e M	heat/tests/functional/util.py
+
+commit e7bd43657d7f0f881b66ae1eec4c87cfbe57923c
+tree dd1570bf8ede87053c6452af19b23c76c82d675e
+parent f5dfdff4b8eedc25af8c329ecc5e5490aec9a5ff
+author Zane Bitter <zbitter@redhat.com> 1347550954 +0200
+committer Zane Bitter <zbitter@redhat.com> 1347565685 +0200
+
+    tests: Make StackBoto inherit more from Stack
+    
+    Change-Id: Ie2b6f2e6dd7d3f75622422d68449972ee7eceb00
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 62c880ffab5d83787202e4cd3161522a97083d0a a5944235c8865df55e2d4a3eadec013d348a454e M	heat/tests/functional/util.py
+
+commit f5dfdff4b8eedc25af8c329ecc5e5490aec9a5ff
+tree e18110ce7c61c516a4a9faccd422b2fe03133720
+parent ed33a8dc90468f2873a4a581c22027f10d9393d4
+author Zane Bitter <zbitter@redhat.com> 1347562608 +0200
+committer Zane Bitter <zbitter@redhat.com> 1347565338 +0200
+
+    tests: Fail promptly on stack creation failure
+    
+    Fix the functional tests to report failure as soon as stack creation fails,
+    rather than waiting 80+ minutes to time out.
+    
+    Change-Id: Ie48a84c7bb3ab274337297cc740b78d58d8ed4a6
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 dd6e93751c048899c3b6680cbf3bf704d7daaa2e 51cd8b6635e5ec781f70c489c13ea9786e44523c M	heat/tests/functional/test_WordPress_Single_Instance_With_EBS_EIP.py
+:100644 100644 e175443dbc59d9d82b0961920340239371b3d6e5 6e189a2e3317b0ea6e33a2a56512b83bf0811d3d M	heat/tests/functional/test_WordPress_Single_Instance_With_EIP.py
+:100644 100644 a16e6dae0cccd9ab5b58c69a1f8bd44637eea26a 62c880ffab5d83787202e4cd3161522a97083d0a M	heat/tests/functional/util.py
+
+commit ed33a8dc90468f2873a4a581c22027f10d9393d4
+tree 460298e5ba9f54fa395ced0c536cbc9dadbe9531
+parent d17039840e171370bfd7e233c49719f0cd76d4bb
+author Steven Dake <sdake@redhat.com> 1347561391 -0700
+committer Steven Dake <sdake@redhat.com> 1347561448 -0700
+
+    Add Wordpress_2_Instances testcase
+    
+    Fixes Issue #205
+    
+    Change-Id: Ic7a08b2ac278a032033bec47bbfe53aeb11b253e
+    Signed-off-by: Steven Dake <sdake@redhat.com>
+
+:000000 100644 0000000000000000000000000000000000000000 339058b03f8f3026f4de4d48d56f185846a8cf9a A	heat/tests/functional/test_WordPress_2_Intances.py
+
+commit 06604600fbdb6d69ebe7e2e13a647ba3915e7b91
+tree 36ec7c5090dd98f4df115a00ce2e03512cebcbea
+parent 411656a5d6b29ccbbf4bf1157c0c89e7f3cd6b4e
+author Steven Dake <sdake@redhat.com> 1347556438 -0700
+committer Steven Dake <sdake@redhat.com> 1347557809 -0700
+
+    Add test_WordPress_2_Instances_With_EBS_EIP.py
+    
+    This work is based upon Tomas Sedovic's work.
+    
+    A floating ip checker is added to instance() in util.py
+    
+    Change-Id: I138a5f7bc0c5d04bc5308a80113f3057440578b9
+    Signed-off-by: Steven Dake <sdake@redhat.com>
+    Signed-off-by: Tomas Sedovic <tsedovic@redhat.com>
+
+:000000 100644 0000000000000000000000000000000000000000 4fb1be3cf3e582b5457b3acaf6d4e70734c7e4c7 A	heat/tests/functional/test_WordPress_2_Instances_With_EBS_EIP.py
+:100644 100644 b296ff109efda21332023976b144d4f6acb8ff75 67481bac2c0db2890a72d2e133044c1687130ab3 M	heat/tests/functional/util.py
+
+commit ec0f4efd32b66a883680c707e5c0c32f82f7d847
+tree 09999c61de06da9f16135ac540408688d912bd25
+parent 411656a5d6b29ccbbf4bf1157c0c89e7f3cd6b4e
+author Steven Hardy <shardy@redhat.com> 1347448071 +0100
+committer Steven Hardy <shardy@redhat.com> 1347554584 +0100
+
+    heat tests : functional test utils add response_xml_item
+    
+    Add response_xml_item method to Stack, which allows stack
+    API XML responses to be more easily parsed base on xpath
+    prefix and keyname
+    
+    Change-Id: I96437bd7ff4575e9262d46c4c21f4408041e147d
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 b296ff109efda21332023976b144d4f6acb8ff75 ac44423b30a09888c61e3f6d32e19ecb4f117e48 M	heat/tests/functional/util.py
+
+commit 411656a5d6b29ccbbf4bf1157c0c89e7f3cd6b4e
+tree 77a344fd06bccfb08159b32b804ac96ca842f60f
+parent dad88e25b1abcb7e123c1a13205107fb793ac4a2
+author Zane Bitter <zbitter@redhat.com> 1347551429 +0200
+committer Zane Bitter <zbitter@redhat.com> 1347551429 +0200
+
+    Fix timing issue in starting openstack-network
+    
+    Change-Id: I31f3092f95b140015d661ebd86bd1567c607f3d4
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100755 100755 b1b94598c23b18434b4979ea0d773ddfcac2197d 52c5712f60e441ce71149dfa80e32a70d29cb804 M	tools/openstack
+
+commit dad88e25b1abcb7e123c1a13205107fb793ac4a2
+tree e73cffe418f1a1f9b11c37946d928fada6ff6ad3
+parent a4fdfd41195efcadc67f598b223f3691b63848bc
+author Steven Dake <sdake@redhat.com> 1347545844 -0700
+committer Steven Dake <sdake@redhat.com> 1347545844 -0700
+
+    There is no spoon take 2
+    
+    ugh
+    
+    Change-Id: I746c721ed779b1c63592fa0e07053d27ef4231a0
+    Signed-off-by: Steven Dake <sdake@redhat.com>
+
+:100644 100644 a33e474c60f1950d8319bc497319fc04d4577eda c5fe93747004b353108959eec8ae85888be3fac8 M	heat/engine/resources.py
+
+commit a4fdfd41195efcadc67f598b223f3691b63848bc
+tree 8d9c44697a519ddf5a489b9c0cb2d49c022efae8
+parent 5553ac7ad6e0951cd8b31474eaf25c2512c71e4b
+author Steven Dake <sdake@redhat.com> 1347544743 -0700
+committer Steven Dake <sdake@redhat.com> 1347544743 -0700
+
+    There is no spoon
+    
+    There is no name, only resource_name.
+    
+    Change-Id: I1455d497c68fb650d3aef0f1232872f441005c0d
+    Signed-off-by: Steven Dake <sdake@redhat.com>
+
+:100644 100644 98c8e5d2d3cb7b078289dbadbdadba98502b10c0 a33e474c60f1950d8319bc497319fc04d4577eda M	heat/engine/resources.py
+
+commit 614287a9645ab6b32fe9fc71a99a1a7308bf61d3
+tree 6b841a8e517e3f3f50078ff2fda1fcdec49709d4
+parent 38e3b5a24a026e0fa087db9ade14182af752d377
+author Steven Hardy <shardy@redhat.com> 1347534063 +0100
+committer Steven Hardy <shardy@redhat.com> 1347534163 +0100
+
+    heat : Revert "Make sure the properties are defined in all cases."
+    
+    bugfix : backout #194 fix as it breaks RDS (or maybe all resoures
+    implemented as nested-stacks)
+    
+    This reverts commit ae0b853499296763dae77aa5c1e4c22225674489.
+    
+    reopens #194
+    
+    Change-Id: I349a1625a040e33e080549a137824d1d2cfca9f8
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 30ba7b55403a6678e849ab442e0e7159c48ac243 b3142d6a73901899fa93082de1d51a15c15c4399 M	heat/engine/parser.py
+
+commit 38e3b5a24a026e0fa087db9ade14182af752d377
+tree faff410b76992b60132d2b2059ee92a8fdad35c6
+parent da37711c68d885bf883b49aec3ce05917e9c5bbd
+author Steven Hardy <shardy@redhat.com> 1347532035 +0100
+committer Steven Hardy <shardy@redhat.com> 1347532035 +0100
+
+    heat : bugfix convert User resource to physical_resource_name()
+    
+    engine user.py needs the self.name references changed to
+    self.physical_resource_name() to align with the recent resource
+    naming changes.
+    
+    Change-Id: I4620a4afc5e9c11d7b6d9348aaac35bcfa31bbac
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 13abd9e67bc834df7b969f489f40b1f8049188e4 45920e1b7201c85eb138e665d8d97f1aff9ee83b M	heat/engine/user.py
+
+commit da37711c68d885bf883b49aec3ce05917e9c5bbd
+tree 30cf38292d872ba37e649f78a4c7366613f321c6
+parent 04701a275f9712865bc5b7ea458bb7123f3a34d7
+author Steven Dake <sdake@redhat.com> 1347515010 -0700
+committer Steven Dake <sdake@redhat.com> 1347515168 -0700
+
+    creating instances failed as a result of regression in last commit
+    
+    The previous commit to the tree organizes resource names by
+    stack.resource.  Most of the openstack APIs take resource ids
+    but the instance create operation requires text identifiers.
+    
+    Rewrite the text identifiers for the nova security groups before
+    starting an instance.
+    
+    Change-Id: I8a842868781ecb353f66b5a4e3d022766a4c8a0e
+    Signed-off-by: Steven Dake <sdake@redhat.com>
+
+:100644 100644 9b456e6cb4fab9c2da707aca74345239e60476c4 9c00c506aff55a7a3e3a2f07bf24063ce8e88b80 M	heat/engine/instance.py
+:100644 100644 0caa20abcf37c7ab684f228767496f7a172c033c 98c8e5d2d3cb7b078289dbadbdadba98502b10c0 M	heat/engine/resources.py
+
+commit 61ba35be90d0241b066badb0149b0a5dd8c5528b
+tree 68c9f3724cd52985890bf21854b6a0c1e4feb8ba
+parent 04701a275f9712865bc5b7ea458bb7123f3a34d7
+author Angus Salkeld <asalkeld@redhat.com> 1347508224 +1000
+committer Angus Salkeld <asalkeld@redhat.com> 1347508224 +1000
+
+    Update openstack-common
+    
+    Change-Id: I002574a60b4f59543bc6aa73256c2f0b3b79d378
+    Signed-off-by: Angus Salkeld <asalkeld@redhat.com>
+
+:100644 100644 6785766cb4679978f68397eadfdbc064eeb89a1d 53ed9ce2128b8d89defe085e314863ee9522b0c7 M	heat/openstack/common/cfg.py
+:100644 100644 e5da94b9496518923bf69507a22065589e7f4bfa ba32da550b01a1b353becc043b544fecde474eb7 M	heat/openstack/common/exception.py
+:100644 100644 67c9fa951184c2ac5a79d3caf4f9c0eab80938e4 5dd48301760e4778904bdc32f2d748e0e9ef7980 M	heat/openstack/common/excutils.py
+:100644 100644 2fbb0291a06d97182e6c1717da125fe3888623a6 f45372b4dba607251b5a79795be42d94b94da8f9 M	heat/openstack/common/importutils.py
+:100644 100644 845023eba89088090b4c4beee626699dc9f79481 2566fd113354a39dd6d6f0b9013ec37ad67cda9f M	heat/openstack/common/jsonutils.py
+:100644 100644 e4c808fd182eda628eae82fad0fb8230bd484409 41e3781ce8b62a667fb2cd56bb3aaeb7042f7432 M	heat/openstack/common/log.py
+:100644 100644 b18fff770fd51baa7e9fc4fc15b6dcde9770005d e6383f610ecf5e6044b1fcc1574465ae4ad92306 M	heat/openstack/common/notifier/api.py
+:100644 100644 0d6090d10b9ad87991dcf7cb7d29a020138ce9d8 ef1e65fb9835ca29fe3211263c662ef75d12e28c M	heat/openstack/common/notifier/log_notifier.py
+:100644 100644 64b00c006b523b1f0bde1ddc252d930d1480efa7 2ddb32156462c69747a8a6c0c4e25230f86a1bc0 M	heat/openstack/common/notifier/rabbit_notifier.py
+:100644 100644 28a44c04dbcdbb7fe11783765cd3fabdd78366cc 2eb5f0a7da6057725fb289f63e0fc5ce07323bfa M	heat/openstack/common/rpc/__init__.py
+:100644 100644 25df5f99c43f079f2302b2cad9bb3de618ac4a06 2374a13be886c7b6ebd482352be756b14ab3647e M	heat/openstack/common/rpc/amqp.py
+:100644 100644 e559c6f1fa3194fd12fe92c5b7a89dfc5ed9caed 7ff4e3170e62b6d5dcf5fdf708520049e53e5b43 M	heat/openstack/common/rpc/common.py
+:100644 100644 20003d77e4d1b07cd5311a1a99b183998991d612 b5209a407f57a696928c85bda24adba488aaaa98 M	heat/openstack/common/rpc/impl_kombu.py
+:100644 100644 d4f4cc77e9ff010443a8b39770be5c97e84a6de3 697f4d8c5d129f9f6d20a426108e7af0081b2c5a M	heat/openstack/common/rpc/impl_qpid.py
+:100644 100644 00296dd33660af521626f633812717f1798fe6a7 476e383d5141b4fa3ad350cca8e7bf74ac64a2c6 M	heat/openstack/common/rpc/impl_zmq.py
+:100644 100644 db96a27486aef839d56e00fdf6c84e7eb21e23d6 99e98b43b1e9f48c8d19588970b88ce490138e8d M	heat/openstack/common/rpc/proxy.py
+:100644 100644 59f255d0c0cd8ca5605444d31c6ea622b85d3dd1 628f5e3c9b2f68e2b930982b470786dbdb4c6340 M	heat/openstack/common/setup.py
+:100644 100644 5eeaf70aa49fc7b3d35ad7fa5e4d4d7be0f57106 c4f6cf0497a5573270f104e98061ff69587213e6 M	heat/openstack/common/timeutils.py
+:100644 100644 5d0099e92549af07255797182c3e160e1b2f8f16 e1d847ccb7af7f2122ae61050b01554e8a60d312 M	heat/openstack/common/utils.py
+
+commit 04701a275f9712865bc5b7ea458bb7123f3a34d7
+tree 796961c53e396103a636dfb00be9c80186c77892
+parent 640c0a3e5f5ccca02d152d101e150d87b51e14eb
+author Steven Dake <sdake@redhat.com> 1347487970 -0700
+committer Steven Dake <sdake@redhat.com> 1347502008 -0700
+
+    Make physical resource names unique based upon stack name
+    
+    Some templates use the same resource name when registering with
+    nova.  Nova will not allow mulitple resource names to register
+    with the same name in all cases, and in those it does, it often
+    becomes confused (in the case of EIP).  This patch creates a
+    dot notation
+    
+    For the LB test, an example of the resources would be:
+    teststack.LoadBalancer.LB_instance
+    teststack.DatabaseServer.MySqlDatabaseServer
+    teststack.WikiServerOne
+    
+    Fixes Issue #160
+    Fixes Issue #136
+    
+    Thanks to asalkeld@redhat.com for helping sort out the unit
+    test cases.
+    
+    Change-Id: I14f4551feb41c7f98caa30dd98f997da6d00c467
+    Signed-off-by: Steven Dake <sdake@redhat.com>
+
+:100644 100644 74f05e3c2e32e240caab4ddf8a9e119d8a85331c 9b456e6cb4fab9c2da707aca74345239e60476c4 M	heat/engine/instance.py
+:100644 100644 46717af33fa6cb18f74e7e8c81dbdfd503639839 0caa20abcf37c7ab684f228767496f7a172c033c M	heat/engine/resources.py
+:100644 100644 f266f93da6869b0b7d804f7f9a2f89e1dc11831f 5b8c5c71e0c3145bdd30ee247a9490a659a4bf31 M	heat/engine/s3.py
+:100644 100644 91301a6379db8f61c0330c96c24628caed77cac2 b9986cdc9857ff80e9f88dfddcadf5879bb3d624 M	heat/engine/security_group.py
+:100644 100644 4642b94e322ebbf03a9465191ebacfecf01c7f9f a3af810cbc92364da8ef3f5de20099df868be4c3 M	heat/engine/stack.py
+:100644 100644 e735fbe9f636c29f16e25d5d4c4bd60d472db2c4 13abd9e67bc834df7b969f489f40b1f8049188e4 M	heat/engine/user.py
+:100644 100644 8330fff8290765a489a19f87da7ed44ad9a9024e 7b075994514f6b55ed88530977af8e4be190e5c1 M	heat/engine/volume.py
+:100644 100644 7f11fa13c1ccefd706b334a672dfdcd8ea6989a5 7c4af4a4529a9a5ad05c5a9d52f1dc03528c5a86 M	heat/tests/functional/test_WordPress_With_LB.py
+:100644 100644 c98e9d8c82dadb9342dc40aef1f2f2af905a92ff b296ff109efda21332023976b144d4f6acb8ff75 M	heat/tests/functional/util.py
+:100644 100644 6e2b13d85f2a080d737c994ef6684b5553671e95 ed637906854d3a20a68cb57db934b69c26ab42a9 M	heat/tests/test_engine_manager.py
+:100644 100644 6afde1f1318ff2096eafb75aadc0803793865e05 b9ad04fdc26449584db89432a08a7fa38e8c0e0b M	heat/tests/test_instance.py
+
+commit 7044fc5edc2ecc448775891628706ca41405fe0a
+tree 5217bf28760ee79c3b37f82becfd6d04a2d5dcb0
+parent fe95bd633a6b6d341052cd58814372551c75dc89
+author Jeff Peeler <jpeeler@redhat.com> 1347481525 -0400
+committer Jeff Peeler <jpeeler@redhat.com> 1347483584 -0400
+
+    Change Stack to support user defined parameter
+    
+    This change allows tests to specify DBUsername/DBPassword if necessary.
+    The keyname is still looked up in nova and the distribution is retrieved
+    from the already existing Stack parameter.
+    
+    Change-Id: I3732ffb685d68c8a72a83247f74ed11a50a74cd1
+    Signed-off-by: Jeff Peeler <jpeeler@redhat.com>
+
+:100644 100644 b531aa372b5a01b904de2a01c3d2dbab50bf6d19 d6fb391b1078413ddae01d5ca2d35b43ab73d981 M	heat/tests/functional/test_WordPress_Composed_Instances.py
+:100644 100644 ce89afef5f0394c1943ff0cfec3672d4b5b1ba8d 9fd8a35750fd6b3c8fec1f567c5d6c5f7cf67670 M	heat/tests/functional/test_WordPress_Single_Instance.py
+:100644 100644 8c0a84299e1f0725b0f184a7ad9925c83e3c8dda 9fda3fad75a9dd57bcde61a6a496251e5c1846c2 M	heat/tests/functional/test_WordPress_Single_Instance_Boto.py
+:100644 100644 7b198d4219ffae86f1914aa65df98c7a74ff88b1 0d8a8c483b4b4e4b2615e1be101fb0464612b7fc M	heat/tests/functional/test_WordPress_Single_Instance_With_EBS.py
+:100644 100644 3e404ca86233e065bf55d5421c980ea73ae14ac8 dd6e93751c048899c3b6680cbf3bf704d7daaa2e M	heat/tests/functional/test_WordPress_Single_Instance_With_EBS_EIP.py
+:100644 100644 f16eb9c683c59d9ed6c163d440d7b38f9be90230 e175443dbc59d9d82b0961920340239371b3d6e5 M	heat/tests/functional/test_WordPress_Single_Instance_With_EIP.py
+:100644 100644 ab2539c9d85cd15e9e69e7ffc95e437010b081a0 cf2667451d7dbff15f24ee2b8937bbcbd70d4ff2 M	heat/tests/functional/test_WordPress_Single_Instance_With_HA.py
+:100644 100644 56dec55731d5c8ae284b627c2f36d124b9397082 7f11fa13c1ccefd706b334a672dfdcd8ea6989a5 M	heat/tests/functional/test_WordPress_With_LB.py
+:100644 100644 a82eaf1f15c5d08bf9cc7b84f9664c8091c8c97f 113a7d163b7a2d5cc63c2eca2bc2814f8bf2638a M	heat/tests/functional/test_WordPress_With_RDS.py
+:100644 100644 be2514371192d488194c6ad42525a3fa0e163447 c98e9d8c82dadb9342dc40aef1f2f2af905a92ff M	heat/tests/functional/util.py
+
+commit d24e8c746359169058e9c0577c2f843695ca3b55
+tree 88c3c3649c7778600cec1126527075ee856640dd
+parent f2817a79d3fa6e08fcf0c98314e2ea8df6b72f8f
+author Ian Main <imain@redhat.com> 1347477151 -0700
+committer Ian Main <imain@redhat.com> 1347477177 -0700
+
+    Add 2 instance with EBS test.
+    
+    Seems to work even.
+    
+    Change-Id: Ie09d97dc86a68525783f1f9c080fed13e651ef78
+    Signed-off-by: Ian Main <imain@redhat.com>
+
+:000000 100644 0000000000000000000000000000000000000000 e8083199b84b818b5116ceb6b2ec09d7e732e305 A	heat/tests/functional/test_WordPress_2_Instances_With_EBS.py
+
+commit f2817a79d3fa6e08fcf0c98314e2ea8df6b72f8f
+tree dcb76066070fb99d887f6e020947e0f4d2afee04
+parent 14fe52e0e632e45657bcf1cef1dca397cc9a9e4e
+author Jeff Peeler <jpeeler@redhat.com> 1347464203 -0400
+committer Jeff Peeler <jpeeler@redhat.com> 1347471527 -0400
+
+    Change VerifyClass to have a generic verify_url method
+    
+    Change-Id: I0e1298e7852e336d6271c4014b11935ac3ce6689
+    Signed-off-by: Jeff Peeler <jpeeler@redhat.com>
+
+:100644 100644 f44b228809162263e612779ede4a7660ba4ff933 d9bc235fccf2d3d604cdb940576732ed90935279 M	heat/tests/functional/verify.py
+
+commit 8da4ddf51fedefdb1601baf7359e128f22f396e2
+tree c292025c741688b375654f0c7d8cd02e04b0e6ad
+parent 1ba219d38df61ab4b0807c5fa730287ec903ccca
+author Steven Dake <sdake@redhat.com> 1347462690 -0700
+committer Steven Dake <sdake@redhat.com> 1347462690 -0700
+
+    Make S3 import except on ImportError rather then all exceptions
+    
+    Change-Id: Icb98aed65ccba825f8402fdde95ac38b2a12c1a6
+    Signed-off-by: Steven Dake <sdake@redhat.com>
+
+:100644 100644 428cd736ad0da79db7d15bfe7d461110f8bccc61 46717af33fa6cb18f74e7e8c81dbdfd503639839 M	heat/engine/resources.py
+:100644 100644 7a1816357472f596b26e7e13ba4abb383408e148 f266f93da6869b0b7d804f7f9a2f89e1dc11831f M	heat/engine/s3.py

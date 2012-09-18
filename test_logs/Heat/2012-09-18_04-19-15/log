@@ -4030,3 +4030,12 @@ skipping non-regular file "6"
 skipping non-regular file "7"
 skipping non-regular file "8"
 skipping non-regular file "9"
+[master a14ba66] Sync jenkins-Heat-48 build logs
+ 4 files changed, 4226 insertions(+)
+ create mode 100644 test_logs/Heat/2012-09-17_21-22-28/build.xml
+ create mode 100644 test_logs/Heat/2012-09-18_04-19-15/changelog.xml
+ create mode 100644 test_logs/Heat/2012-09-18_04-19-15/log
+To git@github.com:heat-api/heat-api.github.com.git
+   216e42f..a14ba66  master -> master
+~/heat-integration
+Finished: SUCCESS

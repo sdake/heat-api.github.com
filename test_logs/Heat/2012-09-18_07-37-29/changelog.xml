@@ -1,0 +1,13 @@
+Changes in branch origin/master, between 86c76940078506aa5b6610511f6763a1b2267733 and 84da9d441df3edbc0ae0fb2f46fcdd31aa413362
+commit 84da9d441df3edbc0ae0fb2f46fcdd31aa413362
+tree f95913dc83fb345e9a01cfa7b14cf56c9e5e6b58
+parent 86c76940078506aa5b6610511f6763a1b2267733
+author Zane Bitter <zbitter@redhat.com> 1347967897 +0200
+committer Zane Bitter <zbitter@redhat.com> 1347967951 +0200
+
+    Avoid test runner crash when we have no tty
+    
+    Change-Id: I6dac94a98b9125d3371c19fa14a0de9b4e766820
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100755 100755 e63049910e7b70a756a47d1d7c02c214580ed29d 6327cf2d81662978ec51637ce80c888844567452 M	heat/testing/runner.py

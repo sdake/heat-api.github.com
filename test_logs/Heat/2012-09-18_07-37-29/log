@@ -481,3 +481,12 @@ skipping non-regular file "6"
 skipping non-regular file "7"
 skipping non-regular file "8"
 skipping non-regular file "9"
+[master 1b65d60] Sync jenkins-Heat-49 build logs
+ 4 files changed, 688 insertions(+)
+ create mode 100644 test_logs/Heat/2012-09-18_04-19-15/build.xml
+ create mode 100644 test_logs/Heat/2012-09-18_07-37-29/changelog.xml
+ create mode 100644 test_logs/Heat/2012-09-18_07-37-29/log
+To git@github.com:heat-api/heat-api.github.com.git
+   a14ba66..1b65d60  master -> master
+~/heat-integration
+Finished: FAILURE

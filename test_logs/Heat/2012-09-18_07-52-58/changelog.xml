@@ -1,0 +1,13 @@
+Changes in branch origin/master, between 84da9d441df3edbc0ae0fb2f46fcdd31aa413362 and fd2c75938abbcb2eb434efaa4d3114c76288d7d6
+commit fd2c75938abbcb2eb434efaa4d3114c76288d7d6
+tree f8c47d775736aacf5e3439e97b429759a6a99e14
+parent 84da9d441df3edbc0ae0fb2f46fcdd31aa413362
+author Zane Bitter <zbitter@redhat.com> 1347966906 +0200
+committer Zane Bitter <zbitter@redhat.com> 1347967962 +0200
+
+    Return exit code rom run_tests.sh
+    
+    Change-Id: Iddec2eb8e552f88bd04657536df094355b96b804
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100755 100755 3663a71d5696ab38a3db50ae7275579625974324 086a67690c69e17e1dc4a2d712c47c33a8e4e3ce M	run_tests.sh

@@ -1,0 +1,18 @@
+Changes in branch origin/master, between fd2c75938abbcb2eb434efaa4d3114c76288d7d6 and 84c04e38731d2d49e55f754e5ffeeb117c8b74f2
+commit 84c04e38731d2d49e55f754e5ffeeb117c8b74f2
+tree 9dc6656ea5856296fb90a5166f504b6a2fdce69f
+parent fd2c75938abbcb2eb434efaa4d3114c76288d7d6
+author Steven Hardy <shardy@redhat.com> 1347971329 +0100
+committer Steven Hardy <shardy@redhat.com> 1347980611 +0100
+
+    heat engine : convert stack resource to physical_resource_name
+    
+    Covert stack.Stack to use physical_resource_name or nested stack
+    references are not fully-qualified
+    
+    Ref #241
+    
+    Change-Id: I6e38a7de5af5fe79ddc62cfee9dfe26cae30df6c
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 a3af810cbc92364da8ef3f5de20099df868be4c3 189f5b8216ceab859225fc2d25affd318f7d6aeb M	heat/engine/stack.py

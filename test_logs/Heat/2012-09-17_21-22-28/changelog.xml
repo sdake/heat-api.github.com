@@ -1,0 +1,18 @@
+Changes in branch origin/master, between 85cd0f09743c42f4ba05cb8a8db7185486a48db5 and 86c76940078506aa5b6610511f6763a1b2267733
+commit f309e5190062f938e0fdcc14b433c87d858b52de
+tree 6a6cee9ca805f840d41777f65274911186520469
+parent 8df32a93d2efa66905ab85260ee03c6f2ba0b227
+author Steve Baker <sbaker@redhat.com> 1347844319 +1200
+committer Steve Baker <sbaker@redhat.com> 1347848126 +1200
+
+    Use stack_identity where it has changed from stack_name.
+    
+    This is causing my test_rpcapi to fail.
+    
+    Also, attempt to enable test_rpcapi by setting
+    @attr(tag=['unit', 'rpcapi'])
+    
+    Change-Id: Ie831ddddaccc4245a18e5bc754cbf413cea65741
+
+:100644 100644 6e0b672a61c11e871e3ea9dac0c13006480a7169 15b038f898b0cd32e83c4b3bff6674c5ebeb2270 M	heat/engine/rpcapi.py
+:100644 100644 2d02337e2104157049f06712ef38504eec4fad7c b3d40de08e871eb9022da25b82b6ba4c6e598b18 M	heat/tests/test_rpcapi.py

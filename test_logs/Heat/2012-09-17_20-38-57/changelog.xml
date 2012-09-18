@@ -1,0 +1,12 @@
+Changes in branch origin/master, between fbcf37f17a9c244e4e18f736f4fc0c701d952e2e and 85cd0f09743c42f4ba05cb8a8db7185486a48db5
+commit 2080423d2eaab34b804cdab6f8a24828979ba2b0
+tree 2a20a9d487b03fe818163afb37ed37a67dbd976d
+parent d81d3406ba375b1ad35d2330b0b1015e16436c8e
+author Steve Baker <sbaker@redhat.com> 1347847628 +1200
+committer Steve Baker <sbaker@redhat.com> 1347915110 +1200
+
+    Tests EIP resource creation and association.
+    
+    Change-Id: I3af9556930a447eeba6e3152d004ddae7999d638
+
+:000000 100644 0000000000000000000000000000000000000000 b226011cd1cc9ba68b80cb22015bb5bc47e023b2 A	heat/tests/test_eip.py

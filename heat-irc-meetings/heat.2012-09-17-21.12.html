@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#heat Meeting</title>
+<style type="text/css">
+/* This is for the .html in the HTML2 writer */
+body {
+    font-family: Helvetica, sans-serif;
+    font-size:14px;
+}
+h1 {
+    text-align: center;
+}
+a {
+    color:navy;
+    text-decoration: none;
+    border-bottom:1px dotted navy;
+}
+a:hover {
+    text-decoration:none;
+    border-bottom: 0;
+    color:#0000B9;
+}
+hr {
+    border: 1px solid #ccc;
+}
+/* The (nick, time) item pairs, and other body text things. */
+.details {
+    font-size: 12px;
+    font-weight:bold;
+}
+/* The 'AGREED:', 'IDEA', etc, prefix to lines. */
+.itemtype {
+    font-style: normal;    /* un-italics it */
+    font-weight: bold;
+}
+/* Example: change single item types.  Capitalized command name.
+/* .TOPIC  {  color:navy;  } */
+/* .AGREED {  color:lime;  } */
+
+</style>
+</head>
+
+<body>
+<h1>#heat Meeting</h1>
+<span class="details">
+Meeting started by sdake at 21:12:34 UTC
+(<a href="heat.2012-09-17-21.12.log.html">full logs</a>).</span>
+
+<br><br>
+
+
+
+<h3>Meeting summary</h3>
+<ol>
+<li><b class="TOPIC">rollcall</b> <span class="details">(<a href='heat.2012-09-17-21.12.log.html#l-6'>sdake</a>, 21:14:15)</span>
+<ol type="a">
+  <li><span class="INFO">present sdake, shardy, shadower, stevebake,
+    jpeeler</span> <span class="details">(<a
+    href='heat.2012-09-17-21.12.log.html#l-13'>sdake</a>,
+    21:15:32)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">status of v6 release</b> <span class="details">(<a href='heat.2012-09-17-21.12.log.html#l-14'>sdake</a>, 21:15:42)</span>
+<ol type="a">
+  <li><span class="INFO">slower here too</span> <span
+    class="details">(<a
+    href='heat.2012-09-17-21.12.log.html#l-17'>sdake</a>,
+    21:16:02)</span></li>
+  <li><a
+    href="https://github.com/heat-api/heat/issues?milestone=7&amp;state=open">https://github.com/heat-api/heat/issues?milestone=7&amp;state=open</a>
+    <span class="details">(<a
+    href='heat.2012-09-17-21.12.log.html#l-18'>sdake</a>,
+    21:16:33)</span></li>
+  <li><a
+    href="https://github.com/heat-api/heat/issues/240">https://github.com/heat-api/heat/issues/240</a>
+    <span class="details">(<a
+    href='heat.2012-09-17-21.12.log.html#l-20'>shadower</a>,
+    21:16:55)</span></li>
+  <li><span class="INFO">status of v6 release - 2 blocking bugs -
+    automated test system failing</span> <span class="details">(<a
+    href='heat.2012-09-17-21.12.log.html#l-68'>sdake</a>,
+    21:27:10)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">release notes for v6 review</b> <span class="details">(<a href='heat.2012-09-17-21.12.log.html#l-74'>sdake</a>, 21:27:52)</span>
+<ol type="a">
+  <li><a href="http://fpaste.org/ADBn/">http://fpaste.org/ADBn/</a>
+    <span class="details">(<a
+    href='heat.2012-09-17-21.12.log.html#l-76'>jpeeler</a>,
+    21:28:18)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">v7</b> <span class="details">(<a href='heat.2012-09-17-21.12.log.html#l-119'>sdake</a>, 21:37:10)</span>
+<ol type="a">
+  <li><a href="http://fpaste.org/GdZ6/">http://fpaste.org/GdZ6/</a>
+    <span class="details">(<a
+    href='heat.2012-09-17-21.12.log.html#l-128'>jpeeler</a>,
+    21:39:58)</span></li>
+  <li><a href="http://fpaste.org/xzeY/">http://fpaste.org/xzeY/</a>
+    <span class="details">(<a
+    href='heat.2012-09-17-21.12.log.html#l-144'>jpeeler</a>,
+    21:41:41)</span></li>
+  <li><span class="INFO">jpeeler's announcement release notes
+    approved</span> <span class="details">(<a
+    href='heat.2012-09-17-21.12.log.html#l-146'>sdake</a>,
+    21:42:00)</span></li>
+  <li><i class="itemtype">ACTION</i>: <span class="ACTION">shardy to
+    document using boto client on wiki
+    https://github.com/heat-api/heat/wiki</span> <span
+    class="details">(<a
+    href='heat.2012-09-17-21.12.log.html#l-163'>sdake</a>,
+    21:45:16)</span></li>
+  <li><a
+    href="https://github.com/heat-api/heat/wiki/Heat-CLI-Boto-migration-&amp;-API-rework">https://github.com/heat-api/heat/wiki/Heat-CLI-Boto-migration-&amp;-API-rework</a>
+    <span class="details">(<a
+    href='heat.2012-09-17-21.12.log.html#l-164'>shardy</a>,
+    21:45:22)</span></li>
+  <li><span class="INFO">major features of v7 - security improvements
+    for cloudwatch, cloudwatch split into separate binary so it can
+    scale at different rates then heat-engine, and os-specific
+    orchestration API</span> <span class="details">(<a
+    href='heat.2012-09-17-21.12.log.html#l-190'>sdake</a>,
+    21:51:00)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">open items</b> <span class="details">(<a href='heat.2012-09-17-21.12.log.html#l-195'>sdake</a>, 21:51:43)</span>
+<ol type="a">
+  <li><a
+    href="https://fedoraproject.org/wiki/Test_Day:2012-09-18_OpenStack">https://fedoraproject.org/wiki/Test_Day:2012-09-18_OpenStack</a>
+    <span class="details">(<a
+    href='heat.2012-09-17-21.12.log.html#l-209'>jpeeler</a>,
+    21:56:22)</span></li>
+</ol>
+</li>
+</ol>
+<br><br>
+
+
+
+<span class="details">
+Meeting ended at 21:59:51 UTC
+(<a href="heat.2012-09-17-21.12.log.html">full logs</a>).</span>
+
+<br><br>
+
+
+
+<h3>Action items</h3>
+<ol>
+  <li>shardy to document using boto client on wiki https://github.com/heat-api/heat/wiki</li>
+</ol>
+<br><br>
+
+
+
+<h3>Action items, by person</h3>
+<ol>
+  <li> shardy <ol>
+    <li>shardy to document using boto client on wiki https://github.com/heat-api/heat/wiki</li>
+  </ol></li>
+</ol>
+<br><br>
+
+
+
+<h3>People present (lines said)</h3>
+<ol>
+  <li>sdake (117)</li>
+  <li>shardy (31)</li>
+  <li>Slower (15)</li>
+  <li>jpeeler (15)</li>
+  <li>zaneb (14)</li>
+  <li>shadower (14)</li>
+  <li>stevebake (5)</li>
+  <li>mheat-bot (3)</li>
+</ol>
+<br><br>
+
+
+
+<span class="details">Generated by <a href="http://wiki.debian.org/MeetBot">MeetBot</a> 0.1.4.</span>
+</body></html>

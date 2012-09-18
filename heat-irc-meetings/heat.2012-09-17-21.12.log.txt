@@ -1,0 +1,214 @@
+21:12:34 <sdake> #startmeeting
+21:12:34 <mheat-bot> Meeting started Mon Sep 17 21:12:34 2012 UTC.  The chair is sdake. Information about MeetBot at http://wiki.debian.org/MeetBot.
+21:12:34 <mheat-bot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+21:13:15 <sdake> agenda rollcall, status of v6 release, v6 release notes review, v7, open items
+21:13:43 <sdake> any other?
+21:14:15 <sdake> #topic rollcall
+21:14:22 <sdake> sdake+
+21:14:28 <shardy> shardy here
+21:14:30 <shadower> shadower here
+21:14:37 <stevebake> stevebake here
+21:14:40 <jpeeler> jpeeler here
+21:15:04 <sdake> zaneb about?
+21:15:32 <sdake> #info present sdake, shardy, shadower, stevebake, jpeeler
+21:15:42 <sdake> #topic status of v6 release
+21:15:50 <sdake> we have two bugs open atm in the v6 milestone
+21:15:51 <Slower> sorry, here
+21:16:02 <sdake> #info slower here too
+21:16:33 <sdake> https://github.com/heat-api/heat/issues?milestone=7&state=open
+21:16:53 <shadower> sdake: this should be fixed in the diff I sent you
+21:16:55 <shadower> https://github.com/heat-api/heat/issues/240
+21:17:09 <zaneb> present
+21:17:13 <shadower> or at least patched
+21:17:25 <zaneb> that's better
+21:17:32 <sdake> who ws working on 213?
+21:17:38 <shardy> #213 IHA test nearly done, not sure I'll get it completely tested before sleep tonite
+21:17:52 <shardy> will try, otherwise first thing tomorrow
+21:18:34 <sdake> when is sleep
+21:18:57 <shardy> it's 10pm now, will try to get it done after mtg finishes
+21:19:17 <sdake> ok, well perhaps we should slip a day then
+21:19:29 <shardy> It's nearly there, just a long debug cycle because it launches two stacks
+21:19:37 <sdake> getting pretty late in the day, and i just took 200 from tomas
+21:19:56 <shardy> Or rather two instances
+21:20:16 <sdake> #240 is merged
+21:21:28 <sdake> i am in midst of testing 200 as well, think got 1-2 hrs to go
+21:21:47 <sdake> shardy in midst of testing 213, probably 1-2 hrs
+21:21:56 <sdake> that puts jpeeler at 8pm to start the release
+21:21:59 <sdake> too late for release imo :)
+21:22:22 <sdake> zaneb about?
+21:22:26 <zaneb> yes
+21:22:38 <sdake> how is autotesting going?
+21:22:41 <sdake> wrapped up?
+21:23:08 <zaneb> successfully testing the Getting Started guide on the server
+21:23:15 <sdake> nice11
+21:23:17 <sdake> !!
+21:23:25 <zaneb> setup for the functional tests is currently broken
+21:23:38 <zaneb> missing sudo is the problem there, I think
+21:24:05 <zaneb> once I fix that, we'll see how the functional tests go as well
+21:24:23 <sdake> ok, rather then rush tings, i propose we slip a day and make a strong effort to be done in about 16 hrs (when jeff wakes up)
+21:24:38 <zaneb> +1
+21:24:38 <sdake> vote - slip day to resolve remaining few issues
+21:24:40 <sdake> +1
+21:24:43 <shardy> +1
+21:24:49 <Slower> +1
+21:24:51 <stevebake> +1
+21:25:00 <jpeeler> +1
+21:25:12 <shadower> +1
+21:25:18 <sdake> ok good enuf for me, so plan then is for jpeeler to do what needs to be done tuesday and announce wednesday 10am
+21:25:38 <sdake> if your assigned on an issue that is in the open list, pls try to get it resolved
+21:25:39 <jpeeler> actually
+21:25:45 <jpeeler> tomorrow is test day
+21:25:50 <jpeeler> is that going to be a problem?
+21:25:51 <sdake> zaneb you should probably try to get some rest ;)
+21:26:02 <sdake> some of us wont be able to participate that are releasing heat
+21:26:14 <sdake> we will have to see who is impacted
+21:26:36 <zaneb> I raised a bug yesterday, does that count?
+21:26:42 <sdake> lol
+21:27:08 <shadower> I can take over any unfinished work from the US guys in UTC morning
+21:27:10 <sdake> #info status of v6 release - 2 blocking bugs - automated test system failing
+21:27:11 <shadower> Tuesday
+21:27:17 <sdake> sounds good shadower
+21:27:20 <Slower> FAIL
+21:27:27 <Slower> :)
+21:27:38 <Slower> sorry
+21:27:52 <sdake> #topic release notes for v6 review
+21:28:10 <sdake> jpeeler can you paste ure notes
+21:28:18 <jpeeler> http://fpaste.org/ADBn/
+21:29:00 <jpeeler> as shardy pointed out, i was leaning more heavily towards commits. but i can prune if necessary
+21:29:20 <sdake> what does delete as of
+21:29:32 <sdake> (JPEELER delete: as of d81d3406ba375b1ad35d2330b0b1015e16436c8e)
+21:29:35 <sdake> what does that mean
+21:29:37 <jpeeler> sorry, all SHAs and JPEELER will be removed
+21:29:42 <sdake> ahh ok
+21:29:47 <sdake> i think what you have looks really nice
+21:30:03 <Slower> yeah it looks good
+21:30:09 <shadower> I like it
+21:30:09 <sdake> one thing I would chang etho, is this is not our initial cloudwatch api implementation
+21:30:13 <sdake> its like our second go at it
+21:30:16 <Slower> so you are going to remove the git hashes?
+21:30:23 <shardy> looks good
+21:30:33 <zaneb> might want to mention that we have renamed heat-api to heat-api-cfn - that might be a source of confusion
+21:30:36 <shardy> sdake: We've never had an AWS compatible cloudwatch API before
+21:30:53 <sdake> i see
+21:31:02 <sdake> so we had cloudwatch just not complatible ;)
+21:31:12 <shardy> only something called cloudwatch in the engine, which collected some metrics and alarms
+21:31:22 <Slower> I think that's been a work in progress for some time now..
+21:31:26 <shardy> maybe I'm nitpicking, but the API is a new feature ;)
+21:31:30 <sdake> I'd still say instead of Initial "Major improvements to CloudWatch API"
+21:31:36 <shardy> ok, cool
+21:31:42 <Slower> yeah agreed
+21:31:53 <Slower> or worked to improve compatibility of cloudwatch api
+21:32:26 <jpeeler> more specific, i like that
+21:32:51 <sdake> well, shardy makes decision he wrote most of code
+21:33:10 <sdake> and yes, zaneb is right, should mention to rename of heat-api to heat-api-cfn to make way for heat-api-os
+21:33:50 <zaneb> maybe the keystone change (heat->orchestration) too
+21:33:52 <sdake> shardy what do you want the text to be
+21:33:59 <sdake> ya mention that keystone change
+21:33:59 <zaneb> that has tripped up a couple of people on IRC
+21:34:00 <shardy> sdake: I don't mind, something mentioning cloudwatch and API would be good ;)
+21:34:04 <sdake> that is sure to catch someone offguard
+21:34:49 <shardy> "Improved cloudwatch API implementation"
+21:35:06 <sdake> need some useless adjectives in there tho, like "Major" :)
+21:35:16 <shardy> lol
+21:35:38 <sdake> "in addition to major improvements to CloudWatch"
+21:35:42 <sdake> ike 3
+21:35:44 <sdake> line 3
+21:36:20 <sdake> jpeeler after you digest all that post a new rev in irc
+21:36:23 <sdake> any other comments from folks?
+21:36:28 <sdake> anyone not had a chance to review?
+21:37:10 <sdake> #topic v7
+21:37:20 <sdake> heat has had a really strong opening as a project since march
+21:37:31 <sdake> we have really produced alot of great work
+21:37:48 <sdake> the conclusion of the opening is openstack summit, which occurs on oct 16
+21:38:05 <sdake> as such, I'd recommend we target a release for the 9th
+21:38:34 <sdake> I'd like to see the os specific orchestratoin API sorted out
+21:38:55 <sdake> and I'd like to see cloudwatch improved, especially around security
+21:39:07 <sdake> and if possible running as a separate binary so it can  be scaled separately
+21:39:21 <sdake> what do other folks want
+21:39:58 <jpeeler> http://fpaste.org/GdZ6/
+21:40:38 <sdake> ok real quick, lets vote on jpeeler's release notes
+21:40:43 <sdake> vote +1/-1
+21:40:43 <sdake> +1
+21:40:45 <jpeeler> forgot something
+21:40:56 <jpeeler> heat->orchestration
+21:40:59 <sdake> right
+21:41:14 <zaneb> when that's fixed +1
+21:41:19 <zaneb> nice work jpeeler
+21:41:28 <sdake> ya looks really spif jpeeler
+21:41:30 <shadower> +1
+21:41:30 <sdake> i like
+21:41:32 <Slower> yeah
+21:41:33 <Slower> +1
+21:41:35 <stevebake> +1
+21:41:40 <shardy> +1
+21:41:41 <jpeeler> http://fpaste.org/xzeY/
+21:41:48 <Slower> go jpeeler go!
+21:42:00 <sdake> #info jpeeler's announcement release notes approved
+21:42:13 <sdake> ok now back to v7 :)
+21:42:38 <sdake> anyone have other suggestions for work for v7?
+21:42:59 <sdake> objective to have a nice solid code base for eval for incubation
+21:43:22 <shadower> fully boto compatibility?
+21:43:28 <shadower> though that's not entirely on us
+21:43:37 <shardy> shadower: we already have that?
+21:43:39 <sdake> i think shardy is busy ;)
+21:43:52 <shardy> shadower: what do you think we are missing?
+21:43:53 <shadower> ah, I thought there were some missing pieces still
+21:44:05 <sdake> i think we haven't  tried it
+21:44:08 <sdake> maybe docs are missing?
+21:44:10 <shardy> we have heat-boto which is 100% boto based, and a boto_client wrapper
+21:44:12 <sdake> (I haven't tried it)
+21:44:27 <shadower> shardy: I didn't look into lately, my bad assumption
+21:44:28 <shardy> also the new heat-watch client is boto based on the new cloudwatch API
+21:44:49 <sdake> yar no using boto shardy
+21:45:16 <sdake> #action shardy to document using boto client on wiki https://github.com/heat-api/heat/wiki
+21:45:22 <shardy> https://github.com/heat-api/heat/wiki/Heat-CLI-Boto-migration-&-API-rework
+21:45:45 <sdake> sweet so some cut and paste ;)
+21:45:49 <shardy> I can add more details, but basically "heat-boto" is exactly the same as bin/heat
+21:46:06 <shardy> it is infact a symlink, it just imports a different client library wrapper
+21:46:24 <shardy> I'll add some more details to the wiki about the wrappers etc
+21:46:28 <sdake> cool
+21:46:33 <sdake> put in the "using" section
+21:46:41 <sdake> since ppl dont read roadmap to learn to use stuff generally
+21:46:57 <shardy> I removed all the previous duplication etc, so I think it's pretty much all done
+21:47:01 <shardy> Ok, will do
+21:47:08 <sdake> shardy do you think what i outlined re cloudwatch is possible by 9th
+21:47:18 <shadower> shardy: this is really cool
+21:47:24 <shardy> sdake: Yes, probably
+21:47:44 <sdake> zaneb already gave me a probably on the api ;)
+21:47:45 <shardy> I'm not 100% clear on the architectural changes for scalability, but should all be do-able
+21:47:57 <sdake> basically make it a separate binary
+21:48:04 <sdake> we can chat more later
+21:48:14 <shardy> Yeah, break out the existing RPC stuff, should be fairly easy
+21:48:16 <sdake> atm heat-engine scales at one rate
+21:48:27 <sdake> but if you have cloudwatch, you need to launch more heat-engine
+21:48:35 <sdake> you may only need to relaly launch more heat-cloudwatch
+21:49:05 <sdake> cool
+21:49:12 <sdake> ok well there ar ea bunch of bugs outstanding still
+21:49:17 <sdake> would be nice if ppl could pick those off
+21:49:25 <sdake> i think we have a db rewrite in our future
+21:50:37 <Slower> that seems to happen every so often..
+21:51:00 <sdake> #info major features of v7 - security improvements for cloudwatch, cloudwatch split into separate binary so it can scale at different rates then heat-engine, and os-specific orchestration API
+21:51:32 <sdake> #topic open itemsx
+21:51:36 <sdake> #undo
+21:51:36 <mheat-bot> Removing item from minutes: <MeetBot.items.Topic object at 0x1e63390>
+21:51:40 <sdake> #optic open items
+21:51:43 <sdake> #topic open items
+21:51:44 <sdake> grr
+21:51:54 <sdake> ok we have 22 mins left
+21:52:03 <sdake> any open issues folks want to discuss
+21:52:30 <shardy> Has anyone tried F18+Folsom+heat yet?
+21:52:47 <shardy> we could start a wiki page documenting any issues resulting from testing tomorrow
+21:53:20 <sdake> ideally objective of tomorrow is to focus on testing openstack
+21:53:28 <sdake> we should probably have a separate test day perhaps next week
+21:53:40 <sdake> where we test our f18 updated binaries running v6
+21:54:46 <sdake> objective of tomorrow's openstack test day that is
+21:55:07 <sdake> if your working on heat for release, prioritize ahead of openstack test day plz
+21:55:20 <jpeeler> yeah i'm going to go ahead and remove myself off the wiki
+21:56:05 <sdake> ya should only affect jpeeler and maybe a few others
+21:56:08 <stevebake> Can someone post a url?
+21:56:22 <jpeeler> https://fedoraproject.org/wiki/Test_Day:2012-09-18_OpenStack
+21:56:54 <sdake> yar add yourself to the wiki if you plan to participate
+21:58:07 <stevebake> ok
+21:58:21 * Slower has to do that too
+21:59:09 <sdake> ok 30 seconds anything else?
+21:59:51 <sdake> #endmeeting

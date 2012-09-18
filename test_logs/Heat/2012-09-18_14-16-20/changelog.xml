@@ -1,0 +1,114 @@
+Changes in branch origin/master, between 84c04e38731d2d49e55f754e5ffeeb117c8b74f2 and cd47a395afce13d060434540f1900fec9753d631
+commit fa9905d87a51fb1ff8bf311c31ba1621c67a9046
+tree 1292ec3f3ee19a98b1b39a3e5310bec4f69bcbf5
+parent 2af388ae9c6fdad8972f036b5bcdeb79ca05a8df
+author Steven Dake <sdake@redhat.com> 1347986986 -0700
+committer Steven Dake <sdake@redhat.com> 1347987029 -0700
+
+    Provide full URL address in AutoScalingMultiAZSample.template
+    
+    Fixes issue #242
+    
+    Change-Id: Iafcf32f22f7a59ce08473981c7ff332bb1eb47f8
+    Signed-off-by: Steven Dake <sdake@redhat.com>
+
+:100644 100644 1ad5fd80214d7ca385c3e4c849a8138f3e844812 3cef664b737ed9e7d3f863276b8f6889895f4ea2 M	templates/AutoScalingMultiAZSample.template
+
+commit 66aa7c33692399c96834915b99ad805b99b7f670
+tree 945d5f0097ce6a7c6a7bc13878ec5645bdedcd5f
+parent 3a850dfe3287b82fc0850ef9056a5a9de6cfd6d9
+author Zane Bitter <zbitter@redhat.com> 1347983991 +0200
+committer Zane Bitter <zbitter@redhat.com> 1347986647 +0200
+
+    Tag functional tests with the JEOS required
+    
+    Change-Id: Ie0204d5382d402058b5538884d42512e724e94db
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 cf4ba9874ba0cdae291b33685fc83489272839d6 42ce50be652bca226988bf9fae891294a12d9623 M	heat/tests/functional/test_CFN_API_Actions.py
+:100644 100644 6a0cfcc26a5a9cd7ce457dd2a79dbf51f8faeeff b8d0a8f0a59313c470c433e7d8cc8c5de169dde1 M	heat/tests/functional/test_HAProxy_Single_Instance.py
+:100644 100644 bf06fb8aac9c7fded77047cb2c9a37c03ca55627 f48fb149d1ab43d88bc643e597b4c775c5597e36 M	heat/tests/functional/test_OpenShift_Prebuilt_JEOS.py
+:100644 100644 8996dc18c3cf29a3ee06cc3bd0105a8126d63d75 ca877289ead1eb3edd66f880897338c47e012e49 M	heat/tests/functional/test_WordPress_2_Instances_With_EBS.py
+:100644 100644 0da6adccd3c883959d901eead8ab2cbe5d1071c4 7b9e179d8e601fb8eaa0bb8602c16fc8b97b8c37 M	heat/tests/functional/test_WordPress_2_Instances_With_EBS_EIP.py
+:100644 100644 d277c2e6572dbcbc2168a155f9fa6c938a021080 8cb716fbbabd496a801a0d2b9e82da83076f310d M	heat/tests/functional/test_WordPress_2_Intances.py
+:100644 100644 041eb0899ed7fc8adca75b4be0b4c262d5e0c1ab 1ba2e1118cb6fb13713232caf691692b0ce23855 M	heat/tests/functional/test_WordPress_Composed_Instances.py
+:100644 100644 d938427283fc2c96c1b6dc5a7a3c1e4385f3263f c82702d76426909feb9f0fcff47902891c4ec37f M	heat/tests/functional/test_WordPress_Single_Instance.py
+:100644 100644 1327e4dc82892a1757f6527fe9b17a69dd7149b7 32124979344d24ab9f726ffedae86f3c7e1f300d M	heat/tests/functional/test_WordPress_Single_Instance_Boto.py
+:100644 100644 79d67921dcd9a91d50919c865f5903968c59d57d 52318ddf3b81e91fd0fb36822dad1339cf8cf51f M	heat/tests/functional/test_WordPress_Single_Instance_With_EBS.py
+:100644 100644 1f6bb50389a04f87c889db6c0155ec574f500ce6 c61db81d46e655be9fc89c43ede7a53380091863 M	heat/tests/functional/test_WordPress_Single_Instance_With_EBS_EIP.py
+:100644 100644 00a55d2631f3b402c2070c764085566a47af8808 e6e18dc255ebfe14c37bdaaceb202f0858bfe3f5 M	heat/tests/functional/test_WordPress_Single_Instance_With_EIP.py
+:100644 100644 408c52d8315c1ecb6ea6071af90af98928955af8 e2412b86f7ca18accdba80055a26d895b52a9beb M	heat/tests/functional/test_WordPress_Single_Instance_With_HA.py
+:100644 100644 2f561316d49f1ece5a9f0d51b6c30d3ba53943ad e4525d5cf340e753686e6964ba6ed7727ee3f2b8 M	heat/tests/functional/test_WordPress_Single_Instance_With_IHA.py
+:100644 100644 44a042f84237722b9f5c26717ee437547d1e8e73 005562d5ee5813d88b6de3ffbc782b2caddd716f M	heat/tests/functional/test_WordPress_With_LB.py
+:100644 100644 9845cbc542cbc037073314bde8f2045f0ad46f64 4ef14913b2443369ca746d3b5d8d4d6084a020ed M	heat/tests/functional/test_WordPress_With_RDS.py
+
+commit 3a850dfe3287b82fc0850ef9056a5a9de6cfd6d9
+tree f2a86d0e99287ce679959f632c2d94be13007981
+parent 2af388ae9c6fdad8972f036b5bcdeb79ca05a8df
+author Zane Bitter <zbitter@redhat.com> 1347984116 +0200
+committer Zane Bitter <zbitter@redhat.com> 1347986633 +0200
+
+    Make automated scripts quieter
+    
+    This eliminates a lot of not-very-interesting stuff from the test logs.
+    
+    Change-Id: I20bd90f8875645ef02ce3423a555c523b62ca4e3
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 d5069a5ae90d5c953c3b289fea85692dbbbece8f 441f2a5972787dc9ddd1446ee8b9ba39b218881f M	docs/GettingStarted.rst
+:100755 100755 251b9501ed7e324c4d8a56c89f75cc785f4eba86 b2dd5f6e86b314d6f4742d94da85a445e8c58e69 M	tools/openstack
+
+commit 77a31d31b226e081b6dc9a1681f61aeb22a0926f
+tree 2e829cab539b5293e83633547d0f05cb54118556
+parent 2af388ae9c6fdad8972f036b5bcdeb79ca05a8df
+author Steven Dake <sdake@redhat.com> 1347929372 -0700
+committer Steven Dake <sdake@redhat.com> 1347984564 -0700
+
+    Implement test_AutoScalingMultiAZSample.py
+    
+    Fixes issue #200
+    
+    Change-Id: Iaea2d01a9659c703986d009fb9c0605ba6d0279f
+    Signed-off-by: Steven Dake <sdake@redhat.com>
+
+:000000 100644 0000000000000000000000000000000000000000 2bb644b6b3fd64c39d7155c8dd6a62b3fb0f13ea A	heat/tests/functional/test_AutoScalingMultiAZSample.py
+:100644 100644 e104c1bd96d22b969a3c38699879d82504026c8d 1dd22728b47b0db15228b2123cb6b3a6e5a277ff M	heat/tests/functional/util.py
+
+commit 15e02a245e719d440d0152e0ea264e362536fb3b
+tree 34665146fca98e678b472ab12809fcef924e7489
+parent 84c04e38731d2d49e55f754e5ffeeb117c8b74f2
+author Steven Hardy <shardy@redhat.com> 1347980344 +0100
+committer Steven Hardy <shardy@redhat.com> 1347982367 +0100
+
+    heat engine : loadbalancer add missing calculate_properties()
+    
+    Add calculate_properties() call to ensure the user defined parameter
+    values are correctly updated in self.parameters
+    
+    Ref #241
+    
+    Change-Id: I7f4ec0ac546a5599359b6aa2e713ea1b6051ff34
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 fab1e67f48ab8f783eccd11eeab2ad595c5cded4 b8418f6d20e374880a557fdc76d39d1e1733101f M	heat/engine/loadbalancer.py
+
+commit 28b4d3e37ccf1adffa0d3327736964d03dc6c472
+tree ebf234f2d143fa0e63fee4034451c62ae5880761
+parent e32feeb448b388d31ac27e76e5bbad82b0e2d112
+author Steven Dake <sdake@redhat.com> 1347824402 -0700
+committer Steven Dake <sdake@redhat.com> 1347909184 -0700
+
+    Remove unnecesssary nova constructor calls in each manager API call path
+    
+    auth.authenticate() creates a nova client object.  This nova client
+    object is never reused introducing a 40msec penalty for each API call.
+    The heat-api-cfn module authenticates incoming requests.  In a
+    properly secured environment (one where RPC is secured), the
+    auth.authenticate() calls serve no purpose.
+    
+    Change-Id: I847af259f521a32a7bf3fda0ce3f72735f762a0c
+    Signed-off-by: Steven Dake <sdake@redhat.com>
+
+:100644 100644 3712d11cbd8d501289c1e7a47de580362105d1d1 2a4814e617664f4a7e12f9eab50f69030db3c3e4 M	heat/engine/auth.py
+:100644 100644 73c0e544906471a2bef1977759af62f7eef3edd8 f7da9d9f229ea84c7b26d693f9388fb1865ac8be M	heat/engine/manager.py
+:100644 100644 75564ab0b2a237a4fb3d1e6986ba76df0f959da2 66d50accf92a556e58f84b66b4e010df533cdab2 M	heat/tests/test_engine_manager.py

@@ -1,0 +1,14 @@
+Changes in branch origin/master, between cd47a395afce13d060434540f1900fec9753d631 and 52f5d7c7fed085d695089cd8fbba8b70c7142964
+commit 52f5d7c7fed085d695089cd8fbba8b70c7142964
+tree 47e9d879fa8a6da3ad9d734c9a7499d7f157e17a
+parent cd47a395afce13d060434540f1900fec9753d631
+author Jeff Peeler <jpeeler@redhat.com> 1348021199 -0400
+committer Jeff Peeler <jpeeler@redhat.com> 1348024959 -0400
+
+    Look for instance name that matches template
+    
+    Change-Id: I8963b36fa4c4530cfec9c388c5758812d7d1bddc
+    Signed-off-by: Jeff Peeler <jpeeler@redhat.com>
+
+:100644 100644 c61db81d46e655be9fc89c43ede7a53380091863 9a1d2fa7404d643f06d9bc889f813b87356bd98d M	heat/tests/functional/test_WordPress_Single_Instance_With_EBS_EIP.py
+:100644 100644 e6e18dc255ebfe14c37bdaaceb202f0858bfe3f5 0998895a13a08dc8248c6430cf5493bb8d761544 M	heat/tests/functional/test_WordPress_Single_Instance_With_EIP.py

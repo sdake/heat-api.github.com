@@ -1,0 +1,13 @@
+Changes in branch origin/master, between 722da7e22c2c9263fd3d4d5a8dd2c0c88d8fc4b2 and ed64506fcf4df813bef01f047fe64f5c6276f116
+commit ed64506fcf4df813bef01f047fe64f5c6276f116
+tree 69c8e93f894cc958dbdabe31be4feadf4634752b
+parent 722da7e22c2c9263fd3d4d5a8dd2c0c88d8fc4b2
+author Jeff Peeler <jpeeler@redhat.com> 1348080997 -0400
+committer Jeff Peeler <jpeeler@redhat.com> 1348081136 -0400
+
+    Changed embedded loadbalancer template to use F17
+    
+    Change-Id: I7d06045198add18b020736c9e019e848592c7d60
+    Signed-off-by: Jeff Peeler <jpeeler@redhat.com>
+
+:100644 100644 b8418f6d20e374880a557fdc76d39d1e1733101f 28ba01f45d133394487862532747139ad594d3c8 M	heat/engine/loadbalancer.py

@@ -1,0 +1,13 @@
+Changes in branch origin/master, between 09f2744c8e8eb9e31b91176acaa63957163b5be0 and 89a3cf01e8211df96a0e58d31d73746c1d8b6d84
+commit ed282f09ccb1ebbe56f5bfd1366099424633bd0d
+tree 9b08f8170200ecd8a23f0ad62bf4f9f8729f3c45
+parent 52f5d7c7fed085d695089cd8fbba8b70c7142964
+author Jeff Peeler <jpeeler@redhat.com> 1348029697 -0400
+committer Jeff Peeler <jpeeler@redhat.com> 1348030092 -0400
+
+    Fix scoping issue
+    
+    Change-Id: I03ed3e503b7888591dd10c647296792f24679743
+    Signed-off-by: Jeff Peeler <jpeeler@redhat.com>
+
+:100644 100644 7b9e179d8e601fb8eaa0bb8602c16fc8b97b8c37 855ba6c83888af0859bc05ee2fe46f5bc889784d M	heat/tests/functional/test_WordPress_2_Instances_With_EBS_EIP.py

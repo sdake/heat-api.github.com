@@ -1,0 +1,21 @@
+Changes in branch origin/master, between 52f5d7c7fed085d695089cd8fbba8b70c7142964 and 73a87433678f04b99a566340934b2f3f2557c8bc
+commit 73a87433678f04b99a566340934b2f3f2557c8bc
+tree fe9ba1845f80654467d3ebba273fdc59be3ff9e6
+parent 52f5d7c7fed085d695089cd8fbba8b70c7142964
+author Steven Hardy <shardy@redhat.com> 1348051709 +0100
+committer Steven Hardy <shardy@redhat.com> 1348051709 +0100
+
+    heat : ensure DB user creds aren't written decrypted
+    
+    Return the decrypted user_creds record as a dict copy
+    and do not decrypt the credentials direct into the
+    sqlalchemy model object, or we can inadvertently
+    end up committing decrypted credentials to the DB
+    
+    Ref #218
+    
+    Change-Id: I0df9afcb271804557c94cdf0c913f7a26affdc83
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 9f53a979b05f53490967f5c5e369cb61dc85433d e6f106a41c07816a6b28396aa08267aca09a8c43 M	heat/db/sqlalchemy/api.py
+:100644 100644 f7da9d9f229ea84c7b26d693f9388fb1865ac8be 6bc31423e6ed32b56d6dda6bc2201777457517b1 M	heat/engine/manager.py

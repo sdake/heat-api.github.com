@@ -1,0 +1,13 @@
+Changes in branch origin/master, between 73a87433678f04b99a566340934b2f3f2557c8bc and 09f2744c8e8eb9e31b91176acaa63957163b5be0
+commit 9c2bd6216f7cfb1215dadcda3a6e15795006fb50
+tree 9bea6cb7334f0bb5ff4cd159aee3b6699a325942
+parent 52f5d7c7fed085d695089cd8fbba8b70c7142964
+author Jeff Peeler <jpeeler@redhat.com> 1348027272 -0400
+committer Jeff Peeler <jpeeler@redhat.com> 1348028335 -0400
+
+    Make instance match expected name
+    
+    Change-Id: Ic94cf389306ac45679601bcdcfbef98bc83e2453
+    Signed-off-by: Jeff Peeler <jpeeler@redhat.com>
+
+:100644 100644 1ba2e1118cb6fb13713232caf691692b0ce23855 3a9ee886f59a7ffba855d4b8530b33db1c9e2cc0 M	heat/tests/functional/test_WordPress_Composed_Instances.py

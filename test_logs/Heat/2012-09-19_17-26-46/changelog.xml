@@ -1,0 +1,13 @@
+Changes in branch origin/master, between ed64506fcf4df813bef01f047fe64f5c6276f116 and a1ff5662bfa1e3e3c8f53d47ac6b6d18f00d556c
+commit a1ff5662bfa1e3e3c8f53d47ac6b6d18f00d556c
+tree 6c0f14070c434d5133d6d19101b2673cf6f0645f
+parent ed64506fcf4df813bef01f047fe64f5c6276f116
+author Jeff Peeler <jpeeler@redhat.com> 1348084586 -0400
+committer Jeff Peeler <jpeeler@redhat.com> 1348084586 -0400
+
+    Update another embedded template to F17
+    
+    Change-Id: I4244c98f72bd38afe6d6cd0c7a64aa69b79b578d
+    Signed-off-by: Jeff Peeler <jpeeler@redhat.com>
+
+:100644 100644 54bcb6ccc8aa2e058fa914d198278ba96ff9b065 f9a2d36ee37ca94596b0bf53ddcf55cc47279dbc M	heat/engine/dbinstance.py

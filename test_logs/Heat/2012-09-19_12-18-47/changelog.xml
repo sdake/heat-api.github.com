@@ -1,0 +1,18 @@
+Changes in branch origin/master, between 89a3cf01e8211df96a0e58d31d73746c1d8b6d84 and 722da7e22c2c9263fd3d4d5a8dd2c0c88d8fc4b2
+commit 722da7e22c2c9263fd3d4d5a8dd2c0c88d8fc4b2
+tree 2a262fac695a534a30d412a46ad964bd93e30980
+parent 89a3cf01e8211df96a0e58d31d73746c1d8b6d84
+author Steven Hardy <shardy@redhat.com> 1348067572 +0100
+committer Steven Hardy <shardy@redhat.com> 1348069079 +0100
+
+    heat API : fix wrongly named key for stack events
+    
+    We return a key of "ResourceStatusData", should be "ResourceStatusReason"
+    
+    Fixes #244
+    
+    Change-Id: I692825b0c800815777e9f73bd7060a108e16e45a
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 7e280efdc44da10120adf3718ab4146a9eb81ba7 b97055f46b64a31b2f689bb4611365714b787ded M	heat/api/v1/stacks.py
+:100644 100644 7b66e9a7c85d55cade7f5c79e9dd6b3def633c51 9dab36f29b4d953a1de08a7cfdc3b3cfffcec647 M	heat/tests/test_api_cfn_v1.py

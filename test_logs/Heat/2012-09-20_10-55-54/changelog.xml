@@ -1,0 +1,13 @@
+Changes in branch origin/master, between a974326cd7b72518178fa077b842b96867515aea and 2652832ef3594329fd0afb66ec1c5d8836987c18
+commit 2652832ef3594329fd0afb66ec1c5d8836987c18
+tree 4d2472d6eb9630345cdae71daf05ad2a2db5f7c0
+parent a974326cd7b72518178fa077b842b96867515aea
+author Zane Bitter <zbitter@redhat.com> 1348132493 +0200
+committer Zane Bitter <zbitter@redhat.com> 1348150246 +0200
+
+    Don't fail to delete if VolumeAttachment not found
+    
+    Change-Id: If12b7ebbee2d71e39e49152d971c11f55badca18
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 bd78bf2cb0db1d4eba551805c5e2fd579c1ee930 6a8e399f2c8db8597f754bec05c6af0f2520b498 M	heat/engine/volume.py

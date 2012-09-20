@@ -1,28 +1,25 @@
-Triggered by Gerrit: https://review.openstack.org/13353
+Triggered by Gerrit: https://review.openstack.org/13354
 Building in workspace /var/lib/jenkins/jobs/Heat/workspace
 Checkout:workspace / /var/lib/jenkins/jobs/Heat/workspace - hudson.remoting.LocalChannel@85c3715
 Using strategy: Default
-Last Built Revision: Revision 4cb19b8f437b6cdd4effed274bca51aa088787ff (origin/master)
+Last Built Revision: Revision 4dab6823640d51ab01d191194c98d5fcf1a46e35 (origin/master)
 Wiping out workspace first.
 Cloning the remote Git repository
 Cloning repository https://review.openstack.org/heat-api/heat
 git --version
 git version 1.7.11.2
 Fetching upstream changes from https://review.openstack.org/heat-api/heat
-Commencing build of Revision 4dab6823640d51ab01d191194c98d5fcf1a46e35 (origin/master)
-Checking out Revision 4dab6823640d51ab01d191194c98d5fcf1a46e35 (origin/master)
-[workspace] $ /bin/sh -xe /tmp/hudson1456162490406730690.sh
+Commencing build of Revision a974326cd7b72518178fa077b842b96867515aea (origin/master)
+Checking out Revision a974326cd7b72518178fa077b842b96867515aea (origin/master)
+[workspace] $ /bin/sh -xe /tmp/hudson5333435206148688645.sh
 + /var/lib/jenkins/heat-integration/remote-test.sh
 Deleting mrg-04.mpc.lab.eng.bos.redhat.com from SSH known hosts file...
 Attempting to provision machine mrg-04.mpc.lab.eng.bos.redhat.com with Beaker
 Distro Id:  58551
-Waiting for host networking...
-Waiting for host networking...
-Waiting for host networking...
-/var/lib/jenkins/heat-integration/remote-functions.sh: line 3:  8410 Terminated              sleep 5
-Build was aborted
+XML-RPC fault: <class 'bkr.common.bexceptions.BX'>:u'User host/mrg-05.mpc.lab.eng.bos.redhat.com has already reserved system mrg-04.mpc.lab.eng.bos.redhat.com'
+Build step 'Execute shell' marked build as failure
 [PostBuildScript] - Execution post build scripts.
-[workspace] $ /bin/sh -xe /tmp/hudson1279700715490495425.sh
+[workspace] $ /bin/sh -xe /tmp/hudson7116942816188847785.sh
 + /var/lib/jenkins/heat-integration/log-publish.sh
 ~/heat-integration/heat-api.github.com ~/heat-integration
 Current branch master is up to date.
@@ -91,13 +88,7 @@ skipping non-regular file "63"
 skipping non-regular file "64"
 skipping non-regular file "65"
 skipping non-regular file "66"
+skipping non-regular file "67"
 skipping non-regular file "7"
 skipping non-regular file "8"
 skipping non-regular file "9"
-[master e783c2b] Sync jenkins-Heat-66 build logs
- 4 files changed, 304 insertions(+)
- create mode 100644 test_logs/Heat/2012-09-20_04-09-36/build.xml
- create mode 100644 test_logs/Heat/2012-09-20_10-18-40/changelog.xml
- create mode 100644 test_logs/Heat/2012-09-20_10-18-40/log
-~/heat-integration
-Finished: ABORTED

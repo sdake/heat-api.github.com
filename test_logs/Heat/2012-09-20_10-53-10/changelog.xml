@@ -1,0 +1,33 @@
+Changes in branch origin/master, between 4dab6823640d51ab01d191194c98d5fcf1a46e35 and a974326cd7b72518178fa077b842b96867515aea
+commit a974326cd7b72518178fa077b842b96867515aea
+tree c251dab899e6f250ea84c6a2bcfc36c8112d93e2
+parent 4dab6823640d51ab01d191194c98d5fcf1a46e35
+author Zane Bitter <zbitter@redhat.com> 1348132493 +0200
+committer Zane Bitter <zbitter@redhat.com> 1348149444 +0200
+
+    Improve debugging ability for functional tests
+    
+    Use proper assert*() functions so that we can get some information out of
+    any failed tests.
+    
+    Change-Id: I92d937015562371c2b39bbcf5b9cbd2b6ca19d52
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 2bb644b6b3fd64c39d7155c8dd6a62b3fb0f13ea 397967f9e54b1ebe8a0d0f4d077a7d2b464f83d8 M	heat/tests/functional/test_AutoScalingMultiAZSample.py
+:100644 100644 86f95fa6bff2f1efe5ca8aa14b6b03b7ce5cfbe6 7e2fa64e694b9860306f44f2a94ddbe7b822f4c6 M	heat/tests/functional/test_CFN_API_Actions.py
+:100644 100644 b8d0a8f0a59313c470c433e7d8cc8c5de169dde1 6dd2ab3523bbc5b4fc6b9181f4afe73b1d35995f M	heat/tests/functional/test_HAProxy_Single_Instance.py
+:100644 100644 f48fb149d1ab43d88bc643e597b4c775c5597e36 58d8af6aad8a7ffea30a775a05ed3c29fbe82084 M	heat/tests/functional/test_OpenShift_Prebuilt_JEOS.py
+:100644 100644 8cb716fbbabd496a801a0d2b9e82da83076f310d cf2ed8d4443afc3a3c81f27880e3135d815f21de M	heat/tests/functional/test_WordPress_2_Instances.py
+:100644 100644 ca877289ead1eb3edd66f880897338c47e012e49 9e369ef88ba4332383f83455aae1583ed742aa14 M	heat/tests/functional/test_WordPress_2_Instances_With_EBS.py
+:100644 100644 855ba6c83888af0859bc05ee2fe46f5bc889784d 29ed0fba09f776802e37ccd2e39f75f11776e375 M	heat/tests/functional/test_WordPress_2_Instances_With_EBS_EIP.py
+:100644 100644 3a9ee886f59a7ffba855d4b8530b33db1c9e2cc0 606649bd89518df0292c5b87f1d89800c5b8db9d M	heat/tests/functional/test_WordPress_Composed_Instances.py
+:100644 100644 c82702d76426909feb9f0fcff47902891c4ec37f 375a57cddd6f3c377e1f4dea7d9645cd77fbfc08 M	heat/tests/functional/test_WordPress_Single_Instance.py
+:100644 100644 32124979344d24ab9f726ffedae86f3c7e1f300d f0350c8a9d756cb7235835ed61e8cb7354276831 M	heat/tests/functional/test_WordPress_Single_Instance_Boto.py
+:100644 100644 52318ddf3b81e91fd0fb36822dad1339cf8cf51f 29db9786e493503f176dc70e22b0b6477d703c22 M	heat/tests/functional/test_WordPress_Single_Instance_With_EBS.py
+:100644 100644 9a1d2fa7404d643f06d9bc889f813b87356bd98d e4a4951f83ccebbc1581c9314eae32bfa1ae0054 M	heat/tests/functional/test_WordPress_Single_Instance_With_EBS_EIP.py
+:100644 100644 0998895a13a08dc8248c6430cf5493bb8d761544 7a2d670dda338349d0453ccb8968c648236ce86f M	heat/tests/functional/test_WordPress_Single_Instance_With_EIP.py
+:100644 100644 e2412b86f7ca18accdba80055a26d895b52a9beb 550e634704416e59e7860c4e60be1bd10a960213 M	heat/tests/functional/test_WordPress_Single_Instance_With_HA.py
+:100644 100644 e4525d5cf340e753686e6964ba6ed7727ee3f2b8 19b783b49093e52c24a68299125f4932d14e03d2 M	heat/tests/functional/test_WordPress_Single_Instance_With_IHA.py
+:100644 100644 005562d5ee5813d88b6de3ffbc782b2caddd716f b8f5ec0c3e7648c8225a1c1578712a931582de92 M	heat/tests/functional/test_WordPress_With_LB.py
+:100644 100644 4ef14913b2443369ca746d3b5d8d4d6084a020ed d5a2e049ade7f306ea96362bf27e833a7d8a7831 M	heat/tests/functional/test_WordPress_With_RDS.py
+:100644 100644 1dd22728b47b0db15228b2123cb6b3a6e5a277ff 0837ba9dce298a71342ef77805b5276e6becfe5e M	heat/tests/functional/util.py

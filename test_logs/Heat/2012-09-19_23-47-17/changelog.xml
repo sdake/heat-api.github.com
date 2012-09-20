@@ -1,0 +1,13 @@
+Changes in branch origin/master, between 377a13308a43bb7caf2635bf0da0c7e9ab05800e and 4f558eb479eefbde404a1b422f96877d59868d23
+commit 1721bac83097291b52d05e1fa9ba8c713ab93551
+tree e6648d9dce5c28b122dd2165fc31a128cfde0fcc
+parent 86c76940078506aa5b6610511f6763a1b2267733
+author Steve Baker <sbaker@redhat.com> 1347935400 +1200
+committer Steve Baker <sbaker@redhat.com> 1347936029 +1200
+
+    Unit tests for autoscaling resources. 100% coverage!
+    
+    Change-Id: Idff792aa4898b14f3a55b5b44e6133cdcf496e97
+
+:100644 100644 4fe4ee2ef000a8a871c2e0f7179b9022ea851114 93982c21939731cfae153e4954dac4f786c8cfcd M	heat/engine/autoscaling.py
+:000000 100644 0000000000000000000000000000000000000000 32156c0d62ba6e485e2e3d78b19ac171efb7d0e7 A	heat/tests/test_autoscaling.py

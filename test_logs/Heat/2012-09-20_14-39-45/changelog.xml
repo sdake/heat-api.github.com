@@ -1,0 +1,66 @@
+Changes in branch origin/master, between 2652832ef3594329fd0afb66ec1c5d8836987c18 and d2c8b97015352da73c2dc9463f8d20c6a98dea04
+commit d2c8b97015352da73c2dc9463f8d20c6a98dea04
+tree 040991b383e8134e9221614d64423a2bf3f1611b
+parent f5033cffb6ec4de1d055079f6f4cfe29e507c52f
+author Steven Hardy <shardy@redhat.com> 1348161029 +0100
+committer Steven Hardy <shardy@redhat.com> 1348161029 +0100
+
+    heat : HA functional test missing import
+    
+    Change-Id: Ife9b85c321b41f9d838bf413734a803f858d93c8
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 19907c590d333b86d1057e1b7d2915fa160ea546 6693e71716154a43783b0036983935021a5b722f M	heat/tests/functional/test_WordPress_Single_Instance_With_HA.py
+
+commit f5033cffb6ec4de1d055079f6f4cfe29e507c52f
+tree d86a639ad50c8bef6af072437aa5d62a8d8dfe4e
+parent 89b052aee4dd7d4399bc0f137739a2a0f86f098f
+author Steven Hardy <shardy@redhat.com> 1348160351 +0100
+committer Steven Hardy <shardy@redhat.com> 1348160351 +0100
+
+    heat tests : convert HA test to exec_sudo_command
+    
+    Use exec_sudo_command to ensure sudo command works
+    
+    Change-Id: I9e4b25de04112f860c40604f6152f86efd937468
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 550e634704416e59e7860c4e60be1bd10a960213 19907c590d333b86d1057e1b7d2915fa160ea546 M	heat/tests/functional/test_WordPress_Single_Instance_With_HA.py
+
+commit 89b052aee4dd7d4399bc0f137739a2a0f86f098f
+tree 28494129948f3114cd97f33f7f6ceaa86b37da35
+parent 0991ed88f25771d5adde2119c5b967cd4b397816
+author Steven Hardy <shardy@redhat.com> 1348153347 +0100
+committer Steven Hardy <shardy@redhat.com> 1348160265 +0100
+
+    heat tests : Fixup IHA functional test
+    
+    Add more prints to monitor progress and ensure
+    the halt sudo command works by using the new utils
+    function, workaround paramiko SSH issue
+    
+    Ref #246
+    
+    Change-Id: I656925e61b878a9f2eabfbd65bee796d9d8ee54d
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 19b783b49093e52c24a68299125f4932d14e03d2 24e74b0959b77df9d2d0876447f1c5c2b697cb52 M	heat/tests/functional/test_WordPress_Single_Instance_With_IHA.py
+
+commit 0991ed88f25771d5adde2119c5b967cd4b397816
+tree bf545b1cc376edbb3bff0f2620146de6bd825079
+parent 2652832ef3594329fd0afb66ec1c5d8836987c18
+author Steven Hardy <shardy@redhat.com> 1348148261 +0100
+committer Steven Hardy <shardy@redhat.com> 1348160201 +0100
+
+    heat tests : functional tests add exec_sudo_command
+    
+    Add new method in the Instance class, which uses paramiko
+    invoke_shell instead of exec_command, so sudo commands can
+    run despite requiretty being set in our sudo config
+    
+    Ref #246
+    
+    Change-Id: I3be691167d4c757b68e589261d6f3a1263d77e69
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 0837ba9dce298a71342ef77805b5276e6becfe5e b9f6e06402c0c6484a5b71f558217c011b4bc67a M	heat/tests/functional/util.py

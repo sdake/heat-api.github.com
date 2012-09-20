@@ -1,0 +1,13 @@
+Changes in branch origin/master, between 4cb19b8f437b6cdd4effed274bca51aa088787ff and 4dab6823640d51ab01d191194c98d5fcf1a46e35
+commit 4dab6823640d51ab01d191194c98d5fcf1a46e35
+tree 1401ecbd9dd3d54832a91e05b68bb19d2e5efaa6
+parent 4cb19b8f437b6cdd4effed274bca51aa088787ff
+author Zane Bitter <zbitter@redhat.com> 1348132493 +0200
+committer Zane Bitter <zbitter@redhat.com> 1348148200 +0200
+
+    Fix typo in test file name
+    
+    Change-Id: I6c55e9ca8deaab41f8ed47e09553d1ad4811d879
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 8cb716fbbabd496a801a0d2b9e82da83076f310d 8cb716fbbabd496a801a0d2b9e82da83076f310d R100	heat/tests/functional/test_WordPress_2_Intances.py	heat/tests/functional/test_WordPress_2_Instances.py

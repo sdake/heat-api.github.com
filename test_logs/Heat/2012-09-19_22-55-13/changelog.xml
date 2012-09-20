@@ -1,0 +1,13 @@
+Changes in branch origin/master, between a1ff5662bfa1e3e3c8f53d47ac6b6d18f00d556c and 377a13308a43bb7caf2635bf0da0c7e9ab05800e
+commit 377a13308a43bb7caf2635bf0da0c7e9ab05800e
+tree 77c76cf6fdce401ff49bd9018f8480acca1b5c7d
+parent a1ff5662bfa1e3e3c8f53d47ac6b6d18f00d556c
+author Steve Baker <sbaker@redhat.com> 1348099548 +1200
+committer Steve Baker <sbaker@redhat.com> 1348105174 +1200
+
+    Unit tests for volumes and attachments
+    
+    Change-Id: Id8f1bab9d4cb782830e38a30a6411095d3710273
+
+:100644 100644 7b075994514f6b55ed88530977af8e4be190e5c1 bd78bf2cb0db1d4eba551805c5e2fd579c1ee930 M	heat/engine/volume.py
+:000000 100644 0000000000000000000000000000000000000000 0bd1e36233c6bee02b7e5c55e34a132f8069531a A	heat/tests/test_volume.py

@@ -1,0 +1,17 @@
+Changes in branch origin/master, between 4f558eb479eefbde404a1b422f96877d59868d23 and 4cb19b8f437b6cdd4effed274bca51aa088787ff
+commit 4cb19b8f437b6cdd4effed274bca51aa088787ff
+tree 048c5acc0c307bb58162f0a76daaa2931035de47
+parent 4f558eb479eefbde404a1b422f96877d59868d23
+author Steven Hardy <shardy@redhat.com> 1348127462 +0100
+committer Steven Hardy <shardy@redhat.com> 1348128043 +0100
+
+    heat tests : fixup test_CFN_API_Actions.py
+    
+    Fixup CFN API test following API keyname change ref #244
+    
+    Ref #243
+    
+    Change-Id: I6c235949ee6bb950d0cc5fa39391ee2b6073b0a0
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 42ce50be652bca226988bf9fae891294a12d9623 86f95fa6bff2f1efe5ca8aa14b6b03b7ce5cfbe6 M	heat/tests/functional/test_CFN_API_Actions.py

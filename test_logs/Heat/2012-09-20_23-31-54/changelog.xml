@@ -1,0 +1,26 @@
+Changes in branch origin/master, between d2c8b97015352da73c2dc9463f8d20c6a98dea04 and 36af6c7a3067ddfa893dcd4ae03830556407a9fd
+commit 36af6c7a3067ddfa893dcd4ae03830556407a9fd
+tree 541e1f7dec1c08e82e209efc854dafc8eb9b721c
+parent 580b0d667d318b58e584b1ee0d86cbce0a4a9ecc
+author Jeff Peeler <jpeeler@redhat.com> 1348175507 -0400
+committer Jeff Peeler <jpeeler@redhat.com> 1348175507 -0400
+
+    Change file to executable to get rid of rpmlint warning
+    
+    Change-Id: I5274c04bca9c5f089c39a241cc2ba4ea96e279ac
+    Signed-off-by: Jeff Peeler <jpeeler@redhat.com>
+
+:100644 100755 1a54dfffba06f1e7c1a3347d74ed336d9f7fe7c3 1a54dfffba06f1e7c1a3347d74ed336d9f7fe7c3 M	heat/cloudinit/loguserdata.sh
+
+commit 580b0d667d318b58e584b1ee0d86cbce0a4a9ecc
+tree d5c68964b8b0cad3425b6b5e41e380b8faafccd1
+parent d2c8b97015352da73c2dc9463f8d20c6a98dea04
+author Jeff Peeler <jpeeler@redhat.com> 1348164949 -0400
+committer Jeff Peeler <jpeeler@redhat.com> 1348164949 -0400
+
+    Version 6 about to be announced for release, time for v7
+    
+    Change-Id: Ie85008bc7acce7535268fec0a62a0fda7bbbd1ec
+    Signed-off-by: Jeff Peeler <jpeeler@redhat.com>
+
+:100644 100644 2268276ebdffea748e2bb882063b58fd10a255a9 82f0aaa12fb41772cbffcfdcd462ac7bc3b0c73a M	heat/version.py

@@ -1,0 +1,99 @@
+Changes in branch origin/master, between c663b6381d28303116152df02d870bf7de2b6514 and 6e3505e33b40fa72715dbe7c200b76b8e4d5b7c2
+commit 6e3505e33b40fa72715dbe7c200b76b8e4d5b7c2
+tree bbb3b62b2d9e06929b67d35cefb3a2f9788106a3
+parent 54d53d307d5378a15c627b642fae6246fe33a13d
+author Steve Baker <sbaker@redhat.com> 1347935517 +1200
+committer Steve Baker <sbaker@redhat.com> 1348461133 +1200
+
+    Trivial unit test changes
+    
+    - rename assertEquals to assertEqual
+    - fix the swiftclient package import, which was broken
+      for testing
+    
+    Change-Id: Icbe80ded918b9b2d089797645bf8d46a9efaf619
+
+:100644 100644 b226011cd1cc9ba68b80cb22015bb5bc47e023b2 abb19e09ab3251435a36ed7d609a3d34d5cbabd8 M	heat/tests/test_eip.py
+:100644 100644 86ab3e4e3954932a4ecde2b70b9e689537b3f3d9 552b8742aa3d85eb54cc95fde443de6c02786afa M	heat/tests/test_s3.py
+
+commit 54d53d307d5378a15c627b642fae6246fe33a13d
+tree 02996a277b34137c8f6c6b53174425e86aa23b07
+parent 71324379f93c255f852d24e989b07aaf08358dc2
+author Steve Baker <sbaker@redhat.com> 1348457216 +1200
+committer Steve Baker <sbaker@redhat.com> 1348457317 +1200
+
+    Switch to in-memory sqlite for unit tests; 1500% speed improvement.
+    
+    All unit tests now run in 4 seconds, instead of 64 seconds on a HDD.
+    
+     _ENGINE global setting had to be moved into get_engine() so that migration works, otherwise get_engine() creates a new isolated in-memory database for
+    every call.
+    
+    Other unit test speedups in this change are to stub out some eventlet sleeps
+    which saves about 5 seconds.
+    
+    Change-Id: I3643b73dd9bd86c414934b7c78db67402587f570
+
+:100644 100644 3c3ca44dba416c38f5205588fdb216678e5ff02d bd6c065f720ce8fd20c0d8111f1e7f9aceeb6aad M	heat/db/api.py
+:100644 100644 f4f783d155d964406ef9e74b9f04b330639e4d17 90fb43614633e880041fb6c3e33fd02c65dd9fa4 M	heat/db/sqlalchemy/session.py
+:100644 100644 508edc5d464acb2ab9a2595deac81346aefbf32b 7e0f46099e6ebb154c21452e11cc82df167f21b3 M	heat/tests/test_user.py
+:100644 100644 0bd1e36233c6bee02b7e5c55e34a132f8069531a 8c60ce3e19d05a152f18e4db204d0e446713ff7f M	heat/tests/test_volume.py
+
+commit 71324379f93c255f852d24e989b07aaf08358dc2
+tree e8fbbe7fa9d9b7a2c87a870f3564da58ffc38eba
+parent 2ae14776f1378fae928a83f085124b02ffb7e75b
+author Steve Baker <sbaker@redhat.com> 1348434500 +1200
+committer Steve Baker <sbaker@redhat.com> 1348440023 +1200
+
+    Move test skipping on import failure from package to function.
+    
+    This gives a better test output on what has been skipped and why.
+    
+    The unittest2.TestCase class has been removed because it is unused and
+    unittest2 is not available to the gates.
+    
+    Change-Id: I1b5ae0845b2ef8dadc5cff42770ef062ea4e862f
+
+:100644 100644 28b8842d71e41c2af2336161a3159cf89cb08179 af534d47ca140bdfe4c8851a49fd88ef0f70cb35 M	heat/tests/test_cfn.py
+:100644 100644 1a7c5c4f44017205d440f2a62b03f5ebfbf966c3 86ab3e4e3954932a4ecde2b70b9e689537b3f3d9 M	heat/tests/test_s3.py
+:100644 100644 745fbbe387b9930cc8dcca833c91f8dea3c0480c 055335857abb30426cc6a17fafb319e353af3692 M	heat/tests/utils.py
+
+commit b87922862f031483c781562cfb1bef5433bdb7e6
+tree d85426aab51b0853b01ede5bb23ed3d9e5b18b79
+parent 36af6c7a3067ddfa893dcd4ae03830556407a9fd
+author Zane Bitter <zbitter@redhat.com> 1348240366 +0200
+committer Zane Bitter <zbitter@redhat.com> 1348240429 +0200
+
+    Get rid of gratuitous params in RPC API
+    
+    For historical reasons, we were passing all of the parameters from the query
+    string received by the AWS API to the engine as "params" in many calls.
+    This is not required, since all of the relevant information has already
+    been extracted.
+    
+    Change-Id: Iedec5b442ccb0b358afc8a4e06f60672890aba05
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 b97055f46b64a31b2f689bb4611365714b787ded a74f287952ee2077df2b42d34a0819d8cfee6d41 M	heat/api/v1/stacks.py
+:100644 100644 6bc31423e6ed32b56d6dda6bc2201777457517b1 f4589bf8bc463c11b68f9bbc12f4ff70ccbec6dc M	heat/engine/manager.py
+:100644 100644 15b038f898b0cd32e83c4b3bff6674c5ebeb2270 7d0185f190893670219fcbdff1782ebf03d52e62 M	heat/engine/rpcapi.py
+:100644 100644 9dab36f29b4d953a1de08a7cfdc3b3cfffcec647 0f9a127e8e1315aea6d2461a7acc95e4426bb455 M	heat/tests/test_api_cfn_v1.py
+:100644 100644 66d50accf92a556e58f84b66b4e010df533cdab2 4ffaa89508e30ae7712659e5e7325f3c0c155e41 M	heat/tests/test_engine_manager.py
+:100644 100644 b3d40de08e871eb9022da25b82b6ba4c6e598b18 6fc8cce6a0a016519db988def35b8e3935b1e9a2 M	heat/tests/test_rpcapi.py
+
+commit 312ff2dfeec87aad98c0383ab465d8cc30cd7ef1
+tree 4d522e56bf530ac22f03b617904ba046b18ab4d4
+parent a1ff5662bfa1e3e3c8f53d47ac6b6d18f00d556c
+author Steve Baker <sbaker@redhat.com> 1348109508 +1200
+committer Steve Baker <sbaker@redhat.com> 1348109508 +1200
+
+    Stop deprecation warning when creating resources directly.
+    
+    This change stops the following warning from being logged:
+    heat/heat/engine/resources.py:141: DeprecationWarning: object.__new__()
+    takes no parameters
+      return super(Resource, cls).__new__(cls, name, json, stack)
+    
+    Change-Id: Icf6187fdcc460d9cd732ebfc0cf14390dc240c5c
+
+:100644 100644 c5fe93747004b353108959eec8ae85888be3fac8 1759e37f7f5453386ccb313b5b5c93e533098939 M	heat/engine/resources.py

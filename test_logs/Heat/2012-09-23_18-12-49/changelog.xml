@@ -1,0 +1,16 @@
+Changes in branch origin/master, between 36af6c7a3067ddfa893dcd4ae03830556407a9fd and c663b6381d28303116152df02d870bf7de2b6514
+commit c663b6381d28303116152df02d870bf7de2b6514
+tree abb04445ee1bf956b8b6745fc4356f1e98acefcb
+parent 36af6c7a3067ddfa893dcd4ae03830556407a9fd
+author Steve Baker <sbaker@redhat.com> 1348197516 +1200
+committer Steve Baker <sbaker@redhat.com> 1348198407 +1200
+
+    Unit test coverage for user resources, plus some user fixes.
+    
+    - User 'Policies' attribute removed since it shouldn't exist
+    - fixed 'SecretAccessKey' attribute in AccessKey
+    
+    Change-Id: Iff7cf0bda074cb615045e7236f274cafa56909f6
+
+:100644 100644 45920e1b7201c85eb138e665d8d97f1aff9ee83b 67d681cd6e15f1119ba4d24c4fa54bc0c08498d8 M	heat/engine/user.py
+:000000 100644 0000000000000000000000000000000000000000 508edc5d464acb2ab9a2595deac81346aefbf32b A	heat/tests/test_user.py

@@ -1,0 +1,17 @@
+Changes in branch origin/master, between adb6adb516be589f090a15488b81c1f5ee64821a and 8f1de0c11ae7d2c357656f73590f9e3b3f73c990
+commit 8f1de0c11ae7d2c357656f73590f9e3b3f73c990
+tree cf169b04b28feb0451932909873560b517c23de6
+parent adb6adb516be589f090a15488b81c1f5ee64821a
+author Steve Baker <sbaker@redhat.com> 1348530368 +1200
+committer Steve Baker <sbaker@redhat.com> 1348530368 +1200
+
+    Fix test_waitcondition.py race by converting to mox.
+    
+    Eventlet calls and metadata state changes are now
+    mocked, so there are no sleeps, and in theory no
+    chance of races.
+    
+    Change-Id: I05fee73a8cefafe1f2bb5a4ca65c585933497475
+
+:100644 100644 73512130d63eeae27e83e792b520e53b15d970ae 179a467f84201f2b78e6f76474ed95c5f9238e0f M	heat/engine/wait_condition.py
+:100644 100644 15f2421a7cc2b1e4c5d37cd22b30d5d0f127c8a5 5307f214ed44c241843edb62018f45b6529d8632 M	heat/tests/test_waitcondition.py

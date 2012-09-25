@@ -1,0 +1,14 @@
+Changes in branch origin/master, between 6e3505e33b40fa72715dbe7c200b76b8e4d5b7c2 and adb6adb516be589f090a15488b81c1f5ee64821a
+commit aab5902a1b485a27cc0a1c83559ee70fa5de76fc
+tree eab0629807846b5085ef4aa22415c5e740fde70c
+parent 54d53d307d5378a15c627b642fae6246fe33a13d
+author Steven Dake <sdake@redhat.com> 1348461260 -0700
+committer Steven Dake <sdake@redhat.com> 1348462169 -0700
+
+    Rename heat/cloudformations.py to heat/cloudformation.py
+    
+    Change-Id: I1db2e5b191b35a07aa51113829d95085bfbfc8e7
+    Signed-off-by: Steven Dake <sdake@redhat.com>
+
+:100644 100644 be7b9891dc15caed5e9067866b7f1140a4281000 bb1284a93733b6f034748fe33640eb7ba3d942e3 M	heat/client.py
+:100644 100644 648770d687d5a82468115c438e8648cf01b3d55d 648770d687d5a82468115c438e8648cf01b3d55d R100	heat/cloudformations.py	heat/cloudformation.py

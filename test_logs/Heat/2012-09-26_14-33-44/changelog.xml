@@ -1,0 +1,54 @@
+Changes in branch origin/master, between 8f1de0c11ae7d2c357656f73590f9e3b3f73c990 and 5208008db047d8cda231100db817c6f0e1c190a5
+commit 5208008db047d8cda231100db817c6f0e1c190a5
+tree bff46dbaa5a9610932669e6c9fa52ad4f632819e
+parent ff10a55f16f4579ad3ec9e600b8448606242fd50
+author Steven Dake <sdake@redhat.com> 1348679285 -0700
+committer Steven Dake <sdake@redhat.com> 1348679467 -0700
+
+    Add a Folsom specific heat-keystone-setup binary to bin
+    
+    Fixes issue #253
+    
+    Change-Id: Ie223c43c15ac806da393e3d532ef410526ac16ce
+    Signed-off-by: Steven Dake <sdake@redhat.com>
+
+:000000 100755 0000000000000000000000000000000000000000 0c3d688d0fa46f3cb99c8d091fa7cd07603c3448 A	bin/heat-keystone-setup
+:100755 100755 be3ece18545b4d82bef15277e678097d2b6d70fa 360eb4a997865fbd374f73155321f9bc0de18bfc M	setup.py
+
+commit ff10a55f16f4579ad3ec9e600b8448606242fd50
+tree d4e22263f9f5319882ede3357860ad8d49874f6a
+parent d9f63269f1a0205811cd84487787c8c1291a952b
+author Steven Hardy <shardy@redhat.com> 1348672893 +0100
+committer Steven Hardy <shardy@redhat.com> 1348673250 +0100
+
+    heat engine : format stack outputs for updated stacks
+    
+    Fix bug where stack outputs are not formatted when
+    stacks are in UPDATE_COMPLETE state
+    
+    Fixes #250
+    
+    Change-Id: I8936c8e62b8c9b1f28f09eb5b8c50eb79cb76eb2
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 ca9c9a2c824538122a6dacd4af3c3d85a9b17aa5 a794f4d41dd53f4ba04e9b78e6245599e37630ee M	heat/engine/api.py
+
+commit d9f63269f1a0205811cd84487787c8c1291a952b
+tree 19c2cc8aac03b88abe41121fafd4309e01c8afa3
+parent 8f1de0c11ae7d2c357656f73590f9e3b3f73c990
+author Steven Hardy <shardy@redhat.com> 1348667468 +0100
+committer Steven Hardy <shardy@redhat.com> 1348669635 +0100
+
+    heat : fix glanceclient deprecation warning
+    
+    glanceclient module name changed for F18, so do
+    a conditional import which should import the correct
+    version provided one is available (tested on F17/F18)
+    
+    Fixes #251
+    
+    Change-Id: I095560f29a408949a7d54795fc000c094b1d63b9
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 b9f6e06402c0c6484a5b71f558217c011b4bc67a bb88ec143a221580adb64f42f4d7de251951f538 M	heat/tests/functional/util.py
+:100644 100644 528b40dd43f6d67195b538b9cccb7e9082f124e7 bc39b6cfd058d697a5d5511178d383312ddc1267 M	heat/utils.py

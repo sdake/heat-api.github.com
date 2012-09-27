@@ -1,0 +1,19 @@
+Changes in branch origin/master, between 5208008db047d8cda231100db817c6f0e1c190a5 and e890e7d422fd07dc022b9b755a575519d849b1f8
+commit e890e7d422fd07dc022b9b755a575519d849b1f8
+tree 97204fdf34fe3db4efddba493464a9b6d84509b9
+parent 5208008db047d8cda231100db817c6f0e1c190a5
+author Zane Bitter <zbitter@redhat.com> 1348739347 +0200
+committer Zane Bitter <zbitter@redhat.com> 1348739388 +0200
+
+    Make the keystone service type configurable
+    
+    We will eventually need to have clients for both the OpenStack and
+    CloudFormation-compatible APIs, and they will need to have different
+    service types.
+    
+    Change-Id: I06ae727c17c245ae60934bbed6e1631c7ad5fd77
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 bb1284a93733b6f034748fe33640eb7ba3d942e3 74739e8a528a54a2467a4b0d913353fd0cbda602 M	heat/client.py
+:100644 100644 571fbdafaf6fbac3d3ae5fadfa2ccf28962988f9 52811cdf7b9d55aa258728b742d36bfd755b2ece M	heat/common/auth.py
+:100644 100644 be465c85b547507a2c5dddf055a10bbd7522ffbf ba4e294cb4ea7933476267f448781978933a02d0 M	heat/common/client.py

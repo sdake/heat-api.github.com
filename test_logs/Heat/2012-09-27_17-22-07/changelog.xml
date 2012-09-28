@@ -1,0 +1,66 @@
+Changes in branch origin/master, between e890e7d422fd07dc022b9b755a575519d849b1f8 and f26b2188319a293b4dff6a88c571215798634e85
+commit f26b2188319a293b4dff6a88c571215798634e85
+tree 575a9949fd781e961affeac51a1d8c0f399d5f66
+parent 3c85e1941f95e30b2c592117b4b6b23cecb87bbd
+author Zane Bitter <zbitter@redhat.com> 1348749652 +0200
+committer Zane Bitter <zbitter@redhat.com> 1348753937 +0200
+
+    Allow separate versioning of each API
+    
+    Previously, all APIs used single versioning definition. Since these are
+    likely to change at different rates (AWS APIs are unlikely to change at
+    all, but OpenStack APIs probably will), give each their own version
+    definition.
+    
+    Change-Id: I6985205dfcb5baf6f49ad32b091d811f97d1552a
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 88df75693418cd4959669585d16b7fef99fb37a7 bad885b25eefd8e305b20479193ee765e73920a8 M	etc/heat/heat-api-cfn-paste.ini
+:100644 100644 da1e83d59d57fd42aa7a13b62fa72e2c754f87d3 23e76afa475025bad88954f33a24821536085a82 M	etc/heat/heat-api-cloudwatch-paste.ini
+:100644 100644 e8e403594152912bed8c5a341795ba08bf925d34 b39691f4a0836d7a57caf765f15f904f85f6f844 M	heat/api/cfn/__init__.py
+:100644 100644 cf7c2cd2f8a497ae2a2615f52eed8fa7463c1841 ca95e010b05a92065ebd4ce4f6f67aeec74ecb3e M	heat/api/cfn/v1/__init__.py
+:100644 100644 4625dbb713b17da1fd0be8a3f5250db21d303f4f a6407d4e2a7b03b8f0aacd644b6c8ea3754e630c R084	heat/api/versions.py	heat/api/cfn/versions.py
+:100644 100644 877857857b0ddfc510af1763ca170ad375a7e2b5 823b757b8bee9b468dc5d1cce017d720a0844d06 M	heat/api/cloudwatch/__init__.py
+:000000 100644 0000000000000000000000000000000000000000 a6407d4e2a7b03b8f0aacd644b6c8ea3754e630c A	heat/api/cloudwatch/versions.py
+:100644 100644 8f2826df6fd42cfc6720e939d8bde1be15009475 2e3de02985ce37a083d697ee7e0a744a8d24447e M	heat/api/middleware/version_negotiation.py
+
+commit 3c85e1941f95e30b2c592117b4b6b23cecb87bbd
+tree a35239a3fe557f085bdde824b09e16fe9192f601
+parent 715a62d2b4fd2fd9169254835234e7861027579e
+author Steven Hardy <shardy@redhat.com> 1348753414 +0100
+committer Steven Hardy <shardy@redhat.com> 1348753616 +0100
+
+    heat API : return ResourceProperties as JSON
+    
+    For boto to correctly parse the API DescribeStackEvents
+    action, the ResourceProperties key in the response
+    must be a string, as per the AWS spec, so we encode the
+    properties in a JSON blob
+    
+    Fixes #245
+    
+    Change-Id: Icd38984836a941ed4a012b06382933bb46f43c4f
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 8218d2c39f164e2d0ba223aca83c5f029dea6b5a 2b8aa65b12f350dc765338b8abfb6ee61abf9f02 M	heat/api/cfn/v1/stacks.py
+:100644 100644 ac81fe00b5da63a8461df3b5f5489c8dfe352dea 263e5c7893b2794b730edb6c3ab1031fd66f75d1 M	heat/tests/test_api_cfn_v1.py
+
+commit 715a62d2b4fd2fd9169254835234e7861027579e
+tree a2dd4a7c58e7b441ae51ef0343c993f49e1b346d
+parent e890e7d422fd07dc022b9b755a575519d849b1f8
+author Zane Bitter <zbitter@redhat.com> 1348750670 +0200
+committer Zane Bitter <zbitter@redhat.com> 1348750830 +0200
+
+    Move CloudFormation API to heat.api.cfn package
+    
+    Change-Id: Ib0adf6f38da298b0b87d80272904767066b41087
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100755 100755 2bf0caf08cc8a1b4667f414d52b1b03f94a4d8f4 4535c45a6e93518f35dd92f1b413e17c8477a085 M	bin/heat-api-cfn
+:100644 100644 e09404bff3209faff18cf28fde4dec652ee47efe 88df75693418cd4959669585d16b7fef99fb37a7 M	etc/heat/heat-api-cfn-paste.ini
+:100644 100644 58b8869bd5b2ee97520521c2dbf1c2223b6426fa 4c4c0bff062250af15556485776197eb4ffa08ca M	heat/api/aws/ec2token.py
+:000000 100644 0000000000000000000000000000000000000000 e8e403594152912bed8c5a341795ba08bf925d34 A	heat/api/cfn/__init__.py
+:100644 100644 9ea96535d25629926cd309fdb87cda2b3453151d cf7c2cd2f8a497ae2a2615f52eed8fa7463c1841 R096	heat/api/v1/__init__.py	heat/api/cfn/v1/__init__.py
+:100644 100644 a74f287952ee2077df2b42d34a0819d8cfee6d41 8218d2c39f164e2d0ba223aca83c5f029dea6b5a R099	heat/api/v1/stacks.py	heat/api/cfn/v1/stacks.py
+:100644 100644 0a56618813c62dd313135019f636114b0ef585d5 11d990a13c5f1724198060237e6381b2ccec1f10 M	heat/common/wsgi.py
+:100644 100644 0f9a127e8e1315aea6d2461a7acc95e4426bb455 ac81fe00b5da63a8461df3b5f5489c8dfe352dea M	heat/tests/test_api_cfn_v1.py

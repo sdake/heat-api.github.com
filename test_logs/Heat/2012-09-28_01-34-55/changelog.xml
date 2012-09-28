@@ -1,0 +1,58 @@
+Changes in branch origin/master, between f26b2188319a293b4dff6a88c571215798634e85 and ed998e8c287ee7290246178e0b8feb98eec95096
+commit 9e237f5a665042db2d592a4a0977cff933062590
+tree d11bc83b7bb39e26af0316c5b7b43c39699f8751
+parent f26b2188319a293b4dff6a88c571215798634e85
+author Zane Bitter <zbitter@redhat.com> 1348582415 +0200
+committer Zane Bitter <zbitter@redhat.com> 1348774657 +0200
+
+    Add the beginnings of an OpenStack ReST API
+    
+    So far only access to stacks (not resources and events) is implemented.
+    
+    Change-Id: I9655e9441087ef60c06e67e2d6ae68ec4a3b2d11
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:000000 100755 0000000000000000000000000000000000000000 201abe95052e9598f449463c1b62e03630ef21d6 A	bin/heat-api
+:000000 100644 0000000000000000000000000000000000000000 fc8afd3db0737fe4c5a12640a1e8827f014339a1 A	etc/heat/heat-api-paste.ini
+:000000 100644 0000000000000000000000000000000000000000 d708293fc2edb7e6234992f0bb2162c1c5f69c5e A	etc/heat/heat-api.conf
+:000000 100644 0000000000000000000000000000000000000000 ff263f7c77cbc6fbe07507f940598a059895caec A	heat/api/openstack/__init__.py
+:000000 100644 0000000000000000000000000000000000000000 9b793d5e7393f063a225e82407b1ec3ffe4c646a A	heat/api/openstack/v1/__init__.py
+:000000 100644 0000000000000000000000000000000000000000 c377af31386d80b4500931877ba47f0f36787799 A	heat/api/openstack/v1/stacks.py
+:000000 100644 0000000000000000000000000000000000000000 a6407d4e2a7b03b8f0aacd644b6c8ea3754e630c A	heat/api/openstack/versions.py
+:100644 100644 61c93c03ceb89b7e9a1afa25ff038b142ec4e570 7358cbc5980899e857f0b3b6f94ffb20d5be8c44 M	heat/engine/identifier.py
+:100644 100644 07ae958c39e50e3887b584540b4e509c7686339e aadf27ffb778fed4df4b93ff23a25575ca22f479 M	heat/tests/test_identifier.py
+:100755 100755 cf8aac93802c7b95b0713efc74a09b7351741d1e 92bbd3cd21e75f57f3ee1abfaec660c3c1b60b46 M	install.sh
+:100755 100755 086a67690c69e17e1dc4a2d712c47c33a8e4e3ce b867ef7b1ae2c4956033cf8d0a050efb882286aa M	run_tests.sh
+:100755 100755 360eb4a997865fbd374f73155321f9bc0de18bfc 72b1d95683f5cd7ec72c91050b42dc49f0d9cf4c M	setup.py
+
+commit 642d740b86e07ec2fc60119cb62c0dabd2a28314
+tree 69c3c643e84aef83077f815290fa2b27c194ed1e
+parent 3c85e1941f95e30b2c592117b4b6b23cecb87bbd
+author Steven Hardy <shardy@redhat.com> 1348754450 +0100
+committer Steven Hardy <shardy@redhat.com> 1348754450 +0100
+
+    heat tests : API test fixup for ResourceProperties
+    
+    Fixup CFN API functional test after ResourceProperties
+    format change
+    
+    Change-Id: I91d88443bc885163cffafc83615aa0cfa8d3ff83
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 7e2fa64e694b9860306f44f2a94ddbe7b822f4c6 76d84bd85ec8cf62197cf1facfc1b940088d2302 M	heat/tests/functional/test_CFN_API_Actions.py
+
+commit 988092b70b3b53c6f9277c3a208f50395b4a7e16
+tree fc70481d162d38661b2e97e3f1afe676d63a458f
+parent 5208008db047d8cda231100db817c6f0e1c190a5
+author Steve Baker <sbaker@redhat.com> 1348631583 +1200
+committer Steve Baker <sbaker@redhat.com> 1348695495 +1200
+
+    Unit test for DBInstance resource.
+    
+    Coverage is 100% assuming you don't count the
+    nested template as code.
+    
+    Change-Id: I846ed736d75eeef8723c33db7cae889a26049d9a
+
+:100644 100644 f9a2d36ee37ca94596b0bf53ddcf55cc47279dbc 0529986b795d29d6704878f627800438231bf318 M	heat/engine/dbinstance.py
+:000000 100644 0000000000000000000000000000000000000000 092ddce6fdd47b273c8d1dafc962a5af8b32735f A	heat/tests/test_dbinstance.py

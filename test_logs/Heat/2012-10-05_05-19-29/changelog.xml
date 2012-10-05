@@ -1,0 +1,10 @@
+Changes in branch origin/master, between ed998e8c287ee7290246178e0b8feb98eec95096 and f912bfc4d03f8c801c2b4d29bd1c9fa1a3396ced
+commit f912bfc4d03f8c801c2b4d29bd1c9fa1a3396ced
+tree 4b69f5973fb2008491ed170b831009f8c44e7935
+parent ed998e8c287ee7290246178e0b8feb98eec95096
+author Steve Baker <sbaker@redhat.com> 1349428073 +0100
+committer Steve Baker <sbaker@redhat.com> 1349428086 +0100
+
+    import gettext to fix db migration execution
+
+:100644 100644 11775c1d9a33866813d58b87d89fa559ef06f833 5d0454a2393c4ddc36b0387a1684e5e32e606a3f M	heat/common/exception.py

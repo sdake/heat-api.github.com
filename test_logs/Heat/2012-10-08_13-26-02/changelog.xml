@@ -1,0 +1,87 @@
+Changes in branch origin/master, between f912bfc4d03f8c801c2b4d29bd1c9fa1a3396ced and 703693b03e5cfb39a71a337e1d97a121a914a951
+commit 49ce173820ec8bd1928252a8eacb85d4373711dc
+tree cc5b11e79bb5d7ec48d9b156285e04096b9ab7ee
+parent c491afaef6c5af6e28382eaadb6fe584061f9702
+author Steven Hardy <shardy@redhat.com> 1349709685 +0100
+committer Steven Hardy <shardy@redhat.com> 1349711006 +0100
+
+    heat engine : workaround lack of no_cache on essex
+    
+    no_cache novaclient fix doesn't work on essex, so try
+    both the essex and the folsom compatible novaclient
+    prototypes
+    
+    Change-Id: I0749f821981550d7a5f5a95e2f5951c77d8e1529
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 153b2437049813825b74ab54f477d3262ba3ee91 980ea04259b5a81ab4ec4d0126903a89fe2b6437 M	heat/engine/auth.py
+
+commit c491afaef6c5af6e28382eaadb6fe584061f9702
+tree e2142ca53ffe731c8060a6884c282d185a573789
+parent f912bfc4d03f8c801c2b4d29bd1c9fa1a3396ced
+author Eoghan Glynn <eglynn@redhat.com> 1349706037 +0100
+committer Eoghan Glynn <eglynn@redhat.com> 1349707373 +0100
+
+    Avoid create_stack RPC call timing out on precise
+    
+    The create_stack RPC call times out on Ubuntu as novaclient
+    blocks expecting stdin when prompting for a keyring password:
+    
+        Please set a password for your new keyring
+    
+    This probably does not occur on Fedora due to the version or
+    presence of the python-keyring package differing.
+    
+    The problem can be avoided by ensuring the no_cache flag is
+    set on the novaclient.
+    
+    Change-Id: I3ac9e74571ff837cd07fc3f36ecf706180f4dc46
+
+:100644 100644 2a4814e617664f4a7e12f9eab50f69030db3c3e4 153b2437049813825b74ab54f477d3262ba3ee91 M	heat/engine/auth.py
+
+commit cdd392ba816bfda1c866b590be051111035ab2a4
+tree 2703539d06f606913319e7add74878c372eda712
+parent f8f0fac96ec086f1b2ebc6c780155a0a0caa56e7
+author Steven Hardy <shardy@redhat.com> 1348751579 +0100
+committer Steven Hardy <shardy@redhat.com> 1348823195 +0100
+
+    heat tests : add functional test for UpdateStack
+    
+    Add new API test to prove UpdateStack action
+    
+    Change-Id: I656f3965a222ee1dcd890d4e4491f5550fada461
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:000000 100644 0000000000000000000000000000000000000000 7a3f416cac38599b5f474c617fb2b36df7b289c0 A	heat/tests/functional/test_CFN_API_UpdateStack.py
+
+commit f8f0fac96ec086f1b2ebc6c780155a0a0caa56e7
+tree 5e8de3f342933f1777428a6b5be4a1b8237191fd
+parent 8c191d49a1082e712dec24856f47835fcdd5b26e
+author Steven Hardy <shardy@redhat.com> 1348666627 +0100
+committer Steven Hardy <shardy@redhat.com> 1348823195 +0100
+
+    heat tests : functional utils support for UpdateStack
+    
+    Add Stack.update method so UpdateStack API action
+    can be tested
+    
+    Change-Id: I2fdc37b15eab9b7d786153877755a631fda0ad2a
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 bb88ec143a221580adb64f42f4d7de251951f538 9b3810db52a837eecb550639e2c790607f89fc1f M	heat/tests/functional/util.py
+
+commit 8c191d49a1082e712dec24856f47835fcdd5b26e
+tree d2f421f77149f58e88d5de7312b786c4e5b9769b
+parent ed998e8c287ee7290246178e0b8feb98eec95096
+author Steven Hardy <shardy@redhat.com> 1348504883 +0100
+committer Steven Hardy <shardy@redhat.com> 1348823195 +0100
+
+    heat tests : Add new boto API test
+    
+    Add new test_CFN_API_Actions_Boto.py test, which
+    tests the CFN API via the boto client
+    
+    Change-Id: Iad796da35009fbad0ce21ba0d7ab73c2fd16cd7d
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:000000 100644 0000000000000000000000000000000000000000 afaae463af065df8896e28db891f6f47d7c0970e A	heat/tests/functional/test_CFN_API_Actions_Boto.py

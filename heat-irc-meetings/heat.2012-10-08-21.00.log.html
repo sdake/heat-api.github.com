@@ -1,0 +1,298 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#heat log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">21:00:38</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#startmeeting</span><span class="cmdline"></span>
+<a name="l-2"></a><span class="tm">21:00:38</span><span class="nk"> &lt;mheat-bot&gt;</span> Meeting started Mon Oct  8 21:00:38 2012 UTC.  The chair is sdake. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">21:00:38</span><span class="nk"> &lt;mheat-bot&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic.
+<a name="l-4"></a><span class="tm">21:01:05</span><span class="nk"> &lt;sdake&gt;</span> agenda
+<a name="l-5"></a><span class="tm">21:01:30</span><span class="nk"> &lt;sdake&gt;</span> rollcall, v7 release, remaining work for incubation, bugs heat, bugs heat-jeos
+<a name="l-6"></a><span class="tm">21:01:50</span><span class="nk"> &lt;sdake&gt;</span> summit planning
+<a name="l-7"></a><span class="tm">21:01:53</span><span class="nk"> &lt;sdake&gt;</span> anything else?
+<a name="l-8"></a><span class="tm">21:02:48</span><span class="nk"> &lt;shardy&gt;</span> looks good to me
+<a name="l-9"></a><span class="tm">21:03:34</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">rollcall</span>
+<a name="l-10"></a><span class="tm">21:03:40</span><span class="nk"> &lt;eglynn&gt;</span> o/
+<a name="l-11"></a><span class="tm">21:03:42</span><span class="nk"> &lt;sdake&gt;</span> sdake awake
+<a name="l-12"></a><span class="tm">21:03:45</span><span class="nk"> &lt;zaneb&gt;</span> present
+<a name="l-13"></a><span class="tm">21:03:49</span><span class="nk"> &lt;shardy&gt;</span> shardy here
+<a name="l-14"></a><span class="tm">21:03:52 </span><span class="nka">* shadower</span> <span class="ac">is here</span>
+<a name="l-15"></a><span class="tm">21:03:55</span><span class="nk"> &lt;jpeeler&gt;</span> jpeeler here
+<a name="l-16"></a><span class="tm">21:04:01</span><span class="nk"> &lt;stevebake&gt;</span> o/
+<a name="l-17"></a><span class="tm">21:04:02</span><span class="nk"> &lt;radez&gt;</span> radez here
+<a name="l-18"></a><span class="tm">21:04:22</span><span class="nk"> &lt;sdake&gt;</span> small army - perhaps slower on pto
+<a name="l-19"></a><span class="tm">21:04:36</span><span class="nk"> &lt;sdake&gt;</span> angus on pto
+<a name="l-20"></a><span class="tm">21:04:43</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">v7 release</span>
+<a name="l-21"></a><span class="tm">21:05:28</span><span class="nk"> &lt;sdake&gt;</span> originally we had targeted oct 9th to have good integration with Folsom and sort out a bunch of bugs
+<a name="l-22"></a><span class="tm">21:06:11</span><span class="nk"> &lt;sdake&gt;</span> we had some other work to do as well relating to incubation
+<a name="l-23"></a><span class="tm">21:06:33</span><span class="nk"> &lt;eglynn&gt;</span> at what point will essex support be dropped?
+<a name="l-24"></a><span class="tm">21:06:36</span><span class="nk"> &lt;sdake&gt;</span> i think we need a week or two to sort some of those issues out - need to decide 1 or 2 weeks
+<a name="l-25"></a><span class="tm">21:07:01</span><span class="nk"> &lt;sdake&gt;</span> depends on user base but tbh i haven't considered it
+<a name="l-26"></a><span class="tm">21:07:08</span><span class="nk"> &lt;sdake&gt;</span> we cover open issues at the end, we can cover that then if you like
+<a name="l-27"></a><span class="tm">21:07:21</span><span class="nk"> &lt;eglynn&gt;</span> cool enough, not a pressing issue ...
+<a name="l-28"></a><span class="tm">21:07:25</span><span class="nk"> &lt;sdake&gt;</span> yar
+<a name="l-29"></a><span class="tm">21:07:46</span><span class="nk"> &lt;sdake&gt;</span> so lets get into the other work part, and then we can come back to when we make v7 occur
+<a name="l-30"></a><span class="tm">21:08:00</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">remaining for incubation</span>
+<a name="l-31"></a><span class="tm">21:08:27</span><span class="nk"> &lt;sdake&gt;</span> zaneb rest API?
+<a name="l-32"></a><span class="tm">21:08:57</span><span class="nk"> &lt;zaneb&gt;</span> so, y'all will have seen the first patch go in
+<a name="l-33"></a><span class="tm">21:09:01</span><span class="nk"> &lt;sdake&gt;</span> yar
+<a name="l-34"></a><span class="tm">21:09:16</span><span class="nk"> &lt;zaneb&gt;</span> if anybody wants to add events/resources, feel free to have at it
+<a name="l-35"></a><span class="tm">21:09:31</span><span class="nk"> &lt;zaneb&gt;</span> I still have some more testing to do
+<a name="l-36"></a><span class="tm">21:09:35</span><span class="nk"> &lt;sdake&gt;</span> do you not think those are appropriate?
+<a name="l-37"></a><span class="tm">21:09:38</span><span class="nk"> &lt;shardy&gt;</span> need a client too :)
+<a name="l-38"></a><span class="tm">21:09:45</span><span class="nk"> &lt;zaneb&gt;</span> and I know the create/update events need some rework
+<a name="l-39"></a><span class="tm">21:10:00</span><span class="nk"> &lt;zaneb&gt;</span> to bring them more in line with how other OpenStack services work
+<a name="l-40"></a><span class="tm">21:10:23</span><span class="nk"> &lt;sdake&gt;</span> what kind of timeline
+<a name="l-41"></a><span class="tm">21:10:36</span><span class="nk"> &lt;zaneb&gt;</span> <span class="hi">shardy:</span> yeah, client would be great if anyone has time ;)
+<a name="l-42"></a><span class="tm">21:11:05</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">rest API in, but needs bit more work around events/resources</span>
+<a name="l-43"></a><span class="tm">21:11:10</span><span class="nk"> &lt;zaneb&gt;</span> <span class="hi">sdake:</span> I'd obviously like to have the core stuff settled and documented this week so you guys can take it to summit
+<a name="l-44"></a><span class="tm">21:11:37</span><span class="nk"> &lt;stevebake&gt;</span> do we need to create a separate python-heatclient repo?
+<a name="l-45"></a><span class="tm">21:11:42</span><span class="nk"> &lt;zaneb&gt;</span> I'm not too worried if the client and resource/event APIs aren't done by then
+<a name="l-46"></a><span class="tm">21:12:00</span><span class="nk"> &lt;eglynn&gt;</span> <span class="hi">stevebake:</span> I'd recommend following that pattern
+<a name="l-47"></a><span class="tm">21:12:17</span><span class="nk"> &lt;zaneb&gt;</span> <span class="hi">eglynn:</span> is that how other projects have done it?
+<a name="l-48"></a><span class="tm">21:12:18</span><span class="nk"> &lt;eglynn&gt;</span> (glance diverged with its own native CLI, and we ended up just ripping that out ...)
+<a name="l-49"></a><span class="tm">21:12:38</span><span class="nk"> &lt;shadower&gt;</span> zaneb, I think so, there's python-glanceclient etc.
+<a name="l-50"></a><span class="tm">21:12:41</span><span class="nk"> &lt;eglynn&gt;</span> <span class="hi">zaneb:</span> yep, even glance got with the program eventually
+<a name="l-51"></a><span class="tm">21:12:41</span><span class="nk"> &lt;shardy&gt;</span> <span class="hi">stevebake:</span> may be a good idea, originally we were just going to use boto, but now we have the native API I guess we'll need our own client library
+<a name="l-52"></a><span class="tm">21:12:57</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">need to sort out a python-heatclient repo</span>
+<a name="l-53"></a><span class="tm">21:13:48</span><span class="nk"> &lt;sdake&gt;</span> resources dict
+<a name="l-54"></a><span class="tm">21:13:55</span><span class="nk"> &lt;sdake&gt;</span> zaneb
+<a name="l-55"></a><span class="tm">21:14:48</span><span class="nk"> &lt;zaneb&gt;</span> resources dict?
+<a name="l-56"></a><span class="tm">21:15:19</span><span class="nk"> &lt;sdake&gt;</span> ya the mapping of aws resources to openstack native
+<a name="l-57"></a><span class="tm">21:15:26</span><span class="nk"> &lt;sdake&gt;</span> for the template
+<a name="l-58"></a><span class="tm">21:15:56</span><span class="nk"> &lt;zaneb&gt;</span> I wasn't planning on changing the template code at all at this stage
+<a name="l-59"></a><span class="tm">21:16:24</span><span class="nk"> &lt;sdake&gt;</span> think it might be handy - have either/or
+<a name="l-60"></a><span class="tm">21:16:57</span><span class="nk"> &lt;zaneb&gt;</span> agreed, but I don't think it's a blocker for incubation
+<a name="l-61"></a><span class="tm">21:17:29</span><span class="nk"> &lt;sdake&gt;</span> could be an irritant
+<a name="l-62"></a><span class="tm">21:17:32</span><span class="nk"> &lt;zaneb&gt;</span> I'll have my hands full this week just doing the stuff we have to do before summit
+<a name="l-63"></a><span class="tm">21:17:36</span><span class="nk"> &lt;sdake&gt;</span> got ya
+<a name="l-64"></a><span class="tm">21:17:43</span><span class="nk"> &lt;shadower&gt;</span> whats this about
+<a name="l-65"></a><span class="tm">21:17:45</span><span class="nk"> &lt;shadower&gt;</span> I could help
+<a name="l-66"></a><span class="tm">21:18:00</span><span class="nk"> &lt;sdake&gt;</span> AWS:EIP -&gt; OS:EIP
+<a name="l-67"></a><span class="tm">21:18:02</span><span class="nk"> &lt;shardy&gt;</span> Can we just document it as a roadmap item, so it's clear we plan to do it?
+<a name="l-68"></a><span class="tm">21:18:06</span><span class="nk"> &lt;sdake&gt;</span> rather OS:FloatingIP
+<a name="l-69"></a><span class="tm">21:18:15</span><span class="nk"> &lt;sdake&gt;</span> ya
+<a name="l-70"></a><span class="tm">21:18:16</span><span class="nk"> &lt;zaneb&gt;</span> <span class="hi">shadower:</span> so the idea is that we support other names for resources rather than the AWS ones
+<a name="l-71"></a><span class="tm">21:18:36</span><span class="nk"> &lt;shadower&gt;</span> right
+<a name="l-72"></a><span class="tm">21:18:55</span><span class="nk"> &lt;sdake&gt;</span> u pfor that  then tomas
+<a name="l-73"></a><span class="tm">21:19:00</span><span class="nk"> &lt;stevebake&gt;</span> can our namespace be simpler?
+<a name="l-74"></a><span class="tm">21:19:02</span><span class="nk"> &lt;shadower&gt;</span> okay I have a heat-jeos bug that needs fixing and I'll look into that after
+<a name="l-75"></a><span class="tm">21:19:22</span><span class="nk"> &lt;zaneb&gt;</span> <span class="hi">sdake:</span> the naming convention is AWS::&lt;service&gt;::&lt;resource&gt;
+<a name="l-76"></a><span class="tm">21:19:28</span><span class="nk"> &lt;sdake&gt;</span> shadower perhaps you can crank out a roadmap
+<a name="l-77"></a><span class="tm">21:19:30</span><span class="nk"> &lt;sdake&gt;</span> ya got it zaneb
+<a name="l-78"></a><span class="tm">21:19:37</span><span class="nk"> &lt;shadower&gt;</span> ya I'll do a roadmap
+<a name="l-79"></a><span class="tm">21:19:40</span><span class="nk"> &lt;zaneb&gt;</span> in our case, the actual service we use could be changing
+<a name="l-80"></a><span class="tm">21:19:46</span><span class="nk"> &lt;sdake&gt;</span> perhaps sooner rathe rthen later ;)
+<a name="l-81"></a><span class="tm">21:20:00</span><span class="nk"> &lt;sdake&gt;</span> so folks have an opportunity to feedback on it
+<a name="l-82"></a><span class="tm">21:20:08</span><span class="nk"> &lt;shadower&gt;</span> k
+<a name="l-83"></a><span class="tm">21:20:15</span><span class="nk"> &lt;sdake&gt;</span> cloudwatch security model
+<a name="l-84"></a><span class="tm">21:20:24</span><span class="nk"> &lt;shardy&gt;</span> Stuff like hardcoded nested templates will be a pain for the rename
+<a name="l-85"></a><span class="tm">21:20:31</span><span class="nk"> &lt;sdake&gt;</span> its not a rename
+<a name="l-86"></a><span class="tm">21:20:34</span><span class="nk"> &lt;sdake&gt;</span> its a dual support model
+<a name="l-87"></a><span class="tm">21:20:47</span><span class="nk"> &lt;shardy&gt;</span> Ok, but it'll still break the nested templates ;)
+<a name="l-88"></a><span class="tm">21:21:08</span><span class="nk"> &lt;sdake&gt;</span> dont see how, if nested stack uses a nested name, the parser will translate it correctly
+<a name="l-89"></a><span class="tm">21:21:09</span><span class="nk"> &lt;zaneb&gt;</span> <span class="hi">shardy:</span> basically, we map two different resource types to one class
+<a name="l-90"></a><span class="tm">21:21:20</span><span class="nk"> &lt;zaneb&gt;</span> it shouldn't break nested tempaltes
+<a name="l-91"></a><span class="tm">21:21:51</span><span class="nk"> &lt;sdake&gt;</span> cloudwatch security model
+<a name="l-92"></a><span class="tm">21:22:06</span><span class="nk"> &lt;shardy&gt;</span> <span class="hi">zaneb:</span> all of the nested hard-coded templates have hard-coded AWS:: stuff
+<a name="l-93"></a><span class="tm">21:22:15</span><span class="nk"> &lt;zaneb&gt;</span> <span class="hi">shardy:</span> and that will still work
+<a name="l-94"></a><span class="tm">21:22:28</span><span class="nk"> &lt;sdake&gt;</span> dict, with two keys same value
+<a name="l-95"></a><span class="tm">21:22:52</span><span class="nk"> &lt;shardy&gt;</span> yeah, I guess, messy tho
+<a name="l-96"></a><span class="tm">21:23:04</span><span class="nk"> &lt;sdake&gt;</span> should be tidy - likely few lines of code
+<a name="l-97"></a><span class="tm">21:23:25</span><span class="nk"> &lt;sdake&gt;</span> zaneb did such a good job of rewriting the parser several times that its easy to add ;)
+<a name="l-98"></a><span class="tm">21:23:32</span><span class="nk"> &lt;zaneb&gt;</span> lol
+<a name="l-99"></a><span class="tm">21:23:36</span><span class="nk"> &lt;sdake&gt;</span> haha
+<a name="l-100"></a><span class="tm">21:23:56</span><span class="nk"> &lt;shardy&gt;</span> cloudwatch progressing OK - I can reuse IAM:User stuff angus added, we already have AWS credentials on the instances
+<a name="l-101"></a><span class="tm">21:24:12</span><span class="nk"> &lt;sdake&gt;</span> more interested in the security side
+<a name="l-102"></a><span class="tm">21:24:17</span><span class="nk"> &lt;eglynn&gt;</span> dumb question ... so the objective of the CW security model is to ensure that visibility to metrics does not leak across tenants?
+<a name="l-103"></a><span class="tm">21:24:18</span><span class="nk"> &lt;zaneb&gt;</span> it's actually just a bunch of new entries in resource_types.py
+<a name="l-104"></a><span class="tm">21:24:35</span><span class="nk"> &lt;shardy&gt;</span> Its not the separate-tenant solution, but it will allow me to move the metric collection to the authenticated CW API
+<a name="l-105"></a><span class="tm">21:24:39</span><span class="nk"> &lt;sdake&gt;</span> eglynn yes
+<a name="l-106"></a><span class="tm">21:24:57</span><span class="nk"> &lt;eglynn&gt;</span> cool
+<a name="l-107"></a><span class="tm">21:25:14</span><span class="nk"> &lt;sdake&gt;</span> timeline shardy
+<a name="l-108"></a><span class="tm">21:25:15</span><span class="nk"> &lt;shardy&gt;</span> <span class="hi">eglynn:</span> And to ensure that a compromised instance can't do stuff other than generate bad metric data (ie can't access nova/glance etc)
+<a name="l-109"></a><span class="tm">21:25:34</span><span class="nk"> &lt;shardy&gt;</span> <span class="hi">sdake:</span> I should have an authentcated version of cfn-push-stats ready tomorrow
+<a name="l-110"></a><span class="tm">21:25:59</span><span class="nk"> &lt;shardy&gt;</span> Then I have to sort out cfn-signal/wait-conditions, and cfn-hup for metadata
+<a name="l-111"></a><span class="tm">21:26:17</span><span class="nk"> &lt;shardy&gt;</span> will be tight but I'm aiming for the end of the week
+<a name="l-112"></a><span class="tm">21:26:52</span><span class="nk"> &lt;shardy&gt;</span> there will still be lots of CW work after, but the main really insecure bits (ie the heat metadata server) should be gone by summit if all goes smoothly
+<a name="l-113"></a><span class="tm">21:27:03</span><span class="nk"> &lt;sdake&gt;</span> nice
+<a name="l-114"></a><span class="tm">21:27:11</span><span class="nk"> &lt;eglynn&gt;</span> <span class="hi">shardy:</span> there's bad metric data and there's being swamped by meaningless junk, prolly need to protect CW metric ingestion with throttling also
+<a name="l-115"></a><span class="tm">21:27:23</span><span class="nk"> &lt;eglynn&gt;</span> (i.e. rate-limiting in the openstack lingo ...)
+<a name="l-116"></a><span class="tm">21:27:49</span><span class="nk"> &lt;zaneb&gt;</span> <span class="hi">eglynn:</span> that's probably true for everything else too :)
+<a name="l-117"></a><span class="tm">21:27:53</span><span class="nk"> &lt;shardy&gt;</span> <span class="hi">eglynn:</span> agree, that will prob come later after we've removed the really glaring problems (ie open API with no auth ;)
+<a name="l-118"></a><span class="tm">21:27:58</span><span class="nk"> &lt;eglynn&gt;</span> <span class="hi">zaneb:</span> true that
+<a name="l-119"></a><span class="tm">21:28:15</span><span class="nk"> &lt;eglynn&gt;</span> <span class="hi">shardy:</span> cool
+<a name="l-120"></a><span class="tm">21:29:32</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">cloudwatch security model ready by summit</span>
+<a name="l-121"></a><span class="tm">21:29:58</span><span class="nk"> &lt;sdake&gt;</span> https://github.com/heat-api/heat/issues/173
+<a name="l-122"></a><span class="tm">21:30:53</span><span class="nk"> &lt;eglynn&gt;</span> FYI in nova they simply squashed all migrations pre-Essex into one mega-migration
+<a name="l-123"></a><span class="tm">21:31:05</span><span class="nk"> &lt;zaneb&gt;</span> so there's precedent then :)
+<a name="l-124"></a><span class="tm">21:31:10</span><span class="nk"> &lt;shardy&gt;</span> <span class="hi">sdake:</span> IMO that should wait until after we split Cloudwatch into a separate DB, which won't happen before summit
+<a name="l-125"></a><span class="tm">21:31:17</span><span class="nk"> &lt;eglynn&gt;</span> this cut down on version bloat, but avoided throwing away the evolution
+<a name="l-126"></a><span class="tm">21:31:25</span><span class="nk"> &lt;zaneb&gt;</span> tbh, I don't think we're ready to do that yet
+<a name="l-127"></a><span class="tm">21:31:48</span><span class="nk"> &lt;sdake&gt;</span> ok - bringing up issues that could be addressed
+<a name="l-128"></a><span class="tm">21:31:54</span><span class="nk"> &lt;sdake&gt;</span> sounds like this one gets a no vote
+<a name="l-129"></a><span class="tm">21:33:14</span><span class="nk"> &lt;sdake&gt;</span> ok, i think there was one effort out of that with nobody's name attached to it, which was the client
+<a name="l-130"></a><span class="tm">21:34:32</span><span class="nk"> &lt;stevebake&gt;</span> yep, I could look at client
+<a name="l-131"></a><span class="tm">21:34:46</span><span class="nk"> &lt;sdake&gt;</span> timeline?
+<a name="l-132"></a><span class="tm">21:35:06</span><span class="nk"> &lt;stevebake&gt;</span> zaneb, is there enough api for me to get started on consuming?
+<a name="l-133"></a><span class="tm">21:35:15</span><span class="nk"> &lt;zaneb&gt;</span> <span class="hi">stevebake:</span> implement the create &amp; update parts last, those will be changing
+<a name="l-134"></a><span class="tm">21:35:30</span><span class="nk"> &lt;zaneb&gt;</span> but yes, there should be enough for you to get started
+<a name="l-135"></a><span class="tm">21:35:54</span><span class="nk"> &lt;stevebake&gt;</span> I'll work on it this week then
+<a name="l-136"></a><span class="tm">21:36:06</span><span class="nk"> &lt;zaneb&gt;</span> if you run out you can always add the rest ;)
+<a name="l-137"></a><span class="tm">21:36:16</span><span class="nk"> &lt;stevebake&gt;</span> :)
+<a name="l-138"></a><span class="tm">21:36:22</span><span class="nk"> &lt;shardy&gt;</span> <span class="hi">stevebake:</span> see the heat/client.py and boto_client.py wrappers, you should be able to create a os_client.py and then no changes to bin/heat should (in theory) be needed
+<a name="l-139"></a><span class="tm">21:36:51</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">v7 priorities - rest api, resource dictionary mapping, cloudwatch security, python-heatclient</span>
+<a name="l-140"></a><span class="tm">21:37:02</span><span class="nk"> &lt;stevebake&gt;</span> for a new project, do we need to get it wired into gerrit at the start?
+<a name="l-141"></a><span class="tm">21:37:11</span><span class="nk"> &lt;sdake&gt;</span> ya i'll help you with that
+<a name="l-142"></a><span class="tm">21:37:15</span><span class="nk"> &lt;sdake&gt;</span> get a repo rolling
+<a name="l-143"></a><span class="tm">21:37:22</span><span class="nk"> &lt;sdake&gt;</span> actually ia hve to help wit hthat too :)
+<a name="l-144"></a><span class="tm">21:37:29</span><span class="nk"> &lt;stevebake&gt;</span> heh
+<a name="l-145"></a><span class="tm">21:37:53</span><span class="nk"> &lt;shardy&gt;</span> I have changes for heat-jeos (the cfntools), do we still just push to that repo?
+<a name="l-146"></a><span class="tm">21:38:01</span><span class="nk"> &lt;sdake&gt;</span> ok bug bashing
+<a name="l-147"></a><span class="tm">21:38:06</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">bugs</span>
+<a name="l-148"></a><span class="tm">21:38:16</span><span class="nk"> &lt;shadower&gt;</span> shardy, afaik, yes
+<a name="l-149"></a><span class="tm">21:38:21</span><span class="nk"> &lt;sdake&gt;</span> https://github.com/heat-api/heat-jeos/issues/13
+<a name="l-150"></a><span class="tm">21:38:57</span><span class="nk"> &lt;zaneb&gt;</span> that should be a 2-line fix ;)
+<a name="l-151"></a><span class="tm">21:38:58</span><span class="nk"> &lt;shadower&gt;</span> should be easy to fix
+<a name="l-152"></a><span class="tm">21:39:08</span><span class="nk"> &lt;stevebake&gt;</span> I stumbled on that the first time I tried to run heat
+<a name="l-153"></a><span class="tm">21:39:10</span><span class="nk"> &lt;sdake&gt;</span> https://github.com/heat-api/heat-jeos/issues/20
+<a name="l-154"></a><span class="tm">21:39:32</span><span class="nk"> &lt;shadower&gt;</span> sdake, I started to look into that today, verified it, will fix tomorrow
+<a name="l-155"></a><span class="tm">21:39:44</span><span class="nk"> &lt;sdake&gt;</span> https://github.com/heat-api/heat/issues/249
+<a name="l-156"></a><span class="tm">21:39:58</span><span class="nk"> &lt;sdake&gt;</span> pretty sure this one is fixed
+<a name="l-157"></a><span class="tm">21:41:20</span><span class="nk"> &lt;sdake&gt;</span> d9f63269f1a0205811cd84487787c8c1291a952b
+<a name="l-158"></a><span class="tm">21:41:21</span><span class="nk"> &lt;sdake&gt;</span> closing
+<a name="l-159"></a><span class="tm">21:41:43</span><span class="nk"> &lt;sdake&gt;</span> https://github.com/heat-api/heat/issues/190
+<a name="l-160"></a><span class="tm">21:41:52</span><span class="nk"> &lt;sdake&gt;</span> so - got updated on that
+<a name="l-161"></a><span class="tm">21:42:24</span><span class="nk"> &lt;sdake&gt;</span> for the stuff ppl working on - please get an issue filed, so i can assign it to v7 milestone
+<a name="l-162"></a><span class="tm">21:42:38</span><span class="nk"> &lt;sdake&gt;</span> i'll bump rest to backlog
+<a name="l-163"></a><span class="tm">21:42:42</span><span class="nk"> &lt;sdake&gt;</span> or rather v8
+<a name="l-164"></a><span class="tm">21:43:07</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">release schedule</span>
+<a name="l-165"></a><span class="tm">21:43:21</span><span class="nk"> &lt;sdake&gt;</span> so back on v7 release, looks like 9th isn't going to happen
+<a name="l-166"></a><span class="tm">21:44:11</span><span class="nk"> &lt;sdake&gt;</span> hear lots of 1 weeks - thing that is difficult to measure is python-heatclient
+<a name="l-167"></a><span class="tm">21:44:43</span><span class="nk"> &lt;sdake&gt;</span> angus and I will be in San Diego next week
+<a name="l-168"></a><span class="tm">21:44:52</span><span class="nk"> &lt;zaneb&gt;</span> I don't think the client is essential before summit
+<a name="l-169"></a><span class="tm">21:44:53</span><span class="nk"> &lt;stevebake&gt;</span> I'll have to spend some time on it to see what the scope will be
+<a name="l-170"></a><span class="tm">21:45:10</span><span class="nk"> &lt;sdake&gt;</span> well we may bounce it - depends on what happens
+<a name="l-171"></a><span class="tm">21:45:16</span><span class="nk"> &lt;stevebake&gt;</span> it is a new project, so it will have its own release cycle anyway ;)
+<a name="l-172"></a><span class="tm">21:45:29</span><span class="nk"> &lt;sdake&gt;</span> good point
+<a name="l-173"></a><span class="tm">21:46:00</span><span class="nk"> &lt;sdake&gt;</span> that puts us at 16th for release
+<a name="l-174"></a><span class="tm">21:46:11</span><span class="nk"> &lt;sdake&gt;</span> since we have functional testing sorted out, we wont have a bear of a time releasing
+<a name="l-175"></a><span class="tm">21:46:14</span><span class="nk"> &lt;sdake&gt;</span> should be straight forward
+<a name="l-176"></a><span class="tm">21:46:41</span><span class="nk"> &lt;stevebake&gt;</span> I'm at orientation 16th, 17th, 18th
+<a name="l-177"></a><span class="tm">21:46:46</span><span class="nk"> &lt;sdake&gt;</span> yar
+<a name="l-178"></a><span class="tm">21:46:58</span><span class="nk"> &lt;sdake&gt;</span> while folks are traveling, look to zaneb for leadership
+<a name="l-179"></a><span class="tm">21:47:03</span><span class="nk"> &lt;shadower&gt;</span> stevebake, munich?
+<a name="l-180"></a><span class="tm">21:47:11</span><span class="nk"> &lt;stevebake&gt;</span> brissie
+<a name="l-181"></a><span class="tm">21:47:26</span><span class="nk"> &lt;shadower&gt;</span> ah right, I forgot you're not in europe
+<a name="l-182"></a><span class="tm">21:47:28</span><span class="nk"> &lt;shadower&gt;</span> sorry
+<a name="l-183"></a><span class="tm">21:47:29</span><span class="nk"> &lt;stevebake&gt;</span> (brisbane)
+<a name="l-184"></a><span class="tm">21:47:38</span><span class="nk"> &lt;sdake&gt;</span> who was up for release manager this go around
+<a name="l-185"></a><span class="tm">21:48:00</span><span class="nk"> &lt;sdake&gt;</span> think zaneb and shardy
+<a name="l-186"></a><span class="tm">21:48:02</span><span class="nk"> &lt;zaneb&gt;</span> <span class="hi">sdake:</span> I believe I volunteered last time
+<a name="l-187"></a><span class="tm">21:48:25</span><span class="nk"> &lt;sdake&gt;</span> sound like you have alot on your plate - your welcome to it but need to get some fresh air once in awhile ;)
+<a name="l-188"></a><span class="tm">21:48:46</span><span class="nk"> &lt;shardy&gt;</span> I'm also happy to do it, but going to be pretty loaded with CW stuff all this week..
+<a name="l-189"></a><span class="tm">21:48:58</span><span class="nk"> &lt;zaneb&gt;</span> hopefully the bulk what I'm doing will be done before the 16th
+<a name="l-190"></a><span class="tm">21:49:05</span><span class="nk"> &lt;sdake&gt;</span> sounds  good then zane
+<a name="l-191"></a><span class="tm">21:49:14</span><span class="nk"> &lt;zaneb&gt;</span> but happy to let shardy do it this time and I can go next time if that's easier
+<a name="l-192"></a><span class="tm">21:49:24</span><span class="nk"> &lt;zaneb&gt;</span> relaxed either way
+<a name="l-193"></a><span class="tm">21:49:24</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">zaneb release manager for v7 on 15th</span>
+<a name="l-194"></a><span class="tm">21:49:48</span><span class="nk"> &lt;sdake&gt;</span> lets get it done
+<a name="l-195"></a><span class="tm">21:49:52</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">summit planning</span>
+<a name="l-196"></a><span class="tm">21:50:00</span><span class="nk"> &lt;zaneb&gt;</span> might need some help with the ubuntu stuff
+<a name="l-197"></a><span class="tm">21:50:05</span><span class="nk"> &lt;sdake&gt;</span> http://wiki.openstack.org/Heat/GrizzlySummit/HeatApiDraftDiscussion
+<a name="l-198"></a><span class="tm">21:50:13</span><span class="nk"> &lt;sdake&gt;</span> http://wiki.openstack.org/Heat/GrizzlySummit/HeatImplementingCloudWatch
+<a name="l-199"></a><span class="tm">21:50:22</span><span class="nk"> &lt;sdake&gt;</span> http://wiki.openstack.org/Heat/GrizzlySummit/HeatRoadmapPastandFuture
+<a name="l-200"></a><span class="tm">21:50:38</span><span class="nk"> &lt;sdake&gt;</span> zaneb, dump api ideas into api draft discussion
+<a name="l-201"></a><span class="tm">21:50:58</span><span class="nk"> &lt;sdake&gt;</span> shardy/eglynn dump ideas into implementing cloudwatch
+<a name="l-202"></a><span class="tm">21:51:05</span><span class="nk"> &lt;eglynn&gt;</span> ack
+<a name="l-203"></a><span class="tm">21:51:19</span><span class="nk"> &lt;sdake&gt;</span> everyone dump ideas into roadmap
+<a name="l-204"></a><span class="tm">21:51:28</span><span class="nk"> &lt;shardy&gt;</span> <span class="hi">sdake:</span> Will do, already brain-dumped into our wiki, so should be cut/paste mostly
+<a name="l-205"></a><span class="tm">21:51:34</span><span class="nk"> &lt;sdake&gt;</span> cut and paste wfm ;)
+<a name="l-206"></a><span class="tm">21:51:49</span><span class="nk"> &lt;eglynn&gt;</span> so presumably at some point the wiki content will be transfered to etherpads?
+<a name="l-207"></a><span class="tm">21:51:58</span><span class="nk"> &lt;sdake&gt;</span> <span class="topic">#topic </span><span class="topicline">open issues</span>
+<a name="l-208"></a><span class="tm">21:52:06</span><span class="nk"> &lt;sdake&gt;</span> we dont use etherpads atm
+<a name="l-209"></a><span class="tm">21:52:07</span><span class="nk"> &lt;eglynn&gt;</span> (etherpads are what all the hipsters use at summit ...)
+<a name="l-210"></a><span class="tm">21:52:13</span><span class="nk"> &lt;sdake&gt;</span> yar etherpad is great
+<a name="l-211"></a><span class="tm">21:53:04</span><span class="nk"> &lt;sdake&gt;</span> pretty clear to me - as much as I like our github workflow - simple fast - we are at the point where we should adopt openstack workflow little more closely
+<a name="l-212"></a><span class="tm">21:53:15</span><span class="nk"> &lt;sdake&gt;</span> speaking specifically about github issues and wiki
+<a name="l-213"></a><span class="tm">21:53:31</span><span class="nk"> &lt;stevebake&gt;</span> so launchpad for issues?
+<a name="l-214"></a><span class="tm">21:53:39</span><span class="nk"> &lt;sdake&gt;</span> yar
+<a name="l-215"></a><span class="tm">21:54:16</span><span class="nk"> &lt;sdake&gt;</span> just a start - https://launchpad.net/heat
+<a name="l-216"></a><span class="tm">21:54:37</span><span class="nk"> &lt;sdake&gt;</span> needs more work - one of many things i need to sort out this week
+<a name="l-217"></a><span class="tm">21:54:58</span><span class="nk"> &lt;sdake&gt;</span> couple minutes for discussion then lets have a vote
+<a name="l-218"></a><span class="tm">21:55:17</span><span class="nk"> &lt;shadower&gt;</span> I don't like it but it makes sense
+<a name="l-219"></a><span class="tm">21:55:28</span><span class="nk"> &lt;eglynn&gt;</span> +1 for consistency with the other projects
+<a name="l-220"></a><span class="tm">21:55:35</span><span class="nk"> &lt;stevebake&gt;</span> should we try to bulk migrate existing issues?
+<a name="l-221"></a><span class="tm">21:56:09</span><span class="nk"> &lt;eglynn&gt;</span> launchpad has some sort of REST API AFAIK, could be useful for bulk transfers
+<a name="l-222"></a><span class="tm">21:56:27</span><span class="nk"> &lt;shadower&gt;</span> github has one of those as well fwiw
+<a name="l-223"></a><span class="tm">21:56:27</span><span class="nk"> &lt;eglynn&gt;</span> markmc uses it for releasing and for bug stats
+<a name="l-224"></a><span class="tm">21:56:40</span><span class="nk"> &lt;sdake&gt;</span> thanks eglynn i'll ping mark about it
+<a name="l-225"></a><span class="tm">21:56:56</span><span class="nk"> &lt;sdake&gt;</span> assuming folks vote yes
+<a name="l-226"></a><span class="tm">21:57:18</span><span class="nk"> &lt;stevebake&gt;</span> https://gist.github.com/2369729
+<a name="l-227"></a><span class="tm">21:57:20</span><span class="nk"> &lt;sdake&gt;</span> is there anyone that can't hack doing this - we are a community we roll together
+<a name="l-228"></a><span class="tm">21:57:22</span><span class="nk"> &lt;stevebake&gt;</span> +1
+<a name="l-229"></a><span class="tm">21:57:38</span><span class="nk"> &lt;sdake&gt;</span> thanks stevebake
+<a name="l-230"></a><span class="tm">21:57:55</span><span class="nk"> &lt;zaneb&gt;</span> +1 what shadower said
+<a name="l-231"></a><span class="tm">21:58:08</span><span class="nk"> &lt;sdake&gt;</span> ok , proper vote then
+<a name="l-232"></a><span class="tm">21:58:31</span><span class="nk"> &lt;sdake&gt;</span> vote (+1/-1) migrate wiki to blueprints - migrate issues to launchpad bugs
+<a name="l-233"></a><span class="tm">21:58:38</span><span class="nk"> &lt;eglynn&gt;</span> +1
+<a name="l-234"></a><span class="tm">21:58:41</span><span class="nk"> &lt;stevebake&gt;</span> +1
+<a name="l-235"></a><span class="tm">21:58:45</span><span class="nk"> &lt;zaneb&gt;</span> +1
+<a name="l-236"></a><span class="tm">21:58:45</span><span class="nk"> &lt;jpeeler&gt;</span> +1
+<a name="l-237"></a><span class="tm">21:58:55</span><span class="nk"> &lt;shardy&gt;</span> +1
+<a name="l-238"></a><span class="tm">21:59:52</span><span class="nk"> &lt;sdake&gt;</span> sounds like thats everyone - my position is clear +1
+<a name="l-239"></a><span class="tm">22:00:19</span><span class="nk"> &lt;stevebake&gt;</span> non roadmap related wiki pages should remain for now?
+<a name="l-240"></a><span class="tm">22:00:26</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#info </span><span class="cmdline">vote passed unanimously to migrate wiki to blueprints - migrate issues to launchpad bugs</span>
+<a name="l-241"></a><span class="tm">22:00:49</span><span class="nk"> &lt;sdake&gt;</span> ok, well we are out of time
+<a name="l-242"></a><span class="tm">22:00:55</span><span class="nk"> &lt;sdake&gt;</span> hate to go over, but anything missed?
+<a name="l-243"></a><span class="tm">22:01:10</span><span class="nk"> &lt;zaneb&gt;</span> does radez have anything to add?
+<a name="l-244"></a><span class="tm">22:01:14</span><span class="nk"> &lt;eglynn&gt;</span> one nice side-effect of th emigration will be the tight integration of gerrit &amp; launchpad
+<a name="l-245"></a><span class="tm">22:01:26</span><span class="nk"> &lt;sdake&gt;</span> agree eglynn
+<a name="l-246"></a><span class="tm">22:01:27</span><span class="nk"> &lt;eglynn&gt;</span> (autoclosing bugs when patches are merged etc.)
+<a name="l-247"></a><span class="tm">22:01:43</span><span class="nk"> &lt;radez&gt;</span> had a nice chat with sdake today, we agreed should probably take the work I've done and integrate it into horizon
+<a name="l-248"></a><span class="tm">22:01:50</span><span class="nk"> &lt;radez&gt;</span> I'll keep in touch with progress I make
+<a name="l-249"></a><span class="tm">22:02:09</span><span class="nk"> &lt;zaneb&gt;</span> cool
+<a name="l-250"></a><span class="tm">22:02:11</span><span class="nk"> &lt;sdake&gt;</span> everyone doesn't have esp, which work do you mean
+<a name="l-251"></a><span class="tm">22:02:25</span><span class="nk"> &lt;radez&gt;</span> oh, :) sry
+<a name="l-252"></a><span class="tm">22:02:30</span><span class="nk"> &lt;radez&gt;</span> <span class="hi">re:</span> the heat web ui work
+<a name="l-253"></a><span class="tm">22:02:50</span><span class="nk"> &lt;radez&gt;</span> I fyou havent' seen my screencast let me or sdake know so we can send you a link
+<a name="l-254"></a><span class="tm">22:03:08</span><span class="nk"> &lt;radez&gt;</span> I did a proof of concept that had basic heat functionality in a web interface
+<a name="l-255"></a><span class="tm">22:03:16</span><span class="nk"> &lt;stevebake&gt;</span> radez, I saw the screencast, looks good!
+<a name="l-256"></a><span class="tm">22:03:20</span><span class="nk"> &lt;radez&gt;</span> and skined it to look like the OS dashboard
+<a name="l-257"></a><span class="tm">22:03:25</span><span class="nk"> &lt;radez&gt;</span> the stevebake
+<a name="l-258"></a><span class="tm">22:03:28</span><span class="nk"> &lt;radez&gt;</span> *thx
+<a name="l-259"></a><span class="tm">22:03:38</span><span class="nk"> &lt;shardy&gt;</span> I haven't seen that, sounds great, link would be good :)
+<a name="l-260"></a><span class="tm">22:03:41</span><span class="nk"> &lt;radez&gt;</span> so at this point I'll spend time looking at how to integrate it into horizon
+<a name="l-261"></a><span class="tm">22:03:45</span><span class="nk"> &lt;zaneb&gt;</span> <span class="hi">radez:</span> assume you're using the cfn API... any plans to switch over to the rest one when it's complete?
+<a name="l-262"></a><span class="tm">22:04:23</span><span class="nk"> &lt;radez&gt;</span> I will use the client libs you guys provide to the fullest
+<a name="l-263"></a><span class="tm">22:04:47</span><span class="nk"> &lt;zaneb&gt;</span> ah, ok. so we just have to switch client libs. cool :)
+<a name="l-264"></a><span class="tm">22:04:48</span><span class="nk"> &lt;radez&gt;</span> the code I have now does very little except call into the client.py lib
+<a name="l-265"></a><span class="tm">22:04:54</span><span class="nk"> &lt;radez&gt;</span> and pass data in
+<a name="l-266"></a><span class="tm">22:04:59</span><span class="nk"> &lt;radez&gt;</span> yup :)
+<a name="l-267"></a><span class="tm">22:05:05</span><span class="nk"> &lt;sdake&gt;</span> ok , well radez probably next step is to get a repo for you to do your work in for horizon integration
+<a name="l-268"></a><span class="tm">22:05:10</span><span class="nk"> &lt;stevebake&gt;</span> I think horizon uses all the python-*clients
+<a name="l-269"></a><span class="tm">22:05:36</span><span class="nk"> &lt;shardy&gt;</span> <span class="hi">radez:</span> Cool, good plan :)
+<a name="l-270"></a><span class="tm">22:06:06</span><span class="nk"> &lt;sdake&gt;</span> ok well i'll close meeting there
+<a name="l-271"></a><span class="tm">22:06:22</span><span class="nk"> &lt;sdake&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

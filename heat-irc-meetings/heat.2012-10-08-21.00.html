@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#heat Meeting</title>
+<style type="text/css">
+/* This is for the .html in the HTML2 writer */
+body {
+    font-family: Helvetica, sans-serif;
+    font-size:14px;
+}
+h1 {
+    text-align: center;
+}
+a {
+    color:navy;
+    text-decoration: none;
+    border-bottom:1px dotted navy;
+}
+a:hover {
+    text-decoration:none;
+    border-bottom: 0;
+    color:#0000B9;
+}
+hr {
+    border: 1px solid #ccc;
+}
+/* The (nick, time) item pairs, and other body text things. */
+.details {
+    font-size: 12px;
+    font-weight:bold;
+}
+/* The 'AGREED:', 'IDEA', etc, prefix to lines. */
+.itemtype {
+    font-style: normal;    /* un-italics it */
+    font-weight: bold;
+}
+/* Example: change single item types.  Capitalized command name.
+/* .TOPIC  {  color:navy;  } */
+/* .AGREED {  color:lime;  } */
+
+</style>
+</head>
+
+<body>
+<h1>#heat Meeting</h1>
+<span class="details">
+Meeting started by sdake at 21:00:38 UTC
+(<a href="heat.2012-10-08-21.00.log.html">full logs</a>).</span>
+
+<br><br>
+
+
+
+<h3>Meeting summary</h3>
+<ol>
+<li><b class="TOPIC">rollcall</b> <span class="details">(<a href='heat.2012-10-08-21.00.log.html#l-9'>sdake</a>, 21:03:34)</span>
+<br></li>
+<li><b class="TOPIC">v7 release</b> <span class="details">(<a href='heat.2012-10-08-21.00.log.html#l-20'>sdake</a>, 21:04:43)</span>
+<br></li>
+<li><b class="TOPIC">remaining for incubation</b> <span class="details">(<a href='heat.2012-10-08-21.00.log.html#l-30'>sdake</a>, 21:08:00)</span>
+<ol type="a">
+  <li><span class="INFO">rest API in, but needs bit more work around
+    events/resources</span> <span class="details">(<a
+    href='heat.2012-10-08-21.00.log.html#l-42'>sdake</a>,
+    21:11:05)</span></li>
+  <li><span class="INFO">need to sort out a python-heatclient
+    repo</span> <span class="details">(<a
+    href='heat.2012-10-08-21.00.log.html#l-52'>sdake</a>,
+    21:12:57)</span></li>
+  <li><span class="INFO">cloudwatch security model ready by
+    summit</span> <span class="details">(<a
+    href='heat.2012-10-08-21.00.log.html#l-120'>sdake</a>,
+    21:29:32)</span></li>
+  <li><a
+    href="https://github.com/heat-api/heat/issues/173">https://github.com/heat-api/heat/issues/173</a>
+    <span class="details">(<a
+    href='heat.2012-10-08-21.00.log.html#l-121'>sdake</a>,
+    21:29:58)</span></li>
+  <li><span class="INFO">v7 priorities - rest api, resource dictionary
+    mapping, cloudwatch security, python-heatclient</span> <span
+    class="details">(<a
+    href='heat.2012-10-08-21.00.log.html#l-139'>sdake</a>,
+    21:36:51)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">bugs</b> <span class="details">(<a href='heat.2012-10-08-21.00.log.html#l-147'>sdake</a>, 21:38:06)</span>
+<ol type="a">
+  <li><a
+    href="https://github.com/heat-api/heat-jeos/issues/13">https://github.com/heat-api/heat-jeos/issues/13</a>
+    <span class="details">(<a
+    href='heat.2012-10-08-21.00.log.html#l-149'>sdake</a>,
+    21:38:21)</span></li>
+  <li><a
+    href="https://github.com/heat-api/heat-jeos/issues/20">https://github.com/heat-api/heat-jeos/issues/20</a>
+    <span class="details">(<a
+    href='heat.2012-10-08-21.00.log.html#l-153'>sdake</a>,
+    21:39:10)</span></li>
+  <li><a
+    href="https://github.com/heat-api/heat/issues/249">https://github.com/heat-api/heat/issues/249</a>
+    <span class="details">(<a
+    href='heat.2012-10-08-21.00.log.html#l-155'>sdake</a>,
+    21:39:44)</span></li>
+  <li><a
+    href="https://github.com/heat-api/heat/issues/190">https://github.com/heat-api/heat/issues/190</a>
+    <span class="details">(<a
+    href='heat.2012-10-08-21.00.log.html#l-159'>sdake</a>,
+    21:41:43)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">release schedule</b> <span class="details">(<a href='heat.2012-10-08-21.00.log.html#l-164'>sdake</a>, 21:43:07)</span>
+<ol type="a">
+  <li><span class="INFO">zaneb release manager for v7 on 15th</span>
+    <span class="details">(<a
+    href='heat.2012-10-08-21.00.log.html#l-193'>sdake</a>,
+    21:49:24)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">summit planning</b> <span class="details">(<a href='heat.2012-10-08-21.00.log.html#l-195'>sdake</a>, 21:49:52)</span>
+<ol type="a">
+  <li><a
+    href="http://wiki.openstack.org/Heat/GrizzlySummit/HeatApiDraftDiscussion">http://wiki.openstack.org/Heat/GrizzlySummit/HeatApiDraftDiscussion</a>
+    <span class="details">(<a
+    href='heat.2012-10-08-21.00.log.html#l-197'>sdake</a>,
+    21:50:05)</span></li>
+  <li><a
+    href="http://wiki.openstack.org/Heat/GrizzlySummit/HeatImplementingCloudWatch">http://wiki.openstack.org/Heat/GrizzlySummit/HeatImplementingCloudWatch</a>
+    <span class="details">(<a
+    href='heat.2012-10-08-21.00.log.html#l-198'>sdake</a>,
+    21:50:13)</span></li>
+  <li><a
+    href="http://wiki.openstack.org/Heat/GrizzlySummit/HeatRoadmapPastandFuture">http://wiki.openstack.org/Heat/GrizzlySummit/HeatRoadmapPastandFuture</a>
+    <span class="details">(<a
+    href='heat.2012-10-08-21.00.log.html#l-199'>sdake</a>,
+    21:50:22)</span></li>
+</ol>
+<br></li>
+<li><b class="TOPIC">open issues</b> <span class="details">(<a href='heat.2012-10-08-21.00.log.html#l-207'>sdake</a>, 21:51:58)</span>
+<ol type="a">
+  <li><a
+    href="https://gist.github.com/2369729">https://gist.github.com/2369729</a>
+    <span class="details">(<a
+    href='heat.2012-10-08-21.00.log.html#l-226'>stevebake</a>,
+    21:57:18)</span></li>
+  <li><span class="INFO">vote passed unanimously to migrate wiki to
+    blueprints - migrate issues to launchpad bugs</span> <span
+    class="details">(<a
+    href='heat.2012-10-08-21.00.log.html#l-240'>sdake</a>,
+    22:00:26)</span></li>
+</ol>
+</li>
+</ol>
+<br><br>
+
+
+
+<span class="details">
+Meeting ended at 22:06:22 UTC
+(<a href="heat.2012-10-08-21.00.log.html">full logs</a>).</span>
+
+<br><br>
+
+
+
+<h3>Action items</h3>
+<ol>
+  <li>(none)</li>
+</ol>
+<br><br>
+
+
+
+<h3>People present (lines said)</h3>
+<ol>
+  <li>sdake (124)</li>
+  <li>zaneb (41)</li>
+  <li>shardy (25)</li>
+  <li>eglynn (23)</li>
+  <li>stevebake (23)</li>
+  <li>shadower (16)</li>
+  <li>radez (15)</li>
+  <li>mheat-bot (2)</li>
+  <li>jpeeler (2)</li>
+</ol>
+<br><br>
+
+
+
+<span class="details">Generated by <a href="http://wiki.debian.org/MeetBot">MeetBot</a> 0.1.4.</span>
+</body></html>

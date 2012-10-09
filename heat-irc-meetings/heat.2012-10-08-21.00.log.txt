@@ -1,0 +1,271 @@
+21:00:38 <sdake> #startmeeting
+21:00:38 <mheat-bot> Meeting started Mon Oct  8 21:00:38 2012 UTC.  The chair is sdake. Information about MeetBot at http://wiki.debian.org/MeetBot.
+21:00:38 <mheat-bot> Useful Commands: #action #agreed #help #info #idea #link #topic.
+21:01:05 <sdake> agenda
+21:01:30 <sdake> rollcall, v7 release, remaining work for incubation, bugs heat, bugs heat-jeos
+21:01:50 <sdake> summit planning
+21:01:53 <sdake> anything else?
+21:02:48 <shardy> looks good to me
+21:03:34 <sdake> #topic rollcall
+21:03:40 <eglynn> o/
+21:03:42 <sdake> sdake awake
+21:03:45 <zaneb> present
+21:03:49 <shardy> shardy here
+21:03:52 * shadower is here
+21:03:55 <jpeeler> jpeeler here
+21:04:01 <stevebake> o/
+21:04:02 <radez> radez here
+21:04:22 <sdake> small army - perhaps slower on pto
+21:04:36 <sdake> angus on pto
+21:04:43 <sdake> #topic v7 release
+21:05:28 <sdake> originally we had targeted oct 9th to have good integration with Folsom and sort out a bunch of bugs
+21:06:11 <sdake> we had some other work to do as well relating to incubation
+21:06:33 <eglynn> at what point will essex support be dropped?
+21:06:36 <sdake> i think we need a week or two to sort some of those issues out - need to decide 1 or 2 weeks
+21:07:01 <sdake> depends on user base but tbh i haven't considered it
+21:07:08 <sdake> we cover open issues at the end, we can cover that then if you like
+21:07:21 <eglynn> cool enough, not a pressing issue ...
+21:07:25 <sdake> yar
+21:07:46 <sdake> so lets get into the other work part, and then we can come back to when we make v7 occur
+21:08:00 <sdake> #topic remaining for incubation
+21:08:27 <sdake> zaneb rest API?
+21:08:57 <zaneb> so, y'all will have seen the first patch go in
+21:09:01 <sdake> yar
+21:09:16 <zaneb> if anybody wants to add events/resources, feel free to have at it
+21:09:31 <zaneb> I still have some more testing to do
+21:09:35 <sdake> do you not think those are appropriate?
+21:09:38 <shardy> need a client too :)
+21:09:45 <zaneb> and I know the create/update events need some rework
+21:10:00 <zaneb> to bring them more in line with how other OpenStack services work
+21:10:23 <sdake> what kind of timeline
+21:10:36 <zaneb> shardy: yeah, client would be great if anyone has time ;)
+21:11:05 <sdake> #info rest API in, but needs bit more work around events/resources
+21:11:10 <zaneb> sdake: I'd obviously like to have the core stuff settled and documented this week so you guys can take it to summit
+21:11:37 <stevebake> do we need to create a separate python-heatclient repo?
+21:11:42 <zaneb> I'm not too worried if the client and resource/event APIs aren't done by then
+21:12:00 <eglynn> stevebake: I'd recommend following that pattern
+21:12:17 <zaneb> eglynn: is that how other projects have done it?
+21:12:18 <eglynn> (glance diverged with its own native CLI, and we ended up just ripping that out ...)
+21:12:38 <shadower> zaneb, I think so, there's python-glanceclient etc.
+21:12:41 <eglynn> zaneb: yep, even glance got with the program eventually
+21:12:41 <shardy> stevebake: may be a good idea, originally we were just going to use boto, but now we have the native API I guess we'll need our own client library
+21:12:57 <sdake> #info need to sort out a python-heatclient repo
+21:13:48 <sdake> resources dict
+21:13:55 <sdake> zaneb
+21:14:48 <zaneb> resources dict?
+21:15:19 <sdake> ya the mapping of aws resources to openstack native
+21:15:26 <sdake> for the template
+21:15:56 <zaneb> I wasn't planning on changing the template code at all at this stage
+21:16:24 <sdake> think it might be handy - have either/or
+21:16:57 <zaneb> agreed, but I don't think it's a blocker for incubation
+21:17:29 <sdake> could be an irritant
+21:17:32 <zaneb> I'll have my hands full this week just doing the stuff we have to do before summit
+21:17:36 <sdake> got ya
+21:17:43 <shadower> whats this about
+21:17:45 <shadower> I could help
+21:18:00 <sdake> AWS:EIP -> OS:EIP
+21:18:02 <shardy> Can we just document it as a roadmap item, so it's clear we plan to do it?
+21:18:06 <sdake> rather OS:FloatingIP
+21:18:15 <sdake> ya
+21:18:16 <zaneb> shadower: so the idea is that we support other names for resources rather than the AWS ones
+21:18:36 <shadower> right
+21:18:55 <sdake> u pfor that  then tomas
+21:19:00 <stevebake> can our namespace be simpler?
+21:19:02 <shadower> okay I have a heat-jeos bug that needs fixing and I'll look into that after
+21:19:22 <zaneb> sdake: the naming convention is AWS::<service>::<resource>
+21:19:28 <sdake> shadower perhaps you can crank out a roadmap
+21:19:30 <sdake> ya got it zaneb
+21:19:37 <shadower> ya I'll do a roadmap
+21:19:40 <zaneb> in our case, the actual service we use could be changing
+21:19:46 <sdake> perhaps sooner rathe rthen later ;)
+21:20:00 <sdake> so folks have an opportunity to feedback on it
+21:20:08 <shadower> k
+21:20:15 <sdake> cloudwatch security model
+21:20:24 <shardy> Stuff like hardcoded nested templates will be a pain for the rename
+21:20:31 <sdake> its not a rename
+21:20:34 <sdake> its a dual support model
+21:20:47 <shardy> Ok, but it'll still break the nested templates ;)
+21:21:08 <sdake> dont see how, if nested stack uses a nested name, the parser will translate it correctly
+21:21:09 <zaneb> shardy: basically, we map two different resource types to one class
+21:21:20 <zaneb> it shouldn't break nested tempaltes
+21:21:51 <sdake> cloudwatch security model
+21:22:06 <shardy> zaneb: all of the nested hard-coded templates have hard-coded AWS:: stuff
+21:22:15 <zaneb> shardy: and that will still work
+21:22:28 <sdake> dict, with two keys same value
+21:22:52 <shardy> yeah, I guess, messy tho
+21:23:04 <sdake> should be tidy - likely few lines of code
+21:23:25 <sdake> zaneb did such a good job of rewriting the parser several times that its easy to add ;)
+21:23:32 <zaneb> lol
+21:23:36 <sdake> haha
+21:23:56 <shardy> cloudwatch progressing OK - I can reuse IAM:User stuff angus added, we already have AWS credentials on the instances
+21:24:12 <sdake> more interested in the security side
+21:24:17 <eglynn> dumb question ... so the objective of the CW security model is to ensure that visibility to metrics does not leak across tenants?
+21:24:18 <zaneb> it's actually just a bunch of new entries in resource_types.py
+21:24:35 <shardy> Its not the separate-tenant solution, but it will allow me to move the metric collection to the authenticated CW API
+21:24:39 <sdake> eglynn yes
+21:24:57 <eglynn> cool
+21:25:14 <sdake> timeline shardy
+21:25:15 <shardy> eglynn: And to ensure that a compromised instance can't do stuff other than generate bad metric data (ie can't access nova/glance etc)
+21:25:34 <shardy> sdake: I should have an authentcated version of cfn-push-stats ready tomorrow
+21:25:59 <shardy> Then I have to sort out cfn-signal/wait-conditions, and cfn-hup for metadata
+21:26:17 <shardy> will be tight but I'm aiming for the end of the week
+21:26:52 <shardy> there will still be lots of CW work after, but the main really insecure bits (ie the heat metadata server) should be gone by summit if all goes smoothly
+21:27:03 <sdake> nice
+21:27:11 <eglynn> shardy: there's bad metric data and there's being swamped by meaningless junk, prolly need to protect CW metric ingestion with throttling also
+21:27:23 <eglynn> (i.e. rate-limiting in the openstack lingo ...)
+21:27:49 <zaneb> eglynn: that's probably true for everything else too :)
+21:27:53 <shardy> eglynn: agree, that will prob come later after we've removed the really glaring problems (ie open API with no auth ;)
+21:27:58 <eglynn> zaneb: true that
+21:28:15 <eglynn> shardy: cool
+21:29:32 <sdake> #info cloudwatch security model ready by summit
+21:29:58 <sdake> https://github.com/heat-api/heat/issues/173
+21:30:53 <eglynn> FYI in nova they simply squashed all migrations pre-Essex into one mega-migration
+21:31:05 <zaneb> so there's precedent then :)
+21:31:10 <shardy> sdake: IMO that should wait until after we split Cloudwatch into a separate DB, which won't happen before summit
+21:31:17 <eglynn> this cut down on version bloat, but avoided throwing away the evolution
+21:31:25 <zaneb> tbh, I don't think we're ready to do that yet
+21:31:48 <sdake> ok - bringing up issues that could be addressed
+21:31:54 <sdake> sounds like this one gets a no vote
+21:33:14 <sdake> ok, i think there was one effort out of that with nobody's name attached to it, which was the client
+21:34:32 <stevebake> yep, I could look at client
+21:34:46 <sdake> timeline?
+21:35:06 <stevebake> zaneb, is there enough api for me to get started on consuming?
+21:35:15 <zaneb> stevebake: implement the create & update parts last, those will be changing
+21:35:30 <zaneb> but yes, there should be enough for you to get started
+21:35:54 <stevebake> I'll work on it this week then
+21:36:06 <zaneb> if you run out you can always add the rest ;)
+21:36:16 <stevebake> :)
+21:36:22 <shardy> stevebake: see the heat/client.py and boto_client.py wrappers, you should be able to create a os_client.py and then no changes to bin/heat should (in theory) be needed
+21:36:51 <sdake> #info v7 priorities - rest api, resource dictionary mapping, cloudwatch security, python-heatclient
+21:37:02 <stevebake> for a new project, do we need to get it wired into gerrit at the start?
+21:37:11 <sdake> ya i'll help you with that
+21:37:15 <sdake> get a repo rolling
+21:37:22 <sdake> actually ia hve to help wit hthat too :)
+21:37:29 <stevebake> heh
+21:37:53 <shardy> I have changes for heat-jeos (the cfntools), do we still just push to that repo?
+21:38:01 <sdake> ok bug bashing
+21:38:06 <sdake> #topic bugs
+21:38:16 <shadower> shardy, afaik, yes
+21:38:21 <sdake> https://github.com/heat-api/heat-jeos/issues/13
+21:38:57 <zaneb> that should be a 2-line fix ;)
+21:38:58 <shadower> should be easy to fix
+21:39:08 <stevebake> I stumbled on that the first time I tried to run heat
+21:39:10 <sdake> https://github.com/heat-api/heat-jeos/issues/20
+21:39:32 <shadower> sdake, I started to look into that today, verified it, will fix tomorrow
+21:39:44 <sdake> https://github.com/heat-api/heat/issues/249
+21:39:58 <sdake> pretty sure this one is fixed
+21:41:20 <sdake> d9f63269f1a0205811cd84487787c8c1291a952b
+21:41:21 <sdake> closing
+21:41:43 <sdake> https://github.com/heat-api/heat/issues/190
+21:41:52 <sdake> so - got updated on that
+21:42:24 <sdake> for the stuff ppl working on - please get an issue filed, so i can assign it to v7 milestone
+21:42:38 <sdake> i'll bump rest to backlog
+21:42:42 <sdake> or rather v8
+21:43:07 <sdake> #topic release schedule
+21:43:21 <sdake> so back on v7 release, looks like 9th isn't going to happen
+21:44:11 <sdake> hear lots of 1 weeks - thing that is difficult to measure is python-heatclient
+21:44:43 <sdake> angus and I will be in San Diego next week
+21:44:52 <zaneb> I don't think the client is essential before summit
+21:44:53 <stevebake> I'll have to spend some time on it to see what the scope will be
+21:45:10 <sdake> well we may bounce it - depends on what happens
+21:45:16 <stevebake> it is a new project, so it will have its own release cycle anyway ;)
+21:45:29 <sdake> good point
+21:46:00 <sdake> that puts us at 16th for release
+21:46:11 <sdake> since we have functional testing sorted out, we wont have a bear of a time releasing
+21:46:14 <sdake> should be straight forward
+21:46:41 <stevebake> I'm at orientation 16th, 17th, 18th
+21:46:46 <sdake> yar
+21:46:58 <sdake> while folks are traveling, look to zaneb for leadership
+21:47:03 <shadower> stevebake, munich?
+21:47:11 <stevebake> brissie
+21:47:26 <shadower> ah right, I forgot you're not in europe
+21:47:28 <shadower> sorry
+21:47:29 <stevebake> (brisbane)
+21:47:38 <sdake> who was up for release manager this go around
+21:48:00 <sdake> think zaneb and shardy
+21:48:02 <zaneb> sdake: I believe I volunteered last time
+21:48:25 <sdake> sound like you have alot on your plate - your welcome to it but need to get some fresh air once in awhile ;)
+21:48:46 <shardy> I'm also happy to do it, but going to be pretty loaded with CW stuff all this week..
+21:48:58 <zaneb> hopefully the bulk what I'm doing will be done before the 16th
+21:49:05 <sdake> sounds  good then zane
+21:49:14 <zaneb> but happy to let shardy do it this time and I can go next time if that's easier
+21:49:24 <zaneb> relaxed either way
+21:49:24 <sdake> #info zaneb release manager for v7 on 15th
+21:49:48 <sdake> lets get it done
+21:49:52 <sdake> #topic summit planning
+21:50:00 <zaneb> might need some help with the ubuntu stuff
+21:50:05 <sdake> http://wiki.openstack.org/Heat/GrizzlySummit/HeatApiDraftDiscussion
+21:50:13 <sdake> http://wiki.openstack.org/Heat/GrizzlySummit/HeatImplementingCloudWatch
+21:50:22 <sdake> http://wiki.openstack.org/Heat/GrizzlySummit/HeatRoadmapPastandFuture
+21:50:38 <sdake> zaneb, dump api ideas into api draft discussion
+21:50:58 <sdake> shardy/eglynn dump ideas into implementing cloudwatch
+21:51:05 <eglynn> ack
+21:51:19 <sdake> everyone dump ideas into roadmap
+21:51:28 <shardy> sdake: Will do, already brain-dumped into our wiki, so should be cut/paste mostly
+21:51:34 <sdake> cut and paste wfm ;)
+21:51:49 <eglynn> so presumably at some point the wiki content will be transfered to etherpads?
+21:51:58 <sdake> #topic open issues
+21:52:06 <sdake> we dont use etherpads atm
+21:52:07 <eglynn> (etherpads are what all the hipsters use at summit ...)
+21:52:13 <sdake> yar etherpad is great
+21:53:04 <sdake> pretty clear to me - as much as I like our github workflow - simple fast - we are at the point where we should adopt openstack workflow little more closely
+21:53:15 <sdake> speaking specifically about github issues and wiki
+21:53:31 <stevebake> so launchpad for issues?
+21:53:39 <sdake> yar
+21:54:16 <sdake> just a start - https://launchpad.net/heat
+21:54:37 <sdake> needs more work - one of many things i need to sort out this week
+21:54:58 <sdake> couple minutes for discussion then lets have a vote
+21:55:17 <shadower> I don't like it but it makes sense
+21:55:28 <eglynn> +1 for consistency with the other projects
+21:55:35 <stevebake> should we try to bulk migrate existing issues?
+21:56:09 <eglynn> launchpad has some sort of REST API AFAIK, could be useful for bulk transfers
+21:56:27 <shadower> github has one of those as well fwiw
+21:56:27 <eglynn> markmc uses it for releasing and for bug stats
+21:56:40 <sdake> thanks eglynn i'll ping mark about it
+21:56:56 <sdake> assuming folks vote yes
+21:57:18 <stevebake> https://gist.github.com/2369729
+21:57:20 <sdake> is there anyone that can't hack doing this - we are a community we roll together
+21:57:22 <stevebake> +1
+21:57:38 <sdake> thanks stevebake
+21:57:55 <zaneb> +1 what shadower said
+21:58:08 <sdake> ok , proper vote then
+21:58:31 <sdake> vote (+1/-1) migrate wiki to blueprints - migrate issues to launchpad bugs
+21:58:38 <eglynn> +1
+21:58:41 <stevebake> +1
+21:58:45 <zaneb> +1
+21:58:45 <jpeeler> +1
+21:58:55 <shardy> +1
+21:59:52 <sdake> sounds like thats everyone - my position is clear +1
+22:00:19 <stevebake> non roadmap related wiki pages should remain for now?
+22:00:26 <sdake> #info vote passed unanimously to migrate wiki to blueprints - migrate issues to launchpad bugs
+22:00:49 <sdake> ok, well we are out of time
+22:00:55 <sdake> hate to go over, but anything missed?
+22:01:10 <zaneb> does radez have anything to add?
+22:01:14 <eglynn> one nice side-effect of th emigration will be the tight integration of gerrit & launchpad
+22:01:26 <sdake> agree eglynn
+22:01:27 <eglynn> (autoclosing bugs when patches are merged etc.)
+22:01:43 <radez> had a nice chat with sdake today, we agreed should probably take the work I've done and integrate it into horizon
+22:01:50 <radez> I'll keep in touch with progress I make
+22:02:09 <zaneb> cool
+22:02:11 <sdake> everyone doesn't have esp, which work do you mean
+22:02:25 <radez> oh, :) sry
+22:02:30 <radez> re: the heat web ui work
+22:02:50 <radez> I fyou havent' seen my screencast let me or sdake know so we can send you a link
+22:03:08 <radez> I did a proof of concept that had basic heat functionality in a web interface
+22:03:16 <stevebake> radez, I saw the screencast, looks good!
+22:03:20 <radez> and skined it to look like the OS dashboard
+22:03:25 <radez> the stevebake
+22:03:28 <radez> *thx
+22:03:38 <shardy> I haven't seen that, sounds great, link would be good :)
+22:03:41 <radez> so at this point I'll spend time looking at how to integrate it into horizon
+22:03:45 <zaneb> radez: assume you're using the cfn API... any plans to switch over to the rest one when it's complete?
+22:04:23 <radez> I will use the client libs you guys provide to the fullest
+22:04:47 <zaneb> ah, ok. so we just have to switch client libs. cool :)
+22:04:48 <radez> the code I have now does very little except call into the client.py lib
+22:04:54 <radez> and pass data in
+22:04:59 <radez> yup :)
+22:05:05 <sdake> ok , well radez probably next step is to get a repo for you to do your work in for horizon integration
+22:05:10 <stevebake> I think horizon uses all the python-*clients
+22:05:36 <shardy> radez: Cool, good plan :)
+22:06:06 <sdake> ok well i'll close meeting there
+22:06:22 <sdake> #endmeeting

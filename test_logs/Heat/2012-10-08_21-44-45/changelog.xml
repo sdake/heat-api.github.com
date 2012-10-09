@@ -1,0 +1,32 @@
+Changes in branch origin/master, between 703693b03e5cfb39a71a337e1d97a121a914a951 and 5f7ccf6129f669a757253db8ce2ce88e8f3cd228
+commit dd6975eadc7720c4dcd8624a1fb43c9ccb820259
+tree c37ea232ead9fc3ed3d388fa4fdbe68684f7b696
+parent f912bfc4d03f8c801c2b4d29bd1c9fa1a3396ced
+author Eoghan Glynn <eglynn@redhat.com> 1349697077 +0100
+committer Eoghan Glynn <eglynn@redhat.com> 1349697216 +0100
+
+    Fix hash-bang directive in nova_create_flavors.sh
+    
+    The script employs bash-isms, so the directive to use the
+    Bourne shell causes some predictable failures:
+    
+      nova_create_flavors.sh: [[: not found
+    
+    ... etc.
+    
+    Change-Id: I60f3de55d2ebbfa47d444ec72c07728bbfa38be6
+
+:100755 100755 0bfc224c077971034b0b8ae1441e36384927fa60 8481723ccd744a46071245b3e39133aff7d1d5e1 M	tools/nova_create_flavors.sh
+
+commit 8c9bd2a71b917d89cdb131669b581c0ce59e9683
+tree b655c007b96741e39e910ddf13bdf9dd094ed9ca
+parent ed998e8c287ee7290246178e0b8feb98eec95096
+author Jeff Peeler <jpeeler@redhat.com> 1348877056 -0400
+committer Jeff Peeler <jpeeler@redhat.com> 1348877056 -0400
+
+    Make sure to remove python-glanceclient too
+    
+    Change-Id: I44c39824f5b1d96ac69e6972506fc865718b3c59
+    Signed-off-by: Jeff Peeler <jpeeler@redhat.com>
+
+:100755 100755 b2dd5f6e86b314d6f4742d94da85a445e8c58e69 75030617406600ad244bb8a1f951902c0005e961 M	tools/openstack

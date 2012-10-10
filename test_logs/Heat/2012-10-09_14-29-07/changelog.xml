@@ -1,0 +1,67 @@
+Changes in branch origin/master, between 5f7ccf6129f669a757253db8ce2ce88e8f3cd228 and afe93704f327a4514fa826b06d275729cf214073
+commit 2e3bdd951028f8d0b201b9ddb2553b194a1b0941
+tree 87e5b487603363e8359fe487dd52ce07d009b7d8
+parent 9cf1c6f269ac10c2493653c646bbef9271cf7122
+author Jeff Peeler <jpeeler@redhat.com> 1348876834 -0400
+committer Jeff Peeler <jpeeler@redhat.com> 1349798754 +0100
+
+    Fix versioning code
+    
+    Removed cruft from OpenStack common versioning code that was removed.
+    Added optional git SHA information if module is available. The
+    intent is to have the additional git revision reported only when FINAL
+    is set to False.
+    
+    Change-Id: Iae94b84027e7428cd394726e07845d2bad631586
+    Signed-off-by: Jeff Peeler <jpeeler@redhat.com>
+
+:100644 100644 4ea5ba0d2db80bc2c5d1f89d5b95cd58472a8041 5552444046305c6fda704d60630b723a9a0eb579 M	heat/service.py
+:100644 100644 82f0aaa12fb41772cbffcfdcd462ac7bc3b0c73a 2c75971aef05a0d1e93e6ef6939056cdfe05f8cb M	heat/version.py
+:100755 100755 72b1d95683f5cd7ec72c91050b42dc49f0d9cf4c 4503489e08f89c9a410423f153f14bcb7efeb83d M	setup.py
+
+commit 4651be78386832b8fd1f931f9574f7566d976198
+tree e146303b1cd1caf884932a92e5b4bbb73a62a12b
+parent 9cf1c6f269ac10c2493653c646bbef9271cf7122
+author Jeff Peeler <jpeeler@redhat.com> 1348877315 -0400
+committer Jeff Peeler <jpeeler@redhat.com> 1349797916 +0100
+
+    Remove unnecessary keystone scripts
+    
+    Make remaining keystone script check installed version of Nova and use
+    proper arguments to keystone.
+    
+    closes #252
+    
+    Change-Id: Ie4709891c7ca89d73390a3474e3d10beab449395
+    Signed-off-by: Jeff Peeler <jpeeler@redhat.com>
+
+:100755 100755 0c3d688d0fa46f3cb99c8d091fa7cd07603c3448 b241442d6eeb81c9491759f04e0c4bc62aa61ff8 M	bin/heat-keystone-setup
+:100644 100644 441f2a5972787dc9ddd1446ee8b9ba39b218881f 461b100315c17b712c975c4743f650564a027f4f M	docs/GettingStarted.rst
+:100755 000000 842b9b1097b5b5d63e695c8e990ddf9b39376f55 0000000000000000000000000000000000000000 D	tools/heat-keystone-service
+:100755 000000 65dd7f52f90b6fe395590ab948117cafb283354b 0000000000000000000000000000000000000000 D	tools/heat-keystone-service-devstack
+
+commit 9cf1c6f269ac10c2493653c646bbef9271cf7122
+tree e5d51b8d3417b9e779406b1506bc8fd9a6418c2a
+parent 3e603825a8c743e9a1e2f6f4362669cb6d187c47
+author Zane Bitter <zbitter@redhat.com> 1349771821 +0200
+committer Zane Bitter <zbitter@redhat.com> 1349779141 +0200
+
+    Fix bugs in ReST API stack creation
+    
+    Change-Id: I39277224305465cc951e397f340012563c0f7174
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 c377af31386d80b4500931877ba47f0f36787799 1e529dcb109b6bf59476e6e76df2bd492a188430 M	heat/api/openstack/v1/stacks.py
+
+commit 3e603825a8c743e9a1e2f6f4362669cb6d187c47
+tree 46b09b9a8fe05259eaa2f54cc2077d06eb17f696
+parent 5f7ccf6129f669a757253db8ce2ce88e8f3cd228
+author Zane Bitter <zbitter@redhat.com> 1349777204 +0200
+committer Zane Bitter <zbitter@redhat.com> 1349778997 +0200
+
+    Allow authentication to Nova with a Keystone token
+    
+    Change-Id: I3ca90169559cc167ff51db5fe47ceec8c917f04b
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 980ea04259b5a81ab4ec4d0126903a89fe2b6437 414769e47cc85612ee6c219edd105afc52562175 M	heat/engine/auth.py

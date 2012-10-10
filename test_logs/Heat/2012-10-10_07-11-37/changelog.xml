@@ -1,0 +1,18 @@
+Changes in branch origin/master, between afe93704f327a4514fa826b06d275729cf214073 and a34b9ef5ab0aa3590fd28cb9f8088a3e0896947f
+commit a34b9ef5ab0aa3590fd28cb9f8088a3e0896947f
+tree 1c7138e92175987688ab39294e840c986991030c
+parent afe93704f327a4514fa826b06d275729cf214073
+author Steve Baker <sbaker@redhat.com> 1349828507 +1300
+committer Steve Baker <sbaker@redhat.com> 1349828507 +1300
+
+    Change endpoint service type from orchestration to cloudformation.
+    
+    This is required so that the REST API can take over the orchestration service type.
+    
+    This will break exiting setups until heat-keystone-setup is re-run.
+    
+    There will be a corresponding update to devstack, which may be out of sync to this one.
+
+:100755 100755 b241442d6eeb81c9491759f04e0c4bc62aa61ff8 166233a044feb963cc085d027a79fa31ca07d142 M	bin/heat-keystone-setup
+:100644 100644 74739e8a528a54a2467a4b0d913353fd0cbda602 e16a71bf4a18d7ef05bfad7c559799a53cf67620 M	heat/client.py
+:100644 100644 414769e47cc85612ee6c219edd105afc52562175 067e323b35fcfb2a4101f66c39329d3860b18229 M	heat/engine/auth.py

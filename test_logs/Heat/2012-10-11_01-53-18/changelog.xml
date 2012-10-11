@@ -1,0 +1,45 @@
+Changes in branch origin/master, between a7babbd61f738687f5c2a0eb0b487655d2bc8e5b and 5df2d6f7020c54fc7e5c9c8e68662708791e3f69
+commit 64fc539afcd2adfe8d8698bb6a838a22fc3a132e
+tree ffbae12f9bb2813eaa6ccc1dcecb7b63ce500f61
+parent a553fc2ba55170fc27f2d4e6c5b44d6570523bda
+author Zane Bitter <zbitter@redhat.com> 1349886121 +0200
+committer Zane Bitter <zbitter@redhat.com> 1349886451 +0200
+
+    ReST API: Add some simple API documentation
+    
+    Change-Id: I6b3ff5a46e0ba836634cc21cf7ee8945a18a6a3a
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:000000 100644 0000000000000000000000000000000000000000 44305a7b053edb7dae7a59bceffa50bbd3884d44 A	docs/api.md
+
+commit a553fc2ba55170fc27f2d4e6c5b44d6570523bda
+tree a4870911b12f86df1ec81a6eca0e1066bdfd1f12
+parent 4fca77337a4a491cb1e340d515fabc36b09ee860
+author Zane Bitter <zbitter@redhat.com> 1349798137 +0200
+committer Zane Bitter <zbitter@redhat.com> 1349886451 +0200
+
+    ReST API: Use JSON documents for data input
+    
+    This is more in keeping with how OpenStack resources are manipulated than
+    the previous implementation, which used WWW Forms encoding.
+    
+    Change-Id: Iba7a6b83a65637cf999c67ef3f4dea7b3e64100d
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 1b95d6b66d580733daa2ecc09040462528ad186e b7d0b1bb71085413b1a44e264ae9975d35167deb M	heat/api/openstack/v1/stacks.py
+
+commit 4fca77337a4a491cb1e340d515fabc36b09ee860
+tree 2ee68b8b5582a6b5c9bf18528308724883c1a223
+parent 454b2dffb6b988ca6381c9ef1a973be654921b2b
+author Zane Bitter <zbitter@redhat.com> 1349876284 +0200
+committer Zane Bitter <zbitter@redhat.com> 1349879366 +0200
+
+    ReST API: Refactor handling of input data
+    
+    Create a separate class for dealing with the data associated with a
+    PUT/POST request.
+    
+    Change-Id: I054bc74cf65055d23eb716738c29e751a32f3022
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 acd7ade6d77f05a84c804c18f0d4a8e991951ef8 1b95d6b66d580733daa2ecc09040462528ad186e M	heat/api/openstack/v1/stacks.py

@@ -1,0 +1,104 @@
+Changes in branch origin/master, between a34b9ef5ab0aa3590fd28cb9f8088a3e0896947f and a7babbd61f738687f5c2a0eb0b487655d2bc8e5b
+commit a7babbd61f738687f5c2a0eb0b487655d2bc8e5b
+tree 4be5e4dff0820fe517fac82934ba79435ca78dfd
+parent abafede828fff481912bb1044e0683536468eb64
+author Steve Baker <sbaker@redhat.com> 1349896684 +1300
+committer Steve Baker <sbaker@redhat.com> 1349896740 +1300
+
+    Unit test for load balancer resource type.
+    
+    Change-Id: I2386419563f02bcb509a8547fd587b9af6285c5c
+
+:000000 100644 0000000000000000000000000000000000000000 bc60458fe108d2dbf47d2b81d5ea99db1f74f100 A	heat/tests/test_loadbalancer.py
+:100644 100644 55013ef7a8d1c39826904fab43362b9274a1680b d5ce979ecde26396e0207e7776edf43e5a15829b M	heat/tests/v1_1/fakes.py
+
+commit c0ec1c1dd4aaba11b11f21877e57ee113abd1fdf
+tree a2cf55efeda2390e92d40c0a86a91d7a8c8d2d30
+parent 73b19cb666d70f2288a96c95cfab4bf8ed391faa
+author Steven Hardy <shardy@redhat.com> 1349889625 +0100
+committer Steven Hardy <shardy@redhat.com> 1349892381 +0100
+
+    heat : Add missing calculate_properties to user resource
+    
+    Adding calculate_properties to user AccessKey resource, or
+    we get a key error when trying to list resources in stacks
+    using this resource type
+    
+    Fixes #194
+    
+    Change-Id: I905c162dd6bc3557825610f046e6ee8228d5225b
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 2f1d6876f16f053b634c7682fd71dfa434113a67 880060b5b05e56f54c8e08344465ba078384bae5 M	heat/engine/user.py
+
+commit 73b19cb666d70f2288a96c95cfab4bf8ed391faa
+tree 7aabb061ce1f439574b78754b8c9c8f3d34aaf7a
+parent 454b2dffb6b988ca6381c9ef1a973be654921b2b
+author Steven Hardy <shardy@redhat.com> 1349713002 +0100
+committer Steven Hardy <shardy@redhat.com> 1349892361 +0100
+
+    heat engine : Avoid printing credentials to logfile
+    
+    Avoid printing the AWS secret key to the (world-readable)
+    engine logfile
+    
+    Fixes #258
+    
+    Change-Id: I26d809064c603421c4bbe4a060de5d4776fec4b8
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 67d681cd6e15f1119ba4d24c4fa54bc0c08498d8 2f1d6876f16f053b634c7682fd71dfa434113a67 M	heat/engine/user.py
+
+commit 96c9b50778ab3fc36d33544e6d6510d75e09c044
+tree 8f1f12c8dca1d685f34a294e61395ff107149d19
+parent 454b2dffb6b988ca6381c9ef1a973be654921b2b
+author Steven Hardy <shardy@redhat.com> 1349891480 +0100
+committer Steven Hardy <shardy@redhat.com> 1349892257 +0100
+
+    heat engine : only attempt stack update from valid states
+    
+    Only attempt to update a stack if it is in CREATE_COMPLETE
+    or UPDATE_COMPLETE state
+    
+    Fixes #260
+    
+    Change-Id: If47a628f1602d5d8783b3f0e90fd7e76ccef46ba
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 b3142d6a73901899fa93082de1d51a15c15c4399 e61922308a3f2ce1dbe72f968b48040d3baca4e4 M	heat/engine/parser.py
+
+commit 454b2dffb6b988ca6381c9ef1a973be654921b2b
+tree 8fa93ec16d356e9ead0d330c0445840e40fcc1d4
+parent efd529408659110806aab6de4d37b705bc840143
+author Zane Bitter <zbitter@redhat.com> 1349876284 +0200
+committer Zane Bitter <zbitter@redhat.com> 1349876739 +0200
+
+    ReST API: Fix template validation
+    
+    Also move the URL to be local to a tenant. This is because keystone will
+    automatically fill in the tenant id in the endpoint, so all requests will
+    use this as a base URL.
+    
+    Change-Id: I3fbd5a7d256426079824f8a26fdcd41eac083146
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 9b793d5e7393f063a225e82407b1ec3ffe4c646a b5011706564e479bd0a868fb823475dd17afeb7b M	heat/api/openstack/v1/__init__.py
+:100644 100644 1e529dcb109b6bf59476e6e76df2bd492a188430 acd7ade6d77f05a84c804c18f0d4a8e991951ef8 M	heat/api/openstack/v1/stacks.py
+
+commit efd529408659110806aab6de4d37b705bc840143
+tree cbafbed81244172626e95219b91804feba21bb66
+parent a34b9ef5ab0aa3590fd28cb9f8088a3e0896947f
+author Steven Hardy <shardy@redhat.com> 1349866653 +0100
+committer Steven Hardy <shardy@redhat.com> 1349875612 +0100
+
+    heat : workaround engine error with version code
+    
+    Work around lack of git sha in vcsversion so we don't get an
+    engine error if the version dict doesn't contain the sha key
+    
+    Fixes #259
+    
+    Change-Id: I25d2cfb008a5a9e0e1a60e7360e58608d2d8e9c0
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 2c75971aef05a0d1e93e6ef6939056cdfe05f8cb 9eafd553c275403a99123c751581e19a5a17d499 M	heat/version.py

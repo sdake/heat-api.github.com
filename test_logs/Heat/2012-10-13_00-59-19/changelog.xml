@@ -1,0 +1,58 @@
+Changes in branch origin/master, between 5df2d6f7020c54fc7e5c9c8e68662708791e3f69 and 238187ee0a9d075d1e86534a72ae2eb8e53cce26
+commit 238187ee0a9d075d1e86534a72ae2eb8e53cce26
+tree 3cad84654bf1e6a55c85d038b1f6b7baad2f0ee4
+parent 8be0906b7aa3162d9d1435eb8ed0d8ba9c226066
+author Zane Bitter <zbitter@redhat.com> 1350073974 +0200
+committer Zane Bitter <zbitter@redhat.com> 1350074005 +0200
+
+    ReST API: Separate out code to fetch template from a URL
+    
+    This will make testing a bit easier.
+    
+    Change-Id: I8f9d63e3ff68174bb9f1284c21f52696ec5ac006
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 b7d0b1bb71085413b1a44e264ae9975d35167deb 682285a866c09eb6ed58f134a33d29695910477b M	heat/api/openstack/v1/stacks.py
+
+commit 8be0906b7aa3162d9d1435eb8ed0d8ba9c226066
+tree ce7add9eb3f00061f7782dc76e290bac01f5db7f
+parent db0a268f414e963d73ded7449662385f8e5435c1
+author Steven Hardy <shardy@redhat.com> 1350058691 +0100
+committer Steven Hardy <shardy@redhat.com> 1350058848 +0100
+
+    heat : db API add watch_rule_get_by_name
+    
+    Add watch_rule_get_by_name, and move the previous
+    watch_rule_get to look up rule by ID, which is consistent
+    with the other api calls.  Lookup by id is required for
+    WatchRule rework
+    
+    Ref #217
+    
+    Change-Id: I4b5d08ffcd31b6b522c65edd0a202e8cf5a367b8
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 e00dc71e99bf40df1013625461ee41b03ba78247 6724bd1b88136555b7bd75c848baaa73d68d2f4f M	heat/db/api.py
+:100644 100644 c0249b390f8970fa47c03eab07d0da6fbb10385a ee6a9356494844b0fa94e9425e6c34aaf2488ee5 M	heat/db/sqlalchemy/api.py
+:100644 100644 f4589bf8bc463c11b68f9bbc12f4ff70ccbec6dc 92fc1fe32bc0ce9a6f9fbe8f764de60d325f89e4 M	heat/engine/manager.py
+:100644 100644 4ffaa89508e30ae7712659e5e7325f3c0c155e41 60a738693e8bb7fa2ca18236dfcf727d01f0ee23 M	heat/tests/test_engine_manager.py
+
+commit db0a268f414e963d73ded7449662385f8e5435c1
+tree 7e8a425324d7f33bef8170c0b9fb823267d3e7d1
+parent 5df2d6f7020c54fc7e5c9c8e68662708791e3f69
+author Steven Hardy <shardy@redhat.com> 1350035353 +0100
+committer Steven Hardy <shardy@redhat.com> 1350058816 +0100
+
+    heat : db API add watch_rule_update DB API action
+    
+    Add watch_rule_update DB API call, needed for WatchRule
+    refactor/rework
+    
+    Ref #217
+    
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+    
+    Change-Id: Ie8321d390ab96e987bfa4c97c26f1e0305f6bd48
+
+:100644 100644 bd6c065f720ce8fd20c0d8111f1e7f9aceeb6aad e00dc71e99bf40df1013625461ee41b03ba78247 M	heat/db/api.py
+:100644 100644 e6f106a41c07816a6b28396aa08267aca09a8c43 c0249b390f8970fa47c03eab07d0da6fbb10385a M	heat/db/sqlalchemy/api.py

@@ -1,0 +1,24 @@
+Changes in branch origin/master, between ac38cae7f5352a0c2592d6789bdd5e35ca5aa900 and 4bd5c4a9dde0afbcd31438604c3aa05799c472ce
+commit 4bd5c4a9dde0afbcd31438604c3aa05799c472ce
+tree 11c07c6f40fe5c65dfddd4d1d4ccc5d63801e6d0
+parent ac38cae7f5352a0c2592d6789bdd5e35ca5aa900
+author Steven Hardy <shardy@redhat.com> 1350316899 +0100
+committer Steven Hardy <shardy@redhat.com> 1350319756 +0100
+
+    heat engine : remove unused validate_template params
+    
+    Remove unused params argument to validate_template, since
+    it is no longer passed by the CFN API meaning the validate
+    action fails
+    
+    Fixes #262
+    
+    Change-Id: Ic2a5ede02649f2d6dff86595efb0127e07fbf253
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 9b5fbc65da5bc37b08bb3bbec1656796c47b54df fe493394fdfa2c5a625041d3511f05ee4731000f M	heat/api/openstack/v1/stacks.py
+:100644 100644 62e8d0d0b81a1a7d16d5944bec5a0cdb7e6e6899 88fea7b7939651a4b0f0a7a9999905e77b3b54a1 M	heat/engine/manager.py
+:100644 100644 7d0185f190893670219fcbdff1782ebf03d52e62 ce409f4cd2dc1ff9b55ba838ebe7d210381ebd6e M	heat/engine/rpcapi.py
+:100644 100644 eafeb06c1f58840dde094561b86221cecc9a03a1 d7a7fa60974a0918a6ab79220b0ca4340948d0ad M	heat/tests/test_api_openstack_v1.py
+:100644 100644 6fc8cce6a0a016519db988def35b8e3935b1e9a2 38a38eda3108dbcd5f6d807aedc391ccd7c52a3e M	heat/tests/test_rpcapi.py
+:100644 100644 975e508244b6c7c73c25fa8ed97614020500b42f 38a54168f7818ef750d067eb32373de4691c419d M	heat/tests/test_validate.py

@@ -1,0 +1,16 @@
+Changes in branch origin/master, between fdf285f4df7b4589e8801c77bdd3c3b2f57c9812 and 65496df4a9c08d0ef7fc191f192b19df39447198
+commit 65496df4a9c08d0ef7fc191f192b19df39447198
+tree 1c66302bb0b9cd72d2180b3bc1211fa4678ab37d
+parent fdf285f4df7b4589e8801c77bdd3c3b2f57c9812
+author Zane Bitter <zbitter@redhat.com> 1350308809 +0200
+committer Zane Bitter <zbitter@redhat.com> 1350315146 +0200
+
+    Reduce timeout periods in functional tests
+    
+    Many of the timeouts were absurdly long and delayed reporting of test
+    results by many hours at a time.
+    
+    Change-Id: I9a70442548097d607eab87471a8037b566127ac9
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 9b3810db52a837eecb550639e2c790607f89fc1f 5d09be688da3f8ddc8d0fc5b84e23e094318fd10 M	heat/tests/functional/util.py

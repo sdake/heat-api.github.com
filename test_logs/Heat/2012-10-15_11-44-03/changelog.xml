@@ -1,0 +1,31 @@
+Changes in branch origin/master, between 65496df4a9c08d0ef7fc191f192b19df39447198 and ac38cae7f5352a0c2592d6789bdd5e35ca5aa900
+commit ac38cae7f5352a0c2592d6789bdd5e35ca5aa900
+tree 7bf518c2de8b433062ef005bac79d26c74fd8796
+parent 64965db9de997d55d7599073d2a310251fc355e3
+author Zane Bitter <zbitter@redhat.com> 1350311599 +0200
+committer Zane Bitter <zbitter@redhat.com> 1350315173 +0200
+
+    Obey the passed in distro value in HAProxy template
+    
+    Change-Id: I7e1dad654746329763bb575a09611aa0b827ec24
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 26143a25d54011be4d71c9b79edfdedf79dcdced 8b69eeb8e6fb92f260145c6f526e671f16b1084f M	templates/HAProxy_Single_Instance.template
+
+commit 64965db9de997d55d7599073d2a310251fc355e3
+tree c12bd712e0eb210ebec6c9aa7bcae4ce186f668c
+parent 65496df4a9c08d0ef7fc191f192b19df39447198
+author Zane Bitter <zbitter@redhat.com> 1350310392 +0200
+committer Zane Bitter <zbitter@redhat.com> 1350315161 +0200
+
+    Use --script option to parted in templates
+    
+    Provisioning scripts should never expect user input.
+    
+    Change-Id: I0099cee6a920313c2b5c8e86ddb18de11bab8329
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 71d6e150b4dd85465e003f8c5ee2a792279a3fde 3a7259d531996983ec64a108324d1c76e9277ecb M	templates/WordPress_2_Instances_With_EBS.template
+:100644 100644 fb668888ed31e5904b6d579295842ee586bfdbef a7fac58ab71a3b8032cba6722826fe52bd468ee1 M	templates/WordPress_2_Instances_With_EBS_EIP.template
+:100644 100644 931d41e69fe644d22c00c03e762b987a0c46ad82 fbf35729e0eea290d5be852ebbe5f34e885b6d44 M	templates/WordPress_Single_Instance_With_EBS.template
+:100644 100644 549fafb222d0a9c0918433cf2125d53c938ff1a7 6d38cc2dc801105ab7b0ae16b1f770b143f1427e M	templates/WordPress_Single_Instance_With_EBS_EIP.template

@@ -1,4 +1,4 @@
-Triggered by Gerrit: https://review.openstack.org/14291
+Triggered by Gerrit: https://review.openstack.org/14292
 Building in workspace /var/lib/jenkins/jobs/Heat/workspace
 Checkout:workspace / /var/lib/jenkins/jobs/Heat/workspace - hudson.remoting.LocalChannel@85c3715
 Using strategy: Default
@@ -11,7 +11,7 @@ git version 1.7.11.2
 Fetching upstream changes from https://review.openstack.org/heat-api/heat
 Commencing build of Revision 238187ee0a9d075d1e86534a72ae2eb8e53cce26 (origin/master)
 Checking out Revision 238187ee0a9d075d1e86534a72ae2eb8e53cce26 (origin/master)
-[workspace] $ /bin/sh -xe /tmp/hudson3851900893675309503.sh
+[workspace] $ /bin/sh -xe /tmp/hudson8444178273594018076.sh
 + /var/lib/jenkins/heat-integration/remote-test.sh
 Deleting mrg-04.mpc.lab.eng.bos.redhat.com from SSH known hosts file...
 Attempting to provision machine mrg-04.mpc.lab.eng.bos.redhat.com with Beaker
@@ -19,7 +19,7 @@ Distro Id:  58551
 XML-RPC fault: <class 'bkr.common.bexceptions.BX'>:u'User host/mrg-05.mpc.lab.eng.bos.redhat.com has already reserved system mrg-04.mpc.lab.eng.bos.redhat.com'
 Build step 'Execute shell' marked build as failure
 [PostBuildScript] - Execution post build scripts.
-[workspace] $ /bin/sh -xe /tmp/hudson1293208631555901706.sh
+[workspace] $ /bin/sh -xe /tmp/hudson1818841012733213560.sh
 + /var/lib/jenkins/heat-integration/log-publish.sh
 ~/heat-integration/heat-api.github.com ~/heat-integration
 Current branch master is up to date.
@@ -41,6 +41,7 @@ skipping non-regular file "11"
 skipping non-regular file "110"
 skipping non-regular file "111"
 skipping non-regular file "112"
+skipping non-regular file "113"
 skipping non-regular file "12"
 skipping non-regular file "13"
 skipping non-regular file "14"
@@ -137,10 +138,3 @@ skipping non-regular file "96"
 skipping non-regular file "97"
 skipping non-regular file "98"
 skipping non-regular file "99"
-[master 4401e50] Sync jenkins-Heat-112 build logs
- 4 files changed, 336 insertions(+)
- create mode 100644 test_logs/Heat/2012-10-15_02-32-26/build.xml
- create mode 100644 test_logs/Heat/2012-10-15_04-28-33/changelog.xml
- create mode 100644 test_logs/Heat/2012-10-15_04-28-33/log
-~/heat-integration
-Finished: FAILURE

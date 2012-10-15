@@ -1,0 +1,140 @@
+Changes in branch origin/master, between 238187ee0a9d075d1e86534a72ae2eb8e53cce26 and fdf285f4df7b4589e8801c77bdd3c3b2f57c9812
+commit fdf285f4df7b4589e8801c77bdd3c3b2f57c9812
+tree b56fab346702b61f7a360525de1febc457cfdf03
+parent b3fba7da803d3c0239f7d3a27a69cd099fb6552e
+author Zane Bitter <zbitter@redhat.com> 1350073974 +0200
+committer Zane Bitter <zbitter@redhat.com> 1350301642 +0200
+
+    ReST API: Add unit tests
+    
+    Change-Id: Id815c7d5d08e912f64268529b4bdbdcd06c1c47e
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:000000 100644 0000000000000000000000000000000000000000 eafeb06c1f58840dde094561b86221cecc9a03a1 A	heat/tests/test_api_openstack_v1.py
+
+commit b3fba7da803d3c0239f7d3a27a69cd099fb6552e
+tree 61ac5af380371360c37306642584a15d94de38f2
+parent 47c79a2051f7738a482bad090b894c6e480dfe7a
+author Steven Hardy <shardy@redhat.com> 1350297292 +0100
+committer Steven Hardy <shardy@redhat.com> 1350299683 +0100
+
+    heat : Getting started updates for Cloudwatch
+    
+    Update GettingStarted.rst:
+    - Add heat-api-cloudwatch section
+    - Add firewall rules required for heat-metadata and heat-api-cloudwatch
+    
+    Change-Id: I3b232f378a23b6c334c7e8e5af3ab067ffd50381
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 f3870bf530dcde1ed534a227e8d5f0b33cd17032 3db719c1a89f1bbfcd6954298e620abbb30ddfcc M	docs/GettingStarted.rst
+
+commit 47c79a2051f7738a482bad090b894c6e480dfe7a
+tree 9fc3c88a36f0fa298dbbcd50878e3b817c6e37fc
+parent b53436bf402a992cc9c135dd833bdb15465d4244
+author Zane Bitter <zbitter@redhat.com> 1350295031 +0200
+committer Zane Bitter <zbitter@redhat.com> 1350295095 +0200
+
+    Getting Started: Fix IP address determination on F17
+    
+    The format of the output of ifconfig has changed between Fedora 16 and
+    Fedora 17, so starting the metadata server failed on the latter due to a
+    missing IP address.
+    
+    The change makes the script work with either format, and also now fails
+    with an error if it breaks again.
+    
+    Change-Id: I7012af7bd7c15f6a962d19e66c8a0d8401243895
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 461b100315c17b712c975c4743f650564a027f4f f3870bf530dcde1ed534a227e8d5f0b33cd17032 M	docs/GettingStarted.rst
+
+commit ebc3129e44d5762756d28133880b07a13f6e0be3
+tree 42d7ae5c7119d5ff9ca6717304f8e1ae41dec4db
+parent 238187ee0a9d075d1e86534a72ae2eb8e53cce26
+author Steven Hardy <shardy@redhat.com> 1348815740 +0100
+committer Steven Hardy <shardy@redhat.com> 1350289549 +0100
+
+    heat engine : Move watch logic into WatchRule class
+    
+    Move engine/manager.py logic into WatchRule class so watch-
+    related DB manipulation and related logic is encapsulated in
+    the WatchRule class
+    
+    Fixes #217
+    
+    Change-Id: I5405ab631de17efda7eefb45dadad55ee12c533c
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 a82f9b0c119aeb68ea2fa97317523b4c50201c38 22747cb699c18b7ee2f6542708c6781f76d1bb40 M	heat/engine/cloud_watch.py
+:100644 100644 92fc1fe32bc0ce9a6f9fbe8f764de60d325f89e4 62e8d0d0b81a1a7d16d5944bec5a0cdb7e6e6899 M	heat/engine/manager.py
+:100644 100644 33fa1e64850eaaefb23fde58378c6fdf5aa9d187 5d150655cf6b8b9b9ae5c3de526fe32158e519d2 M	heat/engine/watchrule.py
+:100644 100644 f0582f2a6f74b206e18f080e76cdae263efa11b2 3f3a0169861070090e4ee438d9f1a7b3b264cd39 M	heat/tests/test_watch.py
+
+commit be392980ce9c450cc92a6a57ddbe2b09693e1273
+tree fcedc207e1af257e234b8a4198d7687df25e8ddb
+parent a5c7b42e23add65e4f990674f24aa9bd90725a72
+author Zane Bitter <zbitter@redhat.com> 1350073974 +0200
+committer Zane Bitter <zbitter@redhat.com> 1350074077 +0200
+
+    ReST API: Report template validation errors
+    
+    Use a different HTTP Status code (Bad Request) for validation errors.
+    
+    Change-Id: Ie1097dfbbe920a2efb641b343114d7b4decac473
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 370294283448fa79eb807dac99456cbcf83c8332 9b5fbc65da5bc37b08bb3bbec1656796c47b54df M	heat/api/openstack/v1/stacks.py
+
+commit a5c7b42e23add65e4f990674f24aa9bd90725a72
+tree 7a543933f95b1380df3445f443d6869da8e7c71f
+parent 238187ee0a9d075d1e86534a72ae2eb8e53cce26
+author Zane Bitter <zbitter@redhat.com> 1350073974 +0200
+committer Zane Bitter <zbitter@redhat.com> 1350074041 +0200
+
+    ReST API: Return appropriate error codes
+    
+    Change-Id: I769366dd164199c3b7d16ca8bf4c4d99d21dbb7b
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 682285a866c09eb6ed58f134a33d29695910477b 370294283448fa79eb807dac99456cbcf83c8332 M	heat/api/openstack/v1/stacks.py
+
+commit 4d262e3b29faeb6499ca2befe52d81aea3583ef7
+tree dc42eb55b8e396ec126f10c53cb9a55eeb14058a
+parent 318f233c54c4f2046052a4a70411600e53aa847f
+author Steven Hardy <shardy@redhat.com> 1350045911 +0100
+committer Steven Hardy <shardy@redhat.com> 1350056046 +0100
+
+    heat : Remove cloudwatch functionalty from metadata server
+    
+    Remove the cloudwatch metric functionality from the heat-metadata
+    service, since all stats should now be sent via the CloudWatch
+    api via the PutMetricData action (ref cfn-push-stats update)
+    
+    Note that after this change you will need to rebuild your jeos
+    images to get the new version of cfn-push-stats from heat-jeos
+    
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+    
+    Change-Id: I5eec60d3dd0abfb32e2b4777635f1b0e2714a2c2
+
+:100644 100644 748992917137ec91c2a6d2358faf72825b80635c 7f7efb6e64702dabec57b2588bd023d8144966a9 M	heat/metadata/api/v1/__init__.py
+:100644 100644 68c0effb1cf6c405287fba7cea4957e035c12187 13c2ad105a22d05fb137f57f2c393a7628bb9dd0 M	heat/metadata/api/v1/metadata.py
+
+commit 318f233c54c4f2046052a4a70411600e53aa847f
+tree 1901ad84434e3cd7c1713e1a3d52a17c56359949
+parent 5df2d6f7020c54fc7e5c9c8e68662708791e3f69
+author Steven Hardy <shardy@redhat.com> 1349859791 +0100
+committer Steven Hardy <shardy@redhat.com> 1350056042 +0100
+
+    heat templates : Add boto config to HA templates
+    
+    Add boto config to HA/IHA templates as it's now required for
+    authenticated cfn-push-stats which uses the CloudWatch API
+    
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+    
+    Change-Id: I8670f6774834e9f41870240496fe74728306cf17
+
+:100644 100644 a3c864ceb813278f091201876832956cd5128c57 02726ec67c4d1a18f892e2414133a6ed28f4aa47 M	templates/WordPress_Single_Instance_With_HA.template
+:100644 100644 1159c1a37a2eb035c02de88af374fccefde697da 5ca109832d2eb612ee30485ffe978417cf43b9ef M	templates/WordPress_Single_Instance_With_IHA.template

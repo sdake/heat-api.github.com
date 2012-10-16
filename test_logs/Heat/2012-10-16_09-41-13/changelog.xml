@@ -1,0 +1,13 @@
+Changes in branch origin/master, between 46a41590fb8ebbec565e0d007c429a17d0d7f5eb and b1c97d145531ba3aeff055d7028ff49df13cad9e
+commit b1c97d145531ba3aeff055d7028ff49df13cad9e
+tree 29120797d360bd5c395d3e8e2a94e923b1248232
+parent 46a41590fb8ebbec565e0d007c429a17d0d7f5eb
+author Zane Bitter <zbitter@redhat.com> 1350387323 +0200
+committer Zane Bitter <zbitter@redhat.com> 1350387444 +0200
+
+    Catch SSH Disconnection errors in functional tests
+    
+    Change-Id: I24f959cbaa36138bafeda70a3966000673c80c56
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 5d09be688da3f8ddc8d0fc5b84e23e094318fd10 74946f625079c1883ba7f0ca1d80c7ac9fde007a M	heat/tests/functional/util.py

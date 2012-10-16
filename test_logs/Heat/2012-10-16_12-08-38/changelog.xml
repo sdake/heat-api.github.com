@@ -1,0 +1,83 @@
+Changes in branch origin/master, between b1c97d145531ba3aeff055d7028ff49df13cad9e and f3ab48b64e13d681ff4d07aae67c31fb6c266683
+commit 74b207a332d67fd530f3a87fbf83f6981e75d113
+tree aa949711acb5512372f9eb3acb1010a853c0bb62
+parent da5406a043512dbc47064794d6ab1ab1e0ba228b
+author Steven Hardy <shardy@redhat.com> 1350393377 +0100
+committer Steven Hardy <shardy@redhat.com> 1350395725 +0100
+
+    heat tests : add ValidateTemplate test to CFN_API_Actions_Boto test
+    
+    Add test for ValidateTemplate test to test_CFN_API_Actions_Boto.py
+    
+    Change-Id: I1fff55cd9aaa0c62c2a1e05050695bcd3f96664a
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 afaae463af065df8896e28db891f6f47d7c0970e f19a80bc4c4f43e67c8531d1899a2246279792bd M	heat/tests/functional/test_CFN_API_Actions_Boto.py
+
+commit da5406a043512dbc47064794d6ab1ab1e0ba228b
+tree 338206b7d4acb46876e0d8c66fdc1b02499527e0
+parent 3cbbafd3c2fd321941722eea598aead1dd3d481b
+author Steven Hardy <shardy@redhat.com> 1350391524 +0100
+committer Steven Hardy <shardy@redhat.com> 1350395724 +0100
+
+    heat tests : Add ValidateTemplate test to CFN_API_Actions test
+    
+    Add test for ValidateTemplate action to test_CFN_API_Actions.py
+    
+    Change-Id: Ia7a377f952d096e7b728a7151906ab2781695008
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 76d84bd85ec8cf62197cf1facfc1b940088d2302 f50335a4828046a7ceaed9b1e45394eb03bd17b0 M	heat/tests/functional/test_CFN_API_Actions.py
+
+commit 3cbbafd3c2fd321941722eea598aead1dd3d481b
+tree 56a49374510f29de344c7b373707c12d61aee360
+parent 98b6c2a566812abdb1c89e9dec51331baea5ae14
+author Steven Hardy <shardy@redhat.com> 1350389967 +0100
+committer Steven Hardy <shardy@redhat.com> 1350395724 +0100
+
+    heat API : ValidateTemplate fix response format
+    
+    Fix CFN API ValidateTemplate response format, missing the
+    ValidateTemplateResponse wrapper, required by boto to parse the response
+    
+    Change-Id: I89464df402346ff87041496652d2b4d39cc35fc6
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 2b8aa65b12f350dc765338b8abfb6ee61abf9f02 6cc48961d82326eb90bd4248a235f348ece23191 M	heat/api/cfn/v1/stacks.py
+:100644 100644 88fea7b7939651a4b0f0a7a9999905e77b3b54a1 c525606c38acb1a08563f1a30eabc604995bfe23 M	heat/engine/manager.py
+:100644 100644 d7a7fa60974a0918a6ab79220b0ca4340948d0ad 23115185232ec7c26a199dd9f329ef651e9436e0 M	heat/tests/test_api_openstack_v1.py
+:100644 100644 38a54168f7818ef750d067eb32373de4691c419d 122f3dc4cb589f73e947d2914313672a2c46b4de M	heat/tests/test_validate.py
+
+commit cd512f5e915ff7de89c4829e45e367f9b201a3db
+tree 301d5fe28238378d267d3227ad0560bfb4b4226e
+parent b1c97d145531ba3aeff055d7028ff49df13cad9e
+author Steven Hardy <shardy@redhat.com> 1350394478 +0100
+committer Steven Hardy <shardy@redhat.com> 1350394478 +0100
+
+    heat : heat cli pep cleanups
+    
+    Fix some pep whitespace issues, which were not picked
+    up by the jenkins gate for some reason..
+    
+    Change-Id: I9a3488d61a3cde4bb8038f3f1927eb0c1ad0f60c
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100755 100755 5c017fb9ceeb17d5fd0a1e2644b67a6d5d6dac23 a09c50adc229e32d0ebff8da7e5334457c4bda3f M	bin/heat
+
+commit 98b6c2a566812abdb1c89e9dec51331baea5ae14
+tree 863ad4141d705f476b405c5fc3525954e70e8ef5
+parent b1c97d145531ba3aeff055d7028ff49df13cad9e
+author Steven Hardy <shardy@redhat.com> 1349700507 +0100
+committer Steven Hardy <shardy@redhat.com> 1350393489 +0100
+
+    heat : boto_client_cloudwatch allow credentials override
+    
+    Allow the AWS key/secret to be passed in when making the client
+    connection like boto_client.py
+    
+    Ref #222
+    
+    Change-Id: Iee24120eb52c8ffb97b1b421b0a27313e5f5cbdd
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 27d3e0da4d2f0fefd0bcc67f3b513b0b79ad2240 76f0199aa8a33b5e35c080a7b53968edc4f328c5 M	heat/boto_client_cloudwatch.py

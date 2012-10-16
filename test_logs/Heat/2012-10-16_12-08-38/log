@@ -1,0 +1,224 @@
+Triggered by Gerrit: https://review.openstack.org/14473
+Building in workspace /var/lib/jenkins/jobs/Heat/workspace
+Checkout:workspace / /var/lib/jenkins/jobs/Heat/workspace - hudson.remoting.LocalChannel@85c3715
+Using strategy: Default
+Last Built Revision: Revision b1c97d145531ba3aeff055d7028ff49df13cad9e (origin/master)
+Wiping out workspace first.
+Cloning the remote Git repository
+Cloning repository https://review.openstack.org/heat-api/heat
+git --version
+git version 1.7.11.2
+Fetching upstream changes from https://review.openstack.org/heat-api/heat
+Commencing build of Revision f3ab48b64e13d681ff4d07aae67c31fb6c266683 (origin/master)
+Checking out Revision f3ab48b64e13d681ff4d07aae67c31fb6c266683 (origin/master)
+[workspace] $ /bin/sh -xe /tmp/hudson7240532397189139536.sh
++ /var/lib/jenkins/heat-integration/remote-test.sh
+Deleting mrg-04.mpc.lab.eng.bos.redhat.com from SSH known hosts file...
+Attempting to provision machine mrg-04.mpc.lab.eng.bos.redhat.com with Beaker
+Distro Id:  58551
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Timed out.
+Releasing machine mrg-04.mpc.lab.eng.bos.redhat.com with Beaker
+Build step 'Execute shell' marked build as failure
+[PostBuildScript] - Execution post build scripts.
+[workspace] $ /bin/sh -xe /tmp/hudson8275771529382687173.sh
++ /var/lib/jenkins/heat-integration/log-publish.sh
+~/heat-integration/heat-api.github.com ~/heat-integration
+Current branch master is up to date.
+~/heat-integration
+~/heat-integration/heat-api.github.com ~/heat-integration
+skipping non-regular file "1"
+skipping non-regular file "10"
+skipping non-regular file "100"
+skipping non-regular file "101"
+skipping non-regular file "102"
+skipping non-regular file "103"
+skipping non-regular file "104"
+skipping non-regular file "105"
+skipping non-regular file "106"
+skipping non-regular file "107"
+skipping non-regular file "108"
+skipping non-regular file "109"
+skipping non-regular file "11"
+skipping non-regular file "110"
+skipping non-regular file "111"
+skipping non-regular file "112"
+skipping non-regular file "113"
+skipping non-regular file "114"
+skipping non-regular file "115"
+skipping non-regular file "116"
+skipping non-regular file "117"
+skipping non-regular file "118"
+skipping non-regular file "119"
+skipping non-regular file "12"
+skipping non-regular file "120"
+skipping non-regular file "121"
+skipping non-regular file "122"
+skipping non-regular file "123"
+skipping non-regular file "124"
+skipping non-regular file "125"
+skipping non-regular file "126"
+skipping non-regular file "127"
+skipping non-regular file "128"
+skipping non-regular file "129"
+skipping non-regular file "13"
+skipping non-regular file "130"
+skipping non-regular file "14"
+skipping non-regular file "15"
+skipping non-regular file "16"
+skipping non-regular file "17"
+skipping non-regular file "18"
+skipping non-regular file "19"
+skipping non-regular file "2"
+skipping non-regular file "20"
+skipping non-regular file "21"
+skipping non-regular file "22"
+skipping non-regular file "23"
+skipping non-regular file "24"
+skipping non-regular file "25"
+skipping non-regular file "26"
+skipping non-regular file "27"
+skipping non-regular file "28"
+skipping non-regular file "29"
+skipping non-regular file "3"
+skipping non-regular file "30"
+skipping non-regular file "31"
+skipping non-regular file "32"
+skipping non-regular file "33"
+skipping non-regular file "34"
+skipping non-regular file "35"
+skipping non-regular file "36"
+skipping non-regular file "37"
+skipping non-regular file "38"
+skipping non-regular file "39"
+skipping non-regular file "4"
+skipping non-regular file "40"
+skipping non-regular file "41"
+skipping non-regular file "42"
+skipping non-regular file "43"
+skipping non-regular file "44"
+skipping non-regular file "45"
+skipping non-regular file "46"
+skipping non-regular file "47"
+skipping non-regular file "48"
+skipping non-regular file "49"
+skipping non-regular file "5"
+skipping non-regular file "50"
+skipping non-regular file "51"
+skipping non-regular file "52"
+skipping non-regular file "53"
+skipping non-regular file "54"
+skipping non-regular file "55"
+skipping non-regular file "56"
+skipping non-regular file "57"
+skipping non-regular file "58"
+skipping non-regular file "59"
+skipping non-regular file "6"
+skipping non-regular file "60"
+skipping non-regular file "61"
+skipping non-regular file "62"
+skipping non-regular file "63"
+skipping non-regular file "64"
+skipping non-regular file "65"
+skipping non-regular file "66"
+skipping non-regular file "67"
+skipping non-regular file "68"
+skipping non-regular file "69"
+skipping non-regular file "7"
+skipping non-regular file "70"
+skipping non-regular file "71"
+skipping non-regular file "72"
+skipping non-regular file "73"
+skipping non-regular file "74"
+skipping non-regular file "75"
+skipping non-regular file "76"
+skipping non-regular file "77"
+skipping non-regular file "78"
+skipping non-regular file "79"
+skipping non-regular file "8"
+skipping non-regular file "80"
+skipping non-regular file "81"
+skipping non-regular file "82"
+skipping non-regular file "83"
+skipping non-regular file "84"
+skipping non-regular file "85"
+skipping non-regular file "86"
+skipping non-regular file "87"
+skipping non-regular file "88"
+skipping non-regular file "89"
+skipping non-regular file "9"
+skipping non-regular file "90"
+skipping non-regular file "91"
+skipping non-regular file "92"
+skipping non-regular file "93"
+skipping non-regular file "94"
+skipping non-regular file "95"
+skipping non-regular file "96"
+skipping non-regular file "97"
+skipping non-regular file "98"
+skipping non-regular file "99"

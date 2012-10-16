@@ -1,0 +1,36 @@
+Changes in branch origin/master, between 4bd5c4a9dde0afbcd31438604c3aa05799c472ce and 46a41590fb8ebbec565e0d007c429a17d0d7f5eb
+commit 46a41590fb8ebbec565e0d007c429a17d0d7f5eb
+tree 121cb3578415237bcca42314a1c790165d3bcea8
+parent 84ddb9fb654ee8cd57273110f4760f44af43be3a
+author Steven Hardy <shardy@redhat.com> 1350380297 +0100
+committer Steven Hardy <shardy@redhat.com> 1350382290 +0100
+
+    heat : add template-swift-url option to client
+    
+    Add option to bin/heat to retrieve template body from swift
+    
+    Fixes #216
+    
+    Change-Id: I425d7cd0f01875d85d97906f4f91c3a3b2fcf851
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100755 100755 34473538fb812f69b57e182c144813352f2de457 5c017fb9ceeb17d5fd0a1e2644b67a6d5d6dac23 M	bin/heat
+
+commit 84ddb9fb654ee8cd57273110f4760f44af43be3a
+tree 713018c230de641d8b04a402c29701a0df62751f
+parent 4bd5c4a9dde0afbcd31438604c3aa05799c472ce
+author Steven Hardy <shardy@redhat.com> 1350315772 +0100
+committer Steven Hardy <shardy@redhat.com> 1350323868 +0100
+
+    heat cli: encapsulate template arg-parsing
+    
+    Encapsulate template argument parsing in a helper function
+    cleans up some duplication and provides a single place to add
+    swift-template-url logic
+    
+    Ref #216
+    
+    Change-Id: I36515f318ed79899a2710899ffca83e4452c61f4
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100755 100755 7f615b7078e15075d7f060a050d897518f464584 34473538fb812f69b57e182c144813352f2de457 M	bin/heat

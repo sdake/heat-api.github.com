@@ -1,0 +1,2073 @@
+Triggered by Gerrit: https://review.openstack.org/14461
+Building in workspace /var/lib/jenkins/jobs/Heat/workspace
+Checkout:workspace / /var/lib/jenkins/jobs/Heat/workspace - hudson.remoting.LocalChannel@85c3715
+Using strategy: Default
+Last Built Revision: Revision 4bd5c4a9dde0afbcd31438604c3aa05799c472ce (origin/master)
+Wiping out workspace first.
+Cloning the remote Git repository
+Cloning repository https://review.openstack.org/heat-api/heat
+git --version
+git version 1.7.11.2
+Fetching upstream changes from https://review.openstack.org/heat-api/heat
+Commencing build of Revision 4bd5c4a9dde0afbcd31438604c3aa05799c472ce (origin/master)
+Checking out Revision 4bd5c4a9dde0afbcd31438604c3aa05799c472ce (origin/master)
+[workspace] $ /bin/sh -xe /tmp/hudson5830057683041054692.sh
++ /var/lib/jenkins/heat-integration/remote-test.sh
+Deleting mrg-04.mpc.lab.eng.bos.redhat.com from SSH known hosts file...
+Attempting to provision machine mrg-04.mpc.lab.eng.bos.redhat.com with Beaker
+Distro Id:  58551
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
+Warning: Permanently added 'mrg-04.mpc.lab.eng.bos.redhat.com,10.16.144.40' (RSA) to the list of known hosts.
+ 03:40:02 up 0 min,  0 users,  load average: 0.22, 0.05, 0.02
+Copying scripts to test machine...
+Copying Fedora ISO to test machine...
+Configuring test machine...
+Installing essential packages...
+warning: rpmts_HdrFromFdno: Header V3 RSA/SHA256 Signature, key ID 1aca3465: NOKEY
+Public key for check-0.9.8-5.fc17.x86_64.rpm is not installed
+Importing GPG key 0x1ACA3465:
+ Userid     : "Fedora (17) <fedora@fedoraproject.org>"
+ Fingerprint: cac4 3fb7 74a4 a673 d81c 5de7 50e9 4c99 1aca 3465
+ Package    : fedora-release-17-1.noarch (@anaconda-0)
+ From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-x86_64
+Starting essential daemons...
+Configuring heattest user...
+Installing test scripts...
+Connection to mrg-04.mpc.lab.eng.bos.redhat.com closed.
+Running remote test...
+Extracting heat-api from tarball...
+Install integration test environment...
+~/heat ~
+http://download-i2.fedoraproject.org/pub/fedora/linux/updates/17/x86_64/python-httplib2-0.7.4-6.fc17.noarch.rpm: [Errno 14] curl#7 - "Couldn't connect"
+Trying other mirror.
+/var/tmp/rpm-tmp.IhLMH1: line 1: [1: command not found
+0+0 records in
+0+0 records out
+0 bytes (0 B) copied, 9.423e-06 s, 0.0 kB/s
+Assertion 'new_length >= 3' failed at src/shared/util.c:3724, function ellipsize_mem(). Aborting.
+/bin/openstack-db: line 105:  1932 Aborted                 systemctl status $1.service > /dev/null
+Verified connectivity to MySQL.
+Creating 'nova' database.
+Asking openstack-nova to sync the database.
+2012-10-16 03:44:37 WARNING nova.utils [-] /usr/lib64/python2.7/site-packages/sqlalchemy/pool.py:683: SADeprecationWarning: The 'listeners' argument to Pool (and create_engine()) is deprecated.  Use event.listen().
+  Pool.__init__(self, creator, **kw)
+
+2012-10-16 03:44:37 WARNING nova.utils [-] /usr/lib64/python2.7/site-packages/sqlalchemy/pool.py:159: SADeprecationWarning: Pool.add_listener is deprecated.  Use event.listen()
+  self.add_listener(l)
+
+2012-10-16 03:44:37 AUDIT nova.db.sqlalchemy.fix_dns_domains [-] Applying database fix for Essex dns_domains table.
+Complete!
+Assertion 'new_length >= 3' failed at src/shared/util.c:3724, function ellipsize_mem(). Aborting.
+/bin/openstack-db: line 105:  1965 Aborted                 systemctl status $1.service > /dev/null
+Verified connectivity to MySQL.
+Creating 'glance' database.
+Asking openstack-glance to sync the database.
+/usr/lib64/python2.7/site-packages/sqlalchemy/pool.py:683: SADeprecationWarning: The 'listeners' argument to Pool (and create_engine()) is deprecated.  Use event.listen().
+  Pool.__init__(self, creator, **kw)
+/usr/lib64/python2.7/site-packages/sqlalchemy/pool.py:159: SADeprecationWarning: Pool.add_listener is deprecated.  Use event.listen()
+  self.add_listener(l)
+Complete!
+Assertion 'new_length >= 3' failed at src/shared/util.c:3724, function ellipsize_mem(). Aborting.
+/bin/openstack-db: line 105:  1997 Aborted                 systemctl status $1.service > /dev/null
+Verified connectivity to MySQL.
+Creating 'keystone' database.
+Asking openstack-keystone to sync the database.
+Complete!
++-------------+------------------------------------------------------+
+|   Property  |                        Value                         |
++-------------+------------------------------------------------------+
+| adminurl    | http://localhost:$(compute_port)s/v1.1/$(tenant_id)s |
+| id          | 1d6ab408602f48a7a503a6e734f65d06                     |
+| internalurl | http://localhost:$(compute_port)s/v1.1/$(tenant_id)s |
+| publicurl   | http://localhost:$(compute_port)s/v1.1/$(tenant_id)s |
+| region      | RegionOne                                            |
+| service_id  | 80bb3f95efa34ff29240a7601fb6d6ea                     |
++-------------+------------------------------------------------------+
++-------------+--------------------------------------+
+|   Property  |                Value                 |
++-------------+--------------------------------------+
+| adminurl    | http://localhost:8773/services/Admin |
+| id          | 991b508c36044aca92c5504a3882a454     |
+| internalurl | http://localhost:8773/services/Cloud |
+| publicurl   | http://localhost:8773/services/Cloud |
+| region      | RegionOne                            |
+| service_id  | 0486fbd003aa4c4ead977c64668d4018     |
++-------------+--------------------------------------+
++-------------+----------------------------------+
+|   Property  |              Value               |
++-------------+----------------------------------+
+| adminurl    | http://localhost:9292/v1         |
+| id          | 709a8df635104858a3206c2460acced9 |
+| internalurl | http://localhost:9292/v1         |
+| publicurl   | http://localhost:9292/v1         |
+| region      | RegionOne                        |
+| service_id  | d8e09f5b46754e5ba0776e7ee95ce444 |
++-------------+----------------------------------+
++-------------+---------------------------------------+
+|   Property  |                 Value                 |
++-------------+---------------------------------------+
+| adminurl    | http://localhost:$(admin_port)s/v2.0  |
+| id          | ef8d1a38fe054e5a804eb42d8e7f29f6      |
+| internalurl | http://localhost:$(admin_port)s/v2.0  |
+| publicurl   | http://localhost:$(public_port)s/v2.0 |
+| region      | RegionOne                             |
+| service_id  | 88479f8c220e49babfb4169024b84e4f      |
++-------------+---------------------------------------+
++-------------+----------------------------------------+
+|   Property  |                 Value                  |
++-------------+----------------------------------------+
+| adminurl    | http://localhost:8776/v1/$(tenant_id)s |
+| id          | 8f8560238d9c4d9e951e4ab345d97a13       |
+| internalurl | http://localhost:8776/v1/$(tenant_id)s |
+| publicurl   | http://localhost:8776/v1/$(tenant_id)s |
+| region      | RegionOne                              |
+| service_id  | 940884897ca74f2b9e9f0b2ab8402120       |
++-------------+----------------------------------------+
++-------------+----------------------------------+
+|   Property  |              Value               |
++-------------+----------------------------------+
+| description | OpenStack Dashboard              |
+| id          | 49b565bcbbd543fba3b914c562ff6eb9 |
+| name        | horizon                          |
+| type        | dashboard                        |
++-------------+----------------------------------+
+  No physical volume label read from /dev/loop0
+  Writing physical volume data to disk "/dev/loop0"
+  Physical volume "/dev/loop0" successfully created
+  Volume group "nova-volumes" successfully created
+Installation Complete.
+Checking all expected services are running
+qpidd                                    active
+mysqld                                   active
+openstack-keystone                       active
+tgtd                                     active
+openstack-glance-api                     active
+openstack-glance-registry                active
+openstack-nova-api                       active
+openstack-nova-objectstore               active
+openstack-nova-compute                   active
+openstack-nova-network                   active
+openstack-nova-volume                    active
+openstack-nova-scheduler                 active
+openstack-nova-cert                      active
+Testing nova and glance.  If any errors are displayed, the install failed...
++----+-----------+-----------+------+-----------+------+-------+-------------+
+| ID |    Name   | Memory_MB | Disk | Ephemeral | Swap | VCPUs | RXTX_Factor |
++----+-----------+-----------+------+-----------+------+-------+-------------+
+| 1  | m1.tiny   | 512       | 0    | 0         |      | 1     | 1.0         |
+| 2  | m1.small  | 2048      | 10   | 20        |      | 1     | 1.0         |
+| 3  | m1.medium | 4096      | 10   | 40        |      | 2     | 1.0         |
+| 4  | m1.large  | 8192      | 10   | 80        |      | 4     | 1.0         |
+| 5  | m1.xlarge | 16384     | 10   | 160       |      | 8     | 1.0         |
++----+-----------+-----------+------+-----------+------+-------+-------------+
+nova flavor-list : OK
+nova flavor-delete 1 : OK
+nova flavor-delete 2 : OK
+nova flavor-delete 3 : OK
+nova flavor-delete 4 : OK
+nova flavor-delete 5 : OK
++----+----------+-----------+------+-----------+------+-------+-------------+
+| ID |   Name   | Memory_MB | Disk | Ephemeral | Swap | VCPUs | RXTX_Factor |
++----+----------+-----------+------+-----------+------+-------+-------------+
+| 1  | t1.micro | 256       | 0    | 0         |      | 1     | 1           |
++----+----------+-----------+------+-----------+------+-------+-------------+
+nova flavor-create --ephemeral 10 --swap 0 --rxtx-factor 1 t1.micro 1 256 0 1 : OK
++----+---------+-----------+------+-----------+------+-------+-------------+
+| ID |   Name  | Memory_MB | Disk | Ephemeral | Swap | VCPUs | RXTX_Factor |
++----+---------+-----------+------+-----------+------+-------+-------------+
+| 2  | m1.tiny | 256       | 0    | 20        |      | 1     | 1           |
++----+---------+-----------+------+-----------+------+-------+-------------+
+nova flavor-create --ephemeral 10 --swap 0 --rxtx-factor 1 m1.tiny 2 256 0 1 : OK
++----+----------+-----------+------+-----------+------+-------+-------------+
+| ID |   Name   | Memory_MB | Disk | Ephemeral | Swap | VCPUs | RXTX_Factor |
++----+----------+-----------+------+-----------+------+-------+-------------+
+| 3  | m1.small | 512       | 0    | 40        |      | 1     | 1           |
++----+----------+-----------+------+-----------+------+-------+-------------+
+nova flavor-create --ephemeral 10 --swap 0 --rxtx-factor 1 m1.small 3 512 0 1 : OK
++----+-----------+-----------+------+-----------+------+-------+-------------+
+| ID |    Name   | Memory_MB | Disk | Ephemeral | Swap | VCPUs | RXTX_Factor |
++----+-----------+-----------+------+-----------+------+-------+-------------+
+| 4  | m1.medium | 768       | 0    | 80        |      | 1     | 1           |
++----+-----------+-----------+------+-----------+------+-------+-------------+
+nova flavor-create --ephemeral 10 --swap 0 --rxtx-factor 1 m1.medium 4 768 0 1 : OK
++----+----------+-----------+------+-----------+------+-------+-------------+
+| ID |   Name   | Memory_MB | Disk | Ephemeral | Swap | VCPUs | RXTX_Factor |
++----+----------+-----------+------+-----------+------+-------+-------------+
+| 5  | m1.large | 1024      | 0    | 160       |      | 1     | 1           |
++----+----------+-----------+------+-----------+------+-------+-------------+
+nova flavor-create --ephemeral 10 --swap 0 --rxtx-factor 1 m1.large 5 1024 0 1 : OK
++----+-----------+-----------+------+-----------+------+-------+-------------+
+| ID |    Name   | Memory_MB | Disk | Ephemeral | Swap | VCPUs | RXTX_Factor |
++----+-----------+-----------+------+-----------+------+-------+-------------+
+| 6  | m1.xlarge | 2048      | 0    | 10        |      | 1     | 1           |
++----+-----------+-----------+------+-----------+------+-------+-------------+
+nova flavor-create --ephemeral 10 --swap 0 --rxtx-factor 1 m1.xlarge 6 2048 0 1 : OK
++----+-----------+-----------+------+-----------+------+-------+-------------+
+| ID |    Name   | Memory_MB | Disk | Ephemeral | Swap | VCPUs | RXTX_Factor |
++----+-----------+-----------+------+-----------+------+-------+-------------+
+| 7  | m2.xlarge | 2048      | 0    | 10        |      | 2     | 1           |
++----+-----------+-----------+------+-----------+------+-------+-------------+
+nova flavor-create --ephemeral 10 --swap 0 --rxtx-factor 1 m2.xlarge 7 2048 0 2 : OK
++----+------------+-----------+------+-----------+------+-------+-------------+
+| ID |    Name    | Memory_MB | Disk | Ephemeral | Swap | VCPUs | RXTX_Factor |
++----+------------+-----------+------+-----------+------+-------+-------------+
+| 8  | m2.2xlarge | 2048      | 0    | 10        |      | 2     | 1           |
++----+------------+-----------+------+-----------+------+-------+-------------+
+nova flavor-create --ephemeral 10 --swap 0 --rxtx-factor 1 m2.2xlarge 8 2048 0 2 : OK
++----+------------+-----------+------+-----------+------+-------+-------------+
+| ID |    Name    | Memory_MB | Disk | Ephemeral | Swap | VCPUs | RXTX_Factor |
++----+------------+-----------+------+-----------+------+-------+-------------+
+| 9  | m2.4xlarge | 2048      | 0    | 10        |      | 2     | 1           |
++----+------------+-----------+------+-----------+------+-------+-------------+
+nova flavor-create --ephemeral 10 --swap 0 --rxtx-factor 1 m2.4xlarge 9 2048 0 2 : OK
++----+-----------+-----------+------+-----------+------+-------+-------------+
+| ID |    Name   | Memory_MB | Disk | Ephemeral | Swap | VCPUs | RXTX_Factor |
++----+-----------+-----------+------+-----------+------+-------+-------------+
+| 10 | c1.medium | 2048      | 0    | 10        |      | 2     | 1           |
++----+-----------+-----------+------+-----------+------+-------+-------------+
+nova flavor-create --ephemeral 10 --swap 0 --rxtx-factor 1 c1.medium 10 2048 0 2 : OK
++----+-----------+-----------+------+-----------+------+-------+-------------+
+| ID |    Name   | Memory_MB | Disk | Ephemeral | Swap | VCPUs | RXTX_Factor |
++----+-----------+-----------+------+-----------+------+-------+-------------+
+| 11 | c1.xlarge | 2048      | 0    | 10        |      | 2     | 1           |
++----+-----------+-----------+------+-----------+------+-------+-------------+
+nova flavor-create --ephemeral 10 --swap 0 --rxtx-factor 1 c1.xlarge 11 2048 0 2 : OK
++----+-------------+-----------+------+-----------+------+-------+-------------+
+| ID |     Name    | Memory_MB | Disk | Ephemeral | Swap | VCPUs | RXTX_Factor |
++----+-------------+-----------+------+-----------+------+-------+-------------+
+| 12 | cc1.4xlarge | 2048      | 0    | 10        |      | 2     | 1           |
++----+-------------+-----------+------+-----------+------+-------+-------------+
+nova flavor-create --ephemeral 10 --swap 0 --rxtx-factor 1 cc1.4xlarge 12 2048 0 2 : OK
++----+-------------+-----------+------+-----------+------+-------+-------------+
+| ID |     Name    | Memory_MB | Disk | Ephemeral | Swap | VCPUs | RXTX_Factor |
++----+-------------+-----------+------+-----------+------+-------+-------------+
+| 1  | t1.micro    | 256       | 0    | 10        |      | 1     | 1.0         |
+| 10 | c1.medium   | 2048      | 0    | 10        |      | 2     | 1.0         |
+| 11 | c1.xlarge   | 2048      | 0    | 10        |      | 2     | 1.0         |
+| 12 | cc1.4xlarge | 2048      | 0    | 10        |      | 2     | 1.0         |
+| 2  | m1.tiny     | 256       | 0    | 10        |      | 1     | 1.0         |
+| 3  | m1.small    | 512       | 0    | 10        |      | 1     | 1.0         |
+| 4  | m1.medium   | 768       | 0    | 10        |      | 1     | 1.0         |
+| 5  | m1.large    | 1024      | 0    | 10        |      | 1     | 1.0         |
+| 6  | m1.xlarge   | 2048      | 0    | 10        |      | 1     | 1.0         |
+| 7  | m2.xlarge   | 2048      | 0    | 10        |      | 2     | 1.0         |
+| 8  | m2.2xlarge  | 2048      | 0    | 10        |      | 2     | 1.0         |
+| 9  | m2.4xlarge  | 2048      | 0    | 10        |      | 2     | 1.0         |
++----+-------------+-----------+------+-----------+------+-------+-------------+
+
+note: This tool does not create a network.  Creating a network
+depends on your environment.  An example network create operation:
+
+  sudo nova-manage network create demonet 10.0.0.0/24 1 256 --bridge=demonetbr0
+
+The network range here should *not* be one used on your existing physical
+ network.
+It should be a range dedicated for the network that OpenStack will configure.
+If 10.0.0.0/24 clashes with your local network, pick another range.
+~/heat/oz ~/heat
+python setup.py sdist
+running sdist
+running check
+reading manifest template 'MANIFEST.in'
+writing manifest file 'MANIFEST'
+creating oz-0.10.0
+creating oz-0.10.0/docs
+creating oz-0.10.0/examples
+creating oz-0.10.0/man
+creating oz-0.10.0/man/examples
+creating oz-0.10.0/oz
+creating oz-0.10.0/oz/auto
+making hard links in oz-0.10.0...
+hard linking COPYING -> oz-0.10.0
+hard linking Makefile -> oz-0.10.0
+hard linking README -> oz-0.10.0
+hard linking oz-cleanup-cache -> oz-0.10.0
+hard linking oz-customize -> oz-0.10.0
+hard linking oz-generate-icicle -> oz-0.10.0
+hard linking oz-install -> oz-0.10.0
+hard linking oz.cfg -> oz-0.10.0
+hard linking setup.py -> oz-0.10.0
+hard linking docs/icicle.rng -> oz-0.10.0/docs
+hard linking docs/tdl.rng -> oz-0.10.0/docs
+hard linking examples/f12i386.tdl -> oz-0.10.0/examples
+hard linking examples/f12x86_64.tdl -> oz-0.10.0/examples
+hard linking examples/f13i386.tdl -> oz-0.10.0/examples
+hard linking examples/f13x86_64.tdl -> oz-0.10.0/examples
+hard linking examples/f14i386.tdl -> oz-0.10.0/examples
+hard linking examples/f14i686local.tdl -> oz-0.10.0/examples
+hard linking examples/f14x86_64.tdl -> oz-0.10.0/examples
+hard linking examples/opensuse11.3i386.tdl -> oz-0.10.0/examples
+hard linking examples/opensuse11.3x86_64.tdl -> oz-0.10.0/examples
+hard linking examples/ubuntu9.10i386.tdl -> oz-0.10.0/examples
+hard linking examples/ubuntu9.10x86_64.tdl -> oz-0.10.0/examples
+hard linking examples/win2k.tdl -> oz-0.10.0/examples
+hard linking man/oz-cleanup-cache.1 -> oz-0.10.0/man
+hard linking man/oz-customize.1 -> oz-0.10.0/man
+hard linking man/oz-generate-icicle.1 -> oz-0.10.0/man
+hard linking man/oz-install.1 -> oz-0.10.0/man
+hard linking man/examples/001.example -> oz-0.10.0/man/examples
+hard linking man/examples/002.example -> oz-0.10.0/man/examples
+hard linking man/examples/003.example -> oz-0.10.0/man/examples
+hard linking man/examples/004.example -> oz-0.10.0/man/examples
+hard linking man/examples/footer -> oz-0.10.0/man/examples
+hard linking man/examples/header -> oz-0.10.0/man/examples
+hard linking oz/Debian.py -> oz-0.10.0/oz
+hard linking oz/Fedora.py -> oz-0.10.0/oz
+hard linking oz/FedoraCore.py -> oz-0.10.0/oz
+hard linking oz/Guest.py -> oz-0.10.0/oz
+hard linking oz/GuestFactory.py -> oz-0.10.0/oz
+hard linking oz/Mandrake.py -> oz-0.10.0/oz
+hard linking oz/Mandriva.py -> oz-0.10.0/oz
+hard linking oz/OpenSUSE.py -> oz-0.10.0/oz
+hard linking oz/OzException.py -> oz-0.10.0/oz
+hard linking oz/RHEL_2_1.py -> oz-0.10.0/oz
+hard linking oz/RHEL_3.py -> oz-0.10.0/oz
+hard linking oz/RHEL_4.py -> oz-0.10.0/oz
+hard linking oz/RHEL_5.py -> oz-0.10.0/oz
+hard linking oz/RHEL_6.py -> oz-0.10.0/oz
+hard linking oz/RHL.py -> oz-0.10.0/oz
+hard linking oz/RedHat.py -> oz-0.10.0/oz
+hard linking oz/TDL.py -> oz-0.10.0/oz
+hard linking oz/Ubuntu.py -> oz-0.10.0/oz
+hard linking oz/Windows.py -> oz-0.10.0/oz
+hard linking oz/__init__.py -> oz-0.10.0/oz
+hard linking oz/ozutil.py -> oz-0.10.0/oz
+hard linking oz/auto/debian-5-jeos.preseed -> oz-0.10.0/oz/auto
+hard linking oz/auto/debian-6-jeos.preseed -> oz-0.10.0/oz/auto
+hard linking oz/auto/fedora-10-jeos.ks -> oz-0.10.0/oz/auto
+hard linking oz/auto/fedora-11-jeos.ks -> oz-0.10.0/oz/auto
+hard linking oz/auto/fedora-12-jeos.ks -> oz-0.10.0/oz/auto
+hard linking oz/auto/fedora-13-jeos.ks -> oz-0.10.0/oz/auto
+hard linking oz/auto/fedora-14-jeos.ks -> oz-0.10.0/oz/auto
+hard linking oz/auto/fedora-15-jeos.ks -> oz-0.10.0/oz/auto
+hard linking oz/auto/fedora-16-jeos.ks -> oz-0.10.0/oz/auto
+hard linking oz/auto/fedora-17-jeos.ks -> oz-0.10.0/oz/auto
+hard linking oz/auto/fedora-7-jeos.ks -> oz-0.10.0/oz/auto
+hard linking oz/auto/fedora-8-jeos.ks -> oz-0.10.0/oz/auto
+hard linking oz/auto/fedora-9-jeos.ks -> oz-0.10.0/oz/auto
+hard linking oz/auto/fedoracore-1-jeos.ks -> oz-0.10.0/oz/auto
+hard linking oz/auto/fedoracore-2-jeos.ks -> oz-0.10.0/oz/auto
+hard linking oz/auto/fedoracore-3-jeos.ks -> oz-0.10.0/oz/auto
+hard linking oz/auto/fedoracore-4-jeos.ks -> oz-0.10.0/oz/auto
+hard linking oz/auto/fedoracore-5-jeos.ks -> oz-0.10.0/oz/auto
+hard linking oz/auto/fedoracore-6-jeos.ks -> oz-0.10.0/oz/auto
+hard linking oz/auto/mandrake-10.0-jeos.cfg -> oz-0.10.0/oz/auto
+hard linking oz/auto/mandrake-10.1-jeos.cfg -> oz-0.10.0/oz/auto
+hard linking oz/auto/mandrake-8.2-jeos.cfg -> oz-0.10.0/oz/auto
+hard linking oz/auto/mandrake-9.1-jeos.cfg -> oz-0.10.0/oz/auto
+hard linking oz/auto/mandrake-9.2-jeos.cfg -> oz-0.10.0/oz/auto
+hard linking oz/auto/mandriva-2005-jeos.cfg -> oz-0.10.0/oz/auto
+hard linking oz/auto/mandriva-2006.0-jeos.cfg -> oz-0.10.0/oz/auto
+hard linking oz/auto/mandriva-2007.0-jeos.cfg -> oz-0.10.0/oz/auto
+hard linking oz/auto/mandriva-2008.0-jeos.cfg -> oz-0.10.0/oz/auto
+hard linking oz/auto/opensuse-10.3-jeos.xml -> oz-0.10.0/oz/auto
+hard linking oz/auto/opensuse-11.0-jeos.xml -> oz-0.10.0/oz/auto
+hard linking oz/auto/opensuse-11.1-jeos.xml -> oz-0.10.0/oz/auto
+hard linking oz/auto/opensuse-11.2-jeos.xml -> oz-0.10.0/oz/auto
+hard linking oz/auto/opensuse-11.3-jeos.xml -> oz-0.10.0/oz/auto
+hard linking oz/auto/opensuse-11.4-jeos.xml -> oz-0.10.0/oz/auto
+hard linking oz/auto/opensuse-12.1-jeos.xml -> oz-0.10.0/oz/auto
+hard linking oz/auto/rhel-2.1-jeos.ks -> oz-0.10.0/oz/auto
+hard linking oz/auto/rhel-3-jeos.ks -> oz-0.10.0/oz/auto
+hard linking oz/auto/rhel-4-jeos.ks -> oz-0.10.0/oz/auto
+hard linking oz/auto/rhel-5-jeos.ks -> oz-0.10.0/oz/auto
+hard linking oz/auto/rhel-6-jeos.ks -> oz-0.10.0/oz/auto
+hard linking oz/auto/rhl-7.0-jeos.ks -> oz-0.10.0/oz/auto
+hard linking oz/auto/rhl-7.1-jeos.ks -> oz-0.10.0/oz/auto
+hard linking oz/auto/rhl-7.2-jeos.ks -> oz-0.10.0/oz/auto
+hard linking oz/auto/rhl-7.3-jeos.ks -> oz-0.10.0/oz/auto
+hard linking oz/auto/rhl-8-jeos.ks -> oz-0.10.0/oz/auto
+hard linking oz/auto/rhl-9-jeos.ks -> oz-0.10.0/oz/auto
+hard linking oz/auto/ubuntu-10.04-jeos.preseed -> oz-0.10.0/oz/auto
+hard linking oz/auto/ubuntu-10.10-jeos.preseed -> oz-0.10.0/oz/auto
+hard linking oz/auto/ubuntu-11.04-jeos.preseed -> oz-0.10.0/oz/auto
+hard linking oz/auto/ubuntu-11.10-jeos.preseed -> oz-0.10.0/oz/auto
+hard linking oz/auto/ubuntu-12.04-jeos.preseed -> oz-0.10.0/oz/auto
+hard linking oz/auto/ubuntu-6.06-jeos.preseed -> oz-0.10.0/oz/auto
+hard linking oz/auto/ubuntu-6.10-jeos.preseed -> oz-0.10.0/oz/auto
+hard linking oz/auto/ubuntu-7.04-jeos.preseed -> oz-0.10.0/oz/auto
+hard linking oz/auto/ubuntu-7.10-jeos.preseed -> oz-0.10.0/oz/auto
+hard linking oz/auto/ubuntu-8.04-jeos.preseed -> oz-0.10.0/oz/auto
+hard linking oz/auto/ubuntu-8.10-jeos.preseed -> oz-0.10.0/oz/auto
+hard linking oz/auto/ubuntu-9.04-jeos.preseed -> oz-0.10.0/oz/auto
+hard linking oz/auto/ubuntu-9.10-jeos.preseed -> oz-0.10.0/oz/auto
+hard linking oz/auto/windows-2000-jeos.sif -> oz-0.10.0/oz/auto
+hard linking oz/auto/windows-2003-jeos.sif -> oz-0.10.0/oz/auto
+hard linking oz/auto/windows-2008-jeos.xml -> oz-0.10.0/oz/auto
+hard linking oz/auto/windows-7-jeos.xml -> oz-0.10.0/oz/auto
+hard linking oz/auto/windows-XP-jeos.sif -> oz-0.10.0/oz/auto
+creating dist
+Creating tar archive
+removing 'oz-0.10.0' (and everything under it)
+rpmbuild -ba oz.spec --define "_sourcedir `pwd`/dist"
+Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.L4UkEF
++ umask 022
++ cd /home/heattest/rpmbuild/BUILD
++ cd /home/heattest/rpmbuild/BUILD
++ rm -rf oz-0.10.0
++ /usr/bin/gzip -dc /home/heattest/heat/oz/dist/oz-0.10.0.tar.gz
++ /usr/bin/tar -xf -
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd oz-0.10.0
++ /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
++ exit 0
+Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.8mvMEq
++ umask 022
++ cd /home/heattest/rpmbuild/BUILD
++ cd oz-0.10.0
++ python setup.py build
+running build
+running build_py
+creating build
+creating build/lib
+creating build/lib/oz
+copying oz/Debian.py -> build/lib/oz
+copying oz/RHEL_4.py -> build/lib/oz
+copying oz/Mandriva.py -> build/lib/oz
+copying oz/FedoraCore.py -> build/lib/oz
+copying oz/RedHat.py -> build/lib/oz
+copying oz/Windows.py -> build/lib/oz
+copying oz/ozutil.py -> build/lib/oz
+copying oz/__init__.py -> build/lib/oz
+copying oz/Mandrake.py -> build/lib/oz
+copying oz/RHL.py -> build/lib/oz
+copying oz/RHEL_6.py -> build/lib/oz
+copying oz/RHEL_3.py -> build/lib/oz
+copying oz/Guest.py -> build/lib/oz
+copying oz/Ubuntu.py -> build/lib/oz
+copying oz/OpenSUSE.py -> build/lib/oz
+copying oz/OzException.py -> build/lib/oz
+copying oz/Fedora.py -> build/lib/oz
+copying oz/GuestFactory.py -> build/lib/oz
+copying oz/RHEL_2_1.py -> build/lib/oz
+copying oz/RHEL_5.py -> build/lib/oz
+copying oz/TDL.py -> build/lib/oz
+creating build/lib/oz/auto
+copying oz/auto/windows-XP-jeos.sif -> build/lib/oz/auto
+copying oz/auto/debian-5-jeos.preseed -> build/lib/oz/auto
+copying oz/auto/fedoracore-2-jeos.ks -> build/lib/oz/auto
+copying oz/auto/fedora-13-jeos.ks -> build/lib/oz/auto
+copying oz/auto/windows-2003-jeos.sif -> build/lib/oz/auto
+copying oz/auto/fedora-11-jeos.ks -> build/lib/oz/auto
+copying oz/auto/fedoracore-5-jeos.ks -> build/lib/oz/auto
+copying oz/auto/mandrake-10.0-jeos.cfg -> build/lib/oz/auto
+copying oz/auto/ubuntu-9.10-jeos.preseed -> build/lib/oz/auto
+copying oz/auto/mandrake-9.2-jeos.cfg -> build/lib/oz/auto
+copying oz/auto/fedora-17-jeos.ks -> build/lib/oz/auto
+copying oz/auto/opensuse-11.3-jeos.xml -> build/lib/oz/auto
+copying oz/auto/fedora-12-jeos.ks -> build/lib/oz/auto
+copying oz/auto/mandrake-9.1-jeos.cfg -> build/lib/oz/auto
+copying oz/auto/opensuse-11.4-jeos.xml -> build/lib/oz/auto
+copying oz/auto/fedora-10-jeos.ks -> build/lib/oz/auto
+copying oz/auto/opensuse-11.0-jeos.xml -> build/lib/oz/auto
+copying oz/auto/mandriva-2007.0-jeos.cfg -> build/lib/oz/auto
+copying oz/auto/mandrake-8.2-jeos.cfg -> build/lib/oz/auto
+copying oz/auto/rhl-9-jeos.ks -> build/lib/oz/auto
+copying oz/auto/rhl-7.1-jeos.ks -> build/lib/oz/auto
+copying oz/auto/fedora-16-jeos.ks -> build/lib/oz/auto
+copying oz/auto/ubuntu-8.10-jeos.preseed -> build/lib/oz/auto
+copying oz/auto/debian-6-jeos.preseed -> build/lib/oz/auto
+copying oz/auto/opensuse-12.1-jeos.xml -> build/lib/oz/auto
+copying oz/auto/windows-2000-jeos.sif -> build/lib/oz/auto
+copying oz/auto/fedora-7-jeos.ks -> build/lib/oz/auto
+copying oz/auto/fedoracore-3-jeos.ks -> build/lib/oz/auto
+copying oz/auto/opensuse-10.3-jeos.xml -> build/lib/oz/auto
+copying oz/auto/rhel-6-jeos.ks -> build/lib/oz/auto
+copying oz/auto/fedoracore-6-jeos.ks -> build/lib/oz/auto
+copying oz/auto/ubuntu-12.04-jeos.preseed -> build/lib/oz/auto
+copying oz/auto/rhel-3-jeos.ks -> build/lib/oz/auto
+copying oz/auto/rhel-5-jeos.ks -> build/lib/oz/auto
+copying oz/auto/ubuntu-11.10-jeos.preseed -> build/lib/oz/auto
+copying oz/auto/rhl-7.2-jeos.ks -> build/lib/oz/auto
+copying oz/auto/rhel-4-jeos.ks -> build/lib/oz/auto
+copying oz/auto/fedoracore-4-jeos.ks -> build/lib/oz/auto
+copying oz/auto/rhl-7.0-jeos.ks -> build/lib/oz/auto
+copying oz/auto/mandriva-2006.0-jeos.cfg -> build/lib/oz/auto
+copying oz/auto/rhel-2.1-jeos.ks -> build/lib/oz/auto
+copying oz/auto/ubuntu-7.04-jeos.preseed -> build/lib/oz/auto
+copying oz/auto/opensuse-11.1-jeos.xml -> build/lib/oz/auto
+copying oz/auto/ubuntu-10.10-jeos.preseed -> build/lib/oz/auto
+copying oz/auto/windows-2008-jeos.xml -> build/lib/oz/auto
+copying oz/auto/fedora-14-jeos.ks -> build/lib/oz/auto
+copying oz/auto/ubuntu-6.06-jeos.preseed -> build/lib/oz/auto
+copying oz/auto/rhl-7.3-jeos.ks -> build/lib/oz/auto
+copying oz/auto/fedora-9-jeos.ks -> build/lib/oz/auto
+copying oz/auto/fedora-15-jeos.ks -> build/lib/oz/auto
+copying oz/auto/fedoracore-1-jeos.ks -> build/lib/oz/auto
+copying oz/auto/opensuse-11.2-jeos.xml -> build/lib/oz/auto
+copying oz/auto/ubuntu-9.04-jeos.preseed -> build/lib/oz/auto
+copying oz/auto/ubuntu-8.04-jeos.preseed -> build/lib/oz/auto
+copying oz/auto/rhl-8-jeos.ks -> build/lib/oz/auto
+copying oz/auto/windows-7-jeos.xml -> build/lib/oz/auto
+copying oz/auto/ubuntu-7.10-jeos.preseed -> build/lib/oz/auto
+copying oz/auto/fedora-8-jeos.ks -> build/lib/oz/auto
+copying oz/auto/mandriva-2008.0-jeos.cfg -> build/lib/oz/auto
+copying oz/auto/ubuntu-11.04-jeos.preseed -> build/lib/oz/auto
+copying oz/auto/ubuntu-10.04-jeos.preseed -> build/lib/oz/auto
+copying oz/auto/mandriva-2005-jeos.cfg -> build/lib/oz/auto
+copying oz/auto/ubuntu-6.10-jeos.preseed -> build/lib/oz/auto
+copying oz/auto/mandrake-10.1-jeos.cfg -> build/lib/oz/auto
+running build_scripts
+creating build/scripts-2.7
+copying and adjusting oz-install -> build/scripts-2.7
+copying and adjusting oz-generate-icicle -> build/scripts-2.7
+copying and adjusting oz-customize -> build/scripts-2.7
+copying and adjusting oz-cleanup-cache -> build/scripts-2.7
+changing mode of build/scripts-2.7/oz-install from 644 to 755
+changing mode of build/scripts-2.7/oz-generate-icicle from 644 to 755
+changing mode of build/scripts-2.7/oz-customize from 644 to 755
+changing mode of build/scripts-2.7/oz-cleanup-cache from 644 to 755
++ exit 0
+Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.6914Ob
++ umask 022
++ cd /home/heattest/rpmbuild/BUILD
++ cd oz-0.10.0
++ python setup.py install --root=/home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64 --skip-build
+running install
+running install_lib
+creating /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64
+creating /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr
+creating /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib
+creating /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7
+creating /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages
+creating /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+copying build/lib/oz/Debian.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+copying build/lib/oz/RHEL_4.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+copying build/lib/oz/Mandriva.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+copying build/lib/oz/FedoraCore.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+copying build/lib/oz/RedHat.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+copying build/lib/oz/Windows.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+copying build/lib/oz/ozutil.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+copying build/lib/oz/__init__.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+copying build/lib/oz/Mandrake.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+copying build/lib/oz/RHL.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+copying build/lib/oz/RHEL_6.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+copying build/lib/oz/RHEL_3.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+copying build/lib/oz/Guest.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+copying build/lib/oz/Ubuntu.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+copying build/lib/oz/OpenSUSE.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+creating /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/windows-XP-jeos.sif -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/debian-5-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/fedoracore-2-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/fedora-13-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/windows-2003-jeos.sif -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/fedora-11-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/fedoracore-5-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/mandrake-10.0-jeos.cfg -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/ubuntu-9.10-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/mandrake-9.2-jeos.cfg -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/fedora-17-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/opensuse-11.3-jeos.xml -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/fedora-12-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/mandrake-9.1-jeos.cfg -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/opensuse-11.4-jeos.xml -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/fedora-10-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/opensuse-11.0-jeos.xml -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/mandriva-2007.0-jeos.cfg -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/mandrake-8.2-jeos.cfg -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/rhl-9-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/rhl-7.1-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/fedora-16-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/ubuntu-8.10-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/debian-6-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/opensuse-12.1-jeos.xml -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/windows-2000-jeos.sif -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/fedora-7-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/fedoracore-3-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/opensuse-10.3-jeos.xml -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/rhel-6-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/fedoracore-6-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/ubuntu-12.04-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/rhel-3-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/rhel-5-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/ubuntu-11.10-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/rhl-7.2-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/rhel-4-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/fedoracore-4-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/rhl-7.0-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/mandriva-2006.0-jeos.cfg -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/rhel-2.1-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/ubuntu-7.04-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/opensuse-11.1-jeos.xml -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/ubuntu-10.10-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/windows-2008-jeos.xml -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/fedora-14-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/ubuntu-6.06-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/rhl-7.3-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/fedora-9-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/fedora-15-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/fedoracore-1-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/opensuse-11.2-jeos.xml -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/ubuntu-9.04-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/ubuntu-8.04-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/rhl-8-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/windows-7-jeos.xml -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/ubuntu-7.10-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/fedora-8-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/mandriva-2008.0-jeos.cfg -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/ubuntu-11.04-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/ubuntu-10.04-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/mandriva-2005-jeos.cfg -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/ubuntu-6.10-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/mandrake-10.1-jeos.cfg -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/OzException.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+copying build/lib/oz/Fedora.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+copying build/lib/oz/GuestFactory.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+copying build/lib/oz/RHEL_2_1.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+copying build/lib/oz/RHEL_5.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+copying build/lib/oz/TDL.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/Debian.py to Debian.pyc
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/RHEL_4.py to RHEL_4.pyc
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/Mandriva.py to Mandriva.pyc
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/FedoraCore.py to FedoraCore.pyc
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/RedHat.py to RedHat.pyc
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/Windows.py to Windows.pyc
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/ozutil.py to ozutil.pyc
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/__init__.py to __init__.pyc
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/Mandrake.py to Mandrake.pyc
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/RHL.py to RHL.pyc
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/RHEL_6.py to RHEL_6.pyc
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/RHEL_3.py to RHEL_3.pyc
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/Guest.py to Guest.pyc
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/Ubuntu.py to Ubuntu.pyc
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/OpenSUSE.py to OpenSUSE.pyc
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/OzException.py to OzException.pyc
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/Fedora.py to Fedora.pyc
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/GuestFactory.py to GuestFactory.pyc
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/RHEL_2_1.py to RHEL_2_1.pyc
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/RHEL_5.py to RHEL_5.pyc
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz/TDL.py to TDL.pyc
+running install_scripts
+creating /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/bin
+copying build/scripts-2.7/oz-install -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/bin
+copying build/scripts-2.7/oz-cleanup-cache -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/bin
+copying build/scripts-2.7/oz-customize -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/bin
+copying build/scripts-2.7/oz-generate-icicle -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/bin
+changing mode of /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/bin/oz-install to 755
+changing mode of /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/bin/oz-cleanup-cache to 755
+changing mode of /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/bin/oz-customize to 755
+changing mode of /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/bin/oz-generate-icicle to 755
+running install_data
+creating /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/share
+creating /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/share/man
+creating /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/share/man/man1
+copying man/oz-install.1 -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/share/man/man1
+copying man/oz-customize.1 -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/share/man/man1
+copying man/oz-generate-icicle.1 -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/share/man/man1
+copying man/oz-cleanup-cache.1 -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/share/man/man1
+running install_egg_info
+Writing /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/lib/python2.7/site-packages/oz-0.10.0-py2.7.egg-info
++ mkdir -p /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/var/lib/oz/
++ mkdir -p /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/var/lib/oz/isocontent/
++ mkdir -p /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/var/lib/oz/isos/
++ mkdir -p /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/var/lib/oz/floppycontent/
++ mkdir -p /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/var/lib/oz/floppies/
++ mkdir -p /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/var/lib/oz/icicletmp/
++ mkdir -p /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/var/lib/oz/jeos/
++ mkdir -p /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/var/lib/oz/kernels/
++ mkdir -p /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/etc/oz
++ cp oz.cfg /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/etc/oz
++ make examples-manpage
+make[1]: Entering directory `/home/heattest/rpmbuild/BUILD/oz-0.10.0'
+echo "Generating oz-examples man page"
+Generating oz-examples man page
+make[1]: Leaving directory `/home/heattest/rpmbuild/BUILD/oz-0.10.0'
++ cp man/oz-examples.1 /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/share/man/man1
++ gzip /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/share/man/man1/oz-examples.1
++ /usr/lib/rpm/brp-compress
++ /usr/lib/rpm/brp-strip /usr/bin/strip
++ /usr/lib/rpm/brp-strip-static-archive /usr/bin/strip
++ /usr/lib/rpm/brp-strip-comment-note /usr/bin/strip /usr/bin/objdump
+Processing files: oz-0.10.0-0.20121016074521git69c668e.fc17.noarch
+Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.9DKEqY
++ umask 022
++ cd /home/heattest/rpmbuild/BUILD
++ cd oz-0.10.0
++ DOCDIR=/home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/share/doc/oz-0.10.0
++ export DOCDIR
++ /usr/bin/mkdir -p /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/share/doc/oz-0.10.0
++ cp -pr README COPYING examples docs /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64/usr/share/doc/oz-0.10.0
++ exit 0
+Provides: config(oz) = 0.10.0-0.20121016074521git69c668e.fc17
+Requires(interp): /bin/sh
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Requires(post): /bin/sh
+Requires: /bin/python python(abi) = 2.7
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64
+Wrote: /home/heattest/rpmbuild/SRPMS/oz-0.10.0-0.20121016074521git69c668e.fc17.src.rpm
+Wrote: /home/heattest/rpmbuild/RPMS/noarch/oz-0.10.0-0.20121016074521git69c668e.fc17.noarch.rpm
+Executing(%clean): /bin/sh -e /var/tmp/rpm-tmp.NxGNqp
++ umask 022
++ cd /home/heattest/rpmbuild/BUILD
++ cd oz-0.10.0
++ /usr/bin/rm -rf /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121016074521git69c668e.fc17.x86_64
++ exit 0
+~/heat
+Installing heat in /etc/bash_completion.d
+Installing boto.cfg in /etc
+Installing heat-api-cfn.conf in /etc/heat
+Installing heat-api-cfn-paste.ini in /etc/heat
+Installing heat-api-cloudwatch.conf in /etc/heat
+Installing heat-api-cloudwatch-paste.ini in /etc/heat
+Installing heat-api.conf in /etc/heat
+Installing heat-api-paste.ini in /etc/heat
+Installing heat-metadata.conf in /etc/heat
+Installing heat-metadata-paste.ini in /etc/heat
+warning: no files found matching 'AUTHORS'
+warning: no files found matching 'ChangeLog'
+zip_safe flag not set; analyzing archive contents...
+heat.service: module MAY be using inspect.stack
+heat.engine.loadbalancer: module references __file__
+heat.engine.instance: module references __path__
+heat.engine.dbinstance: module references __file__
+heat.engine.stack: module references __file__
+heat.openstack.common.log: module MAY be using inspect.stack
+heat.db.sqlalchemy.manage: module references __file__
+heat.db.sqlalchemy.migration: module references __file__
+heat.tests.test_validate: module references __file__
+heat.tests.test_engine_manager: module references __file__
+heat.tests.test_instance: module references __file__
+heat.tests.test_api_cfn_v1: module references __file__
+heat.tests.test_parser: module references __file__
+heat.tests.test_dbinstance: module references __file__
+heat.tests.test_eip: module references __file__
+heat.tests.test_s3: module references __file__
+heat.tests.test_api_openstack_v1: module references __file__
+heat.tests.test_loadbalancer: module references __file__
+heat.tests.test_waitcondition: module references __file__
+heat.tests.test_user: module references __file__
+heat.tests.test_api_aws: module references __file__
+heat.tests.test_autoscaling: module references __file__
+heat.tests.test_cfn: module references __file__
+heat.tests.test_resource: module references __file__
+heat.tests.test_identifier: module references __file__
+heat.tests.test_dependencies: module references __file__
+heat.tests.test_api_cloudwatch: module references __file__
+heat.tests.test_volume: module references __file__
+heat.tests.examples.test3: module references __file__
+heat.tests.examples.test1: module references __file__
+heat.tests.examples.test2: module references __file__
+heat.tests.functional.util: module references __file__
+heat.tests.functional.util: module references __path__
+heat.testing.runner: module references __file__
+Installing on an RPM system.
+Redirecting to /bin/systemctl status  mysqld.service
+Verified connectivity to MySQL.
+Creating 'heat' database.
+/usr/lib/python2.7/site-packages/migrate/versioning/repository.py:9: UserWarning: Module heat was already imported from heat/__init__.pyc, but /usr/lib/python2.7/site-packages/heat-7-py2.7.egg is being added to sys.path
+  from pkg_resources import resource_filename
+/usr/lib/python2.7/site-packages/migrate/versioning/repository.py:9: UserWarning: Module heat was already imported from heat/__init__.pyc, but /usr/lib/python2.7/site-packages/heat-7-py2.7.egg is being added to sys.path
+  from pkg_resources import resource_filename
+0 -> 1... 
+done
+1 -> 2... 
+done
+2 -> 3... 
+done
+3 -> 4... 
+done
+4 -> 5... 
+done
+5 -> 6... 
+done
+6 -> 7... 
+done
+7 -> 8... 
+done
+8 -> 9... 
+done
+9 -> 10... 
+done
+10 -> 11... 
+done
+Complete!
+Using the OS_PASSWORD for the SERVICE_PASSWORD.
+ADMIN_ROLE 4873a706e96f40cdb576834f9f98e70d
+SERVICE_TENANT c2798ea827c04a7aa531675cb0eee938
+SERVICE_PASSWORD verybadpass
+SERVICE_TOKEN b7a40d10d187edb3add5
+HEAT_USER c1bc0e4fc6904defa2b3dbd0ed6fcdb2
++-------------+----------------------------------+
+|   Property  |              Value               |
++-------------+----------------------------------+
+| adminurl    | http://localhost:8000/v1         |
+| id          | 3826e9b4696f4e22b832e3330975ea28 |
+| internalurl | http://localhost:8000/v1         |
+| publicurl   | http://localhost:8000/v1         |
+| region      | RegionOne                        |
+| service_id  | 130ac10b8f2d444a85f15fa4ab75ca60 |
++-------------+----------------------------------+
+~/heat/heat-jeos ~/heat
+running install
+running bdist_egg
+running egg_info
+creating heat_jeos.egg-info
+writing heat_jeos.egg-info/PKG-INFO
+writing top-level names to heat_jeos.egg-info/top_level.txt
+writing dependency_links to heat_jeos.egg-info/dependency_links.txt
+writing manifest file 'heat_jeos.egg-info/SOURCES.txt'
+reading manifest file 'heat_jeos.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+writing manifest file 'heat_jeos.egg-info/SOURCES.txt'
+installing library code to build/bdist.linux-x86_64/egg
+running install_lib
+running build_py
+creating build
+creating build/lib
+creating build/lib/heat_jeos
+copying heat_jeos/__init__.py -> build/lib/heat_jeos
+copying heat_jeos/glance_clients.py -> build/lib/heat_jeos
+copying heat_jeos/utils.py -> build/lib/heat_jeos
+creating build/lib/heat_jeos/cfntools
+copying heat_jeos/cfntools/__init__.py -> build/lib/heat_jeos/cfntools
+copying heat_jeos/cfntools/cfn_helper.py -> build/lib/heat_jeos/cfntools
+creating build/lib/heat_jeos/jeos
+copying heat_jeos/jeos/F16-i386-cfntools.tdl -> build/lib/heat_jeos/jeos
+copying heat_jeos/jeos/F16-i386-gold.tdl -> build/lib/heat_jeos/jeos
+copying heat_jeos/jeos/F16-x86_64-cfntools-openshift.tdl -> build/lib/heat_jeos/jeos
+copying heat_jeos/jeos/F16-x86_64-cfntools.tdl -> build/lib/heat_jeos/jeos
+copying heat_jeos/jeos/F16-x86_64-gold.tdl -> build/lib/heat_jeos/jeos
+copying heat_jeos/jeos/F17-i386-cfntools.tdl -> build/lib/heat_jeos/jeos
+copying heat_jeos/jeos/F17-i386-gold.tdl -> build/lib/heat_jeos/jeos
+copying heat_jeos/jeos/F17-x86_64-cfntools.tdl -> build/lib/heat_jeos/jeos
+copying heat_jeos/jeos/F17-x86_64-gold.tdl -> build/lib/heat_jeos/jeos
+copying heat_jeos/jeos/U10-amd64-cfntools.tdl -> build/lib/heat_jeos/jeos
+copying heat_jeos/cfntools/boto.cfg -> build/lib/heat_jeos/cfntools
+copying heat_jeos/cfntools/cfn-get-metadata -> build/lib/heat_jeos/cfntools
+copying heat_jeos/cfntools/cfn-hup -> build/lib/heat_jeos/cfntools
+copying heat_jeos/cfntools/cfn-init -> build/lib/heat_jeos/cfntools
+copying heat_jeos/cfntools/cfn-push-stats -> build/lib/heat_jeos/cfntools
+copying heat_jeos/cfntools/cfn-signal -> build/lib/heat_jeos/cfntools
+creating build/bdist.linux-x86_64
+creating build/bdist.linux-x86_64/egg
+creating build/bdist.linux-x86_64/egg/heat_jeos
+copying build/lib/heat_jeos/__init__.py -> build/bdist.linux-x86_64/egg/heat_jeos
+creating build/bdist.linux-x86_64/egg/heat_jeos/jeos
+copying build/lib/heat_jeos/jeos/U10-amd64-cfntools.tdl -> build/bdist.linux-x86_64/egg/heat_jeos/jeos
+copying build/lib/heat_jeos/jeos/F16-i386-gold.tdl -> build/bdist.linux-x86_64/egg/heat_jeos/jeos
+copying build/lib/heat_jeos/jeos/F16-x86_64-cfntools.tdl -> build/bdist.linux-x86_64/egg/heat_jeos/jeos
+copying build/lib/heat_jeos/jeos/F17-x86_64-cfntools.tdl -> build/bdist.linux-x86_64/egg/heat_jeos/jeos
+copying build/lib/heat_jeos/jeos/F16-x86_64-cfntools-openshift.tdl -> build/bdist.linux-x86_64/egg/heat_jeos/jeos
+copying build/lib/heat_jeos/jeos/F16-x86_64-gold.tdl -> build/bdist.linux-x86_64/egg/heat_jeos/jeos
+copying build/lib/heat_jeos/jeos/F17-i386-gold.tdl -> build/bdist.linux-x86_64/egg/heat_jeos/jeos
+copying build/lib/heat_jeos/jeos/F17-x86_64-gold.tdl -> build/bdist.linux-x86_64/egg/heat_jeos/jeos
+copying build/lib/heat_jeos/jeos/F16-i386-cfntools.tdl -> build/bdist.linux-x86_64/egg/heat_jeos/jeos
+copying build/lib/heat_jeos/jeos/F17-i386-cfntools.tdl -> build/bdist.linux-x86_64/egg/heat_jeos/jeos
+creating build/bdist.linux-x86_64/egg/heat_jeos/cfntools
+copying build/lib/heat_jeos/cfntools/cfn-hup -> build/bdist.linux-x86_64/egg/heat_jeos/cfntools
+copying build/lib/heat_jeos/cfntools/__init__.py -> build/bdist.linux-x86_64/egg/heat_jeos/cfntools
+copying build/lib/heat_jeos/cfntools/cfn-push-stats -> build/bdist.linux-x86_64/egg/heat_jeos/cfntools
+copying build/lib/heat_jeos/cfntools/cfn-get-metadata -> build/bdist.linux-x86_64/egg/heat_jeos/cfntools
+copying build/lib/heat_jeos/cfntools/cfn_helper.py -> build/bdist.linux-x86_64/egg/heat_jeos/cfntools
+copying build/lib/heat_jeos/cfntools/cfn-signal -> build/bdist.linux-x86_64/egg/heat_jeos/cfntools
+copying build/lib/heat_jeos/cfntools/boto.cfg -> build/bdist.linux-x86_64/egg/heat_jeos/cfntools
+copying build/lib/heat_jeos/cfntools/cfn-init -> build/bdist.linux-x86_64/egg/heat_jeos/cfntools
+copying build/lib/heat_jeos/glance_clients.py -> build/bdist.linux-x86_64/egg/heat_jeos
+copying build/lib/heat_jeos/utils.py -> build/bdist.linux-x86_64/egg/heat_jeos
+byte-compiling build/bdist.linux-x86_64/egg/heat_jeos/__init__.py to __init__.pyc
+byte-compiling build/bdist.linux-x86_64/egg/heat_jeos/cfntools/__init__.py to __init__.pyc
+byte-compiling build/bdist.linux-x86_64/egg/heat_jeos/cfntools/cfn_helper.py to cfn_helper.pyc
+byte-compiling build/bdist.linux-x86_64/egg/heat_jeos/glance_clients.py to glance_clients.pyc
+byte-compiling build/bdist.linux-x86_64/egg/heat_jeos/utils.py to utils.pyc
+creating build/bdist.linux-x86_64/egg/EGG-INFO
+installing scripts to build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+running install_scripts
+running build_scripts
+creating build/scripts-2.7
+copying and adjusting bin/heat-jeos -> build/scripts-2.7
+changing mode of build/scripts-2.7/heat-jeos from 644 to 755
+creating build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-2.7/heat-jeos -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/heat-jeos to 755
+copying heat_jeos.egg-info/PKG-INFO -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying heat_jeos.egg-info/SOURCES.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying heat_jeos.egg-info/dependency_links.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying heat_jeos.egg-info/top_level.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+zip_safe flag not set; analyzing archive contents...
+heat_jeos.utils: module references __file__
+creating dist
+creating 'dist/heat_jeos-6-py2.7.egg' and adding 'build/bdist.linux-x86_64/egg' to it
+removing 'build/bdist.linux-x86_64/egg' (and everything under it)
+Processing heat_jeos-6-py2.7.egg
+creating /usr/lib/python2.7/site-packages/heat_jeos-6-py2.7.egg
+Extracting heat_jeos-6-py2.7.egg to /usr/lib/python2.7/site-packages
+Adding heat-jeos 6 to easy-install.pth file
+Installing heat-jeos script to /usr/bin
+
+Installed /usr/lib/python2.7/site-packages/heat_jeos-6-py2.7.egg
+Processing dependencies for heat-jeos==6
+Finished processing dependencies for heat-jeos==6
+~/heat
+
+Generated image: /var/lib/libvirt/images/F17-x86_64-cfntools.qcow2
+
+Image F17-x86_64-cfntools was registered with ID fa2d6e8f-7ac0-4462-96eb-1b4627ea8679
+<CreateStackResponse>
+  <CreateStackResult>
+    <StackId>arn:openstack:heat::admin:stacks/wordpress/1</StackId>
+  </CreateStackResult>
+</CreateStackResponse>
+
+<ListStacksResponse>
+  <ListStacksResult>
+    <StackSummaries>
+      <member>
+        <StackId>arn:openstack:heat::admin:stacks/wordpress/1</StackId>
+        <LastUpdatedTime>2012-10-16T08:03:52Z</LastUpdatedTime>
+        <TemplateDescription>AWS CloudFormation Sample Template WordPress_Single_Instance: WordPress is web software you can use to create a beautiful website or blog. This template installs a single-instance WordPress deployment using a local MySQL database to store the data.</TemplateDescription>
+        <StackStatusReason>Stack creation started</StackStatusReason>
+        <CreationTime>2012-10-16T08:03:52Z</CreationTime>
+        <StackName>wordpress</StackName>
+        <StackStatus>CREATE_IN_PROGRESS</StackStatus>
+      </member>
+    </StackSummaries>
+  </ListStacksResult>
+</ListStacksResponse>
+
+<DescribeStackEventsResponse>
+  <DescribeStackEventsResult>
+    <StackEvents>
+      <member>
+        <StackId>arn:openstack:heat::admin:stacks/wordpress/1</StackId>
+        <EventId>1</EventId>
+        <ResourceStatus>IN_PROGRESS</ResourceStatus>
+        <ResourceType>AWS::EC2::Instance</ResourceType>
+        <Timestamp>2012-10-16T08:03:52Z</Timestamp>
+        <ResourceStatusReason>state changed</ResourceStatusReason>
+        <StackName>wordpress</StackName>
+        <ResourceProperties>{"NovaSchedulerHints": null, "UserData": "#!/bin/bash -v\n/opt/aws/bin/cfn-init\n# Setup MySQL root password and create a user\nmysqladmin -u root password 'admin'\ncat &lt;&lt; EOF | mysql -u root --password='admin'\nCREATE DATABASE wordpress;\nGRANT ALL PRIVILEGES ON wordpress.* TO \"heattest\"@\"localhost\"\nIDENTIFIED BY \"verybadpass\";\nFLUSH PRIVILEGES;\nEXIT\nEOF\nsed --in-place --e s/database_name_here/wordpress/ --e s/username_here/heattest/ --e s/password_here/verybadpass/ /usr/share/wordpress/wp-config.php\n", "SourceDestCheck": null, "AvailabilityZone": "nova", "Monitoring": null, "Volumes": null, "Tags": null, "Tenancy": null, "PlacementGroupName": null, "ImageId": "F17-x86_64-cfntools", "SubnetId": null, "KeyName": "heattest_key", "SecurityGroups": null, "SecurityGroupIds": null, "KernelId": null, "RamDiskId": null, "DisableApiTermination": null, "InstanceType": "m1.xlarge", "PrivateIpAddress": null}</ResourceProperties>
+        <PhysicalResourceId>None</PhysicalResourceId>
+        <LogicalResourceId>WikiDatabase</LogicalResourceId>
+      </member>
+    </StackEvents>
+  </DescribeStackEventsResult>
+</DescribeStackEventsResponse>
+
+Waiting for Stack creation to complete...
+Waiting for Stack creation to complete...
+Waiting for Stack creation to complete...
+Waiting for Stack creation to complete...
+Waiting for Stack creation to complete...
+Waiting for Stack creation to complete...
+Waiting for Stack creation to complete...
+Waiting for Stack creation to complete...
+Waiting for Stack creation to complete...
+Waiting for Stack creation to complete...
+Waiting for Stack creation to complete...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for package installation...
+Waiting for package installation...
+Waiting for package installation...
+Waiting for package installation...
+Waiting for package installation...
+Waiting for package installation...
+Waiting for package installation...
+Waiting for package installation...
+Waiting for package installation...
+Waiting for package installation...
+Waiting for package installation...
+Waiting for package installation...
+Waiting for package installation...
+Waiting for package installation...
+Waiting for package installation...
+Waiting for package installation...
+Waiting for package installation...
+Waiting for package installation...
+Waiting for package installation...
+Waiting for package installation...
+Waiting for package installation...
+Waiting for package installation...
+Waiting for package installation...
+Waiting for package installation...
+Waiting for package installation...
+Waiting for package installation...
+Waiting for package installation...
+Pausing to wait for application startup...
+--2012-10-16 04:08:51--  http://10.0.0.2/wordpress
+Connecting to 10.0.0.2:80... connected.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: http://10.0.0.2/wordpress/ [following]
+--2012-10-16 04:08:51--  http://10.0.0.2/wordpress/
+Connecting to 10.0.0.2:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://10.0.0.2/wordpress/wp-admin/install.php [following]
+--2012-10-16 04:08:51--  http://10.0.0.2/wordpress/wp-admin/install.php
+Connecting to 10.0.0.2:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 3396 (3.3K) [text/html]
+Saving to: `wordpress'
+
+ 0% [                                       ] 0           --.-K/s              100%[======================================>] 3,396       --.-K/s   in 0s      
+
+2012-10-16 04:08:52 (199 MB/s) - `wordpress' saved [3396/3396]
+
+<DeleteStackResponse>
+  <DeleteStackResult/>
+</DeleteStackResponse>
+
+<ListStacksResponse>
+  <ListStacksResult>
+    <StackSummaries>
+      <member>
+        <StackId>arn:openstack:heat::admin:stacks/wordpress/1</StackId>
+        <LastUpdatedTime>2012-10-16T08:08:52Z</LastUpdatedTime>
+        <TemplateDescription>AWS CloudFormation Sample Template WordPress_Single_Instance: WordPress is web software you can use to create a beautiful website or blog. This template installs a single-instance WordPress deployment using a local MySQL database to store the data.</TemplateDescription>
+        <StackStatusReason>Stack deletion started</StackStatusReason>
+        <CreationTime>2012-10-16T08:03:52Z</CreationTime>
+        <StackName>wordpress</StackName>
+        <StackStatus>DELETE_IN_PROGRESS</StackStatus>
+      </member>
+    </StackSummaries>
+  </ListStacksResult>
+</ListStacksResponse>
+
+
+Success!
+~
+Install test dependencies...
+~/heat ~
+Package python-setuptools-0.6.27-2.fc17.noarch already installed and latest version
+Package python-nose-1.1.2-2.fc17.noarch already installed and latest version
+Package python-paramiko-1.7.7.1-2.fc17.noarch already installed and latest version
+~
+~/heat ~
+Running tests
+CfnApiFunctionalTest
+    testDescribeStackEvents                                     OK  0.13
+    testDescribeStackResource                                   OK  0.12
+    testDescribeStackResources                                  OK  0.12
+    testDescribeStacks                                          OK  0.38
+    testGetTemplate                                             OK  0.13
+    testListStackResources                                      OK  0.12
+    testListStacks                                              OK  0.39
+    test_instance                                               OK  0.63
+CfnApiUpdateStackFunctionalTest
+    testUpdateStack                                             OK  1.24
+    testUpdateStackReplace                                      OK  153.12
+HAProxyFunctionalTest
+    test_instance                                               OK  283.05
+WordPress2Instances
+    test_instance                                               OK  183.82
+WordPress2InstancesWithEBS
+    test_instance                                               ERROR
+WordPress2EBSEIPFunctionalTest
+    test_instance                                               FAIL
+WordPressComposedInstancesFunctionalTest
+    test_instance                                               OK  374.81
+WordPressFunctionalTest
+    test_instance                                               OK  143.04
+WordPressBotoFunctionalTest
+    test_instance                                               OK  158.62
+WordPressSingleEBSFunctionalTest
+    test_instance                                               ERROR
+WordPressEBSEIPFunctionalTest
+    test_instance                                               ERROR
+WordPressEIPFunctionalTest
+    test_instance                                               OK  175.21
+HaFunctionalTest
+    test_instance                                               OK  346.41
+WordPressIHAFunctionalTest
+    test_instance                                               ERROR
+WordPressWithLBFunctionalTest
+    test_instance                                               OK  301.83
+WordPressRDSFunctionalTest
+    test_instance                                               OK  264.62
+
+======================================================================
+ERROR: test_instance (heat.tests.functional.test_WordPress_2_Instances_With_EBS.WordPress2InstancesWithEBS)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/heattest/heat/heat/tests/functional/test_WordPress_2_Instances_With_EBS.py", line 72, in test_instance
+    result = stdout.readlines().pop().rstrip()
+IndexError: pop from empty list
+-------------------- >> begin captured stdout << ---------------------
+Checking glance for image registration
+Found image registration for F17-x86_64-cfntools
+Checking arn:openstack:heat::admin:stacks/teststack/7 contains name teststack
+Waiting for stack creation to be completed
+Instance (teststack.WikiDatabase) ip (10.0.0.2) status (ACTIVE)
+Instance (teststack.WikiDatabase) ip (10.0.0.2) SSH detected.
+Instance (teststack.WikiDatabase) ip (10.0.0.2) connected via SSH.
+Instance (teststack.WikiDatabase) ip (10.0.0.2) finished booting.
+Instance (teststack.WikiDatabase) cfntools integrity verified.
+Instance (teststack.WikiDatabase) waiting for provisioning to complete.
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning completed.
+Instance (teststack.WebServer) ip (10.0.0.3) status (ACTIVE)
+Instance (teststack.WebServer) ip (10.0.0.3) SSH detected.
+Instance (teststack.WebServer) ip (10.0.0.3) connected via SSH.
+Instance (teststack.WebServer) ip (10.0.0.3) finished booting.
+Instance (teststack.WebServer) cfntools integrity verified.
+Instance (teststack.WebServer) waiting for provisioning to complete.
+Instance (teststack.WebServer) provisioning completed.
+Verifying file '/etc/wordpress/wp-config.php' exists
+Wordpress installation detected
+Got stack output WebsiteURL=http://10.0.0.3/wordpress, verifying
+Reading html from http://10.0.0.3/wordpress
+VERIFY : looks OK!
+
+--------------------- >> end captured stdout << ----------------------
+-------------------- >> begin captured logging << --------------------
+novaclient.client: DEBUG: REQ: curl -i http://127.0.0.1:5000/v2.0/tokens -X POST -H "Content-Type: application/json" -H "Accept: application/json" -H "User-Agent: python-novaclient"
+
+novaclient.client: DEBUG: REQ BODY: {"auth": {"tenantName": "admin", "passwordCredentials": {"username": "admin", "password": "verybadpass"}}}
+
+novaclient.client: DEBUG: RESP:{'date': 'Tue, 16 Oct 2012 08:25:56 GMT', 'transfer-encoding': 'chunked', 'status': '200', 'vary': 'X-Auth-Token', 'content-type': 'application/json'} {"access": {"token": {"expires": "2012-10-17T08:25:56Z", "id": "80ab05ea7b714c5193be685c091763b4", "tenant": {"description": null, "enabled": true, "id": "6549f3166ca44ea0940794494bbd6e6f", "name": "admin"}}, "serviceCatalog": [{"endpoints": [{"adminURL": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f", "region": "RegionOne", "internalURL": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f", "publicURL": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f"}], "endpoints_links": [], "type": "compute", "name": "nova"}, {"endpoints": [{"adminURL": "http://localhost:9292/v1", "region": "RegionOne", "internalURL": "http://localhost:9292/v1", "publicURL": "http://localhost:9292/v1"}], "endpoints_links": [], "type": "image", "name": "glance"}, {"endpoints": [{"adminURL": "http://localhost:8000/v1", "region": "RegionOne", "internalURL": "http://localhost:8000/v1", "publicURL": "http://localhost:8000/v1"}], "endpoints_links": [], "type": "cloudformation", "name": "heat"}, {"endpoints": [{"adminURL": "http://localhost:8776/v1/6549f3166ca44ea0940794494bbd6e6f", "region": "RegionOne", "internalURL": "http://localhost:8776/v1/6549f3166ca44ea0940794494bbd6e6f", "publicURL": "http://localhost:8776/v1/6549f3166ca44ea0940794494bbd6e6f"}], "endpoints_links": [], "type": "volume", "name": "nova-volume"}, {"endpoints": [{"adminURL": "http://localhost:8773/services/Admin", "region": "RegionOne", "internalURL": "http://localhost:8773/services/Cloud", "publicURL": "http://localhost:8773/services/Cloud"}], "endpoints_links": [], "type": "ec2", "name": "ec2"}, {"endpoints": [{"adminURL": "http://localhost:35357/v2.0", "region": "RegionOne", "internalURL": "http://localhost:35357/v2.0", "publicURL": "http://localhost:5000/v2.0"}], "endpoints_links": [], "type": "identity", "name": "keystone"}], "user": {"username": "admin", "roles_links": [], "id": "2e4a12d2d7a447e69330e51242a92ddb", "roles": [{"id": "4873a706e96f40cdb576834f9f98e70d", "name": "admin"}, {"id": "55aa78865d0443ee8f31ead66b3110d0", "name": "KeystoneServiceAdmin"}, {"id": "e9635df98d714c3388b9ef6ac70284b5", "name": "KeystoneAdmin"}], "name": "admin"}}}
+
+novaclient.client: DEBUG: REQ: curl -i http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/os-keypairs -X GET -H "X-Auth-Project-Id: admin" -H "User-Agent: python-novaclient" -H "Accept: application/json" -H "X-Auth-Token: 80ab05ea7b714c5193be685c091763b4"
+
+novaclient.client: DEBUG: RESP:{'status': '200', 'content-length': '562', 'content-location': u'http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/os-keypairs', 'x-compute-request-id': 'req-428f921e-595e-4910-92c6-93e99e47dc0d', 'date': 'Tue, 16 Oct 2012 08:25:56 GMT', 'content-type': 'application/json'} {"keypairs": [{"keypair": {"public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDbQD+m71J9HLMQRWWijXVz/kgPJ2fn23vyyCG0aMzfapiBKhCWQUDj4nokzrARfqn2M6y61duvfImhWB/9CG4kuBTxAu2BTPdeUpyn0gQNN9F8/p8rMlhoaePSVhf9bF2SYF9lAgqpHuxTOMK6XiwiY0vUqt+z1yuMvLoYNe+4jODeeQ9RRZk87gBK/nD8pB/1hegQ4Xh/JYH5GMsWfsSJPgzFPk8RGVslo1GgbLziZOpYZsOiL3bwNS5RccMQ0ZKSXlXDic1f37waD4oB/xHPO4a9wTDTRhgciiJeoXaLclRdmPCLFRYUDUW91UEEn3OnphxVdImVmWJVgpJoeP2v heattest@mrg-04.mpc.lab.eng.bos.redhat.com\n", "name": "heattest_key", "fingerprint": "f2:96:8b:9a:d4:fc:83:d8:15:cb:45:85:c3:b8:90:3f"}}]}
+
+novaclient.client: DEBUG: REQ: curl -i http://127.0.0.1:5000/v2.0/tokens -X POST -H "Content-Type: application/json" -H "Accept: application/json" -H "User-Agent: python-novaclient"
+
+novaclient.client: DEBUG: REQ BODY: {"auth": {"tenantName": "admin", "passwordCredentials": {"username": "admin", "password": "verybadpass"}}}
+
+novaclient.client: DEBUG: RESP:{'date': 'Tue, 16 Oct 2012 08:26:38 GMT', 'transfer-encoding': 'chunked', 'status': '200', 'vary': 'X-Auth-Token', 'content-type': 'application/json'} {"access": {"token": {"expires": "2012-10-17T08:26:38Z", "id": "027ab8a647f549f7988bd89eca955046", "tenant": {"description": null, "enabled": true, "id": "6549f3166ca44ea0940794494bbd6e6f", "name": "admin"}}, "serviceCatalog": [{"endpoints": [{"adminURL": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f", "region": "RegionOne", "internalURL": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f", "publicURL": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f"}], "endpoints_links": [], "type": "compute", "name": "nova"}, {"endpoints": [{"adminURL": "http://localhost:9292/v1", "region": "RegionOne", "internalURL": "http://localhost:9292/v1", "publicURL": "http://localhost:9292/v1"}], "endpoints_links": [], "type": "image", "name": "glance"}, {"endpoints": [{"adminURL": "http://localhost:8000/v1", "region": "RegionOne", "internalURL": "http://localhost:8000/v1", "publicURL": "http://localhost:8000/v1"}], "endpoints_links": [], "type": "cloudformation", "name": "heat"}, {"endpoints": [{"adminURL": "http://localhost:8776/v1/6549f3166ca44ea0940794494bbd6e6f", "region": "RegionOne", "internalURL": "http://localhost:8776/v1/6549f3166ca44ea0940794494bbd6e6f", "publicURL": "http://localhost:8776/v1/6549f3166ca44ea0940794494bbd6e6f"}], "endpoints_links": [], "type": "volume", "name": "nova-volume"}, {"endpoints": [{"adminURL": "http://localhost:8773/services/Admin", "region": "RegionOne", "internalURL": "http://localhost:8773/services/Cloud", "publicURL": "http://localhost:8773/services/Cloud"}], "endpoints_links": [], "type": "ec2", "name": "ec2"}, {"endpoints": [{"adminURL": "http://localhost:35357/v2.0", "region": "RegionOne", "internalURL": "http://localhost:35357/v2.0", "publicURL": "http://localhost:5000/v2.0"}], "endpoints_links": [], "type": "identity", "name": "keystone"}], "user": {"username": "admin", "roles_links": [], "id": "2e4a12d2d7a447e69330e51242a92ddb", "roles": [{"id": "4873a706e96f40cdb576834f9f98e70d", "name": "admin"}, {"id": "55aa78865d0443ee8f31ead66b3110d0", "name": "KeystoneServiceAdmin"}, {"id": "e9635df98d714c3388b9ef6ac70284b5", "name": "KeystoneAdmin"}], "name": "admin"}}}
+
+novaclient.client: DEBUG: REQ: curl -i http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/servers/detail -X GET -H "X-Auth-Project-Id: admin" -H "User-Agent: python-novaclient" -H "Accept: application/json" -H "X-Auth-Token: 027ab8a647f549f7988bd89eca955046"
+
+novaclient.client: DEBUG: RESP:{'status': '200', 'content-length': '2824', 'content-location': u'http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/servers/detail', 'x-compute-request-id': 'req-805a2bc7-4a4d-4f58-8a82-ffad9aad7fa5', 'date': 'Tue, 16 Oct 2012 08:26:38 GMT', 'content-type': 'application/json'} {"servers": [{"OS-EXT-STS:task_state": null, "addresses": {"demonet": [{"version": 4, "addr": "10.0.0.3"}]}, "links": [{"href": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/servers/27d14bf8-e5cc-4056-996a-62183a0f0f16", "rel": "self"}, {"href": "http://localhost:8774/6549f3166ca44ea0940794494bbd6e6f/servers/27d14bf8-e5cc-4056-996a-62183a0f0f16", "rel": "bookmark"}], "image": {"id": "fa2d6e8f-7ac0-4462-96eb-1b4627ea8679", "links": [{"href": "http://localhost:8774/6549f3166ca44ea0940794494bbd6e6f/images/fa2d6e8f-7ac0-4462-96eb-1b4627ea8679", "rel": "bookmark"}]}, "OS-EXT-STS:vm_state": "active", "OS-EXT-SRV-ATTR:instance_name": "instance-0000000a", "flavor": {"id": "6", "links": [{"href": "http://localhost:8774/6549f3166ca44ea0940794494bbd6e6f/flavors/6", "rel": "bookmark"}]}, "id": "27d14bf8-e5cc-4056-996a-62183a0f0f16", "user_id": "2e4a12d2d7a447e69330e51242a92ddb", "OS-DCF:diskConfig": "MANUAL", "accessIPv4": "", "accessIPv6": "", "progress": 0, "OS-EXT-STS:power_state": 1, "config_drive": "", "status": "ACTIVE", "updated": "2012-10-16T08:26:24Z", "hostId": "503a1dcfafc4bd2b6947ea461a9261beee349e4d2b533ae68f05dfe2", "OS-EXT-SRV-ATTR:host": "mrg-04.mpc.lab.eng.bos.redhat.com", "key_name": "heattest_key", "OS-EXT-SRV-ATTR:hypervisor_hostname": null, "name": "teststack.WebServer", "created": "2012-10-16T08:26:12Z", "tenant_id": "6549f3166ca44ea0940794494bbd6e6f", "metadata": {}}, {"OS-EXT-STS:task_state": null, "addresses": {"demonet": [{"version": 4, "addr": "10.0.0.2"}]}, "links": [{"href": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/servers/e69b2517-5c65-49a2-9c1d-3f51d62ef70f", "rel": "self"}, {"href": "http://localhost:8774/6549f3166ca44ea0940794494bbd6e6f/servers/e69b2517-5c65-49a2-9c1d-3f51d62ef70f", "rel": "bookmark"}], "image": {"id": "fa2d6e8f-7ac0-4462-96eb-1b4627ea8679", "links": [{"href": "http://localhost:8774/6549f3166ca44ea0940794494bbd6e6f/images/fa2d6e8f-7ac0-4462-96eb-1b4627ea8679", "rel": "bookmark"}]}, "OS-EXT-STS:vm_state": "active", "OS-EXT-SRV-ATTR:instance_name": "instance-00000009", "flavor": {"id": "6", "links": [{"href": "http://localhost:8774/6549f3166ca44ea0940794494bbd6e6f/flavors/6", "rel": "bookmark"}]}, "id": "e69b2517-5c65-49a2-9c1d-3f51d62ef70f", "user_id": "2e4a12d2d7a447e69330e51242a92ddb", "OS-DCF:diskConfig": "MANUAL", "accessIPv4": "", "accessIPv6": "", "progress": 0, "OS-EXT-STS:power_state": 1, "config_drive": "", "status": "ACTIVE", "updated": "2012-10-16T08:26:09Z", "hostId": "503a1dcfafc4bd2b6947ea461a9261beee349e4d2b533ae68f05dfe2", "OS-EXT-SRV-ATTR:host": "mrg-04.mpc.lab.eng.bos.redhat.com", "key_name": "heattest_key", "OS-EXT-SRV-ATTR:hypervisor_hostname": null, "name": "teststack.WikiDatabase", "created": "2012-10-16T08:25:57Z", "tenant_id": "6549f3166ca44ea0940794494bbd6e6f", "metadata": {}}]}
+
+paramiko.transport: DEBUG: starting thread (client mode): 0x30899d0L
+paramiko.transport: INFO: Connected (version 2.0, client OpenSSH_5.9)
+paramiko.transport: DEBUG: kex algos:['diffie-hellman-group-exchange-sha256', 'diffie-hellman-group-exchange-sha1', 'diffie-hellman-group14-sha1', 'diffie-hellman-group1-sha1'] server key:['ssh-rsa', 'ssh-dss'] client encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] server encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] client mac:['hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'hmac-sha2-256', 'hmac-sha2-256-96', 'hmac-sha2-512', 'hmac-sha2-512-96', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] server mac:['hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'hmac-sha2-256', 'hmac-sha2-256-96', 'hmac-sha2-512', 'hmac-sha2-512-96', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+paramiko.transport: DEBUG: Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+paramiko.transport: DEBUG: using kex diffie-hellman-group1-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+paramiko.transport: DEBUG: Switch to new keys ...
+paramiko.transport: DEBUG: Adding ssh-rsa host key for 10.0.0.2: dfa770619e1e42936aeaa5535f73b94b
+paramiko.transport: DEBUG: Trying discovered key f2968b9ad4fc83d815cb4585c3b8903f in /home/heattest/.ssh/id_rsa
+paramiko.transport: DEBUG: userauth is OK
+paramiko.transport: INFO: Authentication (publickey) successful!
+paramiko.transport: DEBUG: [chan 1] Max packet in: 34816 bytes
+paramiko.transport: DEBUG: [chan 1] Max packet out: 32768 bytes
+paramiko.transport: INFO: Secsh channel 1 opened.
+paramiko.transport: DEBUG: [chan 1] Sesch channel 1 request ok
+paramiko.transport.sftp: INFO: [chan 1] Opened sftp connection (server version 3)
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/boot-finished')
+paramiko.transport: DEBUG: [chan 2] Max packet in: 34816 bytes
+paramiko.transport: DEBUG: [chan 2] Max packet out: 32768 bytes
+paramiko.transport: INFO: Secsh channel 2 opened.
+paramiko.transport: DEBUG: [chan 2] Sesch channel 2 request ok
+paramiko.transport: DEBUG: [chan 2] EOF received (2)
+paramiko.transport: DEBUG: [chan 2] EOF sent (2)
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+novaclient.client: DEBUG: REQ: curl -i http://127.0.0.1:5000/v2.0/tokens -X POST -H "Content-Type: application/json" -H "Accept: application/json" -H "User-Agent: python-novaclient"
+
+novaclient.client: DEBUG: REQ BODY: {"auth": {"tenantName": "admin", "passwordCredentials": {"username": "admin", "password": "verybadpass"}}}
+
+novaclient.client: DEBUG: RESP:{'date': 'Tue, 16 Oct 2012 08:32:14 GMT', 'transfer-encoding': 'chunked', 'status': '200', 'vary': 'X-Auth-Token', 'content-type': 'application/json'} {"access": {"token": {"expires": "2012-10-17T08:32:14Z", "id": "025e8a9bf37d4e17a0165045da1d9e2b", "tenant": {"description": null, "enabled": true, "id": "6549f3166ca44ea0940794494bbd6e6f", "name": "admin"}}, "serviceCatalog": [{"endpoints": [{"adminURL": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f", "region": "RegionOne", "internalURL": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f", "publicURL": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f"}], "endpoints_links": [], "type": "compute", "name": "nova"}, {"endpoints": [{"adminURL": "http://localhost:9292/v1", "region": "RegionOne", "internalURL": "http://localhost:9292/v1", "publicURL": "http://localhost:9292/v1"}], "endpoints_links": [], "type": "image", "name": "glance"}, {"endpoints": [{"adminURL": "http://localhost:8000/v1", "region": "RegionOne", "internalURL": "http://localhost:8000/v1", "publicURL": "http://localhost:8000/v1"}], "endpoints_links": [], "type": "cloudformation", "name": "heat"}, {"endpoints": [{"adminURL": "http://localhost:8776/v1/6549f3166ca44ea0940794494bbd6e6f", "region": "RegionOne", "internalURL": "http://localhost:8776/v1/6549f3166ca44ea0940794494bbd6e6f", "publicURL": "http://localhost:8776/v1/6549f3166ca44ea0940794494bbd6e6f"}], "endpoints_links": [], "type": "volume", "name": "nova-volume"}, {"endpoints": [{"adminURL": "http://localhost:8773/services/Admin", "region": "RegionOne", "internalURL": "http://localhost:8773/services/Cloud", "publicURL": "http://localhost:8773/services/Cloud"}], "endpoints_links": [], "type": "ec2", "name": "ec2"}, {"endpoints": [{"adminURL": "http://localhost:35357/v2.0", "region": "RegionOne", "internalURL": "http://localhost:35357/v2.0", "publicURL": "http://localhost:5000/v2.0"}], "endpoints_links": [], "type": "identity", "name": "keystone"}], "user": {"username": "admin", "roles_links": [], "id": "2e4a12d2d7a447e69330e51242a92ddb", "roles": [{"id": "4873a706e96f40cdb576834f9f98e70d", "name": "admin"}, {"id": "55aa78865d0443ee8f31ead66b3110d0", "name": "KeystoneServiceAdmin"}, {"id": "e9635df98d714c3388b9ef6ac70284b5", "name": "KeystoneAdmin"}], "name": "admin"}}}
+
+novaclient.client: DEBUG: REQ: curl -i http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/servers/detail -X GET -H "X-Auth-Project-Id: admin" -H "User-Agent: python-novaclient" -H "Accept: application/json" -H "X-Auth-Token: 025e8a9bf37d4e17a0165045da1d9e2b"
+
+novaclient.client: DEBUG: RESP:{'status': '200', 'content-length': '2824', 'content-location': u'http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/servers/detail', 'x-compute-request-id': 'req-ce196220-fdb3-4648-b1fb-d2feb16c5c92', 'date': 'Tue, 16 Oct 2012 08:32:14 GMT', 'content-type': 'application/json'} {"servers": [{"OS-EXT-STS:task_state": null, "addresses": {"demonet": [{"version": 4, "addr": "10.0.0.3"}]}, "links": [{"href": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/servers/27d14bf8-e5cc-4056-996a-62183a0f0f16", "rel": "self"}, {"href": "http://localhost:8774/6549f3166ca44ea0940794494bbd6e6f/servers/27d14bf8-e5cc-4056-996a-62183a0f0f16", "rel": "bookmark"}], "image": {"id": "fa2d6e8f-7ac0-4462-96eb-1b4627ea8679", "links": [{"href": "http://localhost:8774/6549f3166ca44ea0940794494bbd6e6f/images/fa2d6e8f-7ac0-4462-96eb-1b4627ea8679", "rel": "bookmark"}]}, "OS-EXT-STS:vm_state": "active", "OS-EXT-SRV-ATTR:instance_name": "instance-0000000a", "flavor": {"id": "6", "links": [{"href": "http://localhost:8774/6549f3166ca44ea0940794494bbd6e6f/flavors/6", "rel": "bookmark"}]}, "id": "27d14bf8-e5cc-4056-996a-62183a0f0f16", "user_id": "2e4a12d2d7a447e69330e51242a92ddb", "OS-DCF:diskConfig": "MANUAL", "accessIPv4": "", "accessIPv6": "", "progress": 0, "OS-EXT-STS:power_state": 1, "config_drive": "", "status": "ACTIVE", "updated": "2012-10-16T08:26:24Z", "hostId": "503a1dcfafc4bd2b6947ea461a9261beee349e4d2b533ae68f05dfe2", "OS-EXT-SRV-ATTR:host": "mrg-04.mpc.lab.eng.bos.redhat.com", "key_name": "heattest_key", "OS-EXT-SRV-ATTR:hypervisor_hostname": null, "name": "teststack.WebServer", "created": "2012-10-16T08:26:12Z", "tenant_id": "6549f3166ca44ea0940794494bbd6e6f", "metadata": {}}, {"OS-EXT-STS:task_state": null, "addresses": {"demonet": [{"version": 4, "addr": "10.0.0.2"}]}, "links": [{"href": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/servers/e69b2517-5c65-49a2-9c1d-3f51d62ef70f", "rel": "self"}, {"href": "http://localhost:8774/6549f3166ca44ea0940794494bbd6e6f/servers/e69b2517-5c65-49a2-9c1d-3f51d62ef70f", "rel": "bookmark"}], "image": {"id": "fa2d6e8f-7ac0-4462-96eb-1b4627ea8679", "links": [{"href": "http://localhost:8774/6549f3166ca44ea0940794494bbd6e6f/images/fa2d6e8f-7ac0-4462-96eb-1b4627ea8679", "rel": "bookmark"}]}, "OS-EXT-STS:vm_state": "active", "OS-EXT-SRV-ATTR:instance_name": "instance-00000009", "flavor": {"id": "6", "links": [{"href": "http://localhost:8774/6549f3166ca44ea0940794494bbd6e6f/flavors/6", "rel": "bookmark"}]}, "id": "e69b2517-5c65-49a2-9c1d-3f51d62ef70f", "user_id": "2e4a12d2d7a447e69330e51242a92ddb", "OS-DCF:diskConfig": "MANUAL", "accessIPv4": "", "accessIPv6": "", "progress": 0, "OS-EXT-STS:power_state": 1, "config_drive": "", "status": "ACTIVE", "updated": "2012-10-16T08:26:09Z", "hostId": "503a1dcfafc4bd2b6947ea461a9261beee349e4d2b533ae68f05dfe2", "OS-EXT-SRV-ATTR:host": "mrg-04.mpc.lab.eng.bos.redhat.com", "key_name": "heattest_key", "OS-EXT-SRV-ATTR:hypervisor_hostname": null, "name": "teststack.WikiDatabase", "created": "2012-10-16T08:25:57Z", "tenant_id": "6549f3166ca44ea0940794494bbd6e6f", "metadata": {}}]}
+
+paramiko.transport: DEBUG: starting thread (client mode): 0x3131910L
+paramiko.transport: INFO: Connected (version 2.0, client OpenSSH_5.9)
+paramiko.transport: DEBUG: kex algos:['diffie-hellman-group-exchange-sha256', 'diffie-hellman-group-exchange-sha1', 'diffie-hellman-group14-sha1', 'diffie-hellman-group1-sha1'] server key:['ssh-rsa', 'ssh-dss'] client encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] server encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] client mac:['hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'hmac-sha2-256', 'hmac-sha2-256-96', 'hmac-sha2-512', 'hmac-sha2-512-96', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] server mac:['hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'hmac-sha2-256', 'hmac-sha2-256-96', 'hmac-sha2-512', 'hmac-sha2-512-96', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+paramiko.transport: DEBUG: Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+paramiko.transport: DEBUG: using kex diffie-hellman-group1-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+paramiko.transport: DEBUG: Switch to new keys ...
+paramiko.transport: DEBUG: Adding ssh-rsa host key for 10.0.0.3: dfa770619e1e42936aeaa5535f73b94b
+paramiko.transport: DEBUG: Trying discovered key f2968b9ad4fc83d815cb4585c3b8903f in /home/heattest/.ssh/id_rsa
+paramiko.transport: DEBUG: userauth is OK
+paramiko.transport: INFO: Authentication (publickey) successful!
+paramiko.transport: DEBUG: [chan 1] Max packet in: 34816 bytes
+paramiko.transport: DEBUG: [chan 1] Max packet out: 32768 bytes
+paramiko.transport: INFO: Secsh channel 1 opened.
+paramiko.transport: DEBUG: [chan 1] Sesch channel 1 request ok
+paramiko.transport.sftp: INFO: [chan 1] Opened sftp connection (server version 3)
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/boot-finished')
+paramiko.transport: DEBUG: [chan 2] Max packet in: 34816 bytes
+paramiko.transport: DEBUG: [chan 2] Max packet out: 32768 bytes
+paramiko.transport: INFO: Secsh channel 2 opened.
+paramiko.transport: DEBUG: [chan 2] Sesch channel 2 request ok
+paramiko.transport: DEBUG: [chan 2] EOF received (2)
+paramiko.transport: DEBUG: [chan 2] EOF sent (2)
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport: DEBUG: [chan 3] Max packet in: 34816 bytes
+paramiko.transport: DEBUG: [chan 3] Max packet out: 32768 bytes
+paramiko.transport: INFO: Secsh channel 3 opened.
+paramiko.transport: DEBUG: [chan 3] Sesch channel 3 request ok
+paramiko.transport: DEBUG: [chan 3] EOF received (3)
+paramiko.transport: DEBUG: [chan 3] EOF sent (3)
+paramiko.transport: DEBUG: [chan 3] Max packet in: 34816 bytes
+paramiko.transport: DEBUG: [chan 3] Max packet out: 32768 bytes
+paramiko.transport: INFO: Secsh channel 3 opened.
+paramiko.transport: DEBUG: [chan 3] Sesch channel 3 request ok
+paramiko.transport: DEBUG: [chan 3] EOF received (3)
+paramiko.transport: DEBUG: [chan 3] EOF sent (3)
+--------------------- >> end captured logging << ---------------------
+
+======================================================================
+ERROR: test_instance (heat.tests.functional.test_WordPress_Single_Instance_With_EBS.WordPressSingleEBSFunctionalTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/heattest/heat/heat/tests/functional/test_WordPress_Single_Instance_With_EBS.py", line 65, in test_instance
+    result = stdout.readlines().pop().rstrip()
+IndexError: pop from empty list
+-------------------- >> begin captured stdout << ---------------------
+Checking glance for image registration
+Found image registration for F17-x86_64-cfntools
+Checking arn:openstack:heat::admin:stacks/teststack/13 contains name teststack
+Waiting for stack creation to be completed
+Instance (teststack.WikiDatabase) ip (10.0.0.2) status (ACTIVE)
+Instance (teststack.WikiDatabase) ip (10.0.0.2) SSH detected.
+Instance (teststack.WikiDatabase) ip (10.0.0.2) connected via SSH.
+Instance (teststack.WikiDatabase) ip (10.0.0.2) finished booting.
+Instance (teststack.WikiDatabase) cfntools integrity verified.
+Instance (teststack.WikiDatabase) waiting for provisioning to complete.
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning completed.
+Verifying file '/etc/wordpress/wp-config.php' exists
+Wordpress installation detected
+Got stack output WebsiteURL=http://10.0.0.2/wordpress, verifying
+Reading html from http://10.0.0.2/wordpress
+VERIFY : looks OK!
+
+--------------------- >> end captured stdout << ----------------------
+-------------------- >> begin captured logging << --------------------
+novaclient.client: DEBUG: REQ: curl -i http://127.0.0.1:5000/v2.0/tokens -X POST -H "Content-Type: application/json" -H "Accept: application/json" -H "User-Agent: python-novaclient"
+
+novaclient.client: DEBUG: REQ BODY: {"auth": {"tenantName": "admin", "passwordCredentials": {"username": "admin", "password": "verybadpass"}}}
+
+novaclient.client: DEBUG: RESP:{'date': 'Tue, 16 Oct 2012 08:51:16 GMT', 'transfer-encoding': 'chunked', 'status': '200', 'vary': 'X-Auth-Token', 'content-type': 'application/json'} {"access": {"token": {"expires": "2012-10-17T08:51:16Z", "id": "c8d682d842024afdaae9d2aac674bd16", "tenant": {"description": null, "enabled": true, "id": "6549f3166ca44ea0940794494bbd6e6f", "name": "admin"}}, "serviceCatalog": [{"endpoints": [{"adminURL": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f", "region": "RegionOne", "internalURL": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f", "publicURL": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f"}], "endpoints_links": [], "type": "compute", "name": "nova"}, {"endpoints": [{"adminURL": "http://localhost:9292/v1", "region": "RegionOne", "internalURL": "http://localhost:9292/v1", "publicURL": "http://localhost:9292/v1"}], "endpoints_links": [], "type": "image", "name": "glance"}, {"endpoints": [{"adminURL": "http://localhost:8000/v1", "region": "RegionOne", "internalURL": "http://localhost:8000/v1", "publicURL": "http://localhost:8000/v1"}], "endpoints_links": [], "type": "cloudformation", "name": "heat"}, {"endpoints": [{"adminURL": "http://localhost:8776/v1/6549f3166ca44ea0940794494bbd6e6f", "region": "RegionOne", "internalURL": "http://localhost:8776/v1/6549f3166ca44ea0940794494bbd6e6f", "publicURL": "http://localhost:8776/v1/6549f3166ca44ea0940794494bbd6e6f"}], "endpoints_links": [], "type": "volume", "name": "nova-volume"}, {"endpoints": [{"adminURL": "http://localhost:8773/services/Admin", "region": "RegionOne", "internalURL": "http://localhost:8773/services/Cloud", "publicURL": "http://localhost:8773/services/Cloud"}], "endpoints_links": [], "type": "ec2", "name": "ec2"}, {"endpoints": [{"adminURL": "http://localhost:35357/v2.0", "region": "RegionOne", "internalURL": "http://localhost:35357/v2.0", "publicURL": "http://localhost:5000/v2.0"}], "endpoints_links": [], "type": "identity", "name": "keystone"}], "user": {"username": "admin", "roles_links": [], "id": "2e4a12d2d7a447e69330e51242a92ddb", "roles": [{"id": "4873a706e96f40cdb576834f9f98e70d", "name": "admin"}, {"id": "55aa78865d0443ee8f31ead66b3110d0", "name": "KeystoneServiceAdmin"}, {"id": "e9635df98d714c3388b9ef6ac70284b5", "name": "KeystoneAdmin"}], "name": "admin"}}}
+
+novaclient.client: DEBUG: REQ: curl -i http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/os-keypairs -X GET -H "X-Auth-Project-Id: admin" -H "User-Agent: python-novaclient" -H "Accept: application/json" -H "X-Auth-Token: c8d682d842024afdaae9d2aac674bd16"
+
+novaclient.client: DEBUG: RESP:{'status': '200', 'content-length': '562', 'content-location': u'http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/os-keypairs', 'x-compute-request-id': 'req-edb147c3-1d4d-41c1-b9b5-25a0e2be3fba', 'date': 'Tue, 16 Oct 2012 08:51:16 GMT', 'content-type': 'application/json'} {"keypairs": [{"keypair": {"public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDbQD+m71J9HLMQRWWijXVz/kgPJ2fn23vyyCG0aMzfapiBKhCWQUDj4nokzrARfqn2M6y61duvfImhWB/9CG4kuBTxAu2BTPdeUpyn0gQNN9F8/p8rMlhoaePSVhf9bF2SYF9lAgqpHuxTOMK6XiwiY0vUqt+z1yuMvLoYNe+4jODeeQ9RRZk87gBK/nD8pB/1hegQ4Xh/JYH5GMsWfsSJPgzFPk8RGVslo1GgbLziZOpYZsOiL3bwNS5RccMQ0ZKSXlXDic1f37waD4oB/xHPO4a9wTDTRhgciiJeoXaLclRdmPCLFRYUDUW91UEEn3OnphxVdImVmWJVgpJoeP2v heattest@mrg-04.mpc.lab.eng.bos.redhat.com\n", "name": "heattest_key", "fingerprint": "f2:96:8b:9a:d4:fc:83:d8:15:cb:45:85:c3:b8:90:3f"}}]}
+
+novaclient.client: DEBUG: REQ: curl -i http://127.0.0.1:5000/v2.0/tokens -X POST -H "Content-Type: application/json" -H "Accept: application/json" -H "User-Agent: python-novaclient"
+
+novaclient.client: DEBUG: REQ BODY: {"auth": {"tenantName": "admin", "passwordCredentials": {"username": "admin", "password": "verybadpass"}}}
+
+novaclient.client: DEBUG: RESP:{'date': 'Tue, 16 Oct 2012 08:51:37 GMT', 'transfer-encoding': 'chunked', 'status': '200', 'vary': 'X-Auth-Token', 'content-type': 'application/json'} {"access": {"token": {"expires": "2012-10-17T08:51:37Z", "id": "08c4a0e57ac9484f99c88fd9d66018b7", "tenant": {"description": null, "enabled": true, "id": "6549f3166ca44ea0940794494bbd6e6f", "name": "admin"}}, "serviceCatalog": [{"endpoints": [{"adminURL": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f", "region": "RegionOne", "internalURL": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f", "publicURL": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f"}], "endpoints_links": [], "type": "compute", "name": "nova"}, {"endpoints": [{"adminURL": "http://localhost:9292/v1", "region": "RegionOne", "internalURL": "http://localhost:9292/v1", "publicURL": "http://localhost:9292/v1"}], "endpoints_links": [], "type": "image", "name": "glance"}, {"endpoints": [{"adminURL": "http://localhost:8000/v1", "region": "RegionOne", "internalURL": "http://localhost:8000/v1", "publicURL": "http://localhost:8000/v1"}], "endpoints_links": [], "type": "cloudformation", "name": "heat"}, {"endpoints": [{"adminURL": "http://localhost:8776/v1/6549f3166ca44ea0940794494bbd6e6f", "region": "RegionOne", "internalURL": "http://localhost:8776/v1/6549f3166ca44ea0940794494bbd6e6f", "publicURL": "http://localhost:8776/v1/6549f3166ca44ea0940794494bbd6e6f"}], "endpoints_links": [], "type": "volume", "name": "nova-volume"}, {"endpoints": [{"adminURL": "http://localhost:8773/services/Admin", "region": "RegionOne", "internalURL": "http://localhost:8773/services/Cloud", "publicURL": "http://localhost:8773/services/Cloud"}], "endpoints_links": [], "type": "ec2", "name": "ec2"}, {"endpoints": [{"adminURL": "http://localhost:35357/v2.0", "region": "RegionOne", "internalURL": "http://localhost:35357/v2.0", "publicURL": "http://localhost:5000/v2.0"}], "endpoints_links": [], "type": "identity", "name": "keystone"}], "user": {"username": "admin", "roles_links": [], "id": "2e4a12d2d7a447e69330e51242a92ddb", "roles": [{"id": "4873a706e96f40cdb576834f9f98e70d", "name": "admin"}, {"id": "55aa78865d0443ee8f31ead66b3110d0", "name": "KeystoneServiceAdmin"}, {"id": "e9635df98d714c3388b9ef6ac70284b5", "name": "KeystoneAdmin"}], "name": "admin"}}}
+
+novaclient.client: DEBUG: REQ: curl -i http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/servers/detail -X GET -H "X-Auth-Project-Id: admin" -H "User-Agent: python-novaclient" -H "Accept: application/json" -H "X-Auth-Token: 08c4a0e57ac9484f99c88fd9d66018b7"
+
+novaclient.client: DEBUG: RESP:{'status': '200', 'content-length': '1420', 'content-location': u'http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/servers/detail', 'x-compute-request-id': 'req-cffdbd48-5082-4e43-a744-19ad9784975f', 'date': 'Tue, 16 Oct 2012 08:51:37 GMT', 'content-type': 'application/json'} {"servers": [{"OS-EXT-STS:task_state": null, "addresses": {"demonet": [{"version": 4, "addr": "10.0.0.2"}]}, "links": [{"href": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/servers/2b2ee98e-ff02-43a3-abc4-01bc154dc6cd", "rel": "self"}, {"href": "http://localhost:8774/6549f3166ca44ea0940794494bbd6e6f/servers/2b2ee98e-ff02-43a3-abc4-01bc154dc6cd", "rel": "bookmark"}], "image": {"id": "fa2d6e8f-7ac0-4462-96eb-1b4627ea8679", "links": [{"href": "http://localhost:8774/6549f3166ca44ea0940794494bbd6e6f/images/fa2d6e8f-7ac0-4462-96eb-1b4627ea8679", "rel": "bookmark"}]}, "OS-EXT-STS:vm_state": "active", "OS-EXT-SRV-ATTR:instance_name": "instance-00000011", "flavor": {"id": "6", "links": [{"href": "http://localhost:8774/6549f3166ca44ea0940794494bbd6e6f/flavors/6", "rel": "bookmark"}]}, "id": "2b2ee98e-ff02-43a3-abc4-01bc154dc6cd", "user_id": "2e4a12d2d7a447e69330e51242a92ddb", "OS-DCF:diskConfig": "MANUAL", "accessIPv4": "", "accessIPv6": "", "progress": 0, "OS-EXT-STS:power_state": 1, "config_drive": "", "status": "ACTIVE", "updated": "2012-10-16T08:51:28Z", "hostId": "503a1dcfafc4bd2b6947ea461a9261beee349e4d2b533ae68f05dfe2", "OS-EXT-SRV-ATTR:host": "mrg-04.mpc.lab.eng.bos.redhat.com", "key_name": "heattest_key", "OS-EXT-SRV-ATTR:hypervisor_hostname": null, "name": "teststack.WikiDatabase", "created": "2012-10-16T08:51:16Z", "tenant_id": "6549f3166ca44ea0940794494bbd6e6f", "metadata": {}}]}
+
+paramiko.transport: DEBUG: starting thread (client mode): 0x3213250L
+paramiko.transport: INFO: Connected (version 2.0, client OpenSSH_5.9)
+paramiko.transport: DEBUG: kex algos:['diffie-hellman-group-exchange-sha256', 'diffie-hellman-group-exchange-sha1', 'diffie-hellman-group14-sha1', 'diffie-hellman-group1-sha1'] server key:['ssh-rsa', 'ssh-dss'] client encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] server encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] client mac:['hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'hmac-sha2-256', 'hmac-sha2-256-96', 'hmac-sha2-512', 'hmac-sha2-512-96', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] server mac:['hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'hmac-sha2-256', 'hmac-sha2-256-96', 'hmac-sha2-512', 'hmac-sha2-512-96', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+paramiko.transport: DEBUG: Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+paramiko.transport: DEBUG: using kex diffie-hellman-group1-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+paramiko.transport: DEBUG: Switch to new keys ...
+paramiko.transport: DEBUG: Adding ssh-rsa host key for 10.0.0.2: dfa770619e1e42936aeaa5535f73b94b
+paramiko.transport: DEBUG: Trying discovered key f2968b9ad4fc83d815cb4585c3b8903f in /home/heattest/.ssh/id_rsa
+paramiko.transport: DEBUG: userauth is OK
+paramiko.transport: INFO: Authentication (publickey) successful!
+paramiko.transport: DEBUG: [chan 1] Max packet in: 34816 bytes
+paramiko.transport: DEBUG: [chan 1] Max packet out: 32768 bytes
+paramiko.transport: INFO: Secsh channel 1 opened.
+paramiko.transport: DEBUG: [chan 1] Sesch channel 1 request ok
+paramiko.transport.sftp: INFO: [chan 1] Opened sftp connection (server version 3)
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/boot-finished')
+paramiko.transport: DEBUG: [chan 2] Max packet in: 34816 bytes
+paramiko.transport: DEBUG: [chan 2] Max packet out: 32768 bytes
+paramiko.transport: INFO: Secsh channel 2 opened.
+paramiko.transport: DEBUG: [chan 2] Sesch channel 2 request ok
+paramiko.transport: DEBUG: [chan 2] EOF received (2)
+paramiko.transport: DEBUG: [chan 2] EOF sent (2)
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport: DEBUG: [chan 3] Max packet in: 34816 bytes
+paramiko.transport: DEBUG: [chan 3] Max packet out: 32768 bytes
+paramiko.transport: INFO: Secsh channel 3 opened.
+paramiko.transport: DEBUG: [chan 3] Sesch channel 3 request ok
+paramiko.transport: DEBUG: [chan 3] EOF received (3)
+paramiko.transport: DEBUG: [chan 3] EOF sent (3)
+paramiko.transport: DEBUG: [chan 4] Max packet in: 34816 bytes
+paramiko.transport: DEBUG: [chan 4] Max packet out: 32768 bytes
+paramiko.transport: INFO: Secsh channel 4 opened.
+paramiko.transport: DEBUG: [chan 4] Sesch channel 4 request ok
+paramiko.transport: DEBUG: [chan 4] EOF received (4)
+paramiko.transport: DEBUG: [chan 4] EOF sent (4)
+--------------------- >> end captured logging << ---------------------
+
+======================================================================
+ERROR: test_instance (heat.tests.functional.test_WordPress_Single_Instance_With_EBS_EIP.WordPressEBSEIPFunctionalTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/heattest/heat/heat/tests/functional/test_WordPress_Single_Instance_With_EBS_EIP.py", line 89, in test_instance
+    result = stdout.readlines().pop().rstrip()
+IndexError: pop from empty list
+-------------------- >> begin captured stdout << ---------------------
+Checking glance for image registration
+Found image registration for F17-x86_64-cfntools
+Checking arn:openstack:heat::admin:stacks/teststack/14 contains name teststack
+Waiting for stack creation to be completed
+Instance (teststack.WikiServer) ip (10.0.0.2) status (ACTIVE)
+Instance (teststack.WikiServer) ip (10.0.0.2) SSH detected.
+Instance (teststack.WikiServer) ip (10.0.0.2) connected via SSH.
+Instance (teststack.WikiServer) ip (10.0.0.2) finished booting.
+Instance (teststack.WikiServer) cfntools integrity verified.
+Instance (teststack.WikiServer) waiting for provisioning to complete.
+Instance (teststack.WikiServer) provisioning incomplete, waiting...
+Instance (teststack.WikiServer) provisioning incomplete, waiting...
+Instance (teststack.WikiServer) provisioning incomplete, waiting...
+Instance (teststack.WikiServer) provisioning incomplete, waiting...
+Instance (teststack.WikiServer) provisioning incomplete, waiting...
+Instance (teststack.WikiServer) provisioning incomplete, waiting...
+Instance (teststack.WikiServer) provisioning incomplete, waiting...
+Instance (teststack.WikiServer) provisioning incomplete, waiting...
+Instance (teststack.WikiServer) provisioning incomplete, waiting...
+Instance (teststack.WikiServer) provisioning incomplete, waiting...
+Instance (teststack.WikiServer) provisioning incomplete, waiting...
+Instance (teststack.WikiServer) provisioning incomplete, waiting...
+Instance (teststack.WikiServer) provisioning incomplete, waiting...
+Instance (teststack.WikiServer) provisioning incomplete, waiting...
+Instance (teststack.WikiServer) provisioning incomplete, waiting...
+Instance (teststack.WikiServer) provisioning incomplete, waiting...
+Instance (teststack.WikiServer) provisioning incomplete, waiting...
+Instance (teststack.WikiServer) provisioning incomplete, waiting...
+Instance (teststack.WikiServer) provisioning incomplete, waiting...
+Instance (teststack.WikiServer) provisioning incomplete, waiting...
+Instance (teststack.WikiServer) provisioning incomplete, waiting...
+Instance (teststack.WikiServer) provisioning incomplete, waiting...
+Instance (teststack.WikiServer) provisioning completed.
+Verifying file '/etc/wordpress/wp-config.php' exists
+Wordpress installation detected
+floating IP found 10.0.1.113
+Got stack output WebsiteURL=http://10.0.0.2/wordpress, verifying
+Reading html from http://10.0.0.2/wordpress
+VERIFY : looks OK!
+Got stack output InstanceIPAddress=10.0.1.113, verifying url http://10.0.1.113/wordpress
+Reading html from http://10.0.1.113/wordpress
+VERIFY : looks OK!
+
+--------------------- >> end captured stdout << ----------------------
+-------------------- >> begin captured logging << --------------------
+novaclient.client: DEBUG: REQ: curl -i http://127.0.0.1:5000/v2.0/tokens -X POST -H "Content-Type: application/json" -H "Accept: application/json" -H "User-Agent: python-novaclient"
+
+novaclient.client: DEBUG: REQ BODY: {"auth": {"tenantName": "admin", "passwordCredentials": {"username": "admin", "password": "verybadpass"}}}
+
+novaclient.client: DEBUG: RESP:{'date': 'Tue, 16 Oct 2012 08:58:24 GMT', 'transfer-encoding': 'chunked', 'status': '200', 'vary': 'X-Auth-Token', 'content-type': 'application/json'} {"access": {"token": {"expires": "2012-10-17T08:58:24Z", "id": "26da3861a14844da8739744d89d6eb2c", "tenant": {"description": null, "enabled": true, "id": "6549f3166ca44ea0940794494bbd6e6f", "name": "admin"}}, "serviceCatalog": [{"endpoints": [{"adminURL": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f", "region": "RegionOne", "internalURL": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f", "publicURL": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f"}], "endpoints_links": [], "type": "compute", "name": "nova"}, {"endpoints": [{"adminURL": "http://localhost:9292/v1", "region": "RegionOne", "internalURL": "http://localhost:9292/v1", "publicURL": "http://localhost:9292/v1"}], "endpoints_links": [], "type": "image", "name": "glance"}, {"endpoints": [{"adminURL": "http://localhost:8000/v1", "region": "RegionOne", "internalURL": "http://localhost:8000/v1", "publicURL": "http://localhost:8000/v1"}], "endpoints_links": [], "type": "cloudformation", "name": "heat"}, {"endpoints": [{"adminURL": "http://localhost:8776/v1/6549f3166ca44ea0940794494bbd6e6f", "region": "RegionOne", "internalURL": "http://localhost:8776/v1/6549f3166ca44ea0940794494bbd6e6f", "publicURL": "http://localhost:8776/v1/6549f3166ca44ea0940794494bbd6e6f"}], "endpoints_links": [], "type": "volume", "name": "nova-volume"}, {"endpoints": [{"adminURL": "http://localhost:8773/services/Admin", "region": "RegionOne", "internalURL": "http://localhost:8773/services/Cloud", "publicURL": "http://localhost:8773/services/Cloud"}], "endpoints_links": [], "type": "ec2", "name": "ec2"}, {"endpoints": [{"adminURL": "http://localhost:35357/v2.0", "region": "RegionOne", "internalURL": "http://localhost:35357/v2.0", "publicURL": "http://localhost:5000/v2.0"}], "endpoints_links": [], "type": "identity", "name": "keystone"}], "user": {"username": "admin", "roles_links": [], "id": "2e4a12d2d7a447e69330e51242a92ddb", "roles": [{"id": "4873a706e96f40cdb576834f9f98e70d", "name": "admin"}, {"id": "55aa78865d0443ee8f31ead66b3110d0", "name": "KeystoneServiceAdmin"}, {"id": "e9635df98d714c3388b9ef6ac70284b5", "name": "KeystoneAdmin"}], "name": "admin"}}}
+
+novaclient.client: DEBUG: REQ: curl -i http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/os-keypairs -X GET -H "X-Auth-Project-Id: admin" -H "User-Agent: python-novaclient" -H "Accept: application/json" -H "X-Auth-Token: 26da3861a14844da8739744d89d6eb2c"
+
+novaclient.client: DEBUG: RESP:{'status': '200', 'content-length': '562', 'content-location': u'http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/os-keypairs', 'x-compute-request-id': 'req-f10c8acc-bef2-40cb-bd69-0c021f8e092f', 'date': 'Tue, 16 Oct 2012 08:58:24 GMT', 'content-type': 'application/json'} {"keypairs": [{"keypair": {"public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDbQD+m71J9HLMQRWWijXVz/kgPJ2fn23vyyCG0aMzfapiBKhCWQUDj4nokzrARfqn2M6y61duvfImhWB/9CG4kuBTxAu2BTPdeUpyn0gQNN9F8/p8rMlhoaePSVhf9bF2SYF9lAgqpHuxTOMK6XiwiY0vUqt+z1yuMvLoYNe+4jODeeQ9RRZk87gBK/nD8pB/1hegQ4Xh/JYH5GMsWfsSJPgzFPk8RGVslo1GgbLziZOpYZsOiL3bwNS5RccMQ0ZKSXlXDic1f37waD4oB/xHPO4a9wTDTRhgciiJeoXaLclRdmPCLFRYUDUW91UEEn3OnphxVdImVmWJVgpJoeP2v heattest@mrg-04.mpc.lab.eng.bos.redhat.com\n", "name": "heattest_key", "fingerprint": "f2:96:8b:9a:d4:fc:83:d8:15:cb:45:85:c3:b8:90:3f"}}]}
+
+novaclient.client: DEBUG: REQ: curl -i http://127.0.0.1:5000/v2.0/tokens -X POST -H "Content-Type: application/json" -H "Accept: application/json" -H "User-Agent: python-novaclient"
+
+novaclient.client: DEBUG: REQ BODY: {"auth": {"tenantName": "admin", "passwordCredentials": {"username": "admin", "password": "verybadpass"}}}
+
+novaclient.client: DEBUG: RESP:{'date': 'Tue, 16 Oct 2012 08:58:46 GMT', 'transfer-encoding': 'chunked', 'status': '200', 'vary': 'X-Auth-Token', 'content-type': 'application/json'} {"access": {"token": {"expires": "2012-10-17T08:58:46Z", "id": "b980cbfbe53142618b53d30a6342597f", "tenant": {"description": null, "enabled": true, "id": "6549f3166ca44ea0940794494bbd6e6f", "name": "admin"}}, "serviceCatalog": [{"endpoints": [{"adminURL": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f", "region": "RegionOne", "internalURL": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f", "publicURL": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f"}], "endpoints_links": [], "type": "compute", "name": "nova"}, {"endpoints": [{"adminURL": "http://localhost:9292/v1", "region": "RegionOne", "internalURL": "http://localhost:9292/v1", "publicURL": "http://localhost:9292/v1"}], "endpoints_links": [], "type": "image", "name": "glance"}, {"endpoints": [{"adminURL": "http://localhost:8000/v1", "region": "RegionOne", "internalURL": "http://localhost:8000/v1", "publicURL": "http://localhost:8000/v1"}], "endpoints_links": [], "type": "cloudformation", "name": "heat"}, {"endpoints": [{"adminURL": "http://localhost:8776/v1/6549f3166ca44ea0940794494bbd6e6f", "region": "RegionOne", "internalURL": "http://localhost:8776/v1/6549f3166ca44ea0940794494bbd6e6f", "publicURL": "http://localhost:8776/v1/6549f3166ca44ea0940794494bbd6e6f"}], "endpoints_links": [], "type": "volume", "name": "nova-volume"}, {"endpoints": [{"adminURL": "http://localhost:8773/services/Admin", "region": "RegionOne", "internalURL": "http://localhost:8773/services/Cloud", "publicURL": "http://localhost:8773/services/Cloud"}], "endpoints_links": [], "type": "ec2", "name": "ec2"}, {"endpoints": [{"adminURL": "http://localhost:35357/v2.0", "region": "RegionOne", "internalURL": "http://localhost:35357/v2.0", "publicURL": "http://localhost:5000/v2.0"}], "endpoints_links": [], "type": "identity", "name": "keystone"}], "user": {"username": "admin", "roles_links": [], "id": "2e4a12d2d7a447e69330e51242a92ddb", "roles": [{"id": "4873a706e96f40cdb576834f9f98e70d", "name": "admin"}, {"id": "55aa78865d0443ee8f31ead66b3110d0", "name": "KeystoneServiceAdmin"}, {"id": "e9635df98d714c3388b9ef6ac70284b5", "name": "KeystoneAdmin"}], "name": "admin"}}}
+
+novaclient.client: DEBUG: REQ: curl -i http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/servers/detail -X GET -H "X-Auth-Project-Id: admin" -H "User-Agent: python-novaclient" -H "Accept: application/json" -H "X-Auth-Token: b980cbfbe53142618b53d30a6342597f"
+
+novaclient.client: DEBUG: RESP:{'status': '200', 'content-length': '1456', 'content-location': u'http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/servers/detail', 'x-compute-request-id': 'req-27a4efc7-a9c7-49c1-9176-609e0c6bf157', 'date': 'Tue, 16 Oct 2012 08:58:46 GMT', 'content-type': 'application/json'} {"servers": [{"OS-EXT-STS:task_state": null, "addresses": {"demonet": [{"version": 4, "addr": "10.0.0.2"}, {"version": 4, "addr": "10.0.1.113"}]}, "links": [{"href": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/servers/71195d6c-21f0-43f7-83a8-53e44c9d8bf1", "rel": "self"}, {"href": "http://localhost:8774/6549f3166ca44ea0940794494bbd6e6f/servers/71195d6c-21f0-43f7-83a8-53e44c9d8bf1", "rel": "bookmark"}], "image": {"id": "fa2d6e8f-7ac0-4462-96eb-1b4627ea8679", "links": [{"href": "http://localhost:8774/6549f3166ca44ea0940794494bbd6e6f/images/fa2d6e8f-7ac0-4462-96eb-1b4627ea8679", "rel": "bookmark"}]}, "OS-EXT-STS:vm_state": "active", "OS-EXT-SRV-ATTR:instance_name": "instance-00000012", "flavor": {"id": "6", "links": [{"href": "http://localhost:8774/6549f3166ca44ea0940794494bbd6e6f/flavors/6", "rel": "bookmark"}]}, "id": "71195d6c-21f0-43f7-83a8-53e44c9d8bf1", "user_id": "2e4a12d2d7a447e69330e51242a92ddb", "OS-DCF:diskConfig": "MANUAL", "accessIPv4": "", "accessIPv6": "", "progress": 0, "OS-EXT-STS:power_state": 1, "config_drive": "", "status": "ACTIVE", "updated": "2012-10-16T08:58:38Z", "hostId": "503a1dcfafc4bd2b6947ea461a9261beee349e4d2b533ae68f05dfe2", "OS-EXT-SRV-ATTR:host": "mrg-04.mpc.lab.eng.bos.redhat.com", "key_name": "heattest_key", "OS-EXT-SRV-ATTR:hypervisor_hostname": null, "name": "teststack.WikiServer", "created": "2012-10-16T08:58:26Z", "tenant_id": "6549f3166ca44ea0940794494bbd6e6f", "metadata": {}}]}
+
+paramiko.transport: DEBUG: starting thread (client mode): 0x3235b50L
+paramiko.transport: INFO: Connected (version 2.0, client OpenSSH_5.9)
+paramiko.transport: DEBUG: kex algos:['diffie-hellman-group-exchange-sha256', 'diffie-hellman-group-exchange-sha1', 'diffie-hellman-group14-sha1', 'diffie-hellman-group1-sha1'] server key:['ssh-rsa', 'ssh-dss'] client encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] server encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] client mac:['hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'hmac-sha2-256', 'hmac-sha2-256-96', 'hmac-sha2-512', 'hmac-sha2-512-96', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] server mac:['hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'hmac-sha2-256', 'hmac-sha2-256-96', 'hmac-sha2-512', 'hmac-sha2-512-96', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+paramiko.transport: DEBUG: Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+paramiko.transport: DEBUG: using kex diffie-hellman-group1-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+paramiko.transport: DEBUG: Switch to new keys ...
+paramiko.transport: DEBUG: Adding ssh-rsa host key for 10.0.0.2: dfa770619e1e42936aeaa5535f73b94b
+paramiko.transport: DEBUG: Trying discovered key f2968b9ad4fc83d815cb4585c3b8903f in /home/heattest/.ssh/id_rsa
+paramiko.transport: DEBUG: userauth is OK
+paramiko.transport: INFO: Authentication (publickey) successful!
+paramiko.transport: DEBUG: [chan 1] Max packet in: 34816 bytes
+paramiko.transport: DEBUG: [chan 1] Max packet out: 32768 bytes
+paramiko.transport: INFO: Secsh channel 1 opened.
+paramiko.transport: DEBUG: [chan 1] Sesch channel 1 request ok
+paramiko.transport.sftp: INFO: [chan 1] Opened sftp connection (server version 3)
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/boot-finished')
+paramiko.transport: DEBUG: [chan 2] Max packet in: 34816 bytes
+paramiko.transport: DEBUG: [chan 2] Max packet out: 32768 bytes
+paramiko.transport: INFO: Secsh channel 2 opened.
+paramiko.transport: DEBUG: [chan 2] Sesch channel 2 request ok
+paramiko.transport: DEBUG: [chan 2] EOF received (2)
+paramiko.transport: DEBUG: [chan 2] EOF sent (2)
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport: DEBUG: [chan 3] Max packet in: 34816 bytes
+paramiko.transport: DEBUG: [chan 3] Max packet out: 32768 bytes
+paramiko.transport: INFO: Secsh channel 3 opened.
+paramiko.transport: DEBUG: [chan 3] Sesch channel 3 request ok
+paramiko.transport: DEBUG: [chan 3] EOF received (3)
+paramiko.transport: DEBUG: [chan 3] EOF sent (3)
+novaclient.client: DEBUG: REQ: curl -i http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/os-floating-ips -X GET -H "X-Auth-Project-Id: admin" -H "User-Agent: python-novaclient" -H "Accept: application/json" -H "X-Auth-Token: 26da3861a14844da8739744d89d6eb2c"
+
+novaclient.client: DEBUG: RESP:{'status': '200', 'content-length': '144', 'content-location': u'http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/os-floating-ips', 'x-compute-request-id': 'req-ea3047d1-8de1-4661-80a2-d5130f2e7c2e', 'date': 'Tue, 16 Oct 2012 09:04:26 GMT', 'content-type': 'application/json'} {"floating_ips": [{"instance_id": "71195d6c-21f0-43f7-83a8-53e44c9d8bf1", "ip": "10.0.1.113", "fixed_ip": "10.0.0.2", "id": 1, "pool": "nova"}]}
+
+novaclient.client: DEBUG: REQ: curl -i http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/os-floating-ips -X GET -H "X-Auth-Project-Id: admin" -H "User-Agent: python-novaclient" -H "Accept: application/json" -H "X-Auth-Token: 26da3861a14844da8739744d89d6eb2c"
+
+novaclient.client: DEBUG: RESP:{'status': '200', 'content-length': '144', 'content-location': u'http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/os-floating-ips', 'x-compute-request-id': 'req-5167cefe-9a95-490f-95c9-68ca1264a927', 'date': 'Tue, 16 Oct 2012 09:04:26 GMT', 'content-type': 'application/json'} {"floating_ips": [{"instance_id": "71195d6c-21f0-43f7-83a8-53e44c9d8bf1", "ip": "10.0.1.113", "fixed_ip": "10.0.0.2", "id": 1, "pool": "nova"}]}
+
+paramiko.transport: DEBUG: [chan 4] Max packet in: 34816 bytes
+paramiko.transport: DEBUG: [chan 4] Max packet out: 32768 bytes
+paramiko.transport: INFO: Secsh channel 4 opened.
+paramiko.transport: DEBUG: [chan 4] Sesch channel 4 request ok
+paramiko.transport: DEBUG: [chan 4] EOF received (4)
+paramiko.transport: DEBUG: [chan 4] EOF sent (4)
+--------------------- >> end captured logging << ---------------------
+
+======================================================================
+ERROR: test_instance (heat.tests.functional.test_WordPress_Single_Instance_With_IHA.WordPressIHAFunctionalTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/heattest/heat/heat/tests/functional/test_WordPress_Single_Instance_With_IHA.py", line 98, in test_instance
+    self.WikiDatabaseNew.wait_for_provisioning()
+  File "/home/heattest/heat/heat/tests/functional/util.py", line 222, in wait_for_provisioning
+    self.sftp.stat('/var/lib/cloud/instance/provision-finished')
+  File "/usr/lib/python2.7/site-packages/paramiko/sftp_client.py", line 337, in stat
+    t, msg = self._request(CMD_STAT, path)
+  File "/usr/lib/python2.7/site-packages/paramiko/sftp_client.py", line 635, in _request
+    return self._read_response(num)
+  File "/usr/lib/python2.7/site-packages/paramiko/sftp_client.py", line 667, in _read_response
+    raise SSHException('Server connection dropped: %s' % (str(e),))
+SSHException: Server connection dropped: 
+-------------------- >> begin captured stdout << ---------------------
+Checking glance for image registration
+Found image registration for F17-x86_64-cfntools
+Checking arn:openstack:heat::admin:stacks/teststack/17 contains name teststack
+Waiting for stack creation to be completed
+Instance (teststack.WikiDatabase) ip (10.0.0.2) status (ACTIVE)
+Instance (teststack.WikiDatabase) ip (10.0.0.2) SSH detected.
+Instance (teststack.WikiDatabase) ip (10.0.0.2) connected via SSH.
+Instance (teststack.WikiDatabase) ip (10.0.0.2) finished booting.
+Instance (teststack.WikiDatabase) cfntools integrity verified.
+Instance (teststack.WikiDatabase) waiting for provisioning to complete.
+Instance (teststack.WikiDatabase) provisioning completed.
+Verifying file '/usr/share/wordpress/wp-config.php' exists
+Wordpress installation detected
+Got stack output WebsiteURL=http://10.0.0.2/wordpress, verifying
+Reading html from http://10.0.0.2/wordpress
+VERIFY : looks OK!
+Shutting down instance ID = a43da2ca-cfd5-4b86-b85d-06289fa950b0
+Waiting for Instance to be replaced 0/500 ['a43da2ca-cfd5-4b86-b85d-06289fa950b0']
+Waiting for Instance to be replaced 1/500 ['a43da2ca-cfd5-4b86-b85d-06289fa950b0']
+Waiting for Instance to be replaced 2/500 ['a43da2ca-cfd5-4b86-b85d-06289fa950b0']
+Waiting for Instance to be replaced 3/500 ['a43da2ca-cfd5-4b86-b85d-06289fa950b0']
+Waiting for Instance to be replaced 4/500 ['a43da2ca-cfd5-4b86-b85d-06289fa950b0']
+Waiting for Instance to be replaced 5/500 ['a43da2ca-cfd5-4b86-b85d-06289fa950b0']
+Waiting for Instance to be replaced 6/500 ['a43da2ca-cfd5-4b86-b85d-06289fa950b0']
+Waiting for Instance to be replaced 7/500 ['a43da2ca-cfd5-4b86-b85d-06289fa950b0']
+Waiting for Instance to be replaced 8/500 ['a43da2ca-cfd5-4b86-b85d-06289fa950b0']
+Waiting for Instance to be replaced 9/500 ['a43da2ca-cfd5-4b86-b85d-06289fa950b0']
+Waiting for Instance to be replaced 10/500 ['a43da2ca-cfd5-4b86-b85d-06289fa950b0']
+Waiting for Instance to be replaced 11/500 ['a43da2ca-cfd5-4b86-b85d-06289fa950b0', '8e4b3afd-b267-419e-942e-38304809b3d8']
+Instance replaced, new ID = 8e4b3afd-b267-419e-942e-38304809b3d8
+Instance (teststack.WikiDatabase) ip (10.0.0.2) status (ACTIVE)
+Instance (teststack.WikiDatabase) ip (10.0.0.2) SSH detected.
+Instance (teststack.WikiDatabase) ip (10.0.0.2) connected via SSH.
+Instance (teststack.WikiDatabase) ip (10.0.0.2) finished booting.
+Instance (teststack.WikiDatabase) cfntools integrity verified.
+Instance (teststack.WikiDatabase) waiting for provisioning to complete.
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+
+--------------------- >> end captured stdout << ----------------------
+-------------------- >> begin captured logging << --------------------
+novaclient.client: DEBUG: REQ: curl -i http://127.0.0.1:5000/v2.0/tokens -X POST -H "Content-Type: application/json" -H "Accept: application/json" -H "User-Agent: python-novaclient"
+
+novaclient.client: DEBUG: REQ BODY: {"auth": {"tenantName": "admin", "passwordCredentials": {"username": "admin", "password": "verybadpass"}}}
+
+novaclient.client: DEBUG: RESP:{'date': 'Tue, 16 Oct 2012 09:13:31 GMT', 'transfer-encoding': 'chunked', 'status': '200', 'vary': 'X-Auth-Token', 'content-type': 'application/json'} {"access": {"token": {"expires": "2012-10-17T09:13:31Z", "id": "d5f4d4ac935b41ab99279a584fd630b2", "tenant": {"description": null, "enabled": true, "id": "6549f3166ca44ea0940794494bbd6e6f", "name": "admin"}}, "serviceCatalog": [{"endpoints": [{"adminURL": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f", "region": "RegionOne", "internalURL": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f", "publicURL": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f"}], "endpoints_links": [], "type": "compute", "name": "nova"}, {"endpoints": [{"adminURL": "http://localhost:9292/v1", "region": "RegionOne", "internalURL": "http://localhost:9292/v1", "publicURL": "http://localhost:9292/v1"}], "endpoints_links": [], "type": "image", "name": "glance"}, {"endpoints": [{"adminURL": "http://localhost:8000/v1", "region": "RegionOne", "internalURL": "http://localhost:8000/v1", "publicURL": "http://localhost:8000/v1"}], "endpoints_links": [], "type": "cloudformation", "name": "heat"}, {"endpoints": [{"adminURL": "http://localhost:8776/v1/6549f3166ca44ea0940794494bbd6e6f", "region": "RegionOne", "internalURL": "http://localhost:8776/v1/6549f3166ca44ea0940794494bbd6e6f", "publicURL": "http://localhost:8776/v1/6549f3166ca44ea0940794494bbd6e6f"}], "endpoints_links": [], "type": "volume", "name": "nova-volume"}, {"endpoints": [{"adminURL": "http://localhost:8773/services/Admin", "region": "RegionOne", "internalURL": "http://localhost:8773/services/Cloud", "publicURL": "http://localhost:8773/services/Cloud"}], "endpoints_links": [], "type": "ec2", "name": "ec2"}, {"endpoints": [{"adminURL": "http://localhost:35357/v2.0", "region": "RegionOne", "internalURL": "http://localhost:35357/v2.0", "publicURL": "http://localhost:5000/v2.0"}], "endpoints_links": [], "type": "identity", "name": "keystone"}], "user": {"username": "admin", "roles_links": [], "id": "2e4a12d2d7a447e69330e51242a92ddb", "roles": [{"id": "4873a706e96f40cdb576834f9f98e70d", "name": "admin"}, {"id": "55aa78865d0443ee8f31ead66b3110d0", "name": "KeystoneServiceAdmin"}, {"id": "e9635df98d714c3388b9ef6ac70284b5", "name": "KeystoneAdmin"}], "name": "admin"}}}
+
+novaclient.client: DEBUG: REQ: curl -i http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/os-keypairs -X GET -H "X-Auth-Project-Id: admin" -H "User-Agent: python-novaclient" -H "Accept: application/json" -H "X-Auth-Token: d5f4d4ac935b41ab99279a584fd630b2"
+
+novaclient.client: DEBUG: RESP:{'status': '200', 'content-length': '562', 'content-location': u'http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/os-keypairs', 'x-compute-request-id': 'req-ae9a39c6-660d-4ae6-8c45-f4992dff14da', 'date': 'Tue, 16 Oct 2012 09:13:31 GMT', 'content-type': 'application/json'} {"keypairs": [{"keypair": {"public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDbQD+m71J9HLMQRWWijXVz/kgPJ2fn23vyyCG0aMzfapiBKhCWQUDj4nokzrARfqn2M6y61duvfImhWB/9CG4kuBTxAu2BTPdeUpyn0gQNN9F8/p8rMlhoaePSVhf9bF2SYF9lAgqpHuxTOMK6XiwiY0vUqt+z1yuMvLoYNe+4jODeeQ9RRZk87gBK/nD8pB/1hegQ4Xh/JYH5GMsWfsSJPgzFPk8RGVslo1GgbLziZOpYZsOiL3bwNS5RccMQ0ZKSXlXDic1f37waD4oB/xHPO4a9wTDTRhgciiJeoXaLclRdmPCLFRYUDUW91UEEn3OnphxVdImVmWJVgpJoeP2v heattest@mrg-04.mpc.lab.eng.bos.redhat.com\n", "name": "heattest_key", "fingerprint": "f2:96:8b:9a:d4:fc:83:d8:15:cb:45:85:c3:b8:90:3f"}}]}
+
+novaclient.client: DEBUG: REQ: curl -i http://127.0.0.1:5000/v2.0/tokens -X POST -H "Content-Type: application/json" -H "Accept: application/json" -H "User-Agent: python-novaclient"
+
+novaclient.client: DEBUG: REQ BODY: {"auth": {"tenantName": "admin", "passwordCredentials": {"username": "admin", "password": "verybadpass"}}}
+
+novaclient.client: DEBUG: RESP:{'date': 'Tue, 16 Oct 2012 09:18:04 GMT', 'transfer-encoding': 'chunked', 'status': '200', 'vary': 'X-Auth-Token', 'content-type': 'application/json'} {"access": {"token": {"expires": "2012-10-17T09:18:04Z", "id": "88b9a690d27a4ad6ac9cb7b102f13abc", "tenant": {"description": null, "enabled": true, "id": "6549f3166ca44ea0940794494bbd6e6f", "name": "admin"}}, "serviceCatalog": [{"endpoints": [{"adminURL": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f", "region": "RegionOne", "internalURL": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f", "publicURL": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f"}], "endpoints_links": [], "type": "compute", "name": "nova"}, {"endpoints": [{"adminURL": "http://localhost:9292/v1", "region": "RegionOne", "internalURL": "http://localhost:9292/v1", "publicURL": "http://localhost:9292/v1"}], "endpoints_links": [], "type": "image", "name": "glance"}, {"endpoints": [{"adminURL": "http://localhost:8000/v1", "region": "RegionOne", "internalURL": "http://localhost:8000/v1", "publicURL": "http://localhost:8000/v1"}], "endpoints_links": [], "type": "cloudformation", "name": "heat"}, {"endpoints": [{"adminURL": "http://localhost:8776/v1/6549f3166ca44ea0940794494bbd6e6f", "region": "RegionOne", "internalURL": "http://localhost:8776/v1/6549f3166ca44ea0940794494bbd6e6f", "publicURL": "http://localhost:8776/v1/6549f3166ca44ea0940794494bbd6e6f"}], "endpoints_links": [], "type": "volume", "name": "nova-volume"}, {"endpoints": [{"adminURL": "http://localhost:8773/services/Admin", "region": "RegionOne", "internalURL": "http://localhost:8773/services/Cloud", "publicURL": "http://localhost:8773/services/Cloud"}], "endpoints_links": [], "type": "ec2", "name": "ec2"}, {"endpoints": [{"adminURL": "http://localhost:35357/v2.0", "region": "RegionOne", "internalURL": "http://localhost:35357/v2.0", "publicURL": "http://localhost:5000/v2.0"}], "endpoints_links": [], "type": "identity", "name": "keystone"}], "user": {"username": "admin", "roles_links": [], "id": "2e4a12d2d7a447e69330e51242a92ddb", "roles": [{"id": "4873a706e96f40cdb576834f9f98e70d", "name": "admin"}, {"id": "55aa78865d0443ee8f31ead66b3110d0", "name": "KeystoneServiceAdmin"}, {"id": "e9635df98d714c3388b9ef6ac70284b5", "name": "KeystoneAdmin"}], "name": "admin"}}}
+
+novaclient.client: DEBUG: REQ: curl -i http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/servers/detail -X GET -H "X-Auth-Project-Id: admin" -H "User-Agent: python-novaclient" -H "Accept: application/json" -H "X-Auth-Token: 88b9a690d27a4ad6ac9cb7b102f13abc"
+
+novaclient.client: DEBUG: RESP:{'status': '200', 'content-length': '1420', 'content-location': u'http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/servers/detail', 'x-compute-request-id': 'req-8c3f2f48-70b9-4e2e-b748-b0f9ae796a42', 'date': 'Tue, 16 Oct 2012 09:18:04 GMT', 'content-type': 'application/json'} {"servers": [{"OS-EXT-STS:task_state": null, "addresses": {"demonet": [{"version": 4, "addr": "10.0.0.2"}]}, "links": [{"href": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/servers/a43da2ca-cfd5-4b86-b85d-06289fa950b0", "rel": "self"}, {"href": "http://localhost:8774/6549f3166ca44ea0940794494bbd6e6f/servers/a43da2ca-cfd5-4b86-b85d-06289fa950b0", "rel": "bookmark"}], "image": {"id": "fa2d6e8f-7ac0-4462-96eb-1b4627ea8679", "links": [{"href": "http://localhost:8774/6549f3166ca44ea0940794494bbd6e6f/images/fa2d6e8f-7ac0-4462-96eb-1b4627ea8679", "rel": "bookmark"}]}, "OS-EXT-STS:vm_state": "active", "OS-EXT-SRV-ATTR:instance_name": "instance-00000015", "flavor": {"id": "6", "links": [{"href": "http://localhost:8774/6549f3166ca44ea0940794494bbd6e6f/flavors/6", "rel": "bookmark"}]}, "id": "a43da2ca-cfd5-4b86-b85d-06289fa950b0", "user_id": "2e4a12d2d7a447e69330e51242a92ddb", "OS-DCF:diskConfig": "MANUAL", "accessIPv4": "", "accessIPv6": "", "progress": 0, "OS-EXT-STS:power_state": 1, "config_drive": "", "status": "ACTIVE", "updated": "2012-10-16T09:13:43Z", "hostId": "503a1dcfafc4bd2b6947ea461a9261beee349e4d2b533ae68f05dfe2", "OS-EXT-SRV-ATTR:host": "mrg-04.mpc.lab.eng.bos.redhat.com", "key_name": "heattest_key", "OS-EXT-SRV-ATTR:hypervisor_hostname": null, "name": "teststack.WikiDatabase", "created": "2012-10-16T09:13:31Z", "tenant_id": "6549f3166ca44ea0940794494bbd6e6f", "metadata": {}}]}
+
+paramiko.transport: DEBUG: starting thread (client mode): 0x32ff550L
+paramiko.transport: INFO: Connected (version 2.0, client OpenSSH_5.9)
+paramiko.transport: DEBUG: kex algos:['diffie-hellman-group-exchange-sha256', 'diffie-hellman-group-exchange-sha1', 'diffie-hellman-group14-sha1', 'diffie-hellman-group1-sha1'] server key:['ssh-rsa', 'ssh-dss'] client encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] server encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] client mac:['hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'hmac-sha2-256', 'hmac-sha2-256-96', 'hmac-sha2-512', 'hmac-sha2-512-96', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] server mac:['hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'hmac-sha2-256', 'hmac-sha2-256-96', 'hmac-sha2-512', 'hmac-sha2-512-96', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+paramiko.transport: DEBUG: Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+paramiko.transport: DEBUG: using kex diffie-hellman-group1-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+paramiko.transport: DEBUG: Switch to new keys ...
+paramiko.transport: DEBUG: Adding ssh-rsa host key for 10.0.0.2: dfa770619e1e42936aeaa5535f73b94b
+paramiko.transport: DEBUG: Trying discovered key f2968b9ad4fc83d815cb4585c3b8903f in /home/heattest/.ssh/id_rsa
+paramiko.transport: DEBUG: userauth is OK
+paramiko.transport: INFO: Authentication (publickey) successful!
+paramiko.transport: DEBUG: [chan 1] Max packet in: 34816 bytes
+paramiko.transport: DEBUG: [chan 1] Max packet out: 32768 bytes
+paramiko.transport: INFO: Secsh channel 1 opened.
+paramiko.transport: DEBUG: [chan 1] Sesch channel 1 request ok
+paramiko.transport.sftp: INFO: [chan 1] Opened sftp connection (server version 3)
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/boot-finished')
+paramiko.transport: DEBUG: [chan 2] Max packet in: 34816 bytes
+paramiko.transport: DEBUG: [chan 2] Max packet out: 32768 bytes
+paramiko.transport: INFO: Secsh channel 2 opened.
+paramiko.transport: DEBUG: [chan 2] Sesch channel 2 request ok
+paramiko.transport: DEBUG: [chan 2] EOF received (2)
+paramiko.transport: DEBUG: [chan 2] EOF sent (2)
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport: DEBUG: [chan 3] Max packet in: 34816 bytes
+paramiko.transport: DEBUG: [chan 3] Max packet out: 32768 bytes
+paramiko.transport: INFO: Secsh channel 3 opened.
+paramiko.transport: DEBUG: [chan 3] Sesch channel 3 request ok
+paramiko.transport: DEBUG: [chan 3] EOF received (3)
+paramiko.transport: DEBUG: [chan 3] EOF sent (3)
+paramiko.transport: DEBUG: [chan 4] Max packet in: 34816 bytes
+paramiko.transport: DEBUG: [chan 4] Max packet out: 32768 bytes
+paramiko.transport: INFO: Secsh channel 4 opened.
+paramiko.transport: DEBUG: [chan 4] Sesch channel 4 request ok
+paramiko.transport: DEBUG: [chan 4] Sesch channel 4 request ok
+paramiko.transport: DEBUG: EOF in transport thread
+novaclient.client: DEBUG: REQ: curl -i http://127.0.0.1:5000/v2.0/tokens -X POST -H "Content-Type: application/json" -H "Accept: application/json" -H "User-Agent: python-novaclient"
+
+novaclient.client: DEBUG: REQ BODY: {"auth": {"tenantName": "admin", "passwordCredentials": {"username": "admin", "password": "verybadpass"}}}
+
+novaclient.client: DEBUG: RESP:{'date': 'Tue, 16 Oct 2012 09:20:11 GMT', 'transfer-encoding': 'chunked', 'status': '200', 'vary': 'X-Auth-Token', 'content-type': 'application/json'} {"access": {"token": {"expires": "2012-10-17T09:20:11Z", "id": "fdbebcafb2574e609279eb145d891d6b", "tenant": {"description": null, "enabled": true, "id": "6549f3166ca44ea0940794494bbd6e6f", "name": "admin"}}, "serviceCatalog": [{"endpoints": [{"adminURL": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f", "region": "RegionOne", "internalURL": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f", "publicURL": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f"}], "endpoints_links": [], "type": "compute", "name": "nova"}, {"endpoints": [{"adminURL": "http://localhost:9292/v1", "region": "RegionOne", "internalURL": "http://localhost:9292/v1", "publicURL": "http://localhost:9292/v1"}], "endpoints_links": [], "type": "image", "name": "glance"}, {"endpoints": [{"adminURL": "http://localhost:8000/v1", "region": "RegionOne", "internalURL": "http://localhost:8000/v1", "publicURL": "http://localhost:8000/v1"}], "endpoints_links": [], "type": "cloudformation", "name": "heat"}, {"endpoints": [{"adminURL": "http://localhost:8776/v1/6549f3166ca44ea0940794494bbd6e6f", "region": "RegionOne", "internalURL": "http://localhost:8776/v1/6549f3166ca44ea0940794494bbd6e6f", "publicURL": "http://localhost:8776/v1/6549f3166ca44ea0940794494bbd6e6f"}], "endpoints_links": [], "type": "volume", "name": "nova-volume"}, {"endpoints": [{"adminURL": "http://localhost:8773/services/Admin", "region": "RegionOne", "internalURL": "http://localhost:8773/services/Cloud", "publicURL": "http://localhost:8773/services/Cloud"}], "endpoints_links": [], "type": "ec2", "name": "ec2"}, {"endpoints": [{"adminURL": "http://localhost:35357/v2.0", "region": "RegionOne", "internalURL": "http://localhost:35357/v2.0", "publicURL": "http://localhost:5000/v2.0"}], "endpoints_links": [], "type": "identity", "name": "keystone"}], "user": {"username": "admin", "roles_links": [], "id": "2e4a12d2d7a447e69330e51242a92ddb", "roles": [{"id": "4873a706e96f40cdb576834f9f98e70d", "name": "admin"}, {"id": "55aa78865d0443ee8f31ead66b3110d0", "name": "KeystoneServiceAdmin"}, {"id": "e9635df98d714c3388b9ef6ac70284b5", "name": "KeystoneAdmin"}], "name": "admin"}}}
+
+novaclient.client: DEBUG: REQ: curl -i http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/servers/detail -X GET -H "X-Auth-Project-Id: admin" -H "User-Agent: python-novaclient" -H "Accept: application/json" -H "X-Auth-Token: fdbebcafb2574e609279eb145d891d6b"
+
+novaclient.client: DEBUG: RESP:{'status': '200', 'content-length': '1420', 'content-location': u'http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/servers/detail', 'x-compute-request-id': 'req-5daa8c53-f538-485a-ac5a-5c4fcf8b4948', 'date': 'Tue, 16 Oct 2012 09:20:11 GMT', 'content-type': 'application/json'} {"servers": [{"OS-EXT-STS:task_state": null, "addresses": {"demonet": [{"version": 4, "addr": "10.0.0.2"}]}, "links": [{"href": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/servers/8e4b3afd-b267-419e-942e-38304809b3d8", "rel": "self"}, {"href": "http://localhost:8774/6549f3166ca44ea0940794494bbd6e6f/servers/8e4b3afd-b267-419e-942e-38304809b3d8", "rel": "bookmark"}], "image": {"id": "fa2d6e8f-7ac0-4462-96eb-1b4627ea8679", "links": [{"href": "http://localhost:8774/6549f3166ca44ea0940794494bbd6e6f/images/fa2d6e8f-7ac0-4462-96eb-1b4627ea8679", "rel": "bookmark"}]}, "OS-EXT-STS:vm_state": "active", "OS-EXT-SRV-ATTR:instance_name": "instance-00000016", "flavor": {"id": "6", "links": [{"href": "http://localhost:8774/6549f3166ca44ea0940794494bbd6e6f/flavors/6", "rel": "bookmark"}]}, "id": "8e4b3afd-b267-419e-942e-38304809b3d8", "user_id": "2e4a12d2d7a447e69330e51242a92ddb", "OS-DCF:diskConfig": "MANUAL", "accessIPv4": "", "accessIPv6": "", "progress": 0, "OS-EXT-STS:power_state": 1, "config_drive": "", "status": "ACTIVE", "updated": "2012-10-16T09:20:03Z", "hostId": "503a1dcfafc4bd2b6947ea461a9261beee349e4d2b533ae68f05dfe2", "OS-EXT-SRV-ATTR:host": "mrg-04.mpc.lab.eng.bos.redhat.com", "key_name": "heattest_key", "OS-EXT-SRV-ATTR:hypervisor_hostname": null, "name": "teststack.WikiDatabase", "created": "2012-10-16T09:19:51Z", "tenant_id": "6549f3166ca44ea0940794494bbd6e6f", "metadata": {}}]}
+
+paramiko.transport: DEBUG: starting thread (client mode): 0x330d4d0L
+paramiko.transport: INFO: Connected (version 2.0, client OpenSSH_5.9)
+paramiko.transport: DEBUG: kex algos:['diffie-hellman-group-exchange-sha256', 'diffie-hellman-group-exchange-sha1', 'diffie-hellman-group14-sha1', 'diffie-hellman-group1-sha1'] server key:['ssh-rsa', 'ssh-dss'] client encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] server encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] client mac:['hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'hmac-sha2-256', 'hmac-sha2-256-96', 'hmac-sha2-512', 'hmac-sha2-512-96', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] server mac:['hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'hmac-sha2-256', 'hmac-sha2-256-96', 'hmac-sha2-512', 'hmac-sha2-512-96', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+paramiko.transport: DEBUG: Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+paramiko.transport: DEBUG: using kex diffie-hellman-group1-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+paramiko.transport: DEBUG: Switch to new keys ...
+paramiko.transport: DEBUG: Adding ssh-rsa host key for 10.0.0.2: dfa770619e1e42936aeaa5535f73b94b
+paramiko.transport: DEBUG: Trying discovered key f2968b9ad4fc83d815cb4585c3b8903f in /home/heattest/.ssh/id_rsa
+paramiko.transport: DEBUG: userauth is OK
+paramiko.transport: INFO: Authentication (publickey) successful!
+paramiko.transport: DEBUG: [chan 1] Max packet in: 34816 bytes
+paramiko.transport: DEBUG: [chan 1] Max packet out: 32768 bytes
+paramiko.transport: INFO: Secsh channel 1 opened.
+paramiko.transport: DEBUG: [chan 1] Sesch channel 1 request ok
+paramiko.transport.sftp: INFO: [chan 1] Opened sftp connection (server version 3)
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/boot-finished')
+paramiko.transport: DEBUG: [chan 2] Max packet in: 34816 bytes
+paramiko.transport: DEBUG: [chan 2] Max packet out: 32768 bytes
+paramiko.transport: INFO: Secsh channel 2 opened.
+paramiko.transport: DEBUG: [chan 2] Sesch channel 2 request ok
+paramiko.transport: DEBUG: [chan 2] EOF received (2)
+paramiko.transport: DEBUG: [chan 2] EOF sent (2)
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport: DEBUG: EOF in transport thread
+--------------------- >> end captured logging << ---------------------
+
+======================================================================
+FAIL: test_instance (heat.tests.functional.test_WordPress_2_Instances_With_EBS_EIP.WordPress2EBSEIPFunctionalTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/heattest/heat/heat/tests/functional/test_WordPress_2_Instances_With_EBS_EIP.py", line 72, in test_instance
+    self.assertTrue(len(lines) > 0)
+AssertionError: False is not true
+-------------------- >> begin captured stdout << ---------------------
+Checking glance for image registration
+Found image registration for F17-x86_64-cfntools
+Checking arn:openstack:heat::admin:stacks/teststack/8 contains name teststack
+Waiting for stack creation to be completed
+Instance (teststack.WebServer) ip (10.0.0.3) status (ACTIVE)
+Instance (teststack.WebServer) ip (10.0.0.3) SSH detected.
+Instance (teststack.WebServer) ip (10.0.0.3) connected via SSH.
+Instance (teststack.WebServer) ip (10.0.0.3) finished booting.
+Instance (teststack.WebServer) cfntools integrity verified.
+Instance (teststack.WebServer) waiting for provisioning to complete.
+Instance (teststack.WebServer) provisioning incomplete, waiting...
+Instance (teststack.WebServer) provisioning incomplete, waiting...
+Instance (teststack.WebServer) provisioning incomplete, waiting...
+Instance (teststack.WebServer) provisioning incomplete, waiting...
+Instance (teststack.WebServer) provisioning incomplete, waiting...
+Instance (teststack.WebServer) provisioning incomplete, waiting...
+Instance (teststack.WebServer) provisioning incomplete, waiting...
+Instance (teststack.WebServer) provisioning completed.
+Instance (teststack.WikiDatabase) ip (10.0.0.2) status (ACTIVE)
+Instance (teststack.WikiDatabase) ip (10.0.0.2) SSH detected.
+Instance (teststack.WikiDatabase) ip (10.0.0.2) connected via SSH.
+Instance (teststack.WikiDatabase) ip (10.0.0.2) finished booting.
+Instance (teststack.WikiDatabase) cfntools integrity verified.
+Instance (teststack.WikiDatabase) waiting for provisioning to complete.
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning incomplete, waiting...
+Instance (teststack.WikiDatabase) provisioning completed.
+Verifying file '/etc/wordpress/wp-config.php' exists
+
+--------------------- >> end captured stdout << ----------------------
+-------------------- >> begin captured logging << --------------------
+novaclient.client: DEBUG: REQ: curl -i http://127.0.0.1:5000/v2.0/tokens -X POST -H "Content-Type: application/json" -H "Accept: application/json" -H "User-Agent: python-novaclient"
+
+novaclient.client: DEBUG: REQ BODY: {"auth": {"tenantName": "admin", "passwordCredentials": {"username": "admin", "password": "verybadpass"}}}
+
+novaclient.client: DEBUG: RESP:{'date': 'Tue, 16 Oct 2012 08:33:05 GMT', 'transfer-encoding': 'chunked', 'status': '200', 'vary': 'X-Auth-Token', 'content-type': 'application/json'} {"access": {"token": {"expires": "2012-10-17T08:33:05Z", "id": "5ffaeda65d334e3c80b65d6f0873f64b", "tenant": {"description": null, "enabled": true, "id": "6549f3166ca44ea0940794494bbd6e6f", "name": "admin"}}, "serviceCatalog": [{"endpoints": [{"adminURL": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f", "region": "RegionOne", "internalURL": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f", "publicURL": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f"}], "endpoints_links": [], "type": "compute", "name": "nova"}, {"endpoints": [{"adminURL": "http://localhost:9292/v1", "region": "RegionOne", "internalURL": "http://localhost:9292/v1", "publicURL": "http://localhost:9292/v1"}], "endpoints_links": [], "type": "image", "name": "glance"}, {"endpoints": [{"adminURL": "http://localhost:8000/v1", "region": "RegionOne", "internalURL": "http://localhost:8000/v1", "publicURL": "http://localhost:8000/v1"}], "endpoints_links": [], "type": "cloudformation", "name": "heat"}, {"endpoints": [{"adminURL": "http://localhost:8776/v1/6549f3166ca44ea0940794494bbd6e6f", "region": "RegionOne", "internalURL": "http://localhost:8776/v1/6549f3166ca44ea0940794494bbd6e6f", "publicURL": "http://localhost:8776/v1/6549f3166ca44ea0940794494bbd6e6f"}], "endpoints_links": [], "type": "volume", "name": "nova-volume"}, {"endpoints": [{"adminURL": "http://localhost:8773/services/Admin", "region": "RegionOne", "internalURL": "http://localhost:8773/services/Cloud", "publicURL": "http://localhost:8773/services/Cloud"}], "endpoints_links": [], "type": "ec2", "name": "ec2"}, {"endpoints": [{"adminURL": "http://localhost:35357/v2.0", "region": "RegionOne", "internalURL": "http://localhost:35357/v2.0", "publicURL": "http://localhost:5000/v2.0"}], "endpoints_links": [], "type": "identity", "name": "keystone"}], "user": {"username": "admin", "roles_links": [], "id": "2e4a12d2d7a447e69330e51242a92ddb", "roles": [{"id": "4873a706e96f40cdb576834f9f98e70d", "name": "admin"}, {"id": "55aa78865d0443ee8f31ead66b3110d0", "name": "KeystoneServiceAdmin"}, {"id": "e9635df98d714c3388b9ef6ac70284b5", "name": "KeystoneAdmin"}], "name": "admin"}}}
+
+novaclient.client: DEBUG: REQ: curl -i http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/os-keypairs -X GET -H "X-Auth-Project-Id: admin" -H "User-Agent: python-novaclient" -H "Accept: application/json" -H "X-Auth-Token: 5ffaeda65d334e3c80b65d6f0873f64b"
+
+novaclient.client: DEBUG: RESP:{'status': '200', 'content-length': '562', 'content-location': u'http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/os-keypairs', 'x-compute-request-id': 'req-469ce392-eaa6-46c6-9cf0-456d4ad49a4e', 'date': 'Tue, 16 Oct 2012 08:33:05 GMT', 'content-type': 'application/json'} {"keypairs": [{"keypair": {"public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDbQD+m71J9HLMQRWWijXVz/kgPJ2fn23vyyCG0aMzfapiBKhCWQUDj4nokzrARfqn2M6y61duvfImhWB/9CG4kuBTxAu2BTPdeUpyn0gQNN9F8/p8rMlhoaePSVhf9bF2SYF9lAgqpHuxTOMK6XiwiY0vUqt+z1yuMvLoYNe+4jODeeQ9RRZk87gBK/nD8pB/1hegQ4Xh/JYH5GMsWfsSJPgzFPk8RGVslo1GgbLziZOpYZsOiL3bwNS5RccMQ0ZKSXlXDic1f37waD4oB/xHPO4a9wTDTRhgciiJeoXaLclRdmPCLFRYUDUW91UEEn3OnphxVdImVmWJVgpJoeP2v heattest@mrg-04.mpc.lab.eng.bos.redhat.com\n", "name": "heattest_key", "fingerprint": "f2:96:8b:9a:d4:fc:83:d8:15:cb:45:85:c3:b8:90:3f"}}]}
+
+novaclient.client: DEBUG: REQ: curl -i http://127.0.0.1:5000/v2.0/tokens -X POST -H "Content-Type: application/json" -H "Accept: application/json" -H "User-Agent: python-novaclient"
+
+novaclient.client: DEBUG: REQ BODY: {"auth": {"tenantName": "admin", "passwordCredentials": {"username": "admin", "password": "verybadpass"}}}
+
+novaclient.client: DEBUG: RESP:{'date': 'Tue, 16 Oct 2012 08:33:47 GMT', 'transfer-encoding': 'chunked', 'status': '200', 'vary': 'X-Auth-Token', 'content-type': 'application/json'} {"access": {"token": {"expires": "2012-10-17T08:33:47Z", "id": "33b97ec57d8e4f06b4bb38b34580d629", "tenant": {"description": null, "enabled": true, "id": "6549f3166ca44ea0940794494bbd6e6f", "name": "admin"}}, "serviceCatalog": [{"endpoints": [{"adminURL": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f", "region": "RegionOne", "internalURL": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f", "publicURL": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f"}], "endpoints_links": [], "type": "compute", "name": "nova"}, {"endpoints": [{"adminURL": "http://localhost:9292/v1", "region": "RegionOne", "internalURL": "http://localhost:9292/v1", "publicURL": "http://localhost:9292/v1"}], "endpoints_links": [], "type": "image", "name": "glance"}, {"endpoints": [{"adminURL": "http://localhost:8000/v1", "region": "RegionOne", "internalURL": "http://localhost:8000/v1", "publicURL": "http://localhost:8000/v1"}], "endpoints_links": [], "type": "cloudformation", "name": "heat"}, {"endpoints": [{"adminURL": "http://localhost:8776/v1/6549f3166ca44ea0940794494bbd6e6f", "region": "RegionOne", "internalURL": "http://localhost:8776/v1/6549f3166ca44ea0940794494bbd6e6f", "publicURL": "http://localhost:8776/v1/6549f3166ca44ea0940794494bbd6e6f"}], "endpoints_links": [], "type": "volume", "name": "nova-volume"}, {"endpoints": [{"adminURL": "http://localhost:8773/services/Admin", "region": "RegionOne", "internalURL": "http://localhost:8773/services/Cloud", "publicURL": "http://localhost:8773/services/Cloud"}], "endpoints_links": [], "type": "ec2", "name": "ec2"}, {"endpoints": [{"adminURL": "http://localhost:35357/v2.0", "region": "RegionOne", "internalURL": "http://localhost:35357/v2.0", "publicURL": "http://localhost:5000/v2.0"}], "endpoints_links": [], "type": "identity", "name": "keystone"}], "user": {"username": "admin", "roles_links": [], "id": "2e4a12d2d7a447e69330e51242a92ddb", "roles": [{"id": "4873a706e96f40cdb576834f9f98e70d", "name": "admin"}, {"id": "55aa78865d0443ee8f31ead66b3110d0", "name": "KeystoneServiceAdmin"}, {"id": "e9635df98d714c3388b9ef6ac70284b5", "name": "KeystoneAdmin"}], "name": "admin"}}}
+
+novaclient.client: DEBUG: REQ: curl -i http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/servers/detail -X GET -H "X-Auth-Project-Id: admin" -H "User-Agent: python-novaclient" -H "Accept: application/json" -H "X-Auth-Token: 33b97ec57d8e4f06b4bb38b34580d629"
+
+novaclient.client: DEBUG: RESP:{'status': '200', 'content-length': '2900', 'content-location': u'http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/servers/detail', 'x-compute-request-id': 'req-fc8aa121-6ae9-417c-9033-6018c3f27195', 'date': 'Tue, 16 Oct 2012 08:33:47 GMT', 'content-type': 'application/json'} {"servers": [{"OS-EXT-STS:task_state": null, "addresses": {"demonet": [{"version": 4, "addr": "10.0.0.3"}, {"version": 4, "addr": "10.0.1.113"}]}, "links": [{"href": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/servers/5762aeea-c1e8-40bf-b9eb-ecc37bb3ae84", "rel": "self"}, {"href": "http://localhost:8774/6549f3166ca44ea0940794494bbd6e6f/servers/5762aeea-c1e8-40bf-b9eb-ecc37bb3ae84", "rel": "bookmark"}], "image": {"id": "fa2d6e8f-7ac0-4462-96eb-1b4627ea8679", "links": [{"href": "http://localhost:8774/6549f3166ca44ea0940794494bbd6e6f/images/fa2d6e8f-7ac0-4462-96eb-1b4627ea8679", "rel": "bookmark"}]}, "OS-EXT-STS:vm_state": "active", "OS-EXT-SRV-ATTR:instance_name": "instance-0000000c", "flavor": {"id": "6", "links": [{"href": "http://localhost:8774/6549f3166ca44ea0940794494bbd6e6f/flavors/6", "rel": "bookmark"}]}, "id": "5762aeea-c1e8-40bf-b9eb-ecc37bb3ae84", "user_id": "2e4a12d2d7a447e69330e51242a92ddb", "OS-DCF:diskConfig": "MANUAL", "accessIPv4": "", "accessIPv6": "", "progress": 0, "OS-EXT-STS:power_state": 1, "config_drive": "", "status": "ACTIVE", "updated": "2012-10-16T08:33:39Z", "hostId": "503a1dcfafc4bd2b6947ea461a9261beee349e4d2b533ae68f05dfe2", "OS-EXT-SRV-ATTR:host": "mrg-04.mpc.lab.eng.bos.redhat.com", "key_name": "heattest_key", "OS-EXT-SRV-ATTR:hypervisor_hostname": null, "name": "teststack.WebServer", "created": "2012-10-16T08:33:26Z", "tenant_id": "6549f3166ca44ea0940794494bbd6e6f", "metadata": {}}, {"OS-EXT-STS:task_state": null, "addresses": {"demonet": [{"version": 4, "addr": "10.0.0.2"}, {"version": 4, "addr": "10.0.1.114"}]}, "links": [{"href": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/servers/68288df7-bbd4-446a-bb75-611f4194a03e", "rel": "self"}, {"href": "http://localhost:8774/6549f3166ca44ea0940794494bbd6e6f/servers/68288df7-bbd4-446a-bb75-611f4194a03e", "rel": "bookmark"}], "image": {"id": "fa2d6e8f-7ac0-4462-96eb-1b4627ea8679", "links": [{"href": "http://localhost:8774/6549f3166ca44ea0940794494bbd6e6f/images/fa2d6e8f-7ac0-4462-96eb-1b4627ea8679", "rel": "bookmark"}]}, "OS-EXT-STS:vm_state": "active", "OS-EXT-SRV-ATTR:instance_name": "instance-0000000b", "flavor": {"id": "6", "links": [{"href": "http://localhost:8774/6549f3166ca44ea0940794494bbd6e6f/flavors/6", "rel": "bookmark"}]}, "id": "68288df7-bbd4-446a-bb75-611f4194a03e", "user_id": "2e4a12d2d7a447e69330e51242a92ddb", "OS-DCF:diskConfig": "MANUAL", "accessIPv4": "", "accessIPv6": "", "progress": 0, "OS-EXT-STS:power_state": 1, "config_drive": "", "status": "ACTIVE", "updated": "2012-10-16T08:33:21Z", "hostId": "503a1dcfafc4bd2b6947ea461a9261beee349e4d2b533ae68f05dfe2", "OS-EXT-SRV-ATTR:host": "mrg-04.mpc.lab.eng.bos.redhat.com", "key_name": "heattest_key", "OS-EXT-SRV-ATTR:hypervisor_hostname": null, "name": "teststack.WikiDatabase", "created": "2012-10-16T08:33:08Z", "tenant_id": "6549f3166ca44ea0940794494bbd6e6f", "metadata": {}}]}
+
+paramiko.transport: DEBUG: starting thread (client mode): 0x2e7fb50L
+paramiko.transport: INFO: Connected (version 2.0, client OpenSSH_5.9)
+paramiko.transport: DEBUG: kex algos:['diffie-hellman-group-exchange-sha256', 'diffie-hellman-group-exchange-sha1', 'diffie-hellman-group14-sha1', 'diffie-hellman-group1-sha1'] server key:['ssh-rsa', 'ssh-dss'] client encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] server encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] client mac:['hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'hmac-sha2-256', 'hmac-sha2-256-96', 'hmac-sha2-512', 'hmac-sha2-512-96', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] server mac:['hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'hmac-sha2-256', 'hmac-sha2-256-96', 'hmac-sha2-512', 'hmac-sha2-512-96', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+paramiko.transport: DEBUG: Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+paramiko.transport: DEBUG: using kex diffie-hellman-group1-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+paramiko.transport: DEBUG: Switch to new keys ...
+paramiko.transport: DEBUG: Adding ssh-rsa host key for 10.0.0.3: dfa770619e1e42936aeaa5535f73b94b
+paramiko.transport: DEBUG: Trying discovered key f2968b9ad4fc83d815cb4585c3b8903f in /home/heattest/.ssh/id_rsa
+paramiko.transport: DEBUG: userauth is OK
+paramiko.transport: INFO: Authentication (publickey) successful!
+paramiko.transport: DEBUG: [chan 1] Max packet in: 34816 bytes
+paramiko.transport: DEBUG: [chan 1] Max packet out: 32768 bytes
+paramiko.transport: INFO: Secsh channel 1 opened.
+paramiko.transport: DEBUG: [chan 1] Sesch channel 1 request ok
+paramiko.transport.sftp: INFO: [chan 1] Opened sftp connection (server version 3)
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/boot-finished')
+paramiko.transport: DEBUG: [chan 2] Max packet in: 34816 bytes
+paramiko.transport: DEBUG: [chan 2] Max packet out: 32768 bytes
+paramiko.transport: INFO: Secsh channel 2 opened.
+paramiko.transport: DEBUG: [chan 2] Sesch channel 2 request ok
+paramiko.transport: DEBUG: [chan 2] EOF received (2)
+paramiko.transport: DEBUG: [chan 2] EOF sent (2)
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+novaclient.client: DEBUG: REQ: curl -i http://127.0.0.1:5000/v2.0/tokens -X POST -H "Content-Type: application/json" -H "Accept: application/json" -H "User-Agent: python-novaclient"
+
+novaclient.client: DEBUG: REQ BODY: {"auth": {"tenantName": "admin", "passwordCredentials": {"username": "admin", "password": "verybadpass"}}}
+
+novaclient.client: DEBUG: RESP:{'date': 'Tue, 16 Oct 2012 08:35:53 GMT', 'transfer-encoding': 'chunked', 'status': '200', 'vary': 'X-Auth-Token', 'content-type': 'application/json'} {"access": {"token": {"expires": "2012-10-17T08:35:53Z", "id": "d46cfbb30d0f4f95a40871e384b32403", "tenant": {"description": null, "enabled": true, "id": "6549f3166ca44ea0940794494bbd6e6f", "name": "admin"}}, "serviceCatalog": [{"endpoints": [{"adminURL": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f", "region": "RegionOne", "internalURL": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f", "publicURL": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f"}], "endpoints_links": [], "type": "compute", "name": "nova"}, {"endpoints": [{"adminURL": "http://localhost:9292/v1", "region": "RegionOne", "internalURL": "http://localhost:9292/v1", "publicURL": "http://localhost:9292/v1"}], "endpoints_links": [], "type": "image", "name": "glance"}, {"endpoints": [{"adminURL": "http://localhost:8000/v1", "region": "RegionOne", "internalURL": "http://localhost:8000/v1", "publicURL": "http://localhost:8000/v1"}], "endpoints_links": [], "type": "cloudformation", "name": "heat"}, {"endpoints": [{"adminURL": "http://localhost:8776/v1/6549f3166ca44ea0940794494bbd6e6f", "region": "RegionOne", "internalURL": "http://localhost:8776/v1/6549f3166ca44ea0940794494bbd6e6f", "publicURL": "http://localhost:8776/v1/6549f3166ca44ea0940794494bbd6e6f"}], "endpoints_links": [], "type": "volume", "name": "nova-volume"}, {"endpoints": [{"adminURL": "http://localhost:8773/services/Admin", "region": "RegionOne", "internalURL": "http://localhost:8773/services/Cloud", "publicURL": "http://localhost:8773/services/Cloud"}], "endpoints_links": [], "type": "ec2", "name": "ec2"}, {"endpoints": [{"adminURL": "http://localhost:35357/v2.0", "region": "RegionOne", "internalURL": "http://localhost:35357/v2.0", "publicURL": "http://localhost:5000/v2.0"}], "endpoints_links": [], "type": "identity", "name": "keystone"}], "user": {"username": "admin", "roles_links": [], "id": "2e4a12d2d7a447e69330e51242a92ddb", "roles": [{"id": "4873a706e96f40cdb576834f9f98e70d", "name": "admin"}, {"id": "55aa78865d0443ee8f31ead66b3110d0", "name": "KeystoneServiceAdmin"}, {"id": "e9635df98d714c3388b9ef6ac70284b5", "name": "KeystoneAdmin"}], "name": "admin"}}}
+
+novaclient.client: DEBUG: REQ: curl -i http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/servers/detail -X GET -H "X-Auth-Project-Id: admin" -H "User-Agent: python-novaclient" -H "Accept: application/json" -H "X-Auth-Token: d46cfbb30d0f4f95a40871e384b32403"
+
+novaclient.client: DEBUG: RESP:{'status': '200', 'content-length': '2900', 'content-location': u'http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/servers/detail', 'x-compute-request-id': 'req-539f86d9-b91c-4d11-84ca-ffbe6076a970', 'date': 'Tue, 16 Oct 2012 08:35:53 GMT', 'content-type': 'application/json'} {"servers": [{"OS-EXT-STS:task_state": null, "addresses": {"demonet": [{"version": 4, "addr": "10.0.0.3"}, {"version": 4, "addr": "10.0.1.113"}]}, "links": [{"href": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/servers/5762aeea-c1e8-40bf-b9eb-ecc37bb3ae84", "rel": "self"}, {"href": "http://localhost:8774/6549f3166ca44ea0940794494bbd6e6f/servers/5762aeea-c1e8-40bf-b9eb-ecc37bb3ae84", "rel": "bookmark"}], "image": {"id": "fa2d6e8f-7ac0-4462-96eb-1b4627ea8679", "links": [{"href": "http://localhost:8774/6549f3166ca44ea0940794494bbd6e6f/images/fa2d6e8f-7ac0-4462-96eb-1b4627ea8679", "rel": "bookmark"}]}, "OS-EXT-STS:vm_state": "active", "OS-EXT-SRV-ATTR:instance_name": "instance-0000000c", "flavor": {"id": "6", "links": [{"href": "http://localhost:8774/6549f3166ca44ea0940794494bbd6e6f/flavors/6", "rel": "bookmark"}]}, "id": "5762aeea-c1e8-40bf-b9eb-ecc37bb3ae84", "user_id": "2e4a12d2d7a447e69330e51242a92ddb", "OS-DCF:diskConfig": "MANUAL", "accessIPv4": "", "accessIPv6": "", "progress": 0, "OS-EXT-STS:power_state": 1, "config_drive": "", "status": "ACTIVE", "updated": "2012-10-16T08:33:39Z", "hostId": "503a1dcfafc4bd2b6947ea461a9261beee349e4d2b533ae68f05dfe2", "OS-EXT-SRV-ATTR:host": "mrg-04.mpc.lab.eng.bos.redhat.com", "key_name": "heattest_key", "OS-EXT-SRV-ATTR:hypervisor_hostname": null, "name": "teststack.WebServer", "created": "2012-10-16T08:33:26Z", "tenant_id": "6549f3166ca44ea0940794494bbd6e6f", "metadata": {}}, {"OS-EXT-STS:task_state": null, "addresses": {"demonet": [{"version": 4, "addr": "10.0.0.2"}, {"version": 4, "addr": "10.0.1.114"}]}, "links": [{"href": "http://localhost:8774/v1.1/6549f3166ca44ea0940794494bbd6e6f/servers/68288df7-bbd4-446a-bb75-611f4194a03e", "rel": "self"}, {"href": "http://localhost:8774/6549f3166ca44ea0940794494bbd6e6f/servers/68288df7-bbd4-446a-bb75-611f4194a03e", "rel": "bookmark"}], "image": {"id": "fa2d6e8f-7ac0-4462-96eb-1b4627ea8679", "links": [{"href": "http://localhost:8774/6549f3166ca44ea0940794494bbd6e6f/images/fa2d6e8f-7ac0-4462-96eb-1b4627ea8679", "rel": "bookmark"}]}, "OS-EXT-STS:vm_state": "active", "OS-EXT-SRV-ATTR:instance_name": "instance-0000000b", "flavor": {"id": "6", "links": [{"href": "http://localhost:8774/6549f3166ca44ea0940794494bbd6e6f/flavors/6", "rel": "bookmark"}]}, "id": "68288df7-bbd4-446a-bb75-611f4194a03e", "user_id": "2e4a12d2d7a447e69330e51242a92ddb", "OS-DCF:diskConfig": "MANUAL", "accessIPv4": "", "accessIPv6": "", "progress": 0, "OS-EXT-STS:power_state": 1, "config_drive": "", "status": "ACTIVE", "updated": "2012-10-16T08:33:21Z", "hostId": "503a1dcfafc4bd2b6947ea461a9261beee349e4d2b533ae68f05dfe2", "OS-EXT-SRV-ATTR:host": "mrg-04.mpc.lab.eng.bos.redhat.com", "key_name": "heattest_key", "OS-EXT-SRV-ATTR:hypervisor_hostname": null, "name": "teststack.WikiDatabase", "created": "2012-10-16T08:33:08Z", "tenant_id": "6549f3166ca44ea0940794494bbd6e6f", "metadata": {}}]}
+
+paramiko.transport: DEBUG: starting thread (client mode): 0x2f3c710L
+paramiko.transport: INFO: Connected (version 2.0, client OpenSSH_5.9)
+paramiko.transport: DEBUG: kex algos:['diffie-hellman-group-exchange-sha256', 'diffie-hellman-group-exchange-sha1', 'diffie-hellman-group14-sha1', 'diffie-hellman-group1-sha1'] server key:['ssh-rsa', 'ssh-dss'] client encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] server encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] client mac:['hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'hmac-sha2-256', 'hmac-sha2-256-96', 'hmac-sha2-512', 'hmac-sha2-512-96', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] server mac:['hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'hmac-sha2-256', 'hmac-sha2-256-96', 'hmac-sha2-512', 'hmac-sha2-512-96', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+paramiko.transport: DEBUG: Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+paramiko.transport: DEBUG: using kex diffie-hellman-group1-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+paramiko.transport: DEBUG: Switch to new keys ...
+paramiko.transport: DEBUG: Adding ssh-rsa host key for 10.0.0.2: dfa770619e1e42936aeaa5535f73b94b
+paramiko.transport: DEBUG: Trying discovered key f2968b9ad4fc83d815cb4585c3b8903f in /home/heattest/.ssh/id_rsa
+paramiko.transport: DEBUG: userauth is OK
+paramiko.transport: INFO: Authentication (publickey) successful!
+paramiko.transport: DEBUG: [chan 1] Max packet in: 34816 bytes
+paramiko.transport: DEBUG: [chan 1] Max packet out: 32768 bytes
+paramiko.transport: INFO: Secsh channel 1 opened.
+paramiko.transport: DEBUG: [chan 1] Sesch channel 1 request ok
+paramiko.transport.sftp: INFO: [chan 1] Opened sftp connection (server version 3)
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/boot-finished')
+paramiko.transport: DEBUG: [chan 2] Max packet in: 34816 bytes
+paramiko.transport: DEBUG: [chan 2] Max packet out: 32768 bytes
+paramiko.transport: INFO: Secsh channel 2 opened.
+paramiko.transport: DEBUG: [chan 2] Sesch channel 2 request ok
+paramiko.transport: DEBUG: [chan 2] EOF received (2)
+paramiko.transport: DEBUG: [chan 2] EOF sent (2)
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport.sftp: DEBUG: [chan 1] stat('/var/lib/cloud/instance/provision-finished')
+paramiko.transport: DEBUG: [chan 3] Max packet in: 34816 bytes
+paramiko.transport: DEBUG: [chan 3] Max packet out: 32768 bytes
+paramiko.transport: INFO: Secsh channel 3 opened.
+paramiko.transport: DEBUG: [chan 3] Sesch channel 3 request ok
+paramiko.transport: DEBUG: [chan 3] EOF received (3)
+paramiko.transport: DEBUG: [chan 3] Max packet in: 34816 bytes
+paramiko.transport: DEBUG: [chan 3] EOF sent (3)
+paramiko.transport: DEBUG: [chan 3] Max packet out: 32768 bytes
+paramiko.transport: INFO: Secsh channel 3 opened.
+paramiko.transport: DEBUG: [chan 3] Sesch channel 3 request ok
+paramiko.transport: DEBUG: [chan 3] EOF received (3)
+paramiko.transport: DEBUG: [chan 4] Max packet in: 34816 bytes
+paramiko.transport: DEBUG: [chan 3] EOF sent (3)
+paramiko.transport: DEBUG: [chan 4] Max packet out: 32768 bytes
+paramiko.transport: INFO: Secsh channel 4 opened.
+paramiko.transport: DEBUG: [chan 4] Sesch channel 4 request ok
+paramiko.transport: DEBUG: [chan 4] EOF received (4)
+paramiko.transport: DEBUG: [chan 4] EOF sent (4)
+--------------------- >> end captured logging << ---------------------
+
+----------------------------------------------------------------------
+Ran 24 tests in 4969.324s
+
+FAILED (errors=4, failures=1)
+Slowest 5 tests took 2134.41 secs:
+    539.31     test_instance (heat.tests.functional.test_WordPress_Single_Instance_With_IHA.WordPressIHAFunctionalTest)
+    417.59     test_instance (heat.tests.functional.test_WordPress_Single_Instance_With_EBS.WordPressSingleEBSFunctionalTest)
+    409.23     test_instance (heat.tests.functional.test_WordPress_2_Instances_With_EBS.WordPress2InstancesWithEBS)
+    393.15     test_instance (heat.tests.functional.test_WordPress_2_Instances_With_EBS_EIP.WordPress2EBSEIPFunctionalTest)
+    375.13     test_instance (heat.tests.functional.test_WordPress_Single_Instance_With_EBS_EIP.WordPressEBSEIPFunctionalTest)
+nose.config: INFO: Ignoring files matching ['^\\.', '^_', '^setup\\.py$']
+Connection to 10.0.0.2 22 port [tcp/ssh] succeeded!
+Connection to 10.0.0.2 22 port [tcp/ssh] succeeded!
+Connection to 10.0.0.2 22 port [tcp/ssh] succeeded!
+Connection to 10.0.0.2 22 port [tcp/ssh] succeeded!
+Connection to 10.0.0.3 22 port [tcp/ssh] succeeded!
+Connection to 10.0.0.2 22 port [tcp/ssh] succeeded!
+Connection to 10.0.0.3 22 port [tcp/ssh] succeeded!
+Connection to 10.0.0.2 22 port [tcp/ssh] succeeded!
+Connection to 10.0.0.3 22 port [tcp/ssh] succeeded!
+Connection to 10.0.0.3 22 port [tcp/ssh] succeeded!
+Connection to 10.0.0.2 22 port [tcp/ssh] succeeded!
+Connection to 10.0.0.3 22 port [tcp/ssh] succeeded!
+Connection to 10.0.0.2 22 port [tcp/ssh] succeeded!
+Connection to 10.0.0.2 22 port [tcp/ssh] succeeded!
+Connection to 10.0.0.2 22 port [tcp/ssh] succeeded!
+Connection to 10.0.0.2 22 port [tcp/ssh] succeeded!
+Connection to 10.0.0.2 22 port [tcp/ssh] succeeded!
+Connection to 10.0.0.2 22 port [tcp/ssh] succeeded!
+Connection to 10.0.0.2 22 port [tcp/ssh] succeeded!
+Connection to 10.0.0.2 22 port [tcp/ssh] succeeded!
+Connection to 10.0.0.2 22 port [tcp/ssh] succeeded!
+Connection to 10.0.0.3 22 port [tcp/ssh] succeeded!
+Connection to 10.0.0.4 22 port [tcp/ssh] succeeded!
+Connection to 10.0.0.2 22 port [tcp/ssh] succeeded!
+Connection to 10.0.0.3 22 port [tcp/ssh] succeeded!
+~
+FAILED :(
+Connection to mrg-04.mpc.lab.eng.bos.redhat.com closed.
+Releasing machine mrg-04.mpc.lab.eng.bos.redhat.com with Beaker
+Build step 'Execute shell' marked build as failure
+[PostBuildScript] - Execution post build scripts.
+[workspace] $ /bin/sh -xe /tmp/hudson1447332588182010379.sh
++ /var/lib/jenkins/heat-integration/log-publish.sh
+~/heat-integration/heat-api.github.com ~/heat-integration
+Current branch master is up to date.
+~/heat-integration
+~/heat-integration/heat-api.github.com ~/heat-integration
+skipping non-regular file "1"
+skipping non-regular file "10"
+skipping non-regular file "100"
+skipping non-regular file "101"
+skipping non-regular file "102"
+skipping non-regular file "103"
+skipping non-regular file "104"
+skipping non-regular file "105"
+skipping non-regular file "106"
+skipping non-regular file "107"
+skipping non-regular file "108"
+skipping non-regular file "109"
+skipping non-regular file "11"
+skipping non-regular file "110"
+skipping non-regular file "111"
+skipping non-regular file "112"
+skipping non-regular file "113"
+skipping non-regular file "114"
+skipping non-regular file "115"
+skipping non-regular file "116"
+skipping non-regular file "117"
+skipping non-regular file "118"
+skipping non-regular file "119"
+skipping non-regular file "12"
+skipping non-regular file "120"
+skipping non-regular file "121"
+skipping non-regular file "122"
+skipping non-regular file "123"
+skipping non-regular file "124"
+skipping non-regular file "125"
+skipping non-regular file "126"
+skipping non-regular file "13"
+skipping non-regular file "14"
+skipping non-regular file "15"
+skipping non-regular file "16"
+skipping non-regular file "17"
+skipping non-regular file "18"
+skipping non-regular file "19"
+skipping non-regular file "2"
+skipping non-regular file "20"
+skipping non-regular file "21"
+skipping non-regular file "22"
+skipping non-regular file "23"
+skipping non-regular file "24"
+skipping non-regular file "25"
+skipping non-regular file "26"
+skipping non-regular file "27"
+skipping non-regular file "28"
+skipping non-regular file "29"
+skipping non-regular file "3"
+skipping non-regular file "30"
+skipping non-regular file "31"
+skipping non-regular file "32"
+skipping non-regular file "33"
+skipping non-regular file "34"
+skipping non-regular file "35"
+skipping non-regular file "36"
+skipping non-regular file "37"
+skipping non-regular file "38"
+skipping non-regular file "39"
+skipping non-regular file "4"
+skipping non-regular file "40"
+skipping non-regular file "41"
+skipping non-regular file "42"
+skipping non-regular file "43"
+skipping non-regular file "44"
+skipping non-regular file "45"
+skipping non-regular file "46"
+skipping non-regular file "47"
+skipping non-regular file "48"
+skipping non-regular file "49"
+skipping non-regular file "5"
+skipping non-regular file "50"
+skipping non-regular file "51"
+skipping non-regular file "52"
+skipping non-regular file "53"
+skipping non-regular file "54"
+skipping non-regular file "55"
+skipping non-regular file "56"
+skipping non-regular file "57"
+skipping non-regular file "58"
+skipping non-regular file "59"
+skipping non-regular file "6"
+skipping non-regular file "60"
+skipping non-regular file "61"
+skipping non-regular file "62"
+skipping non-regular file "63"
+skipping non-regular file "64"
+skipping non-regular file "65"
+skipping non-regular file "66"
+skipping non-regular file "67"
+skipping non-regular file "68"
+skipping non-regular file "69"
+skipping non-regular file "7"
+skipping non-regular file "70"
+skipping non-regular file "71"
+skipping non-regular file "72"
+skipping non-regular file "73"
+skipping non-regular file "74"
+skipping non-regular file "75"
+skipping non-regular file "76"
+skipping non-regular file "77"
+skipping non-regular file "78"
+skipping non-regular file "79"
+skipping non-regular file "8"
+skipping non-regular file "80"
+skipping non-regular file "81"
+skipping non-regular file "82"
+skipping non-regular file "83"
+skipping non-regular file "84"
+skipping non-regular file "85"
+skipping non-regular file "86"
+skipping non-regular file "87"
+skipping non-regular file "88"
+skipping non-regular file "89"
+skipping non-regular file "9"
+skipping non-regular file "90"
+skipping non-regular file "91"
+skipping non-regular file "92"
+skipping non-regular file "93"
+skipping non-regular file "94"
+skipping non-regular file "95"
+skipping non-regular file "96"
+skipping non-regular file "97"
+skipping non-regular file "98"
+skipping non-regular file "99"

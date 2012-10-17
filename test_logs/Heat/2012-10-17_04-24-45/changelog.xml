@@ -1,0 +1,16 @@
+Changes in branch origin/master, between f3ab48b64e13d681ff4d07aae67c31fb6c266683 and a97c6d3181a3d09751c3f88eee5a43e9eed0ad37
+commit a97c6d3181a3d09751c3f88eee5a43e9eed0ad37
+tree 3a5b16104907464c857132dbde2c72ef6d7a1cbe
+parent f3ab48b64e13d681ff4d07aae67c31fb6c266683
+author Zane Bitter <zbitter@redhat.com> 1350398035 +0200
+committer Zane Bitter <zbitter@redhat.com> 1350462070 +0200
+
+    Use password in preference to token if both supplied
+    
+    Fixes #263 - devstack is providing a token in the environment, which was
+    causing the wrong path to get hit.
+    
+    Change-Id: I9aae346e57fdfe156e52d4696e8f2f859884ff2f
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 067e323b35fcfb2a4101f66c39329d3860b18229 616ed18f3fd537bcf1e22d9c13ca78015dcec2d0 M	heat/engine/auth.py

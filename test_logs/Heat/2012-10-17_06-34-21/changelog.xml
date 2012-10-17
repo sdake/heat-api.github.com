@@ -1,0 +1,21 @@
+Changes in branch origin/master, between a97c6d3181a3d09751c3f88eee5a43e9eed0ad37 and 453854cdf697453376364eae51d65e3e58d82f51
+commit 3308e276481a7160adb58b9c1cad7327543c47cc
+tree bbcc91116a7aa31648301455d84b958991c037d6
+parent f3ab48b64e13d681ff4d07aae67c31fb6c266683
+author Steven Hardy <shardy@redhat.com> 1350404693 +0100
+committer Steven Hardy <shardy@redhat.com> 1350462458 +0100
+
+    heat tests : Remove utils.Stack getter methods
+    
+    Remove the get_*_client getter methods, as they aren't
+    actually doing anything, so just access the attributes
+    
+    Change-Id: Ic6740bdfe7d44c40b9fdf9fc4d03f8eddaf9a740
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 f50335a4828046a7ceaed9b1e45394eb03bd17b0 5c8fa199f00513ba0630b77d2908eeaf8597bc5e M	heat/tests/functional/test_CFN_API_Actions.py
+:100644 100644 f19a80bc4c4f43e67c8531d1899a2246279792bd d45ee83f5a29b3b553d9629aedd275da7e69fdbf M	heat/tests/functional/test_CFN_API_Actions_Boto.py
+:100644 100644 7a3f416cac38599b5f474c617fb2b36df7b289c0 feae070457ce469f82c517cd01f601684a6be1e6 M	heat/tests/functional/test_CFN_API_UpdateStack.py
+:100644 100644 e4a4951f83ccebbc1581c9314eae32bfa1ae0054 d0c74e500d09b3b0e5fb5c76028fa42f05fbd93c M	heat/tests/functional/test_WordPress_Single_Instance_With_EBS_EIP.py
+:100644 100644 7a2d670dda338349d0453ccb8968c648236ce86f ce0fd8fae91363fcdb4a8b14482b26b966e0d747 M	heat/tests/functional/test_WordPress_Single_Instance_With_EIP.py
+:100644 100644 74946f625079c1883ba7f0ca1d80c7ac9fde007a 736d85702d2c6dff5c4a1b90ead8e5534ae429fc M	heat/tests/functional/util.py

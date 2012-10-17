@@ -1,0 +1,16 @@
+Changes in branch origin/master, between 453854cdf697453376364eae51d65e3e58d82f51 and bae47db46091c7ee2840abb264818731ed4ae099
+commit bae47db46091c7ee2840abb264818731ed4ae099
+tree 912fc35a55f4ce966088b54fa88ff32255658e77
+parent 453854cdf697453376364eae51d65e3e58d82f51
+author Zane Bitter <zbitter@redhat.com> 1350462825 +0200
+committer Zane Bitter <zbitter@redhat.com> 1350462953 +0200
+
+    Rename CloudFormation service to heat-cfn
+    
+    This is consistent with what is implemented in devstack.
+    
+    Change-Id: If47c28ddbef1d6c61e2d741f359d850e4ecffaa9
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100755 100755 166233a044feb963cc085d027a79fa31ca07d142 53e55cf6e3b8cca065eaccf7c7bc66082d9f5c16 M	bin/heat-keystone-setup
+:100644 100644 616ed18f3fd537bcf1e22d9c13ca78015dcec2d0 b422dbe1cf1d597acf8dd3ec5dee78ee615ab177 M	heat/engine/auth.py

@@ -1,0 +1,17 @@
+Changes in branch origin/master, between bae47db46091c7ee2840abb264818731ed4ae099 and 0c81d9dbef675c666ba1bb9d659457b3acc05e78
+commit 0c81d9dbef675c666ba1bb9d659457b3acc05e78
+tree 328949dfa8e2f7311c60cc504602f2be8bc9a553
+parent bae47db46091c7ee2840abb264818731ed4ae099
+author Zane Bitter <zbitter@redhat.com> 1350397919 +0200
+committer Zane Bitter <zbitter@redhat.com> 1350477589 +0200
+
+    Handle upgrades in heat-keystone-setup
+    
+    Handle upgrades of Heat by removing any outdated endpoints that exist in
+    keystone and adding any existing "heat" service user to an admin role in
+    the service tenant.
+    
+    Change-Id: If6393417b5404a56b4723f42fb1a1b394d01cc6a
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100755 100755 53e55cf6e3b8cca065eaccf7c7bc66082d9f5c16 880a0f323e951c810178cdb957664a53fc136bb0 M	bin/heat-keystone-setup

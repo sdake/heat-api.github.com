@@ -1,0 +1,19 @@
+Changes in branch origin/master, between 0c81d9dbef675c666ba1bb9d659457b3acc05e78 and 0ee9371f0c67d2334ced2a5bec171864a4fa7374
+commit 0ee9371f0c67d2334ced2a5bec171864a4fa7374
+tree 648e60a9d820b2dc54783c29324f86f5a3b07c21
+parent 0c81d9dbef675c666ba1bb9d659457b3acc05e78
+author Steven Hardy <shardy@redhat.com> 1350477477 +0100
+committer Steven Hardy <shardy@redhat.com> 1350577169 +0100
+
+    heat engine : Make wait-condition poll interval better
+    
+    Remove rising-rate sleep-time logic and replace with a bounded
+    poll interval derived from the timeout - this should avoid ramping
+    up to a really long interval and delaying stack complete status
+    
+    Fixes #264
+    
+    Change-Id: Id53b87a988299708c29fc853f2801f527fd825dd
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 179a467f84201f2b78e6f76474ed95c5f9238e0f fe55fa71cd797dbfe134d98b7084ef00e0024dac M	heat/engine/wait_condition.py

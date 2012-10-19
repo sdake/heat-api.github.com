@@ -1,0 +1,23 @@
+Changes in branch origin/master, between debeccde8f9d3e99d2addc843d718eaf1e588dfe and 6ea813be339f8218cef6ceaa61bbe3a698783e09
+commit 6ea813be339f8218cef6ceaa61bbe3a698783e09
+tree f39ad0cd6c9590921bc107f9280c75394d1b910b
+parent debeccde8f9d3e99d2addc843d718eaf1e588dfe
+author Zane Bitter <zbitter@redhat.com> 1350656113 +0200
+committer Zane Bitter <zbitter@redhat.com> 1350656136 +0200
+
+    Identify stacks using tenant UUIDs
+    
+    Tenant names may come and go, but UUIDs are universally unique. Therefore,
+    ownership of the stack should be keyed on the tenant_id, not the tenant
+    name.
+    
+    Change-Id: I7ec410aeaeceb6319299935b5f34d7c4e9c63d67
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 fe493394fdfa2c5a625041d3511f05ee4731000f 3e29dbd89da8045253d0bb979ad7011a6c9dda66 M	heat/api/openstack/v1/stacks.py
+:100644 100644 ee6a9356494844b0fa94e9425e6c34aaf2488ee5 2e654673173d88358f0a35b9f8491b5586a4f260 M	heat/db/sqlalchemy/api.py
+:100644 100644 c525606c38acb1a08563f1a30eabc604995bfe23 4145813c6b7386e0daca97959bcc53134341cb15 M	heat/engine/manager.py
+:100644 100644 e61922308a3f2ce1dbe72f968b48040d3baca4e4 9f804cd0d61f597e929fed6de26149a1f3b4fb7c M	heat/engine/parser.py
+:100644 100644 263e5c7893b2794b730edb6c3ab1031fd66f75d1 0e25b45c33b8a0764242e3401874c8eef841e9f1 M	heat/tests/test_api_cfn_v1.py
+:100644 100644 23115185232ec7c26a199dd9f329ef651e9436e0 b5a52075ff51f1ad4d249a7dbce038ba9604b654 M	heat/tests/test_api_openstack_v1.py
+:100644 100644 60a738693e8bb7fa2ca18236dfcf727d01f0ee23 f6dde6a4f3eb722f3d9b44156b0f0b78a258fdce M	heat/tests/test_engine_manager.py

@@ -1,0 +1,13 @@
+Changes in branch origin/master, between 0ee9371f0c67d2334ced2a5bec171864a4fa7374 and debeccde8f9d3e99d2addc843d718eaf1e588dfe
+commit debeccde8f9d3e99d2addc843d718eaf1e588dfe
+tree 230e407c06c1267f9f134a1f76f1381ce54040ac
+parent 0ee9371f0c67d2334ced2a5bec171864a4fa7374
+author Jeff Peeler <jpeeler@redhat.com> 1350586406 -0400
+committer Jeff Peeler <jpeeler@redhat.com> 1350586406 -0400
+
+    Make default distribution U10 for deb template
+    
+    Change-Id: Ifcfc7d1fbb6fac2a785a0dc5a4e6ba09cf898ed4
+    Signed-off-by: Jeff Peeler <jpeeler@redhat.com>
+
+:100644 100644 1207d18358d9bdd31a3d13b449b1cbd43d87699a 90ad61f537409e4dfbfa5c96dcf360a11624fb7e M	templates/WordPress_Single_Instance_deb.template

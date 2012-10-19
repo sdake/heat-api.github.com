@@ -1,0 +1,75 @@
+Changes in branch origin/master, between 5658f9d4dbe759fe26a7b820058b8e257f796f35 and 5d7ebbaa06fa348e1e50121316580811c3f15105
+commit 0f108b72dea71d9667a573d5661a301bdeec99cb
+tree 8d290334ec2632447bfb610e0e87722ac62d3e0f
+parent 5658f9d4dbe759fe26a7b820058b8e257f796f35
+author Ian Main <imain@redhat.com> 1350671427 -0700
+committer Ian Main <imain@redhat.com> 1350671427 -0700
+
+    Start and enable libvirtd.
+    
+    Just did a fresh install on fedora 17 and found libvirt was not running
+    by default which caused nova to not start.  Explicitly enable it.
+    
+    Change-Id: Id244af934007020d1a9f263dd71f04e5950dd2c5
+    Signed-off-by: Ian Main <imain@redhat.com>
+
+:100755 100755 75030617406600ad244bb8a1f951902c0005e961 bc194ecc705b161d052c7a465474691219217d42 M	tools/openstack
+
+commit c2d262e6b26d0dd14c6f6c76100e78a4154fef08
+tree 12fb42e0aeddc352963370661bc1e93b80cef600
+parent 13ec48afe3aa12804cf15ad02557b1949cd52cdc
+author Steven Hardy <shardy@redhat.com> 1350670311 +0100
+committer Steven Hardy <shardy@redhat.com> 1350670658 +0100
+
+    heat engine : Resource.keystone handle auth_token
+    
+    Handle auth_token as well as username/password
+    
+    Fixes #268
+    
+    Change-Id: I7015556d74e026977fdd04f4ce9a378c0fac7695
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 2e5879af24495d537c8857cbecde9d1f0fe47d4c a305bab3467b52630ad6a0f54b63e60dad76a59f M	heat/engine/resources.py
+
+commit 13ec48afe3aa12804cf15ad02557b1949cd52cdc
+tree 5b1131dee812592aaf3a297d8d7f4684c525b7e6
+parent 52968f4a16b1af85770f532f734143add807c53b
+author Steven Hardy <shardy@redhat.com> 1350669753 +0100
+committer Steven Hardy <shardy@redhat.com> 1350670630 +0100
+
+    heat engine : Rework auth.authenticate
+    
+    engine.auth.authenticate is really creating a novaclient
+    connection, so move this into Resource.nova
+    
+    Ref #268
+    
+    Change-Id: I15d9c0537b3af9e65cd1ea5bd667bde0c89dc4c2
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 cffc566c7fca9b8585a5629dac66443e7964bae1 1b1a11c9ff855f275430c8eb428382fa767c606e M	heat/engine/auth.py
+:100644 100644 1759e37f7f5453386ccb313b5b5c93e533098939 2e5879af24495d537c8857cbecde9d1f0fe47d4c M	heat/engine/resources.py
+:100644 100644 0e25b45c33b8a0764242e3401874c8eef841e9f1 e56f231f6f68364a2851bdfb3778027fab4b39bb M	heat/tests/test_api_cfn_v1.py
+:100644 100644 3e5fb7acf9017d6dfd27b76d48eba77e9e17ff57 1a6fa4b198cbf4410ebc41a66917f4fce5f5bf04 M	heat/tests/test_api_cloudwatch.py
+:100644 100644 b5a52075ff51f1ad4d249a7dbce038ba9604b654 93034ee52b66ad1b29d1c70bb6a4e09122af106f M	heat/tests/test_api_openstack_v1.py
+:100644 100644 122f3dc4cb589f73e947d2914313672a2c46b4de 4f64a5aa3681fa1740b7084f14386a5a9083445f M	heat/tests/test_validate.py
+
+commit 52968f4a16b1af85770f532f734143add807c53b
+tree bb37252798a326b893c5e5a1810c0124a68b728d
+parent 5658f9d4dbe759fe26a7b820058b8e257f796f35
+author Steven Hardy <shardy@redhat.com> 1350659535 +0100
+committer Steven Hardy <shardy@redhat.com> 1350670613 +0100
+
+    heat engine : remove unused EC2 style auth from engine
+    
+    We handle EC2 style auth at the heat-api-cfn level, so EC2
+    style authenticated requests simply pass us an auth_token in
+    the context, so remove this duplicate/dead code.
+    
+    Ref #268
+    
+    Change-Id: I17708cb6ef4b0eb4989d47c116b6211f0d419dcb
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 b422dbe1cf1d597acf8dd3ec5dee78ee615ab177 cffc566c7fca9b8585a5629dac66443e7964bae1 M	heat/engine/auth.py

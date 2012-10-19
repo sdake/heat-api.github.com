@@ -1,0 +1,15 @@
+Changes in branch origin/master, between 6ea813be339f8218cef6ceaa61bbe3a698783e09 and 5658f9d4dbe759fe26a7b820058b8e257f796f35
+commit 5658f9d4dbe759fe26a7b820058b8e257f796f35
+tree 321fb9fbeed68b4fa0f08ff59fab401e2ac5cb5f
+parent 6ea813be339f8218cef6ceaa61bbe3a698783e09
+author Jeff Peeler <jpeeler@redhat.com> 1350660004 -0400
+committer Jeff Peeler <jpeeler@redhat.com> 1350660004 -0400
+
+    Do not assume host has selinux utils installed
+    
+    related to #265
+    
+    Change-Id: I4a6cff1f05b6f4f88d672cc0d4ce5e8f62a58e47
+    Signed-off-by: Jeff Peeler <jpeeler@redhat.com>
+
+:100644 100644 8b69ddf3f0e7876b6180fbd68d377842cc5830df bb107de7185d7be1b8251e35eb52c7106453e6e7 M	heat/cloudinit/config

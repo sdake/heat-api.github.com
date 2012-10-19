@@ -1,0 +1,17 @@
+Changes in branch origin/master, between 5d7ebbaa06fa348e1e50121316580811c3f15105 and d75075cf35907530f8211d53d89b4ffd186fe251
+commit 0816b2963c4c334efe65f2a0cf2748ae6bc708c0
+tree 9685b4eebd71c5c0fbce0cbb71ebbc51ecfec3e7
+parent 6ea813be339f8218cef6ceaa61bbe3a698783e09
+author Zane Bitter <zbitter@redhat.com> 1350659652 +0200
+committer Zane Bitter <zbitter@redhat.com> 1350660878 +0200
+
+    ReST API: Format output as JSON
+    
+    Eventually, both XML and JSON will be supported, but for now make the
+    output JSON, the same as the input.
+    
+    Change-Id: If0f00b182c27616a9a6f08b468d732c718b7635a
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 3e29dbd89da8045253d0bb979ad7011a6c9dda66 59e42672f1351d496aa0667d8d1d3caef8d37520 M	heat/api/openstack/v1/stacks.py
+:100644 100644 b5a52075ff51f1ad4d249a7dbce038ba9604b654 7ac056a5f7da7a4ca1b018a0bb6d4a113d37c011 M	heat/tests/test_api_openstack_v1.py

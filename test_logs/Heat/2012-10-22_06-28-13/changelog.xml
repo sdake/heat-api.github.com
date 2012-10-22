@@ -1,0 +1,23 @@
+Changes in branch origin/master, between d75075cf35907530f8211d53d89b4ffd186fe251 and 3bc725b5bd1ec82cc5e307d08803836d83a9e143
+commit 3bc725b5bd1ec82cc5e307d08803836d83a9e143
+tree 6c7fa5b1a0bb9f74ccdaa1bd3be0a6edaa6712c0
+parent d75075cf35907530f8211d53d89b4ffd186fe251
+author Zane Bitter <zbitter@redhat.com> 1350897607 +0200
+committer Zane Bitter <zbitter@redhat.com> 1350901527 +0200
+
+    Pass the correct tenant for the service user
+    
+    Previously, the service user (which authenticates tokens passes to the
+    engine by the APIs) was paired with the tenant of the end user to do
+    authentication, which worked only when they were in the same tenant. This
+    should not be the case, since the service user should only have an admin
+    role in the "service" tenant.
+    
+    Fixes #269
+    
+    Change-Id: I99b764fc489429dd6d081485bd89d5dde737c124
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 7d8bbb60759d6b05ab60b702c2645218433c362c e7b4d6450230de16f2d10f8414bacbbe698ba20a M	heat/common/auth_token.py
+:100644 100644 2da8599935d6d2d4b854707c0e56f27c0e9c8870 efe46f1ad46e0e94698dade1c40538b8a28fb675 M	heat/common/context.py
+:100644 100644 a305bab3467b52630ad6a0f54b63e60dad76a59f b4a61b029e6edc4290e4696891b92f0d02628174 M	heat/engine/resources.py

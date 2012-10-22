@@ -1,0 +1,18 @@
+Changes in branch origin/master, between 7036a387f48fb0cd5266f57fa148a32d98cd7270 and d65ae5b3133c72bd6bde013ace36bcfbbc1e51a9
+commit d65ae5b3133c72bd6bde013ace36bcfbbc1e51a9
+tree 19556b8a4e41ccd0f1c1a2a6d2141e8588d4d416
+parent 7036a387f48fb0cd5266f57fa148a32d98cd7270
+author Steven Hardy <shardy@redhat.com> 1350927486 +0100
+committer Steven Hardy <shardy@redhat.com> 1350929888 +0100
+
+    heat engine : Make Resource::swift handle auth_token
+    
+    Make Resource::swift() handle auth_token so the S3
+    resource will work with AWS auth
+    
+    Fixes #271
+    
+    Change-Id: Ie5aca026dea25045e42aab677a2c793c79de1658
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 b4a61b029e6edc4290e4696891b92f0d02628174 a2e5f99cd201ec2dbd04939bb0cb7cd19a2ea98d M	heat/engine/resources.py

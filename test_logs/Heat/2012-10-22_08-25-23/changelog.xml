@@ -1,0 +1,46 @@
+Changes in branch origin/master, between 3bc725b5bd1ec82cc5e307d08803836d83a9e143 and 7036a387f48fb0cd5266f57fa148a32d98cd7270
+commit 7036a387f48fb0cd5266f57fa148a32d98cd7270
+tree 92bf637cd43a153db707f95f8a947fdbb2b54083
+parent 567128f594bf45748528e610f01d90255ff0eb60
+author Zane Bitter <zbitter@redhat.com> 1350568227 +0200
+committer Zane Bitter <zbitter@redhat.com> 1350907600 +0200
+
+    ReST API: Add a keystone endpoint
+    
+    Change-Id: I2770279ec50822c106d3ae23ce2f736a49139443
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100755 100755 5d6fbc01ddde3d957331e2ce79681a6f0710193a a908555626f97240c77a3b5f1925561304eda65a M	bin/heat-keystone-setup
+
+commit 567128f594bf45748528e610f01d90255ff0eb60
+tree 4bcccdc8ad09c00af27aac2c36d18c5c9a17b738
+parent 2e7e7c44cf52191cf54222c8256c6afcc6f00aa5
+author Zane Bitter <zbitter@redhat.com> 1350571853 +0200
+committer Zane Bitter <zbitter@redhat.com> 1350907583 +0200
+
+    Handle %(tenant_id)s in endpoints when updating
+    
+    Change-Id: I61112f02b60b6bb63f33d5459edec1f44a49bdd5
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100755 100755 880a0f323e951c810178cdb957664a53fc136bb0 5d6fbc01ddde3d957331e2ce79681a6f0710193a M	bin/heat-keystone-setup
+
+commit 2e7e7c44cf52191cf54222c8256c6afcc6f00aa5
+tree 8b5b64c94b2dcc26f4b90aa2747271e2662ca394
+parent 3bc725b5bd1ec82cc5e307d08803836d83a9e143
+author Zane Bitter <zbitter@redhat.com> 1350897899 +0200
+committer Zane Bitter <zbitter@redhat.com> 1350907165 +0200
+
+    Change the service user to match devstack
+    
+    The user which authenticates keystone tokens should be the "heat" user in
+    the "service" tenant. This changes the default configuration to do this, as
+    devstack already does.
+    
+    Ref #269
+    
+    Change-Id: I89978ec0b490f6d404c568197dd4208097a4b695
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 bad885b25eefd8e305b20479193ee765e73920a8 a15c1e3d7f80a906a03eb17f8d6fac00d65232fa M	etc/heat/heat-api-cfn-paste.ini
+:100644 100644 fc8afd3db0737fe4c5a12640a1e8827f014339a1 b562de278a9762d2cb4b40b863550459b07072d7 M	etc/heat/heat-api-paste.ini

@@ -2070,3 +2070,10 @@ skipping non-regular file "96"
 skipping non-regular file "97"
 skipping non-regular file "98"
 skipping non-regular file "99"
+[master 8b4fde8] Sync jenkins-Heat-151 build logs
+ 4 files changed, 2292 insertions(+)
+ create mode 100644 test_logs/Heat/2012-10-19_22-58-44/build.xml
+ create mode 100644 test_logs/Heat/2012-10-22_06-28-13/changelog.xml
+ create mode 100644 test_logs/Heat/2012-10-22_06-28-13/log
+~/heat-integration
+Finished: FAILURE

@@ -1,0 +1,15 @@
+Changes in branch origin/master, between d65ae5b3133c72bd6bde013ace36bcfbbc1e51a9 and aa9f26b00041761e35fd205faf482d58819bbc1a
+commit aa9f26b00041761e35fd205faf482d58819bbc1a
+tree cb8f838c07c50f0416a30de2cc935714e09e6fd9
+parent d65ae5b3133c72bd6bde013ace36bcfbbc1e51a9
+author Zane Bitter <zbitter@redhat.com> 1350985787 +0200
+committer Zane Bitter <zbitter@redhat.com> 1350985787 +0200
+
+    Bump version to v8
+    
+    v7 has branched
+    
+    Change-Id: Ib8d3471576e0d408b18f4ab4d04ffdeafba234b5
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 9eafd553c275403a99123c751581e19a5a17d499 4f67db11f9eee674fad71a4657b307a2ff572297 M	heat/version.py

@@ -1,0 +1,42 @@
+Changes in branch origin/master, between aa9f26b00041761e35fd205faf482d58819bbc1a and b0661fdc8cb289a4d0d531809fcfc399936d3f18
+commit b0661fdc8cb289a4d0d531809fcfc399936d3f18
+tree 11ba835d7d00dfc5821a25171854c8ce0e3f8ca0
+parent 320999bf804869e6579c2d555bf211e17c86858d
+author Steven Hardy <shardy@redhat.com> 1350576782 +0100
+committer Steven Hardy <shardy@redhat.com> 1350989949 +0100
+
+    heat engine : kill running greenthreads on stack_delete
+    
+    Add logic to track running eventlet greenthreads and kill
+    them when we start a stack_delete.  This should avoid errors
+    where long-running greenthreads end up referencing stacks which
+    have subsequently been deleted.
+    
+    Fixes #261
+    Ref #223
+    
+    Change-Id: I0d10b6f2dad0efa1caec18a67a3cc66cc693ea24
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 4145813c6b7386e0daca97959bcc53134341cb15 9ea57d771d56f3a7d675d37d8c79916ef63ce77b M	heat/engine/manager.py
+:100644 100644 f6dde6a4f3eb722f3d9b44156b0f0b78a258fdce 7e2ef5cd8db1bd7d1fcc69fb4fe7a9a409b852d6 M	heat/tests/test_engine_manager.py
+
+commit 320999bf804869e6579c2d555bf211e17c86858d
+tree 6300c14fc6399c55e314068ad73c9d878c7c3e30
+parent aa9f26b00041761e35fd205faf482d58819bbc1a
+author Steven Hardy <shardy@redhat.com> 1350481088 +0100
+committer Steven Hardy <shardy@redhat.com> 1350989161 +0100
+
+    heat engine : Store all resource states to DB
+    
+    Resources should be committed to the DB on transisiton
+    to CREATE_IN_PROGRESS state, otherwise resources
+    which take a long time to go from CREATE_IN_PROGRESS to
+    CREATE_COMPLETE (e.g WaitConditions) are invisible while
+    in the CREATE_IN_PROGRESS state to all except the thread
+    creating them.
+    
+    Change-Id: If1563505e854c216c0f6a5ce84b613e1ccb74386
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 a2e5f99cd201ec2dbd04939bb0cb7cd19a2ea98d 90439c828a15595e7fd82b109f45a93cc71d4139 M	heat/engine/resources.py

@@ -1,0 +1,52 @@
+Changes in branch origin/master, between 445a1fdf783b2521c528265a9c10a5c8b516befa and 29b7ae7c1be059ef5b8b457329c453189417a175
+commit 29b7ae7c1be059ef5b8b457329c453189417a175
+tree a39e86d97e21222aaa70c43feac488277582756d
+parent fd66a93cc77e7c719b710496c8eeba23f7f60482
+author Steven Hardy <shardy@redhat.com> 1350998437 +0100
+committer Steven Hardy <shardy@redhat.com> 1351026303 +0100
+
+    heat tests : StackBoto fix _check_*_result functions
+    
+    The _check_*_result functions don't actually check anything
+    so make them check the response format, which should be a stackid
+    
+    Change-Id: I6b22cdc64409846caadbd2ebca5e8a81eccc81a6
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 cb6390b9f991dfe2e9272b5ea44b7be843795ef6 160d4f609165cf25d18abb49ec860dfc0ba89869 M	heat/tests/functional/util.py
+
+commit fd66a93cc77e7c719b710496c8eeba23f7f60482
+tree 996baeacbba075df6b153ef4ca165f1638f7d54e
+parent dd6a3781520004cec56cb8f87aafd762e9322430
+author Steven Hardy <shardy@redhat.com> 1350998199 +0100
+committer Steven Hardy <shardy@redhat.com> 1351026275 +0100
+
+    heat tests : refactor stackid check into utils.Stack
+    
+    Rework utils.Stack._check_stackid so it can be used in the
+    tests to verify stackid format, avoiding maintaining multiple
+    copies of a stackid regex
+    
+    Change-Id: If7fbd7b35626c377b42a43ffa03ee8067540963b
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 d54e86ddc88824a42761bb12fca81d738fd36b59 a0edc8775c8a2a55d734975553cd80e678acdeb8 M	heat/tests/functional/test_CFN_API_Actions.py
+:100644 100644 a21b326149523bc1d361fc29ca1285b7b8cbeb6c 35cd544d7398cbf1f8e8fb8e0904d3ccf29251b5 M	heat/tests/functional/test_CFN_API_Actions_Boto.py
+:100644 100644 736d85702d2c6dff5c4a1b90ead8e5534ae429fc cb6390b9f991dfe2e9272b5ea44b7be843795ef6 M	heat/tests/functional/util.py
+
+commit dd6a3781520004cec56cb8f87aafd762e9322430
+tree ce3253ce81ce57ab916d0cc72aa522d96a397102
+parent 445a1fdf783b2521c528265a9c10a5c8b516befa
+author Steven Hardy <shardy@redhat.com> 1350996135 +0100
+committer Steven Hardy <shardy@redhat.com> 1351026196 +0100
+
+    heat tests : fix CFN_API_Actions test fix state reason
+    
+    state reason is "state changed" not None now we commit
+    the IN_PROGRESS state transition to the DB
+    
+    Change-Id: I4c6641cd489de13ee9575fcdf879cae95ad7df4d
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 b164c587b85559611f50ecdc0e738b83ca21330e d54e86ddc88824a42761bb12fca81d738fd36b59 M	heat/tests/functional/test_CFN_API_Actions.py
+:100644 100644 7fa53de55bbeaa73a9f0625fa165b80a37ae8dd7 a21b326149523bc1d361fc29ca1285b7b8cbeb6c M	heat/tests/functional/test_CFN_API_Actions_Boto.py

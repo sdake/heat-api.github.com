@@ -1,0 +1,17 @@
+Changes in branch origin/master, between b0661fdc8cb289a4d0d531809fcfc399936d3f18 and 445a1fdf783b2521c528265a9c10a5c8b516befa
+commit 445a1fdf783b2521c528265a9c10a5c8b516befa
+tree b94d4710f361554d1f020c24eb58a42d02fbe31c
+parent b0661fdc8cb289a4d0d531809fcfc399936d3f18
+author Steven Hardy <shardy@redhat.com> 1350994077 +0100
+committer Steven Hardy <shardy@redhat.com> 1351026175 +0100
+
+    heat tests : fix CFN_API_Actions test stackid regex
+    
+    stackid format has changed since move from tenant name to
+    tenant id
+    
+    Change-Id: I5e8304f33d49133bc1b7e5530ae1a8323e2986c5
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 5c8fa199f00513ba0630b77d2908eeaf8597bc5e b164c587b85559611f50ecdc0e738b83ca21330e M	heat/tests/functional/test_CFN_API_Actions.py
+:100644 100644 d45ee83f5a29b3b553d9629aedd275da7e69fdbf 7fa53de55bbeaa73a9f0625fa165b80a37ae8dd7 M	heat/tests/functional/test_CFN_API_Actions_Boto.py

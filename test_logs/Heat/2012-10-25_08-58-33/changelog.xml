@@ -1,0 +1,21 @@
+Changes in branch origin/master, between 4743749b80593878ac85bc1aa2d844b606cda6b0 and 92c985191b907096b1cb2aa8c77efa9773596a35
+commit 92c985191b907096b1cb2aa8c77efa9773596a35
+tree cb6340299f155342a10b7b063d844c1296eb9991
+parent 4743749b80593878ac85bc1aa2d844b606cda6b0
+author Steven Hardy <shardy@redhat.com> 1351025978 +0100
+committer Steven Hardy <shardy@redhat.com> 1351162315 +0100
+
+    heat engine : Allow instance users to view their own details
+    
+    So that cfn-hup can read instance metadata via the DescribeStackResource
+    API call, we need non-admin "instance users" to be allowed to read their
+    own AccessKey resource details (since it can-be/is referenced in the
+    instance resource metadata).  The change in this patch should allow non-admin
+    users to read *only their own* secret AccessKey, and leave existing admin-user
+    visibility of the AccessKey resources unchanged.
+    
+    Change-Id: Ic26d614d8e30104fbb354a67d3376b5d995ae8cc
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 880060b5b05e56f54c8e08344465ba078384bae5 3890373a0a251fa1d3ed8ce2779285d306deeef1 M	heat/engine/user.py
+:100644 100644 7e0f46099e6ebb154c21452e11cc82df167f21b3 d6afe44463c81ef62bae10467897e6af5714e2c7 M	heat/tests/test_user.py

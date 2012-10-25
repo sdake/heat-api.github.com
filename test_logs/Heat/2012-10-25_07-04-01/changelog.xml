@@ -1,0 +1,39 @@
+Changes in branch origin/master, between b3b56ff59d1402ba2188778e683d5b3725fb941e and 4743749b80593878ac85bc1aa2d844b606cda6b0
+commit 4743749b80593878ac85bc1aa2d844b606cda6b0
+tree 4c515610921c5697ecc104fd7497d735934c2f72
+parent f5099e02d5b2f1312f10dd255c11d951c75ce34e
+author Steven Hardy <shardy@redhat.com> 1351156589 +0100
+committer Steven Hardy <shardy@redhat.com> 1351156589 +0100
+
+    heat-keystone-setup add instance role
+    
+    Add "heat_instance" role which we will assign all "instance users"
+    to in the engine when we create them
+    
+    Ref #279
+    
+    Change-Id: If7cc07c605f7696c1e9f617dbfca1b81d5b04196
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100755 100755 e3cc784111dd9d164416f7ace26d5fb897485cc6 7fb740069cf5c058bcbba8708b365ad584b6c974 M	bin/heat-keystone-setup
+
+commit f5099e02d5b2f1312f10dd255c11d951c75ce34e
+tree 1e664110b8429a7a44dbc60dd0b525fd343dded4
+parent b3b56ff59d1402ba2188778e683d5b3725fb941e
+author Steven Hardy <shardy@redhat.com> 1351082902 +0100
+committer Steven Hardy <shardy@redhat.com> 1351155679 +0100
+
+    heat-keystone-setup workaround keystone arg syntax
+    
+    Keystone user-role-add syntax is not the same on essex
+    and folsom, so try both formats so we can work with either
+    Removes potentially unreliable approach to detecting keystone
+    version, and also avoids error on folsom when the user already
+    has the specified role
+    
+    Fixes #272
+    
+    Change-Id: Iece52223a29069a1fd517018cc49613be6fac318
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100755 100755 74691bd0b883251ca91a3ef37ccb6657898ad1e0 e3cc784111dd9d164416f7ace26d5fb897485cc6 M	bin/heat-keystone-setup

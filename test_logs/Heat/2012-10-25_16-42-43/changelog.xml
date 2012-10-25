@@ -1,0 +1,16 @@
+Changes in branch origin/master, between 70b609567d72fa22d645df0665308af98418e4fd and c31d2426a4f2b3ca3bbe96a9d6c280f521f0fc46
+commit c31d2426a4f2b3ca3bbe96a9d6c280f521f0fc46
+tree 9d0869e49d7def210829a661c0afe5515e834348
+parent 70b609567d72fa22d645df0665308af98418e4fd
+author Zane Bitter <zbitter@redhat.com> 1351196307 +0200
+committer Zane Bitter <zbitter@redhat.com> 1351196918 +0200
+
+    Move Timestamp code to separate file
+    
+    Change-Id: I57627f5b9048bbbcda0a07ac274fd1e579348496
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 9f804cd0d61f597e929fed6de26149a1f3b4fb7c 7e82c131ff1a4656f05b5a88490c4cb915e6b3b6 M	heat/engine/parser.py
+:100644 100644 90439c828a15595e7fd82b109f45a93cc71d4139 2b15e2a7727dfa03c529ce80375d30cd3e72ad54 M	heat/engine/resources.py
+:000000 100644 0000000000000000000000000000000000000000 c271c5c10dc323be58a3e4032f3791fe665a36f5 A	heat/engine/timestamp.py
+:100644 100644 5d150655cf6b8b9b9ae5c3de526fe32158e519d2 abc0a109ef79a1d7c715bbef42c5601146cf7a3d M	heat/engine/watchrule.py

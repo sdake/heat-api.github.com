@@ -1,0 +1,38 @@
+Changes in branch origin/master, between 92c985191b907096b1cb2aa8c77efa9773596a35 and 70b609567d72fa22d645df0665308af98418e4fd
+commit 70b609567d72fa22d645df0665308af98418e4fd
+tree 9beba1d65379bf874ce2d2093e55627606009f7c
+parent cd9a3a7c95f560551214c10784590111537ff3f1
+author Steven Hardy <shardy@redhat.com> 1351170289 +0100
+committer Steven Hardy <shardy@redhat.com> 1351170289 +0100
+
+    heat-keystone-setup : change role to heat_stack_user
+    
+    Change heat_instance role name to heat_stack_user after discussions
+    
+    Change-Id: I14e95df0e02d82566f4758510ae38f6b26ccb532
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100755 100755 7fb740069cf5c058bcbba8708b365ad584b6c974 9c8669b63c80f91ffb250633326f58fb9d305573 M	bin/heat-keystone-setup
+
+commit cd9a3a7c95f560551214c10784590111537ff3f1
+tree 3457fcaa0319eee8a25386ac70effc64532c1c1f
+parent 92c985191b907096b1cb2aa8c77efa9773596a35
+author Steven Hardy <shardy@redhat.com> 1351161200 +0100
+committer Steven Hardy <shardy@redhat.com> 1351169989 +0100
+
+    heat engine : add template-defined users to keystone role
+    
+    Add all keystone users created by the User resource type
+    to a special keystone role, which can be used later for
+    defining RBAC policy for these users, and also works around
+    a keystone bug (1060959) on Folsom
+    
+    Fixes #279
+    
+    Change-Id: I94931e427ed51f4332bcb506220925b7ce8097bc
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 b84b0533d112717d8e0931b8e2683bd3e0ae751c 1a99585040d6e14ab6d50600755d07c5b86c2195 M	etc/heat/heat-engine.conf
+:100644 100644 f782e44450729c23a365804cc6f170d182a4851a 4af919c64103400d748184f5761429ffc13f7bea M	heat/common/config.py
+:100644 100644 3890373a0a251fa1d3ed8ce2779285d306deeef1 83c827cb3dbbc65dc48bb984dfeb70f30e6b05a2 M	heat/engine/user.py
+:100644 100644 d6afe44463c81ef62bae10467897e6af5714e2c7 f26e2811f31c9d464a708db215b5ebbae320eb59 M	heat/tests/test_user.py

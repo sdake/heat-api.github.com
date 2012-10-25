@@ -1,0 +1,19 @@
+Changes in branch origin/master, between 29b7ae7c1be059ef5b8b457329c453189417a175 and b3b56ff59d1402ba2188778e683d5b3725fb941e
+commit b3b56ff59d1402ba2188778e683d5b3725fb941e
+tree f90cbe4d6c241a6ee8dad6e0cf10bb808306e445
+parent 29b7ae7c1be059ef5b8b457329c453189417a175
+author Steven Hardy <shardy@redhat.com> 1351082494 +0100
+committer Steven Hardy <shardy@redhat.com> 1351155679 +0100
+
+    heat-keystone-setup workaround keystone output reordering
+    
+    Folsom version of keystoneclient orders the columns for
+    keystone user-list differently, so we need to detect the
+    new format to extract the correct field
+    
+    Fixes #273
+    
+    Change-Id: I46f653dd3a8f7b5a68648fbd72671f95b386a547
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100755 100755 a908555626f97240c77a3b5f1925561304eda65a 74691bd0b883251ca91a3ef37ccb6657898ad1e0 M	bin/heat-keystone-setup

@@ -1,0 +1,15 @@
+Changes in branch origin/master, between ffd410dab5bd5d8a05c8eb1772765af45a602792 and 763cf3142b2d68285a7f1a59e12fd5f1031c3ac0
+commit c629b241c1380424805cd909b1e839cc50502c6f
+tree ba828b79137a086b59593866670f8a4525306039
+parent 29b7ae7c1be059ef5b8b457329c453189417a175
+author Steve Baker <sbaker@redhat.com> 1351125112 +1300
+committer Steve Baker <sbaker@redhat.com> 1351197741 +1300
+
+    Format stack_identity as id *and* links.
+    
+    Here the id is defined as {stack_id}
+    
+    Change-Id: Ieadda61d608e2d3e7125b42758cf80588178c042
+
+:100644 100644 59e42672f1351d496aa0667d8d1d3caef8d37520 d32ccf83e54aca7ed32425037617bd64069adf3b M	heat/api/openstack/v1/stacks.py
+:100644 100644 0c81a3267f312d7d2ccaba9682ad71d68da6c3e4 c5b0387855c91c4ebcd55a305ffd8476a68e130a M	heat/tests/test_api_openstack_v1.py

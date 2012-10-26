@@ -1,0 +1,40 @@
+Changes in branch origin/master, between c31d2426a4f2b3ca3bbe96a9d6c280f521f0fc46 and ffd410dab5bd5d8a05c8eb1772765af45a602792
+commit ffd410dab5bd5d8a05c8eb1772765af45a602792
+tree 4cdb98583c4ce0814772e219b1af7494ee92adc0
+parent c31d2426a4f2b3ca3bbe96a9d6c280f521f0fc46
+author Zane Bitter <zbitter@redhat.com> 1351190660 +0200
+committer Zane Bitter <zbitter@redhat.com> 1351197066 +0200
+
+    Move resources into a separate sub-package
+    
+    Change-Id: I5a6d74949b6f39a9df6c5077c2ff768f50fb3ac1
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 9ea57d771d56f3a7d675d37d8c79916ef63ce77b 9d16b3e21555e28dfc115bf6b155e1fdcb40b33c M	heat/engine/manager.py
+:000000 100644 0000000000000000000000000000000000000000 4ff07839cec87722cc56abd922130b017afa5506 A	heat/engine/resources/__init__.py
+:100644 100644 93982c21939731cfae153e4954dac4f786c8cfcd 189001c429cb334d77d9ba1fce2a161ac7776f68 R097	heat/engine/autoscaling.py	heat/engine/resources/autoscaling.py
+:100644 100644 22747cb699c18b7ee2f6542708c6781f76d1bb40 3feff0c3054e2818110de803cf93d870ab38010c R093	heat/engine/cloud_watch.py	heat/engine/resources/cloud_watch.py
+:100644 100644 0529986b795d29d6704878f627800438231bf318 0f36a8f5e464f833bd3ae1752a0598c14f72f570 R099	heat/engine/dbinstance.py	heat/engine/resources/dbinstance.py
+:100644 100644 4b9e59d4c9a51fe357e0dc3d910cb574f3ddbad9 0990ee63fd55c9795495f247de6fc2b763f2e100 R091	heat/engine/eip.py	heat/engine/resources/eip.py
+:100644 100644 9c00c506aff55a7a3e3a2f07bf24063ce8e88b80 865d1548916b82aecc6c5a747f763762ed90272e R098	heat/engine/instance.py	heat/engine/resources/instance.py
+:100644 100644 28ba01f45d133394487862532747139ad594d3c8 0d7cec47a79f284f17c84fb66d17283d49249bd1 R099	heat/engine/loadbalancer.py	heat/engine/resources/loadbalancer.py
+:100644 100644 4126e965724d7886f4362b162dc8f56f3b4f7fea c626f1f3d8d8f757b161759d106435c26a66ad68 R074	heat/engine/resource_types.py	heat/engine/resources/register.py
+:100644 100644 2b15e2a7727dfa03c529ce80375d30cd3e72ad54 7555f0a3ed60a7470c3f0716743c40b0aa863340 R099	heat/engine/resources.py	heat/engine/resources/resource.py
+:100644 100644 7dcebc52af420f04ba54ca4120a1bf6eabdaeb1c 5daa71bf9af995c74fe2fba05bd5d8146fbdf0f3 R098	heat/engine/s3.py	heat/engine/resources/s3.py
+:100644 100644 b9986cdc9857ff80e9f88dfddcadf5879bb3d624 970cd08b0a255c04ea116b4099162abe132cb47a R097	heat/engine/security_group.py	heat/engine/resources/security_group.py
+:100644 100644 189f5b8216ceab859225fc2d25affd318f7d6aeb 40614d283fc34ba9580298685f9c95d58a565c5b R096	heat/engine/stack.py	heat/engine/resources/stack.py
+:100644 100644 83c827cb3dbbc65dc48bb984dfeb70f30e6b05a2 968eaab07c0aebd8bed9dd0eb25dbb2474681357 R098	heat/engine/user.py	heat/engine/resources/user.py
+:100644 100644 6a8e399f2c8db8597f754bec05c6af0f2520b498 090daf2e6648cb353548f6b89310d5a643f0260b R097	heat/engine/volume.py	heat/engine/resources/volume.py
+:100644 100644 fe55fa71cd797dbfe134d98b7084ef00e0024dac 13b541e1d935383ca38d5e19e89291611db5818d R096	heat/engine/wait_condition.py	heat/engine/resources/wait_condition.py
+:100644 100644 32156c0d62ba6e485e2e3d78b19ac171efb7d0e7 76f71aa4b0771e2fad049d101b399e5bcb7b6d11 M	heat/tests/test_autoscaling.py
+:100644 100644 092ddce6fdd47b273c8d1dafc962a5af8b32735f 95057ecb08fd197a685bb07fbe1a9e29be8aa8b4 M	heat/tests/test_dbinstance.py
+:100644 100644 abb19e09ab3251435a36ed7d609a3d34d5cbabd8 4a417e9e2325d741e85890a8be35a282c1d402c9 M	heat/tests/test_eip.py
+:100644 100644 7e2ef5cd8db1bd7d1fcc69fb4fe7a9a409b852d6 cdb33afdd2f665294f67ef800fd6b11388d7617c M	heat/tests/test_engine_manager.py
+:100644 100644 b9ad04fdc26449584db89432a08a7fa38e8c0e0b 3b730c7c7072559e1822286926df1dd805c454d5 M	heat/tests/test_instance.py
+:100644 100644 bc60458fe108d2dbf47d2b81d5ea99db1f74f100 0ad4f25f2bff87a62b2c9011aa4a588dd92e8557 M	heat/tests/test_loadbalancer.py
+:100644 100644 875e975de4e82680c901ae3a9f53a19c6a8f5209 200ff12ff9b9ab4afcbf32510df585d29e9c69f9 M	heat/tests/test_resource.py
+:100644 100644 552b8742aa3d85eb54cc95fde443de6c02786afa f1cf2fd3659162b6b3a27131a3d43c0893e2ea33 M	heat/tests/test_s3.py
+:100644 100644 f26e2811f31c9d464a708db215b5ebbae320eb59 35dd9d2bd2cafb6b03ddcc245a6a9d7d155ef5d9 M	heat/tests/test_user.py
+:100644 100644 4f64a5aa3681fa1740b7084f14386a5a9083445f 1ef43cb88858ae4d90e628741a193fad1a23a575 M	heat/tests/test_validate.py
+:100644 100644 8c60ce3e19d05a152f18e4db204d0e446713ff7f c127d2c106a1ebf74c09f89f0ef9973a6c25f6ad M	heat/tests/test_volume.py
+:100644 100644 5307f214ed44c241843edb62018f45b6529d8632 570a4d796cdc27eb1d3fd9646a5aceafa658de7f M	heat/tests/test_waitcondition.py

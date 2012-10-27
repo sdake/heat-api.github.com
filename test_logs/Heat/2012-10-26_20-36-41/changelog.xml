@@ -1,0 +1,28 @@
+Changes in branch origin/master, between 763cf3142b2d68285a7f1a59e12fd5f1031c3ac0 and 997a2165e7d64d295de0b92d8261cde3fa5ac53f
+commit 997a2165e7d64d295de0b92d8261cde3fa5ac53f
+tree 3c163fb7215200d5130d3d1b12f3789e0be8e8e6
+parent 763cf3142b2d68285a7f1a59e12fd5f1031c3ac0
+author Steven Hardy <shardy@redhat.com> 1351171831 +0100
+committer Steven Hardy <shardy@redhat.com> 1351269347 +0100
+
+    heat metadata : remove metadata_url logic
+    
+    Remove logic where the heat-metadata server registers a
+    URL on startup with the engine.  The instance metadata is
+    now served via the CFN api, so we just have a config-file
+    option specifying the URL of the CFN API.  We don't want to
+    preserve the "register on startup" logic, because we need the
+    engine to have access to this information even if it is
+    restarted independent of some other service (avoid reliance on
+    services coming up in a particular order)
+    
+    Change-Id: I690170977227ec96451d2a2fd25f7e507370b604
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100755 100755 6c6fe4d6e9872ba42e7c72f2f2a0db4564e3957f bb1ea63e4c1cf52cfef083dee7e0c3146e22ce06 M	bin/heat-metadata
+:100644 100644 3db719c1a89f1bbfcd6954298e620abbb30ddfcc 4fb45d0e1a15f641895631f3a518bf2b335eb042 M	docs/GettingStarted.rst
+:100644 100644 1a99585040d6e14ab6d50600755d07c5b86c2195 f7c2405cd91781fc1966592ef5d1e961f241a9d5 M	etc/heat/heat-engine.conf
+:100644 100644 9d16b3e21555e28dfc115bf6b155e1fdcb40b33c a34f692de63af9756074d7bfa46c020d7063096c M	heat/engine/manager.py
+:100644 100644 865d1548916b82aecc6c5a747f763762ed90272e 076d68145631207adb04425d4bf7716f181f2bfe M	heat/engine/resources/instance.py
+:100644 100644 7555f0a3ed60a7470c3f0716743c40b0aa863340 712f42b1ce3416fac7123b3ce523c5a2655c363a M	heat/engine/resources/resource.py
+:100644 100644 13b541e1d935383ca38d5e19e89291611db5818d 66eba75f8fcacf48043c7e8a64418cfe2fc26371 M	heat/engine/resources/wait_condition.py

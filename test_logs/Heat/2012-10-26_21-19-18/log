@@ -1,17 +1,17 @@
-Triggered by Gerrit: https://review.openstack.org/14878
+Triggered by Gerrit: https://review.openstack.org/14879
 Building in workspace /var/lib/jenkins/jobs/Heat/workspace
 Checkout:workspace / /var/lib/jenkins/jobs/Heat/workspace - hudson.remoting.LocalChannel@85c3715
 Using strategy: Default
-Last Built Revision: Revision 763cf3142b2d68285a7f1a59e12fd5f1031c3ac0 (origin/master)
+Last Built Revision: Revision 997a2165e7d64d295de0b92d8261cde3fa5ac53f (origin/master)
 Wiping out workspace first.
 Cloning the remote Git repository
 Cloning repository https://review.openstack.org/heat-api/heat
 git --version
 git version 1.7.11.2
 Fetching upstream changes from https://review.openstack.org/heat-api/heat
-Commencing build of Revision 997a2165e7d64d295de0b92d8261cde3fa5ac53f (origin/master)
-Checking out Revision 997a2165e7d64d295de0b92d8261cde3fa5ac53f (origin/master)
-[workspace] $ /bin/sh -xe /tmp/hudson2261589501385518721.sh
+Commencing build of Revision 0ba94dcc7a2d6fac0579331beb0e6ca267ee8c81 (origin/master)
+Checking out Revision 0ba94dcc7a2d6fac0579331beb0e6ca267ee8c81 (origin/master)
+[workspace] $ /bin/sh -xe /tmp/hudson6643163440242370405.sh
 + /var/lib/jenkins/heat-integration/remote-test.sh
 Deleting mrg-04.mpc.lab.eng.bos.redhat.com from SSH known hosts file...
 Attempting to provision machine mrg-04.mpc.lab.eng.bos.redhat.com with Beaker
@@ -31,36 +31,29 @@ Waiting for host networking...
 Waiting for host networking...
 Waiting for host networking...
 Waiting for host networking...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
+Waiting for host reboot...
 Waiting for host networking...
 Waiting for host networking...
-Waiting for host reboot...
-Waiting for host reboot...
-Waiting for host reboot...
-Waiting for host reboot...
-Waiting for host reboot...
-Waiting for host reboot...
-Waiting for host reboot...
-Waiting for host reboot...
-Waiting for host reboot...
-Waiting for host reboot...
-Waiting for host reboot...
-Waiting for host reboot...
-Waiting for host reboot...
-Waiting for host reboot...
-Waiting for host reboot...
-Waiting for host reboot...
-Waiting for host reboot...
-Waiting for host reboot...
-Waiting for host reboot...
-Waiting for host reboot...
-Waiting for host reboot...
-Waiting for host reboot...
-Waiting for host reboot...
-Waiting for host reboot...
-Waiting for host reboot...
-Waiting for host reboot...
-Waiting for host reboot...
-Waiting for host reboot...
 Waiting for host networking...
 Waiting for host networking...
 Waiting for host networking...
@@ -75,7 +68,7 @@ Waiting for host networking...
 Waiting for host networking...
 Waiting for host networking...
 Warning: Permanently added 'mrg-04.mpc.lab.eng.bos.redhat.com,10.16.144.40' (RSA) to the list of known hosts.
- 20:57:42 up 0 min,  0 users,  load average: 0.55, 0.12, 0.04
+ 21:38:29 up 0 min,  0 users,  load average: 0.51, 0.11, 0.04
 Copying scripts to test machine...
 Copying Fedora ISO to test machine...
 Configuring test machine...
@@ -87,6 +80,8 @@ Importing GPG key 0x1ACA3465:
  Fingerprint: cac4 3fb7 74a4 a673 d81c 5de7 50e9 4c99 1aca 3465
  Package    : fedora-release-17-1.noarch (@anaconda-0)
  From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-x86_64
+http://download-i2.fedoraproject.org/pub/fedora/linux/updates/17/x86_64/elfutils-libs-0.154-2.fc17.x86_64.rpm: [Errno 14] curl#7 - "Couldn't connect"
+Trying other mirror.
 Starting essential daemons...
 Configuring heattest user...
 Installing test scripts...
@@ -95,25 +90,19 @@ Running remote test...
 Extracting heat-api from tarball...
 Install integration test environment...
 ~/heat ~
-http://download-i2.fedoraproject.org/pub/fedora/linux/updates/17/x86_64/boost-system-1.48.0-13.fc17.x86_64.rpm: [Errno 14] curl#7 - "Couldn't connect"
-Trying other mirror.
-http://mirrors.usc.edu/pub/linux/distributions/fedora/linux/updates/17/x86_64/libicu-4.8.1.1-4.fc17.x86_64.rpm: [Errno 14] HTTP Error 404 - Not Found : http://mirrors.usc.edu/pub/linux/distributions/fedora/linux/updates/17/x86_64/libicu-4.8.1.1-4.fc17.x86_64.rpm
-Trying other mirror.
-http://mirror.es.its.nyu.edu/fedora/linux/updates/17/x86_64/python-django-horizon-2012.1.3-1.fc17.noarch.rpm: [Errno 14] HTTP Error 404 - Not Found : http://mirror.es.its.nyu.edu/fedora/linux/updates/17/x86_64/python-django-horizon-2012.1.3-1.fc17.noarch.rpm
-Trying other mirror.
 0+0 records in
 0+0 records out
-0 bytes (0 B) copied, 8.782e-06 s, 0.0 kB/s
+0 bytes (0 B) copied, 9.277e-06 s, 0.0 kB/s
 Verified connectivity to MySQL.
 Creating 'nova' database.
 Asking openstack-nova to sync the database.
-2012-10-26 21:02:40 WARNING nova.utils [-] /usr/lib64/python2.7/site-packages/sqlalchemy/pool.py:683: SADeprecationWarning: The 'listeners' argument to Pool (and create_engine()) is deprecated.  Use event.listen().
+2012-10-26 21:42:23 WARNING nova.utils [-] /usr/lib64/python2.7/site-packages/sqlalchemy/pool.py:683: SADeprecationWarning: The 'listeners' argument to Pool (and create_engine()) is deprecated.  Use event.listen().
   Pool.__init__(self, creator, **kw)
 
-2012-10-26 21:02:40 WARNING nova.utils [-] /usr/lib64/python2.7/site-packages/sqlalchemy/pool.py:159: SADeprecationWarning: Pool.add_listener is deprecated.  Use event.listen()
+2012-10-26 21:42:23 WARNING nova.utils [-] /usr/lib64/python2.7/site-packages/sqlalchemy/pool.py:159: SADeprecationWarning: Pool.add_listener is deprecated.  Use event.listen()
   self.add_listener(l)
 
-2012-10-26 21:02:40 AUDIT nova.db.sqlalchemy.fix_dns_domains [-] Applying database fix for Essex dns_domains table.
+2012-10-26 21:42:23 AUDIT nova.db.sqlalchemy.fix_dns_domains [-] Applying database fix for Essex dns_domains table.
 Complete!
 Verified connectivity to MySQL.
 Creating 'glance' database.
@@ -131,57 +120,57 @@ Complete!
 |   Property  |                        Value                         |
 +-------------+------------------------------------------------------+
 | adminurl    | http://localhost:$(compute_port)s/v1.1/$(tenant_id)s |
-| id          | 5a46158975844edba65a75c4d576d2b0                     |
+| id          | e03d935461104c1dbd42aff9073de61f                     |
 | internalurl | http://localhost:$(compute_port)s/v1.1/$(tenant_id)s |
 | publicurl   | http://localhost:$(compute_port)s/v1.1/$(tenant_id)s |
 | region      | RegionOne                                            |
-| service_id  | 54edaf8afda4443d850e1210950e05a5                     |
+| service_id  | 9c09cb97b3a140b3a685782b64820ee7                     |
 +-------------+------------------------------------------------------+
 +-------------+--------------------------------------+
 |   Property  |                Value                 |
 +-------------+--------------------------------------+
 | adminurl    | http://localhost:8773/services/Admin |
-| id          | 03fa3a0d03c64d2e96f14b8a1a5446bb     |
+| id          | 7f0e1a54a8f9459c976af1294e7ecd4a     |
 | internalurl | http://localhost:8773/services/Cloud |
 | publicurl   | http://localhost:8773/services/Cloud |
 | region      | RegionOne                            |
-| service_id  | 8f7d5fbefff44ca0a8f1aa31bcdbec3c     |
+| service_id  | 7a7d63ace6f046c4b939e4a3f460823f     |
 +-------------+--------------------------------------+
 +-------------+----------------------------------+
 |   Property  |              Value               |
 +-------------+----------------------------------+
 | adminurl    | http://localhost:9292/v1         |
-| id          | 72779fa37b2940879c1e5c2a021a911c |
+| id          | 85242374188744df9c328c9bc7e9de88 |
 | internalurl | http://localhost:9292/v1         |
 | publicurl   | http://localhost:9292/v1         |
 | region      | RegionOne                        |
-| service_id  | 8f959f30be644fcca3f0057f7793ceeb |
+| service_id  | 7024c060f5d34ebeb29c1470c629a02e |
 +-------------+----------------------------------+
 +-------------+---------------------------------------+
 |   Property  |                 Value                 |
 +-------------+---------------------------------------+
 | adminurl    | http://localhost:$(admin_port)s/v2.0  |
-| id          | f55f6a832c3a4cadb5b43276417ebcb7      |
+| id          | eb96e05f789f4115beb5b2fdbe818230      |
 | internalurl | http://localhost:$(admin_port)s/v2.0  |
 | publicurl   | http://localhost:$(public_port)s/v2.0 |
 | region      | RegionOne                             |
-| service_id  | 71bd1f9ed28b4e10b45582d27a23df1d      |
+| service_id  | 53b01716c98c4967ab8158cd9165d47d      |
 +-------------+---------------------------------------+
 +-------------+----------------------------------------+
 |   Property  |                 Value                  |
 +-------------+----------------------------------------+
 | adminurl    | http://localhost:8776/v1/$(tenant_id)s |
-| id          | e0dbe694df96401ca5d34a2f36c75704       |
+| id          | 10fef7e31e5741899289c29719f20320       |
 | internalurl | http://localhost:8776/v1/$(tenant_id)s |
 | publicurl   | http://localhost:8776/v1/$(tenant_id)s |
 | region      | RegionOne                              |
-| service_id  | 6afd30120c424383a665de16bdd821ed       |
+| service_id  | 6927b31e529e4000a2f13121ed6a4f1e       |
 +-------------+----------------------------------------+
 +-------------+----------------------------------+
 |   Property  |              Value               |
 +-------------+----------------------------------+
 | description | OpenStack Dashboard              |
-| id          | e693cabcbf804e0796cab9954fd49e62 |
+| id          | 15d62a535c1c493e8902f604ab72c804 |
 | name        | horizon                          |
 | type        | dashboard                        |
 +-------------+----------------------------------+
@@ -454,7 +443,7 @@ creating dist
 Creating tar archive
 removing 'oz-0.10.0' (and everything under it)
 rpmbuild -ba oz.spec --define "_sourcedir `pwd`/dist"
-Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.VE23UY
+Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.IUNyZJ
 + umask 022
 + cd /home/heattest/rpmbuild/BUILD
 + cd /home/heattest/rpmbuild/BUILD
@@ -466,7 +455,7 @@ Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.VE23UY
 + cd oz-0.10.0
 + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
 + exit 0
-Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.s73WyC
+Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.jRX868
 + umask 022
 + cd /home/heattest/rpmbuild/BUILD
 + cd oz-0.10.0
@@ -476,92 +465,92 @@ running build_py
 creating build
 creating build/lib
 creating build/lib/oz
-copying oz/FedoraCore.py -> build/lib/oz
-copying oz/OzException.py -> build/lib/oz
-copying oz/TDL.py -> build/lib/oz
-copying oz/RedHat.py -> build/lib/oz
-copying oz/RHEL_6.py -> build/lib/oz
-copying oz/GuestFactory.py -> build/lib/oz
-copying oz/RHEL_3.py -> build/lib/oz
-copying oz/OpenSUSE.py -> build/lib/oz
-copying oz/Windows.py -> build/lib/oz
-copying oz/ozutil.py -> build/lib/oz
-copying oz/Ubuntu.py -> build/lib/oz
-copying oz/__init__.py -> build/lib/oz
-copying oz/Guest.py -> build/lib/oz
-copying oz/RHEL_2_1.py -> build/lib/oz
-copying oz/Debian.py -> build/lib/oz
-copying oz/RHEL_4.py -> build/lib/oz
-copying oz/RHL.py -> build/lib/oz
-copying oz/Mandriva.py -> build/lib/oz
-copying oz/Fedora.py -> build/lib/oz
-copying oz/Mandrake.py -> build/lib/oz
 copying oz/RHEL_5.py -> build/lib/oz
+copying oz/Windows.py -> build/lib/oz
+copying oz/RHL.py -> build/lib/oz
+copying oz/Debian.py -> build/lib/oz
+copying oz/OzException.py -> build/lib/oz
+copying oz/ozutil.py -> build/lib/oz
+copying oz/RHEL_6.py -> build/lib/oz
+copying oz/OpenSUSE.py -> build/lib/oz
+copying oz/Mandrake.py -> build/lib/oz
+copying oz/RedHat.py -> build/lib/oz
+copying oz/Guest.py -> build/lib/oz
+copying oz/TDL.py -> build/lib/oz
+copying oz/Mandriva.py -> build/lib/oz
+copying oz/Ubuntu.py -> build/lib/oz
+copying oz/Fedora.py -> build/lib/oz
+copying oz/RHEL_3.py -> build/lib/oz
+copying oz/RHEL_2_1.py -> build/lib/oz
+copying oz/GuestFactory.py -> build/lib/oz
+copying oz/RHEL_4.py -> build/lib/oz
+copying oz/FedoraCore.py -> build/lib/oz
+copying oz/__init__.py -> build/lib/oz
 creating build/lib/oz/auto
-copying oz/auto/mandrake-10.1-jeos.cfg -> build/lib/oz/auto
-copying oz/auto/ubuntu-10.10-jeos.preseed -> build/lib/oz/auto
-copying oz/auto/fedoracore-4-jeos.ks -> build/lib/oz/auto
-copying oz/auto/ubuntu-10.04-jeos.preseed -> build/lib/oz/auto
-copying oz/auto/ubuntu-8.04-jeos.preseed -> build/lib/oz/auto
-copying oz/auto/mandrake-8.2-jeos.cfg -> build/lib/oz/auto
-copying oz/auto/fedora-14-jeos.ks -> build/lib/oz/auto
-copying oz/auto/mandrake-10.0-jeos.cfg -> build/lib/oz/auto
-copying oz/auto/ubuntu-9.10-jeos.preseed -> build/lib/oz/auto
-copying oz/auto/windows-2000-jeos.sif -> build/lib/oz/auto
-copying oz/auto/mandriva-2006.0-jeos.cfg -> build/lib/oz/auto
-copying oz/auto/rhl-8-jeos.ks -> build/lib/oz/auto
-copying oz/auto/mandriva-2008.0-jeos.cfg -> build/lib/oz/auto
-copying oz/auto/rhel-5-jeos.ks -> build/lib/oz/auto
-copying oz/auto/ubuntu-6.06-jeos.preseed -> build/lib/oz/auto
 copying oz/auto/ubuntu-11.04-jeos.preseed -> build/lib/oz/auto
-copying oz/auto/fedoracore-1-jeos.ks -> build/lib/oz/auto
-copying oz/auto/ubuntu-7.04-jeos.preseed -> build/lib/oz/auto
-copying oz/auto/fedoracore-2-jeos.ks -> build/lib/oz/auto
-copying oz/auto/debian-5-jeos.preseed -> build/lib/oz/auto
-copying oz/auto/rhl-7.0-jeos.ks -> build/lib/oz/auto
-copying oz/auto/rhl-7.2-jeos.ks -> build/lib/oz/auto
-copying oz/auto/opensuse-11.4-jeos.xml -> build/lib/oz/auto
-copying oz/auto/mandrake-9.2-jeos.cfg -> build/lib/oz/auto
-copying oz/auto/fedora-15-jeos.ks -> build/lib/oz/auto
-copying oz/auto/fedoracore-5-jeos.ks -> build/lib/oz/auto
-copying oz/auto/opensuse-11.1-jeos.xml -> build/lib/oz/auto
-copying oz/auto/fedora-16-jeos.ks -> build/lib/oz/auto
-copying oz/auto/fedora-17-jeos.ks -> build/lib/oz/auto
-copying oz/auto/fedora-10-jeos.ks -> build/lib/oz/auto
-copying oz/auto/rhel-4-jeos.ks -> build/lib/oz/auto
-copying oz/auto/fedora-8-jeos.ks -> build/lib/oz/auto
-copying oz/auto/windows-2008-jeos.xml -> build/lib/oz/auto
-copying oz/auto/rhl-7.1-jeos.ks -> build/lib/oz/auto
-copying oz/auto/rhl-7.3-jeos.ks -> build/lib/oz/auto
-copying oz/auto/windows-XP-jeos.sif -> build/lib/oz/auto
-copying oz/auto/mandrake-9.1-jeos.cfg -> build/lib/oz/auto
-copying oz/auto/rhel-6-jeos.ks -> build/lib/oz/auto
-copying oz/auto/fedora-9-jeos.ks -> build/lib/oz/auto
-copying oz/auto/ubuntu-6.10-jeos.preseed -> build/lib/oz/auto
-copying oz/auto/fedora-11-jeos.ks -> build/lib/oz/auto
-copying oz/auto/fedora-7-jeos.ks -> build/lib/oz/auto
-copying oz/auto/ubuntu-9.04-jeos.preseed -> build/lib/oz/auto
 copying oz/auto/fedoracore-3-jeos.ks -> build/lib/oz/auto
-copying oz/auto/opensuse-11.0-jeos.xml -> build/lib/oz/auto
-copying oz/auto/rhel-3-jeos.ks -> build/lib/oz/auto
-copying oz/auto/rhl-9-jeos.ks -> build/lib/oz/auto
-copying oz/auto/ubuntu-8.10-jeos.preseed -> build/lib/oz/auto
-copying oz/auto/mandriva-2005-jeos.cfg -> build/lib/oz/auto
-copying oz/auto/opensuse-10.3-jeos.xml -> build/lib/oz/auto
-copying oz/auto/windows-7-jeos.xml -> build/lib/oz/auto
-copying oz/auto/ubuntu-11.10-jeos.preseed -> build/lib/oz/auto
 copying oz/auto/ubuntu-7.10-jeos.preseed -> build/lib/oz/auto
-copying oz/auto/ubuntu-12.04-jeos.preseed -> build/lib/oz/auto
-copying oz/auto/fedora-13-jeos.ks -> build/lib/oz/auto
-copying oz/auto/fedora-12-jeos.ks -> build/lib/oz/auto
-copying oz/auto/opensuse-11.3-jeos.xml -> build/lib/oz/auto
-copying oz/auto/fedoracore-6-jeos.ks -> build/lib/oz/auto
-copying oz/auto/opensuse-11.2-jeos.xml -> build/lib/oz/auto
+copying oz/auto/mandrake-9.1-jeos.cfg -> build/lib/oz/auto
+copying oz/auto/windows-2000-jeos.sif -> build/lib/oz/auto
+copying oz/auto/windows-7-jeos.xml -> build/lib/oz/auto
+copying oz/auto/fedora-7-jeos.ks -> build/lib/oz/auto
+copying oz/auto/ubuntu-11.10-jeos.preseed -> build/lib/oz/auto
+copying oz/auto/windows-XP-jeos.sif -> build/lib/oz/auto
+copying oz/auto/rhel-6-jeos.ks -> build/lib/oz/auto
 copying oz/auto/windows-2003-jeos.sif -> build/lib/oz/auto
-copying oz/auto/rhel-2.1-jeos.ks -> build/lib/oz/auto
-copying oz/auto/opensuse-12.1-jeos.xml -> build/lib/oz/auto
+copying oz/auto/windows-2008-jeos.xml -> build/lib/oz/auto
 copying oz/auto/debian-6-jeos.preseed -> build/lib/oz/auto
+copying oz/auto/fedora-10-jeos.ks -> build/lib/oz/auto
+copying oz/auto/fedoracore-1-jeos.ks -> build/lib/oz/auto
+copying oz/auto/rhel-5-jeos.ks -> build/lib/oz/auto
+copying oz/auto/fedora-14-jeos.ks -> build/lib/oz/auto
+copying oz/auto/rhl-7.2-jeos.ks -> build/lib/oz/auto
+copying oz/auto/rhl-7.0-jeos.ks -> build/lib/oz/auto
+copying oz/auto/fedora-16-jeos.ks -> build/lib/oz/auto
+copying oz/auto/opensuse-12.1-jeos.xml -> build/lib/oz/auto
+copying oz/auto/ubuntu-6.06-jeos.preseed -> build/lib/oz/auto
 copying oz/auto/mandriva-2007.0-jeos.cfg -> build/lib/oz/auto
+copying oz/auto/rhel-3-jeos.ks -> build/lib/oz/auto
+copying oz/auto/fedora-9-jeos.ks -> build/lib/oz/auto
+copying oz/auto/mandrake-8.2-jeos.cfg -> build/lib/oz/auto
+copying oz/auto/mandrake-9.2-jeos.cfg -> build/lib/oz/auto
+copying oz/auto/mandriva-2008.0-jeos.cfg -> build/lib/oz/auto
+copying oz/auto/opensuse-11.2-jeos.xml -> build/lib/oz/auto
+copying oz/auto/fedoracore-4-jeos.ks -> build/lib/oz/auto
+copying oz/auto/opensuse-10.3-jeos.xml -> build/lib/oz/auto
+copying oz/auto/opensuse-11.1-jeos.xml -> build/lib/oz/auto
+copying oz/auto/ubuntu-12.04-jeos.preseed -> build/lib/oz/auto
+copying oz/auto/fedora-12-jeos.ks -> build/lib/oz/auto
+copying oz/auto/mandrake-10.1-jeos.cfg -> build/lib/oz/auto
+copying oz/auto/fedora-11-jeos.ks -> build/lib/oz/auto
+copying oz/auto/fedoracore-2-jeos.ks -> build/lib/oz/auto
+copying oz/auto/rhel-2.1-jeos.ks -> build/lib/oz/auto
+copying oz/auto/mandrake-10.0-jeos.cfg -> build/lib/oz/auto
+copying oz/auto/ubuntu-8.10-jeos.preseed -> build/lib/oz/auto
+copying oz/auto/fedora-8-jeos.ks -> build/lib/oz/auto
+copying oz/auto/mandriva-2006.0-jeos.cfg -> build/lib/oz/auto
+copying oz/auto/opensuse-11.3-jeos.xml -> build/lib/oz/auto
+copying oz/auto/opensuse-11.4-jeos.xml -> build/lib/oz/auto
+copying oz/auto/ubuntu-10.10-jeos.preseed -> build/lib/oz/auto
+copying oz/auto/rhl-7.3-jeos.ks -> build/lib/oz/auto
+copying oz/auto/mandriva-2005-jeos.cfg -> build/lib/oz/auto
+copying oz/auto/fedora-17-jeos.ks -> build/lib/oz/auto
+copying oz/auto/rhel-4-jeos.ks -> build/lib/oz/auto
+copying oz/auto/ubuntu-9.04-jeos.preseed -> build/lib/oz/auto
+copying oz/auto/fedoracore-6-jeos.ks -> build/lib/oz/auto
+copying oz/auto/ubuntu-6.10-jeos.preseed -> build/lib/oz/auto
+copying oz/auto/fedora-15-jeos.ks -> build/lib/oz/auto
+copying oz/auto/debian-5-jeos.preseed -> build/lib/oz/auto
+copying oz/auto/ubuntu-8.04-jeos.preseed -> build/lib/oz/auto
+copying oz/auto/fedora-13-jeos.ks -> build/lib/oz/auto
+copying oz/auto/rhl-8-jeos.ks -> build/lib/oz/auto
+copying oz/auto/rhl-7.1-jeos.ks -> build/lib/oz/auto
+copying oz/auto/ubuntu-9.10-jeos.preseed -> build/lib/oz/auto
+copying oz/auto/rhl-9-jeos.ks -> build/lib/oz/auto
+copying oz/auto/fedoracore-5-jeos.ks -> build/lib/oz/auto
+copying oz/auto/ubuntu-10.04-jeos.preseed -> build/lib/oz/auto
+copying oz/auto/opensuse-11.0-jeos.xml -> build/lib/oz/auto
+copying oz/auto/ubuntu-7.04-jeos.preseed -> build/lib/oz/auto
 running build_scripts
 creating build/scripts-2.7
 copying and adjusting oz-install -> build/scripts-2.7
@@ -573,190 +562,190 @@ changing mode of build/scripts-2.7/oz-generate-icicle from 644 to 755
 changing mode of build/scripts-2.7/oz-customize from 644 to 755
 changing mode of build/scripts-2.7/oz-cleanup-cache from 644 to 755
 + exit 0
-Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.Umxvmg
+Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.77V1oy
 + umask 022
 + cd /home/heattest/rpmbuild/BUILD
 + cd oz-0.10.0
-+ python setup.py install --root=/home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64 --skip-build
++ python setup.py install --root=/home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64 --skip-build
 running install
 running install_lib
-creating /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64
-creating /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr
-creating /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib
-creating /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7
-creating /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages
-creating /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
-copying build/lib/oz/FedoraCore.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
-copying build/lib/oz/OzException.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
-copying build/lib/oz/TDL.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
-creating /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/mandrake-10.1-jeos.cfg -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/ubuntu-10.10-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/fedoracore-4-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/ubuntu-10.04-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/ubuntu-8.04-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/mandrake-8.2-jeos.cfg -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/fedora-14-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/mandrake-10.0-jeos.cfg -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/ubuntu-9.10-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/windows-2000-jeos.sif -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/mandriva-2006.0-jeos.cfg -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/rhl-8-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/mandriva-2008.0-jeos.cfg -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/rhel-5-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/ubuntu-6.06-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/ubuntu-11.04-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/fedoracore-1-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/ubuntu-7.04-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/fedoracore-2-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/debian-5-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/rhl-7.0-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/rhl-7.2-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/opensuse-11.4-jeos.xml -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/mandrake-9.2-jeos.cfg -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/fedora-15-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/fedoracore-5-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/opensuse-11.1-jeos.xml -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/fedora-16-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/fedora-17-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/fedora-10-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/rhel-4-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/fedora-8-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/windows-2008-jeos.xml -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/rhl-7.1-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/rhl-7.3-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/windows-XP-jeos.sif -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/mandrake-9.1-jeos.cfg -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/rhel-6-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/fedora-9-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/ubuntu-6.10-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/fedora-11-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/fedora-7-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/ubuntu-9.04-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/fedoracore-3-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/opensuse-11.0-jeos.xml -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/rhel-3-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/rhl-9-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/ubuntu-8.10-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/mandriva-2005-jeos.cfg -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/opensuse-10.3-jeos.xml -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/windows-7-jeos.xml -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/ubuntu-11.10-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/ubuntu-7.10-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/ubuntu-12.04-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/fedora-13-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/fedora-12-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/opensuse-11.3-jeos.xml -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/fedoracore-6-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/opensuse-11.2-jeos.xml -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/windows-2003-jeos.sif -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/rhel-2.1-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/opensuse-12.1-jeos.xml -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/debian-6-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/auto/mandriva-2007.0-jeos.cfg -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
-copying build/lib/oz/RedHat.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
-copying build/lib/oz/RHEL_6.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
-copying build/lib/oz/GuestFactory.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
-copying build/lib/oz/RHEL_3.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
-copying build/lib/oz/OpenSUSE.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
-copying build/lib/oz/Windows.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
-copying build/lib/oz/ozutil.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
-copying build/lib/oz/Ubuntu.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
-copying build/lib/oz/__init__.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
-copying build/lib/oz/Guest.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
-copying build/lib/oz/RHEL_2_1.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
-copying build/lib/oz/Debian.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
-copying build/lib/oz/RHEL_4.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
-copying build/lib/oz/RHL.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
-copying build/lib/oz/Mandriva.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
-copying build/lib/oz/Fedora.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
-copying build/lib/oz/Mandrake.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
-copying build/lib/oz/RHEL_5.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
-byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/FedoraCore.py to FedoraCore.pyc
-byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/OzException.py to OzException.pyc
-byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/TDL.py to TDL.pyc
-byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/RedHat.py to RedHat.pyc
-byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/RHEL_6.py to RHEL_6.pyc
-byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/GuestFactory.py to GuestFactory.pyc
-byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/RHEL_3.py to RHEL_3.pyc
-byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/OpenSUSE.py to OpenSUSE.pyc
-byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/Windows.py to Windows.pyc
-byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/ozutil.py to ozutil.pyc
-byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/Ubuntu.py to Ubuntu.pyc
-byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/__init__.py to __init__.pyc
-byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/Guest.py to Guest.pyc
-byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/RHEL_2_1.py to RHEL_2_1.pyc
-byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/Debian.py to Debian.pyc
-byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/RHEL_4.py to RHEL_4.pyc
-byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/RHL.py to RHL.pyc
-byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/Mandriva.py to Mandriva.pyc
-byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/Fedora.py to Fedora.pyc
-byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/Mandrake.py to Mandrake.pyc
-byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/RHEL_5.py to RHEL_5.pyc
+creating /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64
+creating /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr
+creating /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib
+creating /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7
+creating /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages
+creating /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+copying build/lib/oz/RHEL_5.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+copying build/lib/oz/Windows.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+copying build/lib/oz/RHL.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+copying build/lib/oz/Debian.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+copying build/lib/oz/OzException.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+copying build/lib/oz/ozutil.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+copying build/lib/oz/RHEL_6.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+copying build/lib/oz/OpenSUSE.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+copying build/lib/oz/Mandrake.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+copying build/lib/oz/RedHat.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+copying build/lib/oz/Guest.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+copying build/lib/oz/TDL.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+copying build/lib/oz/Mandriva.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+copying build/lib/oz/Ubuntu.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+copying build/lib/oz/Fedora.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+copying build/lib/oz/RHEL_3.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+copying build/lib/oz/RHEL_2_1.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+copying build/lib/oz/GuestFactory.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+copying build/lib/oz/RHEL_4.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+creating /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/ubuntu-11.04-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/fedoracore-3-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/ubuntu-7.10-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/mandrake-9.1-jeos.cfg -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/windows-2000-jeos.sif -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/windows-7-jeos.xml -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/fedora-7-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/ubuntu-11.10-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/windows-XP-jeos.sif -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/rhel-6-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/windows-2003-jeos.sif -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/windows-2008-jeos.xml -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/debian-6-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/fedora-10-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/fedoracore-1-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/rhel-5-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/fedora-14-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/rhl-7.2-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/rhl-7.0-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/fedora-16-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/opensuse-12.1-jeos.xml -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/ubuntu-6.06-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/mandriva-2007.0-jeos.cfg -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/rhel-3-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/fedora-9-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/mandrake-8.2-jeos.cfg -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/mandrake-9.2-jeos.cfg -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/mandriva-2008.0-jeos.cfg -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/opensuse-11.2-jeos.xml -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/fedoracore-4-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/opensuse-10.3-jeos.xml -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/opensuse-11.1-jeos.xml -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/ubuntu-12.04-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/fedora-12-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/mandrake-10.1-jeos.cfg -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/fedora-11-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/fedoracore-2-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/rhel-2.1-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/mandrake-10.0-jeos.cfg -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/ubuntu-8.10-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/fedora-8-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/mandriva-2006.0-jeos.cfg -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/opensuse-11.3-jeos.xml -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/opensuse-11.4-jeos.xml -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/ubuntu-10.10-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/rhl-7.3-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/mandriva-2005-jeos.cfg -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/fedora-17-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/rhel-4-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/ubuntu-9.04-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/fedoracore-6-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/ubuntu-6.10-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/fedora-15-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/debian-5-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/ubuntu-8.04-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/fedora-13-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/rhl-8-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/rhl-7.1-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/ubuntu-9.10-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/rhl-9-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/fedoracore-5-jeos.ks -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/ubuntu-10.04-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/opensuse-11.0-jeos.xml -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/auto/ubuntu-7.04-jeos.preseed -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/auto
+copying build/lib/oz/FedoraCore.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+copying build/lib/oz/__init__.py -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/RHEL_5.py to RHEL_5.pyc
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/Windows.py to Windows.pyc
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/RHL.py to RHL.pyc
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/Debian.py to Debian.pyc
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/OzException.py to OzException.pyc
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/ozutil.py to ozutil.pyc
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/RHEL_6.py to RHEL_6.pyc
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/OpenSUSE.py to OpenSUSE.pyc
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/Mandrake.py to Mandrake.pyc
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/RedHat.py to RedHat.pyc
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/Guest.py to Guest.pyc
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/TDL.py to TDL.pyc
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/Mandriva.py to Mandriva.pyc
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/Ubuntu.py to Ubuntu.pyc
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/Fedora.py to Fedora.pyc
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/RHEL_3.py to RHEL_3.pyc
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/RHEL_2_1.py to RHEL_2_1.pyc
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/GuestFactory.py to GuestFactory.pyc
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/RHEL_4.py to RHEL_4.pyc
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/FedoraCore.py to FedoraCore.pyc
+byte-compiling /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz/__init__.py to __init__.pyc
 running install_scripts
-creating /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/bin
-copying build/scripts-2.7/oz-generate-icicle -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/bin
-copying build/scripts-2.7/oz-cleanup-cache -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/bin
-copying build/scripts-2.7/oz-install -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/bin
-copying build/scripts-2.7/oz-customize -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/bin
-changing mode of /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/bin/oz-generate-icicle to 755
-changing mode of /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/bin/oz-cleanup-cache to 755
-changing mode of /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/bin/oz-install to 755
-changing mode of /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/bin/oz-customize to 755
+creating /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/bin
+copying build/scripts-2.7/oz-cleanup-cache -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/bin
+copying build/scripts-2.7/oz-generate-icicle -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/bin
+copying build/scripts-2.7/oz-customize -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/bin
+copying build/scripts-2.7/oz-install -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/bin
+changing mode of /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/bin/oz-cleanup-cache to 755
+changing mode of /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/bin/oz-generate-icicle to 755
+changing mode of /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/bin/oz-customize to 755
+changing mode of /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/bin/oz-install to 755
 running install_data
-creating /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/share
-creating /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/share/man
-creating /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/share/man/man1
-copying man/oz-install.1 -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/share/man/man1
-copying man/oz-customize.1 -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/share/man/man1
-copying man/oz-generate-icicle.1 -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/share/man/man1
-copying man/oz-cleanup-cache.1 -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/share/man/man1
+creating /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/share
+creating /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/share/man
+creating /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/share/man/man1
+copying man/oz-install.1 -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/share/man/man1
+copying man/oz-customize.1 -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/share/man/man1
+copying man/oz-generate-icicle.1 -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/share/man/man1
+copying man/oz-cleanup-cache.1 -> /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/share/man/man1
 running install_egg_info
-Writing /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz-0.10.0-py2.7.egg-info
-+ mkdir -p /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/var/lib/oz/
-+ mkdir -p /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/var/lib/oz/isocontent/
-+ mkdir -p /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/var/lib/oz/isos/
-+ mkdir -p /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/var/lib/oz/floppycontent/
-+ mkdir -p /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/var/lib/oz/floppies/
-+ mkdir -p /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/var/lib/oz/icicletmp/
-+ mkdir -p /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/var/lib/oz/jeos/
-+ mkdir -p /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/var/lib/oz/kernels/
-+ mkdir -p /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/etc/oz
-+ cp oz.cfg /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/etc/oz
+Writing /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/lib/python2.7/site-packages/oz-0.10.0-py2.7.egg-info
++ mkdir -p /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/var/lib/oz/
++ mkdir -p /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/var/lib/oz/isocontent/
++ mkdir -p /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/var/lib/oz/isos/
++ mkdir -p /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/var/lib/oz/floppycontent/
++ mkdir -p /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/var/lib/oz/floppies/
++ mkdir -p /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/var/lib/oz/icicletmp/
++ mkdir -p /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/var/lib/oz/jeos/
++ mkdir -p /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/var/lib/oz/kernels/
++ mkdir -p /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/etc/oz
++ cp oz.cfg /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/etc/oz
 + make examples-manpage
 make[1]: Entering directory `/home/heattest/rpmbuild/BUILD/oz-0.10.0'
 echo "Generating oz-examples man page"
 Generating oz-examples man page
 make[1]: Leaving directory `/home/heattest/rpmbuild/BUILD/oz-0.10.0'
-+ cp man/oz-examples.1 /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/share/man/man1
-+ gzip /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/share/man/man1/oz-examples.1
++ cp man/oz-examples.1 /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/share/man/man1
++ gzip /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/share/man/man1/oz-examples.1
 + /usr/lib/rpm/brp-compress
 + /usr/lib/rpm/brp-strip /usr/bin/strip
 + /usr/lib/rpm/brp-strip-static-archive /usr/bin/strip
 + /usr/lib/rpm/brp-strip-comment-note /usr/bin/strip /usr/bin/objdump
-Processing files: oz-0.10.0-0.20121027010323git17f9c7f.fc17.noarch
-Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.sFbRzV
+Processing files: oz-0.10.0-0.20121027014306git17f9c7f.fc17.noarch
+Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.K1NL9Y
 + umask 022
 + cd /home/heattest/rpmbuild/BUILD
 + cd oz-0.10.0
-+ DOCDIR=/home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/share/doc/oz-0.10.0
++ DOCDIR=/home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/share/doc/oz-0.10.0
 + export DOCDIR
-+ /usr/bin/mkdir -p /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/share/doc/oz-0.10.0
-+ cp -pr README COPYING examples docs /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64/usr/share/doc/oz-0.10.0
++ /usr/bin/mkdir -p /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/share/doc/oz-0.10.0
++ cp -pr README COPYING examples docs /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64/usr/share/doc/oz-0.10.0
 + exit 0
-Provides: config(oz) = 0.10.0-0.20121027010323git17f9c7f.fc17
+Provides: config(oz) = 0.10.0-0.20121027014306git17f9c7f.fc17
 Requires(interp): /bin/sh
 Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
 Requires(post): /bin/sh
 Requires: /bin/python python(abi) = 2.7
-Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64
-Wrote: /home/heattest/rpmbuild/SRPMS/oz-0.10.0-0.20121027010323git17f9c7f.fc17.src.rpm
-Wrote: /home/heattest/rpmbuild/RPMS/noarch/oz-0.10.0-0.20121027010323git17f9c7f.fc17.noarch.rpm
-Executing(%clean): /bin/sh -e /var/tmp/rpm-tmp.tPF5s0
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64
+Wrote: /home/heattest/rpmbuild/SRPMS/oz-0.10.0-0.20121027014306git17f9c7f.fc17.src.rpm
+Wrote: /home/heattest/rpmbuild/RPMS/noarch/oz-0.10.0-0.20121027014306git17f9c7f.fc17.noarch.rpm
+Executing(%clean): /bin/sh -e /var/tmp/rpm-tmp.palQXm
 + umask 022
 + cd /home/heattest/rpmbuild/BUILD
 + cd oz-0.10.0
-+ /usr/bin/rm -rf /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027010323git17f9c7f.fc17.x86_64
++ /usr/bin/rm -rf /home/heattest/rpmbuild/BUILDROOT/oz-0.10.0-0.20121027014306git17f9c7f.fc17.x86_64
 + exit 0
 ~/heat
 Installing heat in /etc/bash_completion.d
@@ -773,39 +762,39 @@ warning: no files found matching 'AUTHORS'
 warning: no files found matching 'ChangeLog'
 zip_safe flag not set; analyzing archive contents...
 heat.service: module MAY be using inspect.stack
-heat.engine.resources.loadbalancer: module references __file__
-heat.engine.resources.instance: module references __path__
-heat.engine.resources.stack: module references __file__
-heat.engine.resources.dbinstance: module references __file__
-heat.openstack.common.log: module MAY be using inspect.stack
-heat.testing.runner: module references __file__
+heat.tests.test_instance: module references __file__
+heat.tests.test_api_cloudwatch: module references __file__
 heat.tests.test_api_aws: module references __file__
 heat.tests.test_api_openstack_v1: module references __file__
+heat.tests.test_dbinstance: module references __file__
+heat.tests.test_autoscaling: module references __file__
 heat.tests.test_validate: module references __file__
-heat.tests.test_dependencies: module references __file__
-heat.tests.test_instance: module references __file__
 heat.tests.test_waitcondition: module references __file__
+heat.tests.test_dependencies: module references __file__
+heat.tests.test_identifier: module references __file__
+heat.tests.test_user: module references __file__
+heat.tests.test_volume: module references __file__
+heat.tests.test_engine_manager: module references __file__
+heat.tests.test_s3: module references __file__
 heat.tests.test_resource: module references __file__
 heat.tests.test_api_cfn_v1: module references __file__
-heat.tests.test_autoscaling: module references __file__
-heat.tests.test_identifier: module references __file__
-heat.tests.test_s3: module references __file__
-heat.tests.test_loadbalancer: module references __file__
-heat.tests.test_volume: module references __file__
-heat.tests.test_user: module references __file__
-heat.tests.test_dbinstance: module references __file__
+heat.tests.test_parser: module references __file__
 heat.tests.test_eip: module references __file__
 heat.tests.test_cfn: module references __file__
-heat.tests.test_engine_manager: module references __file__
-heat.tests.test_parser: module references __file__
-heat.tests.test_api_cloudwatch: module references __file__
-heat.tests.examples.test1: module references __file__
+heat.tests.test_loadbalancer: module references __file__
 heat.tests.examples.test3: module references __file__
+heat.tests.examples.test1: module references __file__
 heat.tests.examples.test2: module references __file__
 heat.tests.functional.util: module references __file__
 heat.tests.functional.util: module references __path__
+heat.testing.runner: module references __file__
 heat.db.sqlalchemy.manage: module references __file__
 heat.db.sqlalchemy.migration: module references __file__
+heat.openstack.common.log: module MAY be using inspect.stack
+heat.engine.resources.dbinstance: module references __file__
+heat.engine.resources.stack: module references __file__
+heat.engine.resources.loadbalancer: module references __file__
+heat.engine.resources.instance: module references __path__
 Installing on an RPM system.
 Redirecting to /bin/systemctl status  mysqld.service
 Verified connectivity to MySQL.
@@ -838,37 +827,37 @@ done
 done
 Complete!
 Using the OS_PASSWORD for the SERVICE_PASSWORD.
-ADMIN_ROLE 9dd28b8ac5ae41a69c8ea8fbb06f270f
-SERVICE_TENANT 55eca148a6d44d2a81411b66281cc0e5
+ADMIN_ROLE 10ba6ef1f91e4a39b0f7a21af0988629
+SERVICE_TENANT 9610c10d61554b89bfa68cda1bd6c123
 SERVICE_PASSWORD verybadpass
-SERVICE_TOKEN 9245b27de518fbd1bbca
+SERVICE_TOKEN 17afe90a4867f9e37002
 Creating heat user...
-HEAT_USERID 3effc10cf99a42ceb3a83faa07614dd3
+HEAT_USERID f15cecfd903546e6a9c6900f745132f4
 +----------+----------------------------------+
 | Property |              Value               |
 +----------+----------------------------------+
-| id       | 600bb077bbca464781546a291e0688f7 |
+| id       | 7adbaaf086dd4fcfb5f88233643bd4c2 |
 | name     | heat_stack_user                  |
 +----------+----------------------------------+
 +-------------+----------------------------------+
 |   Property  |              Value               |
 +-------------+----------------------------------+
 | adminurl    | http://localhost:8000/v1         |
-| id          | a496f6e6f1d847a68a6a5a12198132f5 |
+| id          | e0f5ab2087e444f08b2ce1ab22e431ab |
 | internalurl | http://localhost:8000/v1         |
 | publicurl   | http://localhost:8000/v1         |
 | region      | RegionOne                        |
-| service_id  | 6b2bc26a63494f5c91a6130896602f24 |
+| service_id  | 451399bfcecc461591c35f9dd808cb83 |
 +-------------+----------------------------------+
 +-------------+----------------------------------------+
 |   Property  |                 Value                  |
 +-------------+----------------------------------------+
 | adminurl    | http://localhost:8004/v1/%(tenant_id)s |
-| id          | 2721f9d693114a40bc960cca67c4a0b8       |
+| id          | fd3d4a7033824d1d84c9188aba67664c       |
 | internalurl | http://localhost:8004/v1/%(tenant_id)s |
 | publicurl   | http://localhost:8004/v1/%(tenant_id)s |
 | region      | RegionOne                              |
-| service_id  | 978729537fc4412b81cb7aa778003ee1       |
+| service_id  | 843109780f2d4ac8823d2c374448ea09       |
 +-------------+----------------------------------------+
 ~/heat/heat-jeos ~/heat
 running install
@@ -888,8 +877,8 @@ running build_py
 creating build
 creating build/lib
 creating build/lib/heat_jeos
-copying heat_jeos/glance_clients.py -> build/lib/heat_jeos
 copying heat_jeos/utils.py -> build/lib/heat_jeos
+copying heat_jeos/glance_clients.py -> build/lib/heat_jeos
 copying heat_jeos/__init__.py -> build/lib/heat_jeos
 creating build/lib/heat_jeos/cfntools
 copying heat_jeos/cfntools/cfn_helper.py -> build/lib/heat_jeos/cfntools
@@ -914,34 +903,34 @@ copying heat_jeos/cfntools/cfn-signal -> build/lib/heat_jeos/cfntools
 creating build/bdist.linux-x86_64
 creating build/bdist.linux-x86_64/egg
 creating build/bdist.linux-x86_64/egg/heat_jeos
-copying build/lib/heat_jeos/glance_clients.py -> build/bdist.linux-x86_64/egg/heat_jeos
+copying build/lib/heat_jeos/utils.py -> build/bdist.linux-x86_64/egg/heat_jeos
 creating build/bdist.linux-x86_64/egg/heat_jeos/jeos
+copying build/lib/heat_jeos/jeos/U10-amd64-cfntools.tdl -> build/bdist.linux-x86_64/egg/heat_jeos/jeos
+copying build/lib/heat_jeos/jeos/F16-x86_64-cfntools-openshift.tdl -> build/bdist.linux-x86_64/egg/heat_jeos/jeos
+copying build/lib/heat_jeos/jeos/F16-x86_64-cfntools.tdl -> build/bdist.linux-x86_64/egg/heat_jeos/jeos
+copying build/lib/heat_jeos/jeos/F17-x86_64-gold.tdl -> build/bdist.linux-x86_64/egg/heat_jeos/jeos
+copying build/lib/heat_jeos/jeos/F17-i386-cfntools.tdl -> build/bdist.linux-x86_64/egg/heat_jeos/jeos
 copying build/lib/heat_jeos/jeos/F17-i386-gold.tdl -> build/bdist.linux-x86_64/egg/heat_jeos/jeos
 copying build/lib/heat_jeos/jeos/F16-i386-gold.tdl -> build/bdist.linux-x86_64/egg/heat_jeos/jeos
-copying build/lib/heat_jeos/jeos/F16-i386-cfntools.tdl -> build/bdist.linux-x86_64/egg/heat_jeos/jeos
-copying build/lib/heat_jeos/jeos/F16-x86_64-cfntools-openshift.tdl -> build/bdist.linux-x86_64/egg/heat_jeos/jeos
-copying build/lib/heat_jeos/jeos/F17-i386-cfntools.tdl -> build/bdist.linux-x86_64/egg/heat_jeos/jeos
-copying build/lib/heat_jeos/jeos/F16-x86_64-gold.tdl -> build/bdist.linux-x86_64/egg/heat_jeos/jeos
-copying build/lib/heat_jeos/jeos/F17-x86_64-gold.tdl -> build/bdist.linux-x86_64/egg/heat_jeos/jeos
-copying build/lib/heat_jeos/jeos/F16-x86_64-cfntools.tdl -> build/bdist.linux-x86_64/egg/heat_jeos/jeos
-copying build/lib/heat_jeos/jeos/U10-amd64-cfntools.tdl -> build/bdist.linux-x86_64/egg/heat_jeos/jeos
 copying build/lib/heat_jeos/jeos/F17-x86_64-cfntools.tdl -> build/bdist.linux-x86_64/egg/heat_jeos/jeos
-copying build/lib/heat_jeos/utils.py -> build/bdist.linux-x86_64/egg/heat_jeos
-creating build/bdist.linux-x86_64/egg/heat_jeos/cfntools
-copying build/lib/heat_jeos/cfntools/cfn-signal -> build/bdist.linux-x86_64/egg/heat_jeos/cfntools
-copying build/lib/heat_jeos/cfntools/cfn-hup -> build/bdist.linux-x86_64/egg/heat_jeos/cfntools
-copying build/lib/heat_jeos/cfntools/cfn_helper.py -> build/bdist.linux-x86_64/egg/heat_jeos/cfntools
-copying build/lib/heat_jeos/cfntools/cfn-get-metadata -> build/bdist.linux-x86_64/egg/heat_jeos/cfntools
-copying build/lib/heat_jeos/cfntools/cfn-push-stats -> build/bdist.linux-x86_64/egg/heat_jeos/cfntools
-copying build/lib/heat_jeos/cfntools/__init__.py -> build/bdist.linux-x86_64/egg/heat_jeos/cfntools
-copying build/lib/heat_jeos/cfntools/cfn-init -> build/bdist.linux-x86_64/egg/heat_jeos/cfntools
-copying build/lib/heat_jeos/cfntools/boto.cfg -> build/bdist.linux-x86_64/egg/heat_jeos/cfntools
+copying build/lib/heat_jeos/jeos/F16-x86_64-gold.tdl -> build/bdist.linux-x86_64/egg/heat_jeos/jeos
+copying build/lib/heat_jeos/jeos/F16-i386-cfntools.tdl -> build/bdist.linux-x86_64/egg/heat_jeos/jeos
+copying build/lib/heat_jeos/glance_clients.py -> build/bdist.linux-x86_64/egg/heat_jeos
 copying build/lib/heat_jeos/__init__.py -> build/bdist.linux-x86_64/egg/heat_jeos
-byte-compiling build/bdist.linux-x86_64/egg/heat_jeos/glance_clients.py to glance_clients.pyc
+creating build/bdist.linux-x86_64/egg/heat_jeos/cfntools
+copying build/lib/heat_jeos/cfntools/cfn-init -> build/bdist.linux-x86_64/egg/heat_jeos/cfntools
+copying build/lib/heat_jeos/cfntools/cfn-push-stats -> build/bdist.linux-x86_64/egg/heat_jeos/cfntools
+copying build/lib/heat_jeos/cfntools/cfn-hup -> build/bdist.linux-x86_64/egg/heat_jeos/cfntools
+copying build/lib/heat_jeos/cfntools/boto.cfg -> build/bdist.linux-x86_64/egg/heat_jeos/cfntools
+copying build/lib/heat_jeos/cfntools/cfn_helper.py -> build/bdist.linux-x86_64/egg/heat_jeos/cfntools
+copying build/lib/heat_jeos/cfntools/cfn-signal -> build/bdist.linux-x86_64/egg/heat_jeos/cfntools
+copying build/lib/heat_jeos/cfntools/cfn-get-metadata -> build/bdist.linux-x86_64/egg/heat_jeos/cfntools
+copying build/lib/heat_jeos/cfntools/__init__.py -> build/bdist.linux-x86_64/egg/heat_jeos/cfntools
 byte-compiling build/bdist.linux-x86_64/egg/heat_jeos/utils.py to utils.pyc
+byte-compiling build/bdist.linux-x86_64/egg/heat_jeos/glance_clients.py to glance_clients.pyc
+byte-compiling build/bdist.linux-x86_64/egg/heat_jeos/__init__.py to __init__.pyc
 byte-compiling build/bdist.linux-x86_64/egg/heat_jeos/cfntools/cfn_helper.py to cfn_helper.pyc
 byte-compiling build/bdist.linux-x86_64/egg/heat_jeos/cfntools/__init__.py to __init__.pyc
-byte-compiling build/bdist.linux-x86_64/egg/heat_jeos/__init__.py to __init__.pyc
 creating build/bdist.linux-x86_64/egg/EGG-INFO
 installing scripts to build/bdist.linux-x86_64/egg/EGG-INFO/scripts
 running install_scripts
@@ -974,10 +963,10 @@ Finished processing dependencies for heat-jeos==7
 
 Generated image: /var/lib/libvirt/images/F17-x86_64-cfntools.qcow2
 
-Image F17-x86_64-cfntools was registered with ID d6311ab4-5366-48e5-b95b-53fe9907cbd9
+Image F17-x86_64-cfntools was registered with ID 62ca8365-fe51-4112-95f6-02c163a9c61d
 <CreateStackResponse>
   <CreateStackResult>
-    <StackId>arn:openstack:heat::7f73f499fcbb4f5a82a593c3607497d1:stacks/wordpress/1</StackId>
+    <StackId>arn:openstack:heat::ffdc1f272153432c8507a60957719852:stacks/wordpress/1</StackId>
   </CreateStackResult>
 </CreateStackResponse>
 
@@ -985,11 +974,11 @@ Image F17-x86_64-cfntools was registered with ID d6311ab4-5366-48e5-b95b-53fe990
   <ListStacksResult>
     <StackSummaries>
       <member>
-        <StackId>arn:openstack:heat::7f73f499fcbb4f5a82a593c3607497d1:stacks/wordpress/1</StackId>
-        <LastUpdatedTime>2012-10-27T01:21:37Z</LastUpdatedTime>
+        <StackId>arn:openstack:heat::ffdc1f272153432c8507a60957719852:stacks/wordpress/1</StackId>
+        <LastUpdatedTime>2012-10-27T02:00:23Z</LastUpdatedTime>
         <TemplateDescription>AWS CloudFormation Sample Template WordPress_Single_Instance: WordPress is web software you can use to create a beautiful website or blog. This template installs a single-instance WordPress deployment using a local MySQL database to store the data.</TemplateDescription>
         <StackStatusReason>Stack creation started</StackStatusReason>
-        <CreationTime>2012-10-27T01:21:37Z</CreationTime>
+        <CreationTime>2012-10-27T02:00:23Z</CreationTime>
         <StackName>wordpress</StackName>
         <StackStatus>CREATE_IN_PROGRESS</StackStatus>
       </member>
@@ -1001,11 +990,11 @@ Image F17-x86_64-cfntools was registered with ID d6311ab4-5366-48e5-b95b-53fe990
   <DescribeStackEventsResult>
     <StackEvents>
       <member>
-        <StackId>arn:openstack:heat::7f73f499fcbb4f5a82a593c3607497d1:stacks/wordpress/1</StackId>
+        <StackId>arn:openstack:heat::ffdc1f272153432c8507a60957719852:stacks/wordpress/1</StackId>
         <EventId>1</EventId>
         <ResourceStatus>IN_PROGRESS</ResourceStatus>
         <ResourceType>AWS::EC2::Instance</ResourceType>
-        <Timestamp>2012-10-27T01:21:37Z</Timestamp>
+        <Timestamp>2012-10-27T02:00:23Z</Timestamp>
         <ResourceStatusReason>state changed</ResourceStatusReason>
         <StackName>wordpress</StackName>
         <ResourceProperties>{"NovaSchedulerHints": null, "UserData": "#!/bin/bash -v\n/opt/aws/bin/cfn-init\n# Setup MySQL root password and create a user\nmysqladmin -u root password 'admin'\ncat &lt;&lt; EOF | mysql -u root --password='admin'\nCREATE DATABASE wordpress;\nGRANT ALL PRIVILEGES ON wordpress.* TO \"heattest\"@\"localhost\"\nIDENTIFIED BY \"verybadpass\";\nFLUSH PRIVILEGES;\nEXIT\nEOF\nsed --in-place --e s/database_name_here/wordpress/ --e s/username_here/heattest/ --e s/password_here/verybadpass/ /usr/share/wordpress/wp-config.php\n", "SourceDestCheck": null, "AvailabilityZone": "nova", "Monitoring": null, "Volumes": null, "Tags": null, "Tenancy": null, "PlacementGroupName": null, "ImageId": "F17-x86_64-cfntools", "SubnetId": null, "KeyName": "heattest_key", "SecurityGroups": null, "SecurityGroupIds": null, "KernelId": null, "RamDiskId": null, "DisableApiTermination": null, "InstanceType": "m1.xlarge", "PrivateIpAddress": null}</ResourceProperties>
@@ -1021,76 +1010,15 @@ Waiting for Stack creation to complete...
 Waiting for Stack creation to complete...
 Waiting for Stack creation to complete...
 Waiting for Stack creation to complete...
-ERROR:Failed to describe. Got error:
-ERROR:Internal Server error: Traceback (most recent call last):
-ERROR:  File "/usr/lib/python2.7/site-packages/eventlet/wsgi.py", line 382, in handle_one_response
-ERROR:    result = self.application(self.environ, start_response)
-ERROR:  File "/usr/lib/python2.7/site-packages/webob/dec.py", line 147, in __call__
-ERROR:    resp = self.call_func(req, *args, **self.kwargs)
-ERROR:  File "/usr/lib/python2.7/site-packages/webob/dec.py", line 210, in call_func
-ERROR:    return self.func(req, *args, **kwargs)
-ERROR:  File "/usr/lib/python2.7/site-packages/heat-8-py2.7.egg/heat/common/wsgi.py", line 307, in __call__
-ERROR:    response = req.get_response(self.application)
-ERROR:  File "/usr/lib/python2.7/site-packages/webob/request.py", line 1086, in get_response
-ERROR:    application, catch_exc_info=False)
-ERROR:  File "/usr/lib/python2.7/site-packages/webob/request.py", line 1055, in call_application
-ERROR:    app_iter = application(self.environ, start_response)
-ERROR:  File "/usr/lib/python2.7/site-packages/webob/dec.py", line 159, in __call__
-ERROR:    return resp(environ, start_response)
-ERROR:  File "/usr/lib/python2.7/site-packages/heat-8-py2.7.egg/heat/common/auth_token.py", line 176, in __call__
-ERROR:    return self.app(env, start_response)
-ERROR:  File "/usr/lib/python2.7/site-packages/webob/dec.py", line 147, in __call__
-ERROR:    resp = self.call_func(req, *args, **self.kwargs)
-ERROR:  File "/usr/lib/python2.7/site-packages/webob/dec.py", line 210, in call_func
-ERROR:    return self.func(req, *args, **kwargs)
-ERROR:  File "/usr/lib/python2.7/site-packages/heat-8-py2.7.egg/heat/common/wsgi.py", line 307, in __call__
-ERROR:    response = req.get_response(self.application)
-ERROR:  File "/usr/lib/python2.7/site-packages/webob/request.py", line 1086, in get_response
-ERROR:    application, catch_exc_info=False)
-ERROR:  File "/usr/lib/python2.7/site-packages/webob/request.py", line 1055, in call_application
-ERROR:    app_iter = application(self.environ, start_response)
-ERROR:  File "/usr/lib/python2.7/site-packages/webob/dec.py", line 159, in __call__
-ERROR:    return resp(environ, start_response)
-ERROR:  File "/usr/lib/python2.7/site-packages/routes/middleware.py", line 131, in __call__
-ERROR:    response = self.app(environ, start_response)
-ERROR:  File "/usr/lib/python2.7/site-packages/webob/dec.py", line 159, in __call__
-ERROR:    return resp(environ, start_response)
-ERROR:  File "/usr/lib/python2.7/site-packages/webob/dec.py", line 147, in __call__
-ERROR:    resp = self.call_func(req, *args, **self.kwargs)
-ERROR:  File "/usr/lib/python2.7/site-packages/webob/dec.py", line 210, in call_func
-ERROR:    return self.func(req, *args, **kwargs)
-ERROR:  File "/usr/lib/python2.7/site-packages/heat-8-py2.7.egg/heat/common/wsgi.py", line 559, in __call__
-ERROR:    request, **action_args)
-ERROR:  File "/usr/lib/python2.7/site-packages/heat-8-py2.7.egg/heat/common/wsgi.py", line 601, in dispatch
-ERROR:    return method(*args, **kwargs)
-ERROR:  File "/usr/lib/python2.7/site-packages/heat-8-py2.7.egg/heat/api/cfn/v1/stacks.py", line 199, in describe
-ERROR:    identity = self._get_identity(con, req.params['StackName'])
-ERROR:  File "/usr/lib/python2.7/site-packages/heat-8-py2.7.egg/heat/api/cfn/v1/stacks.py", line 91, in _get_identity
-ERROR:    return self.engine_rpcapi.identify_stack(con, stack_name)
-ERROR:  File "/usr/lib/python2.7/site-packages/heat-8-py2.7.egg/heat/engine/rpcapi.py", line 71, in identify_stack
-ERROR:    topic=_engine_topic(self.topic, ctxt, None))
-ERROR:  File "/usr/lib/python2.7/site-packages/heat-8-py2.7.egg/heat/openstack/common/rpc/proxy.py", line 80, in call
-ERROR:    return rpc.call(context, self._get_topic(topic), msg, timeout)
-ERROR:  File "/usr/lib/python2.7/site-packages/heat-8-py2.7.egg/heat/openstack/common/rpc/__init__.py", line 108, in call
-ERROR:    return _get_impl().call(cfg.CONF, context, topic, msg, timeout)
-ERROR:  File "/usr/lib/python2.7/site-packages/heat-8-py2.7.egg/heat/openstack/common/rpc/impl_qpid.py", line 558, in call
-ERROR:    rpc_amqp.get_connection_pool(conf, Connection))
-ERROR:  File "/usr/lib/python2.7/site-packages/heat-8-py2.7.egg/heat/openstack/common/rpc/amqp.py", line 369, in call
-ERROR:    rv = list(rv)
-ERROR:  File "/usr/lib/python2.7/site-packages/heat-8-py2.7.egg/heat/openstack/common/rpc/amqp.py", line 330, in __iter__
-ERROR:    self.done()
-ERROR:  File "/usr/lib64/python2.7/contextlib.py", line 24, in __exit__
-ERROR:    self.gen.next()
-ERROR:  File "/usr/lib/python2.7/site-packages/heat-8-py2.7.egg/heat/openstack/common/rpc/amqp.py", line 327, in __iter__
-ERROR:    self._iterator.next()
-ERROR:  File "/usr/lib/python2.7/site-packages/heat-8-py2.7.egg/heat/openstack/common/rpc/impl_qpid.py", line 431, in iterconsume
-ERROR:    yield self.ensure(_error_callback, _consume)
-ERROR:  File "/usr/lib/python2.7/site-packages/heat-8-py2.7.egg/heat/openstack/common/rpc/impl_qpid.py", line 377, in ensure
-ERROR:    error_callback(e)
-ERROR:  File "/usr/lib/python2.7/site-packages/heat-8-py2.7.egg/heat/openstack/common/rpc/impl_qpid.py", line 416, in _error_callback
-ERROR:    raise rpc_common.Timeout()
-ERROR:Timeout: Timeout while waiting on RPC response.
-ERROR:
+Waiting for Stack creation to complete...
+Waiting for Stack creation to complete...
+Waiting for Stack creation to complete...
+Waiting for Stack creation to complete...
+Waiting for Stack creation to complete...
+Waiting for Stack creation to complete...
+Waiting for host networking...
+Waiting for host networking...
+Waiting for host networking...
 Waiting for package installation...
 Waiting for package installation...
 Waiting for package installation...
@@ -1146,7 +1074,7 @@ Connection to mrg-04.mpc.lab.eng.bos.redhat.com closed.
 Releasing machine mrg-04.mpc.lab.eng.bos.redhat.com with Beaker
 Build step 'Execute shell' marked build as failure
 [PostBuildScript] - Execution post build scripts.
-[workspace] $ /bin/sh -xe /tmp/hudson3660721594284746900.sh
+[workspace] $ /bin/sh -xe /tmp/hudson3222700391861159723.sh
 + /var/lib/jenkins/heat-integration/log-publish.sh
 ~/heat-integration/heat-api.github.com ~/heat-integration
 Current branch master is up to date.
@@ -1234,6 +1162,7 @@ skipping non-regular file "17"
 skipping non-regular file "170"
 skipping non-regular file "171"
 skipping non-regular file "172"
+skipping non-regular file "173"
 skipping non-regular file "18"
 skipping non-regular file "19"
 skipping non-regular file "2"
@@ -1324,10 +1253,3 @@ skipping non-regular file "96"
 skipping non-regular file "97"
 skipping non-regular file "98"
 skipping non-regular file "99"
-[master 1e2c3dd] Sync jenkins-Heat-172 build logs
- 4 files changed, 1551 insertions(+)
- create mode 100644 test_logs/Heat/2012-10-26_03-23-36/build.xml
- create mode 100644 test_logs/Heat/2012-10-26_20-36-41/changelog.xml
- create mode 100644 test_logs/Heat/2012-10-26_20-36-41/log
-~/heat-integration
-Finished: FAILURE

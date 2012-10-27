@@ -1,0 +1,38 @@
+Changes in branch origin/master, between 997a2165e7d64d295de0b92d8261cde3fa5ac53f and 0ba94dcc7a2d6fac0579331beb0e6ca267ee8c81
+commit 0ba94dcc7a2d6fac0579331beb0e6ca267ee8c81
+tree 5da6ce4bfa0d934100e1f5b73ab8df4c35739181
+parent c8ec051a67fcdeecccefa5b911e42cef5fba5713
+author Steven Hardy <shardy@redhat.com> 1351173028 +0100
+committer Steven Hardy <shardy@redhat.com> 1351269527 +0100
+
+    heat engine : add heat_waitcondition_server_url
+    
+    Add config option for waitcondition server, since metadata
+    and waitcondition notifications are no longer handled by the
+    same API
+    
+    Change-Id: Idc1b39c6c60b8473316fe4861f0f060568540b09
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 4fb45d0e1a15f641895631f3a518bf2b335eb042 5dde28ef90aaf6f86a9d9846d1394ac8dab9a822 M	docs/GettingStarted.rst
+:100644 100644 f7c2405cd91781fc1966592ef5d1e961f241a9d5 462835bedfc9d6592049f1c06d80d6a56d5e950c M	etc/heat/heat-engine.conf
+:100644 100644 4af919c64103400d748184f5761429ffc13f7bea abd0c04a26f413902ba12738459f9b42cd612bce M	heat/common/config.py
+:100644 100644 66eba75f8fcacf48043c7e8a64418cfe2fc26371 20073ddc7bd5602ea8fe8bdbc68bed22ef5f02d1 M	heat/engine/resources/wait_condition.py
+
+commit c8ec051a67fcdeecccefa5b911e42cef5fba5713
+tree b7cc8a435f21da729d7f7d3b854c4868c4dd0d18
+parent 997a2165e7d64d295de0b92d8261cde3fa5ac53f
+author Steven Hardy <shardy@redhat.com> 1351172447 +0100
+committer Steven Hardy <shardy@redhat.com> 1351269362 +0100
+
+    heat metadata : Remove all non-waitcondition related logic
+    
+    Remove all logic except that required by cfn-signal, since both
+    cfn-hup and cfn-push-stats have been ported to use the CFN and
+    Cloudwatch APIs respectively
+    
+    Change-Id: I087349ff3ab901c880a248bd124396a1383c0a5e
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 7f7efb6e64702dabec57b2588bd023d8144966a9 91cd823386b9b880957c81c0f53bafe03a91a445 M	heat/metadata/api/v1/__init__.py
+:100644 100644 13c2ad105a22d05fb137f57f2c393a7628bb9dd0 f8df7f01c91ab08db863de2dd712b0bc996285a2 M	heat/metadata/api/v1/metadata.py

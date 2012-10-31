@@ -1,0 +1,20 @@
+Changes in branch origin/master, between 0ba94dcc7a2d6fac0579331beb0e6ca267ee8c81 and e0bb98d4f5ec918cec8514b8bc5c39057aaaf6d2
+commit e0bb98d4f5ec918cec8514b8bc5c39057aaaf6d2
+tree 8547311a29239165e6ec0367951291a35d0c7c89
+parent 0ba94dcc7a2d6fac0579331beb0e6ca267ee8c81
+author Steven Hardy <shardy@redhat.com> 1351700899 +0000
+committer Steven Hardy <shardy@redhat.com> 1351700899 +0000
+
+    heat-keystone-setup : fix error on folsom first-install
+    
+    When running heat-keystone-setup for the first time after (re)installing
+    openstack folsom, it fails, because the user-role-list is running *as* the
+    heat user, not reading the roles assigned to the heat user, which fails
+    because on a new install the heat user does not have the admin role.
+    Using the credentials from the environment means we run the command as
+    admin, but --user_id selects the roles for the heat user.
+    
+    Change-Id: Ib2733e63f664d75be1e2e3bd43038bbd1dbebde8
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100755 100755 9c8669b63c80f91ffb250633326f58fb9d305573 9e6394b9764d6239bf73def502849cdc8a00c93d M	bin/heat-keystone-setup

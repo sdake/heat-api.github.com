@@ -1,0 +1,16 @@
+Changes in branch origin/master, between e0bb98d4f5ec918cec8514b8bc5c39057aaaf6d2 and d806f727dbebe6bc1616ed4723f967c94f1349a8
+commit d806f727dbebe6bc1616ed4723f967c94f1349a8
+tree b00f1ce029c7b678c1f1a194376c1e618fea08cb
+parent e0bb98d4f5ec918cec8514b8bc5c39057aaaf6d2
+author Zane Bitter <zbitter@redhat.com> 1351711122 +0100
+committer Zane Bitter <zbitter@redhat.com> 1351711122 +0100
+
+    Put the Template class in its own file
+    
+    Change-Id: I5e3a9ef79c1c4f893720cfa529066d49a7c83ad1
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 a794f4d41dd53f4ba04e9b78e6245599e37630ee ac9250d1fb4af2690877bc8ec6b16c4ab1ff9678 M	heat/engine/api.py
+:100644 100644 7e82c131ff1a4656f05b5a88490c4cb915e6b3b6 7c01818aed5fa1e550003f44cb327e23e77b7b8f M	heat/engine/parser.py
+:000000 100644 0000000000000000000000000000000000000000 63924f70cb644ba4577f09dab878296add6c253d A	heat/engine/template.py
+:100644 100644 fb4b73f8c6de8dc17cc4e12f201456b49429a616 4f56c781558afecdaac1eaf470efff2735faa014 M	heat/tests/test_parser.py

@@ -1,0 +1,20 @@
+Changes in branch origin/master, between f605bcc812e2f0eaeca7c62da759f16a7478a6b0 and d918f3919f46ab1663d065e81c12819a8624c7a8
+commit d918f3919f46ab1663d065e81c12819a8624c7a8
+tree 7488a7c094aff9aaa31995a6c55e87b764e886e5
+parent f605bcc812e2f0eaeca7c62da759f16a7478a6b0
+author Zane Bitter <zbitter@redhat.com> 1351711123 +0100
+committer Zane Bitter <zbitter@redhat.com> 1351711123 +0100
+
+    Use new Parameters class for validation
+    
+    The Stack.validate() method is no longer used for the validate_template
+    feature (since it requires the parameter values in order to parse the whole
+    template), so move the code for outputting parameter metadata to where it
+    is actually used.
+    
+    Change-Id: Ibf2ad7cb485bff75953c952f34ea4a597ea5e2f8
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 a34f692de63af9756074d7bfa46c020d7063096c 3189a4d01ef8f84169c88218f0cffcf9553146d3 M	heat/engine/manager.py
+:100644 100644 dbefdc8397544dbe053ddd604153265181b394be ecde0ea5fa567ae69cdff455ad2ed84e25d40d3f M	heat/engine/parser.py
+:100644 100644 cdb33afdd2f665294f67ef800fd6b11388d7617c a095192c87cabd64c1e78d37975b10a50d3f9b3e M	heat/tests/test_engine_manager.py

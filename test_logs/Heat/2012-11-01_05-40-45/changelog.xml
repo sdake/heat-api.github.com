@@ -1,0 +1,22 @@
+Changes in branch origin/master, between a5485ad10d3a0336b1f92c1938d3b87ce15bdf82 and f605bcc812e2f0eaeca7c62da759f16a7478a6b0
+commit f605bcc812e2f0eaeca7c62da759f16a7478a6b0
+tree 152e802a16adfdedd23127e3712868fe67a3dcfb
+parent a5485ad10d3a0336b1f92c1938d3b87ce15bdf82
+author Zane Bitter <zbitter@redhat.com> 1351711123 +0100
+committer Zane Bitter <zbitter@redhat.com> 1351711123 +0100
+
+    Separate Parameters implementation from Properties
+    
+    There are only 3 types allowed for Parameters (String, Number and
+    CommaDelimitedList), but we are currently allowing more due to a shared
+    implementation with Properties (which is an internal implementation
+    detail). This creates a separate implementation for Parameters with only
+    the allowed types.
+    
+    Change-Id: If51ec538893a582da2caa0356c25e515e9d8004e
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:000000 100644 0000000000000000000000000000000000000000 dbe3869f013e5eb8ffa635e9c1be0d0c07259dcf A	heat/engine/parameters.py
+:100644 100644 7c01818aed5fa1e550003f44cb327e23e77b7b8f dbefdc8397544dbe053ddd604153265181b394be M	heat/engine/parser.py
+:000000 100644 0000000000000000000000000000000000000000 9f92ba228e38d51f146a0362e7d6e1116e9e0ba3 A	heat/tests/test_parameters.py
+:100644 100644 4f56c781558afecdaac1eaf470efff2735faa014 dfc10fb7130fef93cfb83f6a4a901584921231ef M	heat/tests/test_parser.py

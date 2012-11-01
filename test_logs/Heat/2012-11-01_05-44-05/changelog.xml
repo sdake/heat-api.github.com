@@ -1,0 +1,16 @@
+Changes in branch origin/master, between d918f3919f46ab1663d065e81c12819a8624c7a8 and f4c34c56285ba17005fb413d8f32f11d4d44332b
+commit f4c34c56285ba17005fb413d8f32f11d4d44332b
+tree 318faebf7817d785883d9ede38da544b0feb5b88
+parent d918f3919f46ab1663d065e81c12819a8624c7a8
+author Zane Bitter <zbitter@redhat.com> 1351711123 +0100
+committer Zane Bitter <zbitter@redhat.com> 1351711123 +0100
+
+    Implement NoEcho for parameters
+    
+    Change-Id: I60ce651367479205e0d456e2ac0ec3f949766383
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 ac9250d1fb4af2690877bc8ec6b16c4ab1ff9678 15e8c8a893da13a7f7335fa9a490474d039f9ba4 M	heat/engine/api.py
+:100644 100644 3189a4d01ef8f84169c88218f0cffcf9553146d3 335c09e52a760f8b77e36cbc29c8f3052cbf876a M	heat/engine/manager.py
+:100644 100644 dbe3869f013e5eb8ffa635e9c1be0d0c07259dcf da26625ac1ea488c1313e1b7f122e2c7a9e49db3 M	heat/engine/parameters.py
+:100644 100644 9f92ba228e38d51f146a0362e7d6e1116e9e0ba3 0f4a34891fc234eed65b7f6a71134e9cbd25773c M	heat/tests/test_parameters.py

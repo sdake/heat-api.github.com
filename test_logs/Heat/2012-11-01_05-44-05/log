@@ -1,25 +1,25 @@
-Triggered by Gerrit: https://review.openstack.org/15137
+Triggered by Gerrit: https://review.openstack.org/15138
 Building in workspace /var/lib/jenkins/jobs/Heat/workspace
 Checkout:workspace / /var/lib/jenkins/jobs/Heat/workspace - hudson.remoting.LocalChannel@85c3715
 Using strategy: Default
-Last Built Revision: Revision f605bcc812e2f0eaeca7c62da759f16a7478a6b0 (origin/master)
+Last Built Revision: Revision d918f3919f46ab1663d065e81c12819a8624c7a8 (origin/master)
 Wiping out workspace first.
 Cloning the remote Git repository
 Cloning repository https://review.openstack.org/heat-api/heat
 git --version
 git version 1.7.11.2
 Fetching upstream changes from https://review.openstack.org/heat-api/heat
-Commencing build of Revision d918f3919f46ab1663d065e81c12819a8624c7a8 (origin/master)
-Checking out Revision d918f3919f46ab1663d065e81c12819a8624c7a8 (origin/master)
-[workspace] $ /bin/sh -xe /tmp/hudson4254516972712524025.sh
+Commencing build of Revision f4c34c56285ba17005fb413d8f32f11d4d44332b (origin/master)
+Checking out Revision f4c34c56285ba17005fb413d8f32f11d4d44332b (origin/master)
+[workspace] $ /bin/sh -xe /tmp/hudson5334056706924623111.sh
 + /var/lib/jenkins/heat-integration/remote-test.sh
 Deleting mrg-04.mpc.lab.eng.bos.redhat.com from SSH known hosts file...
 Attempting to provision machine mrg-04.mpc.lab.eng.bos.redhat.com with Beaker
 Distro Id:  58551
-XML-RPC fault: <class 'bkr.common.bexceptions.BX'>:u'User host/mrg-05.mpc.lab.eng.bos.redhat.com has already reserved system mrg-04.mpc.lab.eng.bos.redhat.com'
+XML-RPC fault: <class 'turbogears.identity.exceptions.IdentityFailure'>: Please log in first
 Build step 'Execute shell' marked build as failure
 [PostBuildScript] - Execution post build scripts.
-[workspace] $ /bin/sh -xe /tmp/hudson3290335854226839454.sh
+[workspace] $ /bin/sh -xe /tmp/hudson7040957002483182764.sh
 + /var/lib/jenkins/heat-integration/log-publish.sh
 ~/heat-integration/heat-api.github.com ~/heat-integration
 Current branch master is up to date.
@@ -115,6 +115,7 @@ skipping non-regular file "177"
 skipping non-regular file "178"
 skipping non-regular file "179"
 skipping non-regular file "18"
+skipping non-regular file "180"
 skipping non-regular file "19"
 skipping non-regular file "2"
 skipping non-regular file "20"
@@ -204,10 +205,3 @@ skipping non-regular file "96"
 skipping non-regular file "97"
 skipping non-regular file "98"
 skipping non-regular file "99"
-[master 443ce4b] Sync jenkins-Heat-179 build logs
- 4 files changed, 423 insertions(+)
- create mode 100644 test_logs/Heat/2012-11-01_05-40-45/build.xml
- create mode 100644 test_logs/Heat/2012-11-01_05-42-26/changelog.xml
- create mode 100644 test_logs/Heat/2012-11-01_05-42-26/log
-~/heat-integration
-Finished: FAILURE

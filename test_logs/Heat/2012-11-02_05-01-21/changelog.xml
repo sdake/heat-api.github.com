@@ -1,0 +1,18 @@
+Changes in branch origin/master, between f4c34c56285ba17005fb413d8f32f11d4d44332b and 77069eefd54b291b28edce2fcd275bb2bcf619d2
+commit 77069eefd54b291b28edce2fcd275bb2bcf619d2
+tree 67eb9ef6827a64028a5c40923eb7ceaaeb28d440
+parent f4c34c56285ba17005fb413d8f32f11d4d44332b
+author Steven Hardy <shardy@redhat.com> 1351846672 +0000
+committer Steven Hardy <shardy@redhat.com> 1351846778 +0000
+
+    heat templates : Align AutoScaling template with cfntools
+    
+    Updated cfntools require authentication for cfn-push-stats,
+    so the AutoScaling template needs the user/key and boto.cfg
+    additions, same as in the HA templates, otherwise cfn-push-stats,
+    and hence autoscaling doesn't work
+    
+    Change-Id: Ib3ef4a932bb656f29e25ef745409f5fe3e82c356
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 3cef664b737ed9e7d3f863276b8f6889895f4ea2 abe8aca0191f3df4fa5f34d12c1e62cf62480918 M	templates/AutoScalingMultiAZSample.template

@@ -1,0 +1,22 @@
+Changes in branch origin/master, between 9874dec669a937e8b844e9e304e65f311ca4cc82 and 8135da2fb42a8f34d530369dde6f3ddd216ffd97
+commit 8135da2fb42a8f34d530369dde6f3ddd216ffd97
+tree 26a50fca848c3cfb023dbd08f60bfdc087409ff7
+parent 9874dec669a937e8b844e9e304e65f311ca4cc82
+author Angus Salkeld <asalkeld@redhat.com> 1351854120 +1100
+committer Angus Salkeld <asalkeld@redhat.com> 1351854120 +1100
+
+    Use openstack-common service.py
+    
+    Change-Id: Idbc145209c039e9362cf97c9926e050f809ef0fa
+
+:100755 100755 22f4ae9a4fc48f99f2da8aaa1bf32ecb812134e0 9a4550c336ad80dfa70b88898a7d6317b875b894 M	bin/heat-engine
+:100644 100644 335c09e52a760f8b77e36cbc29c8f3052cbf876a 36872edb74999de0cc8a572f50c2c10e773d61bc R083	heat/engine/manager.py	heat/engine/service.py
+:100644 000000 731353797d36fefea0035869e26c715a80c71eaa 0000000000000000000000000000000000000000 D	heat/manager.py
+:100644 000000 5552444046305c6fda704d60630b723a9a0eb579 0000000000000000000000000000000000000000 D	heat/service.py
+:100644 100644 cf2ed8d4443afc3a3c81f27880e3135d815f21de e9e9d81fa7ec510c00a986c466280eedc6ceeb05 M	heat/tests/functional/test_WordPress_2_Instances.py
+:100644 100644 9e369ef88ba4332383f83455aae1583ed742aa14 03e88a7176487441a6f940486295a7ea309e4073 M	heat/tests/functional/test_WordPress_2_Instances_With_EBS.py
+:100644 100644 29db9786e493503f176dc70e22b0b6477d703c22 dd1cbf4e20696fb61a1dc2a0ae338a9574f69038 M	heat/tests/functional/test_WordPress_Single_Instance_With_EBS.py
+:100644 100644 d0c74e500d09b3b0e5fb5c76028fa42f05fbd93c 2102019d2fd81c42bc4f9eb3601363aa22ceef00 M	heat/tests/functional/test_WordPress_Single_Instance_With_EBS_EIP.py
+:100644 100644 ce0fd8fae91363fcdb4a8b14482b26b966e0d747 da70be9d3cd844378657689c02de5608c21fe0ba M	heat/tests/functional/test_WordPress_Single_Instance_With_EIP.py
+:100644 100644 a095192c87cabd64c1e78d37975b10a50d3f9b3e c19970a533d26d36919e41389db94bf43afaf2dc R094	heat/tests/test_engine_manager.py	heat/tests/test_engine_service.py
+:100644 100644 9f504869817ea2e989cb402402cc5690144f9d98 3cbd4642e4711b447720463d57f07449cc3289e1 M	heat/tests/test_validate.py

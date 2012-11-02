@@ -1,0 +1,16 @@
+Changes in branch origin/master, between 183bad2534d8352ddadb6a77ba8ca509347505d7 and 9874dec669a937e8b844e9e304e65f311ca4cc82
+commit 589b4a76161ada22faefd39195340f5177b2e934
+tree 59ce9e3fe9b9163796622fdb7d3f4870afa2194d
+parent c6a624f3ab73a5b1770e69d35713c92a82ecb54c
+author Angus Salkeld <asalkeld@redhat.com> 1351739835 +1100
+committer Angus Salkeld <asalkeld@redhat.com> 1351821354 +1100
+
+    Add service.py from openstack-common
+    
+    Change-Id: Ia4996d89d0fdba6dbeb44ae4cf3ca202c78886ee
+
+:000000 100644 0000000000000000000000000000000000000000 c2e73ddfd41bfb822dc98022df64156187ea930c A	heat/openstack/common/eventlet_backdoor.py
+:000000 100644 0000000000000000000000000000000000000000 bc7de8c7b1522bf12d6d5d8d630b8a11a677f4b0 A	heat/openstack/common/loopingcall.py
+:000000 100644 0000000000000000000000000000000000000000 913a4c79657dbf43eaac7629772421ab662baaa7 A	heat/openstack/common/service.py
+:000000 100644 0000000000000000000000000000000000000000 feee2a0eb671f6c7a6a4afea7ea7ab6a14e4c07d A	heat/openstack/common/threadgroup.py
+:100644 100644 a87665559738c915e6dd8c43aff6622e264e9059 a940e54afdaee3ec104aa3d36cec44a7b6a38c19 M	openstack-common.conf

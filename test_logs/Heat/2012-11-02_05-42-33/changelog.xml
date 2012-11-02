@@ -1,0 +1,21 @@
+Changes in branch origin/master, between 77069eefd54b291b28edce2fcd275bb2bcf619d2 and 183bad2534d8352ddadb6a77ba8ca509347505d7
+commit c6a624f3ab73a5b1770e69d35713c92a82ecb54c
+tree bf4b8654b9112abcb5c72e56145a12b60f96a8f1
+parent f4c34c56285ba17005fb413d8f32f11d4d44332b
+author Angus Salkeld <asalkeld@redhat.com> 1351738841 +1100
+committer Angus Salkeld <asalkeld@redhat.com> 1351764541 +1100
+
+    Update openstack-common
+    
+    Change-Id: I3abd011729f413dbd20806f54c9ae6963641d59a
+
+:100644 100644 53ed9ce2128b8d89defe085e314863ee9522b0c7 2f19677697e0c59ddba56a534f5369dd7707bd68 M	heat/openstack/common/cfg.py
+:100644 100644 235350cc498b9abd3cbe3a5a75ca974fc283a881 681b5a88a8ffd71671e455469d159958111f1db0 M	heat/openstack/common/gettextutils.py
+:100644 100644 41e3781ce8b62a667fb2cd56bb3aaeb7042f7432 723ab54ddaeba36cfd3db074686b756389ec86c1 M	heat/openstack/common/log.py
+:100644 100644 e6383f610ecf5e6044b1fcc1574465ae4ad92306 d1ea0f2f087494f9b7829df56e2148f13430ae0f M	heat/openstack/common/notifier/api.py
+:100644 100644 b5209a407f57a696928c85bda24adba488aaaa98 41fec9a2a48a4e017ec36496a434b4e1c93fabb0 M	heat/openstack/common/rpc/impl_kombu.py
+:100644 100644 697f4d8c5d129f9f6d20a426108e7af0081b2c5a b47f25b3fea3ab53b9d9308a0a79eb38c8201b68 M	heat/openstack/common/rpc/impl_qpid.py
+:000000 100644 0000000000000000000000000000000000000000 44a9cdc85e9a11340fee814ea9a6f7b744a67438 A	heat/openstack/common/rpc/service.py
+:100644 100644 628f5e3c9b2f68e2b930982b470786dbdb4c6340 83eef07a7be54ea67c3975fa1d7f050de23dcf87 M	heat/openstack/common/setup.py
+:100644 100644 c4f6cf0497a5573270f104e98061ff69587213e6 86004391de06a7144b6dce653344880bc93ccbf0 M	heat/openstack/common/timeutils.py
+:100644 100644 e1d847ccb7af7f2122ae61050b01554e8a60d312 ce6916811c882a4e6ca7549610f433b9e6a3bf9e M	heat/openstack/common/utils.py

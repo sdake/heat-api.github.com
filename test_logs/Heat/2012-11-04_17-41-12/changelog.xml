@@ -1,0 +1,17 @@
+Changes in branch origin/master, between 8135da2fb42a8f34d530369dde6f3ddd216ffd97 and 5f60499602139d2bca727033e7390f784c14af88
+commit 5f60499602139d2bca727033e7390f784c14af88
+tree 1306bf98876c9a2d3f23b4e08472ad8f5ce3813a
+parent 8135da2fb42a8f34d530369dde6f3ddd216ffd97
+author Steve Baker <sbaker@redhat.com> 1352066704 +1300
+committer Steve Baker <sbaker@redhat.com> 1352066704 +1300
+
+    Update openstack-common, add network_utils.
+    
+    This is required by impl_kombu.py. The engine failed to start without it.
+
+:100644 100644 ba32da550b01a1b353becc043b544fecde474eb7 4866de2fd2beaeee9b8227d7cd3e2227a14eacd6 M	heat/openstack/common/exception.py
+:000000 100644 0000000000000000000000000000000000000000 69f67321636c571d2c28b6a4f3cbd32e2f1901a8 A	heat/openstack/common/network_utils.py
+:100644 100644 41fec9a2a48a4e017ec36496a434b4e1c93fabb0 d3f0107fb487c0fb0d201ddd48392fd763198e7b M	heat/openstack/common/rpc/impl_kombu.py
+:100644 100644 476e383d5141b4fa3ad350cca8e7bf74ac64a2c6 a4320e80cc99f08bd052b5a9803a4dec862b07ac M	heat/openstack/common/rpc/impl_zmq.py
+:100644 100644 ce6916811c882a4e6ca7549610f433b9e6a3bf9e 36990676b6f0d20aab8fa110228c2cbb71907b9a M	heat/openstack/common/utils.py
+:100644 100644 a940e54afdaee3ec104aa3d36cec44a7b6a38c19 8be32746a60dc521cc01acf573987e2fda841810 M	openstack-common.conf

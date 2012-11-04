@@ -1,0 +1,25 @@
+Changes in branch origin/master, between 5f60499602139d2bca727033e7390f784c14af88 and 499e492d946a5c456cdb7087f62497464649bf34
+commit f77c09c2a5749a199028316ceb821ab9907b3e51
+tree e241cd3ecfcdede71634ba7a3a94e70a4d5acc93
+parent 8135da2fb42a8f34d530369dde6f3ddd216ffd97
+author Steve Baker <sbaker@redhat.com> 1352060975 +1300
+committer Steve Baker <sbaker@redhat.com> 1352071397 +1300
+
+    Rename heat client to heat-cfn.
+    
+    This is to allow python-heatclient to eventually become the default heat
+    client.
+    
+    Documentation in heat.wiki will be updated to refer to heat-cfn when this
+    change is pushed.
+    
+    Change-Id: I2209c36adf41fa5d0df0caf9200f7fedbdd51805
+
+:120000 120000 238b5a934e380367360bfbd32345b7548e6de9d5 4b4c848ea564284031614879d40c1d74a338fc88 M	bin/heat-boto
+:100755 100755 a09c50adc229e32d0ebff8da7e5334457c4bda3f d5a6d90fc7214cccf9f45154d2fb326f66848587 R098	bin/heat	bin/heat-cfn
+:100644 100644 5dde28ef90aaf6f86a9d9846d1394ac8dab9a822 e59e41b9bc45ef8390bdd6763db4f816f7aa7db0 M	docs/GettingStarted.rst
+:100644 100644 d143a6941589316d2ec3299efcf25249a38748d5 ba6610898222257e7b75588fa41fde1458df5c3d R085	docs/man/man1/heat.1	docs/man/man1/heat-cfn.1
+:100644 100644 4b04ef52e7acfdfb0f0a43bcf152112ade2b2b4d a4ed068e59b979f83e67fd374a13604d246ec765 R056	etc/bash_completion.d/heat	etc/bash_completion.d/heat-cfn
+:100755 100755 b867ef7b1ae2c4956033cf8d0a050efb882286aa dbe12fd3e9033ad488680c9ca4272b33e8eedcbd M	run_tests.sh
+:100755 100755 4503489e08f89c9a410423f153f14bcb7efeb83d 1c8d7ff1585a4b61a4be81d3cbb9e4140d7d2257 M	setup.py
+:100755 100755 915f8c06e654741480d5c12f3bd296a2e2b435a6 26a54661f68fb69b8bfc1d566daf6d103ebf4903 M	tools/uninstall-heat

@@ -1,0 +1,17 @@
+Changes in branch origin/master, between c44c27404f8e47dd400357f1866a18fff57515f3 and 6a19ccb7b82bcf6f371c3fbbd49177986b91f0fd
+commit 6a19ccb7b82bcf6f371c3fbbd49177986b91f0fd
+tree 990d69bca0194f5c37d8bec921f5a819cc95841e
+parent c44c27404f8e47dd400357f1866a18fff57515f3
+author Zane Bitter <zbitter@redhat.com> 1352122094 +0100
+committer Zane Bitter <zbitter@redhat.com> 1352132742 +0100
+
+    Add a Properties implementation with lazy loading
+    
+    This will allow property values to be calculated on demand, rather than
+    stored as state.
+    
+    Change-Id: I93fefa911b96c931cbf48b82b5a7ccc13ad99168
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:000000 100644 0000000000000000000000000000000000000000 dfd912ec5a7147042f1bd09d06629eef370cae83 A	heat/engine/resources/properties.py
+:000000 100644 0000000000000000000000000000000000000000 361b977a0bc4d2db248eab075f34e5a1ee116736 A	heat/tests/test_properties.py

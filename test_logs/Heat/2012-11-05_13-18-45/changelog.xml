@@ -1,0 +1,17 @@
+Changes in branch origin/master, between 275eb17e973b2f684ad01583f3e9a252b2e9c1cb and 8e16b5168cba7765ccd3bbbdbcdff922e3769c13
+commit 8e16b5168cba7765ccd3bbbdbcdff922e3769c13
+tree b66291b06a96ba9ea0b71e22eda298f02551dd14
+parent 275eb17e973b2f684ad01583f3e9a252b2e9c1cb
+author Zane Bitter <zbitter@redhat.com> 1352122962 +0100
+committer Zane Bitter <zbitter@redhat.com> 1352134569 +0100
+
+    Remove the CheckedDict class
+    
+    Its functionality has been completely superceded by the new Properties
+    and Parameters implementations.
+    
+    Change-Id: I33a1990ee543a189dd3ec8f22eec27e2b0514d09
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 000000 f2b3b14cb619a345dcd040064a2f9326cbef9d03 0000000000000000000000000000000000000000 D	heat/engine/checkeddict.py
+:100644 000000 e1ec6a445f3f710bdbf0b49412ab885d71a12694 0000000000000000000000000000000000000000 D	heat/tests/unit/test_checkeddict.py

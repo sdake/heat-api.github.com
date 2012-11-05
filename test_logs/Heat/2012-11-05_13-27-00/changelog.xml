@@ -1,0 +1,24 @@
+Changes in branch origin/master, between 8e16b5168cba7765ccd3bbbdbcdff922e3769c13 and f8f6bf2a57dcf144a3360b9085d970b62372c06a
+commit f8f6bf2a57dcf144a3360b9085d970b62372c06a
+tree f724920684ec4b611b15f4b7fd788202a2d32a3c
+parent 8e16b5168cba7765ccd3bbbdbcdff922e3769c13
+author Zane Bitter <zbitter@redhat.com> 1351630200 +0100
+committer Zane Bitter <zbitter@redhat.com> 1352134937 +0100
+
+    Handle list properties that do not contain objects
+    
+    The previous implementation of schema verfication on properties required
+    that the schema for the contents of a property list always be a map. Now
+    this is specified explicitly, so that in theory a property could also be a
+    list of Strings or Integers.
+    
+    Change-Id: Icdd9a6c9f9b1e884f959c74f0803b7f3bd2aecc4
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 a5161a88c597afc99ad4ca1f21b26b86e305e815 40c79189da15a9b68fc8ff0c7f86210030e428c9 M	heat/engine/resources/autoscaling.py
+:100644 100644 c6697a8665186b4df959bad7f488812375ee8278 6f9f2264dad3cf9b77c72f573b654ef57bd1a48f M	heat/engine/resources/instance.py
+:100644 100644 4e955cefd906aeced6c288f1d634f2606ebab836 534f1f1e427e3976389022d65138906e14fa592a M	heat/engine/resources/loadbalancer.py
+:100644 100644 dfd912ec5a7147042f1bd09d06629eef370cae83 3ef80e4bde7b9fab2b2a8b7c705a6ae92fc4aed6 M	heat/engine/resources/properties.py
+:100644 100644 939040f9ba6a200bd04a83532fb169e639689c62 d12e6755f77ee27e525f5792a0ec8a8d13338d7c M	heat/engine/resources/quantum/port.py
+:100644 100644 90c6a02bcc212a0fa8f5beef5ee0f2c081312301 83f4be3bcd0929628ec953ad86a3cd088ce6d20a M	heat/engine/resources/quantum/subnet.py
+:100644 100644 361b977a0bc4d2db248eab075f34e5a1ee116736 564c73a8f5822a2e89bcd9c8d6e4faa0cd14597c M	heat/tests/test_properties.py

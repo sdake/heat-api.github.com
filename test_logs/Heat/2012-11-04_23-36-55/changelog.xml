@@ -1,0 +1,15 @@
+Changes in branch origin/master, between 499e492d946a5c456cdb7087f62497464649bf34 and b3a57062ade24b9fbfc1f02f130ad353fffc49d4
+commit b3a57062ade24b9fbfc1f02f130ad353fffc49d4
+tree c66bc07dde27d00b43bcfb006d2ec7d36c5890c0
+parent 499e492d946a5c456cdb7087f62497464649bf34
+author Steve Baker <sbaker@redhat.com> 1351829267 +1300
+committer Steve Baker <sbaker@redhat.com> 1352085000 +1300
+
+    Recursively replace all : with . in Output keys.
+    
+    This is needed so that some Quantum properties with colons in the keys are not
+    interpreted as xml namespaces.
+    
+    Change-Id: Iba5290a408595b2f028744c10315daac29da055e
+
+:100644 100644 6cc48961d82326eb90bd4248a235f348ece23191 7c18f541815536299d098352b0e12db1980dbb22 M	heat/api/cfn/v1/stacks.py

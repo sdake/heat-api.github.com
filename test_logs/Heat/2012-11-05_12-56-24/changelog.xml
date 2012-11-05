@@ -1,0 +1,26 @@
+Changes in branch origin/master, between 6a19ccb7b82bcf6f371c3fbbd49177986b91f0fd and 33b09448c14468b768d2d4da4f756e8132065d81
+commit 33b09448c14468b768d2d4da4f756e8132065d81
+tree b817a99cfd91186ed17d8d3402b9d3e1248b3a9a
+parent 6a19ccb7b82bcf6f371c3fbbd49177986b91f0fd
+author Zane Bitter <zbitter@redhat.com> 1352133057 +0100
+committer Zane Bitter <zbitter@redhat.com> 1352133720 +0100
+
+    Get rid of Resource.calculate_properties()
+    
+    Use the new Properties class to lazily load property values so that we
+    always get the latest data, and get rid of the stateful hacks.
+    
+    Change-Id: I02a1b927606da217d4adab1ca04b659abadda2ce
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 daef65867f109e7437d4956a2b742f14588450c7 f2b3b14cb619a345dcd040064a2f9326cbef9d03 M	heat/engine/checkeddict.py
+:100644 100644 ecde0ea5fa567ae69cdff455ad2ed84e25d40d3f 2fc045d744bc5e0cf2c673e1a316fe766b3433b3 M	heat/engine/parser.py
+:100644 100644 774a02f347834bc4dbf3ca450ea7496ed2d5f582 a5161a88c597afc99ad4ca1f21b26b86e305e815 M	heat/engine/resources/autoscaling.py
+:100644 100644 076d68145631207adb04425d4bf7716f181f2bfe c6697a8665186b4df959bad7f488812375ee8278 M	heat/engine/resources/instance.py
+:100644 100644 28681ceddab1199fbbefd39f77c01601cfc4d631 186f5880121577ebe5153dbeb1745b37bf648fb7 M	heat/engine/resources/resource.py
+:100644 100644 40b8e796618cba4132ed0522f0b6e2988317afce 16a6ac102778b7d0cb4af148f4eee248f9993915 M	heat/engine/resources/user.py
+:100644 100644 20073ddc7bd5602ea8fe8bdbc68bed22ef5f02d1 74d5c7dc00255fdd6a34ff18c5d78ae8f78751b3 M	heat/engine/resources/wait_condition.py
+:100644 100644 c19970a533d26d36919e41389db94bf43afaf2dc 9dde968429cba39b3f00eeec58bafe08b9dd9d83 M	heat/tests/test_engine_service.py
+:100644 100644 4c2c22aa3be07976b50fa0d1fc0ecb8d33a118da 5f8f12fb8ec4bd201364f8c743f89d20e1252399 M	heat/tests/test_loadbalancer.py
+:100644 100644 9091cca696b77700ddd0c918c18440cb5747324f 40776b0309405a420e2c59041e04226341eed055 M	heat/tests/test_quantum.py
+:100644 100644 a00fbd3e2794c3180b97832d452fa8814766c86f e1ec6a445f3f710bdbf0b49412ab885d71a12694 M	heat/tests/unit/test_checkeddict.py

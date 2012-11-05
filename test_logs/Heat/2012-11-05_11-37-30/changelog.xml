@@ -1,0 +1,18 @@
+Changes in branch origin/master, between 9c13216d2b4e777d6dc2399bb1b3a8784da7d3ec and c44c27404f8e47dd400357f1866a18fff57515f3
+commit c44c27404f8e47dd400357f1866a18fff57515f3
+tree 9030b61bd1d3f06659eede65c30fb1f67e552656
+parent 9c13216d2b4e777d6dc2399bb1b3a8784da7d3ec
+author Zane Bitter <zbitter@redhat.com> 1352122656 +0100
+committer Zane Bitter <zbitter@redhat.com> 1352131782 +0100
+
+    Avoid modifying the Properties of a Load Balancer
+    
+    Properties are defined by the template, and should not be modified. In this
+    case it was just as a convenience, since the value does not actually need
+    to be persisted beyond even the current call.
+    
+    Change-Id: I6ca07989d246ec618b2ca5f051f8e614e24c81ae
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 ac8ed220a5a2ca7555f27c5d11f82f928264b058 4e955cefd906aeced6c288f1d634f2606ebab836 M	heat/engine/resources/loadbalancer.py
+:100644 100644 78b8f86f80ce1957eee4ae4feebbe4e708cb263c 4c2c22aa3be07976b50fa0d1fc0ecb8d33a118da M	heat/tests/test_loadbalancer.py

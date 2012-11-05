@@ -1,0 +1,23 @@
+Changes in branch origin/master, between 2162b8047be83875e3f226140dfade88517371a1 and 9c13216d2b4e777d6dc2399bb1b3a8784da7d3ec
+commit 9c13216d2b4e777d6dc2399bb1b3a8784da7d3ec
+tree a9f1dd06ba3536bcd929be4314ad33e7519d24ac
+parent 2162b8047be83875e3f226140dfade88517371a1
+author Zane Bitter <zbitter@redhat.com> 1352113571 +0100
+committer Zane Bitter <zbitter@redhat.com> 1352121835 +0100
+
+    Fix schemata errors for properties
+    
+    In particular, Integer refers to a literal integer in the JSON markup:
+    
+      {"IntegerProperty": 42}
+    
+    So use Number to refer to a string-encoded number:
+    
+      {"NumberProperty": "42"}
+    
+    Change-Id: Id285ae6145ba888f59529207343d016fba3825eb
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 189001c429cb334d77d9ba1fce2a161ac7776f68 774a02f347834bc4dbf3ca450ea7496ed2d5f582 M	heat/engine/resources/autoscaling.py
+:100644 100644 0d7cec47a79f284f17c84fb66d17283d49249bd1 ac8ed220a5a2ca7555f27c5d11f82f928264b058 M	heat/engine/resources/loadbalancer.py
+:100644 100644 968eaab07c0aebd8bed9dd0eb25dbb2474681357 40b8e796618cba4132ed0522f0b6e2988317afce M	heat/engine/resources/user.py

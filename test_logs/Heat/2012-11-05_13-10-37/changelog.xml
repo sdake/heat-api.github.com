@@ -1,0 +1,16 @@
+Changes in branch origin/master, between 33b09448c14468b768d2d4da4f756e8132065d81 and 275eb17e973b2f684ad01583f3e9a252b2e9c1cb
+commit 275eb17e973b2f684ad01583f3e9a252b2e9c1cb
+tree 6d21c3fe6e5642737e9e22f1bf771d7f2d81f6b9
+parent 33b09448c14468b768d2d4da4f756e8132065d81
+author Zane Bitter <zbitter@redhat.com> 1352134505 +0100
+committer Zane Bitter <zbitter@redhat.com> 1352134519 +0100
+
+    Use new Parameters class in unit test
+    
+    This test was still using the old CheckedDict implementation for
+    parameters.
+    
+    Change-Id: I2ade5a81867d6b9f7517061e520da99575e8fbbd
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 dfc10fb7130fef93cfb83f6a4a901584921231ef b8a04d8a2f6f32c44346c9ab78f902a41e4d928c M	heat/tests/test_parser.py

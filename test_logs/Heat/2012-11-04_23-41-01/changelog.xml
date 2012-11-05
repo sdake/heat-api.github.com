@@ -1,0 +1,34 @@
+Changes in branch origin/master, between b3a57062ade24b9fbfc1f02f130ad353fffc49d4 and 2162b8047be83875e3f226140dfade88517371a1
+commit 2162b8047be83875e3f226140dfade88517371a1
+tree 83d1628e450ae2d397e0e87d38c1dfe1be6b9b35
+parent b3a57062ade24b9fbfc1f02f130ad353fffc49d4
+author Steve Baker <sbaker@redhat.com> 1351539673 +1300
+committer Steve Baker <sbaker@redhat.com> 1352085064 +1300
+
+    Add a set of native quantum resource types.
+    
+    The properties schemas map directly to the Quantum REST API, which makes
+    the implementation (and documentation) simpler.
+    
+    The base class QuantumResource contains some default methods and
+    common utility functions.
+    
+    templates/Quantum.template can be run without any parameters and only creates
+    network resources, no instances.
+    
+    More example templates and tests will come later.
+    
+    Change-Id: Ia270294440eeec5163e35009f6be0b5db9ad78c1
+
+:000000 100644 0000000000000000000000000000000000000000 e69de29bb2d1d6434b8b29ae775ad8c2e48c5391 A	heat/engine/resources/quantum/__init__.py
+:000000 100644 0000000000000000000000000000000000000000 92d54345d3194b82eb92e3d724196f8a18b8db7d A	heat/engine/resources/quantum/floatingip.py
+:000000 100644 0000000000000000000000000000000000000000 d625eb4e79ca8b436fa6bcd388eba5e7ed3fe0c4 A	heat/engine/resources/quantum/net.py
+:000000 100644 0000000000000000000000000000000000000000 939040f9ba6a200bd04a83532fb169e639689c62 A	heat/engine/resources/quantum/port.py
+:000000 100644 0000000000000000000000000000000000000000 30e3df4c66cdecb191e1f2b0e7c13e879d9431d6 A	heat/engine/resources/quantum/quantum.py
+:000000 100644 0000000000000000000000000000000000000000 c4336872eb5533e1f4d8ef008a07fd05b18cc1cc A	heat/engine/resources/quantum/router.py
+:000000 100644 0000000000000000000000000000000000000000 90c6a02bcc212a0fa8f5beef5ee0f2c081312301 A	heat/engine/resources/quantum/subnet.py
+:100644 100644 c626f1f3d8d8f757b161759d106435c26a66ad68 16d6e4eb3872daa258c69a19c08d7d87b67ebf5e M	heat/engine/resources/register.py
+:100644 100644 712f42b1ce3416fac7123b3ce523c5a2655c363a 28681ceddab1199fbbefd39f77c01601cfc4d631 M	heat/engine/resources/resource.py
+:000000 100644 0000000000000000000000000000000000000000 9091cca696b77700ddd0c918c18440cb5747324f A	heat/tests/test_quantum.py
+:000000 100644 0000000000000000000000000000000000000000 1fd3298540488ccc8face2caedec7b03e5fb389e A	templates/Quantum.template
+:100644 100644 092419da8d470ef55b7e0c28b08c135d0dd8bed0 9651ae92d92e03b34bfc2888b8122c27e527feb5 M	tools/pip-requires

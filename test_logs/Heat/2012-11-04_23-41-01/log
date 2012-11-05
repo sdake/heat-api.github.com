@@ -1,17 +1,17 @@
-Triggered by Gerrit: https://review.openstack.org/15375
+Triggered by Gerrit: https://review.openstack.org/15376
 Building in workspace /var/lib/jenkins/jobs/Heat/workspace
 Checkout:workspace / /var/lib/jenkins/jobs/Heat/workspace - hudson.remoting.LocalChannel@85c3715
 Using strategy: Default
-Last Built Revision: Revision 499e492d946a5c456cdb7087f62497464649bf34 (origin/master)
+Last Built Revision: Revision b3a57062ade24b9fbfc1f02f130ad353fffc49d4 (origin/master)
 Wiping out workspace first.
 Cloning the remote Git repository
 Cloning repository https://review.openstack.org/heat-api/heat
 git --version
 git version 1.7.11.2
 Fetching upstream changes from https://review.openstack.org/heat-api/heat
-Commencing build of Revision b3a57062ade24b9fbfc1f02f130ad353fffc49d4 (origin/master)
-Checking out Revision b3a57062ade24b9fbfc1f02f130ad353fffc49d4 (origin/master)
-[workspace] $ /bin/sh -xe /tmp/hudson7185762661084235433.sh
+Commencing build of Revision 2162b8047be83875e3f226140dfade88517371a1 (origin/master)
+Checking out Revision 2162b8047be83875e3f226140dfade88517371a1 (origin/master)
+[workspace] $ /bin/sh -xe /tmp/hudson6347651183739359765.sh
 + /var/lib/jenkins/heat-integration/remote-test.sh
 Deleting mrg-04.mpc.lab.eng.bos.redhat.com from SSH known hosts file...
 Attempting to provision machine mrg-04.mpc.lab.eng.bos.redhat.com with Beaker
@@ -19,7 +19,7 @@ Distro Id:  58551
 XML-RPC fault: <class 'turbogears.identity.exceptions.IdentityFailure'>: Please log in first
 Build step 'Execute shell' marked build as failure
 [PostBuildScript] - Execution post build scripts.
-[workspace] $ /bin/sh -xe /tmp/hudson2358122106793060191.sh
+[workspace] $ /bin/sh -xe /tmp/hudson3496708239255184829.sh
 + /var/lib/jenkins/heat-integration/log-publish.sh
 ~/heat-integration/heat-api.github.com ~/heat-integration
 Current branch master is up to date.
@@ -123,6 +123,7 @@ skipping non-regular file "184"
 skipping non-regular file "185"
 skipping non-regular file "186"
 skipping non-regular file "187"
+skipping non-regular file "188"
 skipping non-regular file "19"
 skipping non-regular file "2"
 skipping non-regular file "20"
@@ -212,10 +213,3 @@ skipping non-regular file "96"
 skipping non-regular file "97"
 skipping non-regular file "98"
 skipping non-regular file "99"
-[master 8158f8e] Sync jenkins-Heat-187 build logs
- 4 files changed, 427 insertions(+)
- create mode 100644 test_logs/Heat/2012-11-04_18-46-32/build.xml
- create mode 100644 test_logs/Heat/2012-11-04_23-36-55/changelog.xml
- create mode 100644 test_logs/Heat/2012-11-04_23-36-55/log
-~/heat-integration
-Finished: FAILURE

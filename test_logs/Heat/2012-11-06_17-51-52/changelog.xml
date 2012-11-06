@@ -1,0 +1,10 @@
+Changes in branch origin/master, between e4e408986d6883bc686fcd5eaf099d994c1e001e and 8c1931b68225bb99008a1b4b1e7edf3c8929efb0
+commit 6d43f58669b8b9b873e3b44a982ddaeba3d3cf18
+tree b728c49f40df026945115ed5bc59318a5ef1375d
+parent 8014cf3bb73e7c531f204002f13d8ecee3242716
+author Steve Baker <sbaker@redhat.com> 1352159461 +1300
+committer Steve Baker <sbaker@redhat.com> 1352159461 +1300
+
+    A template which associates an instance with a Quantum port.
+
+:000000 100644 0000000000000000000000000000000000000000 f466e4a39361268a4bbb8c89b1ab960732e2ed88 A	templates/WordPress_Single_Instance_With_Quantum.template

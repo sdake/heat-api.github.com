@@ -1,0 +1,15 @@
+Changes in branch origin/master, between 66dbd413acf437ca57e41a7fdfe34476f58e7b7b and 1d66f9b94375c3f0725b5b0d9c0209820934eed9
+commit 39a9721232649664cf0c96d2c58ad718efe88ce1
+tree 7c2d51c886cbbda70b24b35f5e9eb1c49566c554
+parent f8f6bf2a57dcf144a3360b9085d970b62372c06a
+author Steve Baker <sbaker@redhat.com> 1352169533 +1300
+committer Steve Baker <sbaker@redhat.com> 1352169563 +1300
+
+    Make Boolean property a bool type.
+    Since json has a native bool type, allow bool or string as the property value.
+    Validating a Boolean type value will now convert a string to a bool.
+    
+    Change-Id: Ia1843e0f56e5afb2914708e42b62f2063279317f
+
+:100644 100644 3ef80e4bde7b9fab2b2a8b7c705a6ae92fc4aed6 a3af960ef213a8bb1b5243a449ed187e096b2f1d M	heat/engine/resources/properties.py
+:100644 100644 564c73a8f5822a2e89bcd9c8d6e4faa0cd14597c a20a7e3e7a0c5db814c313edeb554249d92bc3c9 M	heat/tests/test_properties.py

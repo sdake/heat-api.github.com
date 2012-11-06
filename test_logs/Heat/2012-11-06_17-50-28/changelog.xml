@@ -1,0 +1,15 @@
+Changes in branch origin/master, between 1d66f9b94375c3f0725b5b0d9c0209820934eed9 and e4e408986d6883bc686fcd5eaf099d994c1e001e
+commit 8014cf3bb73e7c531f204002f13d8ecee3242716
+tree 3e85611562b014509aabc5a5d24dbc0128d0a0f9
+parent f8f6bf2a57dcf144a3360b9085d970b62372c06a
+author Steve Baker <sbaker@redhat.com> 1352159388 +1300
+committer Steve Baker <sbaker@redhat.com> 1352159388 +1300
+
+    Type is now mandatory. Boolean now exists.
+    
+    This is required for Quantum resource types to work with new Properties.
+
+:100644 100644 d625eb4e79ca8b436fa6bcd388eba5e7ed3fe0c4 352e92212ef1d31ed118d7f4c2ef62e29eae0abb M	heat/engine/resources/quantum/net.py
+:100644 100644 d12e6755f77ee27e525f5792a0ec8a8d13338d7c ccdf31bdc5bd92b49bd2c581b072ed75cb71e063 M	heat/engine/resources/quantum/port.py
+:100644 100644 c4336872eb5533e1f4d8ef008a07fd05b18cc1cc 852a864ebcceef4de11e75ac41a9f0a58ca51e34 M	heat/engine/resources/quantum/router.py
+:100644 100644 83f4be3bcd0929628ec953ad86a3cd088ce6d20a 1334903e90c978e22d70b605f07bd8cec7b93502 M	heat/engine/resources/quantum/subnet.py

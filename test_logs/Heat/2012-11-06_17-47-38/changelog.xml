@@ -1,0 +1,10 @@
+Changes in branch origin/master, between 0f29c45e4ff8ae123b3ce06163801446c69d6153 and 66dbd413acf437ca57e41a7fdfe34476f58e7b7b
+commit 02d3313401af8b0b47590cba41b3b5fa94b54c6e
+tree 07f37dee315701d6b13703ac9dca56849c0aaff5
+parent f8f6bf2a57dcf144a3360b9085d970b62372c06a
+author Steve Baker <sbaker@redhat.com> 1352169638 +1300
+committer Steve Baker <sbaker@redhat.com> 1352169638 +1300
+
+    Quantum template to demonstrate floatingip.
+
+:000000 100644 0000000000000000000000000000000000000000 3aedbbc5bbe6e943d68bada19e984680dbf4d654 A	templates/Quantum_floating.template

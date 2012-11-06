@@ -1,0 +1,13 @@
+Changes in branch origin/master, between f8f6bf2a57dcf144a3360b9085d970b62372c06a and 0f29c45e4ff8ae123b3ce06163801446c69d6153
+commit eff1af8ae03461892fb432ebd0394f8fd88eb4c7
+tree 98412dfe8130ed13aba5ed1f214e90d4b1569868
+parent 7036a387f48fb0cd5266f57fa148a32d98cd7270
+author Jeff Peeler <jpeeler@redhat.com> 1350681829 -0400
+committer Jeff Peeler <jpeeler@redhat.com> 1350919845 -0400
+
+    Cleanup runcmd to exit 0 and not use 'type'
+    
+    Change-Id: I37313a772839f56a015431bbb004ad767da0815e
+    Signed-off-by: Jeff Peeler <jpeeler@redhat.com>
+
+:100644 100644 bb107de7185d7be1b8251e35eb52c7106453e6e7 173ed8cc0a7e78002a6c54adc1f809f9a7663054 M	heat/cloudinit/config

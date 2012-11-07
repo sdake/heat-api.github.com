@@ -1,0 +1,15 @@
+Changes in branch origin/master, between 8c1931b68225bb99008a1b4b1e7edf3c8929efb0 and 7381f16c2ba558dcf8295fb4152f262d548babe4
+commit 7381f16c2ba558dcf8295fb4152f262d548babe4
+tree 7f88bf8a86a070d44f4650b735de2fb223421a20
+parent 8c1931b68225bb99008a1b4b1e7edf3c8929efb0
+author Steve Baker <sbaker@redhat.com> 1352246396 +1300
+committer Steve Baker <sbaker@redhat.com> 1352246426 +1300
+
+    Replace KeyStoneCreds params with X-Auth headers.
+    
+    Username/password are now in X-Auth-User, X-Auth-Key
+
+:100644 100644 4c4c0bff062250af15556485776197eb4ffa08ca bab3fb0635ac76e8765a2fc73b281c8e890eaf2f M	heat/api/aws/ec2token.py
+:100644 100644 e16a71bf4a18d7ef05bfad7c559799a53cf67620 ea25cdf1b12fd55a0ed945e9952c00769eee9e2e M	heat/client.py
+:100644 100644 648770d687d5a82468115c438e8648cf01b3d55d fd0dbfcb1bd2084bd31908096bea70e6e151caf0 M	heat/cloudformation.py
+:100644 100644 efe46f1ad46e0e94698dade1c40538b8a28fb675 ac0ff67d61e8002409297c059f452293ea9f69e6 M	heat/common/context.py

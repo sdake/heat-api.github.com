@@ -1,0 +1,20 @@
+Changes in branch origin/master, between 7381f16c2ba558dcf8295fb4152f262d548babe4 and 9e31cb53779984f9f201d6fdf3640d59da0a2562
+commit e5ec6b4b5dccdbf9de4fe274a3e2d48658140900
+tree 55f33508e5ad65c9d22a0842bad68ae58488c99a
+parent 0f29c45e4ff8ae123b3ce06163801446c69d6153
+author Jeff Peeler <jpeeler@redhat.com> 1352321625 -0500
+committer Jeff Peeler <jpeeler@redhat.com> 1352321954 -0500
+
+    Fix cloud-init runcmd to be exec friendly
+    
+    Can't use colon builtin apparently, or you'll get this:
+    /var/lib/cloud/instance/scripts/runcmd: line 2:
+     {setenforce 0 > /dev/null 2>&1 ||:: No such file or directory
+    
+    Added cloud-init debug output to get the above, copied from:
+    http://bazaar.launchpad.net/~cloud-init-dev/cloud-init/trunk/view/head:/doc/examples/cloud-config-chef.txt
+    
+    Change-Id: I341cf73bc9a0f843d7ab8c99a9d15e1d514654e7
+    Signed-off-by: Jeff Peeler <jpeeler@redhat.com>
+
+:100644 100644 173ed8cc0a7e78002a6c54adc1f809f9a7663054 9ed9c8970090a3130e1a62593e8254749ace2305 M	heat/cloudinit/config

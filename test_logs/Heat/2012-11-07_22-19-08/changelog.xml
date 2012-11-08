@@ -1,0 +1,21 @@
+Changes in branch origin/master, between 6048c0dd6b056b396597c027a463ba2ef42133ee and fb5fe068660319d079da6c44aab7d7e639c8a015
+commit fb5fe068660319d079da6c44aab7d7e639c8a015
+tree 588d90df7383dba889e55a3e88f5f89149f28136
+parent 6048c0dd6b056b396597c027a463ba2ef42133ee
+author Steve Baker <sbaker@redhat.com> 1352342959 +1300
+committer Steve Baker <sbaker@redhat.com> 1352342969 +1300
+
+    Move client connection out of resources.py.
+    
+    Client connection references are currently cached at the resource instance
+    level, which doesn't seem very useful.
+    
+    This change moves the client connection and caching to clients.py, then puts a
+    Clients instance in a Stack. This means that (for example) all requests to nova
+    in one stack will come from the same client instance.
+    
+    Change-Id: I22519f8ae4278ad128d3785d090294285f3a1b89
+
+:000000 100644 0000000000000000000000000000000000000000 2ebf8335897aacd9a97bcda2b640ec3caef0d0c4 A	heat/engine/clients.py
+:100644 100644 2fc045d744bc5e0cf2c673e1a316fe766b3433b3 fc40a032a4e42f6458786975dcee049c1f2183ac M	heat/engine/parser.py
+:100644 100644 186f5880121577ebe5153dbeb1745b37bf648fb7 a605a13376830c988ea2f00f5c6543851f6b52bd M	heat/engine/resources/resource.py

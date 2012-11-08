@@ -1,0 +1,10 @@
+Changes in branch origin/master, between 9e31cb53779984f9f201d6fdf3640d59da0a2562 and 6048c0dd6b056b396597c027a463ba2ef42133ee
+commit 6048c0dd6b056b396597c027a463ba2ef42133ee
+tree 30b5ec73ec2f39e5bc2e96283c5865fd87369c09
+parent 9e31cb53779984f9f201d6fdf3640d59da0a2562
+author Steve Baker <sbaker@redhat.com> 1352342485 +1300
+committer Steve Baker <sbaker@redhat.com> 1352342485 +1300
+
+    Fix FnGetAtt id test
+
+:100644 100644 40776b0309405a420e2c59041e04226341eed055 a610fadaa56e63951c0087581ae49f7b2283aeca M	heat/tests/test_quantum.py

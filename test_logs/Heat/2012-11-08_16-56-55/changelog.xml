@@ -1,0 +1,27 @@
+Changes in branch origin/master, between a09a9a2c21e0278ab8e59f28f2a1d653d4317f3a and e848c080790996e85fbbe0080e50b51d9deab46c
+commit e848c080790996e85fbbe0080e50b51d9deab46c
+tree fb179ed4e5f72814f1ad9f71536d4fd10653a418
+parent a09a9a2c21e0278ab8e59f28f2a1d653d4317f3a
+author Steve Baker <sbaker@redhat.com> 1352403803 +1300
+committer Steve Baker <sbaker@redhat.com> 1352407775 +1300
+
+    Add a list_stacks RPC call.
+    
+    This differs from the old show_stack(None) by not resolving stack data.
+    
+    heat list does not display any of the resolved stack data. Resolving outputs
+    can be especially slow since FnGetAtt may block while it calls out
+    to another service (such as with the quantum resources).
+    
+    Without this change, running heat list on a single Quantum.template takes 1.8s
+    vs 0.7s.
+    
+    In the future, list_stacks can be made to support paging of results.
+    
+    Change-Id: Iae30338b66912d660f1cf48119893b1ab593b67a
+
+:100644 100644 7c18f541815536299d098352b0e12db1980dbb22 42f33173805a8400f480c9b0153bda0f7118b20d M	heat/api/cfn/v1/stacks.py
+:100644 100644 d32ccf83e54aca7ed32425037617bd64069adf3b 7091a6d7208b97f2190ff87f9fb9832c2ea5f27d M	heat/api/openstack/v1/stacks.py
+:100644 100644 fc40a032a4e42f6458786975dcee049c1f2183ac c0ea0008f83d1a7b4bcbcdbafcf543f02dc9ff6c M	heat/engine/parser.py
+:100644 100644 ce409f4cd2dc1ff9b55ba838ebe7d210381ebd6e 873aef811e6f7cfb64968b20718331d910ed5d57 M	heat/engine/rpcapi.py
+:100644 100644 36872edb74999de0cc8a572f50c2c10e773d61bc b7d754602f33003dc7da7c0a289ec686ba403eef M	heat/engine/service.py

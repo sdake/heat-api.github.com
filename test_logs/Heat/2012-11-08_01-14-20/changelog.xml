@@ -1,0 +1,36 @@
+Changes in branch origin/master, between fb5fe068660319d079da6c44aab7d7e639c8a015 and a09a9a2c21e0278ab8e59f28f2a1d653d4317f3a
+commit a09a9a2c21e0278ab8e59f28f2a1d653d4317f3a
+tree 5b6e329091cb2f6e936ee4bdc26c55bb23a89b49
+parent fb5fe068660319d079da6c44aab7d7e639c8a015
+author Steve Baker <sbaker@redhat.com> 1352345958 +1300
+committer Steve Baker <sbaker@redhat.com> 1352345958 +1300
+
+    Rename instance_id to resource_id.
+    
+    The current naming gets increasingly inaccurate with every new resource ;)
+    
+    Change-Id: I98629c7f8fd9c391f58c16ae1f6f2a7a232a2802
+
+:100644 100644 15e8c8a893da13a7f7335fa9a490474d039f9ba4 2c04db392fa28c4a912be092b8849d2ceb5f28df M	heat/engine/api.py
+:100644 100644 40c79189da15a9b68fc8ff0c7f86210030e428c9 a784de877d29eeabb7ad6e7a54e2fdd775c63d7b M	heat/engine/resources/autoscaling.py
+:100644 100644 0990ee63fd55c9795495f247de6fc2b763f2e100 b1514527434d6cbb87753f391999bfb0447253fd M	heat/engine/resources/eip.py
+:100644 100644 6f9f2264dad3cf9b77c72f573b654ef57bd1a48f 2f2422e6d185dc2c8e4d34fd1e045e11bab4d2eb M	heat/engine/resources/instance.py
+:100644 100644 92d54345d3194b82eb92e3d724196f8a18b8db7d 4f8a70b192b3e3c8ee576f0b80806c1a180902d5 M	heat/engine/resources/quantum/floatingip.py
+:100644 100644 352e92212ef1d31ed118d7f4c2ef62e29eae0abb 02be17ad3c7beccd08811b54e2aa7b44c049292a M	heat/engine/resources/quantum/net.py
+:100644 100644 ccdf31bdc5bd92b49bd2c581b072ed75cb71e063 b76f699bf668f5c1352598974df9326533b2fa1a M	heat/engine/resources/quantum/port.py
+:100644 100644 30e3df4c66cdecb191e1f2b0e7c13e879d9431d6 6c3cf926c5959c86fb241fc760e2d4d9de0a69eb M	heat/engine/resources/quantum/quantum.py
+:100644 100644 852a864ebcceef4de11e75ac41a9f0a58ca51e34 9a13924dc83f4ad78035a35b5985ff728ecd6e2d M	heat/engine/resources/quantum/router.py
+:100644 100644 1334903e90c978e22d70b605f07bd8cec7b93502 3c0c13e9424a69d3b8f9d70e77810c5f28e3d6ff M	heat/engine/resources/quantum/subnet.py
+:100644 100644 a605a13376830c988ea2f00f5c6543851f6b52bd 7a3411669e9807467e5260c61d47a60f47f34098 M	heat/engine/resources/resource.py
+:100644 100644 5daa71bf9af995c74fe2fba05bd5d8146fbdf0f3 dcf6b82a5a3804d5f9dd2e9b911f3989551b4f9b M	heat/engine/resources/s3.py
+:100644 100644 970cd08b0a255c04ea116b4099162abe132cb47a d304eb0d16f3f57dc9f83699ed2b6b212d12483b M	heat/engine/resources/security_group.py
+:100644 100644 40614d283fc34ba9580298685f9c95d58a565c5b a729b37b979bc4f0fae8b5c7dbbcdb784dedd672 M	heat/engine/resources/stack.py
+:100644 100644 16a6ac102778b7d0cb4af148f4eee248f9993915 43014ac102265696fe07c355502e75ddbd802bca M	heat/engine/resources/user.py
+:100644 100644 090daf2e6648cb353548f6b89310d5a643f0260b d4f9c98a2469d1e2cf43e917cdd34dad3611a735 M	heat/engine/resources/volume.py
+:100644 100644 74d5c7dc00255fdd6a34ff18c5d78ae8f78751b3 d00dac995bfe51418d9164a0b6a38905cba9fd9a M	heat/engine/resources/wait_condition.py
+:100644 100644 2102019d2fd81c42bc4f9eb3601363aa22ceef00 9964927ffc608298e839489ef1346f4a89689086 M	heat/tests/functional/test_WordPress_Single_Instance_With_EBS_EIP.py
+:100644 100644 da70be9d3cd844378657689c02de5608c21fe0ba 3902a78e65e0b28b82af5e0552ebc9907e6adca9 M	heat/tests/functional/test_WordPress_Single_Instance_With_EIP.py
+:100644 100644 d8410660e5700bd5c50e5d361f29b5720b52c3bc f87170b1ff5a6ec14c2380a8d8d1bf6e715d443a M	heat/tests/test_autoscaling.py
+:100644 100644 9dde968429cba39b3f00eeec58bafe08b9dd9d83 056490c22bc183b7aca1702cc665a375073c2989 M	heat/tests/test_engine_service.py
+:100644 100644 1b8873837c5a388e814e9a01be460df66a18f69d 7e12eff37caf90eeafc1d39045f8509dad59e400 M	heat/tests/test_instance.py
+:100644 100644 2047f56245f5914fe7ee5de946d719560b6f21b6 990139a2c9e4db5a1213de70ff2d38312b434162 M	heat/tests/test_user.py

@@ -1,0 +1,20 @@
+Changes in branch origin/master, between e848c080790996e85fbbe0080e50b51d9deab46c and ec8d548b88d94695c847ec5887f916a7f80dcca5
+commit afd1b9abdbf9b7b037ef144b5915818b4624bc83
+tree 6a4d7aa95d72204d794a538917d71a0c055886cf
+parent a09a9a2c21e0278ab8e59f28f2a1d653d4317f3a
+author Steve Baker <sbaker@redhat.com> 1352429106 +1300
+committer Steve Baker <sbaker@redhat.com> 1352429106 +1300
+
+    Switch to UUID for the Stack primary key.
+    
+    For the migrate upgrade, existing integer keys remain and any subsequent stack
+    will be assigned a uuid.
+    
+    For a migrate downgrade, it should work fine if there have been no stacks added
+    since ugrade. Added stacks will have their IDs 'truncated' back to an integer
+    which will require some manual fixup after downgrade.
+    
+    Change-Id: Ib882bece911fcbc96fffab16a9f0e5ce3cb55fed
+
+:000000 100644 0000000000000000000000000000000000000000 b406e4b55e2613868c71370c196e90cb5995c2f4 A	heat/db/sqlalchemy/migrate_repo/versions/012_stack_id_uuid.py
+:100644 100644 4e70bdf4879a28454f2771b58a579f2c18bd273e 03abeafec3e5433e2fbdee5b2072281db3a20fb6 M	heat/db/sqlalchemy/models.py

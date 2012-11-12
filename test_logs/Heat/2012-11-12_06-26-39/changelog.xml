@@ -1,0 +1,27 @@
+Changes in branch origin/master, between ec8d548b88d94695c847ec5887f916a7f80dcca5 and 8f2993610d0f12f7e711107eaf56db3d28b112b0
+commit 8f2993610d0f12f7e711107eaf56db3d28b112b0
+tree 35c269f847fe2505626a04a2cea9b066bd4932eb
+parent ec8d548b88d94695c847ec5887f916a7f80dcca5
+author Steve Baker <sbaker@redhat.com> 1352662718 +1300
+committer Steve Baker <sbaker@redhat.com> 1352663352 +1300
+
+    Pass a Stack entity to Stack.load().
+    
+    Every call to Stack.load (except one) is loading models.Stack then passing just
+    the ID to Stack.load, which then loads models.Stack again.
+    
+    As far as I can tell, SQLAlchemy doesn't have a 2nd level cache, so this results
+    in the db being queried twice.
+    
+    This change makes it possibe to pass a stack *or* an ID to Stack.load, and
+    converts all calls to pass in a stack if it is available.
+    
+    Change-Id: I501ebd403a241cc3b4a5c1e3070137cfc360bbda
+
+:100644 100644 2c04db392fa28c4a912be092b8849d2ceb5f28df 08795a97097e5203ddb6efb5ab82d3e9e28beb5b M	heat/engine/api.py
+:100644 100644 c0ea0008f83d1a7b4bcbcdbafcf543f02dc9ff6c eda5af997924050efdafafde0fe0aeb94975dc54 M	heat/engine/parser.py
+:100644 100644 b7d754602f33003dc7da7c0a289ec686ba403eef 07d9dbbb5aa00d0787e320386d88de29a4ce3522 M	heat/engine/service.py
+:100644 100644 abc0a109ef79a1d7c715bbef42c5601146cf7a3d 3091cf87f233df53308414bf29dfc8d19bd1fea3 M	heat/engine/watchrule.py
+:100644 100644 e56f231f6f68364a2851bdfb3778027fab4b39bb 8ba73bbecedff1e2080b382fd4411026743fc05d M	heat/tests/test_api_cfn_v1.py
+:100644 100644 c5b0387855c91c4ebcd55a305ffd8476a68e130a 667aab3ab8aeb0aa372fe1108a0e773caae6a7e5 M	heat/tests/test_api_openstack_v1.py
+:100644 100644 056490c22bc183b7aca1702cc665a375073c2989 6647e284f8a88046b09c428d3b36604adf5e4abb M	heat/tests/test_engine_service.py

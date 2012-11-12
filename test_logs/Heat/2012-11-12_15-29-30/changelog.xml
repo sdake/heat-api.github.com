@@ -1,0 +1,17 @@
+Changes in branch origin/master, between 8f2993610d0f12f7e711107eaf56db3d28b112b0 and 75fc3c9bcae6b28c5ff9aa39b2afcd4891b326c4
+commit 75fc3c9bcae6b28c5ff9aa39b2afcd4891b326c4
+tree 7ce7d0be1bb5141f93d47f8b76bf2b017e253430
+parent 8f2993610d0f12f7e711107eaf56db3d28b112b0
+author Steven Hardy <shardy@redhat.com> 1352750398 +0000
+committer Steven Hardy <shardy@redhat.com> 1352750398 +0000
+
+    heat engine : Don't wait() for killed greenthreads
+    
+    We don't care about the return value of any killed threads on
+    delete_stack, and the greenthreads will all raise a GreenletExit
+    exception after being kill()'d anyway.
+    Also see related openstack-common fix : https://review.openstack.org/15906
+    
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 07d9dbbb5aa00d0787e320386d88de29a4ce3522 d5abfec5544e8018c25c2daf762d4cd36bb7483d M	heat/engine/service.py

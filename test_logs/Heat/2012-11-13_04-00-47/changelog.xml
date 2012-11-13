@@ -1,0 +1,24 @@
+Changes in branch origin/master, between 89caca42d693a686fc190bfd9e35606b4a21f208 and 9096b586e2246cbc13b13141216a775720770c80
+commit 9096b586e2246cbc13b13141216a775720770c80
+tree 30ba96c7662c1a080cc06101f38756328a5142ed
+parent 89caca42d693a686fc190bfd9e35606b4a21f208
+author Steven Hardy <shardy@redhat.com> 1352796464 +0000
+committer Steven Hardy <shardy@redhat.com> 1352796464 +0000
+
+    heat align openstack/common with latest oslo-incubator
+    
+    Pull in the latest oslo changes, we need the threadgroup fix
+    Fixes 1078064
+    
+    Change-Id: I58cc94979558663d101a1a7b42446d1a9face6cf
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 c2e73ddfd41bfb822dc98022df64156187ea930c 589d2ee47a8f8ec9b245e3fb480722613d6a3913 M	heat/openstack/common/eventlet_backdoor.py
+:100644 100644 bc7de8c7b1522bf12d6d5d8d630b8a11a677f4b0 a58b02f27c30a61c929d78b72823c6f04770ee6f M	heat/openstack/common/loopingcall.py
+:100644 100644 2ddb32156462c69747a8a6c0c4e25230f86a1bc0 74785c071dde3e5c592838027a09def36445a663 M	heat/openstack/common/notifier/rabbit_notifier.py
+:100644 100644 2eb5f0a7da6057725fb289f63e0fc5ce07323bfa 8046c216f8fc66ca51006ef560af68615fe04677 M	heat/openstack/common/rpc/__init__.py
+:100644 100644 d3f0107fb487c0fb0d201ddd48392fd763198e7b 8c0e5464304668d84e136c699dcab2002b909c6c M	heat/openstack/common/rpc/impl_kombu.py
+:100644 100644 b47f25b3fea3ab53b9d9308a0a79eb38c8201b68 c7afcc48d42e4d1eaab7a56e4cf01fe5c4ba18dd M	heat/openstack/common/rpc/impl_qpid.py
+:100644 100644 913a4c79657dbf43eaac7629772421ab662baaa7 e2fbae04732b085121facf91d4402be1ed26c027 M	heat/openstack/common/service.py
+:100644 100644 83eef07a7be54ea67c3975fa1d7f050de23dcf87 e6f72f034ec06c176f1a82d691ed91f4c841c42d M	heat/openstack/common/setup.py
+:100644 100644 feee2a0eb671f6c7a6a4afea7ea7ab6a14e4c07d 09d9b398ec5fcd335f3ebc758a53b82816a22b4e M	heat/openstack/common/threadgroup.py

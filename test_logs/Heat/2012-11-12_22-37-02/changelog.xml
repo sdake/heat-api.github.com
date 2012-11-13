@@ -1,0 +1,17 @@
+Changes in branch origin/master, between 75fc3c9bcae6b28c5ff9aa39b2afcd4891b326c4 and 89caca42d693a686fc190bfd9e35606b4a21f208
+commit 89caca42d693a686fc190bfd9e35606b4a21f208
+tree ab12b4a3ac7845c329db1b5d464bcd1c63f94501
+parent 75fc3c9bcae6b28c5ff9aa39b2afcd4891b326c4
+author Steve Baker <sbaker@redhat.com> 1352770215 +1300
+committer Steve Baker <sbaker@redhat.com> 1352770313 +1300
+
+    Modify identify_stack to check for uuid.
+    
+    If the passed name matches a uuid then lookup by uuid instead of name.
+    
+    Change-Id: I2058616ce0191aab4d364b652f1b20d072f6b258
+
+:100644 100644 7358cbc5980899e857f0b3b6f94ffb20d5be8c44 9fbc25b091826eeb1a632508f306d813d83c863d M	heat/engine/identifier.py
+:100644 100644 d5abfec5544e8018c25c2daf762d4cd36bb7483d 3ae98f112c50240bf56609cefdaee2cac1d35afd M	heat/engine/service.py
+:100644 100644 6647e284f8a88046b09c428d3b36604adf5e4abb b250920d6b4c638d3d39401cc19f244172b228ae M	heat/tests/test_engine_service.py
+:100644 100644 aadf27ffb778fed4df4b93ff23a25575ca22f479 4fcc73df0c68a8b18bca62a34d0ffa6945747062 M	heat/tests/test_identifier.py

@@ -1,0 +1,14 @@
+Changes in branch origin/master, between 40ed0ade378bb0289c546e7c2cc16891275c3e2b and bd8edd25fa8423ded878b4f3d0d0403e64c3cd17
+commit bd8edd25fa8423ded878b4f3d0d0403e64c3cd17
+tree 1aab0a25464666e2261eb92461c796c5bf511c7b
+parent 40ed0ade378bb0289c546e7c2cc16891275c3e2b
+author Zane Bitter <zbitter@redhat.com> 1352738556 +0100
+committer Zane Bitter <zbitter@redhat.com> 1352922127 +0100
+
+    ReST API: Split utilities into a separate module
+    
+    Change-Id: I140193db16b999255912f7013827b87b9ceb26e5
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 7091a6d7208b97f2190ff87f9fb9832c2ea5f27d a2f962c49c53c2e09134d41273f3f6b08e2ac45f M	heat/api/openstack/v1/stacks.py
+:000000 100644 0000000000000000000000000000000000000000 1b333b21249629437d5c66b67af1eb44d9775ee6 A	heat/api/openstack/v1/util.py

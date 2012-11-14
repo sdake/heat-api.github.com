@@ -1,0 +1,17 @@
+Changes in branch origin/master, between 0ffcb049c62348d33734aac88ac450996f80715d and 40ed0ade378bb0289c546e7c2cc16891275c3e2b
+commit 40ed0ade378bb0289c546e7c2cc16891275c3e2b
+tree 5b5346a60de9f347cc5063c30e8df3e7c6edd4b8
+parent 0ffcb049c62348d33734aac88ac450996f80715d
+author Zane Bitter <zbitter@redhat.com> 1352738556 +0100
+committer Zane Bitter <zbitter@redhat.com> 1352922077 +0100
+
+    Actually validate properties of resources
+    
+    Properties.validate() returns an error on failure; it does not raise an
+    exception (and never has). So we should look at the return value when we
+    call it.
+    
+    Change-Id: Iaa0deb9f54055b4b1f73c0b37d26f5ac2c00d683
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 7a3411669e9807467e5260c61d47a60f47f34098 54d6ac2425d5242850d94e285d60c244e63c04c4 M	heat/engine/resources/resource.py

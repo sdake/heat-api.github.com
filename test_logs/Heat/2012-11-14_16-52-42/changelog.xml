@@ -1,0 +1,14 @@
+Changes in branch origin/master, between bd8edd25fa8423ded878b4f3d0d0403e64c3cd17 and 6ebde1b8f902be7a3ac71b5b85f5060d10f16a8c
+commit 2622c2ac4ecfc499f947d749b76ea1538148d4bb
+tree 671fcf21a6fa9c011cda5c26c997ec2d7852fd49
+parent 0ffcb049c62348d33734aac88ac450996f80715d
+author Steve Baker <sbaker@redhat.com> 1352923907 +1300
+committer Steve Baker <sbaker@redhat.com> 1352923907 +1300
+
+    Allow stack.owner_id to store a uuid.
+    
+    Fixes bug 1078854
+    
+    Change-Id: I3dae1502968853d563ba52bc1d6656c48d5d18ba
+
+:000000 100644 0000000000000000000000000000000000000000 f1a8d8b536c9c75d5cd0ba315670b84824151282 A	heat/db/sqlalchemy/migrate_repo/versions/013_owner_id_uuid.py

@@ -1,0 +1,19 @@
+Changes in branch origin/master, between 18564e60e063dac98348f00aa91c7eb5de98996b and bc2c6dbcfe097b45f53b162f6433e6fdd2ca9fa7
+commit bc2c6dbcfe097b45f53b162f6433e6fdd2ca9fa7
+tree e34728d4ae8a01c05d8fb4ee40708d4d58186575
+parent 18564e60e063dac98348f00aa91c7eb5de98996b
+author Steve Baker <sbaker@redhat.com> 1352863392 +1300
+committer Steve Baker <sbaker@redhat.com> 1352863392 +1300
+
+    Always filter by tenant_id in stack_get_by_name.
+    
+    This means that all calls to stack_get_by_name need to provide a context.
+    
+    Without this change, 2 tenants cannot create stacks with the same name.
+    
+    Change-Id: I98c35a5d51c5c7d66e0b8a0fddc04f221d1d6ab7
+
+:100644 100644 2e654673173d88358f0a35b9f8491b5586a4f260 3f7336597f4609ab13735791f60c0b8f93097fcf M	heat/db/sqlalchemy/api.py
+:100644 100644 3ae98f112c50240bf56609cefdaee2cac1d35afd 44541c5bdf7c82c3b6ad4c91363c66732598d1f0 M	heat/engine/service.py
+:100644 100644 3091cf87f233df53308414bf29dfc8d19bd1fea3 3a5854ad39f5e7e8576d2a6b851b4ef9e84ffd65 M	heat/engine/watchrule.py
+:100644 100644 b250920d6b4c638d3d39401cc19f244172b228ae 7b2ae5ab991af2260363591c6965d264bb7076cd M	heat/tests/test_engine_service.py

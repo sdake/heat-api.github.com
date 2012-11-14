@@ -1,0 +1,15 @@
+Changes in branch origin/master, between 9096b586e2246cbc13b13141216a775720770c80 and 18564e60e063dac98348f00aa91c7eb5de98996b
+commit 18564e60e063dac98348f00aa91c7eb5de98996b
+tree ebbb52f9f0b12dfd386cf5eba70be0fc5685cca6
+parent 9096b586e2246cbc13b13141216a775720770c80
+author Steve Baker <sbaker@redhat.com> 1352845072 +1300
+committer Steve Baker <sbaker@redhat.com> 1352845072 +1300
+
+    Align pip-requires versions with nova
+    
+    This should also make the unit tests run again by preventing
+    SqlAlchemy 8 from being used
+    
+    Change-Id: I6fa92540dc3369b85d135232b10701937071cbd6
+
+:100644 100644 9651ae92d92e03b34bfc2888b8122c27e527feb5 9f7f880fe06cd04edd221ff115191a515e35b0e2 M	tools/pip-requires

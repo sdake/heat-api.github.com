@@ -1,0 +1,13 @@
+Changes in branch origin/master, between 4f30eecf3d445a044a13206f81ec451431447907 and 0ffcb049c62348d33734aac88ac450996f80715d
+commit 0ffcb049c62348d33734aac88ac450996f80715d
+tree 32586583ba6b6c8bbee6c6c8c1a6d746fbb0d884
+parent 4f30eecf3d445a044a13206f81ec451431447907
+author Zane Bitter <zbitter@redhat.com> 1352902614 +0100
+committer Zane Bitter <zbitter@redhat.com> 1352902639 +0100
+
+    Getting Started: Fix formatting errors
+    
+    Change-Id: If174fe7f54caa227996d0d779b28be8eb2050888
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 b630b4e7734674972d346cd647f9913e9d97838b ad5dab041e3fc869c59367edaa5d1a7d81868aa0 M	docs/GettingStarted.rst

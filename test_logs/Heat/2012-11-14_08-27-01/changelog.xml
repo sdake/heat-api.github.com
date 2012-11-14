@@ -1,0 +1,15 @@
+Changes in branch origin/master, between ba00a025d4a5b72638a002ce4e123f6e824d9aa9 and 4f30eecf3d445a044a13206f81ec451431447907
+commit 4f30eecf3d445a044a13206f81ec451431447907
+tree a804e9808cc943277ca4881cfb683478145f67d2
+parent ba00a025d4a5b72638a002ce4e123f6e824d9aa9
+author Steven Hardy <shardy@redhat.com> 1352800480 +0000
+committer Steven Hardy <shardy@redhat.com> 1352893044 +0000
+
+    heat templates : align autoscaling alarm descriptions with values
+    
+    The description doesn't match the actual values for the alarms
+    
+    Change-Id: I46201b75be075f4e4ac32d40031bc17b0786bb1f
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 da98cd5c1319bebf405b144caf7479b44191aa0d b7ec6c417b24be908c55ddcbf97d68e7986b2aa6 M	templates/AutoScalingMultiAZSample.template

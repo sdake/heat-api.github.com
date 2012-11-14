@@ -1,0 +1,20 @@
+Changes in branch origin/master, between da712e0ccd4100fdffee6ee6543ac96c4b357d40 and a425ae02af7a25aa3654e644dc966d07f408a60c
+commit a425ae02af7a25aa3654e644dc966d07f408a60c
+tree 349b69b0dd38a5f5f9436cf7a90c41886589f17b
+parent da712e0ccd4100fdffee6ee6543ac96c4b357d40
+author Steven Hardy <shardy@redhat.com> 1352745076 +0000
+committer Steven Hardy <shardy@redhat.com> 1352893044 +0000
+
+    heat engine : append watch server url to instance userdata
+    
+    Append url for watch server to instance userdata, which avoids
+    post-install sed mangling in the template, and will make it easier
+    to transparently switch to a different metric service
+    
+    Change-Id: I59b9b7efcd75d44e88ebe0a116a9ce1e3ef20c14
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 e59e41b9bc45ef8390bdd6763db4f816f7aa7db0 b630b4e7734674972d346cd647f9913e9d97838b M	docs/GettingStarted.rst
+:100644 100644 462835bedfc9d6592049f1c06d80d6a56d5e950c 172aa244a0a4c746480270cee7d9eb76f6b6656c M	etc/heat/heat-engine.conf
+:100644 100644 abd0c04a26f413902ba12738459f9b42cd612bce a89ea9bc00e9d5f2bf01ad5ca934dbea77481762 M	heat/common/config.py
+:100644 100644 2f2422e6d185dc2c8e4d34fd1e045e11bab4d2eb 6ffc8ddaee760422bad8d3f7b1814764ec85d81e M	heat/engine/resources/instance.py

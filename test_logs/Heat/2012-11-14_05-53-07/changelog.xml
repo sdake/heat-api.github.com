@@ -1,0 +1,17 @@
+Changes in branch origin/master, between bc2c6dbcfe097b45f53b162f6433e6fdd2ca9fa7 and da712e0ccd4100fdffee6ee6543ac96c4b357d40
+commit da712e0ccd4100fdffee6ee6543ac96c4b357d40
+tree d4766d6fc817cbf705ce66732dcace8be165428c
+parent bc2c6dbcfe097b45f53b162f6433e6fdd2ca9fa7
+author Zane Bitter <zbitter@redhat.com> 1352827152 +0100
+committer Gerrit Code Review <review@openstack.org> 1352889253 +0000
+
+    Don't use OpenStack plugin in tox
+    
+    This plugin provides syntax colouring of the tox output, at the cost of no
+    longer reporting errors in test setup (instead it just reports no tests run
+    -> success).
+    
+    Change-Id: Idf4f71a54af6303090d464b0846e563ac3776e4a
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 98f1dbf0dcb31e29a7b31411fa3505a428a9f809 c6b6d6721720b0976348a26e20019f02bd162216 M	tox.ini

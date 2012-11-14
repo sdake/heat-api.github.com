@@ -1,0 +1,20 @@
+Changes in branch origin/master, between a425ae02af7a25aa3654e644dc966d07f408a60c and ba00a025d4a5b72638a002ce4e123f6e824d9aa9
+commit ba00a025d4a5b72638a002ce4e123f6e824d9aa9
+tree dbf5915f0b85493f48844d7a89318301abc455f1
+parent a425ae02af7a25aa3654e644dc966d07f408a60c
+author Steven Hardy <shardy@redhat.com> 1352800129 +0000
+committer Steven Hardy <shardy@redhat.com> 1352893044 +0000
+
+    heat engine : create boto config via instance userdata
+    
+    Create boto config via instance userdata, which the instance
+    cfntools can read instead of /etc/boto.cfg, avoids messy post
+    install sed-mangling in the templates
+    
+    Change-Id: Ic94bfc2e362a3a3f93b9bdeaad6a5f988371346e
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 6ffc8ddaee760422bad8d3f7b1814764ec85d81e 59c28ab3577c609161617ae4df774efe1b903821 M	heat/engine/resources/instance.py
+:100644 100644 abe8aca0191f3df4fa5f34d12c1e62cf62480918 da98cd5c1319bebf405b144caf7479b44191aa0d M	templates/AutoScalingMultiAZSample.template
+:100644 100644 02726ec67c4d1a18f892e2414133a6ed28f4aa47 a3c864ceb813278f091201876832956cd5128c57 M	templates/WordPress_Single_Instance_With_HA.template
+:100644 100644 5ca109832d2eb612ee30485ffe978417cf43b9ef 1159c1a37a2eb035c02de88af374fccefde697da M	templates/WordPress_Single_Instance_With_IHA.template

@@ -1,0 +1,13 @@
+Changes in branch origin/master, between 4ab04a5ffde7034459b0aafba0b1dc8a63a82ea3 and 83bf4291d7ee08fd7371dc2120b5b27027807375
+commit 83bf4291d7ee08fd7371dc2120b5b27027807375
+tree afa146f244ff62f9179a72e230c2d57289482245
+parent 4ab04a5ffde7034459b0aafba0b1dc8a63a82ea3
+author Zane Bitter <zbitter@redhat.com> 1352738556 +0100
+committer Zane Bitter <zbitter@redhat.com> 1353010398 +0100
+
+    ReST API: Refactor routes
+    
+    Change-Id: I2ab3c266ea814e791bc7fd955f8502ca862a92d5
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 b5011706564e479bd0a868fb823475dd17afeb7b c138d50e571b8a65d4688825bcca74d67b0317bf M	heat/api/openstack/v1/__init__.py

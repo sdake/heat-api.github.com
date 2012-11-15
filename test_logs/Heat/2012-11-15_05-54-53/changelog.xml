@@ -1,0 +1,19 @@
+Changes in branch origin/master, between 6ebde1b8f902be7a3ac71b5b85f5060d10f16a8c and 27c5ea86f3c888be909788e40688624cc9b71b10
+commit 27c5ea86f3c888be909788e40688624cc9b71b10
+tree 2c8ab668e526efe646bf016418633eb64f0e3576
+parent 6ebde1b8f902be7a3ac71b5b85f5060d10f16a8c
+author Steven Hardy <shardy@redhat.com> 1352970751 +0000
+committer Steven Hardy <shardy@redhat.com> 1352970751 +0000
+
+    heat dbapi rename stack_get_by_tenant
+    
+    Rename stack_get_by_tenant to stack_get_all_by_tenant
+    This aligns better with other dbapi calls and better describes
+    the actual purpose of the call
+    
+    Change-Id: If410220f8423f31718e6bcbfeca62a45c94c4d18
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 6724bd1b88136555b7bd75c848baaa73d68d2f4f 2b6cf106f32ee35119c00ce462e1baa85ec389d6 M	heat/db/api.py
+:100644 100644 3f7336597f4609ab13735791f60c0b8f93097fcf cfcec42b07e2e4c3cee266644c317fb948c80820 M	heat/db/sqlalchemy/api.py
+:100644 100644 44541c5bdf7c82c3b6ad4c91363c66732598d1f0 2fdc26b9bf40bdc9e399806f7abd344494b40702 M	heat/engine/service.py

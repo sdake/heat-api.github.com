@@ -1,0 +1,26 @@
+Changes in branch origin/master, between 27c5ea86f3c888be909788e40688624cc9b71b10 and ad1e45573ece5bb5ca5d6b2273d0d3ab8faba806
+commit ad1e45573ece5bb5ca5d6b2273d0d3ab8faba806
+tree 63d57f0dc49c2c01a9c4aba84829edc8ff57643d
+parent 27c5ea86f3c888be909788e40688624cc9b71b10
+author Steven Hardy <shardy@redhat.com> 1352973826 +0000
+committer Steven Hardy <shardy@redhat.com> 1352976736 +0000
+
+    heat workaround for HA/Autoscaling regression
+    
+    Interim workaround for HA/Autoscaling regression, caused by change of
+    scope for stack_get_by_name to be per-tenant, meaning we need to do a
+    brute-force lookup to find the stack entry when using the stored admin
+    context.
+    
+    A better, more comprehensive (but more intrusive) fix is in-progress
+    but this at least returns us to the same functionality we had before
+    
+    Note this means that all stacks using WatchRule still need to have names
+    unique accross all tenants.
+    
+    bug 1078779
+    
+    Change-Id: Iad1830d38262d1afb63cee16a3e366d9fd09acb4
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 3a5854ad39f5e7e8576d2a6b851b4ef9e84ffd65 69b86fa59df5f37d5cd31406e336ac958787e48e M	heat/engine/watchrule.py

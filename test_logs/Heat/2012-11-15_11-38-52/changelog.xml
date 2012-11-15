@@ -1,0 +1,19 @@
+Changes in branch origin/master, between ad1e45573ece5bb5ca5d6b2273d0d3ab8faba806 and 4ab04a5ffde7034459b0aafba0b1dc8a63a82ea3
+commit 4ab04a5ffde7034459b0aafba0b1dc8a63a82ea3
+tree 3f402c9b3fdcda8c65066bbb49bae621cd4e4d74
+parent ad1e45573ece5bb5ca5d6b2273d0d3ab8faba806
+author Steven Hardy <shardy@redhat.com> 1352978910 +0000
+committer Steven Hardy <shardy@redhat.com> 1352978910 +0000
+
+    heat engine : remove now-unused metadata rpc calls
+    
+    Remove metadata_(list|get)* calls, as these are no longer used by
+    heat-metadata hence are no-longer required
+    
+    Change-Id: Ia67b9f329f628e3172bba24ff1b1192e8ec18079
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 873aef811e6f7cfb64968b20718331d910ed5d57 764d32fc4e9e7763ad748b7526536cfe42bb45fd M	heat/engine/rpcapi.py
+:100644 100644 2fdc26b9bf40bdc9e399806f7abd344494b40702 655810e2a1935b92600049e3d934e780f04143b9 M	heat/engine/service.py
+:100644 100644 7b2ae5ab991af2260363591c6965d264bb7076cd bf19d1748ec1a1ceeafd5b284a37c875c3ec1260 M	heat/tests/test_engine_service.py
+:100644 100644 38a38eda3108dbcd5f6d807aedc391ccd7c52a3e 4e354d1d4e9b593d4b7529c60d53ffe34e00f5d2 M	heat/tests/test_rpcapi.py

@@ -1,0 +1,15 @@
+Changes in branch origin/master, between 0e0189e4c8ccf12ba04cbd2460422cd28c813035 and 8118aebece8d141a0f675ee6302160a8a38b483a
+commit 8118aebece8d141a0f675ee6302160a8a38b483a
+tree cd8446af9c422209f1e0454db13c930d3ef85598
+parent 0e0189e4c8ccf12ba04cbd2460422cd28c813035
+author Zane Bitter <zbitter@redhat.com> 1353062199 +0100
+committer Zane Bitter <zbitter@redhat.com> 1353063144 +0100
+
+    Refactor unit tests for ReST API
+    
+    This makes it easier to add tests for different controllers.
+    
+    Change-Id: I549295ebdd9a41ca4c184c0ff242c805399656c5
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 667aab3ab8aeb0aa372fe1108a0e773caae6a7e5 8d5c7eda222c1fea3edef237db7f806c743ff9ee M	heat/tests/test_api_openstack_v1.py

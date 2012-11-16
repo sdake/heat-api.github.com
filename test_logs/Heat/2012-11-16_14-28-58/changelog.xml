@@ -1,0 +1,17 @@
+Changes in branch origin/master, between e743158e7a61c00e2a32c340d3f268d0835f4c69 and d892d8166cbb002effc9518793d114406ae59112
+commit d892d8166cbb002effc9518793d114406ae59112
+tree 5b5ba5667bfc260e6b1e60b5a0edbdb39f14f6e6
+parent e743158e7a61c00e2a32c340d3f268d0835f4c69
+author Zane Bitter <zbitter@redhat.com> 1352738557 +0100
+committer Zane Bitter <zbitter@redhat.com> 1353064301 +0100
+
+    ReST API: Add API for Resources
+    
+    Change-Id: I860349d03a2d7d034c600a129aead59964930b02
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 44305a7b053edb7dae7a59bceffa50bbd3884d44 dc4262e715309dfab09cb7023f717dec02d623f7 M	docs/api.md
+:100644 100644 c138d50e571b8a65d4688825bcca74d67b0317bf 4a02ee63b5f7ecfa025ce287ae4e4d0404b7f238 M	heat/api/openstack/v1/__init__.py
+:000000 100644 0000000000000000000000000000000000000000 0cbaab2f6a1710796a0c84dbcaaa8f66b8129e32 A	heat/api/openstack/v1/resources.py
+:100644 100644 26de4c01a0d1f6dc001ed37cc4a1747d6da7d5a8 7d367d95639d554f31142d3b8f7f690d4310fa56 M	heat/api/openstack/v1/util.py
+:100644 100644 8d5c7eda222c1fea3edef237db7f806c743ff9ee ae5a2c1585f415497e583bae595f95207b8c7bf3 M	heat/tests/test_api_openstack_v1.py

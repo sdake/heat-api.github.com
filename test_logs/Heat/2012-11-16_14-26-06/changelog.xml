@@ -1,0 +1,14 @@
+Changes in branch origin/master, between 4c57678486e33ee3a0f91e7f0801b5132c91141e and 0e0189e4c8ccf12ba04cbd2460422cd28c813035
+commit 0e0189e4c8ccf12ba04cbd2460422cd28c813035
+tree 2539f450786e78985672138f7ccf03b1b7052129
+parent 4c57678486e33ee3a0f91e7f0801b5132c91141e
+author Zane Bitter <zbitter@redhat.com> 1353059914 +0100
+committer Zane Bitter <zbitter@redhat.com> 1353063116 +0100
+
+    ReST API: Move remote error handler to utils module
+    
+    Change-Id: Id3b99c62c01f1c22aa39518bb0f650d41f5975f0
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 a2f962c49c53c2e09134d41273f3f6b08e2ac45f fc4b0e5a11eb2d077699698d3d7f90de5fad8b92 M	heat/api/openstack/v1/stacks.py
+:100644 100644 1b333b21249629437d5c66b67af1eb44d9775ee6 26de4c01a0d1f6dc001ed37cc4a1747d6da7d5a8 M	heat/api/openstack/v1/util.py

@@ -1,0 +1,15 @@
+Changes in branch origin/master, between 83bf4291d7ee08fd7371dc2120b5b27027807375 and 16159b75d96197d857c46b57ebef34038e37a8e1
+commit 16159b75d96197d857c46b57ebef34038e37a8e1
+tree 0bfc84f8e8c059bde21fbe6e44a4f08ad365c3bc
+parent 83bf4291d7ee08fd7371dc2120b5b27027807375
+author Zane Bitter <zbitter@redhat.com> 1352738556 +0100
+committer Zane Bitter <zbitter@redhat.com> 1353010469 +0100
+
+    Add identifiers for resources
+    
+    Change-Id: I5d0477ba8ee681f14b0f54cf8fa4d8569d541f88
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 9fbc25b091826eeb1a632508f306d813d83c863d 8cf71c1c01644c2ed75424530a3e2678eef08ab3 M	heat/engine/identifier.py
+:100644 100644 54d6ac2425d5242850d94e285d60c244e63c04c4 ad3fcb3f685e397affe3b738449faf81e02f17c9 M	heat/engine/resources/resource.py
+:100644 100644 4fcc73df0c68a8b18bca62a34d0ffa6945747062 92eefb3ff46d27ebb4470a645e87e4e7b4e2f87c M	heat/tests/test_identifier.py

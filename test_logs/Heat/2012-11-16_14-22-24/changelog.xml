@@ -1,0 +1,15 @@
+Changes in branch origin/master, between 16159b75d96197d857c46b57ebef34038e37a8e1 and 4c57678486e33ee3a0f91e7f0801b5132c91141e
+commit 4c57678486e33ee3a0f91e7f0801b5132c91141e
+tree a93c90eda082359bd4705105a9b939bd5975358b
+parent 16159b75d96197d857c46b57ebef34038e37a8e1
+author Zane Bitter <zbitter@redhat.com> 1352738557 +0100
+committer Zane Bitter <zbitter@redhat.com> 1353011202 +0100
+
+    RPC API: Return a resource identifier
+    
+    Change-Id: Ica33a82a8a201f625f293292e1ae7e5ca26559ef
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 08795a97097e5203ddb6efb5ab82d3e9e28beb5b b0a4a668a35267074cb09875f4f8b4c75e2039c2 M	heat/engine/api.py
+:100644 100644 8ba73bbecedff1e2080b382fd4411026743fc05d 938fb5aa5877c3ec5955b894148ecf07e58d3e5c M	heat/tests/test_api_cfn_v1.py
+:100644 100644 bf19d1748ec1a1ceeafd5b284a37c875c3ec1260 24e8a6e365dba243ae7893bd351cb84985cb2bd5 M	heat/tests/test_engine_service.py

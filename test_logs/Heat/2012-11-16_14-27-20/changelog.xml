@@ -1,0 +1,19 @@
+Changes in branch origin/master, between 8118aebece8d141a0f675ee6302160a8a38b483a and e743158e7a61c00e2a32c340d3f268d0835f4c69
+commit e743158e7a61c00e2a32c340d3f268d0835f4c69
+tree 5f01b73c996e4e8c6cea2cb0c7ac5df2f9d6437b
+parent 8118aebece8d141a0f675ee6302160a8a38b483a
+author Zane Bitter <zbitter@redhat.com> 1353064221 +0100
+committer Zane Bitter <zbitter@redhat.com> 1353064284 +0100
+
+    RPC API: Include less detail in resource list
+    
+    Since the stack_list_resources command could be returning data for a large
+    number of resources, avoid returning the metadata and description (which
+    are not needed) to save space.
+    
+    Change-Id: I4e3a46315952f8dd451410622de0d68423abbbf2
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 b0a4a668a35267074cb09875f4f8b4c75e2039c2 74d4c75024c61f98c0d096ef2cd55a0c7770bcf0 M	heat/engine/api.py
+:100644 100644 655810e2a1935b92600049e3d934e780f04143b9 fcac3341cbf8feb84afb68074b3c474aadd6e2c9 M	heat/engine/service.py
+:100644 100644 938fb5aa5877c3ec5955b894148ecf07e58d3e5c d1d95cd5018d33d25f6383064d39e8aa26d21e67 M	heat/tests/test_api_cfn_v1.py

@@ -1,0 +1,17 @@
+Changes in branch origin/master, between f844bf35119f77a56bdbc6215c961aff64440be9 and 1300ced209f7382ed476503d6d27eacf7af49625
+commit 1300ced209f7382ed476503d6d27eacf7af49625
+tree 9103cb206be977f3c0f0c57008462013daec19eb
+parent f844bf35119f77a56bdbc6215c961aff64440be9
+author Zane Bitter <zbitter@redhat.com> 1353077403 +0100
+committer Zane Bitter <zbitter@redhat.com> 1353078220 +0100
+
+    RPC API: Get rid of event_create call
+    
+    Nothing is using this.
+    
+    Change-Id: Id97ce0af1e176463b92288022765f80e1b5152ed
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 764d32fc4e9e7763ad748b7526536cfe42bb45fd 92254b273a9b80f59880e816b588aa72c78bf8f1 M	heat/engine/rpcapi.py
+:100644 100644 fcac3341cbf8feb84afb68074b3c474aadd6e2c9 0e9638b33d548dc5cdac9fea8eb1f22df78975f2 M	heat/engine/service.py
+:100644 100644 4e354d1d4e9b593d4b7529c60d53ffe34e00f5d2 5112c5c9d7d58e207dd2d1ef2f57bd72a82f1f84 M	heat/tests/test_rpcapi.py

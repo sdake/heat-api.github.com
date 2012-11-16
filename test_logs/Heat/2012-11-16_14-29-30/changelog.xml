@@ -1,0 +1,21 @@
+Changes in branch origin/master, between d892d8166cbb002effc9518793d114406ae59112 and f844bf35119f77a56bdbc6215c961aff64440be9
+commit f844bf35119f77a56bdbc6215c961aff64440be9
+tree 64ce05301c2977d52b1db6e983fbb6f9e558d26d
+parent d892d8166cbb002effc9518793d114406ae59112
+author Zane Bitter <zbitter@redhat.com> 1352911886 +0100
+committer Zane Bitter <zbitter@redhat.com> 1353064787 +0100
+
+    ReST API: Add a convenience redirect for resources
+    
+    Since the path stacks/{stack_name}/{stack_id}/resources exists for each
+    valid stack we can safely redirect to it from stacks/{stack_name}/resources
+    without having to perform any further checks in the engine, so we may as
+    well allow it.
+    
+    Change-Id: I0169493479f8c6840de3edad271cf98e8fd5d1da
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 dc4262e715309dfab09cb7023f717dec02d623f7 385a6d1cfcda4853d5737a2e7d4229bb36ffc9fa M	docs/api.md
+:100644 100644 4a02ee63b5f7ecfa025ce287ae4e4d0404b7f238 446ac7fb357f81ec025168486e44b579be71b7ee M	heat/api/openstack/v1/__init__.py
+:100644 100644 fc4b0e5a11eb2d077699698d3d7f90de5fad8b92 ff4e1bf73d0af93be277849fdb2c6aff364cc2f9 M	heat/api/openstack/v1/stacks.py
+:100644 100644 ae5a2c1585f415497e583bae595f95207b8c7bf3 3ce7a842a67b75264c071fcf890099f8b4ee4940 M	heat/tests/test_api_openstack_v1.py

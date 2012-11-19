@@ -1,0 +1,18 @@
+Changes in branch origin/master, between bb8298d316fd79f867788bf9c0254e3855952d61 and cc8b423f56ffac8e94ce47b7fd2d4bd6ea65cc35
+commit f96f15d2edb379d93c999f8d92f1d636ab87910e
+tree 75ec5ad933e633e8d2b52ff548047086cf7ef5b6
+parent deffe8a1679b2fd0af803de9fa3aee46d41d5d84
+author Steven Hardy <shardy@redhat.com> 1353339061 +0000
+committer Steven Hardy <shardy@redhat.com> 1353363980 +0000
+
+    Make CloudWatchAlarm names unique per-tenant
+    
+    Use physical_resource_name to ensure CloudWatchAlarm resources
+    are unique per tenant
+    
+    Ref bug 1078779
+    
+    Change-Id: Id37393decd8d4f89e79af5c7e9eeb21f4e494699
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 bc02625aa9e3d1d38cde1cfbd720c453fb4a93cb f8a54e64580b55accc988c19eaf75d1b06f95e3d M	heat/engine/resources/cloud_watch.py

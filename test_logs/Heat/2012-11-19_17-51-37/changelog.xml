@@ -1,0 +1,18 @@
+Changes in branch origin/master, between 339ca7bf068900be81489f06e91624fc8b055fea and 879d813efc45a4c07fc99a3c53941cfb9768dd4d
+commit 34c1b9cc334dc3c67c773dffc188413296fde92f
+tree d84e1ab962d7e40373deecdbba34cc41a38eceb2
+parent d89f6c0ba1c0da0bbd42e08b44cfd74e412d2143
+author Steven Hardy <shardy@redhat.com> 1353363804 +0000
+committer Steven Hardy <shardy@redhat.com> 1353363980 +0000
+
+    heat engine allow WatchRule load() from DB object
+    
+    Allow WatchRule.load to initialize an object based on an existing
+    sqlalchemy DB object, similar to parser.Stack, avoids doing two
+    DB lookups when running the periodic watch tasks
+    
+    Change-Id: I280942b81e5fdee17acf5582e3d319045afa7914
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 8b75894158e437ed94430f0c825870b35ce73cf0 83098780ced13e238dee3bd804c3be74a27ca305 M	heat/engine/service.py
+:100644 100644 3ff90840ca72e3bcb6d4bcd800260d4cbae9dee1 09a278e96fcf9c779afadf2d8e339509a72d69cb M	heat/engine/watchrule.py

@@ -1,0 +1,15 @@
+Changes in branch origin/master, between 90b747061c7bf8efe624eeb7842789ac98a45709 and ab302c9ed8be1753d1e41a593eeabee5e3fffd16
+commit ab302c9ed8be1753d1e41a593eeabee5e3fffd16
+tree 91c797504084a8c1dff87e4fe4226bd7fe503631
+parent 90b747061c7bf8efe624eeb7842789ac98a45709
+author Angus Salkeld <asalkeld@redhat.com> 1353298133 +1100
+committer Angus Salkeld <asalkeld@redhat.com> 1353364030 +1100
+
+    Remove unused statements/local assignments
+    
+    Change-Id: Iabc1932ef4f851567c30719de127e1165f23dd90
+
+:100644 100644 552907b6d2813e1e3758d71ff22d034888f791a3 630dab2628e335ed9872715d5725b6100a7e6fb9 M	heat/api/cfn/v1/stacks.py
+:100644 100644 ac6f3504f34299f03d62fb1be4c28aeef5c08211 d008f449d3cf3614add2490a44b951e5a3644e52 M	heat/api/cloudwatch/watch.py
+:100644 100644 dbc6a73af95bcee98a4b4bd1efcf2903811c3424 8f89628732335d1d390f19768a392aba2e8d6610 M	heat/common/wsgi.py
+:100644 100644 8364250345c4930fcd84a6e815ceaebc25dc4d5c 0d2f15f70499e4246c06161a71eeb67519e27d7c M	heat/engine/resources/instance.py

@@ -1,0 +1,22 @@
+Changes in branch origin/master, between 19ac89dd72b225a66de0f779651ad2099a731991 and 339ca7bf068900be81489f06e91624fc8b055fea
+commit d89f6c0ba1c0da0bbd42e08b44cfd74e412d2143
+tree 27ffafd28ee2da0d71bc0b187bbf0741d2731a58
+parent 1563f3039f3335d53891da055dcbb2b2334a234f
+author Steven Hardy <shardy@redhat.com> 1353344123 +0000
+committer Steven Hardy <shardy@redhat.com> 1353363980 +0000
+
+    heat engine move to per-stack periodic watch threads
+    
+    Use the stack thread groups, so a separate watch thread is started
+    for each stack - this avoids some of the context scoping problems
+    previously encountered since we can pass the correct context to the
+    periodic task when starting it
+    
+    Fixes bug 1078779
+    
+    Change-Id: I56e6a4b126199587e91548f450956d77ab2158f3
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 0e9638b33d548dc5cdac9fea8eb1f22df78975f2 8b75894158e437ed94430f0c825870b35ce73cf0 M	heat/engine/service.py
+:100644 100644 3b2863e61afdc32118594fc6ae69b93118ceaa01 3ff90840ca72e3bcb6d4bcd800260d4cbae9dee1 M	heat/engine/watchrule.py
+:100644 100644 7538cf25b156a4279f79a76940515a9ed8cd3210 4a6c74ea3f3c97270e164bc326852583faf0f435 M	heat/tests/test_engine_service.py

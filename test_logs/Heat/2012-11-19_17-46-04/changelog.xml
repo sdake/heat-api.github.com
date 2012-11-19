@@ -1,0 +1,28 @@
+Changes in branch origin/master, between 1f5fac70558d2ca440b04a88b5a1e1e9d740c504 and bb8298d316fd79f867788bf9c0254e3855952d61
+commit deffe8a1679b2fd0af803de9fa3aee46d41d5d84
+tree fa9799a3867479b9fa6c0b4cb36a982c68fd5c70
+parent 90b747061c7bf8efe624eeb7842789ac98a45709
+author Steven Hardy <shardy@redhat.com> 1352907677 +0000
+committer Steven Hardy <shardy@redhat.com> 1353363980 +0000
+
+    WatchRule refer to stack by id not name
+    
+    Rework WatchRule to refer to stacks by uuid not name, this will
+    help us move to allowing non-unique stack names containing WatchRule
+    resources
+    
+    Ref bug 1078779
+    
+    Change-Id: Idbbbd65a05d7036860cc2feb044d568210071d21
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 ac6f3504f34299f03d62fb1be4c28aeef5c08211 299d58f4d5b59dc1c87417d8853d5887e5269516 M	heat/api/cloudwatch/watch.py
+:000000 100644 0000000000000000000000000000000000000000 6baa8d41a6b48cd9f6c621e2ff7f52a61022035d A	heat/db/sqlalchemy/migrate_repo/versions/014_watch_stackid.py
+:100644 100644 c95df804b8eb95ec0b22a0a714ecda5c121e379e 2d6d7790df403aeab7f9cc0c6a27b77669392874 M	heat/db/sqlalchemy/models.py
+:100644 100644 0f1685f72f06b1c39fa2bd114be4fef8c2402f35 86ad9984c7f1544e29a1e5ef1d0a78e92ac5795f M	heat/engine/api.py
+:100644 100644 ac05d642fad4a5767fd4c791c2ff59696b20d394 bc02625aa9e3d1d38cde1cfbd720c453fb4a93cb M	heat/engine/resources/cloud_watch.py
+:100644 100644 69b86fa59df5f37d5cd31406e336ac958787e48e 3b2863e61afdc32118594fc6ae69b93118ceaa01 M	heat/engine/watchrule.py
+:100644 100644 1a6fa4b198cbf4410ebc41a66917f4fce5f5bf04 a2fe652effce841cde3ba45b9b3bdd4cf8c9fb27 M	heat/tests/test_api_cloudwatch.py
+:100644 100644 24e8a6e365dba243ae7893bd351cb84985cb2bd5 7538cf25b156a4279f79a76940515a9ed8cd3210 M	heat/tests/test_engine_service.py
+:100644 100644 5f8f12fb8ec4bd201364f8c743f89d20e1252399 6d3ed25f80972bf6b2618e0139d458aee0b4657e M	heat/tests/test_loadbalancer.py
+:100644 100644 3f3a0169861070090e4ee438d9f1a7b3b264cd39 c453d5f4e09eb4eb4bd2753434538cb5c30b7f23 M	heat/tests/test_watch.py

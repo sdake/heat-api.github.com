@@ -1,0 +1,14 @@
+Changes in branch origin/master, between 1e07e38d0b17a962bd78d3b63f77444927d38410 and 722bb8a259762d0da4a76e5b078f0b1b266b07e7
+commit 722bb8a259762d0da4a76e5b078f0b1b266b07e7
+tree 4af63945434021cfd8598d75c40c8389ea90a199
+parent 1e07e38d0b17a962bd78d3b63f77444927d38410
+author Angus Salkeld <asalkeld@redhat.com> 1353297884 +1100
+committer Angus Salkeld <asalkeld@redhat.com> 1353301921 +1100
+
+    Use jsonutils in ec2token
+    
+    To get access to to_primitive()
+    
+    Change-Id: I9a09609b5469870a217386be9fbad9261ef0c815
+
+:100644 100644 dec0afd52c411398452d30cb49a5f194eba2b5aa 5becab2cf096f975416c405ecb9cc644ea0bd278 M	heat/api/aws/ec2token.py

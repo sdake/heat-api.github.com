@@ -1,0 +1,13 @@
+Changes in branch origin/master, between 1300ced209f7382ed476503d6d27eacf7af49625 and e65020423b0607edf50cdddb0168f8ab7ecb468f
+commit e65020423b0607edf50cdddb0168f8ab7ecb468f
+tree f9698266d5b37a6881d43b8b2941c386c9cd3649
+parent 1300ced209f7382ed476503d6d27eacf7af49625
+author Angus Salkeld <asalkeld@redhat.com> 1353287555 +1100
+committer Angus Salkeld <asalkeld@redhat.com> 1353287555 +1100
+
+    Fix ppetit.template parameter type Integer -> Number
+    
+    part of bug 1072896
+    Change-Id: I47011d14330f8d8015876a88529a399a1cee98b6
+
+:100644 100644 95f4c3b9be5a287767a062d96121c8b7deda01ab 1621765997957fadb0c41fbaec6ffe2dce3c8bae M	templates/ppetit.template

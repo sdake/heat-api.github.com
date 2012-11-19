@@ -1,0 +1,12 @@
+Changes in branch origin/master, between ab302c9ed8be1753d1e41a593eeabee5e3fffd16 and 1f5fac70558d2ca440b04a88b5a1e1e9d740c504
+commit 1f5fac70558d2ca440b04a88b5a1e1e9d740c504
+tree c5e24d7c18d87c5d7b591bf31f234331887413d7
+parent ab302c9ed8be1753d1e41a593eeabee5e3fffd16
+author Angus Salkeld <asalkeld@redhat.com> 1353298734 +1100
+committer Angus Salkeld <asalkeld@redhat.com> 1353364034 +1100
+
+    r1 not defined
+    
+    Change-Id: Icd1135f17512248d5c212ba88add386212510641
+
+:100644 100644 ff4e1bf73d0af93be277849fdb2c6aff364cc2f9 0461551dbc498a2483007dd31ac814013b4d7958 M	heat/api/openstack/v1/stacks.py

@@ -1,0 +1,20 @@
+Changes in branch origin/master, between 05a90503228f829f73bd1017b530a28cefa1a0d4 and 90b747061c7bf8efe624eeb7842789ac98a45709
+commit 90b747061c7bf8efe624eeb7842789ac98a45709
+tree 3e68b107e6bb2812a4c62b3d5f6b534a6dfb7e1f
+parent 05a90503228f829f73bd1017b530a28cefa1a0d4
+author Jeff Peeler <jpeeler@redhat.com> 1353345012 -0500
+committer Jeff Peeler <jpeeler@redhat.com> 1353351628 -0500
+
+    Provide more information with template URL error
+    
+    Previously a generic read error was given. Inform the user with proper
+    exceptions for: the case when a resource is present but non-responsive
+    and when a resource is present but the requested data could not be
+    found.
+    
+    Fixes bug 1072951
+    
+    Change-Id: I35b92cea38358691015f8752e80efc6720e34e48
+    Signed-off-by: Jeff Peeler <jpeeler@redhat.com>
+
+:100644 100644 0be854ca48e136589c41e1736b50e2a2ae234f1e 552907b6d2813e1e3758d71ff22d034888f791a3 M	heat/api/cfn/v1/stacks.py

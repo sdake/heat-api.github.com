@@ -1,0 +1,13 @@
+Changes in branch origin/master, between 722bb8a259762d0da4a76e5b078f0b1b266b07e7 and 05a90503228f829f73bd1017b530a28cefa1a0d4
+commit 05a90503228f829f73bd1017b530a28cefa1a0d4
+tree 886e8d9c78960679f8f7a01c73a4141f00f28692
+parent 722bb8a259762d0da4a76e5b078f0b1b266b07e7
+author Angus Salkeld <asalkeld@redhat.com> 1353297942 +1100
+committer Angus Salkeld <asalkeld@redhat.com> 1353301995 +1100
+
+    Add missing logging imports
+    
+    Change-Id: Ide1d0a27337bfaf767cf85d59deef1752724fbcf
+
+:100644 100644 39dc01d5a679f51386973a214dadeda3b9a940bc 68c9b34d784b85f745775a3ae4514a07064c5d48 M	heat/api/aws/utils.py
+:100644 100644 8556d978fd6cc12df87024ef0d552aa8e42a1911 acc18dba165bc8caf9ac07e6171ff29724b0d031 M	heat/common/utils.py

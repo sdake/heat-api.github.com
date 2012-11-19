@@ -1,0 +1,19 @@
+Changes in branch origin/master, between cc8b423f56ffac8e94ce47b7fd2d4bd6ea65cc35 and 19ac89dd72b225a66de0f779651ad2099a731991
+commit 1563f3039f3335d53891da055dcbb2b2334a234f
+tree c661943e79865bcb5c857992b16d44364669d0f6
+parent f96f15d2edb379d93c999f8d92f1d636ab87910e
+author Steven Hardy <shardy@redhat.com> 1353342372 +0000
+committer Steven Hardy <shardy@redhat.com> 1353363980 +0000
+
+    add watch_rule_get_all_by_stack dbapi call
+    
+    Add option to retrieve all watch rules for a given stack, which
+    will be required to move to periodic watch threads per-stack
+    
+    Ref bug 1078779
+    
+    Change-Id: I350e2ee72c7eec0b91bf85ac52bb04e3cd00b4db
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 27a9db37770b275ebaaab27e7f06da062c6ef212 14ca76c29d6e9397cf5cb3556a14fbc910030408 M	heat/db/api.py
+:100644 100644 cfcec42b07e2e4c3cee266644c317fb948c80820 57680b22a2bc1cccf84e69c10a96d18fcedcd4f6 M	heat/db/sqlalchemy/api.py

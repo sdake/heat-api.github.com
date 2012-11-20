@@ -1,0 +1,18 @@
+Changes in branch origin/master, between 879d813efc45a4c07fc99a3c53941cfb9768dd4d and 66ef27527d7765c2d6b3898a11425c58ec69911c
+commit 66ef27527d7765c2d6b3898a11425c58ec69911c
+tree b8a7b9cc9e5efe1ef2e3008484378bb80ac3453c
+parent 879d813efc45a4c07fc99a3c53941cfb9768dd4d
+author Steve Baker <sbaker@redhat.com> 1353381863 +1300
+committer Steve Baker <sbaker@redhat.com> 1353381863 +1300
+
+    Tool to download all Amazon example templates
+    
+    Templates are saved in templates/cloudformation-examples which is ignored
+    by git.
+    
+    Its probably time we're exposed to a bit more template diversity.
+    
+    Change-Id: I667c4f08fced353201ab9234a51526bcbeb0761b
+
+:100644 100644 0ed16fc57649c1092b9e84362f56a09a813345d7 62a562e80c202ac0d18b38e681f85b688d24f1cb M	.gitignore
+:000000 100755 0000000000000000000000000000000000000000 4650dd2acaa7886d524ae69c723460665c72f739 A	tools/fetch-cloudformation-examples

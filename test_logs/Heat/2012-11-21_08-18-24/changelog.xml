@@ -1,0 +1,17 @@
+Changes in branch origin/master, between ee9e31fb1fd502ed0ddee74d6f41b65a7e6ecf91 and ddd5a10f3771e0cef4c7f48faa9012a8b1d2d3f2
+commit ddd5a10f3771e0cef4c7f48faa9012a8b1d2d3f2
+tree 719f4f9ac20b2b8b135dc0666e224b823a12b8a7
+parent ee9e31fb1fd502ed0ddee74d6f41b65a7e6ecf91
+author Steven Hardy <shardy@redhat.com> 1353497691 +0000
+committer Steven Hardy <shardy@redhat.com> 1353497691 +0000
+
+    heat engine retrieve credentials every periodic task interval
+    
+    Avoid saving a session context, instead retrieve the DB stored
+    credentials for every periodic task trigger, and create a new
+    session context for each periodic event
+    
+    Change-Id: I24ca70b478f06be26ca6cc74385b37d1a0cf098d
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 83098780ced13e238dee3bd804c3be74a27ca305 728c4725b375bcc4fb296c6491e4f4c876c4804b M	heat/engine/service.py

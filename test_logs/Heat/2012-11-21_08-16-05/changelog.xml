@@ -1,0 +1,20 @@
+Changes in branch origin/master, between 66ef27527d7765c2d6b3898a11425c58ec69911c and ee9e31fb1fd502ed0ddee74d6f41b65a7e6ecf91
+commit ee9e31fb1fd502ed0ddee74d6f41b65a7e6ecf91
+tree 73af2e9763ea5b72b17d18eb48285d5d24bf7c8d
+parent 66ef27527d7765c2d6b3898a11425c58ec69911c
+author Steven Hardy <shardy@redhat.com> 1353497474 +0000
+committer Steven Hardy <shardy@redhat.com> 1353497474 +0000
+
+    heat engine Add admin flag to dbapi stack_get
+    
+    Add a flag to the stack_get dbapi call, defaulted to False,
+    which allows us to specify that the admin context is being used
+    hence we don't want tenant-scoping condition applied.
+    This is needed to allow the admin context to retrieve stored
+    credentials per-stack (e.g for the periodic per-stack tasks)
+    
+    Change-Id: I55e307b7940f7da13bd169271744e80d95ea0bd9
+    Signed-off-by: Steven Hardy <shardy@redhat.com>
+
+:100644 100644 14ca76c29d6e9397cf5cb3556a14fbc910030408 22664e5662b5b5d253e242beedb36e8257563c0b M	heat/db/api.py
+:100644 100644 57680b22a2bc1cccf84e69c10a96d18fcedcd4f6 b0cede53543defb8c0ee8b1dfc273e81af7b710d M	heat/db/sqlalchemy/api.py

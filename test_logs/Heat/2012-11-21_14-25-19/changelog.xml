@@ -1,0 +1,20 @@
+Changes in branch origin/master, between ddd5a10f3771e0cef4c7f48faa9012a8b1d2d3f2 and e973659c743579db093ddac7aaab778773b6cd10
+commit b1787bd43e6c7a56523d0bc246008815fb508454
+tree 76fbc69a0d8b6e85a6a6a482fa7095555aabf24b
+parent 66ef27527d7765c2d6b3898a11425c58ec69911c
+author Steve Baker <sbaker@redhat.com> 1353525213 +1300
+committer Steve Baker <sbaker@redhat.com> 1353525213 +1300
+
+    Use a real context for tests.
+    
+    No more DummyContext.
+    
+    Change-Id: Ifbb7cea17b9fa0df90c15867712a74f4d8a5115d
+
+:100644 100644 f87170b1ff5a6ec14c2380a8d8d1bf6e715d443a e581d07ddba8d71f9bdd02736c50e2f09d722782 M	heat/tests/test_autoscaling.py
+:100644 100644 ba419a422dbe905895adcb2d17dc0551617a5252 12c7efbe18dc91aa120198213767bba6145aad15 M	heat/tests/test_dbinstance.py
+:100644 100644 14c7378ea3f8b856b6b322371db5b5ec2020c277 6dba9f1ff28aedd61838c53f93aff059e9edc8d7 M	heat/tests/test_eip.py
+:100644 100644 a610fadaa56e63951c0087581ae49f7b2283aeca a5ab0e9d0b24074dbf6b85ab91317356e760cb2f M	heat/tests/test_quantum.py
+:100644 100644 f1cf2fd3659162b6b3a27131a3d43c0893e2ea33 c9b4fad413484dcb4aa0c24a8a6d1830676917b3 M	heat/tests/test_s3.py
+:100644 100644 990139a2c9e4db5a1213de70ff2d38312b434162 04244283ff0326ca3eee10404a03b23092909792 M	heat/tests/test_user.py
+:100644 100644 ae9eb1676954afe4a2f6ccf58b63e8ad6f719126 20320f231961b1e4988284c5c22cf12d13de8010 M	heat/tests/test_volume.py

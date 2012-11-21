@@ -1,0 +1,28 @@
+Changes in branch origin/master, between e973659c743579db093ddac7aaab778773b6cd10 and 18010f923b3860a16f2da485d5ac6380badec9e0
+commit 67f4f608153048ec3cb566d63d4df7b1d7fe05e4
+tree 01ed0008e9cb93699386628d844ff5f102d3b4e3
+parent b1787bd43e6c7a56523d0bc246008815fb508454
+author Steve Baker <sbaker@redhat.com> 1353525305 +1300
+committer Steve Baker <sbaker@redhat.com> 1353525305 +1300
+
+    Get db session from the context.
+    
+    The aim is to use a single sqlalchemy session for an RPC request.
+    
+    The context object passed to EngineAPI methods is actually an RpcContext
+    which contains the same data as the RequestContext. The @request_context
+    decorator turns this back into a RequestContext which can now have other
+    behaviours added to it.
+    
+    RequestContext now has a lazy loaded session attribute.
+    
+    Save calls on created entities need to be passed the shared session.
+    
+    Change-Id: Ied4e66deaca205362b84fb698f75cc872886607d
+
+:100644 100644 3a8eb73cac57adbfa5a97c294f2aec52c0ac1567 51488934f50776129bcd37b186bcfe4c7706cd63 M	heat/common/context.py
+:100644 100644 14ca76c29d6e9397cf5cb3556a14fbc910030408 d9cbbb8a56adc5b41d37068132f8feed2449cbb9 M	heat/db/api.py
+:100644 100644 57680b22a2bc1cccf84e69c10a96d18fcedcd4f6 459e0d9cc5e94e53d9ce0c0a18bca7ffae6db85c M	heat/db/sqlalchemy/api.py
+:100644 100644 2a6e575a808464732d4c6f3e78803a922e3fa9ae edf44783ee1852844519a230c42fa52f8efcbbf8 M	heat/engine/parser.py
+:100644 100644 d22a12a308dfb194e4b13e2dbd0efc56347980c1 a7ed5315e8ac411652d6c5e1a421eea86a56cba9 M	heat/engine/resources/resource.py
+:100644 100644 83098780ced13e238dee3bd804c3be74a27ca305 fc0d40ae83fe6aaeb09847eea7e3d439125ea85c M	heat/engine/service.py

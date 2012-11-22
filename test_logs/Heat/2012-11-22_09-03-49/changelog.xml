@@ -1,0 +1,16 @@
+Changes in branch origin/master, between f454e5ac3ac593711f370faec1ace83004592311 and cbef4bef028df3d5868e98ae2c55e9dd88149ef0
+commit cbef4bef028df3d5868e98ae2c55e9dd88149ef0
+tree 98562e958d9354b54163efc88bf98c6e5d89da30
+parent f454e5ac3ac593711f370faec1ace83004592311
+author Zane Bitter <zbitter@redhat.com> 1353578817 +0100
+committer Zane Bitter <zbitter@redhat.com> 1353590175 +0100
+
+    ReST API: Add Events
+    
+    Change-Id: I716dc2ad1c9294a7a9df27fbb77e32926b1ba307
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 385a6d1cfcda4853d5737a2e7d4229bb36ffc9fa 2fe04da1f36e954260c424cb5324dd2978216df2 M	docs/api.md
+:100644 100644 f95f549d10c111d15e6ac6b48bcff9e762f2ae4c 5600b51ac94c2dacf419ed28a555f039f1c5089f M	heat/api/openstack/v1/__init__.py
+:000000 100644 0000000000000000000000000000000000000000 545d53bb4c248c001abb28040b13d062886168af A	heat/api/openstack/v1/events.py
+:100644 100644 f94ca97a0b1c4b63ac478a743fae9e51ae32af5a 2e42f59c3a8a10c7885cecc3513ccde46acea971 M	heat/tests/test_api_openstack_v1.py

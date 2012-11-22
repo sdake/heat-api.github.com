@@ -1,0 +1,14 @@
+Changes in branch origin/master, between fada8b3b938c5f4b8107adfeef3c8b8b0a0c4702 and ab71a7e0aa5665e8c34d3d6311ffd3e3d2207608
+commit ab71a7e0aa5665e8c34d3d6311ffd3e3d2207608
+tree ea7fada7adf95d80fe704426176f76163b8feec9
+parent fada8b3b938c5f4b8107adfeef3c8b8b0a0c4702
+author Zane Bitter <zbitter@redhat.com> 1353578816 +0100
+committer Zane Bitter <zbitter@redhat.com> 1353582246 +0100
+
+    Add identifiers for Events
+    
+    Change-Id: I54b2d2bb56129314218f36889f0f525e88c9f146
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 094fbc023d74fd5dba45a9f92452dab978fe18a8 02174101a4b18391ca71b7496c243c5804340829 M	heat/engine/identifier.py
+:100644 100644 632acbd31812b7eaa029b0e29a9df14895eb1cfa cf78a0eacf2ab6045959817ebcf3097706f1997d M	heat/tests/test_identifier.py

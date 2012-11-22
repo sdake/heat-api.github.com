@@ -1,0 +1,14 @@
+Changes in branch origin/master, between ab71a7e0aa5665e8c34d3d6311ffd3e3d2207608 and 248d87801188cfcc464f8f1b4503cf3d2be18b28
+commit 248d87801188cfcc464f8f1b4503cf3d2be18b28
+tree 0bce73bff40b974813f83f917f128a0b7e8adf95
+parent ab71a7e0aa5665e8c34d3d6311ffd3e3d2207608
+author Zane Bitter <zbitter@redhat.com> 1353578817 +0100
+committer Zane Bitter <zbitter@redhat.com> 1353582322 +0100
+
+    Add a method for querying a resource's type
+    
+    Change-Id: Ie07a01668c5958494631806ffc0748f659eb8a1b
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 bd91540e8bc316157d0c49888323cf3ff43d54b3 45031299342a26810901ec04384ff65ceaf43b14 M	heat/engine/resources/resource.py
+:100644 100644 200ff12ff9b9ab4afcbf32510df585d29e9c69f9 c1f94b79284d845dba5f26dcb4778e32dff568c9 M	heat/tests/test_resource.py

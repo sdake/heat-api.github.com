@@ -1,0 +1,15 @@
+Changes in branch origin/master, between 7867fe23510e170efdeb2f8644c81a09c53bf1e7 and 7054f55824ec51032ef1c989b024103536028548
+commit 7054f55824ec51032ef1c989b024103536028548
+tree b4ba14feca3bcb9b1d59dfc6ca96fa68d4f0ad6b
+parent 7867fe23510e170efdeb2f8644c81a09c53bf1e7
+author Zane Bitter <zbitter@redhat.com> 1353578817 +0100
+committer Zane Bitter <zbitter@redhat.com> 1353590038 +0100
+
+    Use the new class for database access to Events
+    
+    Change-Id: I6c02cf47869aaa1d293cb1b528ed967397c47208
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 86ad9984c7f1544e29a1e5ef1d0a78e92ac5795f f53c16d399599b0b8e3a0e206da9e4b1d72b7d3b M	heat/engine/api.py
+:100644 100644 45031299342a26810901ec04384ff65ceaf43b14 a8a35c9af0e7941d3993a9172db831cfa4f71d16 M	heat/engine/resources/resource.py
+:100644 100644 3597462e58b24702dc69e9143b022d4615d15f3b 6c172e32b4249678f9796a863453483a93409535 M	heat/engine/service.py

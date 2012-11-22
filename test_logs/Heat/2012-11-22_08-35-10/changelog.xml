@@ -1,0 +1,16 @@
+Changes in branch origin/master, between 7054f55824ec51032ef1c989b024103536028548 and a5cef837fdfff5963a1c2ef5ee5fdc7367299db5
+commit a5cef837fdfff5963a1c2ef5ee5fdc7367299db5
+tree 0db143affc0ab96b61a77ec9656a382a86826722
+parent 7054f55824ec51032ef1c989b024103536028548
+author Zane Bitter <zbitter@redhat.com> 1353578817 +0100
+committer Zane Bitter <zbitter@redhat.com> 1353590038 +0100
+
+    RPC API: Return an identifier for events
+    
+    Change-Id: Iae2f08014e28997e499771ba9d89feb3954540da
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 630dab2628e335ed9872715d5725b6100a7e6fb9 b7d6d2ea94c65da3660b20cee5550fc9a8dc26ab M	heat/api/cfn/v1/stacks.py
+:100644 100644 f53c16d399599b0b8e3a0e206da9e4b1d72b7d3b 62711f799f337a674e92407f3e7912cd6c85e626 M	heat/engine/api.py
+:100644 100644 d1d95cd5018d33d25f6383064d39e8aa26d21e67 214baec2319a4653dad0767b74b6953b3ce8ec59 M	heat/tests/test_api_cfn_v1.py
+:100644 100644 4a6c74ea3f3c97270e164bc326852583faf0f435 7eb4cb90b2a2157671f06bee952eeeadf5ef6359 M	heat/tests/test_engine_service.py

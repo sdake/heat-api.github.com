@@ -1,0 +1,16 @@
+Changes in branch origin/master, between a5cef837fdfff5963a1c2ef5ee5fdc7367299db5 and f454e5ac3ac593711f370faec1ace83004592311
+commit f454e5ac3ac593711f370faec1ace83004592311
+tree d742091de1b5427020e963d5bf2dec8bd54f160b
+parent a5cef837fdfff5963a1c2ef5ee5fdc7367299db5
+author Zane Bitter <zbitter@redhat.com> 1353589796 +0100
+committer Zane Bitter <zbitter@redhat.com> 1353590175 +0100
+
+    CFN API: Rename ID formatting method
+    
+    It now formats event IDs as well as stack IDs.
+    
+    Change-Id: Iec288eec68cbbebd911a4cf5bfdad96c20dc60f0
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 b7d6d2ea94c65da3660b20cee5550fc9a8dc26ab 314d1ec6e71546e993a23cb7007149b5c150029a M	heat/api/cfn/v1/stacks.py
+:100644 100644 214baec2319a4653dad0767b74b6953b3ce8ec59 b2913feb70f16594e263c16d02a90c1480cb9397 M	heat/tests/test_api_cfn_v1.py

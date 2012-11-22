@@ -1,0 +1,14 @@
+Changes in branch origin/master, between 248d87801188cfcc464f8f1b4503cf3d2be18b28 and 7867fe23510e170efdeb2f8644c81a09c53bf1e7
+commit 7867fe23510e170efdeb2f8644c81a09c53bf1e7
+tree ba947ba3812e4961c59a79c04574ad70cd57a824
+parent 248d87801188cfcc464f8f1b4503cf3d2be18b28
+author Zane Bitter <zbitter@redhat.com> 1353578817 +0100
+committer Zane Bitter <zbitter@redhat.com> 1353582354 +0100
+
+    Add a class to represent Events
+    
+    Change-Id: Ie360343a264f2348af518c8f8eb8cfa0763ad18c
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:000000 100644 0000000000000000000000000000000000000000 d7a76cd36a8af98528b09940b874b709e234ee95 A	heat/engine/resources/event.py
+:000000 100644 0000000000000000000000000000000000000000 50853dd5539d06acc71f7d0bd460380a583929a7 A	heat/tests/test_event.py

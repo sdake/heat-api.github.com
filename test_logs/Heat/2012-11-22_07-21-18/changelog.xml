@@ -1,0 +1,23 @@
+Changes in branch origin/master, between 18010f923b3860a16f2da485d5ac6380badec9e0 and fada8b3b938c5f4b8107adfeef3c8b8b0a0c4702
+commit fada8b3b938c5f4b8107adfeef3c8b8b0a0c4702
+tree 0547cfab764e60844fd1a44a8198cc40485eef39
+parent 18010f923b3860a16f2da485d5ac6380badec9e0
+author Zane Bitter <zbitter@redhat.com> 1353578816 +0100
+committer Zane Bitter <zbitter@redhat.com> 1353582210 +0100
+
+    Improve the identifier class for Resources
+    
+    Enable the resource name to be retrieved from an object. Also allow a
+    ResourceIdentifier to be constructed from only the data passed through the
+    RPC API. This means we can use a single format for identifiers, but still
+    be able to extract important information such as the stack identifier and
+    resource name.
+    
+    Change-Id: Ie9122cb1a835b30eb8e0713a9d5cdcb4a386eda7
+    Signed-off-by: Zane Bitter <zbitter@redhat.com>
+
+:100644 100644 0cbaab2f6a1710796a0c84dbcaaa8f66b8129e32 3a16809e6fe92a603b2eb91885ec8024b2e3dc42 M	heat/api/openstack/v1/resources.py
+:100644 100644 8cf71c1c01644c2ed75424530a3e2678eef08ab3 094fbc023d74fd5dba45a9f92452dab978fe18a8 M	heat/engine/identifier.py
+:100644 100644 a7ed5315e8ac411652d6c5e1a421eea86a56cba9 bd91540e8bc316157d0c49888323cf3ff43d54b3 M	heat/engine/resources/resource.py
+:100644 100644 3ce7a842a67b75264c071fcf890099f8b4ee4940 f94ca97a0b1c4b63ac478a743fae9e51ae32af5a M	heat/tests/test_api_openstack_v1.py
+:100644 100644 92eefb3ff46d27ebb4470a645e87e4e7b4e2f87c 632acbd31812b7eaa029b0e29a9df14895eb1cfa M	heat/tests/test_identifier.py
